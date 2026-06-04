@@ -9,11 +9,11 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'playlist.json'],
       manifest: {
-        name: 'IPTV Premium Player',
-        short_name: 'IPTV Player',
-        description: 'Lecteur IPTV avec support HLS, favoris et mode hors-ligne',
-        theme_color: '#080a12',
-        background_color: '#080a12',
+        name: 'Aonoseke IPTV Player Pro',
+        short_name: 'Aonoseke IPTV',
+        description: 'Aonoseke IPTV Player Pro — 3400+ chaînes gratuites par Aonoseke House Investment RDC',
+        theme_color: '#0d0a04',
+        background_color: '#0d0a04',
         display: 'standalone',
         orientation: 'any',
         icons: [
