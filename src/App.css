@@ -383,23 +383,47 @@
 
 .fav-btn {
   background: none;
-  border: none;
+  border: 1px solid transparent;
   cursor: pointer;
-  padding: 4px;
+  padding: 5px;
   color: var(--text-3);
-  opacity: 0;
-  transition: opacity 0.15s, color 0.15s;
-  border-radius: 4px;
+  opacity: 0.35;
+  transition: opacity 0.15s, color 0.15s, background 0.15s,
+              border-color 0.15s, transform 0.12s;
+  border-radius: 6px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
-.channel-item:hover .fav-btn,
-.fav-btn.favorited { opacity: 1; }
+/* always visible on hover over the item */
+.channel-item:hover .fav-btn {
+  opacity: 0.65;
+}
 
-.fav-btn:hover { color: var(--gold); }
-.fav-btn.favorited { color: var(--gold); }
+/* favorited — toujours visible, doré */
+.fav-btn.favorited {
+  opacity: 1;
+  color: var(--gold);
+  background: rgba(255, 202, 58, 0.1);
+  border-color: rgba(255, 202, 58, 0.25);
+}
+
+/* hover sur le bouton lui-même */
+.fav-btn:hover,
+.fav-btn:focus-visible {
+  opacity: 1;
+  color: var(--gold);
+  background: rgba(255, 202, 58, 0.12);
+  border-color: rgba(255, 202, 58, 0.3);
+  transform: scale(1.15);
+}
+
+/* clic — petit rebond */
+.fav-btn:active {
+  transform: scale(0.9);
+}
 
 /* ── Empty / error states ── */
 .empty-state-small {
@@ -992,7 +1016,17 @@ video {
 
 /* Remove hover-only effects — TV has no cursor */
 .tv-mode .fav-btn {
-  opacity: 1; /* always visible on TV */
+  opacity: 0.55;
+  padding: 7px;
+  border-radius: 8px;
+}
+
+.tv-mode .fav-btn.favorited {
+  opacity: 1;
+}
+
+.tv-mode .channel-item.focused .fav-btn {
+  opacity: 0.9;
 }
 
 .tv-mode .channel-item:hover {
