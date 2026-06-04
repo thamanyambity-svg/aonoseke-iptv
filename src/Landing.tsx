@@ -1,7 +1,8 @@
 import './Landing.css';
 import { useState } from 'react';
-import { MonitorPlay, Play, Check, Tv, Globe, Star, Zap } from 'lucide-react';
+import { Play, Tv, Globe, Star, Zap } from 'lucide-react';
 import type { AuthUser } from './hooks/useAuth.ts';
+import { AlphaLogo } from './components/AlphaLogo.tsx';
 
 // ── Social SVG icons ──────────────────────────────────────────────────────────
 
@@ -88,9 +89,7 @@ export function Landing({ onLogin }: LandingProps): JSX.Element {
         </div>
 
         <div className="landing-logo">
-          <div className="landing-logo-icon" aria-hidden="true">
-            <MonitorPlay size={28} color="#0b0d16" />
-          </div>
+          <AlphaLogo size={72} />
           <div className="landing-logo-text">
             IPTV Player
             <span>by Aonoseke House Investment RDC</span>
@@ -106,22 +105,18 @@ export function Landing({ onLogin }: LandingProps): JSX.Element {
         {/* Stats */}
         <div className="landing-stats">
           <div className="stat-card">
-            <span className="stat-icon">📡</span>
             <div className="stat-number">3 400+</div>
             <div className="stat-label">Chaînes en direct</div>
           </div>
           <div className="stat-card">
-            <span className="stat-icon">🌍</span>
             <div className="stat-number">80+</div>
             <div className="stat-label">Pays représentés</div>
           </div>
           <div className="stat-card">
-            <span className="stat-icon">📂</span>
             <div className="stat-number">28</div>
             <div className="stat-label">Catégories de contenu</div>
           </div>
           <div className="stat-card">
-            <span className="stat-icon">📺</span>
             <div className="stat-number">4K</div>
             <div className="stat-label">HD · FHD · Ultra HD</div>
           </div>

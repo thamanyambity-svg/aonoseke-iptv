@@ -19,6 +19,7 @@ import {
   LogOut,
 } from 'lucide-react';
 import { Player } from './components/Player.tsx';
+import { AlphaLogo } from './components/AlphaLogo.tsx';
 import { useFavorites } from './hooks/useFavorites.ts';
 import type { Channel } from './types-exports.ts';
 import { validatePlaylist, appConfig } from './types-exports.ts';
@@ -312,7 +313,7 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
         {/* Header */}
         <div className="sidebar-header">
           <div className="sidebar-logo-icon" aria-hidden="true">
-            <MonitorPlay size={18} color="#fff" />
+            <AlphaLogo size={34} />
           </div>
           <div className="sidebar-title">
             <h1>IPTV Player</h1>
