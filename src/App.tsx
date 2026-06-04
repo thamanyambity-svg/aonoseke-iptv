@@ -16,6 +16,7 @@ import {
   Radio,
   X,
   RefreshCw,
+  LogOut,
 } from 'lucide-react';
 import { Player } from './components/Player.tsx';
 import { useFavorites } from './hooks/useFavorites.ts';
@@ -23,6 +24,7 @@ import type { Channel } from './types-exports.ts';
 import { validatePlaylist, appConfig } from './types-exports.ts';
 import { logger } from './utils/logger.ts';
 import { ErrorMessages } from './utils/errors.ts';
+import type { AuthUser } from './hooks/useAuth.ts';
 import { sanitizeLogoUrl } from './utils/validation.ts';
 
 // ─── helpers ────────────────────────────────────────────────────────────────
@@ -65,7 +67,12 @@ type Tab = 'all' | 'favorites';
 
 // ─── App ────────────────────────────────────────────────────────────────────
 
-function App(): JSX.Element {
+interface AppProps {
+  user?: AuthUser;
+  onLogout?: () => void;
+}
+
+function App({ user, onLogout }: AppProps = {}): JSX.Element {
   const [channels, setChannels] = useState<Channel[]>([]);
   const [rawSearch, setRawSearch] = useState('');
   const search = useDebounce(rawSearch, 220);
@@ -314,6 +321,16 @@ function App(): JSX.Element {
           <div className="channel-count-badge" title="Nombre de chaînes">
             {channels.length}
           </div>
+          {onLogout && (
+            <button
+              className="logout-btn"
+              onClick={onLogout}
+              title={user ? `Déconnexion (${user.name})` : 'Déconnexion'}
+              aria-label="Se déconnecter"
+            >
+              <LogOut size={13} />
+            </button>
+          )}
         </div>
 
         {/* Tabs */}
