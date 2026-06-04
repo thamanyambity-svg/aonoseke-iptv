@@ -1161,3 +1161,200 @@ video {
 .tv-mode .channel-item.active {
   background: var(--surface-3);
 }
+
+/* ══════════════════════════════════════════
+   PUBLICITÉ — Pré-roll & Bannière
+══════════════════════════════════════════ */
+
+/* Pré-roll overlay (couvre le player) */
+.preroll-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  background: #000;
+  animation: fadeIn 0.25s ease;
+}
+
+.preroll-card {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.preroll-card[role='button'] { cursor: pointer; }
+
+.preroll-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.preroll-content {
+  text-align: center;
+  padding: 40px;
+  max-width: 600px;
+}
+
+.preroll-sponsor {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  display: block;
+  margin-bottom: 18px;
+}
+
+.preroll-title {
+  font-family: var(--display);
+  font-size: clamp(1.5rem, 4vw, 2.6rem);
+  font-weight: 900;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+  margin-bottom: 14px;
+}
+
+.preroll-subtitle {
+  font-size: clamp(0.85rem, 1.8vw, 1.05rem);
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.preroll-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background: var(--lime);
+  color: var(--void);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.preroll-controls {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  background: rgba(0,0,0,0.85);
+  border-top: 1px solid var(--border);
+}
+
+.preroll-countdown {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.55);
+  letter-spacing: 0.5px;
+}
+
+.preroll-skip {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 18px;
+  border-radius: 8px;
+  border: 1px solid var(--border-md);
+  background: var(--surface-3);
+  color: var(--text-1);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.preroll-skip:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  font-family: var(--mono);
+  font-size: 0.74rem;
+}
+
+.preroll-skip:not(:disabled):hover {
+  background: var(--lime);
+  border-color: var(--lime);
+  color: var(--void);
+}
+
+/* TV mode — pré-roll plus grand */
+.tv-mode .preroll-skip { padding: 13px 26px; font-size: 0.95rem; }
+.tv-mode .preroll-countdown { font-size: 0.85rem; }
+
+/* Bannière sponsor (sidebar) */
+.banner-ad {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 8px 12px 12px;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: linear-gradient(135deg, var(--surface-2), rgba(201,168,76,0.06));
+  position: relative;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+  overflow: hidden;
+}
+
+.banner-ad[role='button']:hover {
+  border-color: rgba(201,168,76,0.3);
+  background: linear-gradient(135deg, var(--surface-3), rgba(201,168,76,0.1));
+}
+
+.banner-ad-label {
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  font-family: var(--mono);
+  font-size: 0.5rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--text-3);
+  opacity: 0.7;
+}
+
+.banner-ad-img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.banner-ad-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.banner-ad-title {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--lime);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.banner-ad-sub {
+  font-size: 0.64rem;
+  color: var(--text-3);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.banner-ad-ext {
+  color: var(--text-3);
+  flex-shrink: 0;
+}

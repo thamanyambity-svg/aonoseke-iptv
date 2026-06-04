@@ -1,0 +1,38 @@
+{
+  "enabled": true,
+  "preroll": {
+    "enabled": true,
+    "skipAfter": 5,
+    "maxDuration": 12,
+    "frequency": 1,
+    "items": [
+      {
+        "id": "aonoseke-house",
+        "title": "Aonoseke House Investment",
+        "subtitle": "Votre partenaire import-export en RDC",
+        "cta": "Découvrir nos services",
+        "url": "https://aonoseke.com",
+        "bg": "linear-gradient(135deg, #0d0a04 0%, #2a1e00 60%, #c9a84c 180%)",
+        "image": ""
+      },
+      {
+        "id": "alpha-import",
+        "title": "Alpha Import Exchange",
+        "subtitle": "Solutions commerciales internationales",
+        "cta": "En savoir plus",
+        "url": "https://aonoseke.com",
+        "bg": "linear-gradient(135deg, #0d0a04 0%, #1a1400 70%, #8a6f2c 200%)",
+        "image": ""
+      }
+    ]
+  },
+  "banners": [
+    {
+      "id": "banner-aonoseke",
+      "title": "Aonoseke House Investment RDC",
+      "subtitle": "Import · Export · Partenariats",
+      "url": "https://aonoseke.com",
+      "image": ""
+    }
+  ]
+}

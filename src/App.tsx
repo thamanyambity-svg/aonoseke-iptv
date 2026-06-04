@@ -20,7 +20,12 @@ import {
 } from 'lucide-react';
 import { Player } from './components/Player.tsx';
 import { AlphaLogo } from './components/AlphaLogo.tsx';
+import { PreRollAd } from './components/PreRollAd.tsx';
+import { BannerAd } from './components/BannerAd.tsx';
 import { useFavorites } from './hooks/useFavorites.ts';
+import { useAds } from './hooks/useAds.ts';
+import type { PrerollAd } from './hooks/useAds.ts';
+import { trackEvent } from './hooks/useAnalytics.ts';
 import type { Channel } from './types-exports.ts';
 import { validatePlaylist, appConfig } from './types-exports.ts';
 import { logger } from './utils/logger.ts';
@@ -86,6 +91,12 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
   const [loadError, setLoadError] = useState<string | null>(null);
   const [retryCount, setRetryCount] = useReducer((n: number) => n + 1, 0);
   const { favorites, toggleFavorite } = useFavorites();
+
+  // ── publicité ─────────────────────────────────────────────────────────────
+  const ads = useAds();
+  const [prerollAd, setPrerollAd] = useState<PrerollAd | null>(null);
+  const pendingChannel = useRef<Channel | null>(null);
+  const selectCount = useRef(0);
 
   // ── keyboard nav — channel list ─────────────────────────────────────────
   const [focusedIdx, setFocusedIdx] = useState<number>(-1);
@@ -178,10 +189,49 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
 
   // ── keyboard handlers ─────────────────────────────────────────────────────
 
-  const handleSelectChannel = useCallback((channel: Channel): void => {
+  const playChannel = useCallback((channel: Channel): void => {
     setActiveChannel(channel);
     setError(null);
+    trackEvent('channel_view', channel.url);
   }, []);
+
+  const handleSelectChannel = useCallback(
+    (channel: Channel): void => {
+      // pas de pub si on reste sur la même chaîne
+      if (channel.url === activeChannel?.url) {
+        playChannel(channel);
+        return;
+      }
+
+      const pr = ads.preroll;
+      const freq = pr.frequency > 0 ? pr.frequency : 1;
+      // pub à la 1re lecture puis toutes les `freq` chaînes
+      const shouldShowAd =
+        ads.enabled &&
+        pr.enabled &&
+        pr.items.length > 0 &&
+        selectCount.current % freq === 0;
+
+      selectCount.current += 1;
+
+      if (shouldShowAd) {
+        const ad = pr.items[(selectCount.current - 1) % pr.items.length];
+        pendingChannel.current = channel;
+        setPrerollAd(ad);
+      } else {
+        playChannel(channel);
+      }
+    },
+    [ads, activeChannel, playChannel],
+  );
+
+  const handlePrerollComplete = useCallback((): void => {
+    setPrerollAd(null);
+    if (pendingChannel.current) {
+      playChannel(pendingChannel.current);
+      pendingChannel.current = null;
+    }
+  }, [playChannel]);
 
   // Country slider navigation
   const prevCountry = useCallback((): void => {
@@ -507,6 +557,15 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
             )}
           </div>
         )}
+
+        {/* Bannière sponsor */}
+        {ads.enabled && ads.banners.length > 0 && (
+          <BannerAd
+            ad={ads.banners[0]}
+            onImpression={(id) => trackEvent('ad_impression', id)}
+            onClick={(id) => trackEvent('ad_click', id)}
+          />
+        )}
       </aside>
 
       {/* ── MAIN PLAYER ──────────────────────────────────────────────────── */}
@@ -546,6 +605,16 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
 
         <div className="video-container">
           <Player url={activeChannel?.url ?? ''} onError={(msg) => setError(msg)} />
+          {prerollAd && (
+            <PreRollAd
+              ad={prerollAd}
+              skipAfter={ads.preroll.skipAfter}
+              maxDuration={ads.preroll.maxDuration}
+              onComplete={handlePrerollComplete}
+              onImpression={(id) => trackEvent('ad_impression', id)}
+              onClick={(id) => trackEvent('ad_click', id)}
+            />
+          )}
         </div>
       </main>
     </div>

@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Play, Tv, Globe, Star, Zap } from 'lucide-react';
 import type { AuthUser } from './hooks/useAuth.ts';
 import { AlphaLogo } from './components/AlphaLogo.tsx';
+import { supabaseConfigured, signInWithEmail, getOAuthUrl } from './lib/supabase.ts';
 
 // ── Social SVG icons ──────────────────────────────────────────────────────────
 
@@ -50,7 +51,7 @@ export function Landing({ onLogin }: LandingProps): JSX.Element {
   const [loading, setLoading]   = useState(false);
   const [showPass, setShowPass] = useState(false);
 
-  function handleEmailLogin(e: React.FormEvent): void {
+  async function handleEmailLogin(e: React.FormEvent): Promise<void> {
     e.preventDefault();
     setEmailErr('');
     setPassErr('');
@@ -60,6 +61,19 @@ export function Landing({ onLogin }: LandingProps): JSX.Element {
     if (password.length < 6) { setPassErr('6 caractères minimum.'); valid = false; }
     if (!valid) return;
 
+    // Vrai login Supabase si configuré, sinon mode démo
+    if (supabaseConfigured()) {
+      setLoading(true);
+      try {
+        const user = await signInWithEmail(email, password);
+        onLogin(user);
+      } catch (err) {
+        setPassErr(err instanceof Error ? err.message : 'Échec de la connexion');
+        setLoading(false);
+      }
+      return;
+    }
+
     onLogin({ name: 'Utilisateur', email, provider: 'email' });
   }
 
@@ -68,6 +82,13 @@ export function Landing({ onLogin }: LandingProps): JSX.Element {
   }
 
   function handleSocial(provider: 'google' | 'facebook' | 'apple'): void {
+    // Vrai OAuth Supabase si configuré → redirige vers le fournisseur
+    if (supabaseConfigured()) {
+      setLoading(true);
+      window.location.href = getOAuthUrl(provider);
+      return;
+    }
+    // Mode démo : login simulé
     const names: Record<string, string> = {
       google: 'Utilisateur Google',
       facebook: 'Utilisateur Facebook',
@@ -97,28 +118,28 @@ export function Landing({ onLogin }: LandingProps): JSX.Element {
         </div>
 
         <p className="landing-tagline">
-          Regardez <strong>3 400+ chaînes internationales</strong> gratuitement —
-          films, séries, sport, documentaires et bien plus,
+          Regardez <strong>500+ chaînes Pluto TV</strong> gratuitement —
+          films, séries, sport, news et bien plus, sans abonnement,
           depuis votre navigateur ou votre <strong>Smart TV VIDAA</strong>.
         </p>
 
         {/* Stats */}
         <div className="landing-stats">
           <div className="stat-card">
-            <div className="stat-number">3 400+</div>
+            <div className="stat-number">500+</div>
             <div className="stat-label">Chaînes en direct</div>
           </div>
           <div className="stat-card">
-            <div className="stat-number">80+</div>
-            <div className="stat-label">Pays représentés</div>
+            <div className="stat-number">100%</div>
+            <div className="stat-label">Gratuit · sans abonnement</div>
           </div>
           <div className="stat-card">
             <div className="stat-number">28</div>
             <div className="stat-label">Catégories de contenu</div>
           </div>
           <div className="stat-card">
-            <div className="stat-number">4K</div>
-            <div className="stat-label">HD · FHD · Ultra HD</div>
+            <div className="stat-number">HD</div>
+            <div className="stat-label">Qualité adaptative</div>
           </div>
         </div>
 

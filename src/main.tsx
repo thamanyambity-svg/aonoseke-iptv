@@ -4,6 +4,7 @@ import './index.css';
 import App from './App.tsx';
 import { Landing } from './Landing.tsx';
 import type { AuthUser } from './hooks/useAuth.ts';
+import { parseOAuthRedirect, signOutRemote } from './lib/supabase.ts';
 
 // Detect Smart TV UA
 const TV_UA = /VIDAA|HbbTV|SmartTV|Tizen|WebOS|SMART-TV|Android.*TV|NetCast|PHILIPS|Viera|Roku/i;
@@ -28,33 +29,49 @@ function getStoredUser(): AuthUser | null {
 
 function login(u: AuthUser): void {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(u));
-  // Full page reload — picks up the stored user on next mount
   window.location.reload();
 }
 
 function logout(): void {
+  signOutRemote();
   localStorage.removeItem(STORAGE_KEY);
   window.location.reload();
 }
 
-// Resolve current user once at module load
-const currentUser: AuthUser | null = (() => {
-  if (isTV) {
-    const tv: AuthUser = { name: 'TV Viewer', email: 'tv@aonoseke.com', provider: 'demo' };
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(tv));
-    return tv;
-  }
-  return getStoredUser();
-})();
-
 const root = document.getElementById('root');
 if (!root) throw new Error('Root element not found');
 
-createRoot(root).render(
-  <StrictMode>
-    {currentUser
-      ? <App onLogout={logout} user={currentUser} />
-      : <Landing onLogin={login} />
+function render(user: AuthUser | null): void {
+  createRoot(root as HTMLElement).render(
+    <StrictMode>
+      {user
+        ? <App onLogout={logout} user={user} />
+        : <Landing onLogin={login} />}
+    </StrictMode>,
+  );
+}
+
+// Bootstrap — gère d'abord un éventuel retour OAuth (#access_token=…)
+async function bootstrap(): Promise<void> {
+  // TV : connexion auto en mode démo
+  if (isTV) {
+    const tv: AuthUser = { name: 'TV Viewer', email: 'tv@aonoseke.com', provider: 'demo' };
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(tv));
+    render(tv);
+    return;
+  }
+
+  // Retour d'un login OAuth hébergé Supabase
+  if (window.location.hash.includes('access_token=')) {
+    const user = await parseOAuthRedirect();
+    if (user) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(user));
+      render(user);
+      return;
     }
-  </StrictMode>,
-);
+  }
+
+  render(getStoredUser());
+}
+
+void bootstrap();

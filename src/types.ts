@@ -4,6 +4,8 @@ export interface Channel {
   group: string;
   logo: string;
   url: string;
+  source?: string;        // FAST provider id (e.g. 'pluto')
+  adSupported?: boolean;  // stream carries built-in server-side ads
 }
 
 export interface PlayerProps {
@@ -35,6 +37,8 @@ export function validatePlaylist(data: unknown): Channel[] {
       group: typeof ch.group === 'string' ? ch.group : 'General',
       logo: typeof ch.logo === 'string' ? ch.logo : '',
       url: ch.url,
+      source: typeof ch.source === 'string' ? ch.source : undefined,
+      adSupported: typeof ch.adSupported === 'boolean' ? ch.adSupported : undefined,
     };
   });
 }
