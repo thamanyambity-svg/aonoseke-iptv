@@ -92,13 +92,9 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
   const listRef = useRef<HTMLDivElement>(null);
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  // ── country slider ref ───────────────────────────────────────────────────
-  const countrySliderRef = useRef<HTMLDivElement>(null);
-
-  // ── keyboard nav — category pills ───────────────────────────────────────
-  const [focusedPillIdx, setFocusedPillIdx] = useState<number>(-1);
-  const pillsRef = useRef<HTMLDivElement>(null);
-  const pillBtnRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  // ── slider refs ─────────────────────────────────────────────────────────
+  const countrySliderRef  = useRef<HTMLDivElement>(null);
+  const categorySliderRef = useRef<HTMLDivElement>(null);
 
   // ── load playlist ────────────────────────────────────────────────────────
   useEffect(() => {
@@ -151,7 +147,6 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
   // Reset category when country changes
   useEffect(() => {
     setSelectedGroup('All');
-    setFocusedPillIdx(-1);
   }, [selectedCountry]);
 
   const filteredChannels = useMemo(() => {
@@ -199,55 +194,38 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
     setSelectedCountry(countries[idx < countries.length - 1 ? idx + 1 : 0]);
   }, [countries, selectedCountry]);
 
+  const prevGroup = useCallback((): void => {
+    const idx = groups.indexOf(selectedGroup);
+    setSelectedGroup(groups[idx > 0 ? idx - 1 : groups.length - 1]);
+  }, [groups, selectedGroup]);
+
+  const nextGroup = useCallback((): void => {
+    const idx = groups.indexOf(selectedGroup);
+    setSelectedGroup(groups[idx < groups.length - 1 ? idx + 1 : 0]);
+  }, [groups, selectedGroup]);
+
   const handleCountryKeyDown = useCallback(
     (e: React.KeyboardEvent<HTMLDivElement>): void => {
       if (e.key === 'ArrowLeft')  { e.preventDefault(); prevCountry(); }
       if (e.key === 'ArrowRight') { e.preventDefault(); nextCountry(); }
-      if (e.key === 'ArrowDown')  {
-        e.preventDefault();
-        const idx = groups.indexOf(selectedGroup);
-        const target = idx >= 0 ? idx : 0;
-        setFocusedPillIdx(target);
-        pillBtnRefs.current[target]?.focus();
-      }
+      if (e.key === 'ArrowDown')  { e.preventDefault(); categorySliderRef.current?.focus(); }
     },
-    [prevCountry, nextCountry, groups, selectedGroup],
+    [prevCountry, nextCountry],
   );
 
-  // Category pills keyboard
-  const handlePillsKeyDown = useCallback(
+  const handleCategoryKeyDown = useCallback(
     (e: React.KeyboardEvent<HTMLDivElement>): void => {
-      if (e.key === 'ArrowRight') {
-        e.preventDefault();
-        setFocusedPillIdx((i) => {
-          const next = Math.min(i + 1, groups.length - 1);
-          const btn = pillBtnRefs.current[next];
-          btn?.scrollIntoView({ inline: 'nearest', block: 'nearest' });
-          btn?.focus();
-          return next;
-        });
-      } else if (e.key === 'ArrowLeft') {
-        e.preventDefault();
-        setFocusedPillIdx((i) => {
-          const next = Math.max(i - 1, 0);
-          const btn = pillBtnRefs.current[next];
-          btn?.scrollIntoView({ inline: 'nearest', block: 'nearest' });
-          btn?.focus();
-          return next;
-        });
-      } else if (e.key === 'Enter' && focusedPillIdx >= 0) {
-        setSelectedGroup(groups[focusedPillIdx]);
-      } else if (e.key === 'ArrowUp') {
-        e.preventDefault();
-        countrySliderRef.current?.focus();
-      } else if (e.key === 'ArrowDown') {
+      if (e.key === 'ArrowLeft')  { e.preventDefault(); prevGroup(); }
+      if (e.key === 'ArrowRight') { e.preventDefault(); nextGroup(); }
+      if (e.key === 'ArrowUp')    { e.preventDefault(); countrySliderRef.current?.focus(); }
+      if (e.key === 'ArrowDown')  {
         e.preventDefault();
         listRef.current?.focus();
         setFocusedIdx(0);
         itemRefs.current[0]?.scrollIntoView({ block: 'nearest' });
       }
     },
-    [groups, focusedPillIdx, countries, selectedCountry],
+    [prevGroup, nextGroup],
   );
 
   // Channel list keyboard
@@ -265,10 +243,7 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
         e.preventDefault();
         setFocusedIdx((i) => {
           if (i <= 0) {
-            const idx = groups.indexOf(selectedGroup);
-            const target = idx >= 0 ? idx : 0;
-            setFocusedPillIdx(target);
-            pillBtnRefs.current[target]?.focus();
+            categorySliderRef.current?.focus();
             return -1;
           }
           const next = i - 1;
@@ -279,7 +254,7 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
         handleSelectChannel(filteredChannels[focusedIdx]);
       }
     },
-    [filteredChannels, focusedIdx, handleSelectChannel, groups, selectedGroup, countrySliderRef],
+    [filteredChannels, focusedIdx, handleSelectChannel],
   );
 
   const switchTab = useCallback((tab: Tab) => {
@@ -406,27 +381,26 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
               </button>
             </div>
 
-            {/* ── CATÉGORIE ── */}
+            {/* ── CATÉGORIE — Slider ── */}
             {groups.length > 2 && (
               <div
-                ref={pillsRef}
-                className="category-pills"
+                ref={categorySliderRef}
+                className="country-slider cat-slider"
                 role="group"
-                aria-label="Filtrer par catégorie"
-                onKeyDown={handlePillsKeyDown}
+                aria-label="Sélectionner une catégorie"
+                tabIndex={0}
+                onKeyDown={handleCategoryKeyDown}
               >
-                {groups.map((g, i) => (
-                  <button
-                    key={g}
-                    ref={(el) => { pillBtnRefs.current[i] = el; }}
-                    className={`pill-btn${selectedGroup === g ? ' active' : ''}${focusedPillIdx === i ? ' kbd-focus' : ''}`}
-                    onClick={() => { setSelectedGroup(g); setFocusedPillIdx(i); }}
-                    onFocus={() => setFocusedPillIdx(i)}
-                    aria-pressed={selectedGroup === g}
-                  >
-                    {g === 'All' ? 'Tout' : g}
-                  </button>
-                ))}
+                <button className="cs-arrow" onClick={prevGroup} aria-label="Catégorie précédente" tabIndex={-1}>‹</button>
+                <div className="cs-center">
+                  <span className="cs-name cat-name">
+                    {selectedGroup === 'All' ? 'Toutes' : selectedGroup}
+                  </span>
+                  <span className="cs-pos">
+                    {groups.indexOf(selectedGroup) + 1} / {groups.length}
+                  </span>
+                </div>
+                <button className="cs-arrow" onClick={nextGroup} aria-label="Catégorie suivante" tabIndex={-1}>›</button>
               </div>
             )}
           </>

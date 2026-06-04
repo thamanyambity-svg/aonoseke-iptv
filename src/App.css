@@ -295,7 +295,19 @@
   letter-spacing: 0.5px;
 }
 
-/* ── Category pills ── */
+/* Category slider — accent plus discret */
+.cat-slider {
+  border-top: 1px solid var(--border);
+  padding-top: 6px;
+}
+
+.cat-name {
+  font-size: 0.68rem !important;
+  color: var(--text-2) !important;
+  letter-spacing: 0.8px;
+}
+
+/* ── Category pills (kept for possible reuse) ── */
 .category-pills {
   display: flex;
   gap: 6px;
