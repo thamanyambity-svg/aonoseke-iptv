@@ -198,14 +198,46 @@
 .search-clear:hover { color: var(--text-1); }
 
 /* ── Category pills (scrollable) ── */
-.category-pills {
+/* ── Filter section label ── */
+.filter-label {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  font-weight: 500;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 6px 14px 3px;
+  flex-shrink: 0;
+}
+
+/* ── Country pills ── */
+.country-pills {
   display: flex;
-  gap: 6px;
-  padding: 4px 14px 10px;
+  gap: 5px;
+  padding: 2px 14px 6px;
   overflow-x: auto;
   flex-shrink: 0;
   scrollbar-width: none;
-  /* smooth scroll when auto-scrolling to focused pill */
+  scroll-behavior: smooth;
+}
+.country-pills::-webkit-scrollbar { display: none; }
+.country-pills::after { content: ''; flex-shrink: 0; width: 14px; }
+
+/* country pill variant — slightly taller for flag readability */
+.country-pill {
+  font-size: 0.68rem !important;
+  padding: 5px 10px !important;
+  gap: 3px;
+}
+
+/* ── Category pills ── */
+.category-pills {
+  display: flex;
+  gap: 6px;
+  padding: 2px 14px 8px;
+  overflow-x: auto;
+  flex-shrink: 0;
+  scrollbar-width: none;
   scroll-behavior: smooth;
 }
 .category-pills::-webkit-scrollbar { display: none; }

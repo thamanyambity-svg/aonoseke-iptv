@@ -35,6 +35,23 @@ export function countryFlag(code: string): string {
   return String.fromCodePoint(...codePoints);
 }
 
+// Country display name (fallback to code)
+const COUNTRY_NAMES: Record<string, string> = {
+  FR: 'France', BE: 'Belgique', CH: 'Suisse', CA: 'Canada',
+  MA: 'Maroc', DZ: 'Algérie', TN: 'Tunisie', SN: 'Sénégal',
+  CD: 'Congo RDC', CI: "Côte d'Ivoire", CM: 'Cameroun', GA: 'Gabon',
+  TG: 'Togo', BJ: 'Bénin', ML: 'Mali', BF: 'Burkina Faso',
+  US: 'USA', GB: 'UK', DE: 'Allemagne', IT: 'Italie',
+  ES: 'Espagne', PT: 'Portugal', RU: 'Russie', TR: 'Turquie',
+  SA: 'Arabie Saoudite', AE: 'Émirats', QA: 'Qatar', EG: 'Égypte',
+  IN: 'Inde', CN: 'Chine', JP: 'Japon', KR: 'Corée',
+  BR: 'Brésil', MX: 'Mexique', AR: 'Argentine', AU: 'Australie',
+};
+
+function countryLabel(code: string): string {
+  return `${countryFlag(code)} ${COUNTRY_NAMES[code] ?? code}`;
+}
+
 function useDebounce<T>(value: T, delay: number): T {
   const [debounced, setDebounced] = useState(value);
   useEffect(() => {
@@ -52,6 +69,7 @@ function App(): JSX.Element {
   const [channels, setChannels] = useState<Channel[]>([]);
   const [rawSearch, setRawSearch] = useState('');
   const search = useDebounce(rawSearch, 220);
+  const [selectedCountry, setSelectedCountry] = useState<string>('All');
   const [selectedGroup, setSelectedGroup] = useState<string>('All');
   const [activeChannel, setActiveChannel] = useState<Channel | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -66,6 +84,11 @@ function App(): JSX.Element {
   const listRef = useRef<HTMLDivElement>(null);
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
 
+  // ── keyboard nav — country pills ────────────────────────────────────────
+  const [focusedCountryIdx, setFocusedCountryIdx] = useState<number>(-1);
+  const countryPillsRef = useRef<HTMLDivElement>(null);
+  const countryBtnRefs = useRef<(HTMLButtonElement | null)[]>([]);
+
   // ── keyboard nav — category pills ───────────────────────────────────────
   const [focusedPillIdx, setFocusedPillIdx] = useState<number>(-1);
   const pillsRef = useRef<HTMLDivElement>(null);
@@ -78,16 +101,11 @@ function App(): JSX.Element {
       try {
         setIsLoading(true);
         setLoadError(null);
-        const res = await fetch(appConfig.playlistUrl, {
-          signal: controller.signal,
-        });
+        const res = await fetch(appConfig.playlistUrl, { signal: controller.signal });
         if (!res.ok) throw new Error(`HTTP ${res.status}: ${res.statusText}`);
         const data = (await res.json()) as unknown;
         const validated = validatePlaylist(data).slice(0, appConfig.maxChannels);
-        const sanitized = validated.map((ch) => ({
-          ...ch,
-          logo: sanitizeLogoUrl(ch.logo),
-        }));
+        const sanitized = validated.map((ch) => ({ ...ch, logo: sanitizeLogoUrl(ch.logo) }));
         setChannels(sanitized);
         logger.info('Playlist loaded', { count: sanitized.length });
       } catch (err) {
@@ -103,44 +121,105 @@ function App(): JSX.Element {
   }, [retryCount]);
 
   // ── derived lists ─────────────────────────────────────────────────────────
-  const groups = useMemo(() => {
-    const unique = Array.from(new Set(channels.map((c) => c.group)));
-    return ['All', ...unique.sort()];
+
+  // All countries sorted — prioritize francophone ones
+  const countries = useMemo(() => {
+    const unique = Array.from(new Set(channels.map((c) => c.country).filter(Boolean)));
+    const franco = ['FR','BE','CH','CA','MA','DZ','TN','SN','CD','CI','CM','GA','TG','BJ','ML','BF'];
+    const sorted = [
+      ...franco.filter(c => unique.includes(c)),
+      ...unique.filter(c => !franco.includes(c)).sort(),
+    ];
+    return ['All', ...sorted];
   }, [channels]);
+
+  // Categories filtered by selected country
+  const groups = useMemo(() => {
+    const base = selectedCountry === 'All'
+      ? channels
+      : channels.filter((c) => c.country === selectedCountry);
+    const unique = Array.from(new Set(base.map((c) => c.group).filter(Boolean)));
+    return ['All', ...unique.sort()];
+  }, [channels, selectedCountry]);
+
+  // Reset category when country changes
+  useEffect(() => {
+    setSelectedGroup('All');
+    setFocusedPillIdx(-1);
+  }, [selectedCountry]);
 
   const filteredChannels = useMemo(() => {
     let list = channels;
     if (activeTab === 'favorites') {
       list = channels.filter((c) => favorites.has(c.url));
     }
+    if (selectedCountry !== 'All') {
+      list = list.filter((c) => c.country === selectedCountry);
+    }
+    if (selectedGroup !== 'All') {
+      list = list.filter((c) => c.group === selectedGroup);
+    }
     const q = search.toLowerCase();
-    return list.filter((c) => {
-      const matchSearch =
-        !q ||
+    if (q) {
+      list = list.filter((c) =>
         c.name.toLowerCase().includes(q) ||
         c.group.toLowerCase().includes(q) ||
-        c.country.toLowerCase().includes(q);
-      const matchGroup = selectedGroup === 'All' || c.group === selectedGroup;
-      return matchSearch && matchGroup;
-    });
-  }, [channels, search, selectedGroup, activeTab, favorites]);
+        c.country.toLowerCase().includes(q),
+      );
+    }
+    return list;
+  }, [channels, search, selectedCountry, selectedGroup, activeTab, favorites]);
 
-  // Reset focused index when list changes
   useEffect(() => {
     setFocusedIdx(-1);
     itemRefs.current = [];
   }, [filteredChannels]);
 
-  // ── handlers ──────────────────────────────────────────────────────────────
+  // ── keyboard handlers ─────────────────────────────────────────────────────
+
   const handleSelectChannel = useCallback((channel: Channel): void => {
     setActiveChannel(channel);
     setError(null);
   }, []);
 
-  // pills keyboard handler
+  // Country pills keyboard
+  const handleCountryKeyDown = useCallback(
+    (e: React.KeyboardEvent<HTMLDivElement>): void => {
+      if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        setFocusedCountryIdx((i) => {
+          const next = Math.min(i + 1, countries.length - 1);
+          const btn = countryBtnRefs.current[next];
+          btn?.scrollIntoView({ inline: 'nearest', block: 'nearest' });
+          btn?.focus();
+          return next;
+        });
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        setFocusedCountryIdx((i) => {
+          const next = Math.max(i - 1, 0);
+          const btn = countryBtnRefs.current[next];
+          btn?.scrollIntoView({ inline: 'nearest', block: 'nearest' });
+          btn?.focus();
+          return next;
+        });
+      } else if (e.key === 'Enter' && focusedCountryIdx >= 0) {
+        setSelectedCountry(countries[focusedCountryIdx]);
+      } else if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        // move to category pills
+        const idx = groups.indexOf(selectedGroup);
+        const target = idx >= 0 ? idx : 0;
+        setFocusedPillIdx(target);
+        pillBtnRefs.current[target]?.focus();
+      }
+    },
+    [countries, focusedCountryIdx, groups, selectedGroup],
+  );
+
+  // Category pills keyboard
   const handlePillsKeyDown = useCallback(
     (e: React.KeyboardEvent<HTMLDivElement>): void => {
-      if (!groups.length) return;
       if (e.key === 'ArrowRight') {
         e.preventDefault();
         setFocusedPillIdx((i) => {
@@ -161,18 +240,24 @@ function App(): JSX.Element {
         });
       } else if (e.key === 'Enter' && focusedPillIdx >= 0) {
         setSelectedGroup(groups[focusedPillIdx]);
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        // move up to country pills
+        const idx = countries.indexOf(selectedCountry);
+        const target = idx >= 0 ? idx : 0;
+        setFocusedCountryIdx(target);
+        countryBtnRefs.current[target]?.focus();
       } else if (e.key === 'ArrowDown') {
         e.preventDefault();
-        // move focus down to channel list
         listRef.current?.focus();
         setFocusedIdx(0);
         itemRefs.current[0]?.scrollIntoView({ block: 'nearest' });
       }
     },
-    [groups, focusedPillIdx],
+    [groups, focusedPillIdx, countries, selectedCountry],
   );
 
-  // channel list keyboard handler
+  // Channel list keyboard
   const handleListKeyDown = useCallback(
     (e: React.KeyboardEvent<HTMLDivElement>): void => {
       if (!filteredChannels.length) return;
@@ -187,11 +272,10 @@ function App(): JSX.Element {
         e.preventDefault();
         setFocusedIdx((i) => {
           if (i <= 0) {
-            // move focus up to pills
-            const activePillIdx = groups.indexOf(selectedGroup);
-            const idx = activePillIdx >= 0 ? activePillIdx : 0;
-            setFocusedPillIdx(idx);
-            pillBtnRefs.current[idx]?.focus();
+            const idx = groups.indexOf(selectedGroup);
+            const target = idx >= 0 ? idx : 0;
+            setFocusedPillIdx(target);
+            pillBtnRefs.current[target]?.focus();
             return -1;
           }
           const next = i - 1;
@@ -207,6 +291,7 @@ function App(): JSX.Element {
 
   const switchTab = useCallback((tab: Tab) => {
     setActiveTab(tab);
+    setSelectedCountry('All');
     setSelectedGroup('All');
     setRawSearch('');
   }, []);
@@ -216,6 +301,7 @@ function App(): JSX.Element {
     <div className="app-container">
       {/* ── SIDEBAR ───────────────────────────────────────────────────────── */}
       <aside className="sidebar glass" aria-label="Panneau des chaînes">
+
         {/* Header */}
         <div className="sidebar-header">
           <div className="sidebar-logo-icon" aria-hidden="true">
@@ -225,17 +311,17 @@ function App(): JSX.Element {
             <h1>IPTV Player</h1>
             <span>by Aonoseke House Investment RDC</span>
           </div>
-          <div className="channel-count-badge" title="Nombre de chaînes chargées">
+          <div className="channel-count-badge" title="Nombre de chaînes">
             {channels.length}
           </div>
         </div>
 
         {/* Tabs */}
-        <div className="sidebar-tabs" role="tablist" aria-label="Onglets">
+        <div className="sidebar-tabs" role="tablist">
           <button
             role="tab"
             aria-selected={activeTab === 'all'}
-            className={`tab-btn ${activeTab === 'all' ? 'active' : ''}`}
+            className={`tab-btn${activeTab === 'all' ? ' active' : ''}`}
             onClick={() => switchTab('all')}
           >
             <Tv size={14} aria-hidden="true" />
@@ -244,15 +330,13 @@ function App(): JSX.Element {
           <button
             role="tab"
             aria-selected={activeTab === 'favorites'}
-            className={`tab-btn ${activeTab === 'favorites' ? 'active' : ''}`}
+            className={`tab-btn${activeTab === 'favorites' ? ' active' : ''}`}
             onClick={() => switchTab('favorites')}
           >
             <Star size={14} aria-hidden="true" />
             Favoris
             {favorites.size > 0 && (
-              <span className="tab-badge" aria-label={`${favorites.size} favoris`}>
-                {favorites.size}
-              </span>
+              <span className="tab-badge">{favorites.size}</span>
             )}
           </button>
         </div>
@@ -269,38 +353,64 @@ function App(): JSX.Element {
             aria-label="Rechercher une chaîne"
           />
           {rawSearch && (
-            <button
-              className="search-clear"
-              onClick={() => setRawSearch('')}
-              aria-label="Effacer la recherche"
-            >
+            <button className="search-clear" onClick={() => setRawSearch('')} aria-label="Effacer">
               <X size={13} />
             </button>
           )}
         </div>
 
-        {/* Category pills — only on "all" tab */}
-        {activeTab === 'all' && groups.length > 2 && (
-          <div
-            ref={pillsRef}
-            className="category-pills"
-            role="group"
-            aria-label="Filtrer par catégorie"
-            onKeyDown={handlePillsKeyDown}
-          >
-            {groups.map((g, i) => (
-              <button
-                key={g}
-                ref={(el) => { pillBtnRefs.current[i] = el; }}
-                className={`pill-btn${selectedGroup === g ? ' active' : ''}${focusedPillIdx === i ? ' kbd-focus' : ''}`}
-                onClick={() => { setSelectedGroup(g); setFocusedPillIdx(i); }}
-                onFocus={() => setFocusedPillIdx(i)}
-                aria-pressed={selectedGroup === g}
-              >
-                {g === 'All' ? 'Tout' : g}
-              </button>
-            ))}
-          </div>
+        {/* ── PAYS ── */}
+        {activeTab === 'all' && (
+          <>
+            <div className="filter-label">🌍 Pays</div>
+            <div
+              ref={countryPillsRef}
+              className="country-pills"
+              role="group"
+              aria-label="Filtrer par pays"
+              onKeyDown={handleCountryKeyDown}
+            >
+              {countries.map((c, i) => (
+                <button
+                  key={c}
+                  ref={(el) => { countryBtnRefs.current[i] = el; }}
+                  className={`pill-btn country-pill${selectedCountry === c ? ' active' : ''}${focusedCountryIdx === i ? ' kbd-focus' : ''}`}
+                  onClick={() => { setSelectedCountry(c); setFocusedCountryIdx(i); }}
+                  onFocus={() => setFocusedCountryIdx(i)}
+                  aria-pressed={selectedCountry === c}
+                >
+                  {c === 'All' ? '🌐 Tous' : countryLabel(c)}
+                </button>
+              ))}
+            </div>
+
+            {/* ── CATÉGORIE ── */}
+            {groups.length > 2 && (
+              <>
+                <div className="filter-label">📂 Catégorie</div>
+                <div
+                  ref={pillsRef}
+                  className="category-pills"
+                  role="group"
+                  aria-label="Filtrer par catégorie"
+                  onKeyDown={handlePillsKeyDown}
+                >
+                  {groups.map((g, i) => (
+                    <button
+                      key={g}
+                      ref={(el) => { pillBtnRefs.current[i] = el; }}
+                      className={`pill-btn${selectedGroup === g ? ' active' : ''}${focusedPillIdx === i ? ' kbd-focus' : ''}`}
+                      onClick={() => { setSelectedGroup(g); setFocusedPillIdx(i); }}
+                      onFocus={() => setFocusedPillIdx(i)}
+                      aria-pressed={selectedGroup === g}
+                    >
+                      {g === 'All' ? 'Tout' : g}
+                    </button>
+                  ))}
+                </div>
+              </>
+            )}
+          </>
         )}
 
         {/* Channel list */}
@@ -319,8 +429,7 @@ function App(): JSX.Element {
               <AlertTriangle size={28} aria-hidden="true" />
               <p>{loadError}</p>
               <button className="retry-btn-sm" onClick={setRetryCount}>
-                <RefreshCw size={13} />
-                Réessayer
+                <RefreshCw size={13} /> Réessayer
               </button>
             </div>
           ) : filteredChannels.length === 0 ? (
@@ -328,16 +437,12 @@ function App(): JSX.Element {
               {activeTab === 'favorites' ? (
                 <>
                   <Star size={28} aria-hidden="true" />
-                  <p>
-                    Aucun favori.
-                    <br />
-                    Cliquez sur ★ pour en ajouter.
-                  </p>
+                  <p>Aucun favori.<br />Cliquez sur ★ pour en ajouter.</p>
                 </>
               ) : (
                 <>
                   <Radio size={28} aria-hidden="true" />
-                  <p>Aucune chaîne trouvée.</p>
+                  <p>Aucune chaîne pour cette sélection.</p>
                 </>
               )}
             </div>
@@ -366,19 +471,12 @@ function App(): JSX.Element {
                   </span>
                   <div className="channel-logo" aria-hidden="true">
                     {channel.logo ? (
-                      <img
-                        src={channel.logo}
-                        alt=""
-                        loading="lazy"
-                        onError={(e) => {
-                          (e.target as HTMLImageElement).style.display = 'none';
-                        }}
-                      />
+                      <img src={channel.logo} alt="" loading="lazy"
+                        onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }} />
                     ) : (
                       <MonitorPlay size={15} color="var(--text-dim)" />
                     )}
                   </div>
-
                   <div className="channel-info">
                     <div className="channel-name">{channel.name}</div>
                     <div className="channel-meta">
@@ -386,21 +484,13 @@ function App(): JSX.Element {
                       <span className="channel-group">{channel.group}</span>
                     </div>
                   </div>
-
                   <button
                     className={`fav-btn${favorites.has(channel.url) ? ' favorited' : ''}`}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      toggleFavorite(channel.url);
-                    }}
+                    onClick={(e) => { e.stopPropagation(); toggleFavorite(channel.url); }}
                     aria-label={`${favorites.has(channel.url) ? 'Retirer' : 'Ajouter'} ${channel.name} des favoris`}
                     aria-pressed={favorites.has(channel.url)}
                   >
-                    <Star
-                      size={13}
-                      fill={favorites.has(channel.url) ? 'currentColor' : 'none'}
-                      aria-hidden="true"
-                    />
+                    <Star size={13} fill={favorites.has(channel.url) ? 'currentColor' : 'none'} aria-hidden="true" />
                   </button>
                 </div>
               );
@@ -408,7 +498,7 @@ function App(): JSX.Element {
           )}
         </div>
 
-        {/* Mini now-playing strip at sidebar bottom */}
+        {/* Mini now-playing strip */}
         {activeChannel && (
           <div className="sidebar-now-playing">
             <div className="snp-dot" aria-hidden="true" />
@@ -419,12 +509,8 @@ function App(): JSX.Element {
               </span>
             </div>
             {activeChannel.logo && (
-              <img
-                src={activeChannel.logo}
-                alt=""
-                className="snp-logo"
-                onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
-              />
+              <img src={activeChannel.logo} alt="" className="snp-logo"
+                onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }} />
             )}
           </div>
         )}
@@ -446,11 +532,8 @@ function App(): JSX.Element {
             </div>
             <div className="player-logo-overlay" aria-hidden="true">
               {activeChannel.logo ? (
-                <img
-                  src={activeChannel.logo}
-                  alt=""
-                  onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
-                />
+                <img src={activeChannel.logo} alt=""
+                  onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }} />
               ) : (
                 <Tv size={24} color="var(--text-muted)" />
               )}
@@ -462,11 +545,7 @@ function App(): JSX.Element {
           <div className="error-banner animate-fade-up" role="alert">
             <AlertTriangle size={15} aria-hidden="true" />
             <span>{error}</span>
-            <button
-              className="error-dismiss"
-              onClick={() => setError(null)}
-              aria-label="Fermer l'erreur"
-            >
+            <button className="error-dismiss" onClick={() => setError(null)} aria-label="Fermer">
               <X size={13} />
             </button>
           </div>
@@ -485,7 +564,7 @@ function App(): JSX.Element {
 function SkeletonList(): JSX.Element {
   return (
     <>
-      {Array.from({ length: 12 }).map((_, i) => (
+      {Array.from({ length: 10 }).map((_, i) => (
         <div key={i} className="channel-item skeleton-item" aria-hidden="true">
           <div className="skeleton skeleton-logo" />
           <div className="channel-info">
