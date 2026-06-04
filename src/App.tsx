@@ -174,7 +174,7 @@ function App(): JSX.Element {
           </div>
           <div className="sidebar-title">
             <h1>IPTV Player</h1>
-            <span>Lecteur web en direct</span>
+            <span>by Aonoseke House Investment RDC</span>
           </div>
           <div className="channel-count-badge" title="Nombre de chaînes chargées">
             {channels.length}

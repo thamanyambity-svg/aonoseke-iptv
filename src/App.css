@@ -69,12 +69,17 @@
 }
 
 .sidebar-title span {
-  font-size: 0.62rem;
-  color: var(--text-3);
-  font-weight: 400;
-  letter-spacing: 0.3px;
-  margin-top: 2px;
+  font-size: 0.56rem;
+  color: var(--lime);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-top: 3px;
   display: block;
+  text-transform: uppercase;
+  opacity: 0.75;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .channel-count-badge {

@@ -13,10 +13,10 @@
   --text-2: #7e8899;
   --text-3: #3e4558;
 
-  /* accent — electric lime */
-  --lime:      #b8ff57;
-  --lime-dim:  rgba(184, 255, 87, 0.08);
-  --lime-glow: rgba(184, 255, 87, 0.22);
+  /* accent — or premium Aonoseke */
+  --lime:      #c9a84c;
+  --lime-dim:  rgba(201, 168, 76, 0.1);
+  --lime-glow: rgba(201, 168, 76, 0.28);
 
   /* status */
   --red:       #ff3f55;
