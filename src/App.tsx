@@ -16,7 +16,6 @@ import {
   Radio,
   X,
   RefreshCw,
-  ChevronDown,
 } from 'lucide-react';
 import { Player } from './components/Player.tsx';
 import { useFavorites } from './hooks/useFavorites.ts';
@@ -231,26 +230,19 @@ function App(): JSX.Element {
           )}
         </div>
 
-        {/* Category filter — only on "all" tab */}
+        {/* Category pills — only on "all" tab */}
         {activeTab === 'all' && groups.length > 2 && (
-          <div className="category-filter">
-            <div className="select-wrapper">
-              <select
-                className="category-select"
-                value={selectedGroup}
-                onChange={(e) => setSelectedGroup(e.target.value)}
-                aria-label="Filtrer par catégorie"
+          <div className="category-pills" role="group" aria-label="Filtrer par catégorie">
+            {groups.map((g) => (
+              <button
+                key={g}
+                className={`pill-btn${selectedGroup === g ? ' active' : ''}`}
+                onClick={() => setSelectedGroup(g)}
+                aria-pressed={selectedGroup === g}
               >
-                {groups.map((g) => (
-                  <option key={g} value={g}>
-                    {g === 'All'
-                      ? `🌍 Toutes les catégories (${channels.length})`
-                      : `${countryFlag(channels.find((c) => c.group === g)?.country ?? '')} ${g}`}
-                  </option>
-                ))}
-              </select>
-              <ChevronDown size={13} className="select-chevron" aria-hidden="true" />
-            </div>
+                {g === 'All' ? 'Tout' : g}
+              </button>
+            ))}
           </div>
         )}
 
@@ -312,6 +304,9 @@ function App(): JSX.Element {
                     }
                   }}
                 >
+                  <span className="channel-num" aria-hidden="true">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
                   <div className="channel-logo" aria-hidden="true">
                     {channel.logo ? (
                       <img
