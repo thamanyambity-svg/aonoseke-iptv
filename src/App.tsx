@@ -92,10 +92,8 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
   const listRef = useRef<HTMLDivElement>(null);
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  // ── keyboard nav — country pills ────────────────────────────────────────
-  const [focusedCountryIdx, setFocusedCountryIdx] = useState<number>(-1);
-  const countryPillsRef = useRef<HTMLDivElement>(null);
-  const countryBtnRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  // ── country slider ref ───────────────────────────────────────────────────
+  const countrySliderRef = useRef<HTMLDivElement>(null);
 
   // ── keyboard nav — category pills ───────────────────────────────────────
   const [focusedPillIdx, setFocusedPillIdx] = useState<number>(-1);
@@ -190,39 +188,30 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
     setError(null);
   }, []);
 
-  // Country pills keyboard
+  // Country slider navigation
+  const prevCountry = useCallback((): void => {
+    const idx = countries.indexOf(selectedCountry);
+    setSelectedCountry(countries[idx > 0 ? idx - 1 : countries.length - 1]);
+  }, [countries, selectedCountry]);
+
+  const nextCountry = useCallback((): void => {
+    const idx = countries.indexOf(selectedCountry);
+    setSelectedCountry(countries[idx < countries.length - 1 ? idx + 1 : 0]);
+  }, [countries, selectedCountry]);
+
   const handleCountryKeyDown = useCallback(
     (e: React.KeyboardEvent<HTMLDivElement>): void => {
-      if (e.key === 'ArrowRight') {
+      if (e.key === 'ArrowLeft')  { e.preventDefault(); prevCountry(); }
+      if (e.key === 'ArrowRight') { e.preventDefault(); nextCountry(); }
+      if (e.key === 'ArrowDown')  {
         e.preventDefault();
-        setFocusedCountryIdx((i) => {
-          const next = Math.min(i + 1, countries.length - 1);
-          const btn = countryBtnRefs.current[next];
-          btn?.scrollIntoView({ inline: 'nearest', block: 'nearest' });
-          btn?.focus();
-          return next;
-        });
-      } else if (e.key === 'ArrowLeft') {
-        e.preventDefault();
-        setFocusedCountryIdx((i) => {
-          const next = Math.max(i - 1, 0);
-          const btn = countryBtnRefs.current[next];
-          btn?.scrollIntoView({ inline: 'nearest', block: 'nearest' });
-          btn?.focus();
-          return next;
-        });
-      } else if (e.key === 'Enter' && focusedCountryIdx >= 0) {
-        setSelectedCountry(countries[focusedCountryIdx]);
-      } else if (e.key === 'ArrowDown') {
-        e.preventDefault();
-        // move to category pills
         const idx = groups.indexOf(selectedGroup);
         const target = idx >= 0 ? idx : 0;
         setFocusedPillIdx(target);
         pillBtnRefs.current[target]?.focus();
       }
     },
-    [countries, focusedCountryIdx, groups, selectedGroup],
+    [prevCountry, nextCountry, groups, selectedGroup],
   );
 
   // Category pills keyboard
@@ -250,11 +239,7 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
         setSelectedGroup(groups[focusedPillIdx]);
       } else if (e.key === 'ArrowUp') {
         e.preventDefault();
-        // move up to country pills
-        const idx = countries.indexOf(selectedCountry);
-        const target = idx >= 0 ? idx : 0;
-        setFocusedCountryIdx(target);
-        countryBtnRefs.current[target]?.focus();
+        countrySliderRef.current?.focus();
       } else if (e.key === 'ArrowDown') {
         e.preventDefault();
         listRef.current?.focus();
@@ -294,7 +279,7 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
         handleSelectChannel(filteredChannels[focusedIdx]);
       }
     },
-    [filteredChannels, focusedIdx, handleSelectChannel, groups, selectedGroup],
+    [filteredChannels, focusedIdx, handleSelectChannel, groups, selectedGroup, countrySliderRef],
   );
 
   const switchTab = useCallback((tab: Tab) => {
@@ -377,56 +362,72 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
           )}
         </div>
 
-        {/* ── PAYS ── */}
+        {/* ── PAYS — Slider ◀ NOM ▶ ── */}
         {activeTab === 'all' && (
           <>
-            <div className="filter-label">🌍 Pays</div>
             <div
-              ref={countryPillsRef}
-              className="country-pills"
+              ref={countrySliderRef}
+              className="country-slider"
               role="group"
-              aria-label="Filtrer par pays"
+              aria-label="Sélectionner un pays"
+              tabIndex={0}
               onKeyDown={handleCountryKeyDown}
             >
-              {countries.map((c, i) => (
-                <button
-                  key={c}
-                  ref={(el) => { countryBtnRefs.current[i] = el; }}
-                  className={`pill-btn country-pill${selectedCountry === c ? ' active' : ''}${focusedCountryIdx === i ? ' kbd-focus' : ''}`}
-                  onClick={() => { setSelectedCountry(c); setFocusedCountryIdx(i); }}
-                  onFocus={() => setFocusedCountryIdx(i)}
-                  aria-pressed={selectedCountry === c}
-                >
-                  {c === 'All' ? '🌐 Tous' : countryLabel(c)}
-                </button>
-              ))}
+              <button
+                className="cs-arrow"
+                onClick={prevCountry}
+                aria-label="Pays précédent"
+                tabIndex={-1}
+              >
+                ‹
+              </button>
+
+              <div className="cs-center">
+                <span className="cs-flag" aria-hidden="true">
+                  {selectedCountry === 'All' ? '🌐' : countryFlag(selectedCountry)}
+                </span>
+                <span className="cs-name">
+                  {selectedCountry === 'All'
+                    ? 'Tous les pays'
+                    : (COUNTRY_NAMES[selectedCountry] ?? selectedCountry)}
+                </span>
+                <span className="cs-pos">
+                  {countries.indexOf(selectedCountry) + 1} / {countries.length}
+                </span>
+              </div>
+
+              <button
+                className="cs-arrow"
+                onClick={nextCountry}
+                aria-label="Pays suivant"
+                tabIndex={-1}
+              >
+                ›
+              </button>
             </div>
 
             {/* ── CATÉGORIE ── */}
             {groups.length > 2 && (
-              <>
-                <div className="filter-label">📂 Catégorie</div>
-                <div
-                  ref={pillsRef}
-                  className="category-pills"
-                  role="group"
-                  aria-label="Filtrer par catégorie"
-                  onKeyDown={handlePillsKeyDown}
-                >
-                  {groups.map((g, i) => (
-                    <button
-                      key={g}
-                      ref={(el) => { pillBtnRefs.current[i] = el; }}
-                      className={`pill-btn${selectedGroup === g ? ' active' : ''}${focusedPillIdx === i ? ' kbd-focus' : ''}`}
-                      onClick={() => { setSelectedGroup(g); setFocusedPillIdx(i); }}
-                      onFocus={() => setFocusedPillIdx(i)}
-                      aria-pressed={selectedGroup === g}
-                    >
-                      {g === 'All' ? 'Tout' : g}
-                    </button>
-                  ))}
-                </div>
-              </>
+              <div
+                ref={pillsRef}
+                className="category-pills"
+                role="group"
+                aria-label="Filtrer par catégorie"
+                onKeyDown={handlePillsKeyDown}
+              >
+                {groups.map((g, i) => (
+                  <button
+                    key={g}
+                    ref={(el) => { pillBtnRefs.current[i] = el; }}
+                    className={`pill-btn${selectedGroup === g ? ' active' : ''}${focusedPillIdx === i ? ' kbd-focus' : ''}`}
+                    onClick={() => { setSelectedGroup(g); setFocusedPillIdx(i); }}
+                    onFocus={() => setFocusedPillIdx(i)}
+                    aria-pressed={selectedGroup === g}
+                  >
+                    {g === 'All' ? 'Tout' : g}
+                  </button>
+                ))}
+              </div>
             )}
           </>
         )}
