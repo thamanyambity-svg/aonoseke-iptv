@@ -205,12 +205,21 @@
   overflow-x: auto;
   flex-shrink: 0;
   scrollbar-width: none;
+  /* smooth scroll when auto-scrolling to focused pill */
+  scroll-behavior: smooth;
 }
 .category-pills::-webkit-scrollbar { display: none; }
 
+/* fade hints on edges to show there are more pills */
+.category-pills::after {
+  content: '';
+  flex-shrink: 0;
+  width: 14px; /* right breathing room */
+}
+
 .pill-btn {
   flex-shrink: 0;
-  padding: 5px 11px;
+  padding: 5px 13px;
   border-radius: 20px;
   border: 1px solid var(--border);
   background: transparent;
@@ -218,10 +227,13 @@
   font-size: 0.71rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.15s;
+  transition: background 0.18s, color 0.18s, border-color 0.18s,
+              transform 0.15s, box-shadow 0.18s;
   white-space: nowrap;
   text-transform: uppercase;
   letter-spacing: 0.4px;
+  outline: none;
+  position: relative;
 }
 
 .pill-btn:hover {
@@ -230,10 +242,32 @@
   background: var(--surface-3);
 }
 
+/* selected */
 .pill-btn.active {
   background: var(--lime);
   border-color: var(--lime);
   color: var(--void);
+  font-weight: 700;
+}
+
+/* keyboard focus (telecommande) — distinct ring */
+.pill-btn.kbd-focus,
+.pill-btn:focus-visible {
+  border-color: var(--lime);
+  color: var(--text-1);
+  background: var(--surface-3);
+  box-shadow: 0 0 0 2px var(--lime-glow), 0 0 12px var(--lime-glow);
+  transform: scale(1.06);
+  z-index: 1;
+}
+
+/* active + focused at same time */
+.pill-btn.active.kbd-focus,
+.pill-btn.active:focus-visible {
+  background: var(--lime);
+  color: var(--void);
+  box-shadow: 0 0 0 3px var(--lime-glow), 0 0 18px var(--lime-glow);
+  transform: scale(1.08);
 }
 
 /* ── Channel list ── */
@@ -881,12 +915,19 @@ video {
 
 .tv-mode .category-pills {
   padding: 6px 22px 12px;
-  gap: 8px;
+  gap: 10px;
 }
 
 .tv-mode .pill-btn {
-  font-size: 0.8rem;
-  padding: 7px 16px;
+  font-size: 0.82rem;
+  padding: 8px 18px;
+}
+
+/* stronger glow on TV for distant viewing */
+.tv-mode .pill-btn.kbd-focus,
+.tv-mode .pill-btn:focus-visible {
+  box-shadow: 0 0 0 3px var(--lime-glow), 0 0 24px var(--lime-glow);
+  transform: scale(1.1);
 }
 
 .tv-mode .channel-item {

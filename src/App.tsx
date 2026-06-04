@@ -61,10 +61,15 @@ function App(): JSX.Element {
   const [retryCount, setRetryCount] = useReducer((n: number) => n + 1, 0);
   const { favorites, toggleFavorite } = useFavorites();
 
-  // ── focused index for keyboard nav ──────────────────────────────────────
+  // ── keyboard nav — channel list ─────────────────────────────────────────
   const [focusedIdx, setFocusedIdx] = useState<number>(-1);
   const listRef = useRef<HTMLDivElement>(null);
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  // ── keyboard nav — category pills ───────────────────────────────────────
+  const [focusedPillIdx, setFocusedPillIdx] = useState<number>(-1);
+  const pillsRef = useRef<HTMLDivElement>(null);
+  const pillBtnRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
   // ── load playlist ────────────────────────────────────────────────────────
   useEffect(() => {
@@ -132,6 +137,42 @@ function App(): JSX.Element {
     setError(null);
   }, []);
 
+  // pills keyboard handler
+  const handlePillsKeyDown = useCallback(
+    (e: React.KeyboardEvent<HTMLDivElement>): void => {
+      if (!groups.length) return;
+      if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        setFocusedPillIdx((i) => {
+          const next = Math.min(i + 1, groups.length - 1);
+          const btn = pillBtnRefs.current[next];
+          btn?.scrollIntoView({ inline: 'nearest', block: 'nearest' });
+          btn?.focus();
+          return next;
+        });
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        setFocusedPillIdx((i) => {
+          const next = Math.max(i - 1, 0);
+          const btn = pillBtnRefs.current[next];
+          btn?.scrollIntoView({ inline: 'nearest', block: 'nearest' });
+          btn?.focus();
+          return next;
+        });
+      } else if (e.key === 'Enter' && focusedPillIdx >= 0) {
+        setSelectedGroup(groups[focusedPillIdx]);
+      } else if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        // move focus down to channel list
+        listRef.current?.focus();
+        setFocusedIdx(0);
+        itemRefs.current[0]?.scrollIntoView({ block: 'nearest' });
+      }
+    },
+    [groups, focusedPillIdx],
+  );
+
+  // channel list keyboard handler
   const handleListKeyDown = useCallback(
     (e: React.KeyboardEvent<HTMLDivElement>): void => {
       if (!filteredChannels.length) return;
@@ -145,7 +186,15 @@ function App(): JSX.Element {
       } else if (e.key === 'ArrowUp') {
         e.preventDefault();
         setFocusedIdx((i) => {
-          const next = Math.max(i - 1, 0);
+          if (i <= 0) {
+            // move focus up to pills
+            const activePillIdx = groups.indexOf(selectedGroup);
+            const idx = activePillIdx >= 0 ? activePillIdx : 0;
+            setFocusedPillIdx(idx);
+            pillBtnRefs.current[idx]?.focus();
+            return -1;
+          }
+          const next = i - 1;
           itemRefs.current[next]?.scrollIntoView({ block: 'nearest' });
           return next;
         });
@@ -153,7 +202,7 @@ function App(): JSX.Element {
         handleSelectChannel(filteredChannels[focusedIdx]);
       }
     },
-    [filteredChannels, focusedIdx, handleSelectChannel],
+    [filteredChannels, focusedIdx, handleSelectChannel, groups, selectedGroup],
   );
 
   const switchTab = useCallback((tab: Tab) => {
@@ -232,12 +281,20 @@ function App(): JSX.Element {
 
         {/* Category pills — only on "all" tab */}
         {activeTab === 'all' && groups.length > 2 && (
-          <div className="category-pills" role="group" aria-label="Filtrer par catégorie">
-            {groups.map((g) => (
+          <div
+            ref={pillsRef}
+            className="category-pills"
+            role="group"
+            aria-label="Filtrer par catégorie"
+            onKeyDown={handlePillsKeyDown}
+          >
+            {groups.map((g, i) => (
               <button
                 key={g}
-                className={`pill-btn${selectedGroup === g ? ' active' : ''}`}
-                onClick={() => setSelectedGroup(g)}
+                ref={(el) => { pillBtnRefs.current[i] = el; }}
+                className={`pill-btn${selectedGroup === g ? ' active' : ''}${focusedPillIdx === i ? ' kbd-focus' : ''}`}
+                onClick={() => { setSelectedGroup(g); setFocusedPillIdx(i); }}
+                onFocus={() => setFocusedPillIdx(i)}
                 aria-pressed={selectedGroup === g}
               >
                 {g === 'All' ? 'Tout' : g}
