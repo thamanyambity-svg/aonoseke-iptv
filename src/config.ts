@@ -10,7 +10,7 @@ const apiTimeout = import.meta.env.VITE_API_TIMEOUT as string | undefined;
 export const appConfig = {
   // API & Data
   playlistUrl: playlistUrl ?? '/playlist.json',
-  maxChannels: maxChannels ? parseInt(maxChannels, 10) : 2000,
+  maxChannels: maxChannels ? parseInt(maxChannels, 10) : 5000,
   apiTimeout: apiTimeout ? parseInt(apiTimeout, 10) : 10000,
 
   // Features
