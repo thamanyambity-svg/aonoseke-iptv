@@ -24,6 +24,8 @@ import { AlphaLogo } from './components/AlphaLogo.tsx';
 import { PreRollAd } from './components/PreRollAd.tsx';
 import { BannerAd } from './components/BannerAd.tsx';
 import { Directory } from './components/Directory.tsx';
+import { Paywall } from './components/Paywall.tsx';
+import { useTrial } from './hooks/useTrial.ts';
 import { useFavorites } from './hooks/useFavorites.ts';
 import { useAds } from './hooks/useAds.ts';
 import type { PrerollAd } from './hooks/useAds.ts';
@@ -93,6 +95,9 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
   const [loadError, setLoadError] = useState<string | null>(null);
   const [retryCount, setRetryCount] = useReducer((n: number) => n + 1, 0);
   const { favorites, toggleFavorite } = useFavorites();
+
+  // ── essai 30 jours / premium ────────────────────────────────────────────
+  const trial = useTrial();
 
   // ── publicité ─────────────────────────────────────────────────────────────
   const ads = useAds();
@@ -210,6 +215,7 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
       // pub à la 1re lecture puis toutes les `freq` chaînes
       const shouldShowAd =
         ads.enabled &&
+        !trial.adsHidden &&
         pr.enabled &&
         pr.items.length > 0 &&
         selectCount.current % freq === 0;
@@ -224,7 +230,7 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
         playChannel(channel);
       }
     },
-    [ads, activeChannel, playChannel],
+    [ads, trial.adsHidden, activeChannel, playChannel],
   );
 
   const handlePrerollComplete = useCallback((): void => {
@@ -379,6 +385,19 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
             Annuaire
           </button>
         </div>
+
+        {/* Bandeau essai / premium */}
+        {trial.isPremium ? (
+          <div className="trial-chip trial-chip--premium">★ Premium actif</div>
+        ) : trial.trialActive ? (
+          <div className="trial-chip">
+            Essai gratuit — {trial.daysLeft} j restant{trial.daysLeft > 1 ? 's' : ''}
+          </div>
+        ) : (
+          <div className="trial-chip trial-chip--ended">
+            Essai terminé · Annuaire verrouillé
+          </div>
+        )}
 
         {/* Search */}
         {activeTab !== 'directory' && (
@@ -582,7 +601,7 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
         )}
 
         {/* Bannière sponsor */}
-        {ads.enabled && ads.banners.length > 0 && (
+        {ads.enabled && !trial.adsHidden && ads.banners.length > 0 && (
           <BannerAd
             ad={ads.banners[0]}
             onImpression={(id) => trackEvent('ad_impression', id)}
@@ -594,7 +613,18 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
       {/* ── MAIN ─────────────────────────────────────────────────────────── */}
       <main className="main-content">
         {activeTab === 'directory' ? (
-          <Directory />
+          trial.annuaireUnlocked ? (
+            <Directory />
+          ) : (
+            <Paywall
+              daysUsed={30}
+              onSubscribe={() => {
+                // MVP : active le premium en local. Plus tard : Flutterwave/Stripe.
+                localStorage.setItem('iptv-premium', 'true');
+                window.location.reload();
+              }}
+            />
+          )
         ) : (
         <>
         {activeChannel && (

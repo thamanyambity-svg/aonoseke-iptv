@@ -9,7 +9,8 @@
     "logo": "https://www.google.com/s2/favicons?domain=pluto.tv&sz=64",
     "description": "250+ chaînes gratuites financées par la pub",
     "status": "online",
-    "legal": true
+    "legal": true,
+    "verifiedAt": "2026-06-12T23:42:37.268Z"
   },
   {
     "id": "tubi",
@@ -21,7 +22,8 @@
     "logo": "https://www.google.com/s2/favicons?domain=tubitv.com&sz=64",
     "description": "50 000+ films et séries gratuits (Fox)",
     "status": "online",
-    "legal": true
+    "legal": true,
+    "verifiedAt": "2026-06-12T23:42:37.268Z"
   },
   {
     "id": "plex",
@@ -33,7 +35,8 @@
     "logo": "https://www.google.com/s2/favicons?domain=plex.tv&sz=64",
     "description": "Films, séries et chaînes live gratuits",
     "status": "online",
-    "legal": true
+    "legal": true,
+    "verifiedAt": "2026-06-12T23:42:37.268Z"
   },
   {
     "id": "samsung-tv-plus",
@@ -45,7 +48,8 @@
     "logo": "https://www.google.com/s2/favicons?domain=samsungtvplus.com&sz=64",
     "description": "Chaînes FAST de Samsung, sans abonnement",
     "status": "online",
-    "legal": true
+    "legal": true,
+    "verifiedAt": "2026-06-12T23:42:37.268Z"
   },
   {
     "id": "rakuten-tv",
@@ -57,7 +61,8 @@
     "logo": "https://www.google.com/s2/favicons?domain=rakuten.tv&sz=64",
     "description": "Chaînes gratuites + location de films",
     "status": "online",
-    "legal": true
+    "legal": true,
+    "verifiedAt": "2026-06-12T23:42:37.268Z"
   },
   {
     "id": "molotov",
@@ -69,7 +74,8 @@
     "logo": "https://www.google.com/s2/favicons?domain=molotov.tv&sz=64",
     "description": "TV française en direct + replay",
     "status": "online",
-    "legal": true
+    "legal": true,
+    "verifiedAt": "2026-06-12T23:42:37.268Z"
   },
   {
     "id": "france-tv",
@@ -81,7 +87,8 @@
     "logo": "https://www.google.com/s2/favicons?domain=france.tv&sz=64",
     "description": "France 2, 3, 4, 5 — direct & replay gratuits",
     "status": "online",
-    "legal": true
+    "legal": true,
+    "verifiedAt": "2026-06-12T23:42:37.268Z"
   },
   {
     "id": "arte",
@@ -93,7 +100,8 @@
     "logo": "https://www.google.com/s2/favicons?domain=arte.tv&sz=64",
     "description": "Docs, cinéma, culture — franco-allemand",
     "status": "online",
-    "legal": true
+    "legal": true,
+    "verifiedAt": "2026-06-12T23:42:37.268Z"
   },
   {
     "id": "6play",
@@ -105,7 +113,8 @@
     "logo": "https://www.google.com/s2/favicons?domain=6play.fr&sz=64",
     "description": "M6, W9, 6ter — direct & replay",
     "status": "online",
-    "legal": true
+    "legal": true,
+    "verifiedAt": "2026-06-12T23:42:37.268Z"
   },
   {
     "id": "tf1plus",
@@ -117,7 +126,8 @@
     "logo": "https://www.google.com/s2/favicons?domain=tf1.fr&sz=64",
     "description": "TF1, TMC, TFX — streaming gratuit",
     "status": "online",
-    "legal": true
+    "legal": true,
+    "verifiedAt": "2026-06-12T23:42:37.268Z"
   },
   {
     "id": "crackle",
@@ -128,8 +138,9 @@
     "url": "https://www.crackle.com",
     "logo": "https://www.google.com/s2/favicons?domain=crackle.com&sz=64",
     "description": "Films et séries gratuits (Chicken Soup)",
-    "status": "online",
-    "legal": true
+    "status": "offline",
+    "legal": true,
+    "verifiedAt": "2026-06-12T23:42:37.268Z"
   },
   {
     "id": "roku-channel",
@@ -141,7 +152,8 @@
     "logo": "https://www.google.com/s2/favicons?domain=roku.com&sz=64",
     "description": "Chaînes live + VOD gratuits",
     "status": "online",
-    "legal": true
+    "legal": true,
+    "verifiedAt": "2026-06-12T23:42:37.268Z"
   },
   {
     "id": "distrotv",
@@ -153,7 +165,8 @@
     "logo": "https://www.google.com/s2/favicons?domain=distro.tv&sz=64",
     "description": "250+ chaînes live internationales",
     "status": "online",
-    "legal": true
+    "legal": true,
+    "verifiedAt": "2026-06-12T23:42:37.268Z"
   },
   {
     "id": "iptv-org",
@@ -165,7 +178,8 @@
     "logo": "https://www.google.com/s2/favicons?domain=github.io&sz=64",
     "description": "Index open-source de chaînes publiques",
     "status": "online",
-    "legal": true
+    "legal": true,
+    "verifiedAt": "2026-06-12T23:42:37.268Z"
   },
   {
     "id": "kanopy",
@@ -177,7 +191,8 @@
     "logo": "https://www.google.com/s2/favicons?domain=kanopy.com&sz=64",
     "description": "Cinéma & docs via bibliothèques publiques",
     "status": "online",
-    "legal": true
+    "legal": true,
+    "verifiedAt": "2026-06-12T23:42:37.268Z"
   },
   {
     "id": "youtube",
@@ -189,6 +204,7 @@
     "logo": "https://www.google.com/s2/favicons?domain=youtube.com&sz=64",
     "description": "Films gratuits, chaînes, lives",
     "status": "online",
-    "legal": true
+    "legal": true,
+    "verifiedAt": "2026-06-12T23:42:37.268Z"
   }
 ]
