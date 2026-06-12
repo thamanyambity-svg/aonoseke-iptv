@@ -78,6 +78,23 @@ create policy "own profile update"
   to authenticated
   using (auth.uid() = id);
 
+-- ── Table : statut d'uptime des sites de l'annuaire ──
+-- Écrite par la fonction Vercel Cron api/cron-uptime.js (toutes les 5 min).
+create table if not exists public.site_status (
+  site_id     text primary key,
+  status      text not null check (status in ('online', 'offline')),
+  checked_at  timestamptz not null default now()
+);
+
+alter table public.site_status enable row level security;
+
+-- Lecture publique du statut (affiché dans l'annuaire), écriture service_role seulement
+drop policy if exists "public read status" on public.site_status;
+create policy "public read status"
+  on public.site_status for select
+  to anon, authenticated
+  using (true);
+
 -- ════════════════════════════════════════════════════════════════
 -- Vue agrégée pour le dashboard annonceurs (revenus / impressions)
 -- Interrogeable côté serveur avec la clé service_role uniquement.

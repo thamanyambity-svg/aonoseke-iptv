@@ -17,11 +17,13 @@ import {
   X,
   RefreshCw,
   LogOut,
+  Compass,
 } from 'lucide-react';
 import { Player } from './components/Player.tsx';
 import { AlphaLogo } from './components/AlphaLogo.tsx';
 import { PreRollAd } from './components/PreRollAd.tsx';
 import { BannerAd } from './components/BannerAd.tsx';
+import { Directory } from './components/Directory.tsx';
 import { useFavorites } from './hooks/useFavorites.ts';
 import { useAds } from './hooks/useAds.ts';
 import type { PrerollAd } from './hooks/useAds.ts';
@@ -69,7 +71,7 @@ function useDebounce<T>(value: T, delay: number): T {
   return debounced;
 }
 
-type Tab = 'all' | 'favorites';
+type Tab = 'all' | 'favorites' | 'directory';
 
 // ─── App ────────────────────────────────────────────────────────────────────
 
@@ -367,25 +369,44 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
               <span className="tab-badge">{favorites.size}</span>
             )}
           </button>
+          <button
+            role="tab"
+            aria-selected={activeTab === 'directory'}
+            className={`tab-btn${activeTab === 'directory' ? ' active' : ''}`}
+            onClick={() => switchTab('directory')}
+          >
+            <Compass size={14} aria-hidden="true" />
+            Annuaire
+          </button>
         </div>
 
         {/* Search */}
-        <div className="search-container">
-          <Search size={15} className="search-icon" aria-hidden="true" />
-          <input
-            type="search"
-            placeholder="Chaîne, pays, catégorie…"
-            className="search-input"
-            value={rawSearch}
-            onChange={(e) => setRawSearch(e.target.value)}
-            aria-label="Rechercher une chaîne"
-          />
-          {rawSearch && (
-            <button className="search-clear" onClick={() => setRawSearch('')} aria-label="Effacer">
-              <X size={13} />
-            </button>
-          )}
-        </div>
+        {activeTab !== 'directory' && (
+          <div className="search-container">
+            <Search size={15} className="search-icon" aria-hidden="true" />
+            <input
+              type="search"
+              placeholder="Chaîne, pays, catégorie…"
+              className="search-input"
+              value={rawSearch}
+              onChange={(e) => setRawSearch(e.target.value)}
+              aria-label="Rechercher une chaîne"
+            />
+            {rawSearch && (
+              <button className="search-clear" onClick={() => setRawSearch('')} aria-label="Effacer">
+                <X size={13} />
+              </button>
+            )}
+          </div>
+        )}
+
+        {/* En mode Annuaire : indice dans la sidebar */}
+        {activeTab === 'directory' && (
+          <div className="dir-sidebar-hint">
+            <Compass size={26} aria-hidden="true" />
+            <p>Parcourez les plateformes de streaming légales à droite.</p>
+          </div>
+        )}
 
         {/* ── PAYS — Slider ◀ NOM ▶ ── */}
         {activeTab === 'all' && (
@@ -457,6 +478,7 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
         )}
 
         {/* Channel list */}
+        {activeTab !== 'directory' && (
         <div
           ref={listRef}
           className="channel-list"
@@ -540,6 +562,7 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
             })
           )}
         </div>
+        )}
 
         {/* Mini now-playing strip */}
         {activeChannel && (
@@ -568,8 +591,12 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
         )}
       </aside>
 
-      {/* ── MAIN PLAYER ──────────────────────────────────────────────────── */}
+      {/* ── MAIN ─────────────────────────────────────────────────────────── */}
       <main className="main-content">
+        {activeTab === 'directory' ? (
+          <Directory />
+        ) : (
+        <>
         {activeChannel && (
           <div className="player-header animate-fade">
             <div className="now-playing">
@@ -616,6 +643,8 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
             />
           )}
         </div>
+        </>
+        )}
       </main>
     </div>
   );
