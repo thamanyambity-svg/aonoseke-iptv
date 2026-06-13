@@ -26,6 +26,7 @@ import { BannerAd } from './components/BannerAd.tsx';
 import { Directory } from './components/Directory.tsx';
 import { Paywall } from './components/Paywall.tsx';
 import { useTrial } from './hooks/useTrial.ts';
+import { useDeadChannels } from './hooks/useDeadChannels.ts';
 import { startSubscription } from './lib/payment.ts';
 import { useFavorites } from './hooks/useFavorites.ts';
 import { useAds } from './hooks/useAds.ts';
@@ -100,6 +101,9 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
   // ── essai 30 jours / premium ────────────────────────────────────────────
   const trial = useTrial();
 
+  // ── auto-masquage des chaînes qui ne jouent pas ─────────────────────────
+  const { deadSet, markDead } = useDeadChannels();
+
   // ── publicité ─────────────────────────────────────────────────────────────
   const ads = useAds();
   const [prerollAd, setPrerollAd] = useState<PrerollAd | null>(null);
@@ -169,10 +173,11 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
   }, [selectedCountry]);
 
   const filteredChannels = useMemo(() => {
-    let list = channels;
-    if (activeTab === 'favorites') {
-      list = channels.filter((c) => favorites.has(c.url));
-    }
+    // exclut les chaînes marquées mortes (sauf dans l'onglet Favoris,
+    // où l'utilisateur veut voir ses choix même temporairement KO)
+    let list = activeTab === 'favorites'
+      ? channels.filter((c) => favorites.has(c.url))
+      : channels.filter((c) => !deadSet.has(c.url));
     if (selectedCountry !== 'All') {
       list = list.filter((c) => c.country === selectedCountry);
     }
@@ -188,7 +193,7 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
       );
     }
     return list;
-  }, [channels, search, selectedCountry, selectedGroup, activeTab, favorites]);
+  }, [channels, search, selectedCountry, selectedGroup, activeTab, favorites, deadSet]);
 
   useEffect(() => {
     setFocusedIdx(-1);
@@ -664,7 +669,15 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
         )}
 
         <div className="video-container">
-          <Player url={activeChannel?.url ?? ''} onError={(msg) => setError(msg)} />
+          <Player
+            url={activeChannel?.url ?? ''}
+            onError={(msg) => {
+              setError(msg);
+              // la chaîne ne joue pas → on la masque pour ne plus jamais
+              // la proposer (filet de crédibilité)
+              if (activeChannel?.url) markDead(activeChannel.url);
+            }}
+          />
           {prerollAd && (
             <PreRollAd
               ad={prerollAd}
