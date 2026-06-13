@@ -23,6 +23,7 @@ import { AlphaLogo } from './components/AlphaLogo.tsx';
 import { PreRollAd } from './components/PreRollAd.tsx';
 import { BannerAd } from './components/BannerAd.tsx';
 import { Directory } from './components/Directory.tsx';
+import { CinematicBg } from './components/CinematicBg.tsx';
 import { Paywall } from './components/Paywall.tsx';
 import { Profile } from './components/Profile.tsx';
 import { AdminDashboard } from './components/AdminDashboard.tsx';
@@ -674,6 +675,7 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
         )}
 
         <div className="video-container">
+          {!activeChannel && <CinematicBg />}
           <Player
             url={activeChannel?.url ?? ''}
             onError={(msg) => {

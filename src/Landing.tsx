@@ -2,6 +2,7 @@ import './Landing.css';
 import { useState } from 'react';
 import { Play, Tv, Globe, Star, Zap, User, Mail, Lock } from 'lucide-react';
 import { AlphaLogo } from './components/AlphaLogo.tsx';
+import { CinematicBg } from './components/CinematicBg.tsx';
 
 type Mode = 'signin' | 'signup';
 
@@ -50,6 +51,7 @@ export function Landing({ onSignUp, onSignIn, onDemo }: LandingProps): JSX.Eleme
 
   return (
     <div className="landing">
+      <CinematicBg />
       <div className="landing-bg" aria-hidden="true" />
 
       {/* ── LEFT — Branding ── */}

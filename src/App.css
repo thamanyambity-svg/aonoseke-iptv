@@ -851,7 +851,9 @@ video {
   justify-content: center;
   height: 100%;
   gap: 16px;
-  background: var(--void);
+  background: transparent;
+  position: relative;
+  z-index: 1;
 }
 
 .empty-main-icon {
