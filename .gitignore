@@ -21,3 +21,8 @@ lerna-debug.log*
 coverage/
 .cache/
 
+
+# Doublons macOS
+* 2.*
+*\ 2.json
+*\ 2.tsx
