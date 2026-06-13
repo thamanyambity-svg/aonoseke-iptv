@@ -19,6 +19,35 @@ function statusLabel(s: SiteStatus): string {
   }
 }
 
+/** Teinte déterministe à partir du nom (pour le monogramme). */
+function hueOf(name: string): number {
+  let h = 0;
+  for (let i = 0; i < name.length; i++) h = (h * 31 + name.charCodeAt(i)) % 360;
+  return h;
+}
+
+/**
+ * Logo monogramme : initiale sur un fond dégradé teinté par le nom.
+ * Rendu homogène, instantané et sans dépendance réseau — aucun risque
+ * d'image cassée ou de favicon délavé.
+ */
+function SiteLogo({ name }: { name: string; url: string }): JSX.Element {
+  const hue = hueOf(name);
+  return (
+    <div
+      className="site-logo site-logo--mono"
+      style={{
+        background: `linear-gradient(135deg, hsl(${hue} 58% 32%), hsl(${hue} 62% 15%))`,
+        color: `hsl(${hue} 80% 78%)`,
+        borderColor: `hsl(${hue} 50% 40% / 0.4)`,
+      }}
+      aria-hidden="true"
+    >
+      {name.charAt(0).toUpperCase()}
+    </div>
+  );
+}
+
 export function Directory(): JSX.Element {
   const { sites, loading, error, checkAll, checking } = useSites();
   const [search, setSearch] = useState('');
@@ -129,14 +158,21 @@ export function Directory(): JSX.Element {
         <div className="dir-grid">
           {filtered.map((site) => (
             <div key={site.id} className="site-card">
-              <div className="site-card-top">
-                <img
-                  src={site.logo}
-                  alt=""
-                  className="site-logo"
-                  loading="lazy"
-                  onError={(e) => { (e.target as HTMLImageElement).style.visibility = 'hidden'; }}
-                />
+              {/* En-tête : logo + nom + favori */}
+              <div className="site-head">
+                <SiteLogo name={site.name} url={site.url} />
+                <div className="site-headtext">
+                  <div className="site-name-row">
+                    <h3 className="site-name">{site.name}</h3>
+                    {site.legal && (
+                      <ShieldCheck size={12} className="site-legal" aria-label="Source légale" />
+                    )}
+                  </div>
+                  <span className={`site-status site-status--${site.status}`}>
+                    <span className="status-dot" aria-hidden="true" />
+                    {statusLabel(site.status)}
+                  </span>
+                </div>
                 <button
                   className={`site-fav${favs.has(site.id) ? ' on' : ''}`}
                   onClick={() => toggleFav(site.id)}
@@ -147,24 +183,14 @@ export function Directory(): JSX.Element {
                 </button>
               </div>
 
-              <div className="site-name-row">
-                <h3 className="site-name">{site.name}</h3>
-                {site.legal && (
-                  <ShieldCheck size={13} className="site-legal" aria-label="Source légale" />
-                )}
-              </div>
               <p className="site-desc">{site.description}</p>
 
-              <div className="site-meta">
-                <span className="site-cat">{site.category}</span>
-                <span className="site-lang">{site.language}</span>
-              </div>
-
-              <div className="site-card-bottom">
-                <span className={`site-status site-status--${site.status}`}>
-                  <span className="status-dot" aria-hidden="true" />
-                  {statusLabel(site.status)}
-                </span>
+              {/* Pied : tags + bouton ouvrir */}
+              <div className="site-foot">
+                <div className="site-meta">
+                  <span className="site-cat">{site.category}</span>
+                  <span className="site-lang">{site.language}</span>
+                </div>
                 <button className="site-open" onClick={() => openSite(site)}>
                   Ouvrir <ExternalLink size={12} />
                 </button>
