@@ -1,263 +1,1033 @@
 [
   {
-    "name": "FRANCE 2",
-    "country": "FR",
-    "group": "TNT",
-    "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/france/france-2-fr.png",
-    "url": "https://raw.githubusercontent.com/schumijo/iptv/main/playlists/francetv/france2.m3u8",
-    "source": "schumijo",
+    "name": "Filinfo TV (1080p)",
+    "country": "BF",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/KG93Tvn.png",
+    "url": "https://d2iqjnqfr8pv3b.cloudfront.net/out/v1/d09d2fc718404cd8bccd3eba2444dd70/index.m3u8",
+    "source": "noyau-fr",
     "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
   },
   {
-    "name": "FRANCE 3",
-    "country": "FR",
-    "group": "TNT",
-    "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/france/france-3-fr.png",
-    "url": "https://raw.githubusercontent.com/schumijo/iptv/main/playlists/francetv/france3.m3u8",
-    "source": "schumijo",
+    "name": "RTB 3",
+    "country": "BF",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/OFZm8ic.png",
+    "url": "https://edge13.vedge.infomaniak.com/livecast/ik:rtb3-1/manifest.m3u8",
+    "source": "noyau-fr",
     "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
   },
   {
-    "name": "FRANCE 4",
-    "country": "FR",
-    "group": "TNT",
-    "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/france/france-4-fr.png",
-    "url": "https://raw.githubusercontent.com/schumijo/iptv/main/playlists/francetv/france4.m3u8",
-    "source": "schumijo",
+    "name": "ADO TV (720p)",
+    "country": "BJ",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/pxFamLr.png",
+    "url": "https://strhls.streamakaci.tv/ortb/ortb2-multi/playlist.m3u8",
+    "source": "noyau-fr",
     "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
   },
   {
-    "name": "FRANCE 5",
-    "country": "FR",
-    "group": "TNT",
-    "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/france/france-5-fr.png",
-    "url": "https://raw.githubusercontent.com/schumijo/iptv/main/playlists/francetv/france5.m3u8",
-    "source": "schumijo",
+    "name": "Eden TV (540p)",
+    "country": "BJ",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/4ClnG0x.png",
+    "url": "https://rtmp.edentv.bj/hls/stream.m3u8",
+    "source": "noyau-fr",
     "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
   },
   {
-    "name": "ARTE",
-    "country": "FR",
-    "group": "TNT",
-    "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/france/arte-fr.png",
-    "url": "https://raw.githubusercontent.com/schumijo/iptv/main/playlists/francetv/arte.m3u8",
-    "source": "schumijo",
+    "name": "ORTB TV (720p)",
+    "country": "BJ",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/o6zAR88.png",
+    "url": "http://69.64.57.208/ortb/playlist.m3u8",
+    "source": "noyau-fr",
     "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
   },
   {
-    "name": "LCP",
-    "country": "FR",
-    "group": "TNT",
-    "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/france/lcp-fr.png",
-    "url": "https://raw.githubusercontent.com/schumijo/iptv/main/playlists/francetv/lcpps.m3u8",
-    "source": "schumijo",
+    "name": "TVC Bénin (720p)",
+    "country": "BJ",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/oUnEYl5.png",
+    "url": "https://live.tvcbenin.com/direct/729c37a1d3319ee21991227b1f84c687.sdp/playlist.m3u8",
+    "source": "noyau-fr",
     "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
   },
   {
-    "name": "LCI",
-    "country": "FR",
-    "group": "TNT",
-    "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/france/lci-fr.png",
-    "url": "https://raw.githubusercontent.com/pinkisso/mored/refs/heads/main/res/26-1/lci1.m3u8",
-    "source": "schumijo",
+    "name": "Baraka Television (720p)",
+    "country": "CD",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/IKXddHN.png",
+    "url": "https://stream.berosat.live:19360/baraka-hd/baraka-hd.m3u8",
+    "source": "noyau-fr",
     "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
   },
   {
-    "name": "FRANCE INFO",
-    "country": "FR",
-    "group": "TNT",
-    "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/france/franceinfo-fr.png",
-    "url": "https://raw.githubusercontent.com/schumijo/iptv/main/playlists/francetv/franceinfo.m3u8",
-    "source": "schumijo",
+    "name": "CCPV TV (1080p)",
+    "country": "CD",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/VRhkEqz.jpg",
+    "url": "https://tnt-television.com/CCPV-TV/index.m3u8",
+    "source": "noyau-fr",
     "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
   },
   {
-    "name": "L'ÉQUIPE TV",
-    "country": "FR",
-    "group": "TNT",
-    "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/france/lequipe-fr.png",
-    "url": "https://dq37unyetkpcz.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-m04j89j7k5gtp/LEquipe_FR.m3u8",
-    "source": "schumijo",
+    "name": "Compassion TV (240p)",
+    "country": "CD",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/lfoUsyR.jpeg",
+    "url": "https://tnt-television.com/COMPASSION_FM/index.m3u8",
+    "source": "noyau-fr",
     "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
   },
   {
-    "name": "RMC STORY",
-    "country": "FR",
-    "group": "TNT",
-    "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/france/rmc-story-fr.png",
-    "url": "https://d15aro46bnpfm8.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-fqkqiax1078up/RMC_Story_FR.m3u8",
-    "source": "schumijo",
+    "name": "Géopolis TV (240p)",
+    "country": "CD",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/WzGAIYe.jpg",
+    "url": "https://tnt-television.com/Geopolis_tv/index.m3u8",
+    "source": "noyau-fr",
     "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
   },
   {
-    "name": "RMC DÉCOUVERTE",
-    "country": "FR",
-    "group": "TNT",
-    "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/france/rmc-decouverte-fr.png",
-    "url": "https://d16zzycxcd0m0r.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-hixvx5kymecr9/RMC_Decouverte_FR.m3u8",
-    "source": "schumijo",
+    "name": "LBFD RTV (1080p)",
+    "country": "CD",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/buMvLJc.jpeg",
+    "url": "https://tnt-television.com/LBFD_RTV/index.m3u8",
+    "source": "noyau-fr",
     "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
   },
   {
-    "name": "RMC LIFE",
-    "country": "FR",
-    "group": "TNT",
-    "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/france/rmc-life-fr.png",
-    "url": "https://d3dcdjv6dx07iz.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-eaaww2dyp3iih/RMC_Life_FR.m3u8",
-    "source": "schumijo",
+    "name": "Lollywood HD TV",
+    "country": "CD",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/fQhrsdr.png",
+    "url": "https://stream.berosat.live/hls/lollywood-hd/lollywood-hd.m3u8",
+    "source": "noyau-fr",
     "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
   },
   {
-    "name": "CANAL+ EN CLAIR",
-    "country": "FR",
-    "group": "TNT",
-    "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/france/canal-plus-fr.png",
-    "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/canalplus/canalplusclair-hd.m3u8",
-    "source": "schumijo",
+    "name": "Numerica TV (1080p)",
+    "country": "CD",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/ZUPJJ59.png",
+    "url": "https://tnt-television.com/NUMERICA/index.m3u8",
+    "source": "noyau-fr",
     "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
   },
   {
-    "name": "LE MEILLEUR D'ARTHUR",
-    "country": "FR",
-    "group": "Séries et Divertissements",
-    "logo": "https://freebox.cdn.scw.iliad.fr/large_Logo_Le_Meilleurd_Arthur_colored_3f4b333562.png",
-    "url": "https://amg02393-awpg-amg02393c2-rakuten-uk-2464.playouts.now.amagi.tv/playlist/amg02393-awpg-lemeilleurdarthur-rakutenuk/playlist.m3u8",
-    "source": "schumijo",
+    "name": "RL PRO TV",
+    "country": "CD",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/PIBtCEN.jpeg",
+    "url": "https://stream.berosat.live:19360/rlpro-tv/rlpro-tv.m3u8",
+    "source": "noyau-fr",
     "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
   },
   {
-    "name": "FRANCE TV SÉRIES",
-    "country": "FR",
-    "group": "Séries et Divertissements",
-    "logo": "https://i.ibb.co/9rmSGqP/frsr.png",
-    "url": "https://raw.githubusercontent.com/schumijo/iptv/main/playlists/francetv/series.m3u8",
-    "source": "schumijo",
+    "name": "RTNC (540p)",
+    "country": "CD",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/oVXO950.jpeg",
+    "url": "http://69.64.57.208/rtnc/playlist.m3u8",
+    "source": "noyau-fr",
     "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
   },
   {
-    "name": "SONY ONE THE BLACKLIST",
-    "country": "FR",
-    "group": "Séries et Divertissements",
-    "logo": "",
-    "url": "https://06cb85ad6ccb4a6b97f561e62d16ad3f.mediatailor.us-west-2.amazonaws.com/v1/master/ba62fe743df0fe93366eba3a257d792884136c7f/LINEAR-822-FR-SONYONETHEBLACKLIST-LG_FR/playlist.m3u8",
-    "source": "schumijo",
+    "name": "Ev-tele (720p)",
+    "country": "CG",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/iBlXl2T.png",
+    "url": "https://playtv4k.live/live/EVTELE/index.m3u8",
+    "source": "noyau-fr",
     "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
   },
   {
-    "name": "MGG E-SPORT",
-    "country": "FR",
-    "group": "Séries et Divertissements",
-    "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/france/mgg-tv-fr.png",
-    "url": "https://d1mdvi698umja9.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-kuib43fy5umqi-ssai-prd/mgg.m3u8",
-    "source": "schumijo",
+    "name": "JOS TV HD",
+    "country": "CG",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/Ai9kpuu.jpeg",
+    "url": "https://stream.berosat.live:19360/jos-tv-stream/jos-tv-stream.m3u8",
+    "source": "noyau-fr",
     "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
   },
   {
-    "name": "GONG",
-    "country": "FR",
-    "group": "Séries et Divertissements",
-    "logo": "https://i.ibb.co/MMpFXQL/gong.jpg",
-    "url": "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg01596-gongnetworks-gong-samsungfr/playlist.m3u8",
-    "source": "schumijo",
+    "name": "Tele Congo (720p)",
+    "country": "CG",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/r4B5zq4.png",
+    "url": "http://69.64.57.208/telecongo/playlist.m3u8",
+    "source": "noyau-fr",
     "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
   },
   {
-    "name": "NOVELA CHANNEL",
-    "country": "FR",
-    "group": "Séries et Divertissements",
-    "logo": "",
-    "url": "https://video1.getstreamhosting.com:1936/8494/8494/playlist.m3u8",
-    "source": "schumijo",
+    "name": "A12 TV",
+    "country": "CI",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/JgnjgvF.png",
+    "url": "https://video1.getstreamhosting.com:1936/8250/8250/manifest.m3u8",
+    "source": "noyau-fr",
     "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
   },
   {
-    "name": "POPCORN",
-    "country": "FR",
-    "group": "Séries et Divertissements",
-    "logo": "https://freebox.cdn.scw.iliad.fr/large_POPCORN_emission_Logo_Reproduction_8ad41ad83b.png",
-    "url": "https://dyc8bdiow0oz1.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-qique82ecf5q8/pcorn.m3u8",
-    "source": "schumijo",
+    "name": "A+ Ivoire (720p)",
+    "country": "CI",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/yOW0vyP.png",
+    "url": "http://69.64.57.208/atv/playlist.m3u8",
+    "source": "noyau-fr",
     "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
   },
   {
-    "name": "LG 1",
-    "country": "FR",
-    "group": "Cinéma",
-    "logo": "https://lge-static.ottera.tv/prod/lge/linear_channel/logo/1600x400/lg1_800x200_white_5.png",
-    "url": "https://stream.ads.ottera.tv/playlist.m3u8?network_id=12782",
-    "source": "schumijo",
+    "name": "Afro Magic Channel",
+    "country": "CI",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/yQzXErU.png",
+    "url": "https://video1.getstreamhosting.com:1936/8306/8306/playlist.m3u8",
+    "source": "noyau-fr",
     "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
   },
   {
-    "name": "LG 1:FILM",
-    "country": "FR",
-    "group": "Cinéma",
-    "logo": "https://lge-static.ottera.tv/prod/lge/linear_channel/logo/1600x400/lg1film_epg_white_2.png",
-    "url": "https://stream.ads.ottera.tv/playlist.m3u8?network_id=13954",
-    "source": "schumijo",
+    "name": "Afroculture TV",
+    "country": "CI",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/bjaZ3kO.png",
+    "url": "https://streamtv.cmediahosthosting.net:3836/live/myafroculturelive.m3u8",
+    "source": "noyau-fr",
     "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
   },
   {
-    "name": "LG 1:SPOTLIGHT",
-    "country": "FR",
-    "group": "Cinéma",
-    "logo": "https://lge-static.ottera.tv/prod/lge/linear_channel/logo/1600x400/lg1spt_epg_white_3.png",
-    "url": "https://stream.ads.ottera.tv/playlist.m3u8?network_id=13956",
-    "source": "schumijo",
+    "name": "Benie TV (720p)",
+    "country": "CI",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/7FXi05e.jpeg",
+    "url": "https://tv.voozmedia.fun/benietv/index.m3u8",
+    "source": "noyau-fr",
     "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
   },
   {
-    "name": "CINE NANAR",
-    "country": "FR",
-    "group": "Cinéma",
-    "logo": "https://static.wixstatic.com/media/6ba705_4a8e930e0e1e4231b059e29e951d15ad~mv2.png",
-    "url": "https://zylo-cinenanar-rakuten.amagi.tv/playlist.m3u8",
-    "source": "schumijo",
+    "name": "Guide Love TV (720p)",
+    "country": "CI",
+    "group": "Afrique",
+    "logo": "https://i.ibb.co/9gS2Y4G/guidelove-logo.png",
+    "url": "https://video1.getstreamhosting.com:1936/8056/8056/playlist.m3u8",
+    "source": "noyau-fr",
     "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
   },
   {
-    "name": "CINE WESTERN",
-    "country": "FR",
-    "group": "Cinéma",
-    "logo": "https://static.wixstatic.com/media/6ba705_157c0663b69041e0a7c5b543e83f53e0~mv2.png",
-    "url": "https://amg00711-zylo-amg00711c8-rakuten-uk-2686.playouts.now.amagi.tv/playlist/amg00711-zylofast-cinewestern-rakutenuk/playlist.m3u8",
-    "source": "schumijo",
+    "name": "Ivoire Channel (720p)",
+    "country": "CI",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/gKbNqQv.png",
+    "url": "https://video1.getstreamhosting.com:1936/8244/8244/playlist.m3u8",
+    "source": "noyau-fr",
     "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
   },
   {
-    "name": "EMOTION'L",
-    "country": "FR",
-    "group": "Cinéma",
-    "logo": "https://static.wixstatic.com/media/6ba705_5193d9a37da44d3898aed28bb9177835~mv2.png",
-    "url": "https://amg00711-zylo-france-zylo-emotional-rakuten-frukp.amagi.tv/hls/amagi_hls_data_rakutenAA-zylo-emotional-rakuten/CDN/master.m3u8",
-    "source": "schumijo",
+    "name": "LMTV French (720p)",
+    "country": "CI",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/FVnq2cQ.png",
+    "url": "https://video1.getstreamhosting.com:1936/8282/8282/playlist.m3u8",
+    "source": "noyau-fr",
     "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "Miracle TV+ (720p)",
+    "country": "CI",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/AQ60OYO.png",
+    "url": "https://strhlslb01.streamakaci.tv/str_mtv_mtv/str_mtv_multi/playlist.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "My Gospel TV",
+    "country": "FR",
+    "group": "Francophone",
+    "logo": "https://mygospeltv.fr/wp-content/uploads/2022/05/MY-GODPEL-TV-e1652783900988.png",
+    "url": "https://streamtv.cmediahosthosting.net:3046/live/mygospeltvlive.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "NTV Afrique (1080p)",
+    "country": "CI",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/qqLXdHz.png",
+    "url": "https://strhlslb01.streamakaci.tv/str_ntv_ntv/str_ntv_ntv_multi/playlist.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "REFLET TV (1080p)",
+    "country": "CI",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/EauXR22.png",
+    "url": "https://edge-a3.evrideo.tv/8f37c9f0-fe22-44f4-b64a-76ad11730daf_1000026630_HLS/manifest.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "RTI 1 (1080p)",
+    "country": "CI",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/TybQZQS.png",
+    "url": "http://69.64.57.208:8080/rti1/playlist.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "RTI 2 (1080p)",
+    "country": "CI",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/73ueXrp.png",
+    "url": "http://69.64.57.208:8080/rti2/playlist.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "RTI La 3 (1080p)",
+    "country": "CI",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/HdNshgF.png",
+    "url": "http://69.64.57.208/la3/index.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "RTVC (720p)",
+    "country": "CI",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/oXuSkHz.png",
+    "url": "https://cdn140m.panaccess.com/HLS/RTVC/index.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "Serie Max",
+    "country": "CI",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/GaRQXHT.png",
+    "url": "https://video1.getstreamhosting.com:1936/8330/8330/playlist.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "TV Al Bayane (360p)",
+    "country": "CI",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/Xs9oEG8.png",
+    "url": "http://69.64.57.208/albayanetv/index.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "TV La Capitale",
+    "country": "CI",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/zZJzNjM.jpeg",
+    "url": "https://stream.berosat.live:19360/tv-capitale-tream/tv-capitale-tream.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "Afrique54 TV (720p)",
+    "country": "CM",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/WIaRpiS.png",
+    "url": "https://video1.getstreamhosting.com:1936/8318/8318/playlist.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "CAM 10 TV (720p)",
+    "country": "CM",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/xspb9uY.png",
+    "url": "https://stream.it-innov.com/cam10tv/index.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "Canal 2 International (720p)",
+    "country": "CM",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/BzA2z7m.png",
+    "url": "http://69.64.57.208/canal2international/playlist.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "CRTV (360p)",
+    "country": "CM",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/cQWNh3L.png",
+    "url": "http://69.64.57.208/crtv/playlist.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "Equinoxe TV (720p)",
+    "country": "CM",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/GKbnBlo.png",
+    "url": "http://69.64.57.208/equinoxtv/playlist.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "Laura Dave Media TV (720p)",
+    "country": "CM",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/zzG1S2n.png",
+    "url": "https://streaming.lauradavemedia.com/ldm/index.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "My TV Channel (720p)",
+    "country": "CM",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/vh2373L.png",
+    "url": "http://connectiktv.ddns.net:5000/mytvchannel/@mytvchannel/playlist.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "Play TV (720p)",
+    "country": "CM",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/1dmBqpf.png",
+    "url": "http://connectiktv.ddns.net:5000/playtv/@playtv/playlist.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "PLEX TV",
+    "country": "CM",
+    "group": "Afrique",
+    "logo": "https://i.ibb.co/H4VktvG/Plex-TV-237.jpg",
+    "url": "http://connectiktv.ddns.net:5000/plextv/@plextv/playlist.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "TR24 (720p)",
+    "country": "CM",
+    "group": "Afrique",
+    "logo": "https://i.ibb.co/fQrBY1M/tr24-telepack.jpg",
+    "url": "https://stream.it-innov.com/tr24/index.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "Espace TV (1080p)",
+    "country": "GN",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/R5tbzFI.png",
+    "url": "https://edge11.vedge.infomaniak.com/livecast/ik:espacetv/manifest.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "Kalac TV (1080p)",
+    "country": "GN",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/FgKJiHZ.png",
+    "url": "https://edge13.vedge.infomaniak.com/livecast/ik:kalactv/chunklist_w280736538.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "RTG 1 (360p)",
+    "country": "GN",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/E1sMcXz.png",
+    "url": "http://69.64.57.208/rtg/playlist.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "Nickelodeon Junior (1080p)",
+    "country": "FR",
+    "group": "Francophone",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Nickelodeon_Junior.png/960px-Nickelodeon_Junior.png",
+    "url": "http://151.80.18.177:86/Nickelodeon_Junior/index.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "Africable TV (360p)",
+    "country": "ML",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/iQE57Z2.png",
+    "url": "http://69.64.57.208/africable/playlist.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "Cherifla TV (360p)",
+    "country": "ML",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/V8nuoEW.png",
+    "url": "http://69.64.57.208/cherifla/playlist.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "D3 TV (480p)",
+    "country": "ML",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/uFEIBtB.png",
+    "url": "https://live20.bozztv.com/akamaissh101/ssh101/d3tvnet/playlist.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "Nieta TV (576p)",
+    "country": "ML",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/5RoXTaN.png",
+    "url": "http://69.64.57.208/nieta/playlist.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "ORTM 1 (540p)",
+    "country": "ML",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/eKUpcls.png",
+    "url": "http://69.64.57.208/ortm/playlist.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "ORTM 2 (720p)",
+    "country": "ML",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/GQ4fHsv.png",
+    "url": "http://69.64.57.208/tm2/playlist.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "StoryChannel TV (720p)",
+    "country": "MA",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/ZBV6xph.png",
+    "url": "https://136044159.r.cdnsun.net/storychannel.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "TM1 (360p)",
+    "country": "ML",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/83BgaBa.png",
+    "url": "http://69.64.57.208/tm1/playlist.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "Tal TV (1080p)",
+    "country": "NE",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/KWMP0t1.png",
+    "url": "https://mediaserver1.castpin.com/hls/taltv/index.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "Tele Sahel (1080p)",
+    "country": "NE",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/vboq428.png",
+    "url": "https://mediaserver1.castpin.com/hls/telesahel/index.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "BCN TV",
+    "country": "RW",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/rP46S5B.png",
+    "url": "https://live.bcntv.org/live/bcn_16_9.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "Isango TV (480p)",
+    "country": "RW",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/EfsHaMQ.png",
+    "url": "http://80.241.215.175:1935/isangostar/isangostar/playlist.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "Isibo TV",
+    "country": "RW",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/bXhEeTC.png",
+    "url": "https://5c46fa289c89f.streamlock.net/pub2live/myStream/playlist.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "KC2 (720p)",
+    "country": "RW",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/PsYPzNc.png",
+    "url": "http://197.243.19.131:1935/kc2/kc2/chunklist.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "RTV Rwanda (480p)",
+    "country": "RW",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/4nbGvxW.png",
+    "url": "http://197.243.19.131:1935/rtv25/rtv/chunklist.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "TV10 (720p)",
+    "country": "RW",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/DeaWC1N.png",
+    "url": "https://5c46fa289c89f.streamlock.net/pub1live/mystream/playlist.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "A2i Music (720p)",
+    "country": "SN",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/Fykhzxh.jpg",
+    "url": "https://stream.sen-gt.com/A2iMusic/myStream/playlist.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "A2i Religion (720p)",
+    "country": "SN",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/54WrwyN.jpg",
+    "url": "https://stream.sen-gt.com/A2iReligion/myStream/playlist.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "A2i TV (1080p)",
+    "country": "IT",
+    "group": "Francophone",
+    "logo": "https://i.imgur.com/YlDFir7.jpg",
+    "url": "https://stream.sen-gt.com/A2itv/myStream/playlist.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "Louga TV (480p)",
+    "country": "SN",
+    "group": "Afrique",
+    "logo": "https://i.ibb.co/xXZ5kFy/unnamed.jpg",
+    "url": "https://stream.sen-gt.com/Mbacke/myStream/playlist.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "RTS 1 (720p)",
+    "country": "SN",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/HHGktpF.png",
+    "url": "http://69.64.57.208/rts1/playlist.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "RTS 2 (720p)",
+    "country": "SN",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/YypHsF4.png",
+    "url": "http://69.64.57.208/rts2/playlist.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "Sen TV (360p)",
+    "country": "SN",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/beVCugh.png",
+    "url": "http://69.64.57.208/sentv/playlist.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "SenJeunes TV (480p)",
+    "country": "SN",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/MeCSPsI.jpg",
+    "url": "https://stream.sen-gt.com/senjeunestv/myStream/playlist.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "TFM (720p)",
+    "country": "SN",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/TQWBlXn.png",
+    "url": "http://69.64.57.208/tfm/playlist.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "Walf TV (360p)",
+    "country": "SN",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/IrBAqIJ.png",
+    "url": "http://69.64.57.208/walftv/playlist.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "Tele Tchad (1080p)",
+    "country": "TD",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/udSzfHD.png",
+    "url": "https://strhlslb01.streamakaci.tv/str_tchad_tchad/str_tchad_multi/playlist.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "Chandel TV (720p)",
+    "country": "TG",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/jQO7dVE.png",
+    "url": "https://kali.vdopanel.com:3660/live/vj6jlam1rlive.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "RT JVA (720p)",
+    "country": "TG",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/Ja3HVLB.jpg",
+    "url": "https://cdn140m.panaccess.com/HLS/RTVJA/index.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "Television Espoir 47 (720p)",
+    "country": "TG",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/utBh0xL.png",
+    "url": "https://cdn140m.panaccess.com/HLS/Espoir47/index.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "TVT (720p)",
+    "country": "TG",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/WtXonN9.png",
+    "url": "http://69.64.57.208/tvt/playlist.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "2M Monde +1 (1080p)",
+    "country": "MA",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/MvpntzA.png",
+    "url": "https://d2qh3gh0k5vp3v.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-n6pess5lwbghr/2M_ES.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "Africanews French (720p)",
+    "country": "FR",
+    "group": "Francophone",
+    "logo": "https://i.imgur.com/5UxU4zc.png",
+    "url": "https://cdn-euronews.akamaized.net/live/eds/africanews-fr/25050/index.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "AL24 News",
+    "country": "DZ",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/vyVEXYL.png",
+    "url": "https://cdn.live.easybroadcast.io/abr_corp/66_al24_u4yga6h/corp/66_al24_u4yga6h_240p/chunks.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "Al Aoula Inter (1080p)",
+    "country": "MA",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/nq53d2N.png",
+    "url": "https://stream-lb.livemediama.com/alaoula/hls/master.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "Amou Yazid TV (576p)",
+    "country": "DZ",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/L8UPGPC.png",
+    "url": "http://mkstream.servehttp.com:1940/AmouYazid/ay1/playlist.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "CNA (360p)",
+    "country": "DZ",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/Ki3ySUE.png",
+    "url": "https://live.creacast.com/cna/stream/playlist.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "Euronews French (720p)",
+    "country": "FR",
+    "group": "Francophone",
+    "logo": "https://i.imgur.com/8t9mdg9.png",
+    "url": "https://2f6c5bf4.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UmxheHhUVi1ldV9FdXJvbmV3c0ZyYW5jYWlzX0hMUw/playlist.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "France 24 French (1080p)",
+    "country": "FR",
+    "group": "Francophone",
+    "logo": "https://i.imgur.com/u8N6uoj.png",
+    "url": "https://live.france24.com/hls/live/2037179-b/F24_FR_HI_HLS/master_5000.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "Iqraa Africa & Europe (1080p)",
+    "country": "SA",
+    "group": "Francophone",
+    "logo": "https://i.imgur.com/nUlZvSe.png",
+    "url": "https://playlist.fasttvcdn.com/pl/dlkqw1ftuvuuzkcb4pxdcg/Iqraafasttv1/playlist.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "Medi1TV Afrique (1080p)",
+    "country": "MA",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/a20DHnj.png",
+    "url": "https://cdn.live.easybroadcast.io/abr_corp/83_medi1tv-afrique_tm7tu45/playlist.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "Medi 1 TV Maghreb (1080p)",
+    "country": "MA",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/F5OFQsp.jpeg",
+    "url": "https://cdn.live.easybroadcast.io/abr_corp/83_medi1tv-maghreb_jnbspmg/playlist.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "MTA4 Africa (1080p)",
+    "country": "UK",
+    "group": "Francophone",
+    "logo": "https://i.imgur.com/lmVeQQX.png",
+    "url": "https://chlivemta.akamaized.net/hls/live/2010555/mtaafrica1/playlist.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "MTA5 Africa (1080p)",
+    "country": "UK",
+    "group": "Francophone",
+    "logo": "https://i.imgur.com/9Cobb2i.png",
+    "url": "https://chlivemta.akamaized.net/hls/live/2010555/mtaafrica2/playlist.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "Radio Tele Full Gospel",
+    "country": "HT",
+    "group": "Francophone",
+    "logo": "https://i.imgur.com/WbwIp9y.jpeg",
+    "url": "https://f-tx-edge-87.christianworldmedia.com/EJCFG/mp4:EJCFG/playlist.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "RTH-TV2 Gospel (720p)",
+    "country": "US",
+    "group": "Francophone",
+    "logo": "https://i.imgur.com/4z0FiEA.png",
+    "url": "https://2-fss-2.streamhoster.com/pl_120/amlst:206708-4202592/playlist.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "Trace Gospel (1080p)",
+    "country": "FR",
+    "group": "Francophone",
+    "logo": "https://i.imgur.com/X0UmU3K.png",
+    "url": "https://channels.trace.plus/Traceprod/GOSPEL_FR/.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "Trace Latina (1080p)",
+    "country": "FR",
+    "group": "Francophone",
+    "logo": "https://i.imgur.com/CUVAi4u.png",
+    "url": "https://amg01131-tracetv-tracelatina-glewed-vtnk7.amagi.tv/playlist.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "TV5MONDE Chefs (1080p)",
+    "country": "FR",
+    "group": "Francophone",
+    "logo": "https://psi.tv5monde.com/media/static/default/lives/tv5monde-chef.png",
+    "url": "https://tvf-tv5ch.otteravision.com/tvf/tv5ch/tv5ch.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "TVCARiB Gospel (480p)",
+    "country": "SX",
+    "group": "Francophone",
+    "logo": "https://i.imgur.com/fvGlwKo.png",
+    "url": "https://cdn.mycloudstream.io/hls/live/broadcast/wokrhjkd/index.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "VoxAfrica (720p)",
+    "country": "UK",
+    "group": "Francophone",
+    "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/6/63/Voxafrica-1.png/960px-Voxafrica-1.png",
+    "url": "http://69.64.57.208/voxafrica/playlist.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
+  },
+  {
+    "name": "Zylo Fréquence Novelas (1080p)",
+    "country": "FR",
+    "group": "Francophone",
+    "logo": "https://i.imgur.com/fEjNAps.png",
+    "url": "https://d20oth1416y9a1.cloudfront.net/playlist/amg00711-zylofast-frequencenovelas-rakutenus/playlist.m3u8",
+    "source": "noyau-fr",
+    "verified": true,
+    "verifiedAt": "2026-06-13T13:13:23.442Z"
   },
   {
     "name": "FREQUENCE NOVELAS",
@@ -266,1656 +1036,6 @@
     "logo": "",
     "url": "https://amg00711-zylo-amg00711c4-rakuten-us-769.playouts.now.amagi.tv/playlist/amg00711-zylofast-frequencenovelas-rakutenus/playlist.m3u8",
     "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "SCREAM'IN",
-    "country": "FR",
-    "group": "Cinéma",
-    "logo": "",
-    "url": "https://zylo-screamin-rakuten.amagi.tv/hls/amagi_hls_data_rakutenAA-zylo-screamin-rakuten/CDN/master.m3u8",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "SONY ONE HITS ACTION",
-    "country": "FR",
-    "group": "Cinéma",
-    "logo": "",
-    "url": "https://5098a8b860504a3690fd2e7c0a18d68f.mediatailor.us-west-2.amazonaws.com/v1/master/ba62fe743df0fe93366eba3a257d792884136c7f/LINEAR-817-FR-SONYONEHITSACTION-LG_FR/playlist.m3u8",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "SONY ONE HITS COMEDIE",
-    "country": "FR",
-    "group": "Cinéma",
-    "logo": "",
-    "url": "https://7aa9671895264ec9a384dfed1b992171.mediatailor.us-west-2.amazonaws.com/v1/master/ba62fe743df0fe93366eba3a257d792884136c7f/LINEAR-818-FR-SONYONEHITSCOMDIE-LG_FR/playlist.m3u8",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "SONY ONE FAVORIS",
-    "country": "FR",
-    "group": "Cinéma",
-    "logo": "",
-    "url": "https://49d735318d6b4c30a24a7997ea594e1b.mediatailor.us-west-2.amazonaws.com/v1/master/ba62fe743df0fe93366eba3a257d792884136c7f/LINEAR-820-FR-SONYONEFAVORIS-LG_FR/playlist.m3u8",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "SONY ONE SERIES COMEDIES",
-    "country": "FR",
-    "group": "Cinéma",
-    "logo": "",
-    "url": "https://4f2a3e1ff5274297b115cf0f7da1c2cd.mediatailor.us-west-2.amazonaws.com/v1/master/ba62fe743df0fe93366eba3a257d792884136c7f/LINEAR-819-FR-SONYONESRIESCOMDIE-LG_FR/playlist.m3u8",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "SONY ONE SERIES THRILLER",
-    "country": "FR",
-    "group": "Cinéma",
-    "logo": "",
-    "url": "https://483a1e90c18641c9a6d27becd41ad892.mediatailor.us-west-2.amazonaws.com/v1/master/ba62fe743df0fe93366eba3a257d792884136c7f/LINEAR-821-FR-SONYONESRIESTHRILLER-LG_FR/playlist.m3u8",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "EURONEWS FR",
-    "country": "FR",
-    "group": "Informations Françaises",
-    "logo": "https://i.ibb.co/VxLFYSj/euronews.png",
-    "url": "https://euronews-live-fre-fr.fast.rakuten.tv/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6564/bitok/e/26032/euronews-fr.m3u8",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "FRANCE 24 FR",
-    "country": "FR",
-    "group": "Informations Françaises",
-    "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/france/france-24-fr.png",
-    "url": "https://raw.githubusercontent.com/schumijo/iptv/main/playlists/francetv/france24.m3u8",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "PUBLIC-SÉNAT 24H",
-    "country": "FR",
-    "group": "Informations Françaises",
-    "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/france/public-senat-fr.png",
-    "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/publicsenat/publicsenat-dm.m3u8",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "RMC TALK INFO",
-    "country": "FR",
-    "group": "Informations Françaises",
-    "logo": "https://static-cdn.tv.sfr.net/data/img/apps/chaines/logos/img300RMCTALKINFOcoul.png",
-    "url": "https://d75bm5ggq4k1o.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-gui89fv6hprsj/RMC_TALK_INFO_FR.m3u8",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "INFOSPORT+",
-    "country": "FR",
-    "group": "Sport",
-    "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/france/infosport-plus-fr.png",
-    "url": "http://212.102.60.80/Infosport/index.m3u8",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "ÉQUIDIA",
-    "country": "FR",
-    "group": "Sport Thématique",
-    "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/france/equidia-fr.png",
-    "url": "https://raw.githubusercontent.com/schumijo/iptv/main/playlists/equidia/equidia-live2.m3u8",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "TRACE SPORTS STARS",
-    "country": "FR",
-    "group": "Sport Thématique",
-    "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/france/trace-sport-stars-fr.png",
-    "url": "https://lightning-tracesport-samsungau.amagi.tv/playlist.m3u8",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "AFTER FOOT TV",
-    "country": "FR",
-    "group": "Sport Thématique",
-    "logo": "https://freebox.cdn.scw.iliad.fr/large_logo_afterfoot_TV_fondblanc_83130699dd.png",
-    "url": "https://d278gam2ft6q08.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-0ic4hqa502el6/AfterfootTV_FR.m3u8",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "MOTORVISION TV",
-    "country": "FR",
-    "group": "Sport Thématique",
-    "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/france/motorvision-tv-fr.png",
-    "url": "https://d39g1vxj2ef6in.cloudfront.net/v1/master/3fec3e5cac39a52b2132f9c66c83dae043dc17d4/prod-rakuten-stitched/master.m3u8?ads.xumo_channelId=88883047",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "FRANCE TV SPORT",
-    "country": "FR",
-    "group": "Sport Thématique",
-    "logo": "",
-    "url": "https://raw.githubusercontent.com/schumijo/iptv/main/playlists/francetv/sport.m3u8",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "FRANCE TV DOCS",
-    "country": "FR",
-    "group": "Découverte",
-    "logo": "https://i.ibb.co/kJjHW61/frdocs.png",
-    "url": "https://raw.githubusercontent.com/schumijo/iptv/main/playlists/francetv/docs.m3u8",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "RMC MECANIC",
-    "country": "FR",
-    "group": "Style de vie/Pratique",
-    "logo": "https://static-cdn.tv.sfr.net/data/img/apps/chaines/logos/img300RMCMECANICcoul.png",
-    "url": "https://d31lyfwi8gzfyr.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-ebepfdmg74kzh/RMC_MECANIC_FR.m3u8",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "FASHION TV",
-    "country": "FR",
-    "group": "Style de vie/Pratique",
-    "logo": "https://freebox.cdn.scw.iliad.fr/241_21651551ee.png",
-    "url": "https://edge-fast3.evrideo.tv/bfdbb576-83f7-11f0-9f89-0200170e3e04_1000028043_HLS/manifest.m3u8",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "MY ZEN TV",
-    "country": "FR",
-    "group": "Style de vie/Pratique",
-    "logo": "https://freebox.cdn.scw.iliad.fr/243_4125a164b3.png",
-    "url": "https://cdn-ue1-prod.tsv2.amagi.tv/linear/amg01255-secomcofites-my-myzen-en-plex/playlist.m3u8",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "MIEUX TV",
-    "country": "FR",
-    "group": "Style de vie/Pratique",
-    "logo": "https://freebox.cdn.scw.iliad.fr/large_thumbnail_COULEUR_edd99e7eee.png",
-    "url": "https://raw.githubusercontent.com/schumijo/iptv/main/playlists/francetv/mieux.m3u8",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "INA",
-    "country": "FR",
-    "group": "Style de vie/Pratique",
-    "logo": "",
-    "url": "https://raw.githubusercontent.com/schumijo/iptv/main/playlists/francetv/ina.m3u8",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "MÉLODY",
-    "country": "FR",
-    "group": "Musique",
-    "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/france/melody-fr.png",
-    "url": "https://live.creacast.com/telemelody/smil:telemelody-yjvCxE7x.smil/playlist.m3u8",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "CLUBBING TV",
-    "country": "FR",
-    "group": "Musique",
-    "logo": "https://freebox.cdn.scw.iliad.fr/274_8e77a87554.png",
-    "url": "https://d1j2csarxnwazk.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-uze1m6xh4fiyr-ssai-prd/master.m3u8",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "GÉNÉRATIONS TV",
-    "country": "FR",
-    "group": "Musique",
-    "logo": "https://freebox.cdn.scw.iliad.fr/282_540a739064.png",
-    "url": "https://edge11.vedge.infomaniak.com/livecast/ik:generation-tv/manifest.m3u8",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "TRACE LATINA",
-    "country": "FR",
-    "group": "Musique",
-    "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/france/trace-latina-fr.png",
-    "url": "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg01131-tracetv-tracelatinaes-samsungspain/playlist.m3u8",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "BBLACK! AFRICA",
-    "country": "FR",
-    "group": "Musique",
-    "logo": "https://i.ibb.co/JB18vMW/bblack.png",
-    "url": "https://livevideo.vedge.infomaniak.com/livecast/ik:bblackafrica/manifest.m3u8",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "BBLACK! CARIBBEAN",
-    "country": "FR",
-    "group": "Musique",
-    "logo": "https://i.ibb.co/JB18vMW/bblack.png",
-    "url": "https://livevideo.vedge.infomaniak.com/livecast/ik:bblackcaribbean/manifest.m3u8",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "BBLACK! CLASSIK",
-    "country": "FR",
-    "group": "Musique",
-    "logo": "https://i.ibb.co/JB18vMW/bblack.png",
-    "url": "https://livevideo.vedge.infomaniak.com/livecast/ik:bblackclassik/manifest.m3u8",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "MADRAS FM TV",
-    "country": "FR",
-    "group": "Musique",
-    "logo": "https://freebox.cdn.scw.iliad.fr/medium_Logo_Madras_02_f8b735e803.png",
-    "url": "https://edge17.vedge.infomaniak.com/livecast/ik:madrasfmtv/manifest.m3u8",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "EQUIDIA RACING TROT",
-    "country": "FR",
-    "group": "Sport Multiplex",
-    "logo": "",
-    "url": "https://raw.githubusercontent.com/schumijo/iptv/main/playlists/equidia/equidia-racingtrot.m3u8",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "EQUIDIA RACING GALOP",
-    "country": "FR",
-    "group": "Sport Multiplex",
-    "logo": "",
-    "url": "https://raw.githubusercontent.com/schumijo/iptv/main/playlists/equidia/equidia-racinggalop.m3u8",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "EQUIDIA RACING MAG",
-    "country": "FR",
-    "group": "Sport Multiplex",
-    "logo": "",
-    "url": "https://raw.githubusercontent.com/schumijo/iptv/main/playlists/equidia/equidia-racingmag.m3u8",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "EQUIDIA RACING 1",
-    "country": "FR",
-    "group": "Sport Multiplex",
-    "logo": "",
-    "url": "https://raw.githubusercontent.com/schumijo/iptv/main/playlists/equidia/equidia-racing1.m3u8",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "EQUIDIA RACING 2",
-    "country": "FR",
-    "group": "Sport Multiplex",
-    "logo": "",
-    "url": "https://raw.githubusercontent.com/schumijo/iptv/main/playlists/equidia/equidia-racing2.m3u8",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "EQUIDIA RACING 3",
-    "country": "FR",
-    "group": "Sport Multiplex",
-    "logo": "",
-    "url": "https://raw.githubusercontent.com/schumijo/iptv/main/playlists/equidia/equidia-racing3.m3u8",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "EQUIDIA RACING 4",
-    "country": "FR",
-    "group": "Sport Multiplex",
-    "logo": "",
-    "url": "https://raw.githubusercontent.com/schumijo/iptv/main/playlists/equidia/equidia-racing4.m3u8",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "EQUIDIA RACING 5",
-    "country": "FR",
-    "group": "Sport Multiplex",
-    "logo": "",
-    "url": "https://raw.githubusercontent.com/schumijo/iptv/main/playlists/equidia/equidia-racing5.m3u8",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "EQUIDIA RACING 6",
-    "country": "FR",
-    "group": "Sport Multiplex",
-    "logo": "",
-    "url": "https://raw.githubusercontent.com/schumijo/iptv/main/playlists/equidia/equidia-racing6.m3u8",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "EQUIDIA RACING 7",
-    "country": "FR",
-    "group": "Sport Multiplex",
-    "logo": "",
-    "url": "https://raw.githubusercontent.com/schumijo/iptv/main/playlists/equidia/equidia-racing7.m3u8",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "EQUIDIA RACING 8",
-    "country": "FR",
-    "group": "Sport Multiplex",
-    "logo": "",
-    "url": "https://raw.githubusercontent.com/schumijo/iptv/main/playlists/equidia/equidia-racing8.m3u8",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "RTL TVI",
-    "country": "BE",
-    "group": "Etrangère",
-    "logo": "https://i.ibb.co/kKMpCzz/rtltvi.png",
-    "url": "https://tvi-live-hls.akamaized.net/hls/live/2038650/TVI-Live-HLS/master.m3u8",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "BEL RTL",
-    "country": "BE",
-    "group": "Etrangère",
-    "logo": "https://i.ibb.co/NyHqX5R/belrtl.png",
-    "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/rtl/be/belrtl.m3u8",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "LE FIGARO IDF",
-    "country": "FR",
-    "group": "Locale",
-    "logo": "https://freebox.cdn.scw.iliad.fr/large_Le_Figaro_TV_Id_F_RVB_1b0ecffb64.png",
-    "url": "https://static.lefigaro.fr/secom/tnt.m3u8",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "20 MINUTES TV IDF",
-    "country": "FR",
-    "group": "Locale",
-    "logo": "https://freebox.cdn.scw.iliad.fr/large_20_minutes_tv_idf_2025_svg_102a63bdb4.png",
-    "url": "https://live-20minutestv.digiteka.com/1961167769/index.m3u8",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "WÉO TV",
-    "country": "FR",
-    "group": "Locale",
-    "logo": "https://freebox.cdn.scw.iliad.fr/large_WEO_LA_VOIX_DU_NORD_66b319c9a9.jpg",
-    "url": "https://lives.digiteka.com/stream/c58028c2-a58b-4526-9ec8-389cad4a71e8/index.m3u8",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Un si grand soleil",
-    "country": "FR",
-    "group": "Séries TV",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR3600001R1_20260127T040243SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR3600001R1",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "100% Comedy",
-    "country": "FR",
-    "group": "Divertissement",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR3600003DS_20260127T040232SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR3600003DS",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Euronews EN DIRECT",
-    "country": "FR",
-    "group": "Actualités",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR2600004SS_20250415T020856SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR2600004SS",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Top Films - Rakuten TV",
-    "country": "FR",
-    "group": "Cinéma",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR2600007CB_20250415T020909SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR2600007CB",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "ça Chauffe en Cuisine",
-    "country": "FR",
-    "group": "Voyages et Gastronomie",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR34000032F_20260127T040246SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR34000032F",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Plus belle la vie",
-    "country": "FR",
-    "group": "Séries TV",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBD37000020Y_20260113T032405SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBD37000020Y",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "RMC Wow",
-    "country": "FR",
-    "group": "Divertissement",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR300001M1_20241015T042812SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR300001M1",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "RMC MYSTERE",
-    "country": "FR",
-    "group": "Divertissement",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR300006GF_20241106T142644SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR300006GF",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Les Anges",
-    "country": "FR",
-    "group": "Télé réalité",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBD4100001DF_20260113T032403SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBD4100001DF",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Le Meilleur de la TV Réalité",
-    "country": "FR",
-    "group": "Télé réalité",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBD3900005MB_20250805T005519SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBD3900005MB",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Le Meilleur des Jeux TV",
-    "country": "FR",
-    "group": "Divertissement",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR3600004UH_20251125T101544SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR3600004UH",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Qui veut gagner des millions ?",
-    "country": "FR",
-    "group": "Divertissement",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBD1900007PQ_20260127T040241SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBD1900007PQ",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Les Z'amours",
-    "country": "FR",
-    "group": "Divertissement",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBD1900005BA_20251013T054034SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBD1900005BA",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Motus",
-    "country": "FR",
-    "group": "Divertissement",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBB490000412_20241015T042740SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBB490000412",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Familles en Scène",
-    "country": "FR",
-    "group": "Divertissement",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR3600002W2_20241106T142619SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR3600002W2",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Y'a que la vérité qui compte",
-    "country": "FR",
-    "group": "Divertissement",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBC900003KP_20250923T010349SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBC900003KP",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Dhar Mann TV",
-    "country": "FR",
-    "group": "Divertissement",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR3800005NP_20251111T012043SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR3800005NP",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Juste Pour Rire",
-    "country": "FR",
-    "group": "Divertissement",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBA3300035UK_20250923T010337SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBA3300035UK",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "FailArmy",
-    "country": "FR",
-    "group": "Divertissement",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBA33000234L_20241015T035938SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBA33000234L",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "People Are Awesome",
-    "country": "FR",
-    "group": "Divertissement",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBA10000029E_20241015T042540SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBA10000029E",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "ADN",
-    "country": "FR",
-    "group": "Anime",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBD5100001ZA_20250610T011318SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBD5100001ZA",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Yu-Gi-Oh!",
-    "country": "FR",
-    "group": "Anime",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR7000045E_20250408T021644SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR7000045E",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Beyblade",
-    "country": "FR",
-    "group": "Anime",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR1400001VU_20241015T040223SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR1400001VU",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Wasabi",
-    "country": "FR",
-    "group": "Anime",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBD41000051L_20250708T031704SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBD41000051L",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Incroyables Fortunes",
-    "country": "FR",
-    "group": "Divertissement",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR600001I2_20251202T002639SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR600001I2",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Epicurieux avec Jamy",
-    "country": "FR",
-    "group": "Divertissement",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBD5100003TP_20251202T002632SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBD5100003TP",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Culture Pub",
-    "country": "FR",
-    "group": "Divertissement",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBD110000181_20241015T040244SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBD110000181",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "MGG FAST",
-    "country": "FR",
-    "group": "Divertissement",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBC3900003ZH_20250422T045312SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBC3900003ZH",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Fireplace Vibes",
-    "country": "FR",
-    "group": "Divertissement",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR2200002HV_20251216T040612SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR2200002HV",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "BBC Series",
-    "country": "FR",
-    "group": "Séries TV",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR2900001UF_20250916T003553SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR2900001UF",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Alerte à Malibu",
-    "country": "FR",
-    "group": "Séries TV",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBC4700002RF_20251028T011415SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBC4700002RF",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Rookie Blue",
-    "country": "FR",
-    "group": "Séries TV",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR2100001VM_20251125T101549SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR2100001VM",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Un Village Français",
-    "country": "FR",
-    "group": "Séries TV",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBC39000050N_20241015T040406SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBC39000050N",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Les Routes du Paradis",
-    "country": "FR",
-    "group": "Séries TV",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR3100005MK_20251111T012056SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR3100005MK",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Degrassi",
-    "country": "FR",
-    "group": "Séries TV",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBD19000115C_20241015T040247SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBD19000115C",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Les filles d'à cÃ´té",
-    "country": "FR",
-    "group": "Séries TV",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBC47000054S_20241015T040346SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBC47000054S",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Génération Sitcoms",
-    "country": "FR",
-    "group": "Séries TV",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBC4700001XG_20250624T021408SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBC4700001XG",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "K-Drama+",
-    "country": "FR",
-    "group": "Séries TV",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBD41000124S_20251013T054031SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBD41000124S",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Mr Bean Animated",
-    "country": "FR",
-    "group": "Séries TV",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR90000160_20251028T011422SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR90000160",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Fréquence Novelas",
-    "country": "FR",
-    "group": "Séries TV",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBC800001X0_20241025T153329SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBC800001X0",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Passion Novelas",
-    "country": "FR",
-    "group": "Séries TV",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBD15000024B_20241015T042751SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBD15000024B",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Tele.Novela",
-    "country": "FR",
-    "group": "Séries TV",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBC14000010C_20241015T042852SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBC14000010C",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Les riches pleurent aussi",
-    "country": "FR",
-    "group": "Séries TV",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBA3300022OA_20250819T032118SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBA3300022OA",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Passion Bollywood",
-    "country": "FR",
-    "group": "Séries TV",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR1100001V1_20250513T005820SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR1100001V1",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Zee One",
-    "country": "FR",
-    "group": "Séries TV",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR360000680_20251013T054021SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR360000680",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Jodha Akbar",
-    "country": "FR",
-    "group": "Séries TV",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR4000001TX_20251202T002642SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR4000001TX",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Faites entrer l'accusé",
-    "country": "FR",
-    "group": "Crime",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR1400002XF_20251111T012047SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR1400002XF",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Homicide",
-    "country": "FR",
-    "group": "Crime",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBB49000033R_20250902T003711SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBB49000033R",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Love Crime & History",
-    "country": "FR",
-    "group": "Crime",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBD43000016D_20250715T004340SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBD43000016D",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Crime - Rakuten TV",
-    "country": "FR",
-    "group": "Crime",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR2600009UG_20241126T043134SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR2600009UG",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "IntoCrime",
-    "country": "FR",
-    "group": "Crime",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR300032ZK_20250304T015622SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR300032ZK",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Crimes Enquêtes Faits Divers",
-    "country": "FR",
-    "group": "Crime",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR600002ZR_20251202T002626SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR600002ZR",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "100% Docs Crime",
-    "country": "FR",
-    "group": "Crime",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBD39000064E_20251118T015629SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBD39000064E",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "J'irai dormir chez vous",
-    "country": "FR",
-    "group": "Documentaires",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBD4800001P4_20241106T142647SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBD4800001P4",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "RMC alerte secours",
-    "country": "FR",
-    "group": "Documentaires",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR30000271_20241015T042814SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR30000271",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Les secrets de nos régions",
-    "country": "FR",
-    "group": "Documentaires",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBD410000436_20250527T014719SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBD410000436",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "La Maison France 5",
-    "country": "FR",
-    "group": "Documentaires",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR4200001BN_20251209T004439SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR4200001BN",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Mission Intervention",
-    "country": "FR",
-    "group": "Documentaires",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR700002UP_20251202T002629SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR700002UP",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Mayday: Catastrophe Aérienne",
-    "country": "FR",
-    "group": "Documentaires",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR400000413_20251209T004503SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR400000413",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "BFM Grands Reportages",
-    "country": "FR",
-    "group": "Documentaires",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR300004J5_20241015T040221SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR300004J5",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Doc Story",
-    "country": "FR",
-    "group": "Documentaires",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR1200001N2_20241015T040252SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR1200001N2",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "L'effet papillon",
-    "country": "FR",
-    "group": "Documentaires",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBD11000038N_20250211T013831SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBD11000038N",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Destination Nature",
-    "country": "FR",
-    "group": "Documentaires",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBC4000001IO_20260127T040238SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBC4000001IO",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "BBC Earth",
-    "country": "FR",
-    "group": "Documentaires",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR3200001NQ_20250923T010333SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR3200001NQ",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "NatureTime",
-    "country": "FR",
-    "group": "Documentaires",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBB4900002D4_20241015T042746SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBB4900002D4",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Cap Terre",
-    "country": "FR",
-    "group": "Documentaires",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBC3900004DS_20250923T010330SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBC3900004DS",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Voyages & Saveurs",
-    "country": "FR",
-    "group": "Voyages et Gastronomie",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR3600005C7_20251125T101554SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR3600005C7",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Invitation au voyage",
-    "country": "FR",
-    "group": "Voyages et Gastronomie",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR3700004HZ_20251230T031040SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR3700004HZ",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "TV5 MONDE+ Chefs",
-    "country": "FR",
-    "group": "Voyages et Gastronomie",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR1300003HM_20251013T054012SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR1300003HM",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "TV5 Monde Voyage",
-    "country": "FR",
-    "group": "Voyages et Gastronomie",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR1800004EP_20251013T054046SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR1800004EP",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Echappées belles & co",
-    "country": "FR",
-    "group": "Voyages et Gastronomie",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBC3500002E4_20241015T040301SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBC3500002E4",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "BFM 2",
-    "country": "FR",
-    "group": "Actualités",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR1400003Y0_20241015T040216SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR1400003Y0",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "TV5 Monde Info",
-    "country": "FR",
-    "group": "Actualités",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR1800005X0_20251013T054015SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR1800005X0",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Al Jazeera",
-    "country": "FR",
-    "group": "Actualités",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR23000013B_20251118T015405SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR23000013B",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "CNN Headlines",
-    "country": "FR",
-    "group": "Actualités",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBD190001055_20251209T004428SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBD190001055",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Sky News International",
-    "country": "FR",
-    "group": "Actualités",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR3400002VW_20250624T020534SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR3400002VW",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Reuters",
-    "country": "FR",
-    "group": "Actualités",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBD490000195_20241015T042818SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBD490000195",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Bloomberg TV+",
-    "country": "FR",
-    "group": "Actualités",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR1400004VF_20250603T004911SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR1400004VF",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "L'Equipe",
-    "country": "FR",
-    "group": "Sports",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR200016Y5_20250422T103213SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR200016Y5",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "FIFA+",
-    "country": "FR",
-    "group": "Sports",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBA3300037Y7_20251028T011417SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBA3300037Y7",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Top Gear",
-    "country": "FR",
-    "group": "Sports",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR2400001TP_20241015T042856SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR2400001TP",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Drive TV",
-    "country": "FR",
-    "group": "Sports",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBD3600001BQ_20241015T040258SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBD3600001BQ",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Vevo Pop",
-    "country": "FR",
-    "group": "Musique",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBC2100001YY_20241015T040412SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBC2100001YY",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Vevo Hip-Hop & R&B",
-    "country": "FR",
-    "group": "Musique",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBC2100002JA_20241015T040410SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBC2100002JA",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Vevo Rétro",
-    "country": "FR",
-    "group": "Musique",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBD1900013CB_20250513T005804SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBD1900013CB",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "K-POP by CJ ENM",
-    "country": "FR",
-    "group": "Musique",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR3900001AC_20241105T032704SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR3900001AC",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Cool Summer Channel",
-    "country": "FR",
-    "group": "Musique",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR2500001BS_20241015T040238SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR2500001BS",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "NEW KPOP",
-    "country": "FR",
-    "group": "Musique",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR1700002OZ_20251013T054040SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR1700002OZ",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Emotion",
-    "country": "FR",
-    "group": "Musique",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBC900001LB_20241015T040425SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBC900001LB",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Caillou",
-    "country": "FR",
-    "group": "Jeunesse",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR4800002NE_20250121T012923SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR4800002NE",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Pocoyo",
-    "country": "FR",
-    "group": "Jeunesse",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR700001VJ_20251111T012101SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR700001VJ",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Les Lapins Crétins",
-    "country": "FR",
-    "group": "Jeunesse",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBD2300002CM_20251209T004459SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBD2300002CM",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Masha et Michka",
-    "country": "FR",
-    "group": "Jeunesse",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR38000024W_20260120T031404SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR38000024W",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Charlotte aux Fraises",
-    "country": "FR",
-    "group": "Jeunesse",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBD1900012T7_20241015T040231SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBD1900012T7",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "SuperToons TV",
-    "country": "FR",
-    "group": "Jeunesse",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBD5100002NL_20250729T045525SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBD5100002NL",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "100% Kidz",
-    "country": "FR",
-    "group": "Jeunesse",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR3400004L5_20251230T031031SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR3400004L5",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Famille - Rakuten TV",
-    "country": "FR",
-    "group": "Cinéma",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR2600001PI_20251230T031018SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR2600001PI",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Family Club",
-    "country": "FR",
-    "group": "Cinéma",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBD2300001UQ_20250121T012933SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBD2300001UQ",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Action Totale",
-    "country": "FR",
-    "group": "Cinéma",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR220000105_20250617T031603SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR220000105",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Brefcinema",
-    "country": "FR",
-    "group": "Cinéma",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBA1000009KO_20241106T142654SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBA1000009KO",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Ciné Nanar",
-    "country": "FR",
-    "group": "Cinéma",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBB39000020C_20250902T003655SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBB39000020C",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "100% Cinema",
-    "country": "FR",
-    "group": "Cinéma",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR13000020W_20250819T032458SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR13000020W",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "MyTime Movie Network",
-    "country": "FR",
-    "group": "Cinéma",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBA2200010VN_20260127T040227SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBA2200010VN",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Moviesphere",
-    "country": "FR",
-    "group": "Cinéma",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR42000023H_20251209T004507SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR42000023H",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Allociné",
-    "country": "FR",
-    "group": "Cinéma",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBD3900001QP_20241015T040203SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBD3900001QP",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Trailers",
-    "country": "FR",
-    "group": "Cinéma",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBC9000041F_20250715T004338SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBC9000041F",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Films Romantiques - Rakuten TV",
-    "country": "FR",
-    "group": "Cinéma",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR2600003OZ_20250121T012912SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR2600003OZ",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Runtime",
-    "country": "FR",
-    "group": "Cinéma",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBB50000016B_20241030T154324SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBB50000016B",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Comédies - Rakuten TV",
-    "country": "FR",
-    "group": "Cinéma",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR26000068C_20241022T044043SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR26000068C",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Ciné Western",
-    "country": "FR",
-    "group": "Cinéma",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBD19000095S_20260127T040235SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FRBD19000095S",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Sci-Fi - Rakuten TV",
-    "country": "FR",
-    "group": "Cinéma",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR4100001D0_20251125T101552SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR4100001D0",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Top Sci-Fi",
-    "country": "FR",
-    "group": "Cinéma",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR4600001FK_20251216T040617SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR4600001FK",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Box Office Drama",
-    "country": "FR",
-    "group": "Cinéma",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR3700003N4_20250610T011321SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR3700003N4",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Shadowz",
-    "country": "FR",
-    "group": "Cinéma",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR1800003VF_20241210T052746SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR1800003VF",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Shark TV",
-    "country": "FR",
-    "group": "Cinéma",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR4000002JN_20251230T031021SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR4000002JN",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Box Office Action",
-    "country": "FR",
-    "group": "Cinéma",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR370000288_20260113T032400SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR370000288",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Drames - Rakuten TV",
-    "country": "FR",
-    "group": "Cinéma",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR2600005LH_20241015T040143SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR2600005LH",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Films d'action - Rakuten TV",
-    "country": "FR",
-    "group": "Cinéma",
-    "logo": "https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FR2600002X9_20240827T040439SQUARE.png",
-    "url": "https://jmp2.uk/stvp-FR2600002X9",
-    "source": "schumijo",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "NRJ 12",
-    "country": "FR",
-    "group": "France",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/NRJ12_logo_2015.svg/749px-NRJ12_logo_2015.svg.png",
-    "url": "https://nrj12.nrjaudio.fm/hls/live/2038374/nrj_12/master.m3u8",
-    "source": "free-tv",
     "verified": true,
     "verifiedAt": "2026-06-13T08:20:30.387Z"
   },
@@ -1930,131 +1050,11 @@
     "verifiedAt": "2026-06-13T08:20:30.387Z"
   },
   {
-    "name": "ADN TV+ (720p)",
-    "country": "FR",
-    "group": "Animation",
-    "logo": "https://i.imgur.com/HQZQyWt.png",
-    "url": "https://d3b73b34o7cvkq.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-gz2sgqzp076kf/adn.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Africa 24 English (1080p)",
-    "country": "FR",
-    "group": "News",
-    "logo": "https://africa24tv.com/wp-content/uploads/2023/12/logo-Africa24TVEnglish.png",
-    "url": "https://edge20.vedge.infomaniak.com/livecast/ik:africa24english/manifest.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Africa 24 Sport (1080p)",
-    "country": "FR",
-    "group": "News",
-    "logo": "https://i0.wp.com/africa24tv.com/wp-content/uploads/2023/12/LOGO-AFRICASPORT-4-HD-sans-fond.png?fit=512%2C107&ssl=1",
-    "url": "https://africa24.vedge.infomaniak.com/livecast/ik:africa24sport/manifest.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Alpe d’Huez TV (720p)",
-    "country": "FR",
-    "group": "General",
-    "logo": "https://i.imgur.com/090tCQ5.png",
-    "url": "https://edge13.vedge.infomaniak.com/livecast/ik:adhtv/manifest.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
     "name": "Banijay Mr Bean Animé (1080p)",
     "country": "UK",
     "group": "Animation",
     "logo": "https://static.wikia.nocookie.net/logopedia/images/2/25/Mr._Bean_Animated_Series_stacked_logo.png",
     "url": "https://amg00627-amg00627c31-rakuten-fr-3991.playouts.now.amagi.tv/playlist/amg00627-banijayfast-mrbeanfrcc-rakutenfr/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Brionnais TV (720p)",
-    "country": "FR",
-    "group": "General",
-    "logo": "https://i.imgur.com/y94bhqX.jpg",
-    "url": "https://stream2.mandarine.media/brionnaistv/brionnaistv/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Canal 32 (1080p)",
-    "country": "FR",
-    "group": "General",
-    "logo": "https://i.imgur.com/lAsE6kN.png",
-    "url": "https://event.vedge.infomaniak.com/livecast/ik:canal32_4/manifest.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Cannes Lérins TV (1080p)",
-    "country": "FR",
-    "group": "General",
-    "logo": "https://i.imgur.com/atlgnum.png",
-    "url": "https://vdo2.pro-fhi.net:3628/live/uppodsfqlive.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "DBM TV (1080p)",
-    "country": "FR",
-    "group": "Music",
-    "logo": "https://i.imgur.com/ab6p2SW.png",
-    "url": "https://dbmtv.vedge.infomaniak.com/livecast/dbmtv/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Disney Jr. (1080p)",
-    "country": "FR",
-    "group": "Kids",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/3/36/2019_Disney_Junior_logo.svg",
-    "url": "http://151.80.18.177:86/Disney_Junior_HD/index.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Equidia (1080p)",
-    "country": "FR",
-    "group": "Sports",
-    "logo": "https://i.imgur.com/QPpbRcZ.png",
-    "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/equidia/live2.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Euronews French (720p)",
-    "country": "FR",
-    "group": "News",
-    "logo": "https://i.imgur.com/8t9mdg9.png",
-    "url": "https://2f6c5bf4.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UmxheHhUVi1ldV9FdXJvbmV3c0ZyYW5jYWlzX0hMUw/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "FashionTV Secrets (1080p)",
-    "country": "FR",
-    "group": "Lifestyle",
-    "logo": "https://i.ibb.co/fVGJyCC8/w512.png",
-    "url": "https://ssai.aniview.com/api/v1/hls/stream.m3u8?AVS_SSAIID=67c0c39764ad6f7dab07aa0b&AV_APPNAME=[ADS.APP_NAME]&AV_APPPKGNAME=[ADS.APP_BUNDLE]&AV_APPSTOREURL=[ADS.APP_STORE_URL]&AV_CCPA=[ADS.US_PRIVACY]&AV_CLIENT_SECTION=ftv_secrets&AV_CONSENT=[ADS.GDPR_CONSENT]&AV_CONTENT_CAT=IAB7&AV_CONTENT_CHANNEL=&AV_CONTENT_CONTEXT=&AV_CONTENT_EPISODE=&AV_CONTENT_GENRE=fashion+and+lifestyle&AV_CONTENT_ID=[ADS.VIDAA_ADS_CONTENTID]&AV_CONTENT_KEYWORDS=&AV_CONTENT_LANGUAGE=en&AV_CONTENT_LENGTH=&AV_CONTENT_NETWORK=&AV_CONTENT_PROVIDER=FTV&AV_CONTENT_RATING=R&AV_CONTENT_SEASON=&AV_CONTENT_SERIES=&AV_CONTENT_TITLE=&AV_CONTENT_URL=&AV_DNT=[ADS.DNT]&AV_GDPR=[ADS.GDPR]&AV_HEIGHT=[ADS.H]&AV_IDFA=[ADS.IFA]&AV_IFA_TYPE=[ADS.IFA_TYPE]&AV_LANGUAGE=[ADS.DEVICE_LANGUAGE]&AV_OSVERS=[ADS.DEVICE_OSV]&AV_RTB_DEVICE_TYPE=[ADS.DEVICE_TYPE]&AV_VAUTH=[ADS.VAUTH]&AV_WIDTH=[ADS.W]&Content_Id=[ADS.ADS_CONTENTID]&ads.vidaa_ads_param=1191723366&cb=[CACHEBUSTER]&content_channel_name=ftv+-fashiontv+Secrets&content_livestream=1",
     "source": "iptv-org",
     "verified": true,
     "verifiedAt": "2026-06-13T08:20:30.387Z"
@@ -2070,231 +1070,11 @@
     "verifiedAt": "2026-06-13T08:20:30.387Z"
   },
   {
-    "name": "France 24 French (1080p)",
-    "country": "FR",
-    "group": "News",
-    "logo": "https://i.imgur.com/u8N6uoj.png",
-    "url": "https://live.france24.com/hls/live/2037179-b/F24_FR_HI_HLS/master_5000.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Francophonie24 (1080p)",
-    "country": "FR",
-    "group": "Documentary",
-    "logo": "https://i.imgur.com/uM1v1sd.png",
-    "url": "https://5421175365ea3.streamlock.net/live/smil:switch.smil/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Generations TV (576p)",
-    "country": "FR",
-    "group": "Undefined",
-    "logo": "https://i.imgur.com/NgBrDMe.png",
-    "url": "https://event.vedge.infomaniak.com/livecast/ik:generation-tv/manifest.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "HANDICAP TV France",
-    "country": "FR",
-    "group": "Lifestyle",
-    "logo": "https://i.imgur.com/vXbAeD0.png",
-    "url": "https://srv.webtvmanager.fr:3697/stream/play.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "ILTV (720p)",
-    "country": "FR",
-    "group": "Undefined",
-    "logo": "https://i.imgur.com/fVhrJHK.png",
-    "url": "https://live.creacast.com/iltv/smil:iltv.smil/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Littoral FM (720p)",
-    "country": "FR",
-    "group": "Music",
-    "logo": "https://i.imgur.com/DCZKAQ1.png",
-    "url": "https://live.creacast.com/littoralfm-ch1/stream/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "MDL (720p)",
-    "country": "FR",
-    "group": "Undefined",
-    "logo": "https://i.imgur.com/REN30bx.png",
-    "url": "http://tv.mondeduloisir.fr:1935/tixtv/smil:web.smil/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Monte Carlo Digital Television (1080p)",
-    "country": "FR",
-    "group": "Lifestyle",
-    "logo": "https://i.imgur.com/99h8F1y.jpeg",
-    "url": "https://fl718492-exthls-p1.flovp.com/fl718492/live/live.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "My Gospel TV",
-    "country": "FR",
-    "group": "Music",
-    "logo": "https://mygospeltv.fr/wp-content/uploads/2022/05/MY-GODPEL-TV-e1652783900988.png",
-    "url": "https://streamtv.cmediahosthosting.net:3046/live/mygospeltvlive.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Nature Time France (1080p)",
-    "country": "CA",
-    "group": "Documentary",
-    "logo": "https://i.imgur.com/72JmyjM.png",
-    "url": "https://bamusa-naturetime-emea-fra-rakuten.amagi.tv/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Nickelodeon (1080p)",
-    "country": "FR",
-    "group": "Kids",
-    "logo": "https://i.imgur.com/E84jnP8.png",
-    "url": "http://151.80.18.177:86/Nickelodeon_FR/index.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Nickelodeon Junior (1080p)",
-    "country": "FR",
-    "group": "Kids",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Nickelodeon_Junior.png/960px-Nickelodeon_Junior.png",
-    "url": "http://151.80.18.177:86/Nickelodeon_Junior/index.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "P2M TV (720p)",
-    "country": "FR",
-    "group": "Music",
-    "logo": "https://i.imgur.com/TrecSeG.png",
-    "url": "https://vdo2.pro-fhi.net:3207/stream/play.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Qwest TV Jazz & Beyond (1080p)",
-    "country": "FR",
-    "group": "Music",
-    "logo": "https://i.imgur.com/89yWH5L.png",
-    "url": "https://samsungau-qwestjazz-samsungtv-zw2jc.amagi.tv/playlist/samsungau-qwestjazz-samsungtv/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "RFM TV",
-    "country": "FR",
-    "group": "Undefined",
-    "logo": "https://i.imgur.com/FVDTJxW.png",
-    "url": "http://315e5a5d.ottrast.com/iptv/MM4E93NGF5LADZ/1038/index.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "TRACE Brazuca (1080p)",
-    "country": "FR",
-    "group": "Music",
-    "logo": "https://i.imgur.com/DFBocPu.png",
-    "url": "https://amg01131-tracetv-amg01131c4-stirr-us-4390.playouts.now.amagi.tv/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Trace Gospel (1080p)",
-    "country": "FR",
-    "group": "Music",
-    "logo": "https://i.imgur.com/X0UmU3K.png",
-    "url": "https://channels.trace.plus/Traceprod/GOSPEL_FR/.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "TV3V (720p)",
-    "country": "FR",
-    "group": "General",
-    "logo": "https://i.ibb.co/X2yd0zL/logo-tv3v.jpg",
-    "url": "https://tv3v.live-kd.com/live/tv3v/livestream/index.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "TV7 Colmar (576p)",
-    "country": "FR",
-    "group": "General",
-    "logo": "https://i.imgur.com/kSdGi43.png",
-    "url": "https://tv7.live-kd.com/live/tv7/livestream/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
     "name": "TV Monaco (1080p)",
     "country": "MC",
     "group": "General",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/TVMonaco_2023.svg/960px-TVMonaco_2023.svg.png",
     "url": "https://production-fast-mcrtv.content.okast.tv/channels/2116dc08-1959-465d-857f-3619daefb66b/b702b2b9-aebd-436c-be69-2118f56f3d86/master.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "ViàMatélé (1080p)",
-    "country": "FR",
-    "group": "Undefined",
-    "logo": "https://i.imgur.com/XVCV9rj.png",
-    "url": "https://5dd226f8f01e8.streamlock.net/via-matele-live/matelelive_1080/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "viàTéléPaese (720p)",
-    "country": "FR",
-    "group": "General",
-    "logo": "https://i.imgur.com/TLZsAKK.png",
-    "url": "https://srv.webtvmanager.fr:3970/live/viatelepaeselive.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Vosges Télévision (576p)",
-    "country": "FR",
-    "group": "Undefined",
-    "logo": "https://i.imgur.com/7y7ancc.png",
-    "url": "https://vosgestv.live-kd.com/live/vosgestv/vosgestv/playlist.m3u8",
     "source": "iptv-org",
     "verified": true,
     "verifiedAt": "2026-06-13T08:20:30.387Z"
@@ -2310,231 +1090,11 @@
     "verifiedAt": "2026-06-13T08:20:30.387Z"
   },
   {
-    "name": "zenith (1080p)",
-    "country": "FR",
-    "group": "Culture",
-    "logo": "https://znth.tv/images/logo.png",
-    "url": "https://live.azenagroup.com/zenith/index.ll.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Zylo Emotion' L (1080p)",
-    "country": "FR",
-    "group": "Movies",
-    "logo": "https://i.imgur.com/MP34aaj.png",
-    "url": "https://rakutenaa-zylo-emotional-rakuten-r1zkm.amagi.tv/playlist/rakutenAA-zylo-emotional-rakuten/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Zylo Fréquence Novelas (1080p)",
-    "country": "FR",
-    "group": "Series",
-    "logo": "https://i.imgur.com/fEjNAps.png",
-    "url": "https://d20oth1416y9a1.cloudfront.net/playlist/amg00711-zylofast-frequencenovelas-rakutenus/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Zylo Into Crime (1080p)",
-    "country": "FR",
-    "group": "Documentary",
-    "logo": "https://i.imgur.com/43at4M2.png",
-    "url": "https://amg00711-zylo-amg00711c10-rakuten-fr-6731.playouts.now.amagi.tv/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Zylo ScreamIN (1080p)",
-    "country": "FR",
-    "group": "Movies",
-    "logo": "https://i.imgur.com/tGmKbil.png",
-    "url": "https://rakutenaa-zylo-screamin-rakuten-p11ej.amagi.tv/playlist/rakutenAA-zylo-screamin-rakuten/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "2M Monde +1 (1080p)",
-    "country": "MA",
-    "group": "General",
-    "logo": "https://i.imgur.com/MvpntzA.png",
-    "url": "https://d2qh3gh0k5vp3v.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-n6pess5lwbghr/2M_ES.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
     "name": "3ABN French",
     "country": "US",
     "group": "Religious",
     "logo": "https://i.imgur.com/B5gsM7m.png",
     "url": "https://3abn.bozztv.com/3abn2/Fre_live/smil:Fre_live.smil/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "A2i Music (720p)",
-    "country": "SN",
-    "group": "Music",
-    "logo": "https://i.imgur.com/Fykhzxh.jpg",
-    "url": "https://stream.sen-gt.com/A2iMusic/myStream/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "A2i Religion (720p)",
-    "country": "SN",
-    "group": "Religious",
-    "logo": "https://i.imgur.com/54WrwyN.jpg",
-    "url": "https://stream.sen-gt.com/A2iReligion/myStream/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "A2i TV (1080p)",
-    "country": "IT",
-    "group": "General",
-    "logo": "https://i.imgur.com/YlDFir7.jpg",
-    "url": "https://stream.sen-gt.com/A2itv/myStream/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "A12 TV",
-    "country": "CI",
-    "group": "General",
-    "logo": "https://i.imgur.com/JgnjgvF.png",
-    "url": "https://video1.getstreamhosting.com:1936/8250/8250/manifest.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "A+ Ivoire (720p)",
-    "country": "CI",
-    "group": "Culture",
-    "logo": "https://i.imgur.com/yOW0vyP.png",
-    "url": "http://69.64.57.208/atv/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "ADO TV (720p)",
-    "country": "BJ",
-    "group": "Kids",
-    "logo": "https://i.imgur.com/pxFamLr.png",
-    "url": "https://strhls.streamakaci.tv/ortb/ortb2-multi/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Africable TV (360p)",
-    "country": "ML",
-    "group": "General",
-    "logo": "https://i.imgur.com/iQE57Z2.png",
-    "url": "http://69.64.57.208/africable/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Africanews French (720p)",
-    "country": "FR",
-    "group": "News",
-    "logo": "https://i.imgur.com/5UxU4zc.png",
-    "url": "https://cdn-euronews.akamaized.net/live/eds/africanews-fr/25050/index.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Afrique54 TV (720p)",
-    "country": "CM",
-    "group": "News",
-    "logo": "https://i.imgur.com/WIaRpiS.png",
-    "url": "https://video1.getstreamhosting.com:1936/8318/8318/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Afro Magic Channel",
-    "country": "CI",
-    "group": "Culture",
-    "logo": "https://i.imgur.com/yQzXErU.png",
-    "url": "https://video1.getstreamhosting.com:1936/8306/8306/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Afroculture TV",
-    "country": "CI",
-    "group": "Culture",
-    "logo": "https://i.imgur.com/bjaZ3kO.png",
-    "url": "https://streamtv.cmediahosthosting.net:3836/live/myafroculturelive.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "AL24 News",
-    "country": "DZ",
-    "group": "News",
-    "logo": "https://i.imgur.com/vyVEXYL.png",
-    "url": "https://cdn.live.easybroadcast.io/abr_corp/66_al24_u4yga6h/corp/66_al24_u4yga6h_240p/chunks.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Al Aoula Inter (1080p)",
-    "country": "MA",
-    "group": "General",
-    "logo": "https://i.imgur.com/nq53d2N.png",
-    "url": "https://stream-lb.livemediama.com/alaoula/hls/master.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Amou Yazid TV (576p)",
-    "country": "DZ",
-    "group": "Kids",
-    "logo": "https://i.imgur.com/L8UPGPC.png",
-    "url": "http://mkstream.servehttp.com:1940/AmouYazid/ay1/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Baraka Television (720p)",
-    "country": "CD",
-    "group": "News",
-    "logo": "https://i.imgur.com/IKXddHN.png",
-    "url": "https://stream.berosat.live:19360/baraka-hd/baraka-hd.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Benie TV (720p)",
-    "country": "CI",
-    "group": "Religious",
-    "logo": "https://i.imgur.com/7FXi05e.jpeg",
-    "url": "https://tv.voozmedia.fun/benietv/index.m3u8",
     "source": "iptv-org",
     "verified": true,
     "verifiedAt": "2026-06-13T08:20:30.387Z"
@@ -2550,71 +1110,11 @@
     "verifiedAt": "2026-06-13T08:20:30.387Z"
   },
   {
-    "name": "BX1 (720p)",
-    "country": "BE",
-    "group": "Undefined",
-    "logo": "https://i.imgur.com/0OkSa6c.png",
-    "url": "https://59959724487e3.streamlock.net/stream/live/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "CAM 10 TV (720p)",
-    "country": "CM",
-    "group": "General",
-    "logo": "https://i.imgur.com/xspb9uY.png",
-    "url": "https://stream.it-innov.com/cam10tv/index.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
     "name": "Canaf54 TV",
     "country": "UK",
     "group": "General",
     "logo": "https://i.imgur.com/viB0FS2.png",
     "url": "https://5caf24a595d94.streamlock.net:1937/pvyugfkzkc/pvyugfkzkc/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Canal 2 International (720p)",
-    "country": "CM",
-    "group": "General",
-    "logo": "https://i.imgur.com/BzA2z7m.png",
-    "url": "http://69.64.57.208/canal2international/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Canal Savoir (360p)",
-    "country": "CA",
-    "group": "Education",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/9/97/Savoir_m%C3%A9dia_logo_3.png",
-    "url": "https://hls.savoir.media/live/stream.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Carac 4 (1080p)",
-    "country": "CH",
-    "group": "Entertainment",
-    "logo": "https://i.imgur.com/Dj5LPy3.png",
-    "url": "https://edge17.vedge.infomaniak.com/livecast/ik:compack_media_1/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "CCPV TV (1080p)",
-    "country": "CD",
-    "group": "Religious",
-    "logo": "https://i.imgur.com/VRhkEqz.jpg",
-    "url": "https://tnt-television.com/CCPV-TV/index.m3u8",
     "source": "iptv-org",
     "verified": true,
     "verifiedAt": "2026-06-13T08:20:30.387Z"
@@ -2630,121 +1130,11 @@
     "verifiedAt": "2026-06-13T08:20:30.387Z"
   },
   {
-    "name": "Chandel TV (720p)",
-    "country": "TG",
-    "group": "Entertainment",
-    "logo": "https://i.imgur.com/jQO7dVE.png",
-    "url": "https://kali.vdopanel.com:3660/live/vj6jlam1rlive.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Cherifla TV (360p)",
-    "country": "ML",
-    "group": "General",
-    "logo": "https://i.imgur.com/V8nuoEW.png",
-    "url": "http://69.64.57.208/cherifla/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "CNA (360p)",
-    "country": "DZ",
-    "group": "Religious",
-    "logo": "https://i.imgur.com/Ki3ySUE.png",
-    "url": "https://live.creacast.com/cna/stream/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Compassion TV (240p)",
-    "country": "CD",
-    "group": "Religious",
-    "logo": "https://i.imgur.com/lfoUsyR.jpeg",
-    "url": "https://tnt-television.com/COMPASSION_FM/index.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Couleur 3 (720p)",
-    "country": "CH",
-    "group": "Music",
-    "logo": "https://i.imgur.com/VOIwYYd.png",
-    "url": "https://visualradio-rts-couleur3-d.akamaized.net/out/v1/6a1472634ad745f59a9e63ee8adbbc00/index.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "CRTV (360p)",
-    "country": "CM",
-    "group": "General",
-    "logo": "https://i.imgur.com/cQWNh3L.png",
-    "url": "http://69.64.57.208/crtv/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "D3 TV (480p)",
-    "country": "ML",
-    "group": "Music",
-    "logo": "https://i.imgur.com/uFEIBtB.png",
-    "url": "https://live20.bozztv.com/akamaissh101/ssh101/d3tvnet/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Eden TV (540p)",
-    "country": "BJ",
-    "group": "General",
-    "logo": "https://i.imgur.com/4ClnG0x.png",
-    "url": "https://rtmp.edentv.bj/hls/stream.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Equinoxe TV (720p)",
-    "country": "CM",
-    "group": "General",
-    "logo": "https://i.imgur.com/GKbnBlo.png",
-    "url": "http://69.64.57.208/equinoxtv/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Espace TV (1080p)",
-    "country": "GN",
-    "group": "News",
-    "logo": "https://i.imgur.com/R5tbzFI.png",
-    "url": "https://edge11.vedge.infomaniak.com/livecast/ik:espacetv/manifest.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
     "name": "ETV (1080p)",
     "country": "GP",
     "group": "General",
     "logo": "https://i.imgur.com/m5E2VP0.png",
     "url": "https://edge12.vedge.infomaniak.com/livecast/ik:etvgp/manifest.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Ev-tele (720p)",
-    "country": "CG",
-    "group": "Culture",
-    "logo": "https://i.imgur.com/iBlXl2T.png",
-    "url": "https://playtv4k.live/live/EVTELE/index.m3u8",
     "source": "iptv-org",
     "verified": true,
     "verifiedAt": "2026-06-13T08:20:30.387Z"
@@ -2760,51 +1150,11 @@
     "verifiedAt": "2026-06-13T08:20:30.387Z"
   },
   {
-    "name": "Filinfo TV (1080p)",
-    "country": "BF",
-    "group": "News",
-    "logo": "https://i.imgur.com/KG93Tvn.png",
-    "url": "https://d2iqjnqfr8pv3b.cloudfront.net/out/v1/d09d2fc718404cd8bccd3eba2444dd70/index.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Géopolis TV (240p)",
-    "country": "CD",
-    "group": "News",
-    "logo": "https://i.imgur.com/WzGAIYe.jpg",
-    "url": "https://tnt-television.com/Geopolis_tv/index.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Guide Love TV (720p)",
-    "country": "CI",
-    "group": "Lifestyle",
-    "logo": "https://i.ibb.co/9gS2Y4G/guidelove-logo.png",
-    "url": "https://video1.getstreamhosting.com:1936/8056/8056/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
     "name": "HMI PROMZ NEWS (720p)",
     "country": "US",
     "group": "Music",
     "logo": "https://i.imgur.com/gwPaw3v.png",
     "url": "https://video1.getstreamhosting.com:1936/8326/8326/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "ICI RDI (720p)",
-    "country": "CA",
-    "group": "News",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/ICI_RDI_logo.svg/960px-ICI_RDI_logo.svg.png",
-    "url": "https://rcavlive.akamaized.net/hls/live/704025/xcanrdi/master.m3u8",
     "source": "iptv-org",
     "verified": true,
     "verifiedAt": "2026-06-13T08:20:30.387Z"
@@ -2820,51 +1170,11 @@
     "verifiedAt": "2026-06-13T08:20:30.387Z"
   },
   {
-    "name": "Iqraa Africa & Europe (1080p)",
-    "country": "SA",
-    "group": "Religious",
-    "logo": "https://i.imgur.com/nUlZvSe.png",
-    "url": "https://playlist.fasttvcdn.com/pl/dlkqw1ftuvuuzkcb4pxdcg/Iqraafasttv1/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
     "name": "Iqraa Quran (1080p)",
     "country": "SA",
     "group": "Religious",
     "logo": "https://i.imgur.com/HPVsIa4.png",
     "url": "https://playlist.fasttvcdn.com/pl/dlkqw1ftuvuuzkcb4pxdcg/Iqraafasttv2/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Ivoire Channel (720p)",
-    "country": "CI",
-    "group": "Music",
-    "logo": "https://i.imgur.com/gKbNqQv.png",
-    "url": "https://video1.getstreamhosting.com:1936/8244/8244/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Japanim TV (1080p)",
-    "country": "BE",
-    "group": "Animation",
-    "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/6b97e19f-4243-4d48-b794-ff8cf54d795f-profile_image-300x300.png",
-    "url": "https://foxkidstv.be:3369/stream/play.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "JOS TV HD",
-    "country": "CG",
-    "group": "Culture",
-    "logo": "https://i.imgur.com/Ai9kpuu.jpeg",
-    "url": "https://stream.berosat.live:19360/jos-tv-stream/jos-tv-stream.m3u8",
     "source": "iptv-org",
     "verified": true,
     "verifiedAt": "2026-06-13T08:20:30.387Z"
@@ -2880,76 +1190,6 @@
     "verifiedAt": "2026-06-13T08:20:30.387Z"
   },
   {
-    "name": "KC2 (720p)",
-    "country": "RW",
-    "group": "Entertainment",
-    "logo": "https://i.imgur.com/PsYPzNc.png",
-    "url": "http://197.243.19.131:1935/kc2/kc2/chunklist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Laura Dave Media TV (720p)",
-    "country": "CM",
-    "group": "General",
-    "logo": "https://i.imgur.com/zzG1S2n.png",
-    "url": "https://streaming.lauradavemedia.com/ldm/index.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "LBFD RTV (1080p)",
-    "country": "CD",
-    "group": "Religious",
-    "logo": "https://i.imgur.com/buMvLJc.jpeg",
-    "url": "https://tnt-television.com/LBFD_RTV/index.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Legislative Assembly of Ontario",
-    "country": "CA",
-    "group": "Legislative",
-    "logo": "https://i.imgur.com/n24MrsX.png",
-    "url": "https://temp3.isilive.ca/live/_definst_/ontla/house-en/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "LMTV French (720p)",
-    "country": "CI",
-    "group": "Religious",
-    "logo": "https://i.imgur.com/FVnq2cQ.png",
-    "url": "https://video1.getstreamhosting.com:1936/8282/8282/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Lollywood HD TV",
-    "country": "CD",
-    "group": "Movies",
-    "logo": "https://i.imgur.com/fQhrsdr.png",
-    "url": "https://stream.berosat.live/hls/lollywood-hd/lollywood-hd.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Louga TV (480p)",
-    "country": "SN",
-    "group": "General",
-    "logo": "https://i.ibb.co/xXZ5kFy/unnamed.jpg",
-    "url": "https://stream.sen-gt.com/Mbacke/myStream/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
     "name": "Maná Église Online (1080p)",
     "country": "PT",
     "group": "Religious",
@@ -2960,71 +1200,11 @@
     "verifiedAt": "2026-06-13T08:20:30.387Z"
   },
   {
-    "name": "MaTele (1080p)",
-    "country": "BE",
-    "group": "General",
-    "logo": "https://i.imgur.com/rw72POr.png",
-    "url": "https://live.matele.be/hls/live.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "MaxTV/Dieu TV (1080p)",
-    "country": "CH",
-    "group": "General",
-    "logo": "https://i.imgur.com/13PjEk8.png",
-    "url": "https://cdn.katapy.io/cache/stream/katapytv/dieu/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
     "name": "like Gecko) Chrome/149.0.0.0 Safari/537.3\" group-title=\"Music\",MCM Top (576p)",
     "country": "RU",
     "group": "Music",
     "logo": "https://i.imgur.com/EVtWQLd.png",
     "url": "https://iptv.prosto.tv/ch137/index.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Medi1TV Afrique (1080p)",
-    "country": "MA",
-    "group": "News",
-    "logo": "https://i.imgur.com/a20DHnj.png",
-    "url": "https://cdn.live.easybroadcast.io/abr_corp/83_medi1tv-afrique_tm7tu45/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Medi 1 TV Maghreb (1080p)",
-    "country": "MA",
-    "group": "News",
-    "logo": "https://i.imgur.com/F5OFQsp.jpeg",
-    "url": "https://cdn.live.easybroadcast.io/abr_corp/83_medi1tv-maghreb_jnbspmg/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Miracle TV+ (720p)",
-    "country": "CI",
-    "group": "Religious",
-    "logo": "https://i.imgur.com/AQ60OYO.png",
-    "url": "https://strhlslb01.streamakaci.tv/str_mtv_mtv/str_mtv_multi/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Montreal Greek TV (480p)",
-    "country": "CA",
-    "group": "Culture",
-    "logo": "https://i.imgur.com/Y5YnUit.png",
-    "url": "http://live.greektv.ca/hls1/greektv.m3u8",
     "source": "iptv-org",
     "verified": true,
     "verifiedAt": "2026-06-13T08:20:30.387Z"
@@ -3050,121 +1230,11 @@
     "verifiedAt": "2026-06-13T08:20:30.387Z"
   },
   {
-    "name": "MTA4 Africa (1080p)",
-    "country": "UK",
-    "group": "Religious",
-    "logo": "https://i.imgur.com/lmVeQQX.png",
-    "url": "https://chlivemta.akamaized.net/hls/live/2010555/mtaafrica1/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "MTA5 Africa (1080p)",
-    "country": "UK",
-    "group": "Religious",
-    "logo": "https://i.imgur.com/9Cobb2i.png",
-    "url": "https://chlivemta.akamaized.net/hls/live/2010555/mtaafrica2/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "My TV Channel (720p)",
-    "country": "CM",
-    "group": "Undefined",
-    "logo": "https://i.imgur.com/vh2373L.png",
-    "url": "http://connectiktv.ddns.net:5000/mytvchannel/@mytvchannel/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
     "name": "Nautical Channel (720p)",
     "country": "IT",
     "group": "Sports",
     "logo": "https://i.imgur.com/2ByDyzL.png",
     "url": "https://a-cdn.klowdtv.com/live2/nautical_720p/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Nieta TV (576p)",
-    "country": "ML",
-    "group": "Religious",
-    "logo": "https://i.imgur.com/5RoXTaN.png",
-    "url": "http://69.64.57.208/nieta/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "NTV Afrique (1080p)",
-    "country": "CI",
-    "group": "General",
-    "logo": "https://i.imgur.com/qqLXdHz.png",
-    "url": "https://strhlslb01.streamakaci.tv/str_ntv_ntv/str_ntv_ntv_multi/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Numerica TV (1080p)",
-    "country": "CD",
-    "group": "General",
-    "logo": "https://i.imgur.com/ZUPJJ59.png",
-    "url": "https://tnt-television.com/NUMERICA/index.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "ORTB TV (720p)",
-    "country": "BJ",
-    "group": "General",
-    "logo": "https://i.imgur.com/o6zAR88.png",
-    "url": "http://69.64.57.208/ortb/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "ORTM 1 (540p)",
-    "country": "ML",
-    "group": "General",
-    "logo": "https://i.imgur.com/eKUpcls.png",
-    "url": "http://69.64.57.208/ortm/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "ORTM 2 (720p)",
-    "country": "ML",
-    "group": "General",
-    "logo": "https://i.imgur.com/GQ4fHsv.png",
-    "url": "http://69.64.57.208/tm2/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Play TV (720p)",
-    "country": "CM",
-    "group": "Music",
-    "logo": "https://i.imgur.com/1dmBqpf.png",
-    "url": "http://connectiktv.ddns.net:5000/playtv/@playtv/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "PLEX TV",
-    "country": "CM",
-    "group": "Entertainment",
-    "logo": "https://i.ibb.co/H4VktvG/Plex-TV-237.jpg",
-    "url": "http://connectiktv.ddns.net:5000/plextv/@plextv/playlist.m3u8",
     "source": "iptv-org",
     "verified": true,
     "verifiedAt": "2026-06-13T08:20:30.387Z"
@@ -3180,41 +1250,11 @@
     "verifiedAt": "2026-06-13T08:20:30.387Z"
   },
   {
-    "name": "Radio Contact (1080p)",
-    "country": "BE",
-    "group": "Music",
-    "logo": "https://i.imgur.com/32mmGvB.png",
-    "url": "https://contact-live-hls.akamaized.net/hls/live/2038650/CONTACT-Live-HLS/master.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
     "name": "Radio Télé 4VEH (720p)",
     "country": "HT",
     "group": "Religious",
     "logo": "https://i.imgur.com/AnOjqaS.png",
     "url": "https://uni01rtmp.tulix.tv/4vehtv/4vehtv-firetv/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Radio Tele Evangile Sans Limite",
-    "country": "CA",
-    "group": "Religious",
-    "logo": "https://i.imgur.com/CL32kFA.png",
-    "url": "https://5790d294af2dc.streamlock.net/8124/8124/chunklist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Radio Tele Full Gospel",
-    "country": "HT",
-    "group": "Religious",
-    "logo": "https://i.imgur.com/WbwIp9y.jpeg",
-    "url": "https://f-tx-edge-87.christianworldmedia.com/EJCFG/mp4:EJCFG/playlist.m3u8",
     "source": "iptv-org",
     "verified": true,
     "verifiedAt": "2026-06-13T08:20:30.387Z"
@@ -3270,41 +1310,11 @@
     "verifiedAt": "2026-06-13T08:20:30.387Z"
   },
   {
-    "name": "REFLET TV (1080p)",
-    "country": "CI",
-    "group": "General",
-    "logo": "https://i.imgur.com/EauXR22.png",
-    "url": "https://edge-a3.evrideo.tv/8f37c9f0-fe22-44f4-b64a-76ad11730daf_1000026630_HLS/manifest.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
     "name": "RHT Guadeloupe (720p)",
     "country": "GP",
     "group": "Music",
     "logo": "https://i.imgur.com/hQ0Q6nE.png",
     "url": "https://edge12.vedge.infomaniak.com/livecast/ik:livehautetension/manifest.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "RT JVA (720p)",
-    "country": "TG",
-    "group": "Religious",
-    "logo": "https://i.imgur.com/Ja3HVLB.jpg",
-    "url": "https://cdn140m.panaccess.com/HLS/RTVJA/index.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "RTG 1 (360p)",
-    "country": "GN",
-    "group": "General",
-    "logo": "https://i.imgur.com/E1sMcXz.png",
-    "url": "http://69.64.57.208/rtg/playlist.m3u8",
     "source": "iptv-org",
     "verified": true,
     "verifiedAt": "2026-06-13T08:20:30.387Z"
@@ -3320,141 +1330,11 @@
     "verifiedAt": "2026-06-13T08:20:30.387Z"
   },
   {
-    "name": "RTH-TV2 Gospel (720p)",
-    "country": "US",
-    "group": "Religious",
-    "logo": "https://i.imgur.com/4z0FiEA.png",
-    "url": "https://2-fss-2.streamhoster.com/pl_120/amlst:206708-4202592/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "RTI 1 (1080p)",
-    "country": "CI",
-    "group": "General",
-    "logo": "https://i.imgur.com/TybQZQS.png",
-    "url": "http://69.64.57.208:8080/rti1/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "RTI 2 (1080p)",
-    "country": "CI",
-    "group": "General",
-    "logo": "https://i.imgur.com/73ueXrp.png",
-    "url": "http://69.64.57.208:8080/rti2/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "RTI La 3 (1080p)",
-    "country": "CI",
-    "group": "Music",
-    "logo": "https://i.imgur.com/HdNshgF.png",
-    "url": "http://69.64.57.208/la3/index.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
     "name": "RTL Zwee (1080p)",
     "country": "LU",
     "group": "General",
     "logo": "https://i.imgur.com/7SmCtyy.png",
     "url": "https://live-edge.rtl.lu/channel2/smil:channel2/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "RTNC (540p)",
-    "country": "CD",
-    "group": "General",
-    "logo": "https://i.imgur.com/oVXO950.jpeg",
-    "url": "http://69.64.57.208/rtnc/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "RTS 1 (720p)",
-    "country": "SN",
-    "group": "General",
-    "logo": "https://i.imgur.com/HHGktpF.png",
-    "url": "http://69.64.57.208/rts1/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "RTS 2 (720p)",
-    "country": "SN",
-    "group": "Entertainment",
-    "logo": "https://i.imgur.com/YypHsF4.png",
-    "url": "http://69.64.57.208/rts2/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "RTS Info (1080p)",
-    "country": "CH",
-    "group": "News",
-    "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/switzerland/rts-info-ch.png",
-    "url": "https://rtsinfo-d.akamaized.net/out/v1/2b7ae2e1ba3f43c6aba15bced153baf5/index.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "RTV Rwanda (480p)",
-    "country": "RW",
-    "group": "General",
-    "logo": "https://i.imgur.com/4nbGvxW.png",
-    "url": "http://197.243.19.131:1935/rtv25/rtv/chunklist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "RTVC (720p)",
-    "country": "CI",
-    "group": "Religious",
-    "logo": "https://i.imgur.com/oXuSkHz.png",
-    "url": "https://cdn140m.panaccess.com/HLS/RTVC/index.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Sen TV (360p)",
-    "country": "SN",
-    "group": "General",
-    "logo": "https://i.imgur.com/beVCugh.png",
-    "url": "http://69.64.57.208/sentv/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "SenJeunes TV (480p)",
-    "country": "SN",
-    "group": "General",
-    "logo": "https://i.imgur.com/MeCSPsI.jpg",
-    "url": "https://stream.sen-gt.com/senjeunestv/myStream/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Serie Max",
-    "country": "CI",
-    "group": "Series",
-    "logo": "https://i.imgur.com/GaRQXHT.png",
-    "url": "https://video1.getstreamhosting.com:1936/8330/8330/playlist.m3u8",
     "source": "iptv-org",
     "verified": true,
     "verifiedAt": "2026-06-13T08:20:30.387Z"
@@ -3470,36 +1350,6 @@
     "verifiedAt": "2026-06-13T08:20:30.387Z"
   },
   {
-    "name": "Stingray Classica (1080p)",
-    "country": "CA",
-    "group": "Music",
-    "logo": "https://i.imgur.com/nh1k5RC.png",
-    "url": "https://lotus.stingray.com/manifest/classica-cla008-montreal/samsungtvplus/master.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "StoryChannel TV (720p)",
-    "country": "MA",
-    "group": "Culture",
-    "logo": "https://i.imgur.com/ZBV6xph.png",
-    "url": "https://136044159.r.cdnsun.net/storychannel.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Tal TV (1080p)",
-    "country": "NE",
-    "group": "Entertainment",
-    "logo": "https://i.imgur.com/KWMP0t1.png",
-    "url": "https://mediaserver1.castpin.com/hls/taltv/index.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
     "name": "Tele Boston (480p)",
     "country": "US",
     "group": "Entertainment",
@@ -3510,31 +1360,11 @@
     "verifiedAt": "2026-06-13T08:20:30.387Z"
   },
   {
-    "name": "Tele Congo (720p)",
-    "country": "CG",
-    "group": "General",
-    "logo": "https://i.imgur.com/r4B5zq4.png",
-    "url": "http://69.64.57.208/telecongo/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
     "name": "Tele Louange (1080p)",
     "country": "HT",
     "group": "Religious",
     "logo": "https://i.imgur.com/DjnMUuL.png",
     "url": "https://5790d294af2dc.streamlock.net/8124/8124/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Tele Sahel (1080p)",
-    "country": "NE",
-    "group": "General",
-    "logo": "https://i.imgur.com/vboq428.png",
-    "url": "https://mediaserver1.castpin.com/hls/telesahel/index.m3u8",
     "source": "iptv-org",
     "verified": true,
     "verifiedAt": "2026-06-13T08:20:30.387Z"
@@ -3570,36 +1400,6 @@
     "verifiedAt": "2026-06-13T08:20:30.387Z"
   },
   {
-    "name": "Television Espoir 47 (720p)",
-    "country": "TG",
-    "group": "General",
-    "logo": "https://i.imgur.com/utBh0xL.png",
-    "url": "https://cdn140m.panaccess.com/HLS/Espoir47/index.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "TFM (720p)",
-    "country": "SN",
-    "group": "General",
-    "logo": "https://i.imgur.com/TQWBlXn.png",
-    "url": "http://69.64.57.208/tfm/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "TM1 (360p)",
-    "country": "ML",
-    "group": "General",
-    "logo": "https://i.imgur.com/83BgaBa.png",
-    "url": "http://69.64.57.208/tm1/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
     "name": "TNH (720p)",
     "country": "HT",
     "group": "General",
@@ -3620,101 +1420,11 @@
     "verifiedAt": "2026-06-13T08:20:30.387Z"
   },
   {
-    "name": "TR24 (720p)",
-    "country": "CM",
-    "group": "Entertainment",
-    "logo": "https://i.ibb.co/fQrBY1M/tr24-telepack.jpg",
-    "url": "https://stream.it-innov.com/tr24/index.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Trends Z (1080p)",
-    "country": "BE",
-    "group": "Business",
-    "logo": "https://i.imgur.com/qtiGLzZ.png",
-    "url": "https://d1hz1p2gea2zy4.cloudfront.net/live/rmgtv/RMG-TRENDSZFR-LIVE/index.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "TV Al Bayane (360p)",
-    "country": "CI",
-    "group": "Religious",
-    "logo": "https://i.imgur.com/Xs9oEG8.png",
-    "url": "http://69.64.57.208/albayanetv/index.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
     "name": "TV Famille (720p)",
     "country": "MQ",
     "group": "Family",
     "logo": "https://i.imgur.com/Kbfihk5.png",
     "url": "https://streamer1.streamhost.org/salive/GMItvfh/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "TV La Capitale",
-    "country": "CI",
-    "group": "News",
-    "logo": "https://i.imgur.com/zZJzNjM.jpeg",
-    "url": "https://stream.berosat.live:19360/tv-capitale-tream/tv-capitale-tream.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "TVC Bénin (720p)",
-    "country": "BJ",
-    "group": "General",
-    "logo": "https://i.imgur.com/oUnEYl5.png",
-    "url": "https://live.tvcbenin.com/direct/729c37a1d3319ee21991227b1f84c687.sdp/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "TVCARiB Gospel (480p)",
-    "country": "SX",
-    "group": "Religious",
-    "logo": "https://i.imgur.com/fvGlwKo.png",
-    "url": "https://cdn.mycloudstream.io/hls/live/broadcast/wokrhjkd/index.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "TVT (720p)",
-    "country": "TG",
-    "group": "General",
-    "logo": "https://i.imgur.com/WtXonN9.png",
-    "url": "http://69.64.57.208/tvt/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "VoxAfrica (720p)",
-    "country": "UK",
-    "group": "Undefined",
-    "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/6/63/Voxafrica-1.png/960px-Voxafrica-1.png",
-    "url": "http://69.64.57.208/voxafrica/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-13T08:20:30.387Z"
-  },
-  {
-    "name": "Walf TV (360p)",
-    "country": "SN",
-    "group": "General",
-    "logo": "https://i.imgur.com/IrBAqIJ.png",
-    "url": "http://69.64.57.208/walftv/playlist.m3u8",
     "source": "iptv-org",
     "verified": true,
     "verifiedAt": "2026-06-13T08:20:30.387Z"
@@ -3730,16 +1440,6 @@
     "verifiedAt": "2026-06-12T23:42:37.268Z"
   },
   {
-    "name": "Bel RTL (1080p)",
-    "country": "BE",
-    "group": "Music",
-    "logo": "https://i.imgur.com/0DUprIW.png",
-    "url": "https://bel-live-hls.akamaized.net/hls/live/2038650/BEL-Live-HLS/master.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
     "name": "CGTN Français (1080p)",
     "country": "CN",
     "group": "News",
@@ -3750,51 +1450,11 @@
     "verifiedAt": "2026-06-12T23:42:37.268Z"
   },
   {
-    "name": "CNA (Chaîne Nord Africaine) (360p)",
-    "country": "DZ",
-    "group": "Religious",
-    "logo": "https://i.imgur.com/Ki3ySUE.png",
-    "url": "https://live.creacast.com/cna/smil:cna.smil/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
-    "name": "Couleur 3 (720p)",
-    "country": "CH",
-    "group": "Music",
-    "logo": "https://i.imgur.com/VOIwYYd.png",
-    "url": "https://rtsc3video.akamaized.net/hls/live/2042837/c3video/3/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
-    "name": "La Une (1080p)",
-    "country": "BE",
-    "group": "Entertainment",
-    "logo": "https://i.imgur.com/jMwZp7z.png",
-    "url": "https://c9851ec-rbm-hilv-fsly.cdn.redbee.live/L22/6d35e26e/1bffdaaf.isml/.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
     "name": "Madras FM TV (1080p)",
     "country": "GP",
     "group": "Music",
     "logo": "https://i.imgur.com/spGg1CZ.png",
     "url": "https://edge12.vedge.infomaniak.com/livecast/ik:madrasfmtv/manifest.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
-    "name": "Télé Sahel (576p)",
-    "country": "NE",
-    "group": "General",
-    "logo": "https://i.imgur.com/vboq428.png",
-    "url": "http://69.64.57.208/telesahel/playlist.m3u8",
     "source": "iptv-org",
     "verified": true,
     "verifiedAt": "2026-06-12T23:42:37.268Z"
@@ -5760,16 +3420,6 @@
     "verifiedAt": "2026-06-12T23:42:37.268Z"
   },
   {
-    "name": "Love Pets (1080p)",
-    "country": "CA",
-    "group": "Documentary",
-    "logo": "https://lovepetstv.com/wp-content/uploads/2022/12/LovePets_Logo_SecondaryColor.png",
-    "url": "https://amg01576-blueskyeenterta-lovepetsemea-samsungse-ctamh.amagi.tv/playlist/amg01576-blueskyeenterta-lovepetsemea-samsungse/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
     "name": "Love the Planet (1080p)",
     "country": "ES",
     "group": "Documentary",
@@ -5805,46 +3455,6 @@
     "group": "Documentary",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Natgeologo.svg/960px-Natgeologo.svg.png",
     "url": "http://cdns.jp-primehome.com:8000/zhongying/live/playlist.m3u8?cid=cs10",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
-    "name": "NatureTime (1080p)",
-    "country": "CA",
-    "group": "Documentary",
-    "logo": "https://i.imgur.com/72JmyjM.png",
-    "url": "https://amg00090-blueantllc-lovenature-au-samsungau-wggcn.amagi.tv/playlist/amg00090-blueantllc-lovenature-au-samsungau/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
-    "name": "NatureTime (1080p)",
-    "country": "CA",
-    "group": "Documentary",
-    "logo": "https://i.imgur.com/72JmyjM.png",
-    "url": "https://shls-live-ak.akamaized.net/out/v1/b06a89a463764d3688cda337d40dc5bf/index.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
-    "name": "NatureTime (1080p)",
-    "country": "CA",
-    "group": "Documentary",
-    "logo": "https://i.imgur.com/72JmyjM.png",
-    "url": "https://amg01515-amg01515c43-samsung-gb-9038.playouts.now.amagi.tv/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
-    "name": "NatureTime Finland (1080p)",
-    "country": "CA",
-    "group": "Documentary",
-    "logo": "https://i.imgur.com/72JmyjM.png",
-    "url": "https://bamusa-naturetime-emea-eng-rakuten.amagi.tv/playlist.m3u8",
     "source": "iptv-org",
     "verified": true,
     "verifiedAt": "2026-06-12T23:42:37.268Z"
@@ -5915,26 +3525,6 @@
     "group": "Documentary",
     "logo": "https://iili.io/JGqD21e.png",
     "url": "https://fast-channels.sinclairstoryline.com/THENEST/index.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
-    "name": "Total Crime (1080p)",
-    "country": "CA",
-    "group": "Documentary",
-    "logo": "https://images.pluto.tv/channels/62e93b8eb8e02600071f8b1d/colorLogoPNG_1731000193486.png",
-    "url": "https://aegis-cloudfront-1.tubi.video/b062c287-a170-47df-99e4-f5dcd441ee59/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
-    "name": "WaterBear (1080p)",
-    "country": "CH",
-    "group": "Documentary",
-    "logo": "https://framerusercontent.com/images/41VQQ7F0fYlp1MX1N4Ixog5QnPI.png",
-    "url": "https://amg01415-waterbearnetwor-waterbear-samsunguk-1h0y8.amagi.tv/playlist/amg01415-waterbearnetwor-waterbear-samsunguk/playlist.m3u8",
     "source": "iptv-org",
     "verified": true,
     "verifiedAt": "2026-06-12T23:42:37.268Z"
@@ -6275,16 +3865,6 @@
     "group": "Series",
     "logo": "https://i.imgur.com/KdBr6rG.png",
     "url": "https://amg00353-amg00353c30-samsung-au-3440.playouts.now.amagi.tv/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
-    "name": "Haunt TV (1080p)",
-    "country": "CA",
-    "group": "Series",
-    "logo": "https://images.pluto.tv/channels/63934c218ef524000757b122/colorLogoPNG.png",
-    "url": "https://amg01446-blueantmediacan-haunttvaussam-samsungau-vcnai.amagi.tv/playlist/amg01446-blueantmediacan-haunttvaussam-samsungau/playlist.m3u8",
     "source": "iptv-org",
     "verified": true,
     "verifiedAt": "2026-06-12T23:42:37.268Z"
@@ -6975,16 +4555,6 @@
     "group": "Kids",
     "logo": "https://i.imgur.com/XRGioQX.png",
     "url": "https://d24p9tv2w5yorn.cloudfront.net/vod.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
-    "name": "Kidoodle.TV (1080p)",
-    "country": "CA",
-    "group": "Kids",
-    "logo": "https://i.imgur.com/MaFtbM5.png",
-    "url": "https://amg07653-apmc-amg07653c9-samsung-us-8740.playouts.now.amagi.tv/playlist.m3u8",
     "source": "iptv-org",
     "verified": true,
     "verifiedAt": "2026-06-12T23:42:37.268Z"
@@ -7780,16 +5350,6 @@
     "verifiedAt": "2026-06-12T23:42:37.268Z"
   },
   {
-    "name": "Game+ (720p)",
-    "country": "CA",
-    "group": "Sports",
-    "logo": "https://i.imgur.com/Lj69WbR.png",
-    "url": "https://a-cdn.klowdtv.com/live2/fntsy_720p/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
     "name": "Gaora Sports (544p)",
     "country": "JP",
     "group": "Sports",
@@ -7815,16 +5375,6 @@
     "group": "Sports",
     "logo": "https://i.imgur.com/s6lmfXF.png",
     "url": "http://cdns.jp-primehome.com:8000/zhongying/live/playlist.m3u8?cid=cs03",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
-    "name": "like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\" group-title=\"Sports\",Hard Knocks (1080p)",
-    "country": "CA",
-    "group": "Sports",
-    "logo": "https://i.imgur.com/nt9B6jx.png",
-    "url": "https://d3uyzhwvmemdyf.cloudfront.net/v1/master/9d062541f2ff39b5c0f48b743c6411d25f62fc25/Hard-Knocks-DistroTV/109.m3u8?ads.vf=6pOF6kgy418",
     "source": "iptv-org",
     "verified": true,
     "verifiedAt": "2026-06-12T23:42:37.268Z"
@@ -9420,16 +6970,6 @@
     "verifiedAt": "2026-06-12T23:42:37.268Z"
   },
   {
-    "name": "Isango TV (480p)",
-    "country": "RW",
-    "group": "Music",
-    "logo": "https://i.imgur.com/EfsHaMQ.png",
-    "url": "http://80.241.215.175:1935/isangostar/isangostar/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
     "name": "Jeddah Radio (1080p)",
     "country": "SA",
     "group": "Music",
@@ -9930,16 +7470,6 @@
     "verifiedAt": "2026-06-12T23:42:37.268Z"
   },
   {
-    "name": "Mosaique FM (1080p)",
-    "country": "TN",
-    "group": "Music",
-    "logo": "https://i.imgur.com/GDUykah.png",
-    "url": "https://webcam.mosaiquefm.net/mosatv/_definst_/studio/playlist.m3u8?DVR",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
     "name": "Music India (720p)",
     "country": "IN",
     "group": "Music",
@@ -10045,16 +7575,6 @@
     "group": "Music",
     "logo": "",
     "url": "https://amg01076-amg01076c19-rakuten-gb-8653.playouts.now.amagi.tv/playlist/amg01076-lightning-now90s00s-rakutengb/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
-    "name": "Now TV 102.3FM Edmonton (CKNO-FM) (616p)",
-    "country": "CA",
-    "group": "Music",
-    "logo": "https://i.imgur.com/sF2g7KE.png",
-    "url": "https://videostream.jpbgdigital.com/NOWTV.m3u8",
     "source": "iptv-org",
     "verified": true,
     "verifiedAt": "2026-06-12T23:42:37.268Z"
@@ -10420,26 +7940,6 @@
     "verifiedAt": "2026-06-12T23:42:37.268Z"
   },
   {
-    "name": "Qello Concerts by Stingray (1080p)",
-    "country": "CA",
-    "group": "Music",
-    "logo": "https://i.imgur.com/IRyFTWq.png",
-    "url": "https://d39g1vxj2ef6in.cloudfront.net/v1/master/3fec3e5cac39a52b2132f9c66c83dae043dc17d4/prod-rakuten-stitched/master.m3u8?ads.xumo_channelId=88883052",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
-    "name": "Qello Concerts by Stingray (1080p)",
-    "country": "CA",
-    "group": "Music",
-    "logo": "https://i.imgur.com/IRyFTWq.png",
-    "url": "https://lotus.stingray.com/manifest/qello-qello001-montreal/samsungtvplus/master.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
     "name": "Rabeh Saqer (1080p)",
     "country": "SA",
     "group": "Music",
@@ -10495,16 +7995,6 @@
     "group": "Music",
     "logo": "https://i.imgur.com/qZzSOeU.png",
     "url": "https://eu1.servers10.com:8081/8074/index.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
-    "name": "RADIO DISCOunt TV (1080p)",
-    "country": "CH",
-    "group": "Music",
-    "logo": "https://i.imgur.com/ScNYMmx.png",
-    "url": "https://585b674743bbb.streamlock.net/9030/9030/playlist.m3u8",
     "source": "iptv-org",
     "verified": true,
     "verifiedAt": "2026-06-12T23:42:37.268Z"
@@ -11020,291 +8510,11 @@
     "verifiedAt": "2026-06-12T23:42:37.268Z"
   },
   {
-    "name": "Stingray Classic Rock (1080p)",
-    "country": "CA",
-    "group": "Music",
-    "logo": "https://i.imgur.com/FBgu8yB.png",
-    "url": "https://lotus.stingray.com/manifest/ose-101ads-montreal/samsungtvplus/master.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
-    "name": "Stingray CMusic (1080p)",
-    "country": "CA",
-    "group": "Music",
-    "logo": "https://i.imgur.com/3UppN5P.png",
-    "url": "https://lotus.stingray.com/manifest/cmusic-cme004-montreal/samsungtvplus/master.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
-    "name": "Stingray DJAZZ (1080p)",
-    "country": "CA",
-    "group": "Music",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Stingray_Djazz.png/960px-Stingray_Djazz.png",
-    "url": "https://lotus.stingray.com/manifest/djazz-djaads-montreal/samsungtvplus/master.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
-    "name": "Stingray Easy Listening (1080p)",
-    "country": "CA",
-    "group": "Music",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Stingray_Music_logo.svg/960px-Stingray_Music_logo.svg.png",
-    "url": "https://lotus.stingray.com/manifest/ose-137ads-montreal/samsungtvplus/master.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
-    "name": "Stingray Euro Hits (1080p)",
-    "country": "CA",
-    "group": "Music",
-    "logo": "https://i.imgur.com/FyhO9U5.png",
-    "url": "https://lotus.stingray.com/manifest/ose-214ads-montreal/samsungtvplus/master.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
-    "name": "Stingray Flashback 70s (1080p)",
-    "country": "CA",
-    "group": "Music",
-    "logo": "https://i.imgur.com/jf5C9QF.png",
-    "url": "https://lotus.stingray.com/manifest/ose-115ads-montreal/samsungtvplus/master.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
-    "name": "Stingray Greatest Hits (1080p)",
-    "country": "CA",
-    "group": "Music",
-    "logo": "",
-    "url": "https://d39g1vxj2ef6in.cloudfront.net/v1/master/3fec3e5cac39a52b2132f9c66c83dae043dc17d4/prod-rakuten-stitched/master.m3u8?ads.xumo_channelId=88883053",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
-    "name": "Stingray Greatest Hits (1080p)",
-    "country": "CA",
-    "group": "Music",
-    "logo": "",
-    "url": "https://lotus.stingray.com/manifest/ose-155ads-montreal/samsungtvplus/master.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
     "name": "Stingray Greatest Holiday Hits",
     "country": "US",
     "group": "Music",
     "logo": "https://i.imgur.com/Hz2d6og.png",
     "url": "https://d39g1vxj2ef6in.cloudfront.net/v1/manifest/3fec3e5cac39a52b2132f9c66c83dae043dc17d4/prod-rakuten-stitched/54947915-6504-4548-aaef-eabd451f8607/1.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
-    "name": "Stingray Hit List (1080p)",
-    "country": "CA",
-    "group": "Music",
-    "logo": "https://i.imgur.com/lgpIwId.png",
-    "url": "https://lotus.stingray.com/manifest/ose-107ads-montreal/samsungtvplus/master.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
-    "name": "Stingray Hitlist (1080p)",
-    "country": "CA",
-    "group": "Music",
-    "logo": "https://i.imgur.com/lgpIwId.png",
-    "url": "https://d39g1vxj2ef6in.cloudfront.net/v1/master/3fec3e5cac39a52b2132f9c66c83dae043dc17d4/prod-rakuten-stitched/master.m3u8?ads.xumo_channelId=88883054",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
-    "name": "Stingray Holidayscapes (1080p)",
-    "country": "CA",
-    "group": "Music",
-    "logo": "https://images.plex.tv/photo?size=large-1920&scale=1&url=https%3A%2F%2Fprovider-static.plex.tv%2Fepg%2Fcms%2Fproduction%2F9cb4b15c-8244-4499-ae2c-9a92d4cdff6d%2F13895_SHS_Plex_Logos_Holidays_1500x1000_Dark-Background.png",
-    "url": "https://plextv.ott-channels.stingray.com/holidayscapes/master.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
-    "name": "Stingray Hot Country (1080p)",
-    "country": "CA",
-    "group": "Music",
-    "logo": "https://i.imgur.com/PZhxyIT.png",
-    "url": "https://lotus.stingray.com/manifest/ose-108ads-montreal/samsungtvplus/master.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
-    "name": "Stingray Jukebox Oldies (1080p)",
-    "country": "CA",
-    "group": "Music",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Stingray_Music_logo.svg/960px-Stingray_Music_logo.svg.png",
-    "url": "https://lotus.stingray.com/manifest/ose-021ads-montreal/samsungtvplus/master.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
-    "name": "Stingray Karaoke (1080p)",
-    "country": "CA",
-    "group": "Music",
-    "logo": "https://i.imgur.com/9TLTLS3.png",
-    "url": "https://lotus.stingray.com/manifest/karaoke-kar000-montreal/samsungtvplus/master.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
-    "name": "Stingray Naturescape (1080p)",
-    "country": "CA",
-    "group": "Music",
-    "logo": "https://i.imgur.com/882kd90.png",
-    "url": "https://d39g1vxj2ef6in.cloudfront.net/v1/master/3fec3e5cac39a52b2132f9c66c83dae043dc17d4/prod-rakuten-stitched/master.m3u8?ads.xumo_channelId=88883056",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
-    "name": "Stingray Naturescape (1080p)",
-    "country": "CA",
-    "group": "Music",
-    "logo": "https://i.imgur.com/882kd90.png",
-    "url": "https://lotus.stingray.com/manifest/naturescape-a003-montreal/samsungtvplus/master.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
-    "name": "Stingray Nothin' But 90s (1080p)",
-    "country": "CA",
-    "group": "Music",
-    "logo": "https://i.imgur.com/Tq3I0po.png",
-    "url": "https://lotus.stingray.com/manifest/ose-142ads-montreal/samsungtvplus/master.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
-    "name": "Stingray Pop Adult (1080p)",
-    "country": "CA",
-    "group": "Music",
-    "logo": "https://i.imgur.com/H2ugC9L.png",
-    "url": "https://lotus.stingray.com/manifest/ose-104ads-montreal/samsungtvplus/master.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
-    "name": "Stingray Remember the 80s (1080p)",
-    "country": "CA",
-    "group": "Music",
-    "logo": "https://i.imgur.com/6E3wYrb.png",
-    "url": "https://lotus.stingray.com/manifest/ose-128ads-montreal/samsungtvplus/master.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
-    "name": "Stingray Remember the 80s (1080p)",
-    "country": "CA",
-    "group": "Music",
-    "logo": "https://i.imgur.com/duwc8E8.png",
-    "url": "https://d39g1vxj2ef6in.cloudfront.net/v1/master/3fec3e5cac39a52b2132f9c66c83dae043dc17d4/prod-rakuten-stitched/master.m3u8?ads.xumo_channelId=88883071",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
-    "name": "Stingray Rock Alternative (1080p)",
-    "country": "CA",
-    "group": "Music",
-    "logo": "https://i.imgur.com/mt8ulVX.png",
-    "url": "https://lotus.stingray.com/manifest/ose-102ads-montreal/samsungtvplus/master.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
-    "name": "Stingray Romance Latino (1080p)",
-    "country": "CA",
-    "group": "Music",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Stingray_Music_logo.svg/960px-Stingray_Music_logo.svg.png",
-    "url": "https://lotus.stingray.com/manifest/ose-202ads-montreal/samsungtvplus/master.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
-    "name": "Stingray Smooth Jazz (1080p)",
-    "country": "CA",
-    "group": "Music",
-    "logo": "https://i.imgur.com/h1DsOzH.png",
-    "url": "https://lotus.stingray.com/manifest/ose-140ads-montreal/samsungtvplus/master.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
-    "name": "Stingray Soul Storm (1080p)",
-    "country": "CA",
-    "group": "Music",
-    "logo": "https://i.imgur.com/dU1KC3f.png",
-    "url": "https://lotus.stingray.com/manifest/ose-134ads-montreal/samsungtvplus/master.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
-    "name": "Stingray The Spa (1080p)",
-    "country": "CA",
-    "group": "Music",
-    "logo": "https://i.imgur.com/ywAN923.png",
-    "url": "https://lotus.stingray.com/manifest/ose-122ads-montreal/samsungtvplus/master.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
-    "name": "Stingray Today's KPOP (1080p)",
-    "country": "CA",
-    "group": "Music",
-    "logo": "https://i.imgur.com/mMbntB5.png",
-    "url": "https://lotus.stingray.com/manifest/ose-317ads-montreal/samsungtvplus/master.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
-    "name": "Stingray Today's Latin Pop (1080p)",
-    "country": "CA",
-    "group": "Music",
-    "logo": "https://i.imgur.com/Os3kRRP.png",
-    "url": "https://lotus.stingray.com/manifest/ose-190ads-montreal/samsungtvplus/master.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
-    "name": "Stingray Urban Beat (1080p)",
-    "country": "CA",
-    "group": "Music",
-    "logo": "https://i.imgur.com/Os3kRRP.png",
-    "url": "https://lotus.stingray.com/manifest/ose-133ads-montreal/samsungtvplus/master.m3u8",
     "source": "iptv-org",
     "verified": true,
     "verifiedAt": "2026-06-12T23:42:37.268Z"
@@ -13120,16 +10330,6 @@
     "verifiedAt": "2026-06-12T23:42:37.268Z"
   },
   {
-    "name": "CBC News (1080p)",
-    "country": "CA",
-    "group": "News",
-    "logo": "https://i.imgur.com/SjTdhvJ.png",
-    "url": "https://d2ny9lo79ujali.cloudfront.net/CBC_News_International.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
     "name": "CBS News 24/7 (720p)",
     "country": "US",
     "group": "News",
@@ -13350,16 +10550,6 @@
     "verifiedAt": "2026-06-12T23:42:37.268Z"
   },
   {
-    "name": "Channel Y (720p)",
-    "country": "CA",
-    "group": "News",
-    "logo": "https://i.imgur.com/OqSl2Qf.png",
-    "url": "http://cdn19.live247stream.com/channely/tv/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
     "name": "Chardikla Gurbaani TV (1080p)",
     "country": "IN",
     "group": "News",
@@ -13415,46 +10605,6 @@
     "group": "News",
     "logo": "https://enhd.ar/wp-content/uploads/2022/01/0e4a83fc-ba5b-4f26-a333-31f8bd544bcb-300x260.jpeg",
     "url": "https://edge.essastream.com/citricotv/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
-    "name": "CityNews Calgary (720p)",
-    "country": "CA",
-    "group": "News",
-    "logo": "https://m.media-amazon.com/images/I/51Icdznow+L.png",
-    "url": "https://citynewsregional.akamaized.net/hls/live/1024053/Regional_Live_8/master.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
-    "name": "CityNews Edmonton",
-    "country": "CA",
-    "group": "News",
-    "logo": "https://m.media-amazon.com/images/I/51Icdznow+L.png",
-    "url": "https://citynewsregional.akamaized.net/hls/live/1024053/Regional_Live_8/Video-2Mbps.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
-    "name": "CityNews Toronto (720p)",
-    "country": "CA",
-    "group": "News",
-    "logo": "https://m.media-amazon.com/images/I/51Icdznow+L.png",
-    "url": "https://citynewsregional.akamaized.net/hls/live/1024052/Regional_Live_7/master.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
-    "name": "CityNews Vancouver (720p)",
-    "country": "CA",
-    "group": "News",
-    "logo": "https://m.media-amazon.com/images/I/51Icdznow+L.png",
-    "url": "https://citynewsregional.akamaized.net/hls/live/1024054/Regional_Live_9/master.m3u8",
     "source": "iptv-org",
     "verified": true,
     "verifiedAt": "2026-06-12T23:42:37.268Z"
@@ -14530,16 +11680,6 @@
     "verifiedAt": "2026-06-12T23:42:37.268Z"
   },
   {
-    "name": "Medi 1 TV Arabic (1080p)",
-    "country": "MA",
-    "group": "News",
-    "logo": "https://i.imgur.com/3YsZPY6.jpeg",
-    "url": "https://cdn.live.easybroadcast.io/abr_corp/83_medi1tv-arabic_g90v4ec/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
     "name": "Media One (720p)",
     "country": "IN",
     "group": "News",
@@ -15325,16 +12465,6 @@
     "group": "News",
     "logo": "",
     "url": "https://cmero-ott-live.ssl.cdn.cra.cz/channels/cme-ro-voyo-news/playlist.m3u8?offsetSeconds=0&url=0",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
-    "name": "Probashi TV News (1080p)",
-    "country": "CA",
-    "group": "News",
-    "logo": "https://i.imgur.com/7oTsfQ4.png",
-    "url": "http://158.69.24.53:8080/probashi_tv/index.m3u8",
     "source": "iptv-org",
     "verified": true,
     "verifiedAt": "2026-06-12T23:42:37.268Z"
@@ -16590,16 +13720,6 @@
     "verifiedAt": "2026-06-12T23:42:37.268Z"
   },
   {
-    "name": "5AAB TV (720p)",
-    "country": "CA",
-    "group": "Entertainment",
-    "logo": "https://i.imgur.com/jrGrfof.png",
-    "url": "http://158.69.124.9:1935/5aabtv/5aabtv/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
     "name": "30A Television Channel (720p)",
     "country": "US",
     "group": "Entertainment",
@@ -16745,16 +13865,6 @@
     "group": "Entertainment",
     "logo": "https://i.imgur.com/2KAObBt.png",
     "url": "http://l2.cloudskep.com/ant1cm2/abr/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
-    "name": "Apna Punjab TV (720p)",
-    "country": "CA",
-    "group": "Entertainment",
-    "logo": "https://i.imgur.com/IM4D8Wz.png",
-    "url": "https://plus.gigabitcdn.net/live-stream/apna-punjab-H3sE/playlist.m3u8",
     "source": "iptv-org",
     "verified": true,
     "verifiedAt": "2026-06-12T23:42:37.268Z"
@@ -17245,16 +14355,6 @@
     "group": "Entertainment",
     "logo": "https://dtil.tmsimg.com/assets/s143038_ld_h15_aa.png?lock=720x540",
     "url": "https://cdn-6.pishow.tv/live/10002/master.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
-    "name": "like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\" group-title=\"Entertainment\",FEVA TV (1080p)",
-    "country": "CA",
-    "group": "Entertainment",
-    "logo": "https://i.imgur.com/QSi0YTS.png",
-    "url": "https://d21x3vavxu7p2x.cloudfront.net/v1/master/9d062541f2ff39b5c0f48b743c6411d25f62fc25/DistroTV-MuxIP-FEVATV/416.m3u8?ads.vf=nn5CUAdOxVu",
     "source": "iptv-org",
     "verified": true,
     "verifiedAt": "2026-06-12T23:42:37.268Z"
@@ -17845,16 +14945,6 @@
     "group": "Entertainment",
     "logo": "https://i.imgur.com/TJHk6Va.png",
     "url": "https://stream.solmediaeg.com/soltv/soltv.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
-    "name": "Sooriyan TV (1080p)",
-    "country": "CA",
-    "group": "Entertainment",
-    "logo": "https://i.ibb.co/LSyydKj/Sooriyan-TV-Tamil.jpg",
-    "url": "https://live20.bozztv.com/giatv/giatv-Infinittyott/Infinittyott/playlist.m3u8",
     "source": "iptv-org",
     "verified": true,
     "verifiedAt": "2026-06-12T23:42:37.268Z"
@@ -18660,26 +15750,6 @@
     "verifiedAt": "2026-06-12T23:42:37.268Z"
   },
   {
-    "name": "Gusto TV (1080p)",
-    "country": "CA",
-    "group": "Cooking",
-    "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Gusto_TV.png",
-    "url": "https://563f72af.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UmFrdXRlblRWLWV1X0d1c3RvVFZfSExT/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
-    "name": "Gusto TV (1080p)",
-    "country": "CA",
-    "group": "Cooking",
-    "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Gusto_TV.png",
-    "url": "https://e75fc053c0d2406fb74cdd71d77e1a7f.mediatailor.us-east-1.amazonaws.com/v1/master/f4e8c53a8367a5b58e20ce054ea3ce25a3e904d3/RakutenTV-eu_GustoTV/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
     "name": "Hungry (720p)",
     "country": "US",
     "group": "Cooking",
@@ -19345,16 +16415,6 @@
     "group": "Lifestyle",
     "logo": "https://i.imgur.com/OSet4en.png",
     "url": "https://vcp.myplaytv.com/glowtv/glowtv/playlist.m3u8",
-    "source": "iptv-org",
-    "verified": true,
-    "verifiedAt": "2026-06-12T23:42:37.268Z"
-  },
-  {
-    "name": "QS24.tv (1080p)",
-    "country": "CH",
-    "group": "Lifestyle",
-    "logo": "https://i.ibb.co/qnBDjtC/Logo-QS24-schwarz-Pfade.png",
-    "url": "https://h030.video-stream-hosting.de/quantisana-live/_definst_/smil:livestream.smil/playlist.m3u8",
     "source": "iptv-org",
     "verified": true,
     "verifiedAt": "2026-06-12T23:42:37.268Z"
