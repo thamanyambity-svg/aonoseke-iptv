@@ -1491,11 +1491,25 @@ video {
   align-items: center;
   gap: 11px;
 }
-.site-logo {
+.site-logo,
+.site-logo-wrap {
   width: 42px;
   height: 42px;
   border-radius: 11px;
   flex-shrink: 0;
+}
+.site-logo-wrap {
+  background: #fff;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.site-logo-img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
 }
 .site-logo--mono {
   display: flex;

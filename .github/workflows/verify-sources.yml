@@ -1,0 +1,38 @@
+name: Vérification automatique des sources
+
+# Relance la vérification, élague les chaînes mortes et met à jour les
+# statuts de l'annuaire, puis commit les fichiers nettoyés.
+on:
+  schedule:
+    - cron: '0 */6 * * *' # toutes les 6 heures
+  workflow_dispatch:        # déclenchement manuel possible
+
+permissions:
+  contents: write
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Vérifier playlist + annuaire
+        run: node scripts/verify-sources.mjs
+
+      - name: Commit si changements
+        run: |
+          if [ -n "$(git status --porcelain public/playlist.json public/sites.json)" ]; then
+            git config user.name  "aonoseke-bot"
+            git config user.email "bot@aonoseke.local"
+            git add public/playlist.json public/sites.json
+            git commit -m "chore: vérification auto des sources [skip ci]"
+            git push
+          else
+            echo "Aucun changement — toutes les sources OK."
+          fi

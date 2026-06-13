@@ -26,6 +26,7 @@ import { BannerAd } from './components/BannerAd.tsx';
 import { Directory } from './components/Directory.tsx';
 import { Paywall } from './components/Paywall.tsx';
 import { useTrial } from './hooks/useTrial.ts';
+import { startSubscription } from './lib/payment.ts';
 import { useFavorites } from './hooks/useFavorites.ts';
 import { useAds } from './hooks/useAds.ts';
 import type { PrerollAd } from './hooks/useAds.ts';
@@ -619,9 +620,11 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
             <Paywall
               daysUsed={30}
               onSubscribe={() => {
-                // MVP : active le premium en local. Plus tard : Flutterwave/Stripe.
-                localStorage.setItem('iptv-premium', 'true');
-                window.location.reload();
+                // Flutterwave (Mobile Money) si configuré, sinon démo locale.
+                void startSubscription(user?.email ?? 'client@aonoseke.com', () => {
+                  localStorage.setItem('iptv-premium', 'true');
+                  window.location.reload();
+                });
               }}
             />
           )

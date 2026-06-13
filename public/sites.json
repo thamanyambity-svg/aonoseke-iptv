@@ -206,5 +206,71 @@
     "status": "online",
     "legal": true,
     "verifiedAt": "2026-06-12T23:42:37.268Z"
+  },
+  {
+    "id": "crunchyroll",
+    "name": "Crunchyroll",
+    "category": "Anime",
+    "language": "Multi",
+    "country": "US",
+    "url": "https://www.crunchyroll.com",
+    "description": "Anime en streaming (offre gratuite avec pub)",
+    "status": "online",
+    "legal": true
+  },
+  {
+    "id": "adn",
+    "name": "ADN",
+    "category": "Anime",
+    "language": "FR",
+    "country": "FR",
+    "url": "https://animationdigitalnetwork.com",
+    "description": "Animation Digital Network — anime VOSTFR/VF",
+    "status": "online",
+    "legal": true
+  },
+  {
+    "id": "retrocrush",
+    "name": "RetroCrush",
+    "category": "Anime",
+    "language": "EN",
+    "country": "US",
+    "url": "https://www.retrocrush.tv",
+    "description": "Anime classique gratuit",
+    "status": "online",
+    "legal": true
+  },
+  {
+    "id": "viki",
+    "name": "Rakuten Viki",
+    "category": "Dramas",
+    "language": "Multi",
+    "country": "US",
+    "url": "https://www.viki.com",
+    "description": "Dramas asiatiques (offre gratuite avec pub)",
+    "status": "online",
+    "legal": true
+  },
+  {
+    "id": "kocowa",
+    "name": "KOCOWA",
+    "category": "Dramas",
+    "language": "EN",
+    "country": "US",
+    "url": "https://www.kocowa.com",
+    "description": "Dramas et variétés coréens",
+    "status": "online",
+    "legal": true
+  },
+  {
+    "id": "tubi-anime",
+    "name": "Tubi Anime",
+    "category": "Anime",
+    "language": "EN",
+    "country": "US",
+    "url": "https://tubitv.com/category/anime",
+    "description": "Section anime gratuite de Tubi",
+    "status": "online",
+    "legal": true
   }
 ]

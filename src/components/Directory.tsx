@@ -1,4 +1,4 @@
-import { useState, useMemo, useCallback } from 'react';
+import { useState, useMemo, useCallback, useEffect } from 'react';
 import {
   Search, X, ExternalLink, RefreshCw, Star,
   AlertTriangle, Globe, ShieldCheck,
@@ -27,12 +27,30 @@ function hueOf(name: string): number {
 }
 
 /**
- * Logo monogramme : initiale sur un fond dégradé teinté par le nom.
- * Rendu homogène, instantané et sans dépendance réseau — aucun risque
- * d'image cassée ou de favicon délavé.
+ * Logo : essaie d'abord un vrai PNG de marque hébergé localement
+ * (/logos/{id}.png), puis retombe sur un monogramme coloré déterministe.
+ * Les vrais logos sont fiables (auto-hébergés) ; le monogramme garantit
+ * un rendu net même sans fichier.
  */
-function SiteLogo({ name }: { name: string; url: string }): JSX.Element {
+function SiteLogo({ id, name, hasLogo }: { id: string; name: string; hasLogo: boolean }): JSX.Element {
+  const [failed, setFailed] = useState(false);
   const hue = hueOf(name);
+
+  // PNG chargé uniquement s'il est listé dans le manifest (zéro flash)
+  if (hasLogo && !failed) {
+    return (
+      <div className="site-logo-wrap" aria-hidden="true">
+        <img
+          className="site-logo-img"
+          src={`/logos/${id}.png`}
+          alt=""
+          loading="lazy"
+          onError={() => setFailed(true)}
+        />
+      </div>
+    );
+  }
+
   return (
     <div
       className="site-logo site-logo--mono"
@@ -56,6 +74,15 @@ export function Directory(): JSX.Element {
     () => new Set(getLocalStorageItem<string[]>(FAV_KEY, [])),
   );
 
+  // Manifest des logos réellement présents dans /public/logos (zéro flash)
+  const [logoIds, setLogoIds] = useState<Set<string>>(new Set());
+  useEffect(() => {
+    fetch('/logos/manifest.json')
+      .then((r) => (r.ok ? r.json() : []))
+      .then((ids: string[]) => Array.isArray(ids) && setLogoIds(new Set(ids)))
+      .catch(() => { /* pas de manifest → tout en monogramme */ });
+  }, []);
+
   const categories = useMemo(() => {
     const set = Array.from(new Set(sites.map((s) => s.category)));
     return ['All', ...set.sort()];
@@ -63,15 +90,19 @@ export function Directory(): JSX.Element {
 
   const filtered = useMemo(() => {
     const q = search.toLowerCase();
-    return sites.filter((s) => {
-      const matchCat = category === 'All' || s.category === category;
-      const matchSearch =
-        !q ||
-        s.name.toLowerCase().includes(q) ||
-        s.description.toLowerCase().includes(q) ||
-        s.category.toLowerCase().includes(q);
-      return matchCat && matchSearch;
-    });
+    const rank: Record<string, number> = { online: 0, checking: 1, unknown: 2, offline: 3 };
+    return sites
+      .filter((s) => {
+        const matchCat = category === 'All' || s.category === category;
+        const matchSearch =
+          !q ||
+          s.name.toLowerCase().includes(q) ||
+          s.description.toLowerCase().includes(q) ||
+          s.category.toLowerCase().includes(q);
+        return matchCat && matchSearch;
+      })
+      // En ligne d'abord, hors ligne en bas
+      .sort((a, b) => (rank[a.status] ?? 9) - (rank[b.status] ?? 9));
   }, [sites, search, category]);
 
   const toggleFav = useCallback((id: string): void => {
@@ -160,7 +191,7 @@ export function Directory(): JSX.Element {
             <div key={site.id} className="site-card">
               {/* En-tête : logo + nom + favori */}
               <div className="site-head">
-                <SiteLogo name={site.name} url={site.url} />
+                <SiteLogo id={site.id} name={site.name} hasLogo={logoIds.has(site.id)} />
                 <div className="site-headtext">
                   <div className="site-name-row">
                     <h3 className="site-name">{site.name}</h3>
