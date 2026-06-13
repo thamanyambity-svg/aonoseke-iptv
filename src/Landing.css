@@ -534,3 +534,90 @@
   .landing-logo-text { font-size: 1.4rem; }
   .login-card { padding: 28px 20px; }
 }
+
+/* ══════════════════════════════════════════
+   AUTH — inscription / connexion
+══════════════════════════════════════════ */
+.boot-screen {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--void);
+}
+
+.auth-toggle {
+  display: flex;
+  gap: 4px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 4px;
+  margin-bottom: 22px;
+}
+.auth-toggle-btn {
+  flex: 1;
+  padding: 9px;
+  border: none;
+  background: transparent;
+  color: var(--text-3);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.15s;
+}
+.auth-toggle-btn.active {
+  background: var(--lime);
+  color: var(--void);
+  font-weight: 700;
+}
+
+.input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.input-icon {
+  position: absolute;
+  left: 12px;
+  color: var(--text-3);
+  pointer-events: none;
+}
+.input-wrap .form-input {
+  width: 100%;
+  padding-left: 34px;
+  padding-right: 56px;
+}
+.pass-toggle {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  color: var(--text-3);
+  cursor: pointer;
+  font-size: 0.62rem;
+  font-family: var(--mono);
+  letter-spacing: 0.5px;
+}
+.pass-toggle:hover { color: var(--lime); }
+
+.auth-error {
+  background: rgba(255, 63, 85, 0.1);
+  border: 1px solid rgba(255, 63, 85, 0.3);
+  color: #ff6b7a;
+  font-size: 0.78rem;
+  padding: 9px 12px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 14px;
+}
+.auth-notice {
+  background: var(--lime-dim);
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  color: var(--lime);
+  font-size: 0.78rem;
+  padding: 9px 12px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 14px;
+}

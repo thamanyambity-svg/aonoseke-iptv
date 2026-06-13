@@ -1,27 +1,15 @@
 /**
- * Analytics léger — suivi des vues, impressions pub et clics.
+ * Analytics — enregistre vues, impressions et clics pub dans Supabase
+ * (table view_events). C'est la source des statistiques d'audience du
+ * tableau de bord admin (preuve pour les annonceurs).
  *
- * Stocke localement (compteurs agrégés) et, si Supabase est configuré
- * (VITE_SUPABASE_URL), pousse chaque événement dans la table `view_events`
- * pour la facturation annonceurs. Sans backend, fonctionne en mode local.
+ * Sans Supabase, compteurs locaux uniquement (mode démo).
  */
-import { logger } from '../utils/logger.ts';
+import { supabase } from '../lib/supabaseClient.ts';
 
-export type EventType =
-  | 'channel_view'
-  | 'ad_impression'
-  | 'ad_click'
-  | 'session_start';
-
-interface AnalyticsEvent {
-  type: EventType;
-  ref?: string; // channel url, ad id…
-  ts: number;
-}
+export type EventType = 'channel_view' | 'ad_impression' | 'ad_click' | 'session_start';
 
 const LOCAL_KEY = 'iptv-analytics';
-const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL as string | undefined;
-const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY as string | undefined;
 
 function bumpLocal(type: EventType): void {
   try {
@@ -30,43 +18,21 @@ function bumpLocal(type: EventType): void {
     counts[type] = (counts[type] ?? 0) + 1;
     localStorage.setItem(LOCAL_KEY, JSON.stringify(counts));
   } catch {
-    /* quota / private mode — ignore */
-  }
-}
-
-async function pushRemote(evt: AnalyticsEvent): Promise<void> {
-  if (!SUPABASE_URL || !SUPABASE_KEY) return;
-  try {
-    let userId: string | null = null;
-    try {
-      const u = localStorage.getItem('iptv-auth-user');
-      if (u) userId = (JSON.parse(u) as { email?: string }).email ?? null;
-    } catch {
-      /* ignore */
-    }
-    await fetch(`${SUPABASE_URL}/rest/v1/view_events`, {
-      method: 'POST',
-      headers: {
-        apikey: SUPABASE_KEY,
-        Authorization: `Bearer ${SUPABASE_KEY}`,
-        'Content-Type': 'application/json',
-        Prefer: 'return=minimal',
-      },
-      body: JSON.stringify({
-        event_type: evt.type,
-        ref: evt.ref ?? null,
-        user_email: userId,
-        created_at: new Date(evt.ts).toISOString(),
-      }),
-    });
-  } catch (err) {
-    logger.warn('Analytics push failed', { error: String(err) });
+    /* quota / private mode */
   }
 }
 
 export function trackEvent(type: EventType, ref?: string): void {
   bumpLocal(type);
-  void pushRemote({ type, ref, ts: Date.now() });
+  if (!supabase) return;
+  // user_id est résolu côté session ; null si anonyme
+  void supabase.auth.getUser().then(({ data }) => {
+    void supabase!.from('view_events').insert({
+      event_type: type,
+      ref: ref ?? null,
+      user_id: data.user?.id ?? null,
+    });
+  });
 }
 
 export function getLocalStats(): Record<string, number> {

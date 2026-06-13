@@ -3,8 +3,7 @@ import { createRoot } from 'react-dom/client';
 import './index.css';
 import App from './App.tsx';
 import { Landing } from './Landing.tsx';
-import type { AuthUser } from './hooks/useAuth.ts';
-import { parseOAuthRedirect, signOutRemote } from './lib/supabase.ts';
+import { useAuth } from './hooks/useAuth.ts';
 
 // Detect Smart TV UA
 const TV_UA = /VIDAA|HbbTV|SmartTV|Tizen|WebOS|SMART-TV|Android.*TV|NetCast|PHILIPS|Viera|Roku/i;
@@ -16,62 +15,35 @@ if (isTV) {
   document.addEventListener('contextmenu', (e) => e.preventDefault());
 }
 
-const STORAGE_KEY = 'iptv-auth-user';
+function Root(): JSX.Element {
+  const { user, loading, signUp, signIn, signInDemo, signOut } = useAuth();
 
-function getStoredUser(): AuthUser | null {
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    return raw ? (JSON.parse(raw) as AuthUser) : null;
-  } catch {
-    return null;
+  if (loading) {
+    return (
+      <div className="boot-screen">
+        <div className="spinner" />
+      </div>
+    );
   }
-}
 
-function login(u: AuthUser): void {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(u));
-  window.location.reload();
-}
+  if (!user) {
+    return (
+      <Landing
+        onSignUp={signUp}
+        onSignIn={signIn}
+        onDemo={signInDemo}
+      />
+    );
+  }
 
-function logout(): void {
-  signOutRemote();
-  localStorage.removeItem(STORAGE_KEY);
-  window.location.reload();
+  return <App user={user} onLogout={() => void signOut()} />;
 }
 
 const root = document.getElementById('root');
 if (!root) throw new Error('Root element not found');
 
-function render(user: AuthUser | null): void {
-  createRoot(root as HTMLElement).render(
-    <StrictMode>
-      {user
-        ? <App onLogout={logout} user={user} />
-        : <Landing onLogin={login} />}
-    </StrictMode>,
-  );
-}
-
-// Bootstrap — gère d'abord un éventuel retour OAuth (#access_token=…)
-async function bootstrap(): Promise<void> {
-  // TV : connexion auto en mode démo
-  if (isTV) {
-    const tv: AuthUser = { name: 'TV Viewer', email: 'tv@aonoseke.com', provider: 'demo' };
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(tv));
-    render(tv);
-    return;
-  }
-
-  // Retour d'un login OAuth hébergé Supabase
-  if (window.location.hash.includes('access_token=')) {
-    const user = await parseOAuthRedirect();
-    if (user) {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(user));
-      render(user);
-      return;
-    }
-  }
-
-  render(getStoredUser());
-}
-
-void bootstrap();
+createRoot(root).render(
+  <StrictMode>
+    <Root />
+  </StrictMode>,
+);

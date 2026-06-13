@@ -16,7 +16,6 @@ import {
   Radio,
   X,
   RefreshCw,
-  LogOut,
   Compass,
 } from 'lucide-react';
 import { Player } from './components/Player.tsx';
@@ -25,6 +24,8 @@ import { PreRollAd } from './components/PreRollAd.tsx';
 import { BannerAd } from './components/BannerAd.tsx';
 import { Directory } from './components/Directory.tsx';
 import { Paywall } from './components/Paywall.tsx';
+import { Profile } from './components/Profile.tsx';
+import { AdminDashboard } from './components/AdminDashboard.tsx';
 import { useTrial } from './hooks/useTrial.ts';
 import { useDeadChannels } from './hooks/useDeadChannels.ts';
 import { startSubscription } from './lib/payment.ts';
@@ -97,6 +98,10 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
   const [loadError, setLoadError] = useState<string | null>(null);
   const [retryCount, setRetryCount] = useReducer((n: number) => n + 1, 0);
   const { favorites, toggleFavorite } = useFavorites();
+
+  // ── profil / admin ──────────────────────────────────────────────────────
+  const [showProfile, setShowProfile] = useState(false);
+  const [showAdmin, setShowAdmin] = useState(false);
 
   // ── essai 30 jours / premium ────────────────────────────────────────────
   const trial = useTrial();
@@ -346,14 +351,14 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
           <div className="channel-count-badge" title="Nombre de chaînes">
             {channels.length}
           </div>
-          {onLogout && (
+          {user && (
             <button
-              className="logout-btn"
-              onClick={onLogout}
-              title={user ? `Déconnexion (${user.name})` : 'Déconnexion'}
-              aria-label="Se déconnecter"
+              className="profile-btn"
+              onClick={() => setShowProfile(true)}
+              title={`Profil — ${user.username ?? user.name}`}
+              aria-label="Ouvrir le profil"
             >
-              <LogOut size={13} />
+              {(user.username ?? user.name ?? '?').charAt(0).toUpperCase()}
             </button>
           )}
         </div>
@@ -692,6 +697,24 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
         </>
         )}
       </main>
+
+      {/* Profil utilisateur */}
+      {showProfile && user && (
+        <Profile
+          user={user}
+          favoritesCount={favorites.size}
+          isPremium={trial.isPremium}
+          daysLeft={trial.daysLeft}
+          onClose={() => setShowProfile(false)}
+          onLogout={() => { setShowProfile(false); onLogout?.(); }}
+          onOpenAdmin={user.role === 'admin' ? () => { setShowProfile(false); setShowAdmin(true); } : undefined}
+        />
+      )}
+
+      {/* Tableau de bord admin */}
+      {showAdmin && user?.role === 'admin' && (
+        <AdminDashboard onClose={() => setShowAdmin(false)} />
+      )}
     </div>
   );
 }
