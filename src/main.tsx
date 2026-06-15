@@ -16,7 +16,7 @@ if (isTV) {
 }
 
 function Root(): JSX.Element {
-  const { user, loading, signUp, signIn, signInDemo, signOut } = useAuth();
+  const { user, loading, signUp, signIn, signInWithProvider, signInDemo, signOut } = useAuth();
 
   if (loading) {
     return (
@@ -31,6 +31,7 @@ function Root(): JSX.Element {
       <Landing
         onSignUp={signUp}
         onSignIn={signIn}
+        onSocial={signInWithProvider}
         onDemo={signInDemo}
       />
     );

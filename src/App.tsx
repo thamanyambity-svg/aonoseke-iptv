@@ -19,7 +19,7 @@ import {
   Compass,
 } from 'lucide-react';
 import { Player } from './components/Player.tsx';
-import { AlphaLogo } from './components/AlphaLogo.tsx';
+import { AlphaLogoAnimated } from './components/AlphaLogoAnimated.tsx';
 import { PreRollAd } from './components/PreRollAd.tsx';
 import { BannerAd } from './components/BannerAd.tsx';
 import { Directory } from './components/Directory.tsx';
@@ -33,7 +33,7 @@ import { startSubscription } from './lib/payment.ts';
 import { useFavorites } from './hooks/useFavorites.ts';
 import { useAds } from './hooks/useAds.ts';
 import type { PrerollAd } from './hooks/useAds.ts';
-import { trackEvent } from './hooks/useAnalytics.ts';
+import { trackEvent, trackHeartbeat } from './hooks/useAnalytics.ts';
 import type { Channel } from './types-exports.ts';
 import { validatePlaylist, appConfig } from './types-exports.ts';
 import { logger } from './utils/logger.ts';
@@ -211,7 +211,17 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
   const playChannel = useCallback((channel: Channel): void => {
     setActiveChannel(channel);
     setError(null);
-    trackEvent('channel_view', channel.url);
+    trackEvent('channel_view', channel.url, channel.group);
+  }, []);
+
+  // Heartbeat : mesure le temps de connexion réel (ping discret toutes les 60s,
+  // seulement quand l'onglet est visible).
+  useEffect(() => {
+    trackHeartbeat();
+    const id = window.setInterval(() => {
+      if (document.visibilityState === 'visible') trackHeartbeat();
+    }, 60_000);
+    return () => window.clearInterval(id);
   }, []);
 
   const handleSelectChannel = useCallback(
@@ -343,7 +353,7 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
         {/* Header */}
         <div className="sidebar-header">
           <div className="sidebar-logo-icon" aria-hidden="true">
-            <AlphaLogo size={34} />
+            <AlphaLogoAnimated size={34} />
           </div>
           <div className="sidebar-title">
             <h1>IPTV Player</h1>

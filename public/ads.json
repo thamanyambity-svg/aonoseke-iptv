@@ -4,35 +4,57 @@
     "enabled": true,
     "skipAfter": 5,
     "maxDuration": 12,
-    "frequency": 1,
+    "frequency": 4,
     "items": [
       {
         "id": "aonoseke-house",
-        "title": "Aonoseke House Investment",
-        "subtitle": "Votre partenaire import-export en RDC",
-        "cta": "Découvrir nos services",
-        "url": "https://aonoseke.com",
-        "bg": "linear-gradient(135deg, #0d0a04 0%, #2a1e00 60%, #c9a84c 180%)",
-        "image": ""
+        "variant": "souverain",
+        "emblem": true,
+        "eyebrow": "Facilitation d'achats · Sourcing · Importation",
+        "title": "La passerelle sécurisée vers le monde",
+        "subtitle": "Entre Kinshasa et les géants économiques — importez sans les risques de la distance.",
+        "destinations": "Chine · Dubaï · Turquie · Thaïlande · Japon",
+        "cta": "Découvrir la plateforme",
+        "url": "https://aonosekehouseinvestmentdrc.site/how-it-works?utm_source=iptv-player&utm_medium=preroll&utm_campaign=alpha-import-2026&utm_content=aonoseke-house",
+        "bg": "linear-gradient(135deg, #0d0a04 0%, #2a1e00 60%, #1a1206 100%)",
+        "legal": "A.Onoseke House Investment RDC · RCCM CD/KNM/RCCM/21-A-01949 · Siège : Av. Haut Congo n°13, Ngaliema, Kinshasa · contact@aonosekehouseinvestmentdrc.site · +243 999 894 788"
       },
       {
-        "id": "alpha-import",
-        "title": "Alpha Import Exchange",
-        "subtitle": "Solutions commerciales internationales",
-        "cta": "En savoir plus",
-        "url": "https://aonoseke.com",
-        "bg": "linear-gradient(135deg, #0d0a04 0%, #1a1400 70%, #8a6f2c 200%)",
-        "image": ""
+        "id": "alpha-import-trust",
+        "variant": "corridor",
+        "emblem": true,
+        "eyebrow": "Import B2B sécurisé",
+        "title": "Importez en toute confiance",
+        "subtitle": "Paiement 60/40, partenaires certifiés, traçabilité totale.",
+        "destinations": "Un partenaire certifié par pays",
+        "cta": "Comment ça marche",
+        "url": "https://aonosekehouseinvestmentdrc.site/how-it-works?utm_source=iptv-player&utm_medium=preroll&utm_campaign=alpha-import-2026&utm_content=alpha-import-trust",
+        "bg": "linear-gradient(135deg, #0d0a04 0%, #1a1400 70%, #0f0b04 100%)",
+        "legal": "A.Onoseke House Investment RDC · RCCM CD/KNM/RCCM/21-A-01949 · Siège : Av. Haut Congo n°13, Ngaliema, Kinshasa · contact@aonosekehouseinvestmentdrc.site · +243 999 894 788"
+      },
+      {
+        "id": "alpha-import-action",
+        "variant": "souverain",
+        "emblem": true,
+        "eyebrow": "Sourcing stratégique",
+        "title": "Lancez votre importation",
+        "subtitle": "Devis, validation, livraison : un workflow documenté de bout en bout.",
+        "destinations": "Chine · Dubaï · Turquie · Thaïlande · Japon",
+        "cta": "Commencer maintenant",
+        "url": "https://aonosekehouseinvestmentdrc.site/register?utm_source=iptv-player&utm_medium=preroll&utm_campaign=alpha-import-2026&utm_content=alpha-import-action",
+        "bg": "linear-gradient(115deg, #0d0a04 0%, #332600 55%, #1a1206 100%)",
+        "legal": "A.Onoseke House Investment RDC · RCCM CD/KNM/RCCM/21-A-01949 · Siège : Av. Haut Congo n°13, Ngaliema, Kinshasa · contact@aonosekehouseinvestmentdrc.site · +243 999 894 788"
       }
     ]
   },
   "banners": [
     {
       "id": "banner-aonoseke",
-      "title": "Aonoseke House Investment RDC",
-      "subtitle": "Import · Export · Partenariats",
-      "url": "https://aonoseke.com",
-      "image": ""
+      "emblem": true,
+      "title": "Alpha Import Exchange — A.Onoseke House Investment RDC",
+      "subtitle": "Import · Sourcing stratégique · Partenariats — Chine · Dubaï · Turquie · Thaïlande · Japon",
+      "url": "https://aonosekehouseinvestmentdrc.site/?utm_source=iptv-player&utm_medium=banner&utm_campaign=alpha-import-2026&utm_content=banner-aonoseke",
+      "legal": "RCCM CD/KNM/RCCM/21-A-01949 — Ngaliema, Kinshasa"
     }
   ]
 }

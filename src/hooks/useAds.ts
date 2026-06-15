@@ -8,6 +8,12 @@ export interface PrerollAd {
   url?: string;
   bg?: string;
   image?: string;
+  logo?: string;
+  eyebrow?: string;
+  destinations?: string;
+  legal?: string;
+  variant?: 'souverain' | 'corridor';
+  emblem?: boolean;
 }
 
 export interface BannerAd {
@@ -16,6 +22,9 @@ export interface BannerAd {
   subtitle?: string;
   url?: string;
   image?: string;
+  logo?: string;
+  legal?: string;
+  emblem?: boolean;
 }
 
 export interface AdsConfig {

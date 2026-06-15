@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { ExternalLink } from 'lucide-react';
 import type { BannerAd as BannerAdData } from '../hooks/useAds.ts';
+import { AlphaLogo } from './AlphaLogo.tsx';
 
 interface BannerAdProps {
   ad: BannerAdData;
@@ -38,12 +39,18 @@ export function BannerAd({ ad, onImpression, onClick }: BannerAdProps): JSX.Elem
       }}
     >
       <span className="banner-ad-label">Sponsor</span>
+      {ad.emblem ? (
+        <AlphaLogo size={34} />
+      ) : (
+        ad.logo && <img src={ad.logo} alt="Alpha Import Exchange" className="banner-ad-logo" />
+      )}
       {ad.image ? (
         <img src={ad.image} alt={ad.title} className="banner-ad-img" />
       ) : (
         <div className="banner-ad-text">
           <span className="banner-ad-title">{ad.title}</span>
           {ad.subtitle && <span className="banner-ad-sub">{ad.subtitle}</span>}
+          {ad.legal && <span className="banner-ad-legal">{ad.legal}</span>}
         </div>
       )}
       {ad.url && <ExternalLink size={12} className="banner-ad-ext" aria-hidden="true" />}

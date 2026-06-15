@@ -1,0 +1,46 @@
+.alpha-logo-anim {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.alpha-logo-anim-deco {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.alpha-logo-anim-core {
+  position: relative;
+  display: inline-flex;
+}
+
+.ala-ring,
+.ala-sweep {
+  transform-box: view-box;
+  transform-origin: 70px 70px;
+}
+
+.ala-ring-1 { animation: alaSpin 16s linear infinite; }
+.ala-ring-2 { animation: alaSpinRev 24s linear infinite; }
+.ala-sweep { animation: alaSpin 4.5s linear infinite; }
+.ala-dot { animation: alaPulse 2.4s ease-in-out infinite; }
+.ala-dot-2 { animation-duration: 3s; }
+.ala-dot-3 { animation-duration: 3.4s; }
+
+@keyframes alaSpin { to { transform: rotate(360deg); } }
+@keyframes alaSpinRev { to { transform: rotate(-360deg); } }
+@keyframes alaPulse {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ala-ring-1,
+  .ala-ring-2,
+  .ala-sweep,
+  .ala-dot { animation: none; }
+  .ala-sweep { display: none; }
+}

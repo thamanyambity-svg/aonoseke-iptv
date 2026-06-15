@@ -462,6 +462,106 @@
 
 .btn-demo:active { transform: translateY(0); }
 
+/* Social / phone auth */
+.auth-social {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn-social {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 11px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text-1);
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btn-social:hover:not(:disabled) {
+  border-color: rgba(201, 168, 76, 0.4);
+  background: var(--surface-3);
+  transform: translateY(-1px);
+}
+
+.btn-social:disabled { opacity: 0.55; cursor: not-allowed; }
+
+.btn-social-ic { flex-shrink: 0; }
+
+.auth-phone {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn-phone {
+  width: 100%;
+  padding: 11px 16px;
+  border-radius: var(--radius-sm);
+  border: none;
+  background: var(--lime);
+  color: var(--void);
+  font-weight: 800;
+  font-size: 0.78rem;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btn-phone:hover:not(:disabled) { background: #dfc06b; transform: translateY(-1px); }
+.btn-phone:disabled { opacity: 0.55; cursor: not-allowed; }
+
+.phone-back {
+  align-self: flex-start;
+  background: none;
+  border: none;
+  color: var(--text-3);
+  font-size: 0.72rem;
+  cursor: pointer;
+  padding: 2px;
+}
+
+.phone-back:hover { color: var(--lime); }
+
+.auth-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 16px 0;
+  color: var(--text-3);
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.form-select {
+  width: 100%;
+  cursor: pointer;
+  padding-left: 14px;
+}
+
+.form-optional {
+  color: var(--text-3);
+  font-weight: 400;
+  font-size: 0.85em;
+}
+
 /* Demo hint */
 .demo-hint {
   margin-top: 16px;

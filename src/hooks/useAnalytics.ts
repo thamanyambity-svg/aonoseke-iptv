@@ -22,7 +22,7 @@ function bumpLocal(type: EventType): void {
   }
 }
 
-export function trackEvent(type: EventType, ref?: string): void {
+export function trackEvent(type: EventType, ref?: string, category?: string): void {
   bumpLocal(type);
   if (!supabase) return;
   // user_id est résolu côté session ; null si anonyme
@@ -30,9 +30,19 @@ export function trackEvent(type: EventType, ref?: string): void {
     void supabase!.from('view_events').insert({
       event_type: type,
       ref: ref ?? null,
+      category: category ?? null,
       user_id: data.user?.id ?? null,
     });
   });
+}
+
+/**
+ * Heartbeat : signale ~60s de présence active de l'utilisateur connecté.
+ * Sert à mesurer le temps de connexion réel (table user_activity).
+ */
+export function trackHeartbeat(): void {
+  if (!supabase) return;
+  void supabase.rpc('track_heartbeat', { p_seconds: 60 });
 }
 
 export function getLocalStats(): Record<string, number> {
