@@ -26,8 +26,16 @@ export default defineConfig({
         ],
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,svg}'],
+        // On NE précache PAS le HTML : la navigation va au réseau (NetworkFirst)
+        // → l'app charge toujours le dernier code en ligne (fin du cache bloqué).
+        globPatterns: ['**/*.{js,css,svg}'],
+        cleanupOutdatedCaches: true,
         runtimeCaching: [
+          {
+            urlPattern: ({ request }) => request.mode === 'navigate',
+            handler: 'NetworkFirst',
+            options: { cacheName: 'app-shell', networkTimeoutSeconds: 3 },
+          },
           {
             urlPattern: /\.json$/,
             handler: 'NetworkFirst',
