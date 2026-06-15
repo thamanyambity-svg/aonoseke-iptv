@@ -964,21 +964,27 @@ video {
 }
 
 @media (max-width: 768px) {
-  .app-container { flex-direction: column; }
+  /* Mobile : scroll naturel de la page (plus de panneaux figés qui écrasent la liste) */
+  .app-container { flex-direction: column; height: auto; min-height: 100vh; overflow: visible; }
   .sidebar {
     width: 100vw !important;
     min-width: 0;
-    height: 46vh;
+    height: auto;
+    overflow: visible;
     border-right: none;
     border-bottom: 1px solid var(--border);
   }
   .sidebar::before { height: 2px; }
-  .main-content { flex: 1; }
+  /* La liste des chaînes a sa propre zone scrollable, généreuse */
+  .channel-list { max-height: 58vh; }
+  .main-content { min-height: 56vh; display: flex; flex-direction: column; }
+  .video-container { min-height: 56vh; }
   .now-playing-title { font-size: 1.1rem; max-width: 200px; }
 }
 
 @media (max-width: 480px) {
-  .sidebar { height: 42vh; }
+  .channel-list { max-height: 56vh; }
+  .video-container { min-height: 52vh; }
   .now-playing-title { font-size: 0.95rem; }
 }
 
