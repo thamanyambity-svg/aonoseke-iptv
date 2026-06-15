@@ -45,7 +45,7 @@ function fmtDate(s: string): string {
 }
 
 function isOnline(lastSeen: string): boolean {
-  return Date.now() - new Date(lastSeen).getTime() < 5 * 60 * 1000; // 5 min
+  return Date.now() - new Date(lastSeen).getTime() < 2 * 60 * 1000; // 2 min
 }
 
 function flagEmoji(cc: string | null): string {
@@ -119,7 +119,19 @@ export function AdminDashboard({ onClose }: { onClose: () => void }): JSX.Elemen
     }
   }, []);
 
-  useEffect(() => { void load(); }, [load]);
+  const loadUsers = useCallback(async (): Promise<void> => {
+    if (!supabase) return;
+    const { data } = await supabase.rpc('admin_recent_users', { lim: 100 });
+    if (data) setUsers(data as RecentUser[]);
+  }, []);
+
+  // Rafraîchissement live de la présence toutes les 3 s — uniquement la liste
+  // des utilisateurs (pas les stats lourdes), pour ne pas marteler la base.
+  useEffect(() => {
+    void load();
+    const id = window.setInterval(() => void loadUsers(), 3000);
+    return () => window.clearInterval(id);
+  }, [load, loadUsers]);
 
   function exportCsv(): void {
     const header = 'username,email,pays,ville,ip,inscrit,derniere_activite,role\n';
@@ -277,8 +289,8 @@ export function AdminDashboard({ onClose }: { onClose: () => void }): JSX.Elemen
                 </tr>
               </thead>
               <tbody>
-                {users.map((u, i) => (
-                  <tr key={i}>
+                {users.map((u) => (
+                  <tr key={u.id}>
                     <td>
                       <span className={`u-dot${isOnline(u.last_seen_at) ? ' on' : ''}`} />
                       {isOnline(u.last_seen_at) ? 'En ligne' : 'Hors ligne'}
