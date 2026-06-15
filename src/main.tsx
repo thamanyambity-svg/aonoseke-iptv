@@ -40,6 +40,17 @@ function Root(): JSX.Element {
   return <App user={user} onLogout={() => void signOut()} />;
 }
 
+// PWA : recharge auto quand un nouveau service worker prend la main
+// (évite de rester bloqué sur un ancien bundle en cache après un déploiement).
+if ('serviceWorker' in navigator) {
+  let refreshing = false;
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    if (refreshing) return;
+    refreshing = true;
+    window.location.reload();
+  });
+}
+
 const root = document.getElementById('root');
 if (!root) throw new Error('Root element not found');
 
