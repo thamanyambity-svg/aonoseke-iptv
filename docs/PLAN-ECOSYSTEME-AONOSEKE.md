@@ -32,14 +32,12 @@ Impressions pub (player)
 
 **North Star :** nombre de demandes qualifiées + montant des dépôts 60% / mois **attribuables au player**.
 
-| Étape | Métrique | Cible (à fixer ensemble — Phase 0) |
+| Étape | Métrique | Cible (run-rate de sortie M12 — plancher · base · stretch) |
 |---|---|---|
-| Impressions pré-roll | vues / mois | _à définir_ |
-| Taux de clic pub (CTR) | clics / impressions | viser 2–5 % |
-| Visites landing | sessions UTM `iptv-player` | _à définir_ |
-| Inscriptions BUYER | comptes créés depuis le player | _à définir_ |
-| Demandes d'import | requests `PENDING` attribuées player | **KPI principal** |
-| Dépôts 60% | € encaissés (Stripe) | **KPI principal** |
+| Inscriptions BUYER (leads) | comptes via player/spots | ~80 · 145 · 260 /mois |
+| Demandes d'import | requests `PENDING` attribuées | ~30 · 50 · 90 /mois |
+| Dépôts 60% (commandes financées) | `FUNDED` (Stripe) | **~9 · 15 · 27 /mois** |
+| Revenu plateforme | commission ~10 % × AOV 12 k$ | **~11 k · 18 k · 32 k $/mois** |
 
 ---
 
@@ -58,10 +56,11 @@ Tant qu'une seule case est rouge → **pas de prod**.
 
 ## 4. Phases 0 → 5
 
-### Phase 0 — Cadrage & objectifs *(porte d'entrée)*
-- **Livrables :** cibles chiffrées (leads/mois, dépôts/mois), budget marketing, délai, marchés prioritaires (RDC/Kinshasa ? diaspora ?).
-- **DoD :** tableau KPI validé par toi.
-- **Responsable :** Toi (chiffres) + moi (mise en forme).
+### Phase 0 — Cadrage & objectifs ✅ *verrouillée (2026-06-15)*
+- **Objectif (fourchette plancher → stretch)** : run-rate de sortie M12 = **~9 → ~15 → ~27 commandes financées/mois** (~75 k / 120 k / 215 k $ de revenu an 1). AOV 12 k$ marchandise, commission ~10 % → ~1 200 $/commande.
+- **Marchés** : RDC locale **+** diaspora. **Analytics** : Supabase. **Budget** : ~40 k$ an 1 (base) ; tranche stretch ≤ ~65 k$ débloquée seulement si CAC pilote prouvé (≤ ~400 $/commande).
+- **Ramp** : M1–3 pilote (prouver funnel+attribution) → M4–6 ramp → M7–12 scale.
+- **DoD :** ✅ tableau KPI validé.
 
 ### Phase 1 — Tracking & attribution *(le trou actuel)*
 - Ajouter des **UTM** à chaque URL de `ads.json` (`utm_source=iptv-player`, `utm_medium=preroll|banner`, `utm_campaign`, `utm_content=<id>`).

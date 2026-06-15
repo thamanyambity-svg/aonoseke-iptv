@@ -1,5 +1,5 @@
 import { useEffect, useState, useCallback, lazy, Suspense } from 'react';
-import { Users, Activity, TrendingUp, Eye, RefreshCw, X, Crown, Download, FileDown, Globe, Clock, Layers } from 'lucide-react';
+import { Users, Activity, TrendingUp, Eye, RefreshCw, X, Crown, Download, FileDown, Globe, Clock, Layers, Trash2 } from 'lucide-react';
 import { supabase } from '../lib/supabaseClient.ts';
 import { logger } from '../utils/logger.ts';
 import { WorldMap, type GeoPoint } from './WorldMap.tsx';
@@ -22,6 +22,7 @@ interface Stats {
 }
 
 interface RecentUser {
+  id: string;
   username: string;
   email: string;
   country: string | null;
@@ -130,6 +131,14 @@ export function AdminDashboard({ onClose }: { onClose: () => void }): JSX.Elemen
     a.href = URL.createObjectURL(blob);
     a.download = `aonoseke-utilisateurs-${new Date().toISOString().slice(0, 10)}.csv`;
     a.click();
+  }
+
+  async function deleteUser(id: string, username: string): Promise<void> {
+    if (!supabase) return;
+    if (!window.confirm(`Supprimer définitivement « ${username} » ?\nCette action est irréversible (compte + données).`)) return;
+    const { error: err } = await supabase.rpc('admin_delete_user', { target: id });
+    if (err) { window.alert('Suppression impossible : ' + err.message); return; }
+    void load();
   }
 
   const cards = stats ? [
@@ -264,7 +273,7 @@ export function AdminDashboard({ onClose }: { onClose: () => void }): JSX.Elemen
               <thead>
                 <tr>
                   <th>Statut</th><th>Utilisateur</th><th>Email</th>
-                  <th>Pays</th><th>Ville</th><th>IP</th><th>Inscrit</th><th>Dernière activité</th>
+                  <th>Pays</th><th>Ville</th><th>IP</th><th>Inscrit</th><th>Dernière activité</th><th>Actions</th>
                 </tr>
               </thead>
               <tbody>
@@ -284,10 +293,22 @@ export function AdminDashboard({ onClose }: { onClose: () => void }): JSX.Elemen
                     <td className="u-ip">{u.ip ?? '—'}</td>
                     <td>{fmtDate(u.created_at)}</td>
                     <td>{fmtDate(u.last_seen_at)}</td>
+                    <td>
+                      {u.role !== 'admin' && (
+                        <button
+                          className="u-del"
+                          onClick={() => void deleteUser(u.id, u.username)}
+                          title="Supprimer cet utilisateur"
+                          aria-label={`Supprimer ${u.username}`}
+                        >
+                          <Trash2 size={14} />
+                        </button>
+                      )}
+                    </td>
                   </tr>
                 ))}
                 {users.length === 0 && (
-                  <tr><td colSpan={8} className="u-empty">Aucun utilisateur inscrit pour l'instant.</td></tr>
+                  <tr><td colSpan={9} className="u-empty">Aucun utilisateur inscrit pour l'instant.</td></tr>
                 )}
               </tbody>
             </table>

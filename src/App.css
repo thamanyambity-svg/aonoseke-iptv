@@ -1409,6 +1409,20 @@ video {
 .u-flag { margin-right: 2px; }
 .u-ip { font-family: var(--mono); font-size: 0.72rem; color: var(--text-3); }
 
+.u-del {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text-3);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.u-del:hover { color: #ff6b6b; border-color: rgba(255, 107, 107, 0.5); background: rgba(255, 107, 107, 0.08); }
+
 /* ══ Dashboard : engagement + panneaux analytics ══ */
 .admin-eng {
   display: flex;
