@@ -67,31 +67,38 @@ function detectDevice(): string {
  * son profil (fonctions sécurisées : n'écrivent que sa propre ligne).
  * Best-effort : ne fait jamais échouer la connexion.
  */
+interface GeoResult { ip?: string; city?: string; region?: string; country?: string; code?: string; lat?: number; lon?: number }
+
 async function captureGeo(): Promise<void> {
   if (!supabase) return;
-  try {
-    if (sessionStorage.getItem('geo-captured')) return;
-    sessionStorage.setItem('geo-captured', '1');
-    const res = await fetch('https://ipapi.co/json/');
-    if (!res.ok) return;
-    const g = (await res.json()) as {
-      ip?: string; city?: string; region?: string;
-      country_name?: string; country_code?: string;
-      latitude?: number; longitude?: number; error?: boolean;
-    };
-    if (!g || g.error) return;
-    await supabase.rpc('set_my_geo', {
-      p_country: g.country_name ?? null,
-      p_country_code: g.country_code ?? null,
-      p_city: g.city ?? null,
-      p_region: g.region ?? null,
-      p_ip: g.ip ?? null,
-      p_lat: typeof g.latitude === 'number' ? g.latitude : null,
-      p_lon: typeof g.longitude === 'number' ? g.longitude : null,
-    });
-    await supabase.rpc('set_my_device', { p_device: detectDevice() });
-  } catch {
-    /* géo best-effort */
+  if (sessionStorage.getItem('geo-done')) return;
+  const providers: Array<() => Promise<GeoResult>> = [
+    async () => {
+      const g = await (await fetch('https://ipapi.co/json/')).json();
+      if (g.error) throw new Error('ipapi');
+      return { ip: g.ip, city: g.city, region: g.region, country: g.country_name, code: g.country_code, lat: g.latitude, lon: g.longitude };
+    },
+    async () => {
+      const g = await (await fetch('https://ipwho.is/')).json();
+      if (g.success === false) throw new Error('ipwho');
+      return { ip: g.ip, city: g.city, region: g.region, country: g.country, code: g.country_code, lat: g.latitude, lon: g.longitude };
+    },
+  ];
+  for (const provider of providers) {
+    try {
+      const g = await provider();
+      if (!g.ip) continue;
+      const { error } = await supabase.rpc('set_my_geo', {
+        p_country: g.country ?? null, p_country_code: g.code ?? null,
+        p_city: g.city ?? null, p_region: g.region ?? null, p_ip: g.ip ?? null,
+        p_lat: typeof g.lat === 'number' ? g.lat : null,
+        p_lon: typeof g.lon === 'number' ? g.lon : null,
+      });
+      if (error) continue;
+      await supabase.rpc('set_my_device', { p_device: detectDevice() });
+      sessionStorage.setItem('geo-done', '1'); // flag posé seulement après succès → réessai sinon
+      return;
+    } catch { /* fournisseur suivant */ }
   }
 }
 
@@ -121,14 +128,33 @@ export function useAuth(): {
     }
 
     let active = true;
+    let hbId: number | undefined;
+
+    // Heartbeat fiable : présence + temps (track_heartbeat met à jour
+    // user_activity ET last_seen_at) immédiatement, toutes les 60s, et au
+    // retour sur l'onglet. Placé ici (cœur d'auth) = garanti de tourner.
+    const beat = (): void => {
+      if (supabase && document.visibilityState === 'visible') {
+        void supabase.rpc('track_heartbeat', { p_seconds: 60 });
+      }
+    };
+    const startPresence = (): void => {
+      beat();
+      if (hbId === undefined) hbId = window.setInterval(beat, 60_000);
+    };
+    const stopPresence = (): void => {
+      if (hbId !== undefined) { window.clearInterval(hbId); hbId = undefined; }
+    };
+    document.addEventListener('visibilitychange', beat);
+
     void supabase.auth.getSession().then(async ({ data }) => {
       if (!active) return;
       const s = data.session;
       if (s?.user) {
         const u = await loadProfile(s.user.id, s.user.email ?? '');
         if (active) setState({ user: u, loading: false });
-        void supabase!.rpc('touch_last_seen');
         void captureGeo();
+        startPresence();
       } else {
         setState({ user: null, loading: false });
       }
@@ -139,15 +165,21 @@ export function useAuth(): {
       if (session?.user) {
         void loadProfile(session.user.id, session.user.email ?? '').then((u) => {
           if (active) setState({ user: u, loading: false });
-          void supabase!.rpc('touch_last_seen');
           void captureGeo();
+          startPresence();
         });
       } else {
+        stopPresence();
         setState({ user: null, loading: false });
       }
     });
 
-    return () => { active = false; sub.subscription.unsubscribe(); };
+    return () => {
+      active = false;
+      stopPresence();
+      document.removeEventListener('visibilitychange', beat);
+      sub.subscription.unsubscribe();
+    };
   }, []);
 
   const signUp = useCallback(
