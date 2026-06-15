@@ -16,7 +16,7 @@ export default function MapboxMap({ points, token }: { points: GeoPoint[]; token
     mapboxgl.accessToken = token;
     const map = new mapboxgl.Map({
       container: ref.current,
-      style: 'mapbox://styles/mapbox/dark-v11',
+      style: 'mapbox://styles/mapbox/satellite-streets-v12',
       center: [12, 8],
       zoom: 1.1,
       attributionControl: false,
