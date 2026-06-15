@@ -17,6 +17,7 @@ import {
   X,
   RefreshCw,
   Compass,
+  Menu,
 } from 'lucide-react';
 import { Player } from './components/Player.tsx';
 import { AlphaLogoAnimated } from './components/AlphaLogoAnimated.tsx';
@@ -93,6 +94,7 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
   const [selectedCountry, setSelectedCountry] = useState<string>('All');
   const [selectedGroup, setSelectedGroup] = useState<string>('All');
   const [activeChannel, setActiveChannel] = useState<Channel | null>(null);
+  const [sidebarOpen, setSidebarOpen] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState<Tab>('all');
   const [isLoading, setIsLoading] = useState(true);
@@ -211,6 +213,7 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
   const playChannel = useCallback((channel: Channel): void => {
     setActiveChannel(channel);
     setError(null);
+    setSidebarOpen(false); // chaîne choisie → on referme le drawer pour laisser le lecteur en plein écran
     trackEvent('channel_view', channel.url, channel.group);
   }, []);
 
@@ -226,6 +229,7 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
 
   const handleSelectChannel = useCallback(
     (channel: Channel): void => {
+      setSidebarOpen(false); // toute sélection referme le drawer (même si une pub précède)
       // pas de pub si on reste sur la même chaîne
       if (channel.url === activeChannel?.url) {
         playChannel(channel);
@@ -346,7 +350,18 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
 
   // ─── render ───────────────────────────────────────────────────────────────
   return (
-    <div className="app-container">
+    <div className={`app-container${sidebarOpen ? ' sidebar-open' : ''}`}>
+      {/* Toggle hamburger — disponible sur tous les supports */}
+      <button
+        className="sidebar-toggle"
+        onClick={() => setSidebarOpen((o) => !o)}
+        aria-label={sidebarOpen ? 'Masquer la liste des chaînes' : 'Afficher la liste des chaînes'}
+      >
+        {sidebarOpen ? <X size={20} /> : <Menu size={20} />}
+      </button>
+      {sidebarOpen && (
+        <div className="sidebar-backdrop" onClick={() => setSidebarOpen(false)} aria-hidden="true" />
+      )}
       {/* ── SIDEBAR ───────────────────────────────────────────────────────── */}
       <aside className="sidebar glass" aria-label="Panneau des chaînes">
 
