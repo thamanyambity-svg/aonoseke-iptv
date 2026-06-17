@@ -218,8 +218,33 @@ export function AdminDashboard({ user, onClose, initialTab = 'audience' }: Admin
   // Garde-fou de sécurité : si l'utilisateur courant n'est pas admin,
   // on ne rend rien. La sécurité côté Supabase (RPC security_definer +
   // is_admin()) reste la source de vérité, ce n'est qu'un garde-fou UI.
-  if (user?.role !== 'admin') {
-    logger.warn('AdminDashboard affiché pour un non-admin — refusé', { role: user?.role });
+  
+  // DEBUG: Log complet pour diagnostic
+  const userRole = user?.role;
+  const isAdmin = userRole === 'admin';
+  
+  if (!isAdmin) {
+    logger.warn('🔒 AdminDashboard accès refusé', { 
+      userId: user?.id,
+      email: user?.email,
+      userRole: userRole || '[vide]',
+      expectedRole: 'admin',
+      message: 'Utilisateur non-admin ne peut pas accéder au dashboard'
+    });
+    
+    // Log dans la console pour le débogage
+    console.error(
+      '%c🔒 ADMIN DASHBOARD — ACCÈS REFUSÉ',
+      'color: red; font-weight: bold; font-size: 14px'
+    );
+    console.table({
+      'User ID': user?.id,
+      'Email': user?.email,
+      'Rôle actuel': userRole || '[vide — pas configuré!]',
+      'Rôle requis': 'admin',
+      'Action': 'Allez sur Supabase → Table Editor → profiles → colonne role → mettez "admin"'
+    });
+    
     return null;
   }
 
