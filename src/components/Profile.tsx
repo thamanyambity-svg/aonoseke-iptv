@@ -1,18 +1,17 @@
-import { X, LogOut, Crown, Star, Shield } from 'lucide-react';
+import { X, LogOut, Star, Shield, Megaphone } from 'lucide-react';
 import type { AuthUser } from '../hooks/useAuth.ts';
 
 interface ProfileProps {
   user: AuthUser;
   favoritesCount: number;
-  isPremium: boolean;
-  daysLeft: number;
   onClose: () => void;
   onLogout: () => void;
   onOpenAdmin?: () => void;
+  onOpenAdMgmt?: () => void;
 }
 
 export function Profile({
-  user, favoritesCount, isPremium, daysLeft, onClose, onLogout, onOpenAdmin,
+  user, favoritesCount, onClose, onLogout, onOpenAdmin, onOpenAdMgmt,
 }: ProfileProps): JSX.Element {
   const initial = (user.username ?? user.name ?? '?').charAt(0).toUpperCase();
 
@@ -27,11 +26,7 @@ export function Profile({
         <h2 className="profile-name">{user.username ?? user.name}</h2>
         <p className="profile-email">{user.email}</p>
 
-        {isPremium ? (
-          <span className="profile-badge profile-badge--premium"><Crown size={12} /> Premium</span>
-        ) : (
-          <span className="profile-badge">Essai · {daysLeft} j restants</span>
-        )}
+        <span className="profile-badge">Compte gratuit</span>
 
         <div className="profile-rows">
           <div className="profile-row">
@@ -40,7 +35,7 @@ export function Profile({
           </div>
           <div className="profile-row">
             <span className="profile-row-label"><Shield size={13} /> Statut du compte</span>
-            <span className="profile-row-value">{isPremium ? 'Premium actif' : 'Essai gratuit'}</span>
+            <span className="profile-row-value">Accès complet gratuit</span>
           </div>
           {user.role === 'admin' && (
             <div className="profile-row">
@@ -49,6 +44,12 @@ export function Profile({
             </div>
           )}
         </div>
+
+        {user.role === 'admin' && onOpenAdMgmt && (
+          <button className="profile-admin-btn profile-ad-btn" onClick={onOpenAdMgmt}>
+            <Megaphone size={14} /> Gestion publicitaire
+          </button>
+        )}
 
         {user.role === 'admin' && onOpenAdmin && (
           <button className="profile-admin-btn" onClick={onOpenAdmin}>

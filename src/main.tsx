@@ -4,6 +4,11 @@ import './index.css';
 import App from './App.tsx';
 import { Landing } from './Landing.tsx';
 import { useAuth } from './hooks/useAuth.ts';
+import { captureUtmParams } from './utils/utmTracking.ts';
+
+// Capture les UTM params de l'URL d'atterrissage (Phase 1 tracking écosystème)
+// À appeler le plus tôt possible, avant le rendu React.
+captureUtmParams();
 
 // Detect Smart TV UA
 const TV_UA = /VIDAA|HbbTV|SmartTV|Tizen|WebOS|SMART-TV|Android.*TV|NetCast|PHILIPS|Viera|Roku/i;

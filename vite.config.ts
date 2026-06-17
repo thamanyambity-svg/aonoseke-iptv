@@ -13,6 +13,10 @@ export default defineConfig({
     // bloqué, et le heartbeat (présence + activité) s'exécute enfin.
     VitePWA({ selfDestroying: true }),
   ],
+  // Vitest : exclut les tests E2E Playwright (gérés séparément)
+  test: {
+    exclude: ['node_modules', 'tests/e2e/**'],
+  },
   build: {
     rollupOptions: {
       output: {

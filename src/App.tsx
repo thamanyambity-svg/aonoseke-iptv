@@ -25,12 +25,9 @@ import { PreRollAd } from './components/PreRollAd.tsx';
 import { BannerAd } from './components/BannerAd.tsx';
 import { Directory } from './components/Directory.tsx';
 import { CinematicBg } from './components/CinematicBg.tsx';
-import { Paywall } from './components/Paywall.tsx';
 import { Profile } from './components/Profile.tsx';
 import { AdminDashboard } from './components/AdminDashboard.tsx';
-import { useTrial } from './hooks/useTrial.ts';
 import { useDeadChannels } from './hooks/useDeadChannels.ts';
-import { startSubscription } from './lib/payment.ts';
 import { useFavorites } from './hooks/useFavorites.ts';
 import { useAds } from './hooks/useAds.ts';
 import type { PrerollAd } from './hooks/useAds.ts';
@@ -41,42 +38,10 @@ import { logger } from './utils/logger.ts';
 import { ErrorMessages } from './utils/errors.ts';
 import type { AuthUser } from './hooks/useAuth.ts';
 import { sanitizeLogoUrl } from './utils/validation.ts';
+import { countryFlag, countryLabel, useDebounce } from './utils/appHelpers.ts';
 
-// ─── helpers ────────────────────────────────────────────────────────────────
-
-export function countryFlag(code: string): string {
-  if (!code || code.length !== 2) return '🌐';
-  const codePoints = [...code.toUpperCase()].map(
-    (c) => 0x1f1e6 - 0x41 + c.charCodeAt(0),
-  );
-  return String.fromCodePoint(...codePoints);
-}
-
-// Country display name (fallback to code)
-const COUNTRY_NAMES: Record<string, string> = {
-  FR: 'France', BE: 'Belgique', CH: 'Suisse', CA: 'Canada',
-  MA: 'Maroc', DZ: 'Algérie', TN: 'Tunisie', SN: 'Sénégal',
-  CD: 'Congo RDC', CI: "Côte d'Ivoire", CM: 'Cameroun', GA: 'Gabon',
-  TG: 'Togo', BJ: 'Bénin', ML: 'Mali', BF: 'Burkina Faso',
-  US: 'USA', GB: 'UK', DE: 'Allemagne', IT: 'Italie',
-  ES: 'Espagne', PT: 'Portugal', RU: 'Russie', TR: 'Turquie',
-  SA: 'Arabie Saoudite', AE: 'Émirats', QA: 'Qatar', EG: 'Égypte',
-  IN: 'Inde', CN: 'Chine', JP: 'Japon', KR: 'Corée',
-  BR: 'Brésil', MX: 'Mexique', AR: 'Argentine', AU: 'Australie',
-};
-
-function countryLabel(code: string): string {
-  return `${countryFlag(code)} ${COUNTRY_NAMES[code] ?? code}`;
-}
-
-function useDebounce<T>(value: T, delay: number): T {
-  const [debounced, setDebounced] = useState(value);
-  useEffect(() => {
-    const id = setTimeout(() => setDebounced(value), delay);
-    return () => clearTimeout(id);
-  }, [value, delay]);
-  return debounced;
-}
+// countryFlag est ré-exporté pour les tests existants (App.test.tsx l'importe depuis App)
+export { countryFlag } from './utils/appHelpers.ts';
 
 type Tab = 'all' | 'favorites' | 'directory';
 
@@ -105,9 +70,7 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
   // ── profil / admin ──────────────────────────────────────────────────────
   const [showProfile, setShowProfile] = useState(false);
   const [showAdmin, setShowAdmin] = useState(false);
-
-  // ── essai 30 jours / premium ────────────────────────────────────────────
-  const trial = useTrial();
+  const [adminInitialTab, setAdminInitialTab] = useState<'audience' | 'ads'>('audience');
 
   // ── auto-masquage des chaînes qui ne jouent pas ─────────────────────────
   const { deadSet, markDead } = useDeadChannels();
@@ -241,7 +204,6 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
       // pub à la 1re lecture puis toutes les `freq` chaînes
       const shouldShowAd =
         ads.enabled &&
-        !trial.adsHidden &&
         pr.enabled &&
         pr.items.length > 0 &&
         selectCount.current % freq === 0;
@@ -256,7 +218,7 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
         playChannel(channel);
       }
     },
-    [ads, trial.adsHidden, activeChannel, playChannel],
+    [ads, activeChannel, playChannel],
   );
 
   const handlePrerollComplete = useCallback((): void => {
@@ -423,18 +385,10 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
           </button>
         </div>
 
-        {/* Bandeau essai / premium */}
-        {trial.isPremium ? (
-          <div className="trial-chip trial-chip--premium">★ Premium actif</div>
-        ) : trial.trialActive ? (
-          <div className="trial-chip">
-            Essai gratuit — {trial.daysLeft} j restant{trial.daysLeft > 1 ? 's' : ''}
-          </div>
-        ) : (
-          <div className="trial-chip trial-chip--ended">
-            Essai terminé · Annuaire verrouillé
-          </div>
-        )}
+        {/* Modèle 100% gratuit — financé par la publicité */}
+        <div className="trial-chip trial-chip--free">
+          100% gratuit · sans inscription requise
+        </div>
 
         {/* Search */}
         {activeTab !== 'directory' && (
@@ -638,7 +592,7 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
         )}
 
         {/* Bannière sponsor */}
-        {ads.enabled && !trial.adsHidden && ads.banners.length > 0 && (
+        {ads.enabled && ads.banners.length > 0 && (
           <BannerAd
             ad={ads.banners[0]}
             onImpression={(id) => trackEvent('ad_impression', id)}
@@ -650,20 +604,7 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
       {/* ── MAIN ─────────────────────────────────────────────────────────── */}
       <main className="main-content">
         {activeTab === 'directory' ? (
-          trial.annuaireUnlocked ? (
-            <Directory />
-          ) : (
-            <Paywall
-              daysUsed={30}
-              onSubscribe={() => {
-                // Flutterwave (Mobile Money) si configuré, sinon démo locale.
-                void startSubscription(user?.email ?? 'client@aonoseke.com', () => {
-                  localStorage.setItem('iptv-premium', 'true');
-                  window.location.reload();
-                });
-              }}
-            />
-          )
+          <Directory />
         ) : (
         <>
         {activeChannel && (
@@ -730,17 +671,20 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
         <Profile
           user={user}
           favoritesCount={favorites.size}
-          isPremium={trial.isPremium}
-          daysLeft={trial.daysLeft}
           onClose={() => setShowProfile(false)}
           onLogout={() => { setShowProfile(false); onLogout?.(); }}
-          onOpenAdmin={user.role === 'admin' ? () => { setShowProfile(false); setShowAdmin(true); } : undefined}
+          onOpenAdmin={user.role === 'admin' ? () => { setShowProfile(false); setAdminInitialTab('audience'); setShowAdmin(true); } : undefined}
+          onOpenAdMgmt={user.role === 'admin' ? () => { setShowProfile(false); setAdminInitialTab('ads'); setShowAdmin(true); } : undefined}
         />
       )}
 
-      {/* Tableau de bord admin */}
+      {/* Tableau de bord admin unifié (Audience + Publicité) */}
       {showAdmin && user?.role === 'admin' && (
-        <AdminDashboard onClose={() => setShowAdmin(false)} />
+        <AdminDashboard
+          user={user}
+          onClose={() => setShowAdmin(false)}
+          initialTab={adminInitialTab}
+        />
       )}
     </div>
   );

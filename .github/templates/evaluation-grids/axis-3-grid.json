@@ -1,0 +1,82 @@
+{
+  "axis": 3,
+  "name": "UX & Product",
+  "weight": 0.20,
+  "criteria": [
+    {
+      "id": "3.1",
+      "name": "User Journey Clarity",
+      "description": "Are the main user journeys clear, mapped, and free of major friction?",
+      "weight": 0.15,
+      "scale": 5,
+      "score": null,
+      "justification": ""
+    },
+    {
+      "id": "3.2",
+      "name": "Persona Quality & Documentation",
+      "description": "Are personas documented, representative of real users, and actionable?",
+      "weight": 0.10,
+      "scale": 5,
+      "score": null,
+      "justification": ""
+    },
+    {
+      "id": "3.3",
+      "name": "Ergonomics & Intuitiveness",
+      "description": "Can a novice user understand and use the product without assistance?",
+      "weight": 0.15,
+      "scale": 5,
+      "score": null,
+      "justification": ""
+    },
+    {
+      "id": "3.4",
+      "name": "Design System Coherence",
+      "description": "Is there a formal design system and is it consistently applied?",
+      "weight": 0.12,
+      "scale": 5,
+      "score": null,
+      "justification": ""
+    },
+    {
+      "id": "3.5",
+      "name": "Accessibility (WCAG 2.1 / RGAA)",
+      "description": "Is the product compliant with accessibility standards?",
+      "weight": 0.15,
+      "scale": 5,
+      "score": null,
+      "justification": ""
+    },
+    {
+      "id": "3.6",
+      "name": "User Friction Level",
+      "description": "Is friction minimal and recurring pain points addressed? (Note: 5=minimal friction, 1=high recurring friction)",
+      "weight": 0.15,
+      "scale": 5,
+      "score": null,
+      "justification": ""
+    },
+    {
+      "id": "3.7",
+      "name": "User Feedback Mechanism",
+      "description": "Is there a process to collect and act on user feedback?",
+      "weight": 0.10,
+      "scale": 5,
+      "score": null,
+      "justification": ""
+    },
+    {
+      "id": "3.8",
+      "name": "Responsive & Mobile Experience",
+      "description": "Is the product responsive and optimized for mobile devices?",
+      "weight": 0.08,
+      "scale": 5,
+      "score": null,
+      "justification": ""
+    }
+  ],
+  "global_score": null,
+  "method": "weighted_average",
+  "notes": "Scale: 1=critical UX issues, 2=significant problems, 3=adequate, 4=good, 5=excellent. For friction: 5=minimal, 1=massive recurring."
+}

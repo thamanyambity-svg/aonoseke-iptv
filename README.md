@@ -19,6 +19,7 @@ A professional, modern, and feature-rich **IPTV streaming player** built with Re
 - 🚀 **Performance Optimized** - Virtual scrolling for smooth 2000+ channels
 - ♿ **Accessible** - WCAG 2.1 AA compliant with keyboard navigation
 - 🔐 **Secure** - XSS protection, CSP headers, input validation
+- 🆓 **100% Free** - No paywall, no premium tier — monetisation is 100% ad-based (multi-advertiser)
 
 ## 🚀 Quick Start
 
@@ -136,6 +137,14 @@ VITE_PLAYLIST_URL=https://your-server.com/playlist.json
 VITE_ENABLE_ANALYTICS=true
 VITE_API_TIMEOUT=10000
 ```
+
+> **Modèle commercial** : l'application est **100% gratuite** pour les utilisateurs finaux.
+> Pas d'essai, pas d'abonnement premium, pas de paywall.
+> La monétisation repose entièrement sur la publicité in-player (pré-roll + bannières)
+> ouverte à plusieurs annonceurs. Voir `public/ads.json` pour la configuration des campagnes.
+>
+> Les fichiers liés à l'ancien modèle premium (`Paywall.tsx`, `payment.ts`, `useTrial.ts`)
+> ont été déplacés dans `archive/` pour référence historique.
 
 ## 🔧 Configuration
 

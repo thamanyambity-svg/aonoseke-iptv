@@ -1,0 +1,95 @@
+{
+  "name": "Project Synthesis Grid",
+  "description": "Consolidated evaluation across all 5 axes. Completed during Atelier 4 (Synthesis & Action Planning).",
+  "axes": [
+    {
+      "axis_id": 1,
+      "axis_name": "Vision & Mission",
+      "weight": 0.20,
+      "score": null,
+      "principal_finding": "",
+      "status": "[ ] Weak [ ] Adequate [ ] Strong"
+    },
+    {
+      "axis_id": 2,
+      "axis_name": "Technical Analysis",
+      "weight": 0.25,
+      "score": null,
+      "principal_finding": "",
+      "status": "[ ] Weak [ ] Adequate [ ] Strong"
+    },
+    {
+      "axis_id": 3,
+      "axis_name": "UX & Product",
+      "weight": 0.20,
+      "score": null,
+      "principal_finding": "",
+      "status": "[ ] Weak [ ] Adequate [ ] Strong"
+    },
+    {
+      "axis_id": 4,
+      "axis_name": "Subjective & Team Sentiment",
+      "weight": 0.15,
+      "score": null,
+      "principal_finding": "",
+      "status": "[ ] Weak [ ] Adequate [ ] Strong"
+    },
+    {
+      "axis_id": 5,
+      "axis_name": "Roadmap, Priorities & Risks",
+      "weight": 0.20,
+      "score": null,
+      "principal_finding": "",
+      "status": "[ ] Weak [ ] Adequate [ ] Strong"
+    }
+  ],
+  "global_project_score": null,
+  "calculation_method": "weighted_average",
+  "transverse_insights": [
+    {
+      "title": "Vision-Execution Alignment",
+      "insight": "How well do technical decisions (Axis 2) and roadmap (Axis 5) support the stated vision (Axis 1)?",
+      "score": null
+    },
+    {
+      "title": "Technical-UX Coherence",
+      "insight": "Does technical debt (Axis 2) prevent UX improvements (Axis 3)? Do technical choices enable product vision?",
+      "score": null
+    },
+    {
+      "title": "Team Health & Confidence",
+      "insight": "Does team sentiment (Axis 4) align with objective findings (Axes 1-3, 5)? Are concerns well-founded or signal issues?",
+      "score": null
+    },
+    {
+      "title": "Roadmap Realism",
+      "insight": "Is the roadmap (Axis 5) realistic given technical health (Axis 2) and team capacity (Axis 4)?",
+      "score": null
+    }
+  ],
+  "key_signals_for_stakeholder": [
+    {
+      "signal_number": 1,
+      "category": "[ ] Positive [ ] Concern [ ] Opportunity",
+      "description": "",
+      "priority": "[ ] High [ ] Medium [ ] Low",
+      "action_required": ""
+    },
+    {
+      "signal_number": 2,
+      "category": "[ ] Positive [ ] Concern [ ] Opportunity",
+      "description": "",
+      "priority": "[ ] High [ ] Medium [ ] Low",
+      "action_required": ""
+    },
+    {
+      "signal_number": 3,
+      "category": "[ ] Positive [ ] Concern [ ] Opportunity",
+      "description": "",
+      "priority": "[ ] High [ ] Medium [ ] Low",
+      "action_required": ""
+    }
+  ],
+  "important_note": "The global score is NOT a success/failure metric. A project with 3.2/5 and a clear action plan is healthier than one with 4.1/5 and no visibility. The value is in the analysis clarity and resulting action plan.",
+  "next_steps": "Use this synthesis to inform 3-month action plan and stakeholder presentation."
+}

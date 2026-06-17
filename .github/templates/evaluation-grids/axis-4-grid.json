@@ -1,0 +1,67 @@
+{
+  "axis": 4,
+  "name": "Subjective & Team Sentiment",
+  "weight": 0.15,
+  "method": "anonymous_consolidation",
+  "description": "Individual team member sentiment consolidated anonymously. Each team member completes independently, then scores are averaged.",
+  "criteria": [
+    {
+      "id": "4.1",
+      "name": "First Impression",
+      "description": "What was the overall gut feeling discovering the project? (clarity, quality, excitement)",
+      "weight": 0.15,
+      "scale": 5,
+      "score": null,
+      "justification": ""
+    },
+    {
+      "id": "4.2",
+      "name": "Enthusiasm Level",
+      "description": "How excited is the team about this project? (positive energy, pride, engagement)",
+      "weight": 0.15,
+      "scale": 5,
+      "score": null,
+      "justification": ""
+    },
+    {
+      "id": "4.3",
+      "name": "Concern & Frustration Level",
+      "description": "How much concern/frustration exists? (Note: 5=minimal concern, 1=high frustration)",
+      "weight": 0.15,
+      "scale": 5,
+      "score": null,
+      "justification": ""
+    },
+    {
+      "id": "4.4",
+      "name": "Overall Understanding",
+      "description": "Does the team understand what the project is trying to accomplish?",
+      "weight": 0.15,
+      "scale": 5,
+      "score": null,
+      "justification": ""
+    },
+    {
+      "id": "4.5",
+      "name": "Personal Vision Alignment",
+      "description": "Do you personally agree with the project's direction and mission? (1-10 scale mapped to 1-5)",
+      "weight": 0.20,
+      "scale": 5,
+      "score": null,
+      "justification": ""
+    },
+    {
+      "id": "4.6",
+      "name": "Ownership & Impact Feeling",
+      "description": "Do you feel you can contribute meaningfully and see the impact of your work?",
+      "weight": 0.20,
+      "scale": 5,
+      "score": null,
+      "justification": ""
+    }
+  ],
+  "global_score": null,
+  "aggregation_method": "average_of_individual_scores",
+  "notes": "Method: Each team member completes individually and anonymously. Tech lead consolidates responses without attribution. Global score is average of all individual scores across all team members.",
+  "anonymity": "CONFIDENTIAL - All responses are consolidated anonymously. No individual statements are attributed."
+}

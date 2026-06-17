@@ -1,0 +1,91 @@
+{
+  "axis": 2,
+  "name": "Technical Analysis",
+  "weight": 0.25,
+  "criteria": [
+    {
+      "id": "2.1",
+      "name": "Architecture Clarity & Coherence",
+      "description": "Is the overall architecture clear, documented, and coherent?",
+      "weight": 0.12,
+      "scale": 5,
+      "score": null,
+      "justification": ""
+    },
+    {
+      "id": "2.2",
+      "name": "Stack Modernité & Maintenance",
+      "description": "Are technology components modern, actively maintained, and not obsolete?",
+      "weight": 0.10,
+      "scale": 5,
+      "score": null,
+      "justification": ""
+    },
+    {
+      "id": "2.3",
+      "name": "Code Lisibilité & Modularité",
+      "description": "Is code readable and modular with clear separation of concerns?",
+      "weight": 0.12,
+      "scale": 5,
+      "score": null,
+      "justification": ""
+    },
+    {
+      "id": "2.4",
+      "name": "Test Coverage & Quality",
+      "description": "Is test coverage adequate (target 60%+) with high-quality, relevant tests?",
+      "weight": 0.12,
+      "scale": 5,
+      "score": null,
+      "justification": ""
+    },
+    {
+      "id": "2.5",
+      "name": "Technical Debt Level",
+      "description": "Is technical debt minimal and tracked? (Note: 5=minimal debt, 1=massive unmanaged debt)",
+      "weight": 0.12,
+      "scale": 5,
+      "score": null,
+      "justification": ""
+    },
+    {
+      "id": "2.6",
+      "name": "Security (Auth, Secrets, Vulns)",
+      "description": "Are authentication, secrets management, and known vulnerabilities properly handled?",
+      "weight": 0.14,
+      "scale": 5,
+      "score": null,
+      "justification": ""
+    },
+    {
+      "id": "2.7",
+      "name": "Performance & Scalability",
+      "description": "Does the system meet performance targets and scale horizontally/vertically?",
+      "weight": 0.10,
+      "scale": 5,
+      "score": null,
+      "justification": ""
+    },
+    {
+      "id": "2.8",
+      "name": "Observabilité (Logs, Metrics, Alerting)",
+      "description": "Are logs, metrics, and alerting in place for monitoring system health?",
+      "weight": 0.10,
+      "scale": 5,
+      "score": null,
+      "justification": ""
+    },
+    {
+      "id": "2.9",
+      "name": "CI/CD Pipeline Maturity",
+      "description": "Is the deployment pipeline automated, traceable, and reversible?",
+      "weight": 0.08,
+      "scale": 5,
+      "score": null,
+      "justification": ""
+    }
+  ],
+  "global_score": null,
+  "method": "weighted_average",
+  "notes": "Scale: 1=critical issues, 2=significant gaps, 3=adequate/functional, 4=good, 5=excellent. For debt: 5=minimal, 1=massive."
+}

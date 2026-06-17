@@ -1,0 +1,64 @@
+{
+  "axis": 1,
+  "name": "Vision & Mission",
+  "weight": 0.20,
+  "criteria": [
+    {
+      "id": "1.1",
+      "name": "Clarity of Project Finality",
+      "description": "Is the deep reason why the project was created clear and documented?",
+      "weight": 0.20,
+      "scale": 5,
+      "score": null,
+      "justification": ""
+    },
+    {
+      "id": "1.2",
+      "name": "Mission-Finality Alignment",
+      "description": "Does the operational mission reflect and serve the stated finality?",
+      "weight": 0.15,
+      "scale": 5,
+      "score": null,
+      "justification": ""
+    },
+    {
+      "id": "1.3",
+      "name": "User Audience Identification",
+      "description": "Are primary and secondary users clearly identified with compatible needs?",
+      "weight": 0.15,
+      "scale": 5,
+      "score": null,
+      "justification": ""
+    },
+    {
+      "id": "1.4",
+      "name": "Value Proposition Strength",
+      "description": "Is the unique value defensible against alternatives?",
+      "weight": 0.20,
+      "scale": 5,
+      "score": null,
+      "justification": ""
+    },
+    {
+      "id": "1.5",
+      "name": "Explicit Values & Principles",
+      "description": "Are guiding principles clear and explicitly stated, not just implicit?",
+      "weight": 0.10,
+      "scale": 5,
+      "score": null,
+      "justification": ""
+    },
+    {
+      "id": "1.6",
+      "name": "Long-Term Vision Documentation",
+      "description": "Is a 3-5 year vision documented and shared across team and stakeholders?",
+      "weight": 0.20,
+      "scale": 5,
+      "score": null,
+      "justification": ""
+    }
+  ],
+  "global_score": null,
+  "method": "weighted_average",
+  "notes": "Scale: 1=absent/very weak, 2=weak, 3=adequate, 4=good, 5=excellent/exemplary"
+}

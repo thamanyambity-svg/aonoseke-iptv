@@ -1,0 +1,82 @@
+{
+  "axis": 5,
+  "name": "Roadmap, Priorities & Risks",
+  "weight": 0.20,
+  "criteria": [
+    {
+      "id": "5.1",
+      "name": "Progress State Clarity",
+      "description": "Is it clear what's in production, in-progress, planned, and discussed?",
+      "weight": 0.12,
+      "scale": 5,
+      "score": null,
+      "justification": ""
+    },
+    {
+      "id": "5.2",
+      "name": "Short-Term Priorities Coherence",
+      "description": "Are the top 3 initiatives for next 3 months clearly defined and coherent?",
+      "weight": 0.15,
+      "scale": 5,
+      "score": null,
+      "justification": ""
+    },
+    {
+      "id": "5.3",
+      "name": "Medium/Long-Term Vision Alignment",
+      "description": "Do 6-12 month and 1-2 year priorities align with stated vision?",
+      "weight": 0.15,
+      "scale": 5,
+      "score": null,
+      "justification": ""
+    },
+    {
+      "id": "5.4",
+      "name": "Critical Dependencies ID",
+      "description": "Are all critical internal and external dependencies identified?",
+      "weight": 0.12,
+      "scale": 5,
+      "score": null,
+      "justification": ""
+    },
+    {
+      "id": "5.5",
+      "name": "Continuity Plans for Dependencies",
+      "description": "For each critical non-mastered dependency, is there a documented plan B?",
+      "weight": 0.10,
+      "scale": 5,
+      "score": null,
+      "justification": ""
+    },
+    {
+      "id": "5.6",
+      "name": "Risk Mapping Exhaustiveness",
+      "description": "Are the top 5-8 risks identified and prioritized by probability × impact?",
+      "weight": 0.12,
+      "scale": 5,
+      "score": null,
+      "justification": ""
+    },
+    {
+      "id": "5.7",
+      "name": "Mitigation Quality & Ownership",
+      "description": "For each high-risk item, is there a clear mitigation plan with an owner and deadline?",
+      "weight": 0.12,
+      "scale": 5,
+      "score": null,
+      "justification": ""
+    },
+    {
+      "id": "5.8",
+      "name": "Resource Availability",
+      "description": "Are human and budget resources sufficient to execute the roadmap?",
+      "weight": 0.12,
+      "scale": 5,
+      "score": null,
+      "justification": ""
+    }
+  ],
+  "global_score": null,
+  "method": "weighted_average",
+  "notes": "Scale: 1=critical gaps, 2=significant gaps, 3=adequate, 4=good, 5=excellent/comprehensive."
+}
