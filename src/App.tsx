@@ -31,7 +31,7 @@ import { useDeadChannels } from './hooks/useDeadChannels.ts';
 import { useFavorites } from './hooks/useFavorites.ts';
 import { useAds } from './hooks/useAds.ts';
 import type { PrerollAd } from './hooks/useAds.ts';
-import { trackEvent, trackHeartbeat } from './hooks/useAnalytics.ts';
+import { trackEvent } from './hooks/useAnalytics.ts';
 import type { Channel } from './types-exports.ts';
 import { validatePlaylist, appConfig } from './types-exports.ts';
 import { logger } from './utils/logger.ts';
@@ -180,15 +180,8 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
     trackEvent('channel_view', channel.url, channel.group);
   }, []);
 
-  // Heartbeat : mesure le temps de connexion réel (ping discret toutes les 60s,
-  // seulement quand l'onglet est visible).
-  useEffect(() => {
-    trackHeartbeat();
-    const id = window.setInterval(() => {
-      if (document.visibilityState === 'visible') trackHeartbeat();
-    }, 60_000);
-    return () => window.clearInterval(id);
-  }, []);
+  // Le heartbeat de présence est géré de façon centralisée dans useAuth
+  // (une seule source → pas de double comptage du temps de connexion).
 
   const handleSelectChannel = useCallback(
     (channel: Channel): void => {

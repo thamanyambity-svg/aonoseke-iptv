@@ -96,10 +96,11 @@ where p.id is null;
 -- Une ligne par heartbeat (période de 60s envoyée par useAuth).
 -- Sert au calcul du temps de connexion réel (engagement).
 create table if not exists public.user_activity (
-  id          bigint generated always as identity primary key,
   user_id     uuid not null references auth.users (id) on delete cascade,
-  seconds     integer not null default 60,
-  created_at  timestamptz not null default now()
+  day         date not null default current_date,
+  seconds     integer not null default 0,
+  created_at  timestamptz not null default now(),
+  primary key (user_id, day)
 );
 
 create index if not exists user_activity_user_idx    on public.user_activity (user_id);
@@ -220,9 +221,9 @@ begin
   where u.id = auth.uid()
   on conflict (id) do update
   set
-    email = coalesce(email, excluded.email),
-    username = coalesce(username, excluded.username),
-    full_name = coalesce(full_name, excluded.full_name),
+    email     = coalesce(profiles.email, excluded.email),
+    username  = coalesce(profiles.username, excluded.username),
+    full_name = coalesce(profiles.full_name, excluded.full_name),
     last_seen_at = now();
 end;
 $$;
@@ -560,9 +561,11 @@ begin
   set last_seen_at = now()
   where id = auth.uid();
 
-  -- Insère une ligne d'activité
-  insert into public.user_activity (user_id, seconds)
-  values (auth.uid(), p_seconds);
+  -- UPSERT : accumule les secondes du jour (PK user_id, day) — pas d'unique_violation
+  insert into public.user_activity (user_id, day, seconds)
+  values (auth.uid(), current_date, greatest(0, least(coalesce(p_seconds, 60), 300)))
+  on conflict (user_id, day) do update
+    set seconds = public.user_activity.seconds + excluded.seconds;
 end;
 $$;
 

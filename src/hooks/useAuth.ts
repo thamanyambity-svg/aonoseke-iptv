@@ -172,16 +172,22 @@ export function useAuth(): {
     // Heartbeat fiable : présence + temps (track_heartbeat met à jour
     // user_activity ET last_seen_at) immédiatement, toutes les 60s, et au
     // retour sur l'onglet. Placé ici (cœur d'auth) = garanti de tourner.
+    let signedIn = false;
     const beat = (): void => {
-      if (supabase && document.visibilityState === 'visible') {
-        void supabase.rpc('track_heartbeat', { p_seconds: 60 });
-      }
+      // Ne bat QUE si une session est établie (sinon track_heartbeat lève 42501)
+      // et que l'onglet est visible. Erreur capturée → plus d'échec silencieux.
+      if (!supabase || !signedIn || document.visibilityState !== 'visible') return;
+      void supabase.rpc('track_heartbeat', { p_seconds: 60 }).then(({ error }) => {
+        if (error) logger.warn('heartbeat: track_heartbeat a échoué', { message: error.message });
+      });
     };
     const startPresence = (): void => {
+      signedIn = true;
       beat();
       if (hbId === undefined) hbId = window.setInterval(beat, 60_000);
     };
     const stopPresence = (): void => {
+      signedIn = false;
       if (hbId !== undefined) { window.clearInterval(hbId); hbId = undefined; }
     };
     document.addEventListener('visibilitychange', beat);
