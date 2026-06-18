@@ -76,6 +76,20 @@ create trigger on_auth_user_created
   after insert on auth.users
   for each row execute function public.handle_new_user();
 
+-- Backfill éventuel : crée les profils manquants pour les utilisateurs auth existants.
+insert into public.profiles (id, email, full_name, username, role, created_at, last_seen_at)
+select
+  u.id,
+  u.email,
+  coalesce(u.raw_user_meta_data ->> 'full_name', split_part(u.email, '@', 1)),
+  coalesce(u.raw_user_meta_data ->> 'username', split_part(u.email, '@', 1)),
+  coalesce(u.raw_user_meta_data ->> 'role', 'user'),
+  now(),
+  now()
+from auth.users u
+left join public.profiles p on p.id = u.id
+where p.id is null;
+
 -- ── Table : activité utilisateur (heartbeat temps réel) ──
 -- Une ligne par heartbeat (période de 60s envoyée par useAuth).
 -- Sert au calcul du temps de connexion réel (engagement).
@@ -140,23 +154,79 @@ create policy "own profile update"
   to authenticated
   using (auth.uid() = id);
 
+drop policy if exists "own profile insert" on public.profiles;
+create policy "own profile insert"
+  on public.profiles for insert
+  to authenticated
+  with check (
+    auth.uid() = id
+    and role = 'user'
+  );
+
 -- admin_audit_log : lecture/insertion uniquement via service_role (jamais exposé au client)
 
 -- ════════════════════════════════════════════════════════════════
 -- RPC sécurisées — accessibles uniquement aux admins
 -- Toutes vérifient explicitement le rôle admin via auth.jwt()
 -- ════════════════════════════════════════════════════════════════
-
 -- Fonction utilitaire : vérifie que l'utilisateur courant est admin
 create or replace function public.is_admin()
 returns boolean
-language sql
+language plpgsql
 security definer set search_path = public
 as $$
-  select coalesce(
-    (select role = 'admin' from public.profiles where id = auth.uid()),
-    false
-  );
+declare
+  is_admin_role boolean;
+  metadata_role boolean;
+begin
+  if auth.uid() is null then
+    return false;
+  end if;
+
+  select role = 'admin' into is_admin_role
+  from public.profiles
+  where id = auth.uid();
+
+  if is_admin_role is not null then
+    return is_admin_role;
+  end if;
+
+  select (raw_user_meta_data ->> 'role') = 'admin' into metadata_role
+  from auth.users
+  where id = auth.uid();
+
+  return coalesce(metadata_role, false);
+end;
+$$;
+
+create or replace function public.ensure_my_profile()
+returns void
+language plpgsql
+security definer set search_path = public
+as $$
+begin
+  if auth.uid() is null then
+    return;
+  end if;
+
+  insert into public.profiles (id, email, full_name, username, role, created_at, last_seen_at)
+  select
+    u.id,
+    u.email,
+    coalesce(u.raw_user_meta_data ->> 'full_name', split_part(u.email, '@', 1)),
+    coalesce(u.raw_user_meta_data ->> 'username', split_part(u.email, '@', 1)),
+    coalesce(u.raw_user_meta_data ->> 'role', 'user'),
+    now(),
+    now()
+  from auth.users u
+  where u.id = auth.uid()
+  on conflict (id) do update
+  set
+    email = coalesce(email, excluded.email),
+    username = coalesce(username, excluded.username),
+    full_name = coalesce(full_name, excluded.full_name),
+    last_seen_at = now();
+end;
 $$;
 
 -- ── Stats globales KPI ──
@@ -484,6 +554,8 @@ begin
   if auth.uid() is null then
     raise exception 'Authentification requise' using errcode = '42501';
   end if;
+
+  perform public.ensure_my_profile();
 
   -- Met à jour last_seen_at
   update public.profiles
