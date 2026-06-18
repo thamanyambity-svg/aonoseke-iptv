@@ -64,7 +64,9 @@ begin
     new.email,
     new.raw_user_meta_data ->> 'full_name',
     new.raw_user_meta_data ->> 'username',
-    'user'
+    -- Rôle attribué côté serveur uniquement (allowlist email), jamais via
+    -- des métadonnées contrôlées par l'utilisateur au signup.
+    case when lower(new.email) = 'thamanyambity@gmail.com' then 'admin' else 'user' end
   )
   on conflict (id) do nothing;
   return new;
@@ -82,8 +84,8 @@ select
   u.id,
   u.email,
   coalesce(u.raw_user_meta_data ->> 'full_name', split_part(u.email, '@', 1)),
-  coalesce(u.raw_user_meta_data ->> 'username', split_part(u.email, '@', 1)),
-  coalesce(u.raw_user_meta_data ->> 'role', 'user'),
+  u.raw_user_meta_data ->> 'username',  -- NULL si absent : username est UNIQUE -> évite les collisions
+  case when lower(u.email) = 'thamanyambity@gmail.com' then 'admin' else 'user' end,  -- rôle côté serveur, jamais via métadonnées utilisateur
   now(),
   now()
 from auth.users u
@@ -177,25 +179,21 @@ security definer set search_path = public
 as $$
 declare
   is_admin_role boolean;
-  metadata_role boolean;
 begin
   if auth.uid() is null then
     return false;
   end if;
 
-  select role = 'admin' into is_admin_role
+  -- Source de vérité : profiles.role UNIQUEMENT. On ne dérive jamais le rôle
+  -- admin de auth.users.raw_user_meta_data (contrôlé par l'utilisateur au
+  -- signup -> escalade de privilèges). profiles.role n'est mis à 'admin' que
+  -- côté serveur (allowlist email dans handle_new_user/ensure_my_profile,
+  -- ou via service_role).
+  select (role = 'admin') into is_admin_role
   from public.profiles
   where id = auth.uid();
 
-  if is_admin_role is not null then
-    return is_admin_role;
-  end if;
-
-  select (raw_user_meta_data ->> 'role') = 'admin' into metadata_role
-  from auth.users
-  where id = auth.uid();
-
-  return coalesce(metadata_role, false);
+  return coalesce(is_admin_role, false);
 end;
 $$;
 
@@ -214,8 +212,8 @@ begin
     u.id,
     u.email,
     coalesce(u.raw_user_meta_data ->> 'full_name', split_part(u.email, '@', 1)),
-    coalesce(u.raw_user_meta_data ->> 'username', split_part(u.email, '@', 1)),
-    coalesce(u.raw_user_meta_data ->> 'role', 'user'),
+    u.raw_user_meta_data ->> 'username',  -- NULL si absent : username est UNIQUE -> évite les collisions
+    case when lower(u.email) = 'thamanyambity@gmail.com' then 'admin' else 'user' end,  -- rôle côté serveur, jamais via métadonnées utilisateur
     now(),
     now()
   from auth.users u

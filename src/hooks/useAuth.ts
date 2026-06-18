@@ -34,11 +34,16 @@ async function loadProfile(userId: string, email: string): Promise<AuthUser> {
   const fallback: AuthUser = { id: userId, name: email.split('@')[0], email, provider: 'email' };
   if (!supabase) return fallback;
   try {
-    const { data } = await supabase
+    const { data, error } = await supabase
       .from('profiles')
       .select('username, full_name, avatar_url, role')
       .eq('id', userId)
       .single();
+
+    // PGRST116 = aucune ligne trouvée (profil manquant) → tentative de recréation plus bas.
+    if (error && error.code !== 'PGRST116') {
+      logger.warn('loadProfile: lecture du profil échouée', { code: error.code, message: error.message });
+    }
 
     if (data) {
       return {
@@ -52,13 +57,22 @@ async function loadProfile(userId: string, email: string): Promise<AuthUser> {
       };
     }
 
-    // Si le profil est manquant, on tente de le recréer côté Supabase.
-    await supabase.rpc('ensure_my_profile');
-    const { data: recreated } = await supabase
+    // Profil manquant : tentative de recréation côté Supabase (self-heal).
+    const { error: ensureError } = await supabase.rpc('ensure_my_profile');
+    if (ensureError) {
+      logger.warn('loadProfile: ensure_my_profile a échoué', { message: ensureError.message });
+      return fallback;
+    }
+
+    const { data: recreated, error: recreatedError } = await supabase
       .from('profiles')
       .select('username, full_name, avatar_url, role')
       .eq('id', userId)
       .single();
+
+    if (recreatedError) {
+      logger.warn('loadProfile: relecture après recréation échouée', { code: recreatedError.code, message: recreatedError.message });
+    }
 
     if (recreated) {
       return {
@@ -73,7 +87,8 @@ async function loadProfile(userId: string, email: string): Promise<AuthUser> {
     }
 
     return fallback;
-  } catch {
+  } catch (e) {
+    logger.warn('loadProfile: exception', { message: e instanceof Error ? e.message : String(e) });
     return fallback;
   }
 }
