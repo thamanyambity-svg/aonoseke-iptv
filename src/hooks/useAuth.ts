@@ -39,16 +39,40 @@ async function loadProfile(userId: string, email: string): Promise<AuthUser> {
       .select('username, full_name, avatar_url, role')
       .eq('id', userId)
       .single();
-    if (!data) return fallback;
-    return {
-      id: userId,
-      email,
-      username: data.username ?? undefined,
-      name: data.full_name ?? data.username ?? email.split('@')[0],
-      avatar: data.avatar_url ?? undefined,
-      role: (data.role as 'user' | 'admin') ?? 'user',
-      provider: 'email',
-    };
+
+    if (data) {
+      return {
+        id: userId,
+        email,
+        username: data.username ?? undefined,
+        name: data.full_name ?? data.username ?? email.split('@')[0],
+        avatar: data.avatar_url ?? undefined,
+        role: (data.role as 'user' | 'admin') ?? 'user',
+        provider: 'email',
+      };
+    }
+
+    // Si le profil est manquant, on tente de le recréer côté Supabase.
+    await supabase.rpc('ensure_my_profile');
+    const { data: recreated } = await supabase
+      .from('profiles')
+      .select('username, full_name, avatar_url, role')
+      .eq('id', userId)
+      .single();
+
+    if (recreated) {
+      return {
+        id: userId,
+        email,
+        username: recreated.username ?? undefined,
+        name: recreated.full_name ?? recreated.username ?? email.split('@')[0],
+        avatar: recreated.avatar_url ?? undefined,
+        role: (recreated.role as 'user' | 'admin') ?? 'user',
+        provider: 'email',
+      };
+    }
+
+    return fallback;
   } catch {
     return fallback;
   }
