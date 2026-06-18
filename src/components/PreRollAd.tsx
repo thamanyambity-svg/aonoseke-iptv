@@ -64,11 +64,20 @@ export function PreRollAd({
     <div className="preroll-overlay" role="dialog" aria-label="Publicité partenaire">
       <div
         className={`preroll-card preroll-${ad.variant ?? 'souverain'}`}
-        style={ad.image ? undefined : { background: ad.bg ?? 'var(--surface-2)' }}
+        style={ad.image || ad.video ? undefined : { background: ad.bg ?? 'var(--surface-2)' }}
         onClick={handleClickAd}
         role={ad.url ? 'button' : undefined}
       >
-        {ad.image ? (
+        {ad.video ? (
+          <video
+            src={ad.video}
+            className="preroll-img"
+            autoPlay
+            muted
+            playsInline
+            onEnded={complete}
+          />
+        ) : ad.image ? (
           <img src={ad.image} alt={ad.title} className="preroll-img" />
         ) : (
           <div className="preroll-content">

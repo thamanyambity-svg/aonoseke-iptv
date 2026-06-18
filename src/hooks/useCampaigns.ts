@@ -18,6 +18,7 @@ export interface CampaignContent {
   url?: string;
   bg?: string;
   image?: string;
+  video?: string;
   logo?: string;
   eyebrow?: string;
   destinations?: string;

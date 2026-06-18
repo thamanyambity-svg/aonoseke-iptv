@@ -29,7 +29,7 @@ import { Profile } from './components/Profile.tsx';
 import { AdminDashboard } from './components/AdminDashboard.tsx';
 import { useDeadChannels } from './hooks/useDeadChannels.ts';
 import { useFavorites } from './hooks/useFavorites.ts';
-import { useAds } from './hooks/useAds.ts';
+import { useAds, trackAdEvent } from './hooks/useAds.ts';
 import type { PrerollAd } from './hooks/useAds.ts';
 import { trackEvent } from './hooks/useAnalytics.ts';
 import type { Channel } from './types-exports.ts';
@@ -588,8 +588,8 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
         {ads.enabled && ads.banners.length > 0 && (
           <BannerAd
             ad={ads.banners[0]}
-            onImpression={(id) => trackEvent('ad_impression', id)}
-            onClick={(id) => trackEvent('ad_click', id)}
+            onImpression={(id) => { trackEvent('ad_impression', id); void trackAdEvent(id, 'impression'); }}
+            onClick={(id) => { trackEvent('ad_click', id); void trackAdEvent(id, 'click'); }}
           />
         )}
       </aside>
@@ -650,8 +650,8 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
               skipAfter={ads.preroll.skipAfter}
               maxDuration={ads.preroll.maxDuration}
               onComplete={handlePrerollComplete}
-              onImpression={(id) => trackEvent('ad_impression', id)}
-              onClick={(id) => trackEvent('ad_click', id)}
+              onImpression={(id) => { trackEvent('ad_impression', id); void trackAdEvent(id, 'impression'); }}
+              onClick={(id) => { trackEvent('ad_click', id); void trackAdEvent(id, 'click'); }}
             />
           )}
         </div>
