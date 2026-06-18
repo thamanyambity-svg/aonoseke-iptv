@@ -289,9 +289,9 @@ begin
   end if;
 
   return query
-  select id, username, email, country, country_code, city, ip, created_at, last_seen_at, role
-  from public.profiles
-  order by last_seen_at desc
+  select p.id, p.username, p.email, p.country, p.country_code, p.city, p.ip, p.created_at, p.last_seen_at, p.role
+  from public.profiles p
+  order by p.last_seen_at desc
   limit lim;
 end;
 $$;
@@ -317,10 +317,10 @@ begin
   end if;
 
   return query
-  select id, username, email, country, country_code, city, device, last_seen_at
-  from public.profiles
-  where last_seen_at > now() - interval '90 seconds'
-  order by last_seen_at desc;
+  select p.id, p.username, p.email, p.country, p.country_code, p.city, p.device, p.last_seen_at
+  from public.profiles p
+  where p.last_seen_at > now() - interval '90 seconds'
+  order by p.last_seen_at desc;
 end;
 $$;
 
