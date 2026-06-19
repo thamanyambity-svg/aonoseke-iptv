@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback, useRef, lazy, Suspense } from 'react';
+import { useEffect, useState, useCallback, useRef, useMemo, lazy, Suspense } from 'react';
 import {
   Users, Activity, TrendingUp, Eye, RefreshCw, X, Download,
   FileDown, Globe, Clock, Layers, Trash2, Radio, Zap, Target, Megaphone,
@@ -297,6 +297,10 @@ function AdminDashboardInner({ user, onClose, initialTab }: {
   // Référence pour tracker la visibilité de l'onglet (économie de requêtes)
   const isVisibleRef = useRef<boolean>(document.visibilityState === 'visible');
 
+  // Débounce timer pour eviter les requêtes répétées lors d'événements
+  // Realtime massifs (ex. plusieurs utilisateurs font heartbeat simultanément)
+  const debounceTimerRef = useRef<number | null>(null);
+
   // ── Chargement complet des données ────────────────────────────────────────
   const load = useCallback(async (): Promise<void> => {
     if (!supabase) {
@@ -429,8 +433,18 @@ function AdminDashboardInner({ user, onClose, initialTab }: {
           'postgres_changes',
           { event: 'UPDATE', schema: 'public', table: 'profiles' },
           () => {
-            // Un profil a été mis à jour (heartbeat probable) → refresh léger
+            // Un profil a été mis à jour (heartbeat probable).
+            // Appelle loadOnline immédiatement pour la liste en ligne.
             void loadOnline();
+            
+            // Débounce : appelle load() (qui inclut admin_recent_users)
+            // une seule fois par 500ms max, même si on reçoit plusieurs events
+            if (debounceTimerRef.current === null) {
+              debounceTimerRef.current = window.setTimeout(() => {
+                void load();
+                debounceTimerRef.current = null;
+              }, 500);
+            }
           },
         )
         .subscribe();
@@ -439,9 +453,18 @@ function AdminDashboardInner({ user, onClose, initialTab }: {
     return () => {
       window.clearInterval(onlineId);
       document.removeEventListener('visibilitychange', onVis);
+      if (debounceTimerRef.current !== null) {
+        window.clearTimeout(debounceTimerRef.current);
+      }
       if (channel) supabase?.removeChannel(channel);
     };
   }, [load, loadOnline]);
+
+  // Ensemble des IDs actuellement en ligne (mise à jour par `loadOnline`).
+  // Utilisé pour afficher un état 'En ligne' cohérent dans la table des
+  // utilisateurs récents, même si `admin_recent_users` a des timestamps
+  // légèrement décalés par rapport au heartbeat.
+  const onlineIds = useMemo(() => new Set(onlineUsers.map((o) => o.id)), [onlineUsers]);
 
   // ── Export CSV (sécurisé contre l'injection de formules) ──────────────────
   function exportCsv(): void {
@@ -716,7 +739,10 @@ function AdminDashboardInner({ user, onClose, initialTab }: {
               </thead>
               <tbody>
                 {users.map((u) => {
-                  const online = isOnline(u.last_seen_at);
+                  // Considère l'utilisateur en ligne si présent dans la source
+                  // temps réel (`onlineUsers`) ou si son `last_seen_at` est
+                  // récent selon le seuil local.
+                  const online = onlineIds.has(u.id) || isOnline(u.last_seen_at);
                   return (
                     <tr key={u.id}>
                       <td>
