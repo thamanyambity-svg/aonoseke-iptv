@@ -324,11 +324,16 @@ function AdminDashboardInner({ user, onClose, initialTab }: {
       const errors = [s.error, u.error, g.error, e.error, h.error, c.error, a.error, d.error, seg.error].filter(Boolean);
       if (errors.length > 0) throw errors[0];
 
-      const statsData = s.data;
-      setStats(typeof statsData === 'object' && statsData ? (statsData as Stats) : null);
+      // admin_stats / admin_geo_stats / admin_engagement sont des RPC "returns table"
+      // -> Supabase renvoie un TABLEAU [{...}] : on prend la 1re ligne (sinon
+      // stats/eng/geo seraient un tableau et stats.total_users serait undefined
+      // -> crash .toLocaleString() au rendu).
+      const statsRow = Array.isArray(s.data) ? s.data[0] : s.data;
+      setStats(statsRow && typeof statsRow === 'object' ? (statsRow as Stats) : null);
       setUsers(safeArray<RecentUser>(u.data));
-      setGeo(parseGeo(g.data));
-      setEng(typeof e.data === 'object' && e.data ? (e.data as Engagement) : null);
+      setGeo(parseGeo(Array.isArray(g.data) ? g.data[0] : g.data));
+      const engRow = Array.isArray(e.data) ? e.data[0] : e.data;
+      setEng(engRow && typeof engRow === 'object' ? (engRow as Engagement) : null);
       setHeat(safeArray<HeatCell>(h.data));
       setContent(safeArray<{ category: string; count: number }>(c.data).map((x) => ({ label: safeString(x.category), count: safeNumber(x.count) })));
       setAges(safeArray<{ age_range: string; count: number }>(a.data).map((x) => ({ label: safeString(x.age_range), count: safeNumber(x.count) })));
