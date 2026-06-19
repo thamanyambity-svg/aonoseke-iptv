@@ -14,8 +14,8 @@
 import { useState, useMemo } from 'react';
 import {
   X, RefreshCw, Plus, Edit2, Trash2, Pause, Play, Megaphone,
-  Building2, Target, TrendingUp, Eye, MousePointerClick, Download,
-  Crown, AlertCircle,
+  Building2, Target, Eye, MousePointerClick, Download,
+  AlertCircle,
 } from 'lucide-react';
 import { useAdvertisers, type Advertiser } from '../hooks/useAdvertisers.ts';
 import {
@@ -25,6 +25,7 @@ import {
   type CampaignStatus,
   type CampaignContent,
 } from '../hooks/useCampaigns.ts';
+import { supabase } from '../lib/supabaseClient.ts';
 import { logger } from '../utils/logger.ts';
 import type { AuthUser } from '../hooks/useAuth.ts';
 
@@ -84,7 +85,7 @@ function csvEscape(value: unknown): string {
   return quoted;
 }
 
-function downloadCsv(filename: string, header: string, rows: string[][]): void {
+function downloadCsv(filename: string, header: string, rows: (string | number)[][]): void {
   const csv = header + '\n' + rows.map((r) => r.map(csvEscape).join(',')).join('\n');
   const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
   const url = URL.createObjectURL(blob);
@@ -161,6 +162,18 @@ function AdvertiserForm({
 
 // ── Sous-composant : formulaire campagne ──────────────────────────────────
 
+// Convertit une date ISO en valeur d'<input type="datetime-local"> (heure locale).
+function toLocalInput(iso?: string | null): string {
+  if (!iso) return '';
+  try {
+    const d = new Date(iso);
+    const off = d.getTimezoneOffset();
+    return new Date(d.getTime() - off * 60000).toISOString().slice(0, 16);
+  } catch {
+    return '';
+  }
+}
+
 function CampaignForm({
   advertisers,
   initial,
@@ -176,6 +189,10 @@ function CampaignForm({
     content: CampaignContent;
     weight: number;
     frequency_cap_per_user: number;
+    start_at?: string;
+    end_at?: string | null;
+    impression_cap?: number | null;
+    click_cap?: number | null;
   }) => void;
   onCancel: () => void;
 }) {
@@ -188,10 +205,36 @@ function CampaignForm({
   const [url, setUrl] = useState(initial?.content?.url ?? '');
   const [eyebrow, setEyebrow] = useState(initial?.content?.eyebrow ?? '');
   const [legal, setLegal] = useState(initial?.content?.legal ?? '');
+  const [variant, setVariant] = useState<'souverain' | 'corridor'>(initial?.content?.variant ?? 'souverain');
+  const [image, setImage] = useState(initial?.content?.image ?? '');
+  const [video, setVideo] = useState(initial?.content?.video ?? '');
   const [weight, setWeight] = useState(initial?.weight ?? 10);
   const [freqCap, setFreqCap] = useState(initial?.frequency_cap_per_user ?? 3);
+  const [startAt, setStartAt] = useState(toLocalInput(initial?.start_at));
+  const [endAt, setEndAt] = useState(toLocalInput(initial?.end_at ?? null));
+  const [imprCap, setImprCap] = useState(initial?.impression_cap != null ? String(initial.impression_cap) : '');
+  const [clickCap, setClickCap] = useState(initial?.click_cap != null ? String(initial.click_cap) : '');
+  const [uploading, setUploading] = useState<'image' | 'video' | null>(null);
 
   const activeAdvertisers = advertisers.filter((a) => a.status === 'active');
+
+  async function handleUpload(file: File | undefined, kind: 'image' | 'video'): Promise<void> {
+    if (!file) return;
+    if (!supabase) { window.alert('Backend non configuré'); return; }
+    setUploading(kind);
+    try {
+      const ext = (file.name.split('.').pop() ?? (kind === 'video' ? 'mp4' : 'jpg')).toLowerCase();
+      const path = `${kind}/${Date.now()}-${Math.random().toString(36).slice(2, 8)}.${ext}`;
+      const { error } = await supabase.storage.from('ad-media').upload(path, file, {
+        contentType: file.type, upsert: false,
+      });
+      if (error) { window.alert('Upload échoué : ' + error.message); return; }
+      const { data } = supabase.storage.from('ad-media').getPublicUrl(path);
+      if (kind === 'image') setImage(data.publicUrl); else setVideo(data.publicUrl);
+    } finally {
+      setUploading(null);
+    }
+  }
 
   return (
     <form
@@ -202,9 +245,13 @@ function CampaignForm({
           advertiser_id: advertiserId,
           name,
           type,
-          content: { title, subtitle, cta, url, eyebrow, legal },
+          content: { title, subtitle, cta, url, eyebrow, legal, variant, image: image || undefined, video: video || undefined },
           weight,
           frequency_cap_per_user: freqCap,
+          start_at: startAt ? new Date(startAt).toISOString() : undefined,
+          end_at: endAt ? new Date(endAt).toISOString() : null,
+          impression_cap: imprCap.trim() === '' ? null : Number(imprCap),
+          click_cap: clickCap.trim() === '' ? null : Number(clickCap),
         });
       }}
     >
@@ -233,6 +280,13 @@ function CampaignForm({
           </select>
         </label>
         <label>
+          <span>Style</span>
+          <select value={variant} onChange={(e) => setVariant(e.target.value as 'souverain' | 'corridor')}>
+            <option value="souverain">Souverain</option>
+            <option value="corridor">Corridor</option>
+          </select>
+        </label>
+        <label>
           <span>Poids (1-100)</span>
           <input type="number" min={1} max={100} value={weight} onChange={(e) => setWeight(Number(e.target.value))} />
         </label>
@@ -241,6 +295,27 @@ function CampaignForm({
           <input type="number" min={1} max={20} value={freqCap} onChange={(e) => setFreqCap(Number(e.target.value))} />
         </label>
       </div>
+
+      {/* ── Médias : upload image / vidéo (ou URL externe) ── */}
+      <div className="ad-form-row">
+        <label>
+          <span>Image (upload ou URL)</span>
+          <input type="file" accept="image/*" disabled={uploading !== null}
+            onChange={(e) => void handleUpload(e.target.files?.[0], 'image')} />
+          <input value={image} onChange={(e) => setImage(e.target.value)} placeholder="https://… (ou via upload)" />
+          {uploading === 'image' && <span className="u-time-ago">Upload en cours…</span>}
+          {image && <img src={image} alt="aperçu" style={{ maxHeight: 70, borderRadius: 6, marginTop: 6, objectFit: 'cover' }} />}
+        </label>
+        <label>
+          <span>Vidéo pré-roll (upload ou URL)</span>
+          <input type="file" accept="video/mp4,video/webm" disabled={uploading !== null}
+            onChange={(e) => void handleUpload(e.target.files?.[0], 'video')} />
+          <input value={video} onChange={(e) => setVideo(e.target.value)} placeholder="https://… .mp4 (ou via upload)" />
+          {uploading === 'video' && <span className="u-time-ago">Upload en cours…</span>}
+          {video && <video src={video} muted controls style={{ maxHeight: 70, borderRadius: 6, marginTop: 6 }} />}
+        </label>
+      </div>
+
       <label>
         <span>Titre *</span>
         <input value={title} onChange={(e) => setTitle(e.target.value)} required placeholder="La passerelle sécurisée vers le monde" />
@@ -263,6 +338,29 @@ function CampaignForm({
         <span>URL de destination (avec UTM)</span>
         <input value={url} onChange={(e) => setUrl(e.target.value)} placeholder="https://...?utm_source=iptv-player&utm_medium=preroll" />
       </label>
+
+      {/* ── Planification & quotas ── */}
+      <div className="ad-form-row">
+        <label>
+          <span>Début de diffusion</span>
+          <input type="datetime-local" value={startAt} onChange={(e) => setStartAt(e.target.value)} />
+        </label>
+        <label>
+          <span>Fin de diffusion (vide = sans fin)</span>
+          <input type="datetime-local" value={endAt} onChange={(e) => setEndAt(e.target.value)} />
+        </label>
+      </div>
+      <div className="ad-form-row">
+        <label>
+          <span>Quota impressions (vide = illimité)</span>
+          <input type="number" min={0} value={imprCap} onChange={(e) => setImprCap(e.target.value)} placeholder="ex : 100000" />
+        </label>
+        <label>
+          <span>Quota clics (vide = illimité)</span>
+          <input type="number" min={0} value={clickCap} onChange={(e) => setClickCap(e.target.value)} placeholder="ex : 5000" />
+        </label>
+      </div>
+
       <label>
         <span>Mentions légales</span>
         <textarea value={legal} onChange={(e) => setLegal(e.target.value)} rows={2}
@@ -270,7 +368,7 @@ function CampaignForm({
       </label>
       <div className="ad-form-actions">
         <button type="button" className="ad-btn ad-btn--ghost" onClick={onCancel}>Annuler</button>
-        <button type="submit" className="ad-btn ad-btn--primary">Enregistrer</button>
+        <button type="submit" className="ad-btn ad-btn--primary" disabled={uploading !== null}>Enregistrer</button>
       </div>
     </form>
   );
@@ -354,6 +452,8 @@ function AdManagementInner(): JSX.Element {
   async function handleCampaignSubmit(data: {
     advertiser_id: string; name: string; type: CampaignType;
     content: CampaignContent; weight: number; frequency_cap_per_user: number;
+    start_at?: string; end_at?: string | null;
+    impression_cap?: number | null; click_cap?: number | null;
   }) {
     if (editingCampaign) {
       const { error } = await camp.update(editingCampaign.id, data);
@@ -626,13 +726,19 @@ function AdManagementInner(): JSX.Element {
                     <th>Impr.</th>
                     <th>Clics</th>
                     <th>CTR</th>
+                    <th>Progression</th>
                     <th>Poids</th>
                     <th>Cap/jour</th>
+                    <th>Diffusion</th>
                     <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {camp.campaigns.map((c) => (
+                  {camp.campaigns.map((c) => {
+                    const pct = c.impression_cap
+                      ? Math.min(100, Math.round((c.impressions / c.impression_cap) * 100))
+                      : null;
+                    return (
                     <tr key={c.id}>
                       <td className="u-name">
                         {c.name}
@@ -650,8 +756,28 @@ function AdManagementInner(): JSX.Element {
                       <td>{fmtNumber(c.impressions)}</td>
                       <td>{fmtNumber(c.clicks)}</td>
                       <td>{fmtPercent(c.ctr)}</td>
+                      <td>
+                        {pct !== null ? (
+                          <div
+                            style={{ display: 'flex', alignItems: 'center', gap: 6, minWidth: 90 }}
+                            title={`${fmtNumber(c.impressions)} / ${fmtNumber(c.impression_cap ?? 0)} impressions`}
+                          >
+                            <div style={{ flex: 1, height: 6, background: 'rgba(255,255,255,0.12)', borderRadius: 3, overflow: 'hidden', minWidth: 48 }}>
+                              <div style={{ width: `${pct}%`, height: '100%', background: pct >= 100 ? '#b00020' : 'var(--accent, #C98A1B)' }} />
+                            </div>
+                            <span style={{ fontSize: '0.78em', color: 'var(--text-3)' }}>{pct}%</span>
+                          </div>
+                        ) : (
+                          <span className="u-time-ago">illimité</span>
+                        )}
+                      </td>
                       <td>{c.weight}</td>
                       <td>{c.frequency_cap_per_user}</td>
+                      <td>
+                        <div className="u-time-ago" style={{ whiteSpace: 'nowrap' }}>
+                          {fmtDate(c.start_at)}<br />→ {fmtDate(c.end_at)}
+                        </div>
+                      </td>
                       <td>
                         <div className="ad-row-actions">
                           <button
@@ -681,7 +807,8 @@ function AdManagementInner(): JSX.Element {
                         </div>
                       </td>
                     </tr>
-                  ))}
+                    );
+                  })}
                 </tbody>
               </table>
             )}

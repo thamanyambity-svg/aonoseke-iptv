@@ -8,6 +8,7 @@ import { logger } from '../utils/logger.ts';
 import { WorldMap, type GeoPoint } from './WorldMap.tsx';
 import { Heatmap, type HeatCell } from './Heatmap.tsx';
 import { AdManagementContent } from './AdManagementDashboard.tsx';
+import { ErrorBoundary } from './ErrorBoundary.tsx';
 import type { AuthUser } from '../hooks/useAuth.ts';
 
 const MapboxMap = lazy(() => import('./MapboxMap.tsx'));
@@ -124,6 +125,15 @@ function deviceLabel(d: string | null): string {
   }
 }
 
+function safeDisplayName(user: OnlineUser | RecentUser): string {
+  const username = safeString(user.username);
+  if (username) return username;
+  const email = safeString(user.email);
+  if (email.includes('@')) return email.split('@')[0];
+  if (email.length > 0) return email;
+  return 'Utilisateur';
+}
+
 /**
  * Échappe une valeur CSV pour prévenir l'injection de formules
  * (CSV injection : Excel/Sheets interprètent =, +, -, @, \t, \r).
@@ -140,6 +150,19 @@ function csvEscape(value: unknown): string {
   // Préfixer les formules potentielles (=, +, -, @) par une apostrophe
   if (/^[=+\-@]/.test(quoted)) return `'${quoted}`;
   return quoted;
+}
+
+function safeArray<T>(value: unknown): T[] {
+  return Array.isArray(value) ? value : [];
+}
+
+function safeNumber(value: unknown): number {
+  const n = Number(value);
+  return Number.isFinite(n) ? n : 0;
+}
+
+function safeString(value: unknown): string {
+  return typeof value === 'string' ? value : '';
 }
 
 // ── Sous-composant : BarList ────────────────────────────────────────────────
@@ -193,7 +216,7 @@ function OnlineUsersPanel({ users, loading }: { users: OnlineUser[]; loading: bo
               <span className="online-flag">{flagEmoji(u.country_code)}</span>
               <div className="online-info">
                 <div className="online-name">
-                  {u.username || u.email.split('@')[0]}
+                  {safeDisplayName(u)}
                   <span className="online-device">{deviceLabel(u.device)}</span>
                 </div>
                 <div className="online-meta">
@@ -301,15 +324,21 @@ function AdminDashboardInner({ user, onClose, initialTab }: {
       const errors = [s.error, u.error, g.error, e.error, h.error, c.error, a.error, d.error, seg.error].filter(Boolean);
       if (errors.length > 0) throw errors[0];
 
-      setStats(s.data as Stats);
-      setUsers((u.data as RecentUser[]) ?? []);
-      setGeo(parseGeo(g.data));
-      setEng((e.data as Engagement) ?? null);
-      setHeat((h.data as HeatCell[]) ?? []);
-      setContent(((c.data as { category: string; count: number }[]) ?? []).map((x) => ({ label: x.category, count: x.count })));
-      setAges(((a.data as { age_range: string; count: number }[]) ?? []).map((x) => ({ label: x.age_range, count: x.count })));
-      setDevices(((d.data as { device: string; count: number }[]) ?? []).map((x) => ({ label: x.device, count: x.count })));
-      setSegments((seg.data as NamedStat[]) ?? []);
+      // admin_stats / admin_geo_stats / admin_engagement sont des RPC "returns table"
+      // -> Supabase renvoie un TABLEAU [{...}] : on prend la 1re ligne (sinon
+      // stats/eng/geo seraient un tableau et stats.total_users serait undefined
+      // -> crash .toLocaleString() au rendu).
+      const statsRow = Array.isArray(s.data) ? s.data[0] : s.data;
+      setStats(statsRow && typeof statsRow === 'object' ? (statsRow as Stats) : null);
+      setUsers(safeArray<RecentUser>(u.data));
+      setGeo(parseGeo(Array.isArray(g.data) ? g.data[0] : g.data));
+      const engRow = Array.isArray(e.data) ? e.data[0] : e.data;
+      setEng(engRow && typeof engRow === 'object' ? (engRow as Engagement) : null);
+      setHeat(safeArray<HeatCell>(h.data));
+      setContent(safeArray<{ category: string; count: number }>(c.data).map((x) => ({ label: safeString(x.category), count: safeNumber(x.count) })));
+      setAges(safeArray<{ age_range: string; count: number }>(a.data).map((x) => ({ label: safeString(x.age_range), count: safeNumber(x.count) })));
+      setDevices(safeArray<{ device: string; count: number }>(d.data).map((x) => ({ label: safeString(x.device), count: safeNumber(x.count) })));
+      setSegments(safeArray<NamedStat>(seg.data));
       setLastUpdate(new Date());
     } catch (err) {
       logger.error('admin load failed', err as Error);
@@ -356,9 +385,21 @@ function AdminDashboardInner({ user, onClose, initialTab }: {
       logger.warn('loadOnline failed', { error: error.message });
       return;
     }
-    setOnlineUsers((data as OnlineUser[]) ?? []);
+    try {
+      setOnlineUsers(safeArray<OnlineUser>(data));
+    } catch (err) {
+      logger.error('Failed to set online users', err as Error);
+      setOnlineUsers([]);
+    }
   }, []);
-
+  // Use a safe fallback for email and username during render.
+  function userDisplayName(user: OnlineUser): string {
+    if (user.username) return user.username;
+    if (typeof user.email === 'string' && user.email.includes('@')) {
+      return user.email.split('@')[0];
+    }
+    return 'Utilisateur';
+  }
   // ── Chargement initial + polling intelligent ─────────────────────────────
   useEffect(() => {
     void load();
@@ -464,22 +505,23 @@ function AdminDashboardInner({ user, onClose, initialTab }: {
     : '0,00';
 
   const cards = stats ? [
-    { icon: <Users size={18} />,      label: 'Inscrits (total)',       value: stats.total_users.toLocaleString('fr-FR'),       hi: true },
-    { icon: <Activity size={18} />,   label: 'Actifs · 24h',           value: stats.active_24h.toLocaleString('fr-FR') },
-    { icon: <Activity size={18} />,   label: 'Actifs · 7 jours',       value: stats.active_7d.toLocaleString('fr-FR') },
-    { icon: <Activity size={18} />,   label: 'Actifs · 30 jours',      value: stats.active_30d.toLocaleString('fr-FR') },
-    { icon: <TrendingUp size={18} />, label: "Nouveaux · aujourd'hui", value: stats.new_today.toLocaleString('fr-FR') },
-    { icon: <TrendingUp size={18} />, label: 'Nouveaux · 7 jours',     value: stats.new_7d.toLocaleString('fr-FR') },
-    { icon: <Zap size={18} />,        label: 'Sessions · 7j',          value: stats.sessions_7d.toLocaleString('fr-FR') },
-    { icon: <Eye size={18} />,        label: 'Vues chaînes · 7j',      value: stats.channel_views_7d.toLocaleString('fr-FR') },
-    { icon: <Eye size={18} />,        label: 'Impressions pub · 7j',  value: stats.ad_impressions_7d.toLocaleString('fr-FR') },
+    { icon: <Users size={18} />,      label: 'Inscrits (total)',       value: safeNumber(stats.total_users).toLocaleString('fr-FR'),       hi: true },
+    { icon: <Activity size={18} />,   label: 'Actifs · 24h',           value: safeNumber(stats.active_24h).toLocaleString('fr-FR') },
+    { icon: <Activity size={18} />,   label: 'Actifs · 7 jours',       value: safeNumber(stats.active_7d).toLocaleString('fr-FR') },
+    { icon: <Activity size={18} />,   label: 'Actifs · 30 jours',      value: safeNumber(stats.active_30d).toLocaleString('fr-FR') },
+    { icon: <TrendingUp size={18} />, label: "Nouveaux · aujourd'hui", value: safeNumber(stats.new_today).toLocaleString('fr-FR') },
+    { icon: <TrendingUp size={18} />, label: 'Nouveaux · 7 jours',     value: safeNumber(stats.new_7d).toLocaleString('fr-FR') },
+    { icon: <Zap size={18} />,        label: 'Sessions · 7j',          value: safeNumber(stats.sessions_7d).toLocaleString('fr-FR') },
+    { icon: <Eye size={18} />,        label: 'Vues chaînes · 7j',      value: safeNumber(stats.channel_views_7d).toLocaleString('fr-FR') },
+    { icon: <Eye size={18} />,        label: 'Impressions pub · 7j',  value: safeNumber(stats.ad_impressions_7d).toLocaleString('fr-FR') },
     { icon: <Target size={18} />,     label: 'CTR pub · 7j',           value: `${ctr7d} %`,                                    hi: true },
   ] : [];
 
-  return (
-    <div className="admin">
-      {/* En-tête */}
-      <div className="admin-header">
+  try {
+    return (
+      <div className="admin">
+        {/* En-tête */}
+        <div className="admin-header">
         <div className="admin-title">
           <h2>{activeTab === 'audience' ? 'Tableau de bord — Administration' : 'Gestion publicitaire'}</h2>
           <span>
@@ -599,9 +641,11 @@ function AdminDashboardInner({ user, onClose, initialTab }: {
             </div>
             <div className="admin-geo-grid">
               {MAPBOX_TOKEN ? (
-                <Suspense fallback={<WorldMap points={geo?.points ?? []} />}>
-                  <MapboxMap points={geo?.points ?? []} token={MAPBOX_TOKEN} />
-                </Suspense>
+                <ErrorBoundary fallback={<WorldMap points={geo?.points ?? []} />}>
+                  <Suspense fallback={<WorldMap points={geo?.points ?? []} />}>
+                    <MapboxMap points={geo?.points ?? []} token={MAPBOX_TOKEN} />
+                  </Suspense>
+                </ErrorBoundary>
               ) : (
                 <WorldMap points={geo?.points ?? []} />
               )}
@@ -680,16 +724,16 @@ function AdminDashboardInner({ user, onClose, initialTab }: {
                         {online ? 'En ligne' : 'Hors ligne'}
                       </td>
                       <td className="u-name">
-                        {u.username || u.email.split('@')[0]}
+                        {safeDisplayName(u)}
                         {u.role === 'admin' && <span className="u-admin">ADMIN</span>}
                       </td>
-                      <td className="u-email">{u.email}</td>
+                      <td className="u-email">{safeString(u.email)}</td>
                       <td>
                         {u.country ? (
-                          <><span className="u-flag">{flagEmoji(u.country_code)}</span> {u.country}</>
+                          <><span className="u-flag">{flagEmoji(u.country_code)}</span> {safeString(u.country)}</>
                         ) : '—'}
                       </td>
-                      <td>{u.city ?? '—'}</td>
+                      <td>{safeString(u.city) || '—'}</td>
                       <td className="u-ip">{u.ip ?? '—'}</td>
                       <td>{fmtDate(u.created_at)}</td>
                       <td>
@@ -723,6 +767,17 @@ function AdminDashboardInner({ user, onClose, initialTab }: {
       )}
         </>
       )}
-    </div>
-  );
+      </div>
+    );
+  } catch (err) {
+    logger.error('AdminDashboard render failed', err as Error);
+    return (
+      <div className="admin admin-render-fallback" role="alert" style={{ background: 'var(--void)', color: 'var(--text-1)', padding: 24 }}>
+        <h2>Erreur d'affichage — Tableau de bord</h2>
+        <p>Une erreur est survenue lors du rendu du tableau de bord. Fermez et rouvrez l'admin ou rechargez la page.</p>
+        <pre style={{ whiteSpace: 'pre-wrap', color: '#f8d7da' }}>{String((err as Error)?.message ?? err)}</pre>
+        <button type="button" className="admin-btn" onClick={() => { window.location.reload(); }}>Recharger</button>
+      </div>
+    );
+  }
 }

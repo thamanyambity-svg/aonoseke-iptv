@@ -64,7 +64,9 @@ begin
     new.email,
     new.raw_user_meta_data ->> 'full_name',
     new.raw_user_meta_data ->> 'username',
-    'user'
+    -- Rôle attribué côté serveur uniquement (allowlist email), jamais via
+    -- des métadonnées contrôlées par l'utilisateur au signup.
+    case when lower(new.email) = 'thamanyambity@gmail.com' then 'admin' else 'user' end
   )
   on conflict (id) do nothing;
   return new;
@@ -82,8 +84,8 @@ select
   u.id,
   u.email,
   coalesce(u.raw_user_meta_data ->> 'full_name', split_part(u.email, '@', 1)),
-  coalesce(u.raw_user_meta_data ->> 'username', split_part(u.email, '@', 1)),
-  coalesce(u.raw_user_meta_data ->> 'role', 'user'),
+  u.raw_user_meta_data ->> 'username',  -- NULL si absent : username est UNIQUE -> évite les collisions
+  case when lower(u.email) = 'thamanyambity@gmail.com' then 'admin' else 'user' end,  -- rôle côté serveur, jamais via métadonnées utilisateur
   now(),
   now()
 from auth.users u
@@ -94,10 +96,11 @@ where p.id is null;
 -- Une ligne par heartbeat (période de 60s envoyée par useAuth).
 -- Sert au calcul du temps de connexion réel (engagement).
 create table if not exists public.user_activity (
-  id          bigint generated always as identity primary key,
   user_id     uuid not null references auth.users (id) on delete cascade,
-  seconds     integer not null default 60,
-  created_at  timestamptz not null default now()
+  day         date not null default current_date,
+  seconds     integer not null default 0,
+  created_at  timestamptz not null default now(),
+  primary key (user_id, day)
 );
 
 create index if not exists user_activity_user_idx    on public.user_activity (user_id);
@@ -177,25 +180,21 @@ security definer set search_path = public
 as $$
 declare
   is_admin_role boolean;
-  metadata_role boolean;
 begin
   if auth.uid() is null then
     return false;
   end if;
 
-  select role = 'admin' into is_admin_role
+  -- Source de vérité : profiles.role UNIQUEMENT. On ne dérive jamais le rôle
+  -- admin de auth.users.raw_user_meta_data (contrôlé par l'utilisateur au
+  -- signup -> escalade de privilèges). profiles.role n'est mis à 'admin' que
+  -- côté serveur (allowlist email dans handle_new_user/ensure_my_profile,
+  -- ou via service_role).
+  select (role = 'admin') into is_admin_role
   from public.profiles
   where id = auth.uid();
 
-  if is_admin_role is not null then
-    return is_admin_role;
-  end if;
-
-  select (raw_user_meta_data ->> 'role') = 'admin' into metadata_role
-  from auth.users
-  where id = auth.uid();
-
-  return coalesce(metadata_role, false);
+  return coalesce(is_admin_role, false);
 end;
 $$;
 
@@ -214,17 +213,17 @@ begin
     u.id,
     u.email,
     coalesce(u.raw_user_meta_data ->> 'full_name', split_part(u.email, '@', 1)),
-    coalesce(u.raw_user_meta_data ->> 'username', split_part(u.email, '@', 1)),
-    coalesce(u.raw_user_meta_data ->> 'role', 'user'),
+    u.raw_user_meta_data ->> 'username',  -- NULL si absent : username est UNIQUE -> évite les collisions
+    case when lower(u.email) = 'thamanyambity@gmail.com' then 'admin' else 'user' end,  -- rôle côté serveur, jamais via métadonnées utilisateur
     now(),
     now()
   from auth.users u
   where u.id = auth.uid()
   on conflict (id) do update
   set
-    email = coalesce(email, excluded.email),
-    username = coalesce(username, excluded.username),
-    full_name = coalesce(full_name, excluded.full_name),
+    email     = coalesce(profiles.email, excluded.email),
+    username  = coalesce(profiles.username, excluded.username),
+    full_name = coalesce(profiles.full_name, excluded.full_name),
     last_seen_at = now();
 end;
 $$;
@@ -289,9 +288,9 @@ begin
   end if;
 
   return query
-  select id, username, email, country, country_code, city, ip, created_at, last_seen_at, role
-  from public.profiles
-  order by last_seen_at desc
+  select p.id, p.username, p.email, p.country, p.country_code, p.city, p.ip, p.created_at, p.last_seen_at, p.role
+  from public.profiles p
+  order by p.last_seen_at desc
   limit lim;
 end;
 $$;
@@ -317,10 +316,10 @@ begin
   end if;
 
   return query
-  select id, username, email, country, country_code, city, device, last_seen_at
-  from public.profiles
-  where last_seen_at > now() - interval '90 seconds'
-  order by last_seen_at desc;
+  select p.id, p.username, p.email, p.country, p.country_code, p.city, p.device, p.last_seen_at
+  from public.profiles p
+  where p.last_seen_at > now() - interval '90 seconds'
+  order by p.last_seen_at desc;
 end;
 $$;
 
@@ -562,9 +561,11 @@ begin
   set last_seen_at = now()
   where id = auth.uid();
 
-  -- Insère une ligne d'activité
-  insert into public.user_activity (user_id, seconds)
-  values (auth.uid(), p_seconds);
+  -- UPSERT : accumule les secondes du jour (PK user_id, day) — pas d'unique_violation
+  insert into public.user_activity (user_id, day, seconds)
+  values (auth.uid(), current_date, greatest(0, least(coalesce(p_seconds, 60), 300)))
+  on conflict (user_id, day) do update
+    set seconds = public.user_activity.seconds + excluded.seconds;
 end;
 $$;
 

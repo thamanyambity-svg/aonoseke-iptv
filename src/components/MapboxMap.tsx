@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import type { GeoPoint } from './WorldMap.tsx';
@@ -10,22 +10,28 @@ import type { GeoPoint } from './WorldMap.tsx';
 export default function MapboxMap({ points, token }: { points: GeoPoint[]; token: string }): JSX.Element {
   const ref = useRef<HTMLDivElement>(null);
   const mapRef = useRef<mapboxgl.Map | null>(null);
+  const [failed, setFailed] = useState(false);
 
   useEffect(() => {
-    if (!ref.current || mapRef.current) return;
-    mapboxgl.accessToken = token;
-    const map = new mapboxgl.Map({
-      container: ref.current,
-      style: 'mapbox://styles/mapbox/satellite-streets-v12',
-      center: [12, 8],
-      zoom: 1.1,
-      attributionControl: false,
-      cooperativeGestures: true,
-      preserveDrawingBuffer: true,
-    });
-    mapRef.current = map;
-    return () => { map.remove(); mapRef.current = null; };
-  }, [token]);
+    if (!ref.current || mapRef.current || failed) return;
+    try {
+      mapboxgl.accessToken = token;
+      const map = new mapboxgl.Map({
+        container: ref.current,
+        style: 'mapbox://styles/mapbox/satellite-streets-v12',
+        center: [12, 8],
+        zoom: 1.1,
+        attributionControl: false,
+        cooperativeGestures: true,
+        preserveDrawingBuffer: true,
+      });
+      mapRef.current = map;
+      return () => { map.remove(); mapRef.current = null; };
+    } catch (err) {
+      console.error('MapboxMap failed to initialize', err);
+      setFailed(true);
+    }
+  }, [token, failed]);
 
   useEffect(() => {
     const map = mapRef.current;
@@ -53,6 +59,17 @@ export default function MapboxMap({ points, token }: { points: GeoPoint[]; token
     };
     if (map.isStyleLoaded()) apply(); else map.once('load', apply);
   }, [points]);
+
+  if (failed) {
+    return (
+      <div className="mapbox-map mapbox-map--failed">
+        <div className="mapbox-fallback">
+          <strong>Carte Mapbox indisponible</strong>
+          <p>Le chargement de la carte a échoué. Vérifiez le token Mapbox ou rechargez la page.</p>
+        </div>
+      </div>
+    );
+  }
 
   return <div ref={ref} className="mapbox-map" />;
 }

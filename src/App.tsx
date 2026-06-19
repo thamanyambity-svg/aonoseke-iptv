@@ -27,18 +27,19 @@ import { Directory } from './components/Directory.tsx';
 import { CinematicBg } from './components/CinematicBg.tsx';
 import { Profile } from './components/Profile.tsx';
 import { AdminDashboard } from './components/AdminDashboard.tsx';
+import { ErrorBoundary } from './components/ErrorBoundary.tsx';
 import { useDeadChannels } from './hooks/useDeadChannels.ts';
 import { useFavorites } from './hooks/useFavorites.ts';
-import { useAds } from './hooks/useAds.ts';
+import { useAds, trackAdEvent } from './hooks/useAds.ts';
 import type { PrerollAd } from './hooks/useAds.ts';
-import { trackEvent, trackHeartbeat } from './hooks/useAnalytics.ts';
+import { trackEvent } from './hooks/useAnalytics.ts';
 import type { Channel } from './types-exports.ts';
 import { validatePlaylist, appConfig } from './types-exports.ts';
 import { logger } from './utils/logger.ts';
 import { ErrorMessages } from './utils/errors.ts';
 import type { AuthUser } from './hooks/useAuth.ts';
 import { sanitizeLogoUrl } from './utils/validation.ts';
-import { countryFlag, countryLabel, useDebounce } from './utils/appHelpers.ts';
+import { countryFlag, COUNTRY_NAMES, useDebounce } from './utils/appHelpers.ts';
 
 // countryFlag est ré-exporté pour les tests existants (App.test.tsx l'importe depuis App)
 export { countryFlag } from './utils/appHelpers.ts';
@@ -157,11 +158,12 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
     }
     const q = search.toLowerCase();
     if (q) {
-      list = list.filter((c) =>
-        c.name.toLowerCase().includes(q) ||
-        c.group.toLowerCase().includes(q) ||
-        c.country.toLowerCase().includes(q),
-      );
+      list = list.filter((c) => {
+        const name = (c.name ?? '').toLowerCase();
+        const group = (c.group ?? '').toLowerCase();
+        const country = (c.country ?? '').toLowerCase();
+        return name.includes(q) || group.includes(q) || country.includes(q);
+      });
     }
     return list;
   }, [channels, search, selectedCountry, selectedGroup, activeTab, favorites, deadSet]);
@@ -180,15 +182,8 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
     trackEvent('channel_view', channel.url, channel.group);
   }, []);
 
-  // Heartbeat : mesure le temps de connexion réel (ping discret toutes les 60s,
-  // seulement quand l'onglet est visible).
-  useEffect(() => {
-    trackHeartbeat();
-    const id = window.setInterval(() => {
-      if (document.visibilityState === 'visible') trackHeartbeat();
-    }, 60_000);
-    return () => window.clearInterval(id);
-  }, []);
+  // Le heartbeat de présence est géré de façon centralisée dans useAuth
+  // (une seule source → pas de double comptage du temps de connexion).
 
   const handleSelectChannel = useCallback(
     (channel: Channel): void => {
@@ -313,14 +308,17 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
   // ─── render ───────────────────────────────────────────────────────────────
   return (
     <div className={`app-container${sidebarOpen ? ' sidebar-open' : ''}`}>
-      {/* Toggle hamburger — disponible sur tous les supports */}
-      <button
-        className="sidebar-toggle"
-        onClick={() => setSidebarOpen((o) => !o)}
-        aria-label={sidebarOpen ? 'Masquer la liste des chaînes' : 'Afficher la liste des chaînes'}
-      >
-        {sidebarOpen ? <X size={20} /> : <Menu size={20} />}
-      </button>
+      {/* Toggle hamburger — masqué quand l'admin ou le profil est ouvert
+          (sinon il chevauche l'en-tête du tableau de bord). */}
+      {!showAdmin && !showProfile && (
+        <button
+          className="sidebar-toggle"
+          onClick={() => setSidebarOpen((o) => !o)}
+          aria-label={sidebarOpen ? 'Masquer la liste des chaînes' : 'Afficher la liste des chaînes'}
+        >
+          {sidebarOpen ? <X size={20} /> : <Menu size={20} />}
+        </button>
+      )}
       {sidebarOpen && (
         <div className="sidebar-backdrop" onClick={() => setSidebarOpen(false)} aria-hidden="true" />
       )}
@@ -595,8 +593,8 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
         {ads.enabled && ads.banners.length > 0 && (
           <BannerAd
             ad={ads.banners[0]}
-            onImpression={(id) => trackEvent('ad_impression', id)}
-            onClick={(id) => trackEvent('ad_click', id)}
+            onImpression={(id) => { trackEvent('ad_impression', id); void trackAdEvent(id, 'impression'); }}
+            onClick={(id) => { trackEvent('ad_click', id); void trackAdEvent(id, 'click'); }}
           />
         )}
       </aside>
@@ -657,8 +655,8 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
               skipAfter={ads.preroll.skipAfter}
               maxDuration={ads.preroll.maxDuration}
               onComplete={handlePrerollComplete}
-              onImpression={(id) => trackEvent('ad_impression', id)}
-              onClick={(id) => trackEvent('ad_click', id)}
+              onImpression={(id) => { trackEvent('ad_impression', id); void trackAdEvent(id, 'impression'); }}
+              onClick={(id) => { trackEvent('ad_click', id); void trackAdEvent(id, 'click'); }}
             />
           )}
         </div>
@@ -680,11 +678,23 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
 
       {/* Tableau de bord admin unifié (Audience + Publicité) */}
       {showAdmin && user?.role === 'admin' && (
-        <AdminDashboard
-          user={user}
-          onClose={() => setShowAdmin(false)}
-          initialTab={adminInitialTab}
-        />
+        <ErrorBoundary
+          fallback={
+            <div className="admin-error-state">
+              <h2>Impossible d'afficher le tableau de bord admin</h2>
+              <p>Une erreur s'est produite lors du rendu du dashboard. Fermez et rouvrez l'admin ou rechargez la page.</p>
+              <button type="button" className="admin-btn" onClick={() => setShowAdmin(false)}>
+                Fermer
+              </button>
+            </div>
+          }
+        >
+          <AdminDashboard
+            user={user}
+            onClose={() => setShowAdmin(false)}
+            initialTab={adminInitialTab}
+          />
+        </ErrorBoundary>
       )}
     </div>
   );

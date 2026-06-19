@@ -34,11 +34,16 @@ async function loadProfile(userId: string, email: string): Promise<AuthUser> {
   const fallback: AuthUser = { id: userId, name: email.split('@')[0], email, provider: 'email' };
   if (!supabase) return fallback;
   try {
-    const { data } = await supabase
+    const { data, error } = await supabase
       .from('profiles')
       .select('username, full_name, avatar_url, role')
       .eq('id', userId)
       .single();
+
+    // PGRST116 = aucune ligne trouvée (profil manquant) → tentative de recréation plus bas.
+    if (error && error.code !== 'PGRST116') {
+      logger.warn('loadProfile: lecture du profil échouée', { code: error.code, message: error.message });
+    }
 
     if (data) {
       return {
@@ -52,13 +57,22 @@ async function loadProfile(userId: string, email: string): Promise<AuthUser> {
       };
     }
 
-    // Si le profil est manquant, on tente de le recréer côté Supabase.
-    await supabase.rpc('ensure_my_profile');
-    const { data: recreated } = await supabase
+    // Profil manquant : tentative de recréation côté Supabase (self-heal).
+    const { error: ensureError } = await supabase.rpc('ensure_my_profile');
+    if (ensureError) {
+      logger.warn('loadProfile: ensure_my_profile a échoué', { message: ensureError.message });
+      return fallback;
+    }
+
+    const { data: recreated, error: recreatedError } = await supabase
       .from('profiles')
       .select('username, full_name, avatar_url, role')
       .eq('id', userId)
       .single();
+
+    if (recreatedError) {
+      logger.warn('loadProfile: relecture après recréation échouée', { code: recreatedError.code, message: recreatedError.message });
+    }
 
     if (recreated) {
       return {
@@ -73,7 +87,8 @@ async function loadProfile(userId: string, email: string): Promise<AuthUser> {
     }
 
     return fallback;
-  } catch {
+  } catch (e) {
+    logger.warn('loadProfile: exception', { message: e instanceof Error ? e.message : String(e) });
     return fallback;
   }
 }
@@ -157,16 +172,22 @@ export function useAuth(): {
     // Heartbeat fiable : présence + temps (track_heartbeat met à jour
     // user_activity ET last_seen_at) immédiatement, toutes les 60s, et au
     // retour sur l'onglet. Placé ici (cœur d'auth) = garanti de tourner.
+    let signedIn = false;
     const beat = (): void => {
-      if (supabase && document.visibilityState === 'visible') {
-        void supabase.rpc('track_heartbeat', { p_seconds: 60 });
-      }
+      // Ne bat QUE si une session est établie (sinon track_heartbeat lève 42501)
+      // et que l'onglet est visible. Erreur capturée → plus d'échec silencieux.
+      if (!supabase || !signedIn || document.visibilityState !== 'visible') return;
+      void supabase.rpc('track_heartbeat', { p_seconds: 60 }).then(({ error }) => {
+        if (error) logger.warn('heartbeat: track_heartbeat a échoué', { message: error.message });
+      });
     };
     const startPresence = (): void => {
+      signedIn = true;
       beat();
       if (hbId === undefined) hbId = window.setInterval(beat, 60_000);
     };
     const stopPresence = (): void => {
+      signedIn = false;
       if (hbId !== undefined) { window.clearInterval(hbId); hbId = undefined; }
     };
     document.addEventListener('visibilitychange', beat);

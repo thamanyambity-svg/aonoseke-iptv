@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import './index.css';
 import App from './App.tsx';
 import { Landing } from './Landing.tsx';
+import { ErrorBoundary } from './components/ErrorBoundary.tsx';
 import { useAuth } from './hooks/useAuth.ts';
 import { captureUtmParams } from './utils/utmTracking.ts';
 
@@ -61,6 +62,8 @@ if (!root) throw new Error('Root element not found');
 
 createRoot(root).render(
   <StrictMode>
-    <Root />
+    <ErrorBoundary>
+      <Root />
+    </ErrorBoundary>
   </StrictMode>,
 );
