@@ -158,11 +158,12 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
     }
     const q = search.toLowerCase();
     if (q) {
-      list = list.filter((c) =>
-        c.name.toLowerCase().includes(q) ||
-        c.group.toLowerCase().includes(q) ||
-        c.country.toLowerCase().includes(q),
-      );
+      list = list.filter((c) => {
+        const name = (c.name ?? '').toLowerCase();
+        const group = (c.group ?? '').toLowerCase();
+        const country = (c.country ?? '').toLowerCase();
+        return name.includes(q) || group.includes(q) || country.includes(q);
+      });
     }
     return list;
   }, [channels, search, selectedCountry, selectedGroup, activeTab, favorites, deadSet]);
