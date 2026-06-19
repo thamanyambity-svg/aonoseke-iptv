@@ -38,7 +38,7 @@ import { logger } from './utils/logger.ts';
 import { ErrorMessages } from './utils/errors.ts';
 import type { AuthUser } from './hooks/useAuth.ts';
 import { sanitizeLogoUrl } from './utils/validation.ts';
-import { countryFlag, countryLabel, useDebounce } from './utils/appHelpers.ts';
+import { countryFlag, COUNTRY_NAMES, useDebounce } from './utils/appHelpers.ts';
 
 // countryFlag est ré-exporté pour les tests existants (App.test.tsx l'importe depuis App)
 export { countryFlag } from './utils/appHelpers.ts';

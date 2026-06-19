@@ -15,7 +15,7 @@ export function countryFlag(code: string): string {
   return String.fromCodePoint(...codePoints);
 }
 
-const COUNTRY_NAMES: Record<string, string> = {
+export const COUNTRY_NAMES: Record<string, string> = {
   FR: 'France', BE: 'Belgique', CH: 'Suisse', CA: 'Canada',
   MA: 'Maroc', DZ: 'Algérie', TN: 'Tunisie', SN: 'Sénégal',
   CD: 'Congo RDC', CI: "Côte d'Ivoire", CM: 'Cameroun', GA: 'Gabon',
