@@ -125,14 +125,12 @@ function deviceLabel(d: string | null): string {
   }
 }
 
-function safeDisplayName(user: OnlineUser): string {
-  if (user.username) return user.username;
-  if (typeof user.email === 'string' && user.email.includes('@')) {
-    return user.email.split('@')[0];
-  }
-  if (typeof user.email === 'string' && user.email.length > 0) {
-    return user.email;
-  }
+function safeDisplayName(user: OnlineUser | RecentUser): string {
+  const username = safeString(user.username);
+  if (username) return username;
+  const email = safeString(user.email);
+  if (email.includes('@')) return email.split('@')[0];
+  if (email.length > 0) return email;
   return 'Utilisateur';
 }
 
@@ -715,16 +713,16 @@ function AdminDashboardInner({ user, onClose, initialTab }: {
                         {online ? 'En ligne' : 'Hors ligne'}
                       </td>
                       <td className="u-name">
-                        {u.username || u.email.split('@')[0]}
+                        {safeDisplayName(u)}
                         {u.role === 'admin' && <span className="u-admin">ADMIN</span>}
                       </td>
-                      <td className="u-email">{u.email}</td>
+                      <td className="u-email">{safeString(u.email)}</td>
                       <td>
                         {u.country ? (
-                          <><span className="u-flag">{flagEmoji(u.country_code)}</span> {u.country}</>
+                          <><span className="u-flag">{flagEmoji(u.country_code)}</span> {safeString(u.country)}</>
                         ) : '—'}
                       </td>
-                      <td>{u.city ?? '—'}</td>
+                      <td>{safeString(u.city) || '—'}</td>
                       <td className="u-ip">{u.ip ?? '—'}</td>
                       <td>{fmtDate(u.created_at)}</td>
                       <td>
