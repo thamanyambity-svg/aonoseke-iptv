@@ -1,9 +1,13 @@
-import React, { useEffect, useRef, useState, useCallback } from 'react';
+import React, { useEffect, useRef, useState, useCallback, lazy, Suspense } from 'react';
 import Hls from 'hls.js';
 import { Maximize2, Minimize2, Tv, RefreshCw } from 'lucide-react';
 import type { PlayerProps } from '../types-exports.ts';
 import { logger } from '../utils/logger.ts';
 import { ErrorMessages } from '../utils/errors.ts';
+import { useAdMatrix } from '../hooks/useAdMatrix.ts';
+
+// Lazy load AdBanner component (non-critical)
+const AdBanner = lazy(() => import('./AdBanner.tsx').then(m => ({ default: m.AdBanner })));
 
 export const Player: React.FC<PlayerProps> = ({ url, onError }): JSX.Element => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -12,12 +16,24 @@ export const Player: React.FC<PlayerProps> = ({ url, onError }): JSX.Element => 
   const [isLoading, setIsLoading] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [recovering, setRecovering] = useState(false);
+  
+  // Smart-Stream Ad Matrix
+  const { currentAd, nextAd } = useAdMatrix();
+  const [showAd, setShowAd] = useState(false);
 
   useEffect((): (() => void) => {
     const onFsChange = (): void => setIsFullscreen(!!document.fullscreenElement);
     document.addEventListener('fullscreenchange', onFsChange);
     return () => document.removeEventListener('fullscreenchange', onFsChange);
   }, []);
+
+  // Afficher la pub après que le player soit prêt (délai 2s)
+  useEffect(() => {
+    if (url && currentAd) {
+      const timer = setTimeout(() => setShowAd(true), 2000);
+      return () => clearTimeout(timer);
+    }
+  }, [url, currentAd]);
 
   const toggleFullscreen = useCallback((): void => {
     if (!document.fullscreenElement) {
@@ -186,6 +202,18 @@ export const Player: React.FC<PlayerProps> = ({ url, onError }): JSX.Element => 
           <RefreshCw size={12} className="spin-icon" />
           Reconnexion…
         </div>
+      )}
+
+      {/* Smart-Stream Ad Matrix — Affichage de la bannière publicitaire */}
+      {showAd && currentAd && (
+        <Suspense fallback={null}>
+          <AdBanner
+            campaign={currentAd}
+            position="bottom"
+            onClose={() => setShowAd(false)}
+            onNextAd={nextAd}
+          />
+        </Suspense>
       )}
     </div>
   );
