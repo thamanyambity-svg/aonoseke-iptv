@@ -385,7 +385,12 @@ function AdminDashboardInner({ user, onClose, initialTab }: {
       logger.warn('loadOnline failed', { error: error.message });
       return;
     }
-    setOnlineUsers(safeArray<OnlineUser>(data));
+    try {
+      setOnlineUsers(safeArray<OnlineUser>(data));
+    } catch (err) {
+      logger.error('Failed to set online users', err as Error);
+      setOnlineUsers([]);
+    }
   }, []);
   // Use a safe fallback for email and username during render.
   function userDisplayName(user: OnlineUser): string {
@@ -512,10 +517,11 @@ function AdminDashboardInner({ user, onClose, initialTab }: {
     { icon: <Target size={18} />,     label: 'CTR pub · 7j',           value: `${ctr7d} %`,                                    hi: true },
   ] : [];
 
-  return (
-    <div className="admin">
-      {/* En-tête */}
-      <div className="admin-header">
+  try {
+    return (
+      <div className="admin">
+        {/* En-tête */}
+        <div className="admin-header">
         <div className="admin-title">
           <h2>{activeTab === 'audience' ? 'Tableau de bord — Administration' : 'Gestion publicitaire'}</h2>
           <span>
@@ -761,6 +767,17 @@ function AdminDashboardInner({ user, onClose, initialTab }: {
       )}
         </>
       )}
-    </div>
-  );
+      </div>
+    );
+  } catch (err) {
+    logger.error('AdminDashboard render failed', err as Error);
+    return (
+      <div className="admin admin-render-fallback" role="alert" style={{ background: 'var(--void)', color: 'var(--text-1)', padding: 24 }}>
+        <h2>Erreur d'affichage — Tableau de bord</h2>
+        <p>Une erreur est survenue lors du rendu du tableau de bord. Fermez et rouvrez l'admin ou rechargez la page.</p>
+        <pre style={{ whiteSpace: 'pre-wrap', color: '#f8d7da' }}>{String((err as Error)?.message ?? err)}</pre>
+        <button type="button" className="admin-btn" onClick={() => { window.location.reload(); }}>Recharger</button>
+      </div>
+    );
+  }
 }
