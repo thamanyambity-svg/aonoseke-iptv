@@ -27,6 +27,7 @@ import { Directory } from './components/Directory.tsx';
 import { CinematicBg } from './components/CinematicBg.tsx';
 import { Profile } from './components/Profile.tsx';
 import { AdminDashboard } from './components/AdminDashboard.tsx';
+import { ErrorBoundary } from './components/ErrorBoundary.tsx';
 import { useDeadChannels } from './hooks/useDeadChannels.ts';
 import { useFavorites } from './hooks/useFavorites.ts';
 import { useAds, trackAdEvent } from './hooks/useAds.ts';
@@ -673,11 +674,23 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
 
       {/* Tableau de bord admin unifié (Audience + Publicité) */}
       {showAdmin && user?.role === 'admin' && (
-        <AdminDashboard
-          user={user}
-          onClose={() => setShowAdmin(false)}
-          initialTab={adminInitialTab}
-        />
+        <ErrorBoundary
+          fallback={
+            <div className="admin-error-state">
+              <h2>Impossible d'afficher le tableau de bord admin</h2>
+              <p>Une erreur s'est produite lors du rendu du dashboard. Fermez et rouvrez l'admin ou rechargez la page.</p>
+              <button type="button" className="admin-btn" onClick={() => setShowAdmin(false)}>
+                Fermer
+              </button>
+            </div>
+          }
+        >
+          <AdminDashboard
+            user={user}
+            onClose={() => setShowAdmin(false)}
+            initialTab={adminInitialTab}
+          />
+        </ErrorBoundary>
       )}
     </div>
   );
