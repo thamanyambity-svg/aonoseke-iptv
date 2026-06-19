@@ -307,14 +307,17 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
   // ─── render ───────────────────────────────────────────────────────────────
   return (
     <div className={`app-container${sidebarOpen ? ' sidebar-open' : ''}`}>
-      {/* Toggle hamburger — disponible sur tous les supports */}
-      <button
-        className="sidebar-toggle"
-        onClick={() => setSidebarOpen((o) => !o)}
-        aria-label={sidebarOpen ? 'Masquer la liste des chaînes' : 'Afficher la liste des chaînes'}
-      >
-        {sidebarOpen ? <X size={20} /> : <Menu size={20} />}
-      </button>
+      {/* Toggle hamburger — masqué quand l'admin ou le profil est ouvert
+          (sinon il chevauche l'en-tête du tableau de bord). */}
+      {!showAdmin && !showProfile && (
+        <button
+          className="sidebar-toggle"
+          onClick={() => setSidebarOpen((o) => !o)}
+          aria-label={sidebarOpen ? 'Masquer la liste des chaînes' : 'Afficher la liste des chaînes'}
+        >
+          {sidebarOpen ? <X size={20} /> : <Menu size={20} />}
+        </button>
+      )}
       {sidebarOpen && (
         <div className="sidebar-backdrop" onClick={() => setSidebarOpen(false)} aria-hidden="true" />
       )}
