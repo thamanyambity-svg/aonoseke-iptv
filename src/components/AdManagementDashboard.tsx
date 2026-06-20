@@ -41,8 +41,9 @@ type Tab = 'advertisers' | 'campaigns';
 function fmtDate(s: string | null): string {
   if (!s) return '—';
   try {
-    return new Date(s).toLocaleDateString('fr-FR', {
+    return new Date(s).toLocaleString('fr-FR', {
       day: '2-digit', month: '2-digit', year: 'numeric',
+      hour: '2-digit', minute: '2-digit',
     });
   } catch {
     return s;
@@ -215,12 +216,14 @@ function CampaignForm({
   const [imprCap, setImprCap] = useState(initial?.impression_cap != null ? String(initial.impression_cap) : '');
   const [clickCap, setClickCap] = useState(initial?.click_cap != null ? String(initial.click_cap) : '');
   const [uploading, setUploading] = useState<'image' | 'video' | null>(null);
+  const [formError, setFormError] = useState<string | null>(null);
 
   const activeAdvertisers = advertisers.filter((a) => a.status === 'active');
 
   async function handleUpload(file: File | undefined, kind: 'image' | 'video'): Promise<void> {
     if (!file) return;
     if (!supabase) { window.alert('Backend non configuré'); return; }
+    setFormError(null);
     setUploading(kind);
     try {
       const ext = (file.name.split('.').pop() ?? (kind === 'video' ? 'mp4' : 'jpg')).toLowerCase();
@@ -228,8 +231,15 @@ function CampaignForm({
       const { error } = await supabase.storage.from('ad-media').upload(path, file, {
         contentType: file.type, upsert: false,
       });
-      if (error) { window.alert('Upload échoué : ' + error.message); return; }
+      if (error) {
+        setFormError('Upload échoué : ' + error.message);
+        return;
+      }
       const { data } = supabase.storage.from('ad-media').getPublicUrl(path);
+      if (!data?.publicUrl) {
+        setFormError('Impossible de récupérer l’URL publique du média.');
+        return;
+      }
       if (kind === 'image') setImage(data.publicUrl); else setVideo(data.publicUrl);
     } finally {
       setUploading(null);
@@ -241,6 +251,11 @@ function CampaignForm({
       className="ad-form"
       onSubmit={(e) => {
         e.preventDefault();
+        setFormError(null);
+        if (startAt && endAt && new Date(endAt) <= new Date(startAt)) {
+          setFormError('La date de fin doit être postérieure à la date de début.');
+          return;
+        }
         onSubmit({
           advertiser_id: advertiserId,
           name,
@@ -270,6 +285,11 @@ function CampaignForm({
           <input value={name} onChange={(e) => setName(e.target.value)} required placeholder="Alpha Import — Découverte" />
         </label>
       </div>
+      {formError && (
+        <div className="ad-form-error" role="alert" aria-live="assertive">
+          {formError}
+        </div>
+      )}
       <div className="ad-form-row">
         <label>
           <span>Type</span>
@@ -301,7 +321,13 @@ function CampaignForm({
         <label>
           <span>Image (upload ou URL)</span>
           <input type="file" accept="image/*" disabled={uploading !== null}
-            onChange={(e) => void handleUpload(e.target.files?.[0], 'image')} />
+            onChange={(e) => {
+              const file = e.currentTarget.files?.[0];
+              if (file) {
+                void handleUpload(file, 'image');
+              }
+              e.currentTarget.value = '';
+            }} />
           <input value={image} onChange={(e) => setImage(e.target.value)} placeholder="https://… (ou via upload)" />
           {uploading === 'image' && <span className="u-time-ago">Upload en cours…</span>}
           {image && <img src={image} alt="aperçu" style={{ maxHeight: 70, borderRadius: 6, marginTop: 6, objectFit: 'cover' }} />}
@@ -309,7 +335,13 @@ function CampaignForm({
         <label>
           <span>Vidéo pré-roll (upload ou URL)</span>
           <input type="file" accept="video/mp4,video/webm" disabled={uploading !== null}
-            onChange={(e) => void handleUpload(e.target.files?.[0], 'video')} />
+            onChange={(e) => {
+              const file = e.currentTarget.files?.[0];
+              if (file) {
+                void handleUpload(file, 'video');
+              }
+              e.currentTarget.value = '';
+            }} />
           <input value={video} onChange={(e) => setVideo(e.target.value)} placeholder="https://… .mp4 (ou via upload)" />
           {uploading === 'video' && <span className="u-time-ago">Upload en cours…</span>}
           {video && <video src={video} muted controls style={{ maxHeight: 70, borderRadius: 6, marginTop: 6 }} />}
@@ -343,11 +375,11 @@ function CampaignForm({
       <div className="ad-form-row">
         <label>
           <span>Début de diffusion</span>
-          <input type="datetime-local" value={startAt} onChange={(e) => setStartAt(e.target.value)} />
+          <input type="datetime-local" value={startAt} onChange={(e) => setStartAt(e.target.value)} max={endAt || undefined} />
         </label>
         <label>
           <span>Fin de diffusion (vide = sans fin)</span>
-          <input type="datetime-local" value={endAt} onChange={(e) => setEndAt(e.target.value)} />
+          <input type="datetime-local" value={endAt} onChange={(e) => setEndAt(e.target.value)} min={startAt || undefined} />
         </label>
       </div>
       <div className="ad-form-row">
