@@ -35625,7 +35625,7 @@
     "group": "151",
     "logo": "",
     "url": "http://151.80.18.177:86/Canal+_Family_HD/index.m3u8",
-    "source": "validated-http",
+    "source": "validated",
     "verified": true,
     "verifiedAt": "2026-06-20T08:44:52.112Z"
   },
@@ -35635,7 +35635,7 @@
     "group": "151",
     "logo": "",
     "url": "http://151.80.18.177:86/Canal+_HD/index.m3u8",
-    "source": "validated-http",
+    "source": "validated",
     "verified": true,
     "verifiedAt": "2026-06-20T08:44:52.146Z"
   },
@@ -35645,7 +35645,7 @@
     "group": "151",
     "logo": "",
     "url": "http://151.80.18.177:86/Canal+_cinema_HD/index.m3u8",
-    "source": "validated-http",
+    "source": "validated",
     "verified": true,
     "verifiedAt": "2026-06-20T08:44:52.146Z"
   },
@@ -35655,7 +35655,7 @@
     "group": "151",
     "logo": "",
     "url": "http://151.80.18.177:86/Canal+_sport_HD/index.m3u8",
-    "source": "validated-http",
+    "source": "validated",
     "verified": true,
     "verifiedAt": "2026-06-20T08:44:52.147Z"
   },
@@ -35665,7 +35665,7 @@
     "group": "151",
     "logo": "",
     "url": "http://151.80.18.177:86/Disney_Junior_HD/index.m3u8",
-    "source": "validated-http",
+    "source": "validated",
     "verified": true,
     "verifiedAt": "2026-06-20T08:44:52.147Z"
   },
@@ -35675,7 +35675,7 @@
     "group": "151",
     "logo": "",
     "url": "http://151.80.18.177:86/Nickelodeon_FR/index.m3u8",
-    "source": "validated-http",
+    "source": "validated",
     "verified": true,
     "verifiedAt": "2026-06-20T08:44:52.147Z"
   },
@@ -35685,7 +35685,7 @@
     "group": "315E5A5D",
     "logo": "",
     "url": "http://315e5a5d.ottrast.com/iptv/MM4E93NGF5LADZ/1038/index.m3u8",
-    "source": "validated-http",
+    "source": "validated",
     "verified": true,
     "verifiedAt": "2026-06-20T08:44:52.147Z"
   },
@@ -35695,7 +35695,7 @@
     "group": "69",
     "logo": "",
     "url": "http://69.64.57.208/2stv/playlist.m3u8",
-    "source": "validated-http",
+    "source": "validated",
     "verified": true,
     "verifiedAt": "2026-06-20T08:44:52.148Z"
   },
@@ -35705,7 +35705,7 @@
     "group": "69",
     "logo": "",
     "url": "http://69.64.57.208/africable/playlist.m3u8",
-    "source": "validated-http",
+    "source": "validated",
     "verified": true,
     "verifiedAt": "2026-06-20T08:44:52.148Z"
   },
@@ -35715,7 +35715,7 @@
     "group": "69",
     "logo": "",
     "url": "http://69.64.57.208/albayanetv/index.m3u8",
-    "source": "validated-http",
+    "source": "validated",
     "verified": true,
     "verifiedAt": "2026-06-20T08:44:52.148Z"
   },
@@ -35725,7 +35725,7 @@
     "group": "69",
     "logo": "",
     "url": "http://69.64.57.208/atv/playlist.m3u8",
-    "source": "validated-http",
+    "source": "validated",
     "verified": true,
     "verifiedAt": "2026-06-20T08:44:52.148Z"
   },
@@ -35735,7 +35735,7 @@
     "group": "69",
     "logo": "",
     "url": "http://69.64.57.208/burkinainfo/index.m3u8",
-    "source": "validated-http",
+    "source": "validated",
     "verified": true,
     "verifiedAt": "2026-06-20T08:44:52.148Z"
   },
@@ -35745,7 +35745,7 @@
     "group": "69",
     "logo": "",
     "url": "http://69.64.57.208/canal2international/playlist.m3u8",
-    "source": "validated-http",
+    "source": "validated",
     "verified": true,
     "verifiedAt": "2026-06-20T08:44:52.148Z"
   },
@@ -35755,7 +35755,7 @@
     "group": "69",
     "logo": "",
     "url": "http://69.64.57.208/cherifla/playlist.m3u8",
-    "source": "validated-http",
+    "source": "validated",
     "verified": true,
     "verifiedAt": "2026-06-20T08:44:52.149Z"
   },
@@ -35765,7 +35765,7 @@
     "group": "69",
     "logo": "",
     "url": "http://69.64.57.208/crtv/playlist.m3u8",
-    "source": "validated-http",
+    "source": "validated",
     "verified": true,
     "verifiedAt": "2026-06-20T08:44:52.149Z"
   },
@@ -35775,7 +35775,7 @@
     "group": "69",
     "logo": "",
     "url": "http://69.64.57.208/equinoxtv/playlist.m3u8",
-    "source": "validated-http",
+    "source": "validated",
     "verified": true,
     "verifiedAt": "2026-06-20T08:44:52.149Z"
   },
@@ -35785,7 +35785,7 @@
     "group": "69",
     "logo": "",
     "url": "http://69.64.57.208/france2/mono.m3u8",
-    "source": "validated-http",
+    "source": "validated",
     "verified": true,
     "verifiedAt": "2026-06-20T08:44:52.149Z"
   },
@@ -35795,7 +35795,7 @@
     "group": "69",
     "logo": "",
     "url": "http://69.64.57.208/france5/mono.m3u8",
-    "source": "validated-http",
+    "source": "validated",
     "verified": true,
     "verifiedAt": "2026-06-20T08:44:52.149Z"
   },
@@ -35805,7 +35805,7 @@
     "group": "69",
     "logo": "",
     "url": "http://69.64.57.208/la3/index.m3u8",
-    "source": "validated-http",
+    "source": "validated",
     "verified": true,
     "verifiedAt": "2026-06-20T08:44:52.149Z"
   },
@@ -35815,7 +35815,7 @@
     "group": "69",
     "logo": "",
     "url": "http://69.64.57.208/nieta/playlist.m3u8",
-    "source": "validated-http",
+    "source": "validated",
     "verified": true,
     "verifiedAt": "2026-06-20T08:44:52.149Z"
   },
@@ -35825,7 +35825,7 @@
     "group": "69",
     "logo": "",
     "url": "http://69.64.57.208/ortb/playlist.m3u8",
-    "source": "validated-http",
+    "source": "validated",
     "verified": true,
     "verifiedAt": "2026-06-20T08:44:52.149Z"
   },
@@ -35835,7 +35835,7 @@
     "group": "69",
     "logo": "",
     "url": "http://69.64.57.208/ortm/playlist.m3u8",
-    "source": "validated-http",
+    "source": "validated",
     "verified": true,
     "verifiedAt": "2026-06-20T08:44:52.149Z"
   },
@@ -35845,7 +35845,7 @@
     "group": "69",
     "logo": "",
     "url": "http://69.64.57.208/rtg/playlist.m3u8",
-    "source": "validated-http",
+    "source": "validated",
     "verified": true,
     "verifiedAt": "2026-06-20T08:44:52.149Z"
   },
@@ -35855,7 +35855,7 @@
     "group": "69",
     "logo": "",
     "url": "http://69.64.57.208/rtnc/playlist.m3u8",
-    "source": "validated-http",
+    "source": "validated",
     "verified": true,
     "verifiedAt": "2026-06-20T08:44:52.149Z"
   },
@@ -35865,7 +35865,7 @@
     "group": "69",
     "logo": "",
     "url": "http://69.64.57.208/rts1/playlist.m3u8",
-    "source": "validated-http",
+    "source": "validated",
     "verified": true,
     "verifiedAt": "2026-06-20T08:44:52.149Z"
   },
@@ -35875,7 +35875,7 @@
     "group": "69",
     "logo": "",
     "url": "http://69.64.57.208/rts2/playlist.m3u8",
-    "source": "validated-http",
+    "source": "validated",
     "verified": true,
     "verifiedAt": "2026-06-20T08:44:52.149Z"
   },
@@ -35885,7 +35885,7 @@
     "group": "69",
     "logo": "",
     "url": "http://69.64.57.208/sentv/playlist.m3u8",
-    "source": "validated-http",
+    "source": "validated",
     "verified": true,
     "verifiedAt": "2026-06-20T08:44:52.149Z"
   },
@@ -35895,7 +35895,7 @@
     "group": "69",
     "logo": "",
     "url": "http://69.64.57.208/telecongo/playlist.m3u8",
-    "source": "validated-http",
+    "source": "validated",
     "verified": true,
     "verifiedAt": "2026-06-20T08:44:52.149Z"
   },
@@ -35905,7 +35905,7 @@
     "group": "69",
     "logo": "",
     "url": "http://69.64.57.208/tfm/playlist.m3u8",
-    "source": "validated-http",
+    "source": "validated",
     "verified": true,
     "verifiedAt": "2026-06-20T08:44:52.149Z"
   },
@@ -35915,7 +35915,7 @@
     "group": "69",
     "logo": "",
     "url": "http://69.64.57.208/tm1/playlist.m3u8",
-    "source": "validated-http",
+    "source": "validated",
     "verified": true,
     "verifiedAt": "2026-06-20T08:44:52.150Z"
   },
@@ -35925,7 +35925,7 @@
     "group": "69",
     "logo": "",
     "url": "http://69.64.57.208/tm2/playlist.m3u8",
-    "source": "validated-http",
+    "source": "validated",
     "verified": true,
     "verifiedAt": "2026-06-20T08:44:52.150Z"
   },
@@ -35935,7 +35935,7 @@
     "group": "69",
     "logo": "",
     "url": "http://69.64.57.208/tvt/playlist.m3u8",
-    "source": "validated-http",
+    "source": "validated",
     "verified": true,
     "verifiedAt": "2026-06-20T08:44:52.150Z"
   },
@@ -35945,7 +35945,7 @@
     "group": "69",
     "logo": "",
     "url": "http://69.64.57.208/voxafrica/playlist.m3u8",
-    "source": "validated-http",
+    "source": "validated",
     "verified": true,
     "verifiedAt": "2026-06-20T08:44:52.150Z"
   },
@@ -35955,7 +35955,7 @@
     "group": "69",
     "logo": "",
     "url": "http://69.64.57.208/walftv/playlist.m3u8",
-    "source": "validated-http",
+    "source": "validated",
     "verified": true,
     "verifiedAt": "2026-06-20T08:44:52.150Z"
   },
@@ -35965,7 +35965,7 @@
     "group": "69",
     "logo": "",
     "url": "http://69.64.57.208:8080/rti1/playlist.m3u8",
-    "source": "validated-http",
+    "source": "validated",
     "verified": true,
     "verifiedAt": "2026-06-20T08:44:52.150Z"
   },
@@ -35975,7 +35975,7 @@
     "group": "69",
     "logo": "",
     "url": "http://69.64.57.208:8080/rti2/playlist.m3u8",
-    "source": "validated-http",
+    "source": "validated",
     "verified": true,
     "verifiedAt": "2026-06-20T08:44:52.150Z"
   },
@@ -35985,7 +35985,7 @@
     "group": "99",
     "logo": "",
     "url": "http://99.27.51.147/CineClassic/index.m3u8",
-    "source": "validated-http",
+    "source": "validated",
     "verified": true,
     "verifiedAt": "2026-06-20T08:44:52.150Z"
   },
@@ -35995,7 +35995,7 @@
     "group": "99",
     "logo": "",
     "url": "http://99.27.51.147:8080/CineFrisson/index.m3u8",
-    "source": "validated-http",
+    "source": "validated",
     "verified": true,
     "verifiedAt": "2026-06-20T08:44:52.150Z"
   },
@@ -36005,7 +36005,7 @@
     "group": "99",
     "logo": "",
     "url": "http://99.27.51.147:8080/M6/index.m3u8",
-    "source": "validated-http",
+    "source": "validated",
     "verified": true,
     "verifiedAt": "2026-06-20T08:44:52.150Z"
   },
@@ -36015,7 +36015,7 @@
     "group": "99",
     "logo": "",
     "url": "http://99.27.51.147:8080/MTV/index.m3u8",
-    "source": "validated-http",
+    "source": "validated",
     "verified": true,
     "verifiedAt": "2026-06-20T08:44:52.150Z"
   },
@@ -36025,7 +36025,7 @@
     "group": "99",
     "logo": "",
     "url": "http://99.27.51.147:8080/SYFY/index.m3u8",
-    "source": "validated-http",
+    "source": "validated",
     "verified": true,
     "verifiedAt": "2026-06-20T08:44:52.150Z"
   },
@@ -36035,7 +36035,7 @@
     "group": "LIVE",
     "logo": "",
     "url": "http://live.greektv.ca/hls1/greektv.m3u8",
-    "source": "validated-http",
+    "source": "validated",
     "verified": true,
     "verifiedAt": "2026-06-20T08:44:52.150Z"
   },
@@ -36045,7 +36045,7 @@
     "group": "REZOFOOT",
     "logo": "",
     "url": "http://rezofoot.tv/Action/index.m3u8",
-    "source": "validated-http",
+    "source": "validated",
     "verified": true,
     "verifiedAt": "2026-06-20T08:44:52.150Z"
   },
@@ -36055,7 +36055,7 @@
     "group": "REZOFOOT",
     "logo": "",
     "url": "http://rezofoot.tv/MCM/index.m3u8",
-    "source": "validated-http",
+    "source": "validated",
     "verified": true,
     "verifiedAt": "2026-06-20T08:44:52.151Z"
   },
@@ -36065,7 +36065,7 @@
     "group": "REZOFOOT",
     "logo": "",
     "url": "http://rezofoot.tv/rtl-9/index.m3u8",
-    "source": "validated-http",
+    "source": "validated",
     "verified": true,
     "verifiedAt": "2026-06-20T08:44:52.151Z"
   },
@@ -36075,7 +36075,7 @@
     "group": "TV",
     "logo": "",
     "url": "http://tv.mondeduloisir.fr:1935/tixtv/smil:web.smil/playlist.m3u8",
-    "source": "validated-http",
+    "source": "validated",
     "verified": true,
     "verifiedAt": "2026-06-20T08:44:52.151Z"
   }
