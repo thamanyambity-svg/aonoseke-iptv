@@ -1,7 +1,7 @@
 import { useEffect, useState, useCallback, useRef, useMemo, lazy, Suspense } from 'react';
 import {
   Users, Activity, TrendingUp, Eye, RefreshCw, X, Download,
-  FileDown, Globe, Clock, Layers, Trash2, Radio, Zap, Target, Megaphone,
+  FileDown, Globe, Clock, Layers, Trash2, Radio, Zap, Target, Megaphone, Wifi,
 } from 'lucide-react';
 import { supabase } from '../lib/supabaseClient.ts';
 import { logger } from '../utils/logger.ts';
@@ -10,6 +10,7 @@ import { Heatmap, type HeatCell } from './Heatmap.tsx';
 import { AdManagementContent } from './AdManagementDashboard.tsx';
 import { ErrorBoundary } from './ErrorBoundary.tsx';
 import type { AuthUser } from '../hooks/useAuth.ts';
+import { useLiveDevices } from '../hooks/useLiveDevices.ts';
 
 const MapboxMap = lazy(() => import('./MapboxMap.tsx'));
 const MAPBOX_TOKEN = import.meta.env.VITE_MAPBOX_TOKEN as string | undefined;
@@ -236,6 +237,61 @@ function OnlineUsersPanel({ users, loading }: { users: OnlineUser[]; loading: bo
 }
 
 // ── Composant principal ─────────────────────────────────────────────────────
+
+// ── Sous-composant : appareils connectés en direct (IP, démo incluse) ───────
+
+function LiveDevicesPanel(): JSX.Element {
+  const { devices, loading, error, reload } = useLiveDevices();
+  return (
+    <div className="admin-table-wrap admin-no-print">
+      <h3 className="admin-table-title">
+        <Wifi size={15} className={loading ? 'pulse-icon' : ''} />
+        Appareils connectés en direct ({devices.length})
+        <button className="admin-btn" style={{ marginLeft: 'auto' }} onClick={() => void reload()} disabled={loading}>
+          <RefreshCw size={13} className={loading ? 'spin-icon' : ''} /> Actualiser
+        </button>
+      </h3>
+      <p className="admin-online-sub" style={{ marginBottom: 10 }}>
+        Tous les appareils — connectés <b>et démo / anonymes</b> — vus dans les 5 dernières minutes · IP capturée côté serveur
+      </p>
+      {error ? (
+        <p className="geo-empty">{error}</p>
+      ) : devices.length === 0 ? (
+        <p className="geo-empty">Aucun appareil actif. Ouvrez l'app (même en démo) pour le voir apparaître ici.</p>
+      ) : (
+        <table className="admin-table">
+          <thead>
+            <tr>
+              <th>Type</th><th>IP</th><th>Appareil</th><th>Localisation</th><th>Activité</th><th>Vu</th>
+            </tr>
+          </thead>
+          <tbody>
+            {devices.map((d) => {
+              const isConn = d.kind === 'Connecté';
+              return (
+                <tr key={d.device_id}>
+                  <td>
+                    <span style={{
+                      display: 'inline-block', fontSize: '0.72em', padding: '2px 8px', borderRadius: 6, fontWeight: 600,
+                      color: isConn ? '#a3e635' : 'var(--lime, #c9a84c)',
+                      background: isConn ? 'rgba(132,204,22,0.12)' : 'var(--lime-dim, rgba(201,168,76,0.12))',
+                    }}>{d.kind}</span>
+                    {d.email && <div className="u-time-ago">{d.email}</div>}
+                  </td>
+                  <td className="u-ip" style={{ fontFamily: 'var(--mono, monospace)' }}>{d.ip ?? '—'}</td>
+                  <td>{deviceLabel(d.device)}</td>
+                  <td>{[d.city, d.country].filter(Boolean).join(', ') || '—'}</td>
+                  <td>{d.pings} ping{d.pings > 1 ? 's' : ''}</td>
+                  <td className="u-time-ago" title={fmtDate(d.last_seen_at)}>{fmtTimeAgo(d.last_seen_at)}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      )}
+    </div>
+  );
+}
 
 export function AdminDashboard({ user, onClose, initialTab = 'audience' }: AdminDashboardProps): JSX.Element | null {
   // Garde-fou de sécurité : si l'utilisateur courant n'est pas admin,
@@ -626,6 +682,9 @@ function AdminDashboardInner({ user, onClose, initialTab }: {
 
               {/* ── Panneau utilisateurs en ligne (temps réel) ─────────────── */}
               <OnlineUsersPanel users={onlineUsers} loading={loading} />
+
+              {/* ── Appareils connectés en direct (avec IP) — démo incluse ── */}
+              <LiveDevicesPanel />
 
           {/* ── KPI cards ─────────────────────────────────────────────── */}
           <div className="admin-cards">
