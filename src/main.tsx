@@ -7,10 +7,14 @@ import { AiAdCalendar } from './components/regie/AiAdCalendar.tsx';
 import { ErrorBoundary } from './components/ErrorBoundary.tsx';
 import { useAuth } from './hooks/useAuth.ts';
 import { captureUtmParams } from './utils/utmTracking.ts';
+import { startPresence } from './lib/devicePresence.ts';
 
 // Capture les UTM params de l'URL d'atterrissage (Phase 1 tracking écosystème)
 // À appeler le plus tôt possible, avant le rendu React.
 captureUtmParams();
+
+// Présence par appareil (IP capturée côté serveur) — pour TOUS, démo incluse.
+startPresence();
 
 // Detect Smart TV UA
 const TV_UA = /VIDAA|HbbTV|SmartTV|Tizen|WebOS|SMART-TV|Android.*TV|NetCast|PHILIPS|Viera|Roku/i;
