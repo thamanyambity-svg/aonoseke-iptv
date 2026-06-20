@@ -25,6 +25,8 @@ export interface CampaignContent {
   legal?: string;
   variant?: 'souverain' | 'corridor';
   emblem?: boolean;
+  /** Plage horaire quotidienne (dayparting) — posé par la régie IA. */
+  daypart?: { startHour: number; endHour: number };
 }
 
 export interface Campaign {

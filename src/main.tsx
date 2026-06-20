@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import './index.css';
 import App from './App.tsx';
 import { Landing } from './Landing.tsx';
+import { AiAdCalendar } from './components/regie/AiAdCalendar.tsx';
 import { ErrorBoundary } from './components/ErrorBoundary.tsx';
 import { useAuth } from './hooks/useAuth.ts';
 import { captureUtmParams } from './utils/utmTracking.ts';
@@ -23,6 +24,11 @@ if (isTV) {
 
 function Root(): JSX.Element {
   const { user, loading, signUp, signIn, signInWithProvider, signInDemo, signOut } = useAuth();
+
+  // Point d'entrée preview de la régie IA — /#regie (bypass auth pour démo/preview).
+  if (window.location.hash.toLowerCase().includes('regie')) {
+    return <AiAdCalendar standalone />;
+  }
 
   if (loading) {
     return (
