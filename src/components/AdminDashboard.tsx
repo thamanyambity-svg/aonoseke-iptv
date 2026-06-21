@@ -1,7 +1,7 @@
 import { useEffect, useState, useCallback, useRef, useMemo, lazy, Suspense } from 'react';
 import {
   Users, Activity, TrendingUp, Eye, RefreshCw, X, Download,
-  FileDown, Globe, Clock, Layers, Trash2, Radio, Zap, Target, Megaphone, Wifi,
+  FileDown, Globe, Clock, Layers, Trash2, Radio, Zap, Target, Megaphone, Wifi, CalendarDays,
 } from 'lucide-react';
 import { supabase } from '../lib/supabaseClient.ts';
 import { logger } from '../utils/logger.ts';
@@ -11,6 +11,7 @@ import { AdManagementContent } from './AdManagementDashboard.tsx';
 import { ErrorBoundary } from './ErrorBoundary.tsx';
 import type { AuthUser } from '../hooks/useAuth.ts';
 import { useLiveDevices } from '../hooks/useLiveDevices.ts';
+import { AiAdCalendar } from './regie/AiAdCalendar.tsx';
 
 const MapboxMap = lazy(() => import('./MapboxMap.tsx'));
 const MAPBOX_TOKEN = import.meta.env.VITE_MAPBOX_TOKEN as string | undefined;
@@ -62,10 +63,10 @@ interface NamedStat { label: string; count: number; }
 interface AdminDashboardProps {
   user: AuthUser | null;
   onClose: () => void;
-  initialTab?: 'audience' | 'ads';
+  initialTab?: 'audience' | 'ads' | 'regie';
 }
 
-type AdminTab = 'audience' | 'ads';
+type AdminTab = 'audience' | 'ads' | 'regie';
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -602,11 +603,13 @@ function AdminDashboardInner({ user, onClose, initialTab }: {
         {/* En-tête */}
         <div className="admin-header">
         <div className="admin-title">
-          <h2>{activeTab === 'audience' ? 'Tableau de bord — Administration' : 'Gestion publicitaire'}</h2>
+          <h2>{activeTab === 'audience' ? 'Tableau de bord — Administration' : activeTab === 'regie' ? 'Régie IA — calendrier' : 'Gestion publicitaire'}</h2>
           <span>
             {activeTab === 'audience'
               ? 'Audience & statistiques pour annonceurs'
-              : 'Plateforme multi-annonceurs · rotation · anti-fraude'}
+              : activeTab === 'regie'
+                ? 'Planifiez vos diffusions en parlant à l’IA'
+                : 'Plateforme multi-annonceurs · rotation · anti-fraude'}
           </span>
         </div>
         <div className="admin-actions admin-no-print">
@@ -649,10 +652,20 @@ function AdminDashboardInner({ user, onClose, initialTab }: {
         >
           <Megaphone size={14} /> Publicité
         </button>
+        <button
+          className={`admin-tab${activeTab === 'regie' ? ' active' : ''}`}
+          onClick={() => setActiveTab('regie')}
+          role="tab"
+          aria-selected={activeTab === 'regie'}
+        >
+          <CalendarDays size={14} /> Régie
+        </button>
       </div>
 
       {activeTab === 'ads' ? (
         <AdManagementContent />
+      ) : activeTab === 'regie' ? (
+        <AiAdCalendar />
       ) : (
         <>
           {/* Bandeau temps réel */}
