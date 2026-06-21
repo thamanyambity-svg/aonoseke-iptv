@@ -1438,6 +1438,23 @@ video {
 .sidebar-toggle:hover { background: rgba(201, 168, 76, 0.18); }
 .sidebar-toggle:active { transform: scale(0.94); }
 
+.sidebar-close {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--lime);
+  cursor: pointer;
+  transition: background 0.15s, transform 0.12s;
+}
+.sidebar-close:hover { background: rgba(201, 168, 76, 0.16); }
+.sidebar-close:active { transform: scale(0.94); }
+
 .sidebar-backdrop {
   position: fixed;
   inset: 0;

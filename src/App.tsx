@@ -18,7 +18,7 @@ import {
   RefreshCw,
   Compass,
   Menu,
-  ArrowLeft,
+  ChevronLeft,
 } from 'lucide-react';
 import { Player } from './components/Player.tsx';
 import { AlphaLogoAnimated } from './components/AlphaLogoAnimated.tsx';
@@ -311,13 +311,13 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
     <div className={`app-container${sidebarOpen ? ' sidebar-open' : ''}`}>
       {/* Toggle hamburger — masqué quand l'admin ou le profil est ouvert
           (sinon il chevauche l'en-tête du tableau de bord). */}
-      {!showAdmin && !showProfile && (
+      {!showAdmin && !showProfile && !sidebarOpen && (
         <button
           className="sidebar-toggle"
-          onClick={() => setSidebarOpen((o) => !o)}
-          aria-label={sidebarOpen ? 'Masquer la liste des chaînes' : 'Afficher la liste des chaînes'}
+          onClick={() => setSidebarOpen(true)}
+          aria-label="Afficher la liste des chaînes"
         >
-          {sidebarOpen ? <ArrowLeft size={20} /> : <Menu size={20} />}
+          <Menu size={20} />
         </button>
       )}
       {sidebarOpen && (
@@ -338,6 +338,14 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
           <div className="channel-count-badge" title="Nombre de chaînes">
             {channels.length}
           </div>
+          <button
+            className="sidebar-close"
+            onClick={() => setSidebarOpen(false)}
+            aria-label="Masquer la liste des chaînes"
+            title="Masquer la liste"
+          >
+            <ChevronLeft size={20} />
+          </button>
           {user && (
             <button
               className="profile-btn"
