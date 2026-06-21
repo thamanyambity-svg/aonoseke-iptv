@@ -12,6 +12,7 @@ import { ErrorBoundary } from './ErrorBoundary.tsx';
 import type { AuthUser } from '../hooks/useAuth.ts';
 import { useLiveDevices } from '../hooks/useLiveDevices.ts';
 import { AiAdCalendar } from './regie/AiAdCalendar.tsx';
+import { AgentConsole } from './regie/AgentConsole.tsx';
 
 const MapboxMap = lazy(() => import('./MapboxMap.tsx'));
 const MAPBOX_TOKEN = import.meta.env.VITE_MAPBOX_TOKEN as string | undefined;
@@ -665,7 +666,10 @@ function AdminDashboardInner({ user, onClose, initialTab }: {
       {activeTab === 'ads' ? (
         <AdManagementContent />
       ) : activeTab === 'regie' ? (
-        <AiAdCalendar />
+        <>
+          <AgentConsole />
+          <AiAdCalendar />
+        </>
       ) : (
         <>
           {/* Bandeau temps réel */}

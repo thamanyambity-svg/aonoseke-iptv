@@ -1,0 +1,66 @@
+/* ── Console des agents IA — thème admin (or/noir-bleuté, tokens player) ── */
+
+.ac-console {
+  background: var(--surface-2, #111422);
+  border: 0.5px solid var(--border, rgba(255, 255, 255, 0.06));
+  border-radius: var(--radius-lg, 16px);
+  padding: 16px;
+  margin-bottom: 18px;
+  font-family: var(--body, system-ui), sans-serif;
+  color: var(--text-1, #f0ede6);
+}
+.ac-console-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.ac-console-title { display: flex; align-items: center; gap: 8px; font-family: var(--display, sans-serif); font-weight: 700; font-size: 15px; }
+.ac-console-title svg { color: var(--lime, #c9a84c); }
+.ac-count {
+  font-family: var(--mono, monospace); font-size: 12px; color: var(--lime, #c9a84c);
+  background: var(--lime-dim, rgba(201, 168, 76, 0.1)); border: 0.5px solid rgba(201, 168, 76, 0.3);
+  border-radius: 20px; padding: 1px 9px;
+}
+.ac-console-sub { margin: 6px 0 14px; font-size: 12.5px; color: var(--text-2, #7e8899); }
+.ac-console-sub b { color: var(--text-1); font-weight: 500; }
+.ac-refresh {
+  display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-2);
+  background: transparent; border: 0.5px solid var(--border-md, rgba(255, 255, 255, 0.1));
+  border-radius: 8px; padding: 6px 11px; cursor: pointer;
+}
+.ac-refresh:hover { color: var(--text-1); border-color: var(--lime); }
+.ac-spin-icon { animation: ac-spin 0.7s linear infinite; }
+
+.ac-empty { font-size: 13px; color: var(--text-2); padding: 10px 2px; }
+.ac-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+
+/* ── ActionCard ── */
+.ac-card {
+  background: var(--surface-3, #181c2e);
+  border: 0.5px solid var(--border, rgba(255, 255, 255, 0.06));
+  border-left: 3px solid var(--lime, #c9a84c);
+  border-radius: 0 var(--radius, 10px) var(--radius, 10px) 0;
+  padding: 13px 14px;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.ac-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.ac-agent { display: inline-flex; align-items: center; gap: 6px; font-family: var(--mono, monospace); font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; }
+.ac-conf {
+  display: inline-flex; align-items: center; gap: 4px; font-family: var(--mono, monospace); font-size: 10.5px;
+  color: var(--text-2); border: 0.5px solid var(--border-md); border-radius: 20px; padding: 1px 8px; white-space: nowrap;
+}
+.ac-conf.hi { color: #9fe1cb; border-color: rgba(29, 158, 117, 0.5); }
+.ac-conf.mid { color: var(--lime); border-color: rgba(201, 168, 76, 0.45); }
+.ac-title { margin: 2px 0 0; font-size: 14px; font-weight: 500; line-height: 1.25; color: var(--text-1); }
+.ac-why { margin: 0; font-size: 12.5px; line-height: 1.55; color: var(--text-2); }
+.ac-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 2px; }
+.ac-chip { font-family: var(--mono, monospace); font-size: 10.5px; color: var(--text-2); background: var(--surface-1, #0b0d16); border: 0.5px solid var(--border); border-radius: 6px; padding: 2px 7px; }
+.ac-chip b { color: var(--text-1); font-weight: 500; }
+.ac-err { margin: 0; font-size: 12px; color: #f3b4b1; }
+
+.ac-actions { display: flex; gap: 8px; margin-top: 6px; }
+.ac-btn { flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: 6px; border-radius: 8px; padding: 8px; font-size: 12.5px; font-weight: 500; cursor: pointer; }
+.ac-btn:disabled { opacity: 0.55; cursor: not-allowed; }
+.ac-btn--reject { background: transparent; border: 0.5px solid var(--border-md); color: var(--text-2); }
+.ac-btn--reject:hover:not(:disabled) { color: var(--text-1); border-color: #E24B4A; }
+.ac-btn--go { background: var(--lime, #c9a84c); border: none; color: #1a1206; }
+.ac-btn--go:active:not(:disabled) { transform: scale(0.98); }
+
+.ac-spin { width: 12px; height: 12px; border-radius: 50%; border: 2px solid currentColor; border-top-color: transparent; display: inline-block; animation: ac-spin 0.7s linear infinite; }
+@keyframes ac-spin { to { transform: rotate(360deg); } }

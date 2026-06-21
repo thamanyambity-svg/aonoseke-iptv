@@ -1,12 +1,15 @@
 /**
  * Composant: AdBanner
- * Affiche une bannière publicitaire du système Smart-Stream Ad Matrix
- * Supporte: images, vidéos, bannières
- * Non-intrusive : peut être injecté dans n'importe quelle layout
+ * Bannière publicitaire — SYSTÈME UNIFIÉ (campaigns/advertisers).
+ *
+ * Consolidation : consomme la campagne riche de `useAdMatrix` (content JSON) et
+ * loggue via `trackAdEvent` → /api/track-ad → ad_events (signature anti-fraude),
+ * au lieu de l'ancien log_ad_matrix_event/ad_impressions.
  */
 
 import { useEffect, useRef, useState } from 'react';
-import { trackAdImpression, trackAdClick, detectDevice } from '../lib/adTracking.ts';
+import { detectDevice } from '../lib/adTracking.ts';
+import { trackAdEvent } from '../hooks/useAds.ts';
 import { logger } from '../utils/logger.ts';
 import type { AdCampaign } from '../hooks/useAdMatrix';
 import './AdBanner.css';
@@ -27,121 +30,90 @@ export function AdBanner({
   const [hasTrackedImpression, setHasTrackedImpression] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Track impression quand le composant monte et est visible
+  const advertiser = campaign?.advertiser_name || campaign?.name || 'Annonceur';
+  const videoUrl = campaign?.content?.video;
+  const imageUrl = campaign?.content?.image;
+  const isVideo = !!videoUrl;
+  const isImage = !isVideo && !!imageUrl;
+
+  // Track impression à l'apparition
   useEffect(() => {
     if (!hasTrackedImpression && campaign?.id) {
-      const trackImpression = async () => {
-        const tracked = await trackAdImpression(campaign.id, {
-          device: detectDevice(),
-        });
-        if (tracked) {
-          setHasTrackedImpression(true);
-        }
-      };
-
-      // Attendre que le DOM soit ready
-      const timer = setTimeout(() => void trackImpression(), 300);
+      const timer = setTimeout(() => {
+        void trackAdEvent(campaign.id, 'impression', { device: detectDevice() });
+        setHasTrackedImpression(true);
+      }, 300);
       return () => clearTimeout(timer);
     }
   }, [campaign?.id, hasTrackedImpression]);
 
-  const handleClick = async () => {
-    if (campaign?.id) {
-      const tracked = await trackAdClick(campaign.id, {
-        device: detectDevice(),
-      });
-      if (tracked) {
-        logger.info('Ad clicked', { campaignId: campaign.id });
-      }
-    }
+  const handleClick = async (): Promise<void> => {
+    if (!campaign?.id) return;
+    await trackAdEvent(campaign.id, 'click', { device: detectDevice() });
+    logger.info('Ad clicked', { campaignId: campaign.id });
+    const url = campaign.content?.url;
+    if (url) window.open(url, '_blank', 'noopener,noreferrer');
   };
 
-  const handleClose = () => {
-    logger.info('Ad banner closed', { campaignId: campaign.id });
-    onClose?.();
-  };
-
-  const handleNext = () => {
-    onNextAd?.();
-  };
-
-  if (!campaign) {
-    return null;
-  }
-
-  const isVideo = campaign.ad_type === 'video';
-  const isImage = campaign.ad_type === 'image' || campaign.ad_type === 'banner';
+  if (!campaign) return null;
 
   return (
     <div
       ref={containerRef}
       className={`ad-banner ad-banner--${position}`}
       role="region"
-      aria-label={`Publicité : ${campaign.client_name}`}
+      aria-label={`Publicité : ${advertiser}`}
     >
-      {/* Conteneur média */}
       <div className="ad-banner-media">
         {isVideo && (
           <video
-            src={campaign.media_url}
+            src={videoUrl}
             className="ad-banner-video"
             controls={false}
             autoPlay
             muted
             loop
-            onClick={handleClick}
+            onClick={() => void handleClick()}
           />
         )}
         {isImage && (
           <img
-            src={campaign.media_url}
-            alt={`Publicité ${campaign.client_name}`}
+            src={imageUrl}
+            alt={`Publicité ${advertiser}`}
             className="ad-banner-image"
-            onClick={handleClick}
+            onClick={() => void handleClick()}
             style={{ cursor: 'pointer' }}
           />
         )}
+        {!isVideo && !isImage && (
+          <button className="ad-banner-text" onClick={() => void handleClick()} type="button">
+            <strong>{campaign.content?.title ?? advertiser}</strong>
+            {campaign.content?.subtitle && <span>{campaign.content.subtitle}</span>}
+            {campaign.content?.cta && <span className="ad-banner-cta">{campaign.content.cta}</span>}
+          </button>
+        )}
       </div>
 
-      {/* Footer avec contrôles */}
       <div className="ad-banner-footer">
-        <span className="ad-banner-branding">
-          Pub · {campaign.client_name}
-        </span>
+        <span className="ad-banner-branding">Pub · {advertiser}</span>
         <div className="ad-banner-controls">
-          {/* Bouton "Suivant" pour rotation */}
           <button
             className="ad-banner-btn ad-banner-btn-next"
-            onClick={handleNext}
+            onClick={() => onNextAd?.()}
             title="Voir la publicité suivante"
             aria-label="Pub suivante"
           >
             ▶
           </button>
-          {/* Bouton "Fermer" */}
           <button
             className="ad-banner-btn ad-banner-btn-close"
-            onClick={handleClose}
+            onClick={() => { logger.info('Ad banner closed', { campaignId: campaign.id }); onClose?.(); }}
             title="Fermer cette publicité"
             aria-label="Fermer"
           >
             ✕
           </button>
         </div>
-      </div>
-
-      {/* Badges de statut (optionnel) */}
-      <div className="ad-banner-badges">
-        {campaign.remaining_impressions > 0 && (
-          <span className="ad-badge ad-badge-impressions" title="Impressions restantes">
-            {campaign.remaining_impressions.toLocaleString('fr-FR')}
-          </span>
-        )}
-        {campaign.remaining_clicks > 0 && (
-          <span className="ad-badge ad-badge-clicks" title="Clics restants">
-            💬 {campaign.remaining_clicks.toLocaleString('fr-FR')}
-          </span>
-        )}
       </div>
     </div>
   );
