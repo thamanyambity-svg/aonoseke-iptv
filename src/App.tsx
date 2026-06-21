@@ -18,6 +18,7 @@ import {
   RefreshCw,
   Compass,
   Menu,
+  ArrowLeft,
 } from 'lucide-react';
 import { Player } from './components/Player.tsx';
 import { AlphaLogoAnimated } from './components/AlphaLogoAnimated.tsx';
@@ -316,7 +317,7 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
           onClick={() => setSidebarOpen((o) => !o)}
           aria-label={sidebarOpen ? 'Masquer la liste des chaînes' : 'Afficher la liste des chaînes'}
         >
-          {sidebarOpen ? <X size={20} /> : <Menu size={20} />}
+          {sidebarOpen ? <ArrowLeft size={20} /> : <Menu size={20} />}
         </button>
       )}
       {sidebarOpen && (
@@ -331,8 +332,8 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
             <AlphaLogoAnimated size={34} />
           </div>
           <div className="sidebar-title">
-            <h1>IPTV Player</h1>
-            <span>by Aonoseke House Investment RDC</span>
+            <h1>AMBITY.A IPTV PLAYER</h1>
+            <span>by A.Onoseke House Investment RDC</span>
           </div>
           <div className="channel-count-badge" title="Nombre de chaînes">
             {channels.length}

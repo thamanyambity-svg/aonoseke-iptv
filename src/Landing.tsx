@@ -71,8 +71,8 @@ export function Landing({ onSignUp, onSignIn, onSocial, onDemo }: LandingProps):
         <div className="landing-logo">
           <AlphaLogoAnimated size={72} />
           <div className="landing-logo-text">
-            IPTV Player
-            <span>by Aonoseke House Investment RDC</span>
+            AMBITY.A IPTV PLAYER
+            <span>by A.Onoseke House Investment RDC</span>
           </div>
         </div>
 
