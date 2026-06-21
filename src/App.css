@@ -857,15 +857,12 @@ video {
 }
 
 .empty-main-icon {
-  width: 68px;
-  height: 68px;
-  background: var(--surface-2);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
+  background: transparent;
+  border: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 }
 
 .empty-main h2 {

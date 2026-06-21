@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState, useCallback, lazy, Suspense } from 'react';
 import Hls from 'hls.js';
-import { Maximize2, Minimize2, Tv, RefreshCw } from 'lucide-react';
+import { Maximize2, Minimize2, RefreshCw } from 'lucide-react';
+import { AlphaLogoAnimated } from './AlphaLogoAnimated.tsx';
 import type { PlayerProps } from '../types-exports.ts';
 import { logger } from '../utils/logger.ts';
 import { ErrorMessages } from '../utils/errors.ts';
@@ -154,7 +155,7 @@ export const Player: React.FC<PlayerProps> = ({ url, onError }): JSX.Element => 
     return (
       <div className="empty-main">
         <div className="empty-main-icon">
-          <Tv size={36} color="var(--accent)" />
+          <AlphaLogoAnimated size={64} />
         </div>
         <h2>Aucune chaîne sélectionnée</h2>
         <p>Choisissez une chaîne dans la liste pour démarrer la lecture en direct.</p>
