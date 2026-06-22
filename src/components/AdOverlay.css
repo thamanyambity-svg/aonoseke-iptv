@@ -1,0 +1,63 @@
+/* ── AdOverlay : surcouche pub NON BLOQUANTE par-dessus le lecteur ──────────
+   Équivalent CSS de la consigne "Tailwind" (ce projet est en Vite + tokens CSS,
+   pas Tailwind). Clé perf : l'overlay ne capte aucun pointeur ; seule la carte
+   pub est cliquable → la vidéo en dessous reste pleinement interactive. */
+
+.adov {
+  position: absolute;
+  inset: 0;
+  z-index: 30;                 /* au-dessus de la vidéo, sous les modales admin */
+  pointer-events: none;        /* ← ne bloque jamais la zone vidéo */
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 16px;
+}
+
+.adov-card {
+  pointer-events: auto;        /* ← seule la carte pub capte les clics */
+  position: relative;
+  width: min(46%, 340px);
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(11, 13, 22, 0.92);
+  border: 1px solid var(--border-md, rgba(255, 255, 255, 0.12));
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  animation: adov-in 0.35s ease;
+}
+@keyframes adov-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.adov-clickable { cursor: pointer; display: block; }
+.adov-media { width: 100%; display: block; aspect-ratio: 16 / 9; object-fit: cover; background: #000; }
+.adov-text {
+  padding: 22px 16px;
+  font-family: var(--display, sans-serif);
+  font-weight: 700;
+  color: var(--text-1, #f0ede6);
+  font-size: 15px;
+  line-height: 1.3;
+}
+
+.adov-meta {
+  display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  padding: 8px 10px;
+}
+.adov-label { font-size: 11px; color: var(--text-2, #7e8899); }
+.adov-cta {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 12px; font-weight: 500; color: var(--lime, #c9a84c);
+}
+
+.adov-close {
+  position: absolute; top: 6px; right: 6px; z-index: 2;
+  width: 26px; height: 26px; border-radius: 50%;
+  border: none; background: rgba(0, 0, 0, 0.55); color: #fff;
+  cursor: pointer; display: grid; place-items: center;
+}
+.adov-close:hover { background: rgba(0, 0, 0, 0.75); }
+
+/* TV / petits écrans : carte un peu plus large */
+@media (max-width: 700px) { .adov-card { width: min(70%, 320px); } }

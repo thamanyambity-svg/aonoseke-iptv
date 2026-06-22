@@ -29,6 +29,7 @@ import { CinematicBg } from './components/CinematicBg.tsx';
 import { Profile } from './components/Profile.tsx';
 import { AdminDashboard } from './components/AdminDashboard.tsx';
 import { ErrorBoundary } from './components/ErrorBoundary.tsx';
+import { AdOverlay } from './components/AdOverlay.tsx';
 import { useDeadChannels } from './hooks/useDeadChannels.ts';
 import { useFavorites } from './hooks/useFavorites.ts';
 import { useAds, trackAdEvent } from './hooks/useAds.ts';
@@ -668,6 +669,13 @@ function App({ user, onLogout }: AppProps = {}): JSX.Element {
               onClick={(id) => { trackEvent('ad_click', id); void trackAdEvent(id, 'click'); }}
             />
           )}
+
+          {/* Smart-Stream Ad Matrix — surcouche pub async (préchargée, non bloquante,
+              Kill Switch Realtime). Isolée par ErrorBoundary : un crash/lenteur de la
+              pub n'interrompt JAMAIS la vidéo (DOM séparé du lecteur). */}
+          <ErrorBoundary fallback={null}>
+            <AdOverlay active={!!activeChannel} />
+          </ErrorBoundary>
         </div>
         </>
         )}
