@@ -6,7 +6,7 @@
       "schedule": "0 4 * * *"
     },
     {
-      "path": "/api/agent-sentinel",
+      "path": "/api/agents-run",
       "schedule": "0 5 * * *"
     }
   ],
