@@ -8,7 +8,7 @@ const repoRoot = path.resolve(__dirname, '..');
 const PLAYLIST_PATH = path.join(repoRoot, 'public/playlist.json');
 
 const CONFIG = {
-  concurrency: 5,
+  concurrency: 10,
   timeout: 10000,
   userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
   maxRetries: 2,
@@ -19,7 +19,8 @@ const args = process.argv.slice(2);
 const ONLY_UNVERIFIED = args.includes('--unverified') || args.includes('-u');
 const DRY_RUN = args.includes('--dry-run') || args.includes('-n');
 const FROM_INDEX = parseInt(args.find(a => a.startsWith('--from='))?.split('=')[1] || '0', 10);
-const TO_INDEX = parseInt(args.find(a => a.startsWith('--to='))?.split('=')[1] || String(Infinity), 10);
+const toRaw = args.find(a => a.startsWith('--to='))?.split('=')[1];
+const TO_INDEX = toRaw ? parseInt(toRaw, 10) : Infinity;
 
 let tested = 0;
 let passed = 0;

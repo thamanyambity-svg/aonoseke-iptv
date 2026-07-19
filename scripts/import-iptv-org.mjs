@@ -21,9 +21,28 @@ const COUNTRIES = {
   bf: { country: 'BF', group: 'Afrique' },
   be: { country: 'BE', group: 'Europe' },
   ch: { country: 'CH', group: 'Europe' },
+  us: { country: 'US', group: 'USA' },
+  gb: { country: 'GB', group: 'UK' },
+  de: { country: 'DE', group: 'Germany' },
+  es: { country: 'ES', group: 'Spain' },
+  it: { country: 'IT', group: 'Italy' },
+  pt: { country: 'PT', group: 'Portugal' },
+  nl: { country: 'NL', group: 'Netherlands' },
 };
 
-const COUNTRY_SPECIFIC = [];
+const FAST_PLATFORMS = {
+  fr_pluto: { country: 'FR', group: 'France (Pluto TV)', source: 'iptv-org/fr_pluto' },
+  fr_rakuten: { country: 'FR', group: 'France (Rakuten)', source: 'iptv-org/fr_rakuten' },
+  fr_samsung: { country: 'FR', group: 'France (Samsung TV)', source: 'iptv-org/fr_samsung' },
+  fr_bfm: { country: 'FR', group: 'France (BFM)', source: 'iptv-org/fr_bfm' },
+  fr_fashiontv: { country: 'FR', group: 'France (FashionTV)', source: 'iptv-org/fr_fashiontv' },
+  fr_groupem6: { country: 'FR', group: 'France (M6)', source: 'iptv-org/fr_groupem6' },
+  fr_groupecanalplus: { country: 'FR', group: 'France (Canal+)', source: 'iptv-org/fr_groupecanalplus' },
+  us_pluto: { country: 'US', group: 'USA (Pluto TV)', source: 'iptv-org/us_pluto' },
+  gb_pluto: { country: 'GB', group: 'UK (Pluto TV)', source: 'iptv-org/gb_pluto' },
+  de_pluto: { country: 'DE', group: 'Germany (Pluto TV)', source: 'iptv-org/de_pluto' },
+  es_pluto: { country: 'ES', group: 'Spain (Pluto TV)', source: 'iptv-org/es_pluto' },
+};
 
 function parseM3U(content) {
   const channels = [];
@@ -73,27 +92,59 @@ async function fetchM3U(code) {
   }
 }
 
+async function fetchFastM3U(code) {
+  const url = `https://raw.githubusercontent.com/iptv-org/iptv/master/streams/${code}.m3u`;
+  try {
+    const res = await fetch(url);
+    if (!res.ok) { console.warn(`  ${url} → ${res.status}`); return []; }
+    const text = await res.text();
+    const channels = parseM3U(text);
+    console.log(`  ${code}.m3u → ${channels.length} channels (FAST)`);
+    return channels;
+  } catch (e) {
+    console.warn(`  ${code}.m3u → ${e.message}`);
+    return [];
+  }
+}
+
 async function main() {
   console.log('Fetching playlists from iptv-org...\n');
 
-  const allCodes = [...Object.keys(COUNTRIES), ...COUNTRY_SPECIFIC];
-  const results = await Promise.all(allCodes.map(fetchM3U));
+  const countryCodes = Object.keys(COUNTRIES);
+  const fastCodes = Object.keys(FAST_PLATFORMS);
+
+  const countryResults = await Promise.all(countryCodes.map(fetchM3U));
+  const fastResults = await Promise.all(fastCodes.map(fetchFastM3U));
   const newChannels = [];
 
-  for (let i = 0; i < allCodes.length; i++) {
-    const code = allCodes[i];
+  for (let i = 0; i < countryCodes.length; i++) {
+    const code = countryCodes[i];
     const meta = COUNTRIES[code];
-    for (const ch of results[i]) {
+    for (const ch of countryResults[i]) {
       if (!ch.url || !ch.name) continue;
       const group = meta ? meta.group : (ch.group || 'General');
       const country = meta ? meta.country : code.slice(0, 2).toUpperCase();
       newChannels.push({
-        name: ch.name,
-        country,
-        group,
+        name: ch.name, country, group,
         logo: ch.logo || LOGO,
         url: ch.url.split('#')[0].split('?')[0],
         source: `iptv-org/${code}`,
+      });
+    }
+  }
+
+  for (let i = 0; i < fastCodes.length; i++) {
+    const code = fastCodes[i];
+    const meta = FAST_PLATFORMS[code];
+    for (const ch of fastResults[i]) {
+      if (!ch.url || !ch.name) continue;
+      newChannels.push({
+        name: ch.name,
+        country: meta.country,
+        group: meta.group,
+        logo: ch.logo || LOGO,
+        url: ch.url.split('#')[0].split('?')[0],
+        source: meta.source,
       });
     }
   }
