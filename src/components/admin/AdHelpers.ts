@@ -38,9 +38,11 @@ export function statusColor(status: string): string {
 }
 
 export function csvEscape(value: unknown): string {
-  const s = value == null ? '' : String(value);
+  if (value == null) return '';
+  if (typeof value !== 'string' && typeof value !== 'number' && typeof value !== 'boolean') return '';
+  const s = String(value);
   const escaped = s.replace(/"/g, '""');
-  const needsQuote = /[,\"\n\r]/.test(s) || /^[=+\-@\t\r]/.test(s);
+  const needsQuote = /[,"\n\r]/.test(s) || /^[=+\-@\t\r]/.test(s);
   const quoted = needsQuote ? `"${escaped}"` : escaped;
   if (/^[=+\-@]/.test(quoted)) return `'${quoted}`;
   return quoted;
