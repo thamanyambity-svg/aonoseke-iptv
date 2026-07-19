@@ -10,7 +10,7 @@ interface ProfileProps {
   onOpenAdMgmt?: () => void;
 }
 
-export function Profile({
+export default function Profile({
   user, favoritesCount, onClose, onLogout, onOpenAdmin, onOpenAdMgmt,
 }: ProfileProps): JSX.Element {
   const initial = (user.username ?? user.name ?? '?').charAt(0).toUpperCase();

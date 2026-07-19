@@ -17,8 +17,8 @@ A professional, modern, and feature-rich **IPTV streaming player** built with Re
 - 📱 **Responsive Design** - Optimized for desktop, tablet, and mobile
 - 🌐 **PWA Ready** - Install as standalone app with offline support
 - 🚀 **Performance Optimized** - Virtual scrolling for smooth 2000+ channels
-- ♿ **Accessible** - WCAG 2.1 AA compliant with keyboard navigation
-- 🔐 **Secure** - XSS protection, CSP headers, input validation
+- ♿ **Accessible** - Keyboard navigation, ARIA labels, screen reader support
+- 🔐 **Secure** - XSS protection, CSP security headers, input validation
 - 🆓 **100% Free** - No paywall, no premium tier — monetisation is 100% ad-based (multi-advertiser)
 
 ## 🚀 Quick Start
@@ -50,7 +50,7 @@ The app will be available at `http://localhost:5173`
 npm run dev              # Start Vite dev server with HMR
 
 # Building
-npm run build           # Compile TypeScript and build with Vite
+npm run build           # TypeScript check + Vite build
 npm run build:analyze   # Build with bundle analysis
 
 # Code Quality
@@ -63,6 +63,10 @@ npm run type-check      # TypeScript type checking
 npm run test            # Run unit tests (vitest)
 npm run test:ui         # Run tests with UI dashboard
 npm run test:coverage   # Generate coverage report
+npm run test:e2e        # Run Playwright E2E tests
+
+# IPTV
+npm run generate:iptv-playlist   # Generate M3U from playlist.json
 
 # Preview
 npm run preview         # Preview production build locally
@@ -74,29 +78,56 @@ npm run preview         # Preview production build locally
 iptv-web-player/
 ├── src/
 │   ├── components/          # React components
-│   │   ├── Player.tsx      # Video player with HLS support
-│   │   └── types.ts        # Component type definitions
-│   ├── config.ts           # App configuration
-│   ├── hooks/              # Custom React hooks
-│   │   └── useFavorites.ts # Favorites management
-│   ├── utils/              # Utility functions
-│   │   ├── validation.ts   # Data validation
-│   │   ├── logger.ts       # Error logging
-│   │   └── errors.ts       # Error types
-│   ├── App.tsx             # Main app component
-│   ├── App.css             # App styles
-│   ├── main.tsx            # Entry point
-│   └── index.css           # Global styles
+│   │   ├── Player.tsx      # Video player with HLS.js
+│   │   ├── Sidebar.tsx     # Channel list, search, filters
+│   │   ├── ErrorBoundary.tsx
+│   │   ├── admin/          # Admin dashboard sub-components
+│   │   │   ├── OnlineUsersPanel.tsx
+│   │   │   ├── LiveDevicesPanel.tsx
+│   │   │   ├── BarList.tsx
+│   │   │   ├── AdHelpers.ts
+│   │   │   ├── AdvertiserForm.tsx
+│   │   │   └── CampaignForm.tsx
+│   │   └── __tests__/      # Component tests
+│   ├── pages/               # Route pages (AdminPage)
+│   ├── hooks/               # Custom React hooks
+│   │   ├── useFavorites.ts
+│   │   ├── useAuth.ts
+│   │   ├── useDeadChannels.ts
+│   │   ├── useAdvertisers.ts
+│   │   ├── useCampaigns.ts
+│   │   └── __tests__/      # Hook tests
+│   ├── stores/              # Zustand global stores
+│   │   ├── authStore.ts
+│   │   ├── favoritesStore.ts
+│   │   ├── playerStore.ts
+│   │   └── __tests__/
+│   ├── lib/                 # External service clients
+│   │   ├── sentry.ts       # Sentry monitoring
+│   │   └── supabaseClient.ts
+│   ├── utils/               # Utility functions
+│   │   ├── validation.ts
+│   │   ├── virtualScroll.ts
+│   │   ├── logger.ts
+│   │   ├── errors.ts
+│   │   └── __tests__/
+│   ├── App.tsx              # Main player route
+│   ├── App.css              # App styles
+│   ├── main.tsx             # Entry point (router + Sentry + PWA)
+│   └── index.css            # Global styles
 ├── public/                  # Static assets
-│   ├── favicon.svg
-│   ├── icons.svg
+│   ├── ads.json             # Ad campaign configuration
+│   ├── ads/                 # Ad media files
 │   └── playlist.json        # Default playlist (auto-generated)
-├── vite.config.ts          # Vite configuration
-├── tsconfig.json           # TypeScript root config
-├── tsconfig.app.json       # App TypeScript config
-├── eslint.config.js        # ESLint configuration
-├── .prettierrc              # Prettier config
-└── package.json            # Dependencies and scripts
+├── .husky/                  # Git hooks (lint-staged)
+├── .github/workflows/       # CI/CD (lint, test, build, deploy)
+├── vite.config.ts
+├── tsconfig.json
+├── tsconfig.app.json
+├── eslint.config.js
+├── .prettierrc
+├── vercel.json              # Deployment + security headers
+└── package.json
 ```
 
 ## 🎮 Usage
@@ -128,6 +159,35 @@ Expected JSON format:
 ]
 ```
 
+### Génération d'une playlist M3U IPTV
+
+Le projet peut générer un fichier M3U adapté aux lecteurs IPTV statiques sans écraser les fichiers existants.
+
+```bash
+npm run generate:iptv-playlist
+```
+
+Options utiles :
+
+```bash
+node scripts/generate-m3u-iptv.mjs \
+  --input=public/playlist.json \
+  --output=public/playlist.iptv.fr.m3u \
+  --country=FR \
+  --group=Francophone \
+  --xmltv=./data/guide.xml \
+  --public-url=https://your-domain.com
+```
+
+Le script :
+
+- filtre les chaînes par `country` et/ou `group`
+- enrichit `tvg-id` et `tvg-logo` à partir d'un guide XMLTV si fourni
+- évite d'écraser un fichier existant en ajoutant un suffixe horodaté
+- affiche le lien public si vous fournissez `--public-url`
+
+Sur une hébergement statique (Vercel, Netlify, GitHub Pages), le fichier généré est accessible directement via l'URL du site + le chemin du fichier.
+
 ### Environment Variables
 
 Create a `.env` file in the root:
@@ -143,8 +203,7 @@ VITE_API_TIMEOUT=10000
 > La monétisation repose entièrement sur la publicité in-player (pré-roll + bannières)
 > ouverte à plusieurs annonceurs. Voir `public/ads.json` pour la configuration des campagnes.
 >
-> Les fichiers liés à l'ancien modèle premium (`Paywall.tsx`, `payment.ts`, `useTrial.ts`)
-> ont été déplacés dans `archive/` pour référence historique.
+> Les fichiers liés à l'ancien modèle premium ont été supprimés lors du nettoyage de la codebase.
 
 ## 🔧 Configuration
 
@@ -177,10 +236,12 @@ npm run test:coverage
 
 ## 🔐 Security
 
-- ✅ Input validation with Zod
+- ✅ Input validation with custom validators (`src/utils/validation.ts`)
 - ✅ XSS protection on channel URLs
-- ✅ Content Security Policy headers
+- ✅ Content Security Policy headers (via Vercel)
 - ✅ Secure localStorage handling
+- ✅ Role-based access control (admin routes guarded server-side)
+- ✅ Sentry error monitoring
 - ✅ No eval() or dangerous patterns
 - ✅ Regular security audits via `npm audit`
 
@@ -188,18 +249,15 @@ npm run test:coverage
 
 - 📊 Virtual scrolling for 2000+ channels
 - 🖼️ Lazy-loaded channel logos
-- 📦 Optimized bundle size (~120KB gzipped)
-- 🎨 Font subsetting (400, 500, 700 weights only)
+- 🔄 Lazy-loaded admin routes with React.Suspense
 - 💾 Progressive Web App caching
 
 ## ♿ Accessibility
 
-- WCAG 2.1 AA compliant
-- Keyboard navigation support
-- Screen reader friendly
-- Proper ARIA labels
+- Keyboard navigation
+- Screen reader support with ARIA labels
 - High contrast dark theme
-- Focus indicators on all interactive elements
+- Focus indicators on interactive elements
 
 ## 🚀 Deployment
 
@@ -266,11 +324,15 @@ npm run lint:check
 | **Frontend** | React 19, TypeScript 5.7 |
 | **Build** | Vite 8, esbuild |
 | **Streaming** | HLS.js 1.6 |
-| **Validation** | Zod 3.24 |
+| **State** | Zustand 5 |
+| **Routing** | React Router 7 |
+| **Backend** | Supabase (auth, storage, RPC) |
+| **Monitoring** | Sentry 10 |
 | **Icons** | Lucide React 1.14 |
-| **Testing** | Vitest 2.0 |
+| **Testing** | Vitest 2, Testing Library, Playwright |
 | **Linting** | ESLint 10, Prettier 3 |
 | **PWA** | Vite PWA Plugin 1.3 |
+| **CI/CD** | GitHub Actions, Husky, lint-staged |
 
 ## 🐛 Troubleshooting
 
@@ -302,6 +364,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-Made with ❤️ by [Your Name]
+Made with ❤️ by Thamany
 
-**Last Updated:** May 2026 | **Version:** 1.0.0
+**Last Updated:** July 2026 | **Version:** 1.0.0

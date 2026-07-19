@@ -79,7 +79,7 @@ export function useSites(): {
   const checkAll = useCallback((): void => {
     if (checking || sites.length === 0) return;
     setChecking(true);
-    setSites((prev) => prev.map((s) => ({ ...s, status: 'checking' as SiteStatus })));
+    setSites((prev) => prev.map((s) => ({ ...s, status: 'checking' })));
 
     void Promise.all(
       sites.map(async (s) => {

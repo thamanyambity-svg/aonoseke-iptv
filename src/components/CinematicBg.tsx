@@ -65,7 +65,7 @@ function PosterRow({ posters, dir, speed, eager }: {
               loading={eager && i < 4 ? 'eager' : 'lazy'}
               decoding="async"
               draggable={false}
-              onError={(e) => { (e.currentTarget as HTMLImageElement).style.opacity = '0'; }}
+              onError={(e) => { (e.currentTarget).style.opacity = '0'; }}
             />
           </div>
         ))}

@@ -182,6 +182,19 @@
     "verifiedAt": "2026-07-19T12:57:40.919Z"
   },
   {
+    "id": "1flex",
+    "name": "1Flex",
+    "category": "Annuaire",
+    "language": "Multi",
+    "country": "FR",
+    "url": "https://www.1flex.org/",
+    "logo": "https://www.google.com/s2/favicons?domain=1flex.org&sz=64",
+    "description": "Annuaire de services IPTV — ajoutez votre playlist pour être consultable.",
+    "status": "online",
+    "legal": false,
+    "verifiedAt": "2026-07-05T00:00:00.000Z"
+  },
+  {
     "id": "kanopy",
     "name": "Kanopy",
     "category": "VOD",

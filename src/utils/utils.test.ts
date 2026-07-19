@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach } from 'vitest';
+import { describe, it, expect } from 'vitest';
 import { calculateVisibleItems, getVisibleSlice } from '../utils/virtualScroll.ts';
 import { isValidUrl, sanitizeLogoUrl } from '../utils/validation.ts';
 

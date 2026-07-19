@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { countryFlag } from './App.tsx';
+import { countryFlag } from './components/Sidebar.tsx';
 import { validatePlaylist } from './types.ts';
 
 describe('countryFlag', () => {

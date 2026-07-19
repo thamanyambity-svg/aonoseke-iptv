@@ -1,7 +1,7 @@
 import { useEffect, useState, useCallback, useRef, useMemo, lazy, Suspense } from 'react';
 import {
   Users, Activity, TrendingUp, Eye, RefreshCw, X, Download,
-  FileDown, Globe, Clock, Layers, Trash2, Radio, Zap, Target, Megaphone, Wifi, CalendarDays,
+  FileDown, Globe, Clock, Layers, Trash2, Radio, Zap, Target, Megaphone, CalendarDays,
 } from 'lucide-react';
 import { supabase } from '../lib/supabaseClient.ts';
 import { logger } from '../utils/logger.ts';
@@ -10,9 +10,11 @@ import { Heatmap, type HeatCell } from './Heatmap.tsx';
 import { AdManagementContent } from './AdManagementDashboard.tsx';
 import { ErrorBoundary } from './ErrorBoundary.tsx';
 import type { AuthUser } from '../hooks/useAuth.ts';
-import { useLiveDevices } from '../hooks/useLiveDevices.ts';
 import { AiAdCalendar } from './regie/AiAdCalendar.tsx';
 import { AgentConsole } from './regie/AgentConsole.tsx';
+import { OnlineUsersPanel } from './admin/OnlineUsersPanel.tsx';
+import { LiveDevicesPanel } from './admin/LiveDevicesPanel.tsx';
+import { BarList } from './admin/BarList.tsx';
 
 const MapboxMap = lazy(() => import('./MapboxMap.tsx'));
 const MAPBOX_TOKEN = import.meta.env.VITE_MAPBOX_TOKEN as string | undefined;
@@ -118,16 +120,6 @@ function flagEmoji(cc: string | null): string {
   return String.fromCodePoint(...[...cc.toUpperCase()].map((c) => base + c.charCodeAt(0) - 65));
 }
 
-function deviceLabel(d: string | null): string {
-  if (!d) return '—';
-  switch (d) {
-    case 'tv':      return 'TV';
-    case 'mobile':  return 'Mobile';
-    case 'desktop': return 'Desktop';
-    default:        return d;
-  }
-}
-
 function safeDisplayName(user: OnlineUser | RecentUser): string {
   const username = safeString(user.username);
   if (username) return username;
@@ -168,134 +160,7 @@ function safeString(value: unknown): string {
   return typeof value === 'string' ? value : '';
 }
 
-// ── Sous-composant : BarList ────────────────────────────────────────────────
-
-function BarList({ items }: { items: NamedStat[] }): JSX.Element {
-  const max = Math.max(1, ...items.map((i) => i.count));
-  if (items.length === 0) {
-    return <p className="geo-empty">Pas encore de données — elles arrivent avec l'usage.</p>;
-  }
-  return (
-    <div className="bar-list">
-      {items.map((it, i) => (
-        <div key={`${it.label}-${i}`} className="bar-row">
-          <span className="bar-label">{it.label}</span>
-          <span className="bar-track">
-            <span
-              className="bar-fill"
-              style={{ width: `${(it.count / max) * 100}%` }}
-            />
-          </span>
-          <span className="bar-count">{it.count.toLocaleString('fr-FR')}</span>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-// ── Sous-composant : panneau utilisateurs en ligne (temps réel) ─────────────
-
-function OnlineUsersPanel({ users, loading }: { users: OnlineUser[]; loading: boolean }): JSX.Element {
-  return (
-    <div className="admin-online-panel">
-      <div className="admin-online-head">
-        <h3 className="admin-table-title">
-          <Radio size={15} className={loading ? 'pulse-icon' : ''} />
-          Utilisateurs en ligne
-          <span className="admin-online-count">
-            {users.length} <span className="admin-online-pulse" aria-hidden="true" />
-          </span>
-        </h3>
-        <span className="admin-online-sub">Mise à jour temps réel · seuil 90s</span>
-      </div>
-
-      {users.length === 0 ? (
-        <p className="geo-empty">Aucun utilisateur en ligne actuellement.</p>
-      ) : (
-        <div className="admin-online-list">
-          {users.map((u) => (
-            <div key={u.id} className="online-row">
-              <span className="online-dot online-dot--on" aria-hidden="true" />
-              <span className="online-flag">{flagEmoji(u.country_code)}</span>
-              <div className="online-info">
-                <div className="online-name">
-                  {safeDisplayName(u)}
-                  <span className="online-device">{deviceLabel(u.device)}</span>
-                </div>
-                <div className="online-meta">
-                  {[u.city, u.country].filter(Boolean).join(', ') || 'Localisation inconnue'}
-                </div>
-              </div>
-              <div className="online-time" title={`Dernier signal : ${fmtDate(u.last_seen_at)}`}>
-                <Clock size={11} aria-hidden="true" />
-                {fmtTimeAgo(u.last_seen_at)}
-              </div>
-            </div>
-          ))}
-        </div>
-      )}
-    </div>
-  );
-}
-
-// ── Composant principal ─────────────────────────────────────────────────────
-
-// ── Sous-composant : appareils connectés en direct (IP, démo incluse) ───────
-
-function LiveDevicesPanel(): JSX.Element {
-  const { devices, loading, error, reload } = useLiveDevices();
-  return (
-    <div className="admin-table-wrap admin-no-print">
-      <h3 className="admin-table-title">
-        <Wifi size={15} className={loading ? 'pulse-icon' : ''} />
-        Appareils connectés en direct ({devices.length})
-        <button className="admin-btn" style={{ marginLeft: 'auto' }} onClick={() => void reload()} disabled={loading}>
-          <RefreshCw size={13} className={loading ? 'spin-icon' : ''} /> Actualiser
-        </button>
-      </h3>
-      <p className="admin-online-sub" style={{ marginBottom: 10 }}>
-        Tous les appareils — connectés <b>et démo / anonymes</b> — vus dans les 5 dernières minutes · IP capturée côté serveur
-      </p>
-      {error ? (
-        <p className="geo-empty">{error}</p>
-      ) : devices.length === 0 ? (
-        <p className="geo-empty">Aucun appareil actif. Ouvrez l'app (même en démo) pour le voir apparaître ici.</p>
-      ) : (
-        <table className="admin-table">
-          <thead>
-            <tr>
-              <th>Type</th><th>IP</th><th>Appareil</th><th>Localisation</th><th>Activité</th><th>Vu</th>
-            </tr>
-          </thead>
-          <tbody>
-            {devices.map((d) => {
-              const isConn = d.kind === 'Connecté';
-              return (
-                <tr key={d.device_id}>
-                  <td>
-                    <span style={{
-                      display: 'inline-block', fontSize: '0.72em', padding: '2px 8px', borderRadius: 6, fontWeight: 600,
-                      color: isConn ? '#a3e635' : 'var(--lime, #c9a84c)',
-                      background: isConn ? 'rgba(132,204,22,0.12)' : 'var(--lime-dim, rgba(201,168,76,0.12))',
-                    }}>{d.kind}</span>
-                    {d.email && <div className="u-time-ago">{d.email}</div>}
-                  </td>
-                  <td className="u-ip" style={{ fontFamily: 'var(--mono, monospace)' }}>{d.ip ?? '—'}</td>
-                  <td>{deviceLabel(d.device)}</td>
-                  <td>{[d.city, d.country].filter(Boolean).join(', ') || '—'}</td>
-                  <td>{d.pings} ping{d.pings > 1 ? 's' : ''}</td>
-                  <td className="u-time-ago" title={fmtDate(d.last_seen_at)}>{fmtTimeAgo(d.last_seen_at)}</td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-      )}
-    </div>
-  );
-}
-
-export function AdminDashboard({ user, onClose, initialTab = 'audience' }: AdminDashboardProps): JSX.Element | null {
+export default function AdminDashboard({ user, onClose, initialTab = 'audience' }: AdminDashboardProps): JSX.Element | null {
   // Garde-fou de sécurité : si l'utilisateur courant n'est pas admin,
   // on ne rend rien. La sécurité côté Supabase (RPC security_definer +
   // is_admin()) reste la source de vérité, ce n'est qu'un garde-fou UI.
@@ -454,14 +319,6 @@ function AdminDashboardInner({ user, onClose, initialTab }: {
       setOnlineUsers([]);
     }
   }, []);
-  // Use a safe fallback for email and username during render.
-  function userDisplayName(user: OnlineUser): string {
-    if (user.username) return user.username;
-    if (typeof user.email === 'string' && user.email.includes('@')) {
-      return user.email.split('@')[0];
-    }
-    return 'Utilisateur';
-  }
   // ── Chargement initial + polling intelligent ─────────────────────────────
   useEffect(() => {
     void load();

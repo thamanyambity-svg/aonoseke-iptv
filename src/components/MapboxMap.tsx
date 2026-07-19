@@ -45,7 +45,7 @@ export default function MapboxMap({ points, token }: { points: GeoPoint[]; token
       }));
     const data = { type: 'FeatureCollection' as const, features };
     const apply = (): void => {
-      const src = map.getSource('users') as mapboxgl.GeoJSONSource | undefined;
+      const src = map.getSource('users');
       if (src) { src.setData(data); return; }
       map.addSource('users', { type: 'geojson', data });
       map.addLayer({
