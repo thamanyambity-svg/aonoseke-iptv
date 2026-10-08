@@ -9,10 +9,12 @@ import { useAuth } from './hooks/useAuth.ts';
 import { captureUtmParams } from './utils/utmTracking.ts';
 import { startPresence } from './lib/devicePresence.ts';
 import { initSentry } from './lib/sentry.ts';
+import { initNativeAuthListener } from './lib/nativeAuth.ts';
 import { useAuthStore } from './stores/authStore.ts';
 import type { JSX } from 'react';
 
 initSentry();
+initNativeAuthListener();
 
 captureUtmParams();
 startPresence();
@@ -29,7 +31,7 @@ if (isTV) {
 }
 
 function AuthGate({ children }: { children: React.ReactNode }): JSX.Element {
-  const { user, loading, signUp, signIn, signInWithProvider, signInDemo } = useAuth();
+  const { user, loading, signUp, signIn, signInWithProvider, sendPhoneOtp, verifyPhoneOtp, signInDemo } = useAuth();
   const setUser = useAuthStore((s) => s.setUser);
   const setLoading = useAuthStore((s) => s.setLoading);
 
@@ -55,6 +57,8 @@ function AuthGate({ children }: { children: React.ReactNode }): JSX.Element {
         onSignUp={signUp}
         onSignIn={signIn}
         onSocial={signInWithProvider}
+        onPhoneSend={sendPhoneOtp}
+        onPhoneVerify={verifyPhoneOtp}
         onDemo={signInDemo}
       />
     );
