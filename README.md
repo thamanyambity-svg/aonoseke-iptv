@@ -24,7 +24,8 @@ A professional, modern, and feature-rich **IPTV streaming player** built with Re
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js 18.0+ 
+
+- Node.js 18.0+
 - npm 9.0+ or yarn
 
 ### Installation
@@ -319,20 +320,20 @@ npm run lint:check
 
 ## 📚 Tech Stack
 
-| Layer | Tech |
-|-------|------|
-| **Frontend** | React 19, TypeScript 5.7 |
-| **Build** | Vite 8, esbuild |
-| **Streaming** | HLS.js 1.6 |
-| **State** | Zustand 5 |
-| **Routing** | React Router 7 |
-| **Backend** | Supabase (auth, storage, RPC) |
-| **Monitoring** | Sentry 10 |
-| **Icons** | Lucide React 1.14 |
-| **Testing** | Vitest 2, Testing Library, Playwright |
-| **Linting** | ESLint 10, Prettier 3 |
-| **PWA** | Vite PWA Plugin 1.3 |
-| **CI/CD** | GitHub Actions, Husky, lint-staged |
+| Layer          | Tech                                  |
+| -------------- | ------------------------------------- |
+| **Frontend**   | React 19, TypeScript 5.7              |
+| **Build**      | Vite 8, esbuild                       |
+| **Streaming**  | HLS.js 1.6                            |
+| **State**      | Zustand 5                             |
+| **Routing**    | React Router 7                        |
+| **Backend**    | Supabase (auth, storage, RPC)         |
+| **Monitoring** | Sentry 10                             |
+| **Icons**      | Lucide React 1.14                     |
+| **Testing**    | Vitest 2, Testing Library, Playwright |
+| **Linting**    | ESLint 10, Prettier 3                 |
+| **PWA**        | Vite PWA Plugin 1.3                   |
+| **CI/CD**      | GitHub Actions, Husky, lint-staged    |
 
 ## 🐛 Troubleshooting
 
@@ -367,3 +368,30 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 Made with ❤️ by Thamany
 
 **Last Updated:** July 2026 | **Version:** 1.0.0
+
+## 📱 Applications (Android, Android TV, Fire TV, PWA)
+
+| Support                           | Comment                                                                                                  |
+| --------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| **Web / PWA**                     | Installable depuis Chrome/Edge (Android, Windows, macOS, Linux, ChromeOS) grâce à `manifest.webmanifest` |
+| **Android (téléphone, tablette)** | APK via Capacitor (`com.aonoseke.iptv`)                                                                  |
+| **Android TV / Fire TV**          | Même APK : lanceur Leanback, bannière TV, écran tactile non requis                                       |
+| iOS                               | Non pris en charge pour l'instant                                                                        |
+
+```bash
+npm run android:apk       # APK de test (debug) → android/app/build/outputs/apk/debug/app-debug.apk
+npm run android:release   # APK + AAB de publication (signature : voir ci-dessous)
+npm run icons             # régénère les icônes depuis public/favicon.svg
+```
+
+Prérequis : Node 20+, JDK 17+, Android SDK (plateforme 36) avec `ANDROID_HOME` défini.
+
+**Signature de publication (Play Store / Amazon)** : créez _une seule fois_ votre clé et **conservez-la** (sans elle,
+aucune mise à jour n'est possible). Placez `android/keystore.properties` (jamais commité) :
+
+```properties
+storeFile=/chemin/vers/aonoseke.jks
+storePassword=…
+keyAlias=aonoseke
+keyPassword=…
+```
