@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { SkipForward, ExternalLink } from 'lucide-react';
 import type { PrerollAd } from '../hooks/useAds.ts';
 import { AlphaLogoAnimated } from './AlphaLogoAnimated.tsx';
+import type { JSX } from 'react';
 
 interface PreRollAdProps {
   ad: PrerollAd;

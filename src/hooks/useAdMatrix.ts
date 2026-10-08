@@ -9,7 +9,7 @@
  */
 
 import { useEffect, useState, useCallback, useRef } from 'react';
-import { supabase } from '../lib/supabaseClient';
+import { supabase, rpc } from '../lib/supabaseClient';
 import { logger } from '../utils/logger.ts';
 import type { CampaignContent } from './useCampaigns.ts';
 
@@ -37,7 +37,7 @@ export function useAdMatrix() {
     }
     try {
       setLoading(true);
-      const { data, error: rpcError } = await supabase.rpc('get_active_campaigns', { p_limit: 10 });
+      const { data, error: rpcError } = await rpc('get_active_campaigns', { p_limit: 10 });
       if (rpcError) {
         logger.warn('useAdMatrix: fetchActiveCampaigns error', { error: rpcError.message });
         setError(rpcError.message);
@@ -58,6 +58,7 @@ export function useAdMatrix() {
   }, []);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- chargement/initialisation au montage : le setState est voulu
     void fetchActiveCampaigns();
     pollingIntervalRef.current = window.setInterval(() => void fetchActiveCampaigns(), 30_000);
     return () => {

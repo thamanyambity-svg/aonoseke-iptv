@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { supabase } from '../lib/supabaseClient.ts';
+import { supabase, rpc } from '../lib/supabaseClient.ts';
 import { getUtmParams, type UtmParams } from '../utils/utmTracking.ts';
 
 // Ré-export des types publics pour compatibilité avec App.tsx
@@ -140,7 +140,7 @@ export function useAds(): AdsConfig {
       // 1. Essaie de charger les campagnes actives depuis Supabase (multi-annonceurs)
       try {
         if (supabase) {
-          const { data, error } = await supabase.rpc('get_active_campaigns', {
+          const { data, error } = await rpc('get_active_campaigns', {
             p_user_country: null,
             p_category: null,
             p_limit: 20,

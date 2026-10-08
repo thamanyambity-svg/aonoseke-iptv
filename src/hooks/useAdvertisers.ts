@@ -8,7 +8,7 @@
  * @module useAdvertisers
  */
 import { useState, useEffect, useCallback } from 'react';
-import { supabase } from '../lib/supabaseClient.ts';
+import { supabase, rpc } from '../lib/supabaseClient.ts';
 import { logger } from '../utils/logger.ts';
 
 export interface Advertiser {
@@ -53,7 +53,7 @@ export function useAdvertisers() {
     setLoading(true);
     setError(null);
     try {
-      const { data, error: rpcError } = await supabase.rpc('admin_list_advertisers');
+      const { data, error: rpcError } = await rpc('admin_list_advertisers');
       if (rpcError) throw rpcError;
       setAdvertisers((data as Advertiser[]) ?? []);
     } catch (err) {
@@ -70,13 +70,14 @@ export function useAdvertisers() {
   }, []);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- chargement/initialisation au montage : le setState est voulu
     void load();
   }, [load]);
 
   const create = useCallback(async (input: AdvertiserInput): Promise<{ id?: string; error?: string }> => {
     if (!supabase) return { error: 'Backend non configuré' };
     try {
-      const { data, error: rpcError } = await supabase.rpc('admin_create_advertiser', {
+      const { data, error: rpcError } = await rpc('admin_create_advertiser', {
         p_name: input.name,
         p_contact_name: input.contact_name ?? null,
         p_contact_email: input.contact_email ?? null,
@@ -96,7 +97,7 @@ export function useAdvertisers() {
   const update = useCallback(async (id: string, patch: AdvertiserUpdate): Promise<{ error?: string }> => {
     if (!supabase) return { error: 'Backend non configuré' };
     try {
-      const { error: rpcError } = await supabase.rpc('admin_update_advertiser', {
+      const { error: rpcError } = await rpc('admin_update_advertiser', {
         p_id: id,
         p_name: patch.name ?? null,
         p_contact_name: patch.contact_name ?? null,
@@ -118,7 +119,7 @@ export function useAdvertisers() {
   const remove = useCallback(async (id: string): Promise<{ error?: string }> => {
     if (!supabase) return { error: 'Backend non configuré' };
     try {
-      const { error: rpcError } = await supabase.rpc('admin_delete_advertiser', { p_id: id });
+      const { error: rpcError } = await rpc('admin_delete_advertiser', { p_id: id });
       if (rpcError) throw rpcError;
       await load();
       return {};

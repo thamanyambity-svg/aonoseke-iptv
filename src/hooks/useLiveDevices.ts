@@ -7,7 +7,7 @@
  * @module useLiveDevices
  */
 import { useState, useEffect, useCallback } from 'react';
-import { supabase } from '../lib/supabaseClient.ts';
+import { supabase, rpc } from '../lib/supabaseClient.ts';
 import { logger } from '../utils/logger.ts';
 
 export interface LiveDevice {
@@ -33,7 +33,7 @@ export function useLiveDevices(windowSeconds = 300, autoRefreshMs = 15_000) {
     if (!supabase) { setError('Backend non configuré'); setLoading(false); return; }
     setError(null);
     try {
-      const { data, error: rpcError } = await supabase.rpc('admin_live_devices', {
+      const { data, error: rpcError } = await rpc('admin_live_devices', {
         p_window_seconds: windowSeconds,
       });
       if (rpcError) throw rpcError;
@@ -50,6 +50,7 @@ export function useLiveDevices(windowSeconds = 300, autoRefreshMs = 15_000) {
   }, [windowSeconds]);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- chargement/initialisation au montage : le setState est voulu
     void load();
     const t = window.setInterval(() => {
       if (document.visibilityState === 'visible') void load();

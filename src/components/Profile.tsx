@@ -1,5 +1,6 @@
 import { X, LogOut, Star, Shield, Megaphone } from 'lucide-react';
 import type { AuthUser } from '../hooks/useAuth.ts';
+import type { JSX } from 'react';
 
 interface ProfileProps {
   user: AuthUser;

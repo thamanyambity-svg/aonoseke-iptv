@@ -11,7 +11,8 @@ import type { Channel } from '../types.ts';
 import type { AuthUser } from '../hooks/useAuth.ts';
 import { countryFlag, COUNTRY_NAMES } from '../utils/appHelpers.ts';
 import { useFavoritesStore } from '../stores/favoritesStore.ts';
-import { usePlayerStore, type Tab } from '../stores/playerStore.ts';
+import { usePlayerStore } from '../stores/playerStore.ts';
+import type { JSX } from 'react';
 
 export { countryFlag } from '../utils/appHelpers.ts';
 
@@ -48,10 +49,10 @@ export function Sidebar({
   channels, isLoading, loadError, onRetry,
   banners, adsEnabled,
 }: SidebarProps): JSX.Element {
-  const { favorites } = useFavoritesStore();
+  const { favorites, toggleFavorite } = useFavoritesStore();
   const {
     activeTab, search, rawSearch, selectedCountry, selectedGroup,
-    setActiveTab, setSearch, setRawSearch, setSelectedCountry, setSelectedGroup,
+    setActiveTab, setRawSearch, setSelectedCountry, setSelectedGroup,
   } = usePlayerStore();
   const [focusedIdx, setFocusedIdx] = useState<number>(-1);
   const listRef = useRef<HTMLDivElement>(null);
@@ -95,6 +96,8 @@ export function Sidebar({
   }, [channels, search, selectedCountry, selectedGroup, activeTab, favorites]);
 
   useEffect(() => {
+    // Réinitialise le focus clavier quand la liste filtrée change.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setFocusedIdx(-1);
     itemRefs.current = [];
   }, [filteredChannels]);

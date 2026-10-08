@@ -10,7 +10,8 @@
  * Si Supabase n'est pas configuré, retombe sur un mode démo localStorage.
  */
 import { useState, useEffect, useCallback } from 'react';
-import { supabase, isSupabaseEnabled } from '../lib/supabaseClient.ts';
+import { supabase, isSupabaseEnabled, rpc } from '../lib/supabaseClient.ts';
+import type { PostgrestError } from '@supabase/supabase-js';
 import { logger } from '../utils/logger.ts';
 
 export interface AuthUser {
@@ -25,6 +26,16 @@ export interface AuthUser {
 
 const DEMO_KEY = 'iptv-auth-user';
 
+interface ProfileRow {
+  username: string | null;
+  full_name: string | null;
+  avatar_url: string | null;
+  role: string | null;
+}
+interface ProfileResult { data: ProfileRow | null; error: PostgrestError | null }
+interface IpapiResponse { error?: unknown; ip?: string; city?: string; region?: string; country_name?: string; country_code?: string; latitude?: number; longitude?: number }
+interface IpwhoResponse { success?: boolean; ip?: string; city?: string; region?: string; country?: string; country_code?: string; latitude?: number; longitude?: number }
+
 interface AuthState {
   user: AuthUser | null;
   loading: boolean;
@@ -34,11 +45,11 @@ async function loadProfile(userId: string, email: string): Promise<AuthUser> {
   const fallback: AuthUser = { id: userId, name: email.split('@')[0], email, provider: 'email' };
   if (!supabase) return fallback;
   try {
-    const { data, error } = await supabase
+    const { data, error } = (await supabase
       .from('profiles')
       .select('username, full_name, avatar_url, role')
       .eq('id', userId)
-      .single();
+      .single()) as ProfileResult;
 
     // PGRST116 = aucune ligne trouvée (profil manquant) → tentative de recréation plus bas.
     if (error && error.code !== 'PGRST116') {
@@ -58,17 +69,17 @@ async function loadProfile(userId: string, email: string): Promise<AuthUser> {
     }
 
     // Profil manquant : tentative de recréation côté Supabase (self-heal).
-    const { error: ensureError } = await supabase.rpc('ensure_my_profile');
+    const { error: ensureError } = await rpc('ensure_my_profile');
     if (ensureError) {
       logger.warn('loadProfile: ensure_my_profile a échoué', { message: ensureError.message });
       return fallback;
     }
 
-    const { data: recreated, error: recreatedError } = await supabase
+    const { data: recreated, error: recreatedError } = (await supabase
       .from('profiles')
       .select('username, full_name, avatar_url, role')
       .eq('id', userId)
-      .single();
+      .single()) as ProfileResult;
 
     if (recreatedError) {
       logger.warn('loadProfile: relecture après recréation échouée', { code: recreatedError.code, message: recreatedError.message });
@@ -113,12 +124,12 @@ async function captureGeo(): Promise<void> {
   if (sessionStorage.getItem('geo-done')) return;
   const providers: Array<() => Promise<GeoResult>> = [
     async () => {
-      const g = await (await fetch('https://ipapi.co/json/')).json();
+      const g = (await (await fetch('https://ipapi.co/json/')).json()) as IpapiResponse;
       if (g.error) throw new Error('ipapi');
       return { ip: g.ip, city: g.city, region: g.region, country: g.country_name, code: g.country_code, lat: g.latitude, lon: g.longitude };
     },
     async () => {
-      const g = await (await fetch('https://ipwho.is/')).json();
+      const g = (await (await fetch('https://ipwho.is/')).json()) as IpwhoResponse;
       if (g.success === false) throw new Error('ipwho');
       return { ip: g.ip, city: g.city, region: g.region, country: g.country, code: g.country_code, lat: g.latitude, lon: g.longitude };
     },
@@ -127,14 +138,14 @@ async function captureGeo(): Promise<void> {
     try {
       const g = await provider();
       if (!g.ip) continue;
-      const { error } = await supabase.rpc('set_my_geo', {
+      const { error } = await rpc('set_my_geo', {
         p_country: g.country ?? null, p_country_code: g.code ?? null,
         p_city: g.city ?? null, p_region: g.region ?? null, p_ip: g.ip ?? null,
         p_lat: typeof g.lat === 'number' ? g.lat : null,
         p_lon: typeof g.lon === 'number' ? g.lon : null,
       });
       if (error) continue;
-      await supabase.rpc('set_my_device', { p_device: detectDevice() });
+      await rpc('set_my_device', { p_device: detectDevice() });
       sessionStorage.setItem('geo-done', '1'); // flag posé seulement après succès → réessai sinon
       return;
     } catch { /* fournisseur suivant */ }
@@ -159,6 +170,7 @@ export function useAuth(): {
       // mode démo
       try {
         const raw = localStorage.getItem(DEMO_KEY);
+        // eslint-disable-next-line react-hooks/set-state-in-effect -- chargement/initialisation au montage : le setState est voulu
         setState({ user: raw ? (JSON.parse(raw) as AuthUser) : null, loading: false });
       } catch {
         setState({ user: null, loading: false });

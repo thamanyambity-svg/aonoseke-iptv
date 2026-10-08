@@ -93,9 +93,9 @@ export function parseCampaignPrompt(
 
   // ── Quota (vues / impressions) ──────────────────────────────────────────
   let impressionCap: number | null = null;
-  const c = lower.match(/(\d[\d\s. ]*)\s*(?:vues|impressions|affichages)/);
+  const c = lower.match(/(\d[\d\s.\u00a0]*)\s*(?:vues|impressions|affichages)/);
   if (c) {
-    const n = parseInt(c[1].replace(/[\s. ]/g, ''), 10);
+    const n = parseInt(c[1].replace(/[\s.\u00a0]/g, ''), 10);
     if (!Number.isNaN(n)) impressionCap = n;
   }
 

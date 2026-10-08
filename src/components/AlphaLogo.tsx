@@ -1,4 +1,5 @@
 import { useId } from 'react';
+import type { JSX } from 'react';
 
 interface AlphaLogoProps {
   size?: number;

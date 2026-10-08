@@ -34,7 +34,7 @@ describe('useDeadChannels', () => {
     act(() => {
       result.current.markDead('http://test.com/stream.m3u8');
     });
-    const stored = JSON.parse(localStorage.getItem('iptv-dead-channels') ?? '{}');
+    const stored = JSON.parse(localStorage.getItem('iptv-dead-channels') ?? '{}') as Record<string, number>;
     expect(stored['http://test.com/stream.m3u8']).toBeGreaterThan(0);
   });
 

@@ -7,6 +7,7 @@ import { useSites } from '../hooks/useSites.ts';
 import type { StreamSite, SiteStatus } from '../hooks/useSites.ts';
 import { getLocalStorageItem, setLocalStorageItem } from '../utils/validation.ts';
 import { trackEvent } from '../hooks/useAnalytics.ts';
+import type { JSX } from 'react';
 
 const FAV_KEY = 'iptv-site-favorites';
 

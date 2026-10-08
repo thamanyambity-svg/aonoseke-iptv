@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import type { GeoPoint } from './WorldMap.tsx';
+import type { JSX } from 'react';
 
 /**
  * Carte Mapbox (style sombre) avec points or pour chaque utilisateur localisé.
@@ -29,6 +30,7 @@ export default function MapboxMap({ points, token }: { points: GeoPoint[]; token
       return () => { map.remove(); mapRef.current = null; };
     } catch (err) {
       console.error('MapboxMap failed to initialize', err);
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- chargement/initialisation au montage : le setState est voulu
       setFailed(true);
     }
   }, [token, failed]);
@@ -45,7 +47,7 @@ export default function MapboxMap({ points, token }: { points: GeoPoint[]; token
       }));
     const data = { type: 'FeatureCollection' as const, features };
     const apply = (): void => {
-      const src = map.getSource('users');
+      const src = map.getSource('users') as unknown as { setData: (d: unknown) => void } | undefined;
       if (src) { src.setData(data); return; }
       map.addSource('users', { type: 'geojson', data });
       map.addLayer({

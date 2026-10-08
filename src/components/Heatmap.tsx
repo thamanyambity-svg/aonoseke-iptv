@@ -1,3 +1,4 @@
+import type { JSX } from 'react';
 export interface HeatCell { dow: number; hour: number; count: number; }
 
 const DAYS = ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'];

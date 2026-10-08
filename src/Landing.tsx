@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Play, Tv, Globe, Star, Zap, User, Mail, Lock } from 'lucide-react';
 import { AlphaLogoAnimated } from './components/AlphaLogoAnimated.tsx';
 import { CinematicBg } from './components/CinematicBg.tsx';
+import type { JSX } from 'react';
 
 type Mode = 'signin' | 'signup';
 
@@ -157,7 +158,7 @@ export function Landing({ onSignUp, onSignIn, onSocial, onDemo }: LandingProps):
 
           <div className="auth-divider"><span>ou avec un email</span></div>
 
-          <form className="login-form" onSubmit={handleSubmit} noValidate>
+          <form className="login-form" onSubmit={(e) => { void handleSubmit(e); }} noValidate>
             {mode === 'signup' && (
               <div className="form-group">
                 <label className="form-label" htmlFor="username">Nom d'utilisateur</label>

@@ -33,6 +33,7 @@ import { sanitizeLogoUrl } from './utils/validation.ts';
 import { usePlayerStore } from './stores/playerStore.ts';
 import { useFavoritesStore } from './stores/favoritesStore.ts';
 import { useAuthStore } from './stores/authStore.ts';
+import type { JSX } from 'react';
 
 const DOCKED_SIDEBAR_QUERY = '(min-width: 1100px)';
 

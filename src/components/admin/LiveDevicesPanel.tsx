@@ -1,5 +1,6 @@
 import { RefreshCw, Wifi } from 'lucide-react';
 import { useLiveDevices } from '../../hooks/useLiveDevices';
+import type { JSX } from 'react';
 
 function fmtDate(s: string): string {
   try {

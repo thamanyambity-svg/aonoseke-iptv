@@ -6,6 +6,7 @@ import type { PlayerProps } from '../types-exports.ts';
 import { logger } from '../utils/logger.ts';
 import { ErrorMessages } from '../utils/errors.ts';
 import { useAdMatrix } from '../hooks/useAdMatrix.ts';
+import type { JSX } from 'react';
 
 // Lazy load AdBanner component (non-critical)
 const AdBanner = lazy(() => import('./AdBanner.tsx').then(m => ({ default: m.AdBanner })));

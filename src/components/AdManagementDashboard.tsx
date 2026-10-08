@@ -32,6 +32,7 @@ import {
 } from './admin/AdHelpers.ts';
 import { AdvertiserForm } from './admin/AdvertiserForm.tsx';
 import { CampaignForm } from './admin/CampaignForm.tsx';
+import type { JSX } from 'react';
 
 interface AdManagementDashboardProps {
   user: AuthUser | null;
@@ -252,7 +253,7 @@ function AdManagementInner(): JSX.Element {
                 <h4>{editingAdvertiser ? 'Modifier l\'annonceur' : 'Nouvel annonceur'}</h4>
                 <AdvertiserForm
                   initial={editingAdvertiser ?? undefined}
-                  onSubmit={handleAdvertiserSubmit}
+                  onSubmit={(d) => { void handleAdvertiserSubmit(d); }}
                   onCancel={() => { setShowAdvertiserForm(false); setEditingAdvertiser(null); }}
                 />
               </div>
@@ -304,7 +305,7 @@ function AdManagementInner(): JSX.Element {
                           <div className="ad-row-actions">
                             <button
                               className="ad-icon-btn"
-                              onClick={() => toggleAdvertiserStatus(a)}
+                              onClick={() => { void toggleAdvertiserStatus(a); }}
                               title={a.status === 'active' ? 'Mettre en pause' : 'Activer'}
                               aria-label="Toggle statut"
                             >
@@ -320,7 +321,7 @@ function AdManagementInner(): JSX.Element {
                             </button>
                             <button
                               className="ad-icon-btn ad-icon-btn--danger"
-                              onClick={() => handleDeleteAdvertiser(a)}
+                              onClick={() => { void handleDeleteAdvertiser(a); }}
                               title="Supprimer"
                               aria-label="Supprimer"
                             >
@@ -366,7 +367,7 @@ function AdManagementInner(): JSX.Element {
                 <CampaignForm
                   advertisers={adv.advertisers}
                   initial={editingCampaign ?? undefined}
-                  onSubmit={handleCampaignSubmit}
+                  onSubmit={(d) => { void handleCampaignSubmit(d); }}
                   onCancel={() => { setShowCampaignForm(false); setEditingCampaign(null); }}
                 />
               </div>
@@ -448,7 +449,7 @@ function AdManagementInner(): JSX.Element {
                         <div className="ad-row-actions">
                           <button
                             className="ad-icon-btn"
-                            onClick={() => toggleCampaignStatus(c)}
+                            onClick={() => { void toggleCampaignStatus(c); }}
                             title={c.status === 'active' ? 'Mettre en pause' : 'Activer'}
                             aria-label="Toggle statut"
                           >
@@ -464,7 +465,7 @@ function AdManagementInner(): JSX.Element {
                           </button>
                           <button
                             className="ad-icon-btn ad-icon-btn--danger"
-                            onClick={() => handleDeleteCampaign(c)}
+                            onClick={() => { void handleDeleteCampaign(c); }}
                             title="Supprimer"
                             aria-label="Supprimer"
                           >
