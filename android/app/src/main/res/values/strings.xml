@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Aonoseke IPTV</string>
+    <string name="title_activity_main">Aonoseke IPTV</string>
+    <string name="package_name">com.aonoseke.iptv</string>
+    <string name="custom_url_scheme">com.aonoseke.iptv</string>
+</resources>
