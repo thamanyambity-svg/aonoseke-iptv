@@ -3,13 +3,14 @@ import { useNavigate } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import AdminDashboard from '../components/AdminDashboard.tsx';
 import { useAuthStore } from '../stores/authStore.ts';
+import type { JSX } from 'react';
 
 export default function AdminPage(): JSX.Element | null {
   const navigate = useNavigate();
   const user = useAuthStore((s) => s.user);
 
   const handleClose = useCallback(() => {
-    navigate('/');
+    void navigate('/');
   }, [navigate]);
 
   if (!user || user.role !== 'admin') {
@@ -17,7 +18,7 @@ export default function AdminPage(): JSX.Element | null {
       <div className="admin" style={{ padding: 40, textAlign: 'center' }}>
         <h2>Accès restreint</h2>
         <p>Vous devez être administrateur pour accéder à cette page.</p>
-        <button className="admin-btn" onClick={() => navigate('/')} style={{ marginTop: 16 }}>
+        <button className="admin-btn" onClick={() => { void navigate('/'); }} style={{ marginTop: 16 }}>
           <ArrowLeft size={14} /> Retour au player
         </button>
       </div>

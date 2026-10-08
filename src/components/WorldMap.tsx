@@ -1,3 +1,4 @@
+import type { JSX } from 'react';
 /**
  * Carte du monde (projection équirectangulaire) avec points lumineux pour
  * chaque utilisateur localisé. SVG pur, zéro dépendance, thème or/sombre.

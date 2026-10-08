@@ -1,6 +1,7 @@
 import { useId } from 'react';
 import { AlphaLogo } from './AlphaLogo.tsx';
 import './AlphaLogoAnimated.css';
+import type { JSX } from 'react';
 
 interface AlphaLogoAnimatedProps {
   size?: number;

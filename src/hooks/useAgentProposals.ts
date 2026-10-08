@@ -8,7 +8,7 @@
  * @module useAgentProposals
  */
 import { useState, useEffect, useCallback } from 'react';
-import { supabase } from '../lib/supabaseClient.ts';
+import { supabase, rpc } from '../lib/supabaseClient.ts';
 import { logger } from '../utils/logger.ts';
 
 export type AgentKind = 'yield' | 'swarm' | 'context' | 'sentinel';
@@ -34,7 +34,7 @@ export function useAgentProposals(autoRefreshMs = 20_000) {
   const load = useCallback(async (): Promise<void> => {
     if (!supabase) { setError('Backend non configuré'); setLoading(false); return; }
     try {
-      const { data, error: rpcError } = await supabase.rpc('admin_list_agent_proposals', { p_status: 'pending' });
+      const { data, error: rpcError } = await rpc('admin_list_agent_proposals', { p_status: 'pending' });
       if (rpcError) throw rpcError;
       setProposals((data as AgentProposal[]) ?? []);
       setError(null);
@@ -53,7 +53,7 @@ export function useAgentProposals(autoRefreshMs = 20_000) {
   const resolve = useCallback(async (id: string, approve: boolean): Promise<{ error?: string }> => {
     if (!supabase) return { error: 'Backend non configuré' };
     try {
-      const { error: rpcError } = await supabase.rpc('admin_resolve_agent_proposal', { p_id: id, p_approve: approve });
+      const { error: rpcError } = await rpc('admin_resolve_agent_proposal', { p_id: id, p_approve: approve });
       if (rpcError) throw rpcError;
       setProposals((prev) => prev.filter((p) => p.id !== id)); // retrait optimiste
       return {};
@@ -64,6 +64,7 @@ export function useAgentProposals(autoRefreshMs = 20_000) {
   }, []);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- chargement/initialisation au montage : le setState est voulu
     void load();
     const t = window.setInterval(() => { if (document.visibilityState === 'visible') void load(); }, autoRefreshMs);
     return () => window.clearInterval(t);

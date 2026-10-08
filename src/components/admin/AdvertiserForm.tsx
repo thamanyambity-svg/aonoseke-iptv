@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import type { Advertiser } from '../../hooks/useAdvertisers';
+import type { JSX } from 'react';
 
 interface AdvertiserFormProps {
   initial?: Partial<Advertiser>;

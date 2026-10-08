@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { ExternalLink } from 'lucide-react';
 import type { BannerAd as BannerAdData } from '../hooks/useAds.ts';
 import { AlphaLogo } from './AlphaLogo.tsx';
+import type { JSX } from 'react';
 
 interface BannerAdProps {
   ad: BannerAdData;

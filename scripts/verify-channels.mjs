@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+// Deep HLS check: manifest (#EXTM3U) -> media playlist -> first segment.
+// Usage: node scripts/verify-channels.mjs [--unverified] [--dry-run] [--prune] [--dedupe]
+//        [--from=N] [--to=N] [--timeout=ms] [--concurrency=N]
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -7,63 +10,104 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(__dirname, '..');
 const PLAYLIST_PATH = path.join(repoRoot, 'public/playlist.json');
 
-const CONFIG = {
-  concurrency: 10,
-  timeout: 10000,
-  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
-  maxRetries: 2,
-  cooldownBetweenBatches: 500,
+const args = process.argv.slice(2);
+const flag = (...names) => names.some(n => args.includes(n));
+const num = (name, def) => {
+  const v = args.find(a => a.startsWith(`--${name}=`))?.split('=')[1];
+  return v !== undefined ? parseInt(v, 10) : def;
 };
 
-const args = process.argv.slice(2);
-const ONLY_UNVERIFIED = args.includes('--unverified') || args.includes('-u');
-const DRY_RUN = args.includes('--dry-run') || args.includes('-n');
-const FROM_INDEX = parseInt(args.find(a => a.startsWith('--from='))?.split('=')[1] || '0', 10);
-const toRaw = args.find(a => a.startsWith('--to='))?.split('=')[1];
-const TO_INDEX = toRaw ? parseInt(toRaw, 10) : Infinity;
+const ONLY_UNVERIFIED = flag('--unverified', '-u');
+const DRY_RUN = flag('--dry-run', '-n');
+const PRUNE = flag('--prune');
+const DEDUPE = flag('--dedupe');
+const FROM_INDEX = num('from', 0);
+const TO_INDEX = num('to', Infinity);
 
-let tested = 0;
-let passed = 0;
-let failed = 0;
+const CONFIG = {
+  concurrency: num('concurrency', 20),
+  timeout: num('timeout', 10000),
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+  maxRetries: 1,
+  cooldownBetweenBatches: 200,
+  maxManifestBytes: 500_000,
+};
 
-async function verifyChannel(channel, index, total) {
-  const { url, name } = channel;
-  if (!url || !url.startsWith('http')) return { status: 'skip' };
+class CheckError extends Error {}
 
+async function get(url) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), CONFIG.timeout);
+  try {
+    return await fetch(url, {
+      headers: { 'User-Agent': CONFIG.userAgent },
+      signal: controller.signal,
+      redirect: 'follow',
+    });
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+async function readText(res) {
+  const buf = new Uint8Array(await res.arrayBuffer());
+  return new TextDecoder().decode(buf.subarray(0, CONFIG.maxManifestBytes));
+}
+
+const firstUri = text =>
+  text.split(/\r?\n/).map(l => l.trim()).find(l => l && !l.startsWith('#'));
+
+async function fetchOk(url, what) {
+  const res = await get(url);
+  if (res.status !== 200) {
+    await res.body?.cancel().catch(() => {});
+    throw new CheckError(`${what} HTTP ${res.status}`);
+  }
+  return res;
+}
+
+async function checkOnce(url) {
+  const res = await fetchOk(url, 'manifest');
+  const text = await readText(res);
+  if (!text.includes('#EXTM3U')) throw new CheckError('not an HLS manifest');
+  const uri = firstUri(text);
+  if (!uri) throw new CheckError('empty manifest');
+
+  const subUrl = new URL(uri, res.url).href;
+  const subRes = await fetchOk(subUrl, 'variant/segment');
+  const head = new Uint8Array(await subRes.arrayBuffer());
+  const subText = new TextDecoder().decode(head.subarray(0, CONFIG.maxManifestBytes));
+
+  // Master playlist -> variant playlist -> first segment. Media playlist -> already a segment.
+  if (subText.startsWith('#EXTM3U')) {
+    const segUri = firstUri(subText);
+    if (!segUri) throw new CheckError('empty media playlist');
+    const segRes = await fetchOk(new URL(segUri, subRes.url).href, 'segment');
+    await segRes.body?.cancel().catch(() => {});
+  }
+}
+
+async function verifyChannel(channel) {
+  const { url } = channel;
+  if (!url || !/^https?:\/\//.test(url)) return { status: 'skip' };
+
+  let lastError = 'unknown';
   for (let attempt = 0; attempt <= CONFIG.maxRetries; attempt++) {
     try {
-      const controller = new AbortController();
-      const timer = setTimeout(() => controller.abort(), CONFIG.timeout);
-
-      const res = await fetch(url, {
-        method: 'GET',
-        headers: { 'User-Agent': CONFIG.userAgent },
-        signal: controller.signal,
-      });
-      clearTimeout(timer);
-
-      const contentType = res.headers.get('content-type') || '';
-      const isM3u8 = contentType.includes('mpegurl') || contentType.includes('apple')
-        || url.endsWith('.m3u8');
-
-      const statusCode = res.status;
-      const ok = statusCode === 200 && (isM3u8 || statusCode === 200);
-
-      return { status: ok ? 'live' : 'dead', statusCode, contentType };
+      await checkOnce(url);
+      return { status: 'live' };
     } catch (err) {
-      if (attempt < CONFIG.maxRetries) {
-        await new Promise(r => setTimeout(r, 1000 * (attempt + 1)));
-        continue;
-      }
-      return { status: 'error', error: err.message };
+      lastError = err.name === 'AbortError' ? 'timeout' : (err.cause?.code || err.message);
+      // Definitive failures: don't retry.
+      if (err instanceof CheckError && /HTTP (404|410)|not an HLS|empty/.test(err.message)) break;
+      if (attempt < CONFIG.maxRetries) await new Promise(r => setTimeout(r, 1000));
     }
   }
-  return { status: 'error', error: 'max retries' };
+  return { status: 'dead', error: lastError };
 }
 
 async function main() {
-  const raw = await fs.readFile(PLAYLIST_PATH, 'utf8');
-  const playlist = JSON.parse(raw);
+  const playlist = JSON.parse(await fs.readFile(PLAYLIST_PATH, 'utf8'));
   if (!Array.isArray(playlist)) throw new Error('Invalid playlist format');
 
   const toVerify = playlist
@@ -71,80 +115,62 @@ async function main() {
     .filter(({ i }) => i >= FROM_INDEX && i <= TO_INDEX)
     .filter(({ ch }) => !ONLY_UNVERIFIED || ch.verified !== true);
 
-  console.log(`Playlist: ${playlist.length} channels`);
-  console.log(`To verify: ${toVerify.length}${ONLY_UNVERIFIED ? ' (unverified only)' : ''}`);
-  console.log(`Concurrency: ${CONFIG.concurrency}, Timeout: ${CONFIG.timeout}ms\n`);
-  if (DRY_RUN) { console.log('DRY RUN — no changes will be saved\n'); }
+  console.log(`Playlist: ${playlist.length} channels, to verify: ${toVerify.length}`);
+  console.log(`Concurrency: ${CONFIG.concurrency}, timeout: ${CONFIG.timeout}ms${DRY_RUN ? ' (DRY RUN)' : ''}\n`);
 
   const startTime = Date.now();
-  const deadChannels = [];
+  const now = new Date().toISOString();
+  const dead = [];
+  let live = 0;
+  let skipped = 0;
 
-  for (let batchStart = 0; batchStart < toVerify.length; batchStart += CONFIG.concurrency) {
-    const batch = toVerify.slice(batchStart, batchStart + CONFIG.concurrency);
-    const results = await Promise.all(
-      batch.map(({ ch, i }) => verifyChannel(ch, i, playlist.length))
-    );
-
-    for (let j = 0; j < batch.length; j++) {
-      const { ch, i } = batch[j];
-      const result = results[j];
-      tested++;
-
-      if (result.status === 'live') {
-        passed++;
-        if (!DRY_RUN) {
-          playlist[i].verified = true;
-          playlist[i].verifiedAt = new Date().toISOString();
-        }
+  for (let s = 0; s < toVerify.length; s += CONFIG.concurrency) {
+    const batch = toVerify.slice(s, s + CONFIG.concurrency);
+    const results = await Promise.all(batch.map(({ ch }) => verifyChannel(ch)));
+    batch.forEach(({ ch, i }, j) => {
+      const r = results[j];
+      if (r.status === 'skip') { skipped++; return; }
+      if (r.status === 'live') {
+        live++;
+        playlist[i].verified = true;
+        playlist[i].verifiedAt = now;
       } else {
-        failed++;
-        deadChannels.push({ index: i, name: ch.name, url: ch.url, ...result });
-        if (!DRY_RUN) {
-          playlist[i].verified = false;
-          playlist[i].verifiedAt = null;
-        }
+        dead.push({ index: i, name: ch.name, url: ch.url, error: r.error });
+        playlist[i].verified = false;
+        playlist[i].verifiedAt = null;
       }
-
-      const progress = `${tested}/${toVerify.length}`;
-      const statusIcon = result.status === 'live' ? '✓' : '✗';
-      console.log(`${progress} ${statusIcon} [${i}] ${ch.name || '?'} — ${result.status}${result.statusCode ? ` (${result.statusCode})` : ''}${result.error ? `: ${result.error}` : ''}`);
-    }
-
-    if (batchStart + CONFIG.concurrency < toVerify.length) {
-      await new Promise(r => setTimeout(r, CONFIG.cooldownBetweenBatches));
-    }
+      console.log(`${live + dead.length}/${toVerify.length} ${r.status === 'live' ? '✓' : '✗'} ${ch.name || '?'}${r.error ? ` — ${r.error}` : ''}`);
+    });
+    await new Promise(r => setTimeout(r, CONFIG.cooldownBetweenBatches));
   }
 
   const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
+  console.log(`\nRESULTS (${elapsed}s) — live: ${live}, dead: ${dead.length}, skipped: ${skipped}`);
 
-  console.log('\n' + '='.repeat(50));
-  console.log(`RESULTS (${elapsed}s)`);
-  console.log('='.repeat(50));
-  console.log(`Tested:  ${tested}`);
-  console.log(`Live:    ${passed}`);
-  console.log(`Dead:    ${failed}`);
-  console.log(`Rate:    ${(tested / elapsed).toFixed(1)} channels/s`);
+  let result = playlist;
+  if (PRUNE) result = result.filter(ch => ch.verified !== false);
+  if (DEDUPE) {
+    const seen = new Set();
+    result = result.filter(ch => (seen.has(ch.url) ? false : seen.add(ch.url)));
+  }
+  if (result.length !== playlist.length) {
+    console.log(`Removed ${playlist.length - result.length} entries (${PRUNE ? 'prune' : ''}${PRUNE && DEDUPE ? '+' : ''}${DEDUPE ? 'dedupe' : ''})`);
+  }
 
-  if (deadChannels.length > 0) {
-    console.log('\nDEAD CHANNELS:');
-    deadChannels.slice(0, 30).forEach((d, idx) => {
-      console.log(`  ${idx + 1}. [${d.index}] ${d.name} — ${d.statusCode || d.error}`);
-    });
-    if (deadChannels.length > 30) {
-      console.log(`  ... and ${deadChannels.length - 30} more`);
+  if (dead.length > 0) {
+    const reportPath = path.join(repoRoot, `dead-channels-${now.slice(0, 10)}.json`);
+    if (!DRY_RUN) {
+      await fs.writeFile(reportPath, JSON.stringify(dead, null, 2) + '\n', 'utf8');
+      console.log(`Dead channels report: ${reportPath}`);
     }
-
-    const reportPath = path.join(repoRoot, `dead-channels-${new Date().toISOString().slice(0, 10)}.json`);
-    await fs.writeFile(reportPath, JSON.stringify(deadChannels, null, 2), 'utf8');
-    console.log(`\nFull dead channels report: ${reportPath}`);
   }
 
   if (!DRY_RUN) {
-    await fs.writeFile(PLAYLIST_PATH, JSON.stringify(playlist, null, 2), 'utf8');
-    console.log(`\nPlaylist updated: ${PLAYLIST_PATH}`);
+    await fs.writeFile(PLAYLIST_PATH, JSON.stringify(result, null, 2) + '\n', 'utf8');
+    console.log(`Playlist updated: ${PLAYLIST_PATH} (${result.length} channels)`);
   }
 
-  process.exit(failed > 0 ? 1 : 0);
+  process.exit(dead.length > 0 && !PRUNE ? 1 : 0);
 }
 
 main().catch(e => {

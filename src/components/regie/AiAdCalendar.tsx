@@ -191,7 +191,7 @@ export function AiAdCalendar({ standalone }: AiAdCalendarProps): JSX.Element {
             <CampaignDraftCard
               draft={draft}
               busy={busy}
-              onConfirm={confirm}
+              onConfirm={() => { void confirm(); }}
               onCancel={() => setDraft(null)}
             />
           )}

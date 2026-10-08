@@ -10,6 +10,7 @@ import { captureUtmParams } from './utils/utmTracking.ts';
 import { startPresence } from './lib/devicePresence.ts';
 import { initSentry } from './lib/sentry.ts';
 import { useAuthStore } from './stores/authStore.ts';
+import type { JSX } from 'react';
 
 initSentry();
 
@@ -28,7 +29,7 @@ if (isTV) {
 }
 
 function AuthGate({ children }: { children: React.ReactNode }): JSX.Element {
-  const { user, loading, signUp, signIn, signInWithProvider, signInDemo, signOut } = useAuth();
+  const { user, loading, signUp, signIn, signInWithProvider, signInDemo } = useAuth();
   const setUser = useAuthStore((s) => s.setUser);
   const setLoading = useAuthStore((s) => s.setLoading);
 

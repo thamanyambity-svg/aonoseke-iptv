@@ -1,4 +1,5 @@
 import { Radio, Clock } from 'lucide-react';
+import type { JSX } from 'react';
 
 interface OnlineUser {
   id: string;

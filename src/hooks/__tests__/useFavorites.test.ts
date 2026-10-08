@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach, vi } from 'vitest';
+import { describe, it, expect, beforeEach } from 'vitest';
 import { useFavoritesStore } from '../../stores/favoritesStore';
 
 beforeEach(() => {
@@ -30,7 +30,7 @@ describe('useFavoritesStore', () => {
 
   it('persists favorites to localStorage', () => {
     useFavoritesStore.getState().toggleFavorite('url1');
-    const stored = JSON.parse(localStorage.getItem('iptv-favorites') ?? '[]');
+    const stored = JSON.parse(localStorage.getItem('iptv-favorites') ?? '[]') as string[];
     expect(stored).toContain('url1');
   });
 });

@@ -3,7 +3,7 @@ import {
   Users, Activity, TrendingUp, Eye, RefreshCw, X, Download,
   FileDown, Globe, Clock, Layers, Trash2, Radio, Zap, Target, Megaphone, CalendarDays,
 } from 'lucide-react';
-import { supabase } from '../lib/supabaseClient.ts';
+import { supabase, rpc } from '../lib/supabaseClient.ts';
 import { logger } from '../utils/logger.ts';
 import { WorldMap, type GeoPoint } from './WorldMap.tsx';
 import { Heatmap, type HeatCell } from './Heatmap.tsx';
@@ -15,6 +15,7 @@ import { AgentConsole } from './regie/AgentConsole.tsx';
 import { OnlineUsersPanel } from './admin/OnlineUsersPanel.tsx';
 import { LiveDevicesPanel } from './admin/LiveDevicesPanel.tsx';
 import { BarList } from './admin/BarList.tsx';
+import type { JSX } from 'react';
 
 const MapboxMap = lazy(() => import('./MapboxMap.tsx'));
 const MAPBOX_TOKEN = import.meta.env.VITE_MAPBOX_TOKEN as string | undefined;
@@ -136,11 +137,15 @@ function safeDisplayName(user: OnlineUser | RecentUser): string {
  * dangereux, et entoure systématiquement de guillemets (RFC 4180).
  */
 function csvEscape(value: unknown): string {
-  const s = value == null ? '' : String(value);
+  const s =
+    typeof value === 'string' ? value
+    : value == null ? ''
+    : typeof value === 'number' || typeof value === 'boolean' || typeof value === 'bigint' ? String(value)
+    : JSON.stringify(value);
   // Doubler les guillemets internes
   const escaped = s.replace(/"/g, '""');
   // Si contient virgule, guillemet, retour ligne, ou commence par caractère dangereux
-  const needsQuote = /[,\"\n\r]/.test(s) || /^[=+\-@\t\r]/.test(s);
+  const needsQuote = /[,"\n\r]/.test(s) || /^[=+\-@\t\r]/.test(s);
   const quoted = needsQuote ? `"${escaped}"` : escaped;
   // Préfixer les formules potentielles (=, +, -, @) par une apostrophe
   if (/^[=+\-@]/.test(quoted)) return `'${quoted}`;
@@ -148,7 +153,12 @@ function csvEscape(value: unknown): string {
 }
 
 function safeArray<T>(value: unknown): T[] {
-  return Array.isArray(value) ? value : [];
+  return Array.isArray(value) ? (value as T[]) : [];
+}
+
+/** Les RPC « returns table » renvoient un tableau : on prend la 1re ligne. */
+function firstRow(data: unknown): unknown {
+  return Array.isArray(data) ? (data as unknown[])[0] : data;
 }
 
 function safeNumber(value: unknown): number {
@@ -194,7 +204,21 @@ export default function AdminDashboard({ user, onClose, initialTab = 'audience' 
     return null;
   }
 
-  return <AdminDashboardInner user={user} onClose={onClose} initialTab={initialTab} />;
+  return (
+    <ErrorBoundary fallback={<AdminRenderFallback />}>
+      <AdminDashboardInner user={user} onClose={onClose} initialTab={initialTab} />
+    </ErrorBoundary>
+  );
+}
+
+function AdminRenderFallback(): JSX.Element {
+  return (
+    <div className="admin admin-render-fallback" role="alert" style={{ background: 'var(--void)', color: 'var(--text-1)', padding: 24 }}>
+      <h2>Erreur d'affichage — Tableau de bord</h2>
+      <p>Une erreur est survenue lors du rendu du tableau de bord. Fermez et rouvrez l'admin ou rechargez la page.</p>
+      <button type="button" className="admin-btn" onClick={() => { window.location.reload(); }}>Recharger</button>
+    </div>
+  );
 }
 
 function AdminDashboardInner({ user, onClose, initialTab }: {
@@ -225,6 +249,28 @@ function AdminDashboardInner({ user, onClose, initialTab }: {
   const debounceTimerRef = useRef<number | null>(null);
 
   // ── Chargement complet des données ────────────────────────────────────────
+  function parseGeo(raw: unknown): GeoStats | null {
+    if (!raw || typeof raw !== 'object') return null;
+    const data = raw as { total?: number; located?: number; countries?: unknown };
+    const countries = Array.isArray(data.countries)
+      ? (data.countries as CountryStat[])
+      : [];
+    const points: GeoPoint[] = countries
+      .filter((c) => typeof c.lat === 'number' && typeof c.lon === 'number')
+      .map((c) => ({
+        lat: c.lat as number,
+        lon: c.lon as number,
+        country: c.country,
+        city: null,
+      }));
+    return {
+      total: data.total ?? 0,
+      located: data.located ?? 0,
+      countries,
+      points,
+    };
+  }
+
   const load = useCallback(async (): Promise<void> => {
     if (!supabase) {
       setError('Backend non configuré');
@@ -248,18 +294,18 @@ function AdminDashboardInner({ user, onClose, initialTab }: {
 
       // Vérification des erreurs (la RPC lève une exception si non-admin,
       // mais on garde le garde-fou côté client pour la robustesse)
-      const errors = [s.error, u.error, g.error, e.error, h.error, c.error, a.error, d.error, seg.error].filter(Boolean);
-      if (errors.length > 0) throw errors[0];
+      const firstError = [s.error, u.error, g.error, e.error, h.error, c.error, a.error, d.error, seg.error].find((x) => x !== null);
+      if (firstError) throw new Error(firstError.message);
 
       // admin_stats / admin_geo_stats / admin_engagement sont des RPC "returns table"
       // -> Supabase renvoie un TABLEAU [{...}] : on prend la 1re ligne (sinon
       // stats/eng/geo seraient un tableau et stats.total_users serait undefined
       // -> crash .toLocaleString() au rendu).
-      const statsRow = Array.isArray(s.data) ? s.data[0] : s.data;
+      const statsRow = firstRow(s.data);
       setStats(statsRow && typeof statsRow === 'object' ? (statsRow as Stats) : null);
       setUsers(safeArray<RecentUser>(u.data));
-      setGeo(parseGeo(Array.isArray(g.data) ? g.data[0] : g.data));
-      const engRow = Array.isArray(e.data) ? e.data[0] : e.data;
+      setGeo(parseGeo(firstRow(g.data)));
+      const engRow = firstRow(e.data);
       setEng(engRow && typeof engRow === 'object' ? (engRow as Engagement) : null);
       setHeat(safeArray<HeatCell>(h.data));
       setContent(safeArray<{ category: string; count: number }>(c.data).map((x) => ({ label: safeString(x.category), count: safeNumber(x.count) })));
@@ -281,33 +327,12 @@ function AdminDashboardInner({ user, onClose, initialTab }: {
   }, []);
 
   // ── Parsing de la géo (la RPC renvoie { total, located, countries: jsonb }) ─
-  function parseGeo(raw: unknown): GeoStats | null {
-    if (!raw || typeof raw !== 'object') return null;
-    const data = raw as { total?: number; located?: number; countries?: unknown };
-    const countries = Array.isArray(data.countries)
-      ? (data.countries as CountryStat[])
-      : [];
-    const points: GeoPoint[] = countries
-      .filter((c) => typeof c.lat === 'number' && typeof c.lon === 'number')
-      .map((c) => ({
-        lat: c.lat as number,
-        lon: c.lon as number,
-        country: c.country,
-        city: null,
-      }));
-    return {
-      total: data.total ?? 0,
-      located: data.located ?? 0,
-      countries,
-      points,
-    };
-  }
 
   // ── Chargement des utilisateurs en ligne (léger, fréquent) ────────────────
   const loadOnline = useCallback(async (): Promise<void> => {
     if (!supabase) return;
     if (!isVisibleRef.current) return; // on ne martèle pas la base si onglet caché
-    const { data, error } = await supabase.rpc('admin_online_users');
+    const { data, error } = await rpc('admin_online_users');
     if (error) {
       logger.warn('loadOnline failed', { error: error.message });
       return;
@@ -321,6 +346,7 @@ function AdminDashboardInner({ user, onClose, initialTab }: {
   }, []);
   // ── Chargement initial + polling intelligent ─────────────────────────────
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- chargement/initialisation au montage : le setState est voulu
     void load();
     void loadOnline();
 
@@ -371,7 +397,7 @@ function AdminDashboardInner({ user, onClose, initialTab }: {
       if (debounceTimerRef.current !== null) {
         window.clearTimeout(debounceTimerRef.current);
       }
-      if (channel) supabase?.removeChannel(channel);
+      if (channel) void supabase?.removeChannel(channel);
     };
   }, [load, loadOnline]);
 
@@ -427,7 +453,7 @@ function AdminDashboardInner({ user, onClose, initialTab }: {
       `Confirmez en cliquant sur OK.`;
     if (!window.confirm(confirmText)) return;
 
-    const { error: err } = await supabase.rpc('admin_delete_user', { target: id });
+    const { error: err } = await rpc('admin_delete_user', { target: id });
     if (err) {
       window.alert('Suppression impossible : ' + err.message);
       return;
@@ -455,8 +481,7 @@ function AdminDashboardInner({ user, onClose, initialTab }: {
     { icon: <Target size={18} />,     label: 'CTR pub · 7j',           value: `${ctr7d} %`,                                    hi: true },
   ] : [];
 
-  try {
-    return (
+  return (
       <div className="admin">
         {/* En-tête */}
         <div className="admin-header">
@@ -728,15 +753,4 @@ function AdminDashboardInner({ user, onClose, initialTab }: {
       )}
       </div>
     );
-  } catch (err) {
-    logger.error('AdminDashboard render failed', err as Error);
-    return (
-      <div className="admin admin-render-fallback" role="alert" style={{ background: 'var(--void)', color: 'var(--text-1)', padding: 24 }}>
-        <h2>Erreur d'affichage — Tableau de bord</h2>
-        <p>Une erreur est survenue lors du rendu du tableau de bord. Fermez et rouvrez l'admin ou rechargez la page.</p>
-        <pre style={{ whiteSpace: 'pre-wrap', color: '#f8d7da' }}>{String((err as Error)?.message ?? err)}</pre>
-        <button type="button" className="admin-btn" onClick={() => { window.location.reload(); }}>Recharger</button>
-      </div>
-    );
-  }
 }

@@ -13,7 +13,7 @@
  * @module useAdPrefetch
  */
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { supabase } from '../lib/supabaseClient.ts';
+import { supabase, rpc } from '../lib/supabaseClient.ts';
 import { logger } from '../utils/logger.ts';
 import type { AdCampaign } from './useAdMatrix.ts';
 
@@ -69,7 +69,7 @@ export function useAdPrefetch(enabled: boolean): { ad: PrefetchedAd | null; dism
   const loadPool = useCallback(async (): Promise<void> => {
     if (!supabase) return;
     try {
-      const { data, error } = await supabase.rpc('get_active_campaigns', { p_limit: 10 });
+      const { data, error } = await rpc('get_active_campaigns', { p_limit: 10 });
       if (!error && Array.isArray(data)) pool.current = data as AdCampaign[];
     } catch (e) {
       logger.warn('useAdPrefetch: loadPool failed', { error: String(e) });
@@ -79,6 +79,7 @@ export function useAdPrefetch(enabled: boolean): { ad: PrefetchedAd | null; dism
   const scheduleNext = useCallback((delay: number): void => {
     if (pool.current.length === 0) {
       timers.current.push(window.setTimeout(() => {
+        // eslint-disable-next-line react-hooks/immutability -- référence récursive voulue (re-planification)
         void loadPool().then(() => scheduleNext(RETRY_MS));
       }, delay));
       return;
@@ -105,6 +106,7 @@ export function useAdPrefetch(enabled: boolean): { ad: PrefetchedAd | null; dism
   useEffect(() => {
     if (!enabled) {
       clearAll();
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- chargement/initialisation au montage : le setState est voulu
       setAd(null);
       return;
     }

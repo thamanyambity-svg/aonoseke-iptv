@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { supabase } from '../../lib/supabaseClient';
 import type { Advertiser } from '../../hooks/useAdvertisers';
 import type { Campaign, CampaignType, CampaignContent } from '../../hooks/useCampaigns';
+import type { JSX } from 'react';
 
 function toLocalInput(iso?: string | null): string {
   if (!iso) return '';
