@@ -75,14 +75,14 @@ const SCENES = {
 };
 
 const SECTORS = [
-  { id: 'sourcing', eyebrow: 'SOURCING & ACHATS', title: 'Achetez directement à la source', sub: 'Fournisseurs vérifiés en Chine, Turquie, Dubaï, Japon et Thaïlande.', cta: 'Demander un devis' },
-  { id: 'maritime', eyebrow: 'FRET MARITIME', title: "Vos conteneurs, de l'Asie à Kinshasa", sub: "Un suivi complet, de l'embarquement à la livraison.", cta: 'Voir le circuit' },
-  { id: 'aerien', eyebrow: 'FRET AÉRIEN', title: 'Urgent ? Livré par avion', sub: 'Des délais maîtrisés pour vos marchandises sensibles.', cta: 'Demander un devis' },
-  { id: 'douane', eyebrow: 'DÉDOUANEMENT KINSHASA', title: 'La douane sans casse-tête', sub: 'Commissionnaires agréés, dossier complet, circuit maîtrisé.', cta: 'Comment ça marche' },
-  { id: 'qualite', eyebrow: 'CONTRÔLE QUALITÉ', title: 'Vérifié avant de partir', sub: "Inspection avant expédition et rapport photo.", cta: 'En savoir plus' },
-  { id: 'securise', eyebrow: 'PAIEMENT SÉCURISÉ 60/40', title: "Ne payez le solde qu'à réception", sub: '60 % sur compte séquestre, 40 % à la livraison conforme.', cta: 'Comment ça marche' },
-  { id: 'financement', eyebrow: 'FINANCEMENT TRADE', title: 'Financez vos achats à l’international', sub: 'Préfinancement, crédit documentaire, assurance-crédit.', cta: 'Nous contacter' },
-  { id: 'conseil', eyebrow: 'CONSEIL & ACCOMPAGNEMENT', title: 'Un dossier d’import solide', sub: 'Étude de faisabilité, fiscalité et douane.', cta: 'Parler à un conseiller' },
+  { id: 'sourcing', scene: SCENES.sourcing, eyebrow: 'SOURCING & ACHATS', title: 'Achetez directement à la source', sub: 'Fournisseurs vérifiés en Chine, Turquie, Dubaï, Japon et Thaïlande.', cta: 'Demander un devis' },
+  { id: 'maritime', scene: SCENES.maritime, eyebrow: 'FRET MARITIME', title: "Vos conteneurs, de l'Asie à Kinshasa", sub: "Un suivi complet, de l'embarquement à la livraison.", cta: 'Voir le circuit' },
+  { id: 'aerien', scene: SCENES.aerien, eyebrow: 'FRET AÉRIEN', title: 'Urgent ? Livré par avion', sub: 'Des délais maîtrisés pour vos marchandises sensibles.', cta: 'Demander un devis' },
+  { id: 'douane', scene: SCENES.douane, eyebrow: 'DÉDOUANEMENT KINSHASA', title: 'La douane sans casse-tête', sub: 'Commissionnaires agréés, dossier complet, circuit maîtrisé.', cta: 'Comment ça marche' },
+  { id: 'qualite', scene: SCENES.qualite, eyebrow: 'CONTRÔLE QUALITÉ', title: 'Vérifié avant de partir', sub: "Inspection avant expédition et rapport photo.", cta: 'En savoir plus' },
+  { id: 'securise', scene: SCENES.securise, eyebrow: 'PAIEMENT SÉCURISÉ 60/40', title: "Ne payez le solde qu'à réception", sub: '60 % sur compte séquestre, 40 % à la livraison conforme.', cta: 'Comment ça marche' },
+  { id: 'financement', scene: SCENES.financement, eyebrow: 'FINANCEMENT TRADE', title: 'Financez vos achats à l’international', sub: 'Préfinancement, crédit documentaire, assurance-crédit.', cta: 'Nous contacter' },
+  { id: 'conseil', scene: SCENES.conseil, eyebrow: 'CONSEIL & ACCOMPAGNEMENT', title: 'Un dossier d’import solide', sub: 'Étude de faisabilité, fiscalité et douane.', cta: 'Parler à un conseiller' },
 ];
 
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
@@ -110,7 +110,7 @@ p{font-weight:500;color:${CREAM};opacity:.9;line-height:1.35;font-size:${banner 
 <div class="bg"></div><div class="grid"></div><div class="bar"></div>
 <svg class="scene" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg"><defs>
 <radialGradient id="orb" cx="38%" cy="35%" r="70%"><stop offset="0%" stop-color="#3a2a05"/><stop offset="100%" stop-color="#0d0900"/></radialGradient></defs>
-${SCENES[s.id]()}</svg>
+${s.scene()}</svg>
 <div class="brand">ALPHA IMPORT EXCHANGE</div>
 <div class="txt"><div class="eyebrow">${esc(s.eyebrow)}</div><h1>${esc(s.title)}</h1><p>${esc(s.sub)}</p><span class="cta">${esc(s.cta)} →</span></div>
 <div class="legal">${esc(LEGAL)}</div></body></html>`;
