@@ -14,6 +14,10 @@ export const Player: React.FC<PlayerProps> = ({ url, onError }): JSX.Element => 
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const hlsRef = useRef<Hls | null>(null);
+  // onError est lu via une ref : une fonction recréée à chaque rendu du parent
+  // ne doit pas relancer la lecture (l'effet HLS ne dépend que de `url`).
+  const onErrorRef = useRef(onError);
+  useEffect(() => { onErrorRef.current = onError; }, [onError]);
   const [isLoading, setIsLoading] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [recovering, setRecovering] = useState(false);
@@ -60,8 +64,15 @@ export const Player: React.FC<PlayerProps> = ({ url, onError }): JSX.Element => 
     setIsLoading(true);
     setRecovering(false);
 
+    // Minuteur d'erreur réseau : annulé dès que la lecture reprend, pour ne pas
+    // afficher (ni marquer « morte ») une chaîne qui s'est rétablie.
+    let errorTimer: ReturnType<typeof setTimeout> | null = null;
+    const clearErrorTimer = (): void => {
+      if (errorTimer) { clearTimeout(errorTimer); errorTimer = null; }
+    };
+
     const handleWaiting = (): void => setIsLoading(true);
-    const handlePlaying = (): void => { setIsLoading(false); setRecovering(false); };
+    const handlePlaying = (): void => { clearErrorTimer(); setIsLoading(false); setRecovering(false); };
     const handleCanPlay = (): void => setIsLoading(false);
     const handleVideoError = (): void => setIsLoading(false);
 
@@ -96,10 +107,12 @@ export const Player: React.FC<PlayerProps> = ({ url, onError }): JSX.Element => 
               hls.startLoad();
               logger.warn('HLS Network error — retrying', { details: data.details });
               // Only surface the error after recovery attempts have clearly failed
-              setTimeout(() => {
+              clearErrorTimer();
+              errorTimer = setTimeout(() => {
+                errorTimer = null;
                 setRecovering(false);
                 setIsLoading(false);
-                onError?.(ErrorMessages.STREAM_UNAVAILABLE);
+                onErrorRef.current?.(ErrorMessages.STREAM_UNAVAILABLE);
               }, 5000);
               break;
             case Hls.ErrorTypes.MEDIA_ERROR:
@@ -109,7 +122,7 @@ export const Player: React.FC<PlayerProps> = ({ url, onError }): JSX.Element => 
             default:
               hls.destroy();
               setIsLoading(false);
-              onError?.(ErrorMessages.STREAM_ERROR);
+              onErrorRef.current?.(ErrorMessages.STREAM_ERROR);
               logger.error('HLS Fatal error', undefined, { type: data.type, details: data.details });
               break;
           }
@@ -127,6 +140,7 @@ export const Player: React.FC<PlayerProps> = ({ url, onError }): JSX.Element => 
       video.addEventListener('loadedmetadata', onMetadata);
 
       return (): void => {
+        clearErrorTimer();
         video.removeEventListener('waiting', handleWaiting);
         video.removeEventListener('playing', handlePlaying);
         video.removeEventListener('canplay', handleCanPlay);
@@ -134,12 +148,13 @@ export const Player: React.FC<PlayerProps> = ({ url, onError }): JSX.Element => 
         video.removeEventListener('loadedmetadata', onMetadata);
       };
     } else {
-      onError?.(ErrorMessages.HLS_NOT_SUPPORTED);
+      onErrorRef.current?.(ErrorMessages.HLS_NOT_SUPPORTED);
       logger.error('HLS not supported');
       setIsLoading(false);
     }
 
     return (): void => {
+      clearErrorTimer();
       video.removeEventListener('waiting', handleWaiting);
       video.removeEventListener('playing', handlePlaying);
       video.removeEventListener('canplay', handleCanPlay);
@@ -149,7 +164,7 @@ export const Player: React.FC<PlayerProps> = ({ url, onError }): JSX.Element => 
         hlsRef.current = null;
       }
     };
-  }, [url, onError]);
+  }, [url]);
 
   if (!url) {
     return (

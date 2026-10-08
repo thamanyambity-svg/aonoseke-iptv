@@ -34,6 +34,8 @@ import { usePlayerStore } from './stores/playerStore.ts';
 import { useFavoritesStore } from './stores/favoritesStore.ts';
 import { useAuthStore } from './stores/authStore.ts';
 
+const DOCKED_SIDEBAR_QUERY = '(min-width: 1100px)';
+
 const Profile = lazy(() => import('./components/Profile.tsx'));
 
 export { countryFlag } from './components/Sidebar.tsx';
@@ -89,7 +91,8 @@ function App(): JSX.Element {
 
   const handleSelectChannel = useCallback(
     (channel: Channel): void => {
-      setSidebarOpen(false);
+      // Grand écran : la liste reste ouverte (zapping). Mobile/tablette : tiroir qui se referme.
+      if (!window.matchMedia(DOCKED_SIDEBAR_QUERY).matches) setSidebarOpen(false);
       if (channel.url === activeChannel?.url) {
         playChannel(channel);
         return;
