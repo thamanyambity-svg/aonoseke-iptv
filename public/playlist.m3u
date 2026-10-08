@@ -33,8 +33,6 @@ https://amogonetworx-artflix-1-nl.samsung.wurl.tv/playlist.m3u8
 https://d1si3n1st4nkgb.cloudfront.net/10502/88886011/hls/master.m3u8?ads.xumo_channelId=88886011
 #EXTINF:-1 tvg-id="Cine Sony (720p)" tvg-name="Cine Sony (720p)" tvg-logo="https://i.imgur.com/bZWoDTg.png" group-title="Movies" country="US",Cine Sony (720p)
 https://a-cdn.klowdtv.com/live1/cine_720p/playlist.m3u8
-#EXTINF:-1 tvg-id="Classique TV (360p)" tvg-name="Classique TV (360p)" tvg-logo="https://i.imgur.com/rHxcraT.png" group-title="Movies" country="BR",Classique TV (360p)
-https://stmv1.srvif.com/classique/classique/playlist.m3u8
 #EXTINF:-1 tvg-id="Ebony TV by Lionsgate (1080p)" tvg-name="Ebony TV by Lionsgate (1080p)" tvg-logo="https://provider-static.plex.tv/epg/cms/production/234d5377-ab07-41bf-acd6-34c17c1c051a/EbonyTV_Plex_Logo_Light_1500x1000.png" group-title="Movies" country="US",Ebony TV by Lionsgate (1080p)
 https://aegis-cloudfront-1.tubi.video/a0ad4b53-ab3a-48dd-be12-bc7f533c372c/playlist.m3u8
 #EXTINF:-1 tvg-id="Gravitas Movies (1080p)" tvg-name="Gravitas Movies (1080p)" tvg-logo="https://i.imgur.com/H2hD4vT.png" group-title="Movies" country="US",Gravitas Movies (1080p)
@@ -193,12 +191,162 @@ https://rakutenaa-zylo-screamin-rakuten-p11ej.amagi.tv/playlist/rakutenAA-zylo-s
 https://d1yl6bf4hrzbr0.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-5km3zs4zs9sp0/allo.m3u8
 #EXTINF:-1 tvg-id="TR24 (720p)" tvg-name="TR24 (720p)" tvg-logo="https://i.ibb.co/fQrBY1M/tr24-telepack.jpg" group-title="Afrique" country="CM",TR24 (720p)
 https://stream.it-innov.com/tr24/index.m3u8
-#EXTINF:-1 tvg-id="2M" tvg-name="2M" tvg-logo="https://i.imgur.com/PJYTfHi.png" group-title="Afrique" country="MA",2M
-http://185.9.2.18/chid_218/index.m3u8
 #EXTINF:-1 tvg-id="MBC 5 (1080p)" tvg-name="MBC 5 (1080p)" tvg-logo="https://i.imgur.com/fRWaDyF.png" group-title="Afrique" country="MA",MBC 5 (1080p)
 https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-5/ee6b000cee0629411b666ab26cb13e9b/index.m3u8
-#EXTINF:-1 tvg-id="TV2 (1080p)" tvg-name="TV2 (1080p)" tvg-logo="https://i.imgur.com/VEb631f.png" group-title="Afrique" country="DZ",TV2 (1080p)
-http://185.9.2.18/chid_347/index.m3u8
+#EXTINF:-1 tvg-id="A2i Music (720p)" tvg-name="A2i Music (720p)" tvg-logo="https://i.imgur.com/Fykhzxh.jpg" group-title="Afrique" country="SN",A2i Music (720p)
+https://stream.sen-gt.com/A2iMusic/myStream/playlist.m3u8
+#EXTINF:-1 tvg-id="A2i Religion (720p)" tvg-name="A2i Religion (720p)" tvg-logo="https://i.imgur.com/54WrwyN.jpg" group-title="Afrique" country="SN",A2i Religion (720p)
+https://stream.sen-gt.com/A2iReligion/myStream/playlist.m3u8
+#EXTINF:-1 tvg-id="Adinkra TV (1080p)" tvg-name="Adinkra TV (1080p)" tvg-logo="https://i.imgur.com/uwuSXJ8.png" group-title="Afrique" country="GH",Adinkra TV (1080p)
+https://59d39900ebfb8.streamlock.net/adinkratvny/adinkratvny/playlist.m3u8
+#EXTINF:-1 tvg-id="Akili Kids!" tvg-name="Akili Kids!" tvg-logo="https://i.imgur.com/xFm2co6.png" group-title="Afrique" country="KE",Akili Kids!
+https://m6.livecdn.io/akilikids.co.ke/akilikids.smil/playlist.m3u8
+#EXTINF:-1 tvg-id="AL24 News" tvg-name="AL24 News" tvg-logo="https://i.imgur.com/vyVEXYL.png" group-title="Afrique" country="DZ",AL24 News
+https://cdn.live.easybroadcast.io/abr_corp/66_al24_u4yga6h/corp/66_al24_u4yga6h_240p/chunks.m3u8
+#EXTINF:-1 tvg-id="Al Masar TV (576p)" tvg-name="Al Masar TV (576p)" tvg-logo="https://play-lh.googleusercontent.com/FHPrsr391mPFqKfTq6ZdvWPZNVfsZeTAVQ8rjQF-NosnRdNipUy5xa43RWkiF4tGcQU" group-title="Afrique" country="LY",Al Masar TV (576p)
+https://starmenajo.com/hls/almasar/index.m3u8
+#EXTINF:-1 tvg-id="Cape Town TV (576p)" tvg-name="Cape Town TV (576p)" tvg-logo="https://i.imgur.com/Y8FK1Kk.png" group-title="Afrique" country="ZA",Cape Town TV (576p)
+https://cdn.freevisiontv.co.za/sttv/smil:ctv.stream.smil/playlist.m3u8
+#EXTINF:-1 tvg-id="Chabiba TV (360p)" tvg-name="Chabiba TV (360p)" tvg-logo="https://i.imgur.com/qVTOklV.png" group-title="Afrique" country="SN",Chabiba TV (360p)
+https://endour.net/hls/RUgLAPCbPdF5oPSTX2Hvl/index.m3u8
+#EXTINF:-1 tvg-id="Chada TV (720p)" tvg-name="Chada TV (720p)" tvg-logo="https://freebox.cdn.scw.iliad.fr/medium_Logo_chada_tv_2ee1412d38.png" group-title="Afrique" country="MA",Chada TV (720p)
+https://edge13.vedge.infomaniak.com/livecast/ik:chadatv/manifest.m3u8
+#EXTINF:-1 tvg-id="Champion TV" tvg-name="Champion TV" tvg-logo="https://i.imgur.com/WjHSrHN.png" group-title="Afrique" country="CI",Champion TV
+https://stream.berosat.live/hls/champion-tv/champion-tv.m3u8
+#EXTINF:-1 tvg-id="Coptic TV (720p)" tvg-name="Coptic TV (720p)" tvg-logo="https://www.ctvchannel.tv/images/CTV-logo-white.png" group-title="Afrique" country="EG",Coptic TV (720p)
+https://ctv.icopts.app/CTV/index.fmp4.m3u8
+#EXTINF:-1 tvg-id="D3 TV (720p)" tvg-name="D3 TV (720p)" tvg-logo="https://i.imgur.com/uFEIBtB.png" group-title="Afrique" country="ML",D3 TV (720p)
+https://lbgo.bozztv.com/ssh101/ssh101/d3tvnet/playlist.m3u8
+#EXTINF:-1 tvg-id="Dabanga TV (1080p)" tvg-name="Dabanga TV (1080p)" tvg-logo="https://i.imgur.com/BH1N6TA.png" group-title="Afrique" country="SD",Dabanga TV (1080p)
+https://hls.dabangasudan.org/hls/stream.m3u8
+#EXTINF:-1 tvg-id="Eden TV (540p)" tvg-name="Eden TV (540p)" tvg-logo="https://i.imgur.com/4ClnG0x.png" group-title="Afrique" country="BJ",Eden TV (540p)
+https://rtmp.edentv.bj/hls/stream.m3u8
+#EXTINF:-1 tvg-id="El Watania 1 (1080i)" tvg-name="El Watania 1 (1080i)" tvg-logo="https://i.imgur.com/gNr2V14.png" group-title="Afrique" country="TN",El Watania 1 (1080i)
+https://sw1.tanitweb.net/TunisiaTV/_definst_/watania1/chunklist.m3u8
+#EXTINF:-1 tvg-id="El Watania 2 (1080p)" tvg-name="El Watania 2 (1080p)" tvg-logo="https://i.imgur.com/kgkrD3V.png" group-title="Afrique" country="TN",El Watania 2 (1080p)
+https://sw1.tanitweb.net/TunisiaTV/_definst_/watania2/playlist.m3u8?DVR
+#EXTINF:-1 tvg-id="Esaie 45 Tele" tvg-name="Esaie 45 Tele" tvg-logo="https://i.imgur.com/nc9QBnD.png" group-title="Afrique" country="CG",Esaie 45 Tele
+https://stream.berosat.live/hls/esaie45-tv/esaie45-tv.m3u8
+#EXTINF:-1 tvg-id="Ev-tele (720p)" tvg-name="Ev-tele (720p)" tvg-logo="https://i.imgur.com/iBlXl2T.png" group-title="Afrique" country="CG",Ev-tele (720p)
+https://playtv4k.live/live/EVTELE/index.m3u8
+#EXTINF:-1 tvg-id="Faith Africa (1080p)" tvg-name="Faith Africa (1080p)" tvg-logo="https://i.imgur.com/yAZE7aU.png" group-title="Afrique" country="ZA",Faith Africa (1080p)
+https://faithnow-hls.secdn.net/faithnow-holland-channel/play/FaithAfrica.smil/playlist.m3u8
+#EXTINF:-1 tvg-id="Fortis TV" tvg-name="Fortis TV" tvg-logo="https://i.imgur.com/HoO9Urd.jpg" group-title="Afrique" country="NG",Fortis TV
+https://stream.fortistv.com/hls/fortis-news/index.m3u8
+#EXTINF:-1 tvg-id="FORT TV (480p)" tvg-name="FORT TV (480p)" tvg-logo="https://i.ibb.co/4KN5zW9/fort-tv-logo-GENE.png" group-title="Afrique" country="UG",FORT TV (480p)
+https://fort.co-works.org/memfs/87017643-274a-4bc0-a786-7767a0d159c2.m3u8
+#EXTINF:-1 tvg-id="GMS TV" tvg-name="GMS TV" tvg-logo="https://i.imgur.com/Ue02CIH.png" group-title="Afrique" country="SN",GMS TV
+https://acasmedia6.acangroup.org/gmstv/gmstv_output/playlist.m3u8
+#EXTINF:-1 tvg-id="Great Commission TV" tvg-name="Great Commission TV" tvg-logo="https://raw.githubusercontent.com/songwenhui239/Songwenhui239/refs/heads/main/Great%20Commission%20TV.jpeg" group-title="Afrique" country="KE",Great Commission TV
+https://stream-server9-jupiter.muxlive.com/hls/gctvghana/index.m3u8
+#EXTINF:-1 tvg-id="Isibo TV" tvg-name="Isibo TV" tvg-logo="https://i.imgur.com/bXhEeTC.png" group-title="Afrique" country="RW",Isibo TV
+https://5c46fa289c89f.streamlock.net/pub2live/myStream/playlist.m3u8
+#EXTINF:-1 tvg-id="K24 (1080p)" tvg-name="K24 (1080p)" tvg-logo="https://i.imgur.com/SUjo6Bm.png" group-title="Afrique" country="KE",K24 (1080p)
+https://livecdn.premiumfree.tv/afxpstr/K24Backup/index.m3u8
+#EXTINF:-1 tvg-id="KassouaTV (720p)" tvg-name="KassouaTV (720p)" tvg-logo="https://i.imgur.com/EfX3HNG.png" group-title="Afrique" country="BJ",KassouaTV (720p)
+https://playtv4k.live/live/kassouatv/index.m3u8
+#EXTINF:-1 tvg-id="KC2 (720p)" tvg-name="KC2 (720p)" tvg-logo="https://i.imgur.com/PsYPzNc.png" group-title="Afrique" country="RW",KC2 (720p)
+https://5c46fa289c89f.streamlock.net/kc2/kc2/chunklist.m3u8
+#EXTINF:-1 tvg-id="KK TV (1080p)" tvg-name="KK TV (1080p)" tvg-logo="https://i.imgur.com/jWOB0oU.png" group-title="Afrique" country="AO",KK TV (1080p)
+https://w1.manasat.com/ktv-angola/smil:ktv-angola.smil/playlist.m3u8
+#EXTINF:-1 tvg-id="KRC TV" tvg-name="KRC TV" tvg-logo="https://i.imgur.com/8c9Uqks.jpeg" group-title="Afrique" country="UG",KRC TV
+https://channels.ad-ug.com/live/ch03/index.m3u8
+#EXTINF:-1 tvg-id="Laura Dave Media TV (720p)" tvg-name="Laura Dave Media TV (720p)" tvg-logo="https://i.imgur.com/zzG1S2n.png" group-title="Afrique" country="CM",Laura Dave Media TV (720p)
+https://streaming.lauradavemedia.com/ldm/index.m3u8
+#EXTINF:-1 tvg-id="LN24SA (1080p)" tvg-name="LN24SA (1080p)" tvg-logo="https://i.imgur.com/Hg5YTwu.png" group-title="Afrique" country="ZA",LN24SA (1080p)
+https://cdnstack.internetmultimediaonline.org/ln24/ln24.stream/playlist.m3u8
+#EXTINF:-1 tvg-id="Lollywood HD TV" tvg-name="Lollywood HD TV" tvg-logo="https://i.imgur.com/fQhrsdr.png" group-title="Afrique" country="CD",Lollywood HD TV
+https://stream.berosat.live/hls/lollywood-hd/lollywood-hd.m3u8
+#EXTINF:-1 tvg-id="Louga TV (480p)" tvg-name="Louga TV (480p)" tvg-logo="https://i.ibb.co/xXZ5kFy/unnamed.jpg" group-title="Afrique" country="SN",Louga TV (480p)
+https://stream.sen-gt.com/Mbacke/myStream/playlist.m3u8
+#EXTINF:-1 tvg-id="LoveWorld Arabic (360p)" tvg-name="LoveWorld Arabic (360p)" tvg-logo="https://i.imgur.com/KYMjRjK.png" group-title="Afrique" country="NG",LoveWorld Arabic (360p)
+https://go5lm6a6dawb-hls-live.5centscdn.com/lwarabic/53132d996b4263ec0d7b602292c46eaf.sdp/playlist.m3u8
+#EXTINF:-1 tvg-id="LoveWorld Persia (720p)" tvg-name="LoveWorld Persia (720p)" tvg-logo="https://i.imgur.com/Vd2xPxh.png" group-title="Afrique" country="NG",LoveWorld Persia (720p)
+https://cdn3.wowza.com/5/aVJETlF0UFdmYTFu/LWPP/ngrp:persia.stream_all/playlist.m3u8
+#EXTINF:-1 tvg-id="LoveworldSAT (1080p)" tvg-name="LoveworldSAT (1080p)" tvg-logo="https://i.imgur.com/Fg65XCS.png" group-title="Afrique" country="NG",LoveworldSAT (1080p)
+https://cdnstack.internetmultimediaonline.org/lwsat/lwsat.stream/index.m3u8
+#EXTINF:-1 tvg-id="LoveWorld UK (1080p)" tvg-name="LoveWorld UK (1080p)" tvg-logo="https://i.imgur.com/JgHbDmF.png" group-title="Afrique" country="NG",LoveWorld UK (1080p)
+https://cdn3.wowza.com/5/L1Uzd2FrbVlLRG1W/live/smil:lwukweb.smil/playlist.m3u8
+#EXTINF:-1 tvg-id="LoveWorld USA (720p)" tvg-name="LoveWorld USA (720p)" tvg-logo="" group-title="Afrique" country="NG",LoveWorld USA (720p)
+https://cdn3.wowza.com/5/RGtVZkFxL3FOQkxX/LWU/ngrp:lwu.stream_all/playlist.m3u8
+#EXTINF:-1 tvg-id="Mahaasin TV" tvg-name="Mahaasin TV" tvg-logo="https://i.imgur.com/wdfdKvC.png" group-title="Afrique" country="TZ",Mahaasin TV
+https://mahaasintv.livebox.co.in/mahaasintvhls/mahaasintv.m3u8
+#EXTINF:-1 tvg-id="MBC 1 Egypt (1080p)" tvg-name="MBC 1 Egypt (1080p)" tvg-logo="https://i.imgur.com/CiA3plN.png" group-title="Afrique" country="EG",MBC 1 Egypt (1080p)
+https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-1-na/eec141533c90dd34722c503a296dd0d8/index.m3u8
+#EXTINF:-1 tvg-id="MBC Masr 2 (1080p)" tvg-name="MBC Masr 2 (1080p)" tvg-logo="https://i.imgur.com/KHo7Gtn.png" group-title="Afrique" country="EG",MBC Masr 2 (1080p)
+https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-masr-2/754931856515075b0aabf0e583495c68/index.m3u8
+#EXTINF:-1 tvg-id="MBC Masr (1080p)" tvg-name="MBC Masr (1080p)" tvg-logo="https://i.imgur.com/o2elx0u.png" group-title="Afrique" country="EG",MBC Masr (1080p)
+https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-masr/956eac069c78a35d47245db6cdbb1575/index.m3u8
+#EXTINF:-1 tvg-id="Medi1TV Afrique (1080p)" tvg-name="Medi1TV Afrique (1080p)" tvg-logo="https://i.imgur.com/a20DHnj.png" group-title="Afrique" country="MA",Medi1TV Afrique (1080p)
+https://cdn.live.easybroadcast.io/abr_corp/83_medi1tv-afrique_tm7tu45/playlist.m3u8
+#EXTINF:-1 tvg-id="Medi1TV Arabic (1080p)" tvg-name="Medi1TV Arabic (1080p)" tvg-logo="https://i.imgur.com/3YsZPY6.jpeg" group-title="Afrique" country="MA",Medi1TV Arabic (1080p)
+https://cdn.live.easybroadcast.io/abr_corp/83_medi1tv-arabic_g90v4ec/playlist.m3u8
+#EXTINF:-1 tvg-id="Medi1TV Maghreb (1080p)" tvg-name="Medi1TV Maghreb (1080p)" tvg-logo="https://i.imgur.com/F5OFQsp.jpeg" group-title="Afrique" country="MA",Medi1TV Maghreb (1080p)
+https://cdn.live.easybroadcast.io/abr_corp/83_medi1tv-maghreb_jnbspmg/playlist.m3u8
+#EXTINF:-1 tvg-id="Mercy TV" tvg-name="Mercy TV" tvg-logo="https://i.imgur.com/YPAM74x.jpeg" group-title="Afrique" country="SL",Mercy TV
+https://cdn-cloudfront.eu-central-1.prod.ingest.aws-infra.dacast.com/live/bff8bd53-ee89-2c76-6a51-95a0003f7d96/master.m3u8
+#EXTINF:-1 tvg-id="Morning Cloud TV (720p)" tvg-name="Morning Cloud TV (720p)" tvg-logo="https://i.imgur.com/Lxfd2ip.png" group-title="Afrique" country="KE",Morning Cloud TV (720p)
+https://livecdn.live247stream.com/mc/tv/playlist.m3u8
+#EXTINF:-1 tvg-id="Muzangala TV (1080p)" tvg-name="Muzangala TV (1080p)" tvg-logo="https://i.imgur.com/fBeaJoS.png" group-title="Afrique" country="AO",Muzangala TV (1080p)
+https://5cf4a2c2512a2.streamlock.net/tvmuzangala/tvmuzangala/playlist.m3u8
+#EXTINF:-1 tvg-id="NW Economie (576p)" tvg-name="NW Economie (576p)" tvg-logo="https://i.imgur.com/OmlFQa8.png" group-title="Afrique" country="TG",NW Economie (576p)
+https://hls.newworldtv.com/nw-economie/video/live.m3u8
+#EXTINF:-1 tvg-id="NW Info 2 (576p)" tvg-name="NW Info 2 (576p)" tvg-logo="https://i.imgur.com/0W4GqFD.png" group-title="Afrique" country="TG",NW Info 2 (576p)
+https://hls.newworldtv.com/nw-info-2/video/live.m3u8
+#EXTINF:-1 tvg-id="NW Info (576p)" tvg-name="NW Info (576p)" tvg-logo="https://i.imgur.com/UDEY91v.png" group-title="Afrique" country="TG",NW Info (576p)
+https://hls.newworldtv.com/nw-info/video/live.m3u8
+#EXTINF:-1 tvg-id="NW Magazine (576p)" tvg-name="NW Magazine (576p)" tvg-logo="https://i.imgur.com/RZNJZYN.png" group-title="Afrique" country="TG",NW Magazine (576p)
+https://hls.newworldtv.com/nw-magazine/video/live.m3u8
+#EXTINF:-1 tvg-id="OTV (720p)" tvg-name="OTV (720p)" tvg-logo="https://pbs.twimg.com/profile_images/1034118312437919744/emeWo-ag_400x400.jpg" group-title="Afrique" country="GH",OTV (720p)
+https://5dcabf026b188.streamlock.net/OceansTV/livestream/playlist.m3u8
+#EXTINF:-1 tvg-id="Pent TV" tvg-name="Pent TV" tvg-logo="https://i.imgur.com/Jw6d3dR.png" group-title="Afrique" country="GH",Pent TV
+https://playlist.dacast.com/live/a72117af-d78e-7ffe-7c12-1af6cd4a8483-live-42172a86-494b-a866-498f-dbaff4b5e3c0/master.m3u8
+#EXTINF:-1 tvg-id="Qausain TV (720p)" tvg-name="Qausain TV (720p)" tvg-logo="https://i.ibb.co/N70QyQ7/Qausain-TV-logo.png" group-title="Afrique" country="NG",Qausain TV (720p)
+https://acasmedia3.acangroup.org/qausaintv/qausaintv_output/playlist.m3u8
+#EXTINF:-1 tvg-id="QTV Gambia (720p)" tvg-name="QTV Gambia (720p)" tvg-logo="https://i.imgur.com/ZsTuADb.png" group-title="Afrique" country="GM",QTV Gambia (720p)
+https://player.qtv.gm/hls/live.stream.m3u8
+#EXTINF:-1 tvg-id="Rapid TV (480p)" tvg-name="Rapid TV (480p)" tvg-logo="https://i.imgur.com/FkMNcj1.jpeg" group-title="Afrique" country="NG",Rapid TV (480p)
+https://stream-hls.castr-cdn.com/6a05a899db0ebd344a759542/live_9655bc604f8211f19e748901a3f596d0/index.m3u8
+#EXTINF:-1 tvg-id="RTB 3" tvg-name="RTB 3" tvg-logo="https://i.imgur.com/OFZm8ic.png" group-title="Afrique" country="BF",RTB 3
+https://edge13.vedge.infomaniak.com/livecast/ik:rtb3-1/manifest.m3u8
+#EXTINF:-1 tvg-id="RTB (360p)" tvg-name="RTB (360p)" tvg-logo="https://i.imgur.com/BFfLV0y.png" group-title="Afrique" country="BF",RTB (360p)
+https://edge12.vedge.infomaniak.com/livecast/ik:rtblive1_8/manifest.m3u8
+#EXTINF:-1 tvg-id="Rwanda TV (480p)" tvg-name="Rwanda TV (480p)" tvg-logo="https://i.imgur.com/4nbGvxW.png" group-title="Afrique" country="RW",Rwanda TV (480p)
+https://5c46fa289c89f.streamlock.net/rtv25/rtv/playlist.m3u8
+#EXTINF:-1 tvg-id="SolTV (720p)" tvg-name="SolTV (720p)" tvg-logo="https://i.imgur.com/TJHk6Va.png" group-title="Afrique" country="GQ",SolTV (720p)
+https://stream.solmediaeg.com/soltv/soltv.m3u8
+#EXTINF:-1 tvg-id="Soweto TV (576p)" tvg-name="Soweto TV (576p)" tvg-logo="https://admango.cdn.mangomolo.com/analytics/uploads/188/654228e5b5.jpg" group-title="Afrique" country="ZA",Soweto TV (576p)
+https://cdn.freevisiontv.co.za/sttv/smil:soweto.stream.smil/playlist.m3u8
+#EXTINF:-1 tvg-id="StoryChannel TV (720p)" tvg-name="StoryChannel TV (720p)" tvg-logo="https://i.imgur.com/ZBV6xph.png" group-title="Afrique" country="MA",StoryChannel TV (720p)
+https://136044159.r.cdnsun.net/storychannel.m3u8
+#EXTINF:-1 tvg-id="Sudan TV (360p)" tvg-name="Sudan TV (360p)" tvg-logo="https://i.imgur.com/XUPAYAA.png" group-title="Afrique" country="SD",Sudan TV (360p)
+https://cdn-globecast.akamaized.net/live/eds/sudan_tv/hls_roku/index.m3u8
+#EXTINF:-1 tvg-id="Tanasuh TV (1080p)" tvg-name="Tanasuh TV (1080p)" tvg-logo="https://i.imgur.com/iBAhM2v.png" group-title="Afrique" country="LY",Tanasuh TV (1080p)
+https://kilolink.pulsarstarsolutions.com/live/smil:tanasuhtv.smil/manifest.m3u8
+#EXTINF:-1 tvg-id="TBC2 (1080p)" tvg-name="TBC2 (1080p)" tvg-logo="https://i.imgur.com/VkUJt2q.png" group-title="Afrique" country="TZ",TBC2 (1080p)
+https://stream-134630.castr.net/5fe35eae8c53540cab83659a/live_44ed95e05b6d11f18d5d85805abbdd6f/index.m3u8
+#EXTINF:-1 tvg-id="Tele Regency TV (576p)" tvg-name="Tele Regency TV (576p)" tvg-logo="https://teleregency.tv/logo-white.png" group-title="Afrique" country="NG",Tele Regency TV (576p)
+https://streams.playtv.com.ng/Tele-Regency_TRTV/index.m3u8
+#EXTINF:-1 tvg-id="Tjil TV (720p)" tvg-name="Tjil TV (720p)" tvg-logo="https://i.imgur.com/iBbawJ0.png" group-title="Afrique" country="NA",Tjil TV (720p)
+https://hls-1zdhtxpm-livepush.akamaized.net/live_cdn/nsM12Xw0C1xXdJ/em0Wx71z-ec6EWJb/rewind-3600.m3u8
+#EXTINF:-1 tvg-id="Tshwane TV (576p)" tvg-name="Tshwane TV (576p)" tvg-logo="https://admango.cdn.mangomolo.com/analytics/uploads/188/654a3ec660.png" group-title="Afrique" country="ZA",Tshwane TV (576p)
+https://cdn.freevisiontv.co.za/sttv/smil:tshwane.stream.smil/playlist.m3u8
+#EXTINF:-1 tvg-id="TV10 (720p)" tvg-name="TV10 (720p)" tvg-logo="https://i.imgur.com/DeaWC1N.png" group-title="Afrique" country="RW",TV10 (720p)
+https://5c46fa289c89f.streamlock.net/pub1live/mystream/playlist.m3u8
+#EXTINF:-1 tvg-id="TV BRICS Africa (1080p)" tvg-name="TV BRICS Africa (1080p)" tvg-logo="https://admango.cdn.mangomolo.com/analytics/uploads/188/666abcee75.jpeg" group-title="Afrique" country="ZA",TV BRICS Africa (1080p)
+https://cdn.freevisiontv.co.za/sttv/smil:brics.stream.smil/playlist.m3u8
+#EXTINF:-1 tvg-id="TVC Benin (720p)" tvg-name="TVC Benin (720p)" tvg-logo="https://i.imgur.com/oUnEYl5.png" group-title="Afrique" country="BJ",TVC Benin (720p)
+https://live.tvcbenin.com/direct/729c37a1d3319ee21991227b1f84c687.sdp/playlist.m3u8
+#EXTINF:-1 tvg-id="TV Cidade" tvg-name="TV Cidade" tvg-logo="https://i.imgur.com/gmSu21X.jpg" group-title="Afrique" country="CV",TV Cidade
+https://stmv1.srvif.com/tvcidade/tvcidade/playlist.m3u8
+#EXTINF:-1 tvg-id="TVM" tvg-name="TVM" tvg-logo="https://i.imgur.com/Vqv7R3Y.png" group-title="Afrique" country="MZ",TVM
+https://stream.tvm.co.mz/hls/tvm/playlist.m3u8
+#EXTINF:-1 tvg-id="TV Mana Mocambique (1080p)" tvg-name="TV Mana Mocambique (1080p)" tvg-logo="https://i.imgur.com/R5YrV5s.png" group-title="Afrique" country="MZ",TV Mana Mocambique (1080p)
+https://w2.manasat.com/tvmana-mz/smil:tvmana-mz.smil/playlist.m3u8
+#EXTINF:-1 tvg-id="Watan TV (1080p)" tvg-name="Watan TV (1080p)" tvg-logo="https://i.imgur.com/pZyKaUH.png" group-title="Afrique" country="EG",Watan TV (1080p)
+https://rp.tactivemedia.com/watantv_source/live/playlist.m3u8
+#EXTINF:-1 tvg-id="WildEarth (1080p)" tvg-name="WildEarth (1080p)" tvg-logo="https://i.imgur.com/Vhv5gjN.png" group-title="Afrique" country="ZA",WildEarth (1080p)
+https://cdn-ue1-prod.tsv2.amagi.tv/linear/amg01290-wildearth-oando/playlist.m3u8
 #EXTINF:-1 tvg-id="NBC 10 Rochester NY (WHEC) (1080p)" tvg-name="NBC 10 Rochester NY (WHEC) (1080p)" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/IPTV-org-logo.svg/240px-IPTV-org-logo.svg.png" group-title="USA" country="US",NBC 10 Rochester NY (WHEC) (1080p)
 https://amg01942-amg01942c4-stirr-us-10190.playouts.now.amagi.tv/playlist.m3u8
 #EXTINF:-1 tvg-id="NBC 11 Baltimore MD (WBAL) (720p)" tvg-name="NBC 11 Baltimore MD (WBAL) (720p)" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/IPTV-org-logo.svg/240px-IPTV-org-logo.svg.png" group-title="USA" country="US",NBC 11 Baltimore MD (WBAL) (720p)
@@ -337,16 +485,8 @@ https://cdn3.wowza.com/1/ZUkxSDBrZHlMbjVn/ZkhNRFNZ/hls/live/playlist.m3u8
 https://d1k3vzh2ivy22k.cloudfront.net/Historia.m3u8
 #EXTINF:-1 tvg-id="HOLA! Play (1080p)" tvg-name="HOLA! Play (1080p)" tvg-logo="https://m.media-amazon.com/images/I/5194tl8duqL.png" group-title="Spain" country="ES",HOLA! Play (1080p)
 https://hola-play-2108fd06-86d4-44e8-9867-c35b4895a1c1-es.fast.rakuten.tv/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6433/master.m3u8
-#EXTINF:-1 tvg-id="Ràdio Bocairent TV (1080p) [Not 24/7]" tvg-name="Ràdio Bocairent TV (1080p) [Not 24/7]" tvg-logo="https://i.imgur.com/MzUQtrl.png" group-title="Spain" country="ES",Ràdio Bocairent TV (1080p) [Not 24/7]
-http://185.81.77.4/BocairentTV/index.m3u8
 #EXTINF:-1 tvg-id="Azzurra TV (576p)" tvg-name="Azzurra TV (576p)" tvg-logo="https://i.imgur.com/qWIZNEc.png" group-title="Italy" country="IT",Azzurra TV (576p)
 https://ed05.top-ix.org/avtvlive/azzurra/streaming/playlist.m3u8
-#EXTINF:-1 tvg-id="Canale 7 (480p)" tvg-name="Canale 7 (480p)" tvg-logo="https://canale7.tv/assets/front/img/fb_logo.jpg" group-title="Italy" country="IT",Canale 7 (480p)
-http://wms.shared.streamshow.it/canale7/canale7/playlist.m3u8
-#EXTINF:-1 tvg-id="Canale 8 (480p)" tvg-name="Canale 8 (480p)" tvg-logo="https://i.imgur.com/xwYmFgj.png" group-title="Italy" country="IT",Canale 8 (480p)
-http://wms.shared.streamshow.it/canale8/canale8/playlist.m3u8
-#EXTINF:-1 tvg-id="Esperia TV (480p)" tvg-name="Esperia TV (480p)" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/8/81/ESPERIATV18_verde.png" group-title="Italy" country="IT",Esperia TV (480p)
-http://wms.shared.streamshow.it/esperiatv/esperiatv/playlist.m3u8
 #EXTINF:-1 tvg-id="Euro TV (720p) [Not 24/7]" tvg-name="Euro TV (720p) [Not 24/7]" tvg-logo="https://i.imgur.com/HFWWzKT.png" group-title="Italy" country="IT",Euro TV (720p) [Not 24/7]
 https://5f22d76e220e1.streamlock.net/eurotv/eurotv/playlist.m3u8
 #EXTINF:-1 tvg-id="FIFA+ Italy (720p)" tvg-name="FIFA+ Italy (720p)" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/FIFA%2B_(2025).svg/960px-FIFA%2B_(2025).svg.png" group-title="Italy" country="IT",FIFA+ Italy (720p)
@@ -355,8 +495,6 @@ https://5d95f7d7.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UmFrdX
 https://5f204aff97bee.streamlock.net/GR_tv/livestream/playlist.m3u8
 #EXTINF:-1 tvg-id="Italia 2 (480p) [Geo-blocked]" tvg-name="Italia 2 (480p) [Geo-blocked]" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Logo_Italia2.svg/960px-Logo_Italia2.svg.png" group-title="Italy" country="IT",Italia 2 (480p) [Geo-blocked]
 https://59d7d6f47d7fc.streamlock.net/italia2/italia2/playlist.m3u8
-#EXTINF:-1 tvg-id="Italia 2 TV (480p) [Geo-blocked]" tvg-name="Italia 2 TV (480p) [Geo-blocked]" tvg-logo="https://i.imgur.com/TDSgG28.png" group-title="Italy" country="IT",Italia 2 TV (480p) [Geo-blocked]
-http://wms.shared.streamshow.it/italia2/mp4:italia2/playlist.m3u8
 #EXTINF:-1 tvg-id="MadeinBO TV (1080p)" tvg-name="MadeinBO TV (1080p)" tvg-logo="https://i.imgur.com/47X44DD.png" group-title="Italy" country="IT",MadeinBO TV (1080p)
 https://srvx1.selftv.video/dmchannel/live/playlist.m3u8
 #EXTINF:-1 tvg-id="Maria Vision (1080p)" tvg-name="Maria Vision (1080p)" tvg-logo="https://i.imgur.com/gP3XAlV.jpeg" group-title="Italy" country="IT",Maria Vision (1080p)
@@ -367,8 +505,6 @@ https://d3k8wzt41aflvx.cloudfront.net/MediasetEU/Live.m3u8
 https://amg00627-amg00627c29-rakuten-it-3989.playouts.now.amagi.tv/playlist/amg00627-banijayfast-mrbeanitcc-rakutenit/playlist.m3u8
 #EXTINF:-1 tvg-id="Padre Pio TV (1080p)" tvg-name="Padre Pio TV (1080p)" tvg-logo="https://upload.wikimedia.org/wikipedia/en/a/a4/Padre_Pio_TV.jpg" group-title="Italy" country="IT",Padre Pio TV (1080p)
 https://600f07e114306.streamlock.net/PadrePioTV/livestream/playlist.m3u8
-#EXTINF:-1 tvg-id="Radio 51 TV (480p) [Geo-blocked]" tvg-name="Radio 51 TV (480p) [Geo-blocked]" tvg-logo="https://i.imgur.com/UupkBt6.png" group-title="Italy" country="IT",Radio 51 TV (480p) [Geo-blocked]
-http://178.32.140.155/canale51/canale51/playlist.m3u8
 #EXTINF:-1 tvg-id="Radio Number One (720p) [Not 24/7]" tvg-name="Radio Number One (720p) [Not 24/7]" tvg-logo="https://i.imgur.com/8cpuaG5.png" group-title="Italy" country="IT",Radio Number One (720p) [Not 24/7]
 https://56b50ada2d659.streamlock.net/RN1TV/livestream/playlist.m3u8
 #EXTINF:-1 tvg-id="like Gecko) Chrome/149.0.0.0 Safari/537.36 group-title=Undefined,Rai 2 (1080p)" tvg-name="like Gecko) Chrome/149.0.0.0 Safari/537.36 group-title=Undefined,Rai 2 (1080p)" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Rai_2_-_Logo_2016.svg/960px-Rai_2_-_Logo_2016.svg.png" group-title="Italy" country="IT",like Gecko) Chrome/149.0.0.0 Safari/537.36 group-title=Undefined,Rai 2 (1080p)
@@ -451,3 +587,85 @@ https://amg01796-amg01796c3-rakuten-uk-2555.playouts.now.amagi.tv/playlist/amg01
 https://rakutenaa-fastmedia-yaquelaverite-rakuten-81p2x.amagi.tv/playlist/rakutenAA-fastmedia-yaquelaverite-rakuten/playlist.m3u8
 #EXTINF:-1 tvg-id="Mytime Movies (1080p)" tvg-name="Mytime Movies (1080p)" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/IPTV-org-logo.svg/240px-IPTV-org-logo.svg.png" group-title="France (Samsung TV)" country="FR",Mytime Movies (1080p)
 https://mytimefrance-rakuten-samsung.amagi.tv/playlist.m3u8
+#EXTINF:-1 tvg-id="ABC News Live (720p)" tvg-name="ABC News Live (720p)" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/ABC_News_Live_logo_2021.svg/960px-ABC_News_Live_logo_2021.svg.png" group-title="News" country="US",ABC News Live (720p)
+https://aegis-cloudfront-1.tubi.video/d6cbb0de-68e4-4f3b-82f9-bf5d526e0bde/index.m3u8
+#EXTINF:-1 tvg-id="Africa 24 (1080p)" tvg-name="Africa 24 (1080p)" tvg-logo="https://africa24tv.com/wp-content/uploads/2021/09/logo.png" group-title="News" country="FR",Africa 24 (1080p)
+https://africa24.vedge.infomaniak.com/livecast/ik:africa24/manifest.m3u8
+#EXTINF:-1 tvg-id="Africa 24 English (1080p)" tvg-name="Africa 24 English (1080p)" tvg-logo="https://africa24tv.com/wp-content/uploads/2023/12/logo-Africa24TVEnglish.png" group-title="News" country="FR",Africa 24 English (1080p)
+https://edge20.vedge.infomaniak.com/livecast/ik:africa24english/manifest.m3u8
+#EXTINF:-1 tvg-id="Africa 24 Sport (1080p)" tvg-name="Africa 24 Sport (1080p)" tvg-logo="https://i0.wp.com/africa24tv.com/wp-content/uploads/2023/12/LOGO-AFRICASPORT-4-HD-sans-fond.png?fit=512%2C107&ssl=1" group-title="News" country="FR",Africa 24 Sport (1080p)
+https://africa24.vedge.infomaniak.com/livecast/ik:africa24sport/manifest.m3u8
+#EXTINF:-1 tvg-id="Africanews English (720p)" tvg-name="Africanews English (720p)" tvg-logo="https://a.jsrdn.com/hls/22886/africanews/extras/1080_logo.png" group-title="News" country="FR",Africanews English (720p)
+https://c3c275b999764df8a2dd55ffe2996818.mediatailor.eu-west-1.amazonaws.com/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6576/bitok/eyJzdGlkIjoiOTU0NDAyODQtOTU0My00Yzc2LThmZjQtNDRhY2YwYmQxYTYwIiwibWt0IjoicGwiLCJjaCI6NjYwNiwicHRmIjo1fQ==/26036/africanews-en.m3u8
+#EXTINF:-1 tvg-id="Africanews French (720p)" tvg-name="Africanews French (720p)" tvg-logo="https://i.imgur.com/5UxU4zc.png" group-title="News" country="FR",Africanews French (720p)
+https://cdn-euronews.akamaized.net/live/eds/africanews-fr/25050/index.m3u8
+#EXTINF:-1 tvg-id="Alarabiya (1080p)" tvg-name="Alarabiya (1080p)" tvg-logo="https://i.imgur.com/NXFkYFj.png" group-title="News" country="AE",Alarabiya (1080p)
+https://live.alarabiya.net/alarabiapublish/alarabiya.smil/playlist.m3u8
+#EXTINF:-1 tvg-id="Al Araby TV (1080p)" tvg-name="Al Araby TV (1080p)" tvg-logo="https://i.imgur.com/YMqWEe4.png" group-title="News" country="QA",Al Araby TV (1080p)
+https://live.kwikmotion.com/alaraby1live/alaraby_abr/playlist.m3u8
+#EXTINF:-1 tvg-id="Al Jazeera 2 (1080p)" tvg-name="Al Jazeera 2 (1080p)" tvg-logo="https://i.imgur.com/miq8O1Q.png" group-title="News" country="QA",Al Jazeera 2 (1080p)
+https://live-hls-web-aja2-gcp.thehlive.com/AJA2/index.m3u8
+#EXTINF:-1 tvg-id="Al Jazeera (1080p)" tvg-name="Al Jazeera (1080p)" tvg-logo="https://dtil.tmsimg.com/assets/s159135_ld_h15_aa.png?lock=720x540" group-title="News" country="QA",Al Jazeera (1080p)
+https://live-hls-apps-aja-fa.getaj.net/AJA/index.m3u8
+#EXTINF:-1 tvg-id="Al Jazeera Mubasher (1080p)" tvg-name="Al Jazeera Mubasher (1080p)" tvg-logo="https://i.imgur.com/DfJI4t5.png" group-title="News" country="QA",Al Jazeera Mubasher (1080p)
+https://live-hls-apps-ajm-fa.getaj.net/AJM/index.m3u8
+#EXTINF:-1 tvg-id="Arirang TV" tvg-name="Arirang TV" tvg-logo="https://i.imgur.com/kk2MdNC.png" group-title="News" country="KR",Arirang TV
+https://dash3.antik.sk/live/test_arirang/playlist.m3u8
+#EXTINF:-1 tvg-id="BFM Business (576p)" tvg-name="BFM Business (576p)" tvg-logo="https://i.imgur.com/psqIHn4.png" group-title="News" country="FR",BFM Business (576p)
+https://live-cdn-stream-euw1.bfmb.bct.nextradiotv.com/master.m3u8
+#EXTINF:-1 tvg-id="BFM TV (576p)" tvg-name="BFM TV (576p)" tvg-logo="https://i.imgur.com/YJCcczD.png" group-title="News" country="FR",BFM TV (576p)
+https://live-cdn-stream-euw1.bfmtv.bct.nextradiotv.com/master.m3u8
+#EXTINF:-1 tvg-id="CBC News Network (1080p)" tvg-name="CBC News Network (1080p)" tvg-logo="https://i.imgur.com/SjTdhvJ.png" group-title="News" country="CA",CBC News Network (1080p)
+https://d2ny9lo79ujali.cloudfront.net/CBC_News_International.m3u8
+#EXTINF:-1 tvg-id="CBS News 24/7 (720p)" tvg-name="CBS News 24/7 (720p)" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/CBS_News_247_logo.svg/960px-CBS_News_247_logo.svg.png" group-title="News" country="US",CBS News 24/7 (720p)
+https://cbsn-us-vtt.cbsnstream.cbsnews.com/out/v1/ef868690d34144509eda696884bf1619/master.m3u8
+#EXTINF:-1 tvg-id="CGTN (1080p)" tvg-name="CGTN (1080p)" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Estrella_TV_Logo_2020.png/500px-Estrella_TV_Logo_2020.png" group-title="News" country="CN",CGTN (1080p)
+https://amg00405-rakutentv-cgtn-rakuten-i9tar.amagi.tv/master.m3u8
+#EXTINF:-1 tvg-id="CGTN French" tvg-name="CGTN French" tvg-logo="https://i.imgur.com/BwhledK.png" group-title="News" country="CN",CGTN French
+https://dash4.antik.sk/live/test_cgtn_fra_tizen/playlist.m3u8
+#EXTINF:-1 tvg-id="Cheddar News (1080p)" tvg-name="Cheddar News (1080p)" tvg-logo="https://i.imgur.com/tuP9GW8.png" group-title="News" country="US",Cheddar News (1080p)
+https://hls.livecdn.io/cheddar.com/cheddar/playlist.m3u8
+#EXTINF:-1 tvg-id="DW (1080p)" tvg-name="DW (1080p)" tvg-logo="https://i.imgur.com/MNKkgfa.png" group-title="News" country="DE",DW (1080p)
+https://dwamdstream103.akamaized.net/hls/live/2015526/dwstream103/master.m3u8
+#EXTINF:-1 tvg-id="Euronews English" tvg-name="Euronews English" tvg-logo="https://a.jsrdn.com/hls/22886/euronews/extras/1080_logo.png" group-title="News" country="FR",Euronews English
+https://dash4.antik.sk/live/test_euronews/playlist.m3u8
+#EXTINF:-1 tvg-id="Euronews French (720p)" tvg-name="Euronews French (720p)" tvg-logo="https://i.imgur.com/5A0Wnrv.png" group-title="News" country="FR",Euronews French (720p)
+https://cdn-euronews.akamaized.net/live/eds/euronews-fr/25026/index.m3u8
+#EXTINF:-1 tvg-id="Euronews German (720p)" tvg-name="Euronews German (720p)" tvg-logo="https://i.imgur.com/8t9mdg9.png" group-title="News" country="FR",Euronews German (720p)
+https://575b7833.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UmxheHhUVi1ldV9FdXJvbmV3c0RldXRzY2hfSExT/playlist.m3u8
+#EXTINF:-1 tvg-id="Euronews Italian (720p)" tvg-name="Euronews Italian (720p)" tvg-logo="https://i.imgur.com/8t9mdg9.png" group-title="News" country="FR",Euronews Italian (720p)
+https://acb6ca89.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UmxheHhUVi1ldV9FdXJvbmV3c0l0YWxpYW5vX0hMUw/playlist.m3u8
+#EXTINF:-1 tvg-id="Euronews Portuguese (720p)" tvg-name="Euronews Portuguese (720p)" tvg-logo="https://i.imgur.com/8t9mdg9.png" group-title="News" country="FR",Euronews Portuguese (720p)
+https://6e52fb8b.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UmxheHhUVi1ldV9FdXJvbmV3c1BvcnR1Z3Vlc19ITFM/playlist.m3u8
+#EXTINF:-1 tvg-id="Euronews Spanish (720p)" tvg-name="Euronews Spanish (720p)" tvg-logo="https://a.jsrdn.com/hls/22886/euronews-spa/extras/1080_logo.png" group-title="News" country="FR",Euronews Spanish (720p)
+https://cdn-euronews.akamaized.net/live/eds/euronews-es/25053/index.m3u8
+#EXTINF:-1 tvg-id="Europe 1 TV (1080p)" tvg-name="Europe 1 TV (1080p)" tvg-logo="https://i.ibb.co/rGqB5FcH/Europe1-TV.png" group-title="News" country="FR",Europe 1 TV (1080p)
+https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/misc/europe-1-tv-dm.m3u8
+#EXTINF:-1 tvg-id="France 24 (1080p)" tvg-name="France 24 (1080p)" tvg-logo="https://dtil.tmsimg.com/assets/s159111_ld_h15_aa.png?lock=720x540" group-title="News" country="FR",France 24 (1080p)
+https://live.france24.com/hls/live/2037222-b/F24_AR_HI_HLS/master_5000.m3u8
+#EXTINF:-1 tvg-id="Ici RDI (720p)" tvg-name="Ici RDI (720p)" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/ICI_RDI_logo.svg/960px-ICI_RDI_logo.svg.png" group-title="News" country="CA",Ici RDI (720p)
+https://rcavlive.akamaized.net/hls/live/704025/xcanrdi/master.m3u8
+#EXTINF:-1 tvg-id="NBC News NOW (1080p)" tvg-name="NBC News NOW (1080p)" tvg-logo="https://i.imgur.com/JZt2qh5.png" group-title="News" country="US",NBC News NOW (1080p)
+https://d1si3n1st4nkgb.cloudfront.net/10502/88896001/hls/master.m3u8?ads.xumo_channelId=88896001
+#EXTINF:-1 tvg-id="Newsy (1080p)" tvg-name="Newsy (1080p)" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Newsy_2021.svg/960px-Newsy_2021.svg.png" group-title="News" country="US",Newsy (1080p)
+https://547f72e6652371c3.mediapackage.us-east-1.amazonaws.com/out/v1/e3e6e29095844c4ba7d887f01e44a5ef/index.m3u8
+#EXTINF:-1 tvg-id="NHK World-Japan (1080p)" tvg-name="NHK World-Japan (1080p)" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/PBS_Kids_logo_%282022%29.svg/960px-PBS_Kids_logo_%282022%29.svg.png" group-title="News" country="JP",NHK World-Japan (1080p)
+https://masterpl.hls.nhkworld.jp/hls/w/live/smarttv.m3u8
+#EXTINF:-1 tvg-id="Rai News 24 (1080p)" tvg-name="Rai News 24 (1080p)" tvg-logo="https://i.imgur.com/n2u57y3.png" group-title="News" country="IT",Rai News 24 (1080p)
+https://d3k8wzt41aflvx.cloudfront.net/RAINEWS24/Live.m3u8
+#EXTINF:-1 tvg-id="Reuters TV (1080p)" tvg-name="Reuters TV (1080p)" tvg-logo="https://i.imgur.com/6eQ2nCJ.png" group-title="News" country="US",Reuters TV (1080p)
+https://amg00453-reuters-amg00453c1-samsung-gb-2113.playouts.now.amagi.tv/playlist/amg00453-reuters-reuters-samsunggb/playlist.m3u8
+#EXTINF:-1 tvg-id="Scripps News (1080p)" tvg-name="Scripps News (1080p)" tvg-logo="https://i.imgur.com/UfN6aAi.png" group-title="News" country="US",Scripps News (1080p)
+https://aegis-cloudfront-1.tubi.video/7e1c26b7-7975-4240-9a4f-480eaa8f3ea4/playlist.m3u8
+#EXTINF:-1 tvg-id="Sky News Arabia (1080p)" tvg-name="Sky News Arabia (1080p)" tvg-logo="https://i.imgur.com/SvjU4h6.png" group-title="News" country="AE",Sky News Arabia (1080p)
+https://live-stream.skynewsarabia.com/c-horizontal-channel/horizontal-stream/index.m3u8
+#EXTINF:-1 tvg-id="TRT Arabi (1080p)" tvg-name="TRT Arabi (1080p)" tvg-logo="https://i.imgur.com/dEfI2M9.png" group-title="News" country="TR",TRT Arabi (1080p)
+https://tv-trtarabi.medya.trt.com.tr/master.m3u8
+#EXTINF:-1 tvg-id="TRT Haber (720p)" tvg-name="TRT Haber (720p)" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/TRT_Haber_Eyl%C3%BCl_2020_Logo.svg/960px-TRT_Haber_Eyl%C3%BCl_2020_Logo.svg.png" group-title="News" country="TR",TRT Haber (720p)
+https://tv-trthaber.medya.trt.com.tr/master.m3u8
+#EXTINF:-1 tvg-id="TRT World" tvg-name="TRT World" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/TRT_World.svg/960px-TRT_World.svg.png" group-title="News" country="TR",TRT World
+https://dash2.antik.sk/live/test_trt_world_atktv/playlist.m3u8
+#EXTINF:-1 tvg-id="UN Web TV (540p)" tvg-name="UN Web TV (540p)" tvg-logo="https://i.imgur.com/UcAwBep.png" group-title="News" country="US",UN Web TV (540p)
+https://cdnapi.kaltura.com/p/2503451/sp/250345100/playManifest/entryId/1_gb6tjmle/protocol/https/format/applehttp/a.m3u8
+#EXTINF:-1 tvg-id="WELT" tvg-name="WELT" tvg-logo="https://i.imgur.com/s4TZoxx.png" group-title="News" country="DE",WELT
+https://dash4.antik.sk/live/test_welt_tizen/playlist.m3u8
