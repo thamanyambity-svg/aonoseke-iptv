@@ -51,6 +51,7 @@ async function pendingSet(agent) {
 async function runSentinel(active) {
   const since = new Date(Date.now() - 24 * 3600 * 1000).toISOString();
   const events = await sel(`ad_events?created_at=gte.${since}&suspect=eq.false&select=campaign_id,event_type,ip,signature`);
+  const analysedAt = new Date().toISOString();
   const by = new Map();
   for (const e of events) {
     if (!e.campaign_id) continue;
@@ -69,6 +70,9 @@ async function runSentinel(active) {
     if (seen.has(cid)) continue;
     const topIp = [...c.ip.values()].sort((a, b) => b - a)[0] || 0;
     const topSig = [...c.sig.values()].sort((a, b) => b - a)[0] || 0;
+    // Contrevenants désignés : seuls leurs clics seront mis en quarantaine à la validation.
+    const badIps = [...c.ip].filter(([, n]) => n >= CLICK_BURST).map(([k]) => k);
+    const badSigs = [...c.sig].filter(([, n]) => n >= CLICK_BURST).map(([k]) => k);
     const ctr = c.imp > 0 ? c.clk / c.imp : 0;
     let reason = null, count = 0, conf = 0;
     if (topIp >= CLICK_BURST) { reason = `rafale de ${topIp} clics d'une même IP`; count = topIp; conf = 0.9; }
@@ -76,8 +80,8 @@ async function runSentinel(active) {
     else if (c.imp >= MIN_IMPR_CTR && ctr > SUSPICIOUS_CTR) { reason = `CTR anormal ${(ctr * 100).toFixed(0)}%`; count = c.clk; conf = 0.78; }
     if (!reason) continue;
     await propose({ p_agent: 'sentinel', p_kind: 'quarantine_events', p_title: `Quarantaine de ~${count} clics suspects`,
-      p_summary: `Anomalie : ${reason}. Quarantaine (réversible) recommandée avant le rapport client.`,
-      p_payload: { event_type: 'click', count, reason }, p_target_campaign_id: cid, p_confidence: conf });
+      p_summary: `Anomalie : ${reason}. Quarantaine (réversible) des seuls clics désignés, sur les dernières 24 h, recommandée avant le rapport client.`,
+      p_payload: { event_type: 'click', count, reason, since, until: analysedAt, ips: badIps, signatures: badSigs }, p_target_campaign_id: cid, p_confidence: conf });
     n++;
   }
   return n;

@@ -113,6 +113,11 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Missing required fields' });
   }
 
+  // Les pubs de secours (ads.json) n'ont pas d'identifiant UUID en base : on les ignore proprement.
+  if (!/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(String(campaignId))) {
+    return res.status(202).json({ ok: true, persisted: false, reason: 'campagne de secours (non enregistrée)' });
+  }
+
   if (!['impression', 'click'].includes(eventType)) {
     return res.status(400).json({ error: 'Invalid event_type' });
   }
@@ -152,7 +157,7 @@ export default async function handler(req, res) {
     });
     const campData = await campResp.json();
     if (!campData || campData.length === 0) {
-      return res.status(404).json({ error: 'Campaign not found' });
+      return res.status(202).json({ ok: true, persisted: false, reason: 'campagne inconnue' });
     }
     const advertiserId = campData[0].advertiser_id;
 
