@@ -8,18 +8,15 @@ Projet : **aonoseke-iptv** (réf. `cvuhvppsdzrjtvrtvrlv`). Tableau de bord : htt
 | 2   | **Authentication → Providers → Google**   | Connexion Google                                                                      |
 | 3   | **Authentication → Providers → Facebook** | Connexion Facebook                                                                    |
 | 4   | **Authentication → Providers → Phone**    | Connexion par SMS                                                                     |
-| 5   | **Storage → ad-media**                    | Images des publicités                                                                 |
+| 5   | _(aucune action)_                         | Les images des pubs sont servies par le site                                          |
 | 6   | **SQL Editor**                            | Créer les campagnes Alpha Import (fichier `supabase/seed-alpha-import-campaigns.sql`) |
 | 7   | **Table Editor → profiles**               | Vous donner le rôle `admin` (accès « Gestion publicitaire »)                          |
 
 Détail des pages 1 à 4 : voir `docs/CONFIG-CONNEXION.md`.
 
-## 5. Storage → ad-media (images des pubs)
+## 5. Images des pubs (aucune action)
 
-1. Menu de gauche **Storage** → bucket **ad-media** (il doit être _Public_ ; sinon `⋯` → _Edit bucket_ → cocher _Public bucket_).
-2. **Create folder** → nom : `sectors`.
-3. Ouvrir `sectors` → **Upload files** → sélectionner les **42 fichiers** du dossier `public/ads/sectors/` du dépôt (`*-preroll.jpg`, `*-portrait.jpg` et `*-banner.jpg`).
-4. Contrôle : cliquer sur un fichier → **Get URL** doit donner `…/storage/v1/object/public/ad-media/sectors/sourcing-preroll.jpg` et s'afficher dans le navigateur.
+Les visuels des 14 secteurs sont dans le dépôt (`public/ads/sectors/`, 42 fichiers) et servis par le site lui-même (`/ads/sectors/…`). Les campagnes les référencent par ce chemin : **rien à téléverser dans Supabase Storage**. Le bucket **ad-media** ne sert que pour les images ajoutées plus tard depuis « Gestion publicitaire ».
 
 ## 6. SQL Editor (campagnes)
 
