@@ -5,11 +5,10 @@
  */
 import { describe, it, expect, beforeAll, beforeEach } from 'vitest';
 import { PGlite } from '@electric-sql/pglite';
-import fs from 'node:fs';
-import path from 'node:path';
-
-const ROOT = path.resolve(__dirname, '..');
-const read = (rel: string): string => fs.readFileSync(path.join(ROOT, rel), 'utf8');
+import schemaSql from '../schema.sql?raw';
+import agentProposalsSql from '../migrations/20260621090000_agent_proposals_approval_socle.sql?raw';
+import dashboardSql from '../migrations/20261009100000_admin_dashboard_consistency.sql?raw';
+import regieSql from '../migrations/20261009110000_regie_logic_fixes.sql?raw';
 const ADM = '00000000-0000-0000-0000-0000000000ad';
 
 let db: PGlite;
@@ -25,10 +24,10 @@ beforeAll(async () => {
     create function auth.uid() returns uuid language sql stable as $$ select nullif(current_setting('app.uid', true), '')::uuid $$;
     create function auth.jwt() returns jsonb language sql stable as $$ select '{}'::jsonb $$;
   `);
-  await db.exec(read('schema.sql'));
-  await db.exec(read('migrations/20260621090000_agent_proposals_approval_socle.sql'));
-  await db.exec(read('migrations/20261009100000_admin_dashboard_consistency.sql'));
-  await db.exec(read('migrations/20261009110000_regie_logic_fixes.sql'));
+  await db.exec(schemaSql);
+  await db.exec(agentProposalsSql);
+  await db.exec(dashboardSql);
+  await db.exec(regieSql);
 }, 60_000);
 
 beforeEach(async () => {
