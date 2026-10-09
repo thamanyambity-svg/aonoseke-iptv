@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState, useCallback, lazy, Suspense } from 'react';
 import Hls from 'hls.js';
-import { Maximize2, Minimize2, RefreshCw } from 'lucide-react';
+import { Maximize2, Minimize2, RefreshCw, Captions } from 'lucide-react';
 import { AlphaLogoAnimated } from './AlphaLogoAnimated.tsx';
 import type { PlayerProps } from '../types-exports.ts';
 import { logger } from '../utils/logger.ts';
@@ -10,6 +10,17 @@ import type { JSX } from 'react';
 
 // Lazy load AdBanner component (non-critical)
 const AdBanner = lazy(() => import('./AdBanner.tsx').then(m => ({ default: m.AdBanner })));
+
+interface SubtitleOption { index: number; label: string; lang: string }
+
+const SUBTITLE_PREF_KEY = 'iptv-subtitle-lang';
+
+function readSubtitlePref(): string {
+  try { return localStorage.getItem(SUBTITLE_PREF_KEY) ?? ''; } catch { return ''; }
+}
+function writeSubtitlePref(lang: string): void {
+  try { localStorage.setItem(SUBTITLE_PREF_KEY, lang); } catch { /* mode privé */ }
+}
 
 export const Player: React.FC<PlayerProps> = ({ url, onError }): JSX.Element => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -22,7 +33,11 @@ export const Player: React.FC<PlayerProps> = ({ url, onError }): JSX.Element => 
   const [isLoading, setIsLoading] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [recovering, setRecovering] = useState(false);
-  
+  // Sous-titres : pistes WebVTT / CEA-608 déclarées par le flux HLS (-1 = désactivés).
+  const [subtitleTracks, setSubtitleTracks] = useState<SubtitleOption[]>([]);
+  const [subtitleIndex, setSubtitleIndex] = useState(-1);
+  const [subtitleMenu, setSubtitleMenu] = useState(false);
+
   // Smart-Stream Ad Matrix
   const { currentAd, nextAd } = useAdMatrix();
   const [showAd, setShowAd] = useState(false);
@@ -99,6 +114,27 @@ export const Player: React.FC<PlayerProps> = ({ url, onError }): JSX.Element => 
         });
       });
 
+      // Sous-titres : on liste les pistes du flux et on réactive la langue
+      // choisie la dernière fois (préférence mémorisée, vide = désactivés).
+      hls.subtitleDisplay = false;
+      hls.on(Hls.Events.SUBTITLE_TRACKS_UPDATED, (_event, data): void => {
+        const options = data.subtitleTracks.map((t, i): SubtitleOption => ({
+          index: i,
+          lang: t.lang ?? '',
+          label: t.name || t.lang || `Piste ${i + 1}`,
+        }));
+        setSubtitleTracks(options);
+        const pref = readSubtitlePref();
+        const match = pref ? options.find((o) => o.lang === pref) : undefined;
+        if (match) {
+          hls.subtitleTrack = match.index;
+          hls.subtitleDisplay = true;
+          setSubtitleIndex(match.index);
+        } else {
+          setSubtitleIndex(-1);
+        }
+      });
+
       hls.on(Hls.Events.ERROR, (_event, data): void => {
         if (data.fatal) {
           switch (data.type) {
@@ -167,6 +203,21 @@ export const Player: React.FC<PlayerProps> = ({ url, onError }): JSX.Element => 
     };
   }, [url]);
 
+  const chooseSubtitle = (index: number): void => {
+    const hls = hlsRef.current;
+    if (!hls) return;
+    if (index < 0) {
+      hls.subtitleDisplay = false;
+      writeSubtitlePref('');
+    } else {
+      hls.subtitleTrack = index;
+      hls.subtitleDisplay = true;
+      writeSubtitlePref(subtitleTracks.find((t) => t.index === index)?.lang ?? '');
+    }
+    setSubtitleIndex(index);
+    setSubtitleMenu(false);
+  };
+
   if (!url) {
     return (
       <div className="empty-main">
@@ -213,6 +264,37 @@ export const Player: React.FC<PlayerProps> = ({ url, onError }): JSX.Element => 
       >
         {isFullscreen ? <Minimize2 size={16} /> : <Maximize2 size={16} />}
       </button>
+
+      {subtitleTracks.length > 0 && (
+        <div className="subtitle-ctl">
+          <button
+            className={`subtitle-btn${subtitleIndex >= 0 ? ' is-on' : ''}`}
+            onClick={() => setSubtitleMenu((v) => !v)}
+            title="Sous-titres"
+            aria-label="Sous-titres"
+            aria-haspopup="menu"
+            aria-expanded={subtitleMenu}
+          >
+            <Captions size={16} />
+          </button>
+          {subtitleMenu && (
+            <ul className="subtitle-menu" role="menu">
+              <li role="none">
+                <button role="menuitemradio" aria-checked={subtitleIndex < 0} onClick={() => chooseSubtitle(-1)}>
+                  Désactivés
+                </button>
+              </li>
+              {subtitleTracks.map((t) => (
+                <li key={t.index} role="none">
+                  <button role="menuitemradio" aria-checked={subtitleIndex === t.index} onClick={() => chooseSubtitle(t.index)}>
+                    {t.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      )}
 
       {recovering && (
         <div className="reconnect-badge">
