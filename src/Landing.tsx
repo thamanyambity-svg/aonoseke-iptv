@@ -1,20 +1,26 @@
 import './Landing.css';
-import { useState } from 'react';
-import { Play, Tv, Globe, Star, Zap, User, Mail, Lock } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { Play, Tv, Globe, Star, Zap, User, Mail, Lock, Phone } from 'lucide-react';
 import { AlphaLogoAnimated } from './components/AlphaLogoAnimated.tsx';
 import { CinematicBg } from './components/CinematicBg.tsx';
 import type { JSX } from 'react';
+import { COUNTRY_CODES, toE164, cleanOtp } from './utils/phone.ts';
 
 type Mode = 'signin' | 'signup';
+type Method = 'email' | 'phone';
+
+const OTP_RESEND_SECONDS = 30;
 
 interface LandingProps {
   onSignUp: (username: string, email: string, password: string, ageRange?: string) => Promise<{ error?: string }>;
   onSignIn: (email: string, password: string) => Promise<{ error?: string }>;
   onSocial: (provider: 'google' | 'facebook') => Promise<{ error?: string }>;
+  onPhoneSend: (phone: string) => Promise<{ error?: string }>;
+  onPhoneVerify: (phone: string, token: string) => Promise<{ error?: string }>;
   onDemo: () => void;
 }
 
-export function Landing({ onSignUp, onSignIn, onSocial, onDemo }: LandingProps): JSX.Element {
+export function Landing({ onSignUp, onSignIn, onSocial, onPhoneSend, onPhoneVerify, onDemo }: LandingProps): JSX.Element {
   const [mode, setMode] = useState<Mode>('signup');
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
@@ -24,6 +30,46 @@ export function Landing({ onSignUp, onSignIn, onSocial, onDemo }: LandingProps):
   const [notice, setNotice] = useState('');
   const [loading, setLoading] = useState(false);
   const [ageRange, setAgeRange] = useState('');
+  const [method, setMethod] = useState<Method>('email');
+  const [countryCode, setCountryCode] = useState('+243');
+  const [phoneInput, setPhoneInput] = useState('');
+  const [otp, setOtp] = useState('');
+  const [otpSent, setOtpSent] = useState(false);
+  const [resendIn, setResendIn] = useState(0);
+
+  useEffect(() => {
+    if (resendIn <= 0) return;
+    const t = window.setTimeout(() => setResendIn((n) => n - 1), 1000);
+    return () => window.clearTimeout(t);
+  }, [resendIn]);
+
+  async function handleSendOtp(e?: React.FormEvent): Promise<void> {
+    e?.preventDefault();
+    setError(''); setNotice('');
+    const full = toE164(countryCode, phoneInput);
+    if (!full) { setError('Numéro invalide. Exemple : 81 234 56 78'); return; }
+    setLoading(true);
+    const res = await onPhoneSend(full);
+    setLoading(false);
+    if (res.error) { setError(translateError(res.error)); return; }
+    setOtpSent(true);
+    setOtp('');
+    setResendIn(OTP_RESEND_SECONDS);
+    setNotice(`Code envoyé par SMS au ${full}.`);
+  }
+
+  async function handleVerifyOtp(e: React.FormEvent): Promise<void> {
+    e.preventDefault();
+    setError(''); setNotice('');
+    const full = toE164(countryCode, phoneInput);
+    if (!full) { setError('Numéro invalide.'); return; }
+    if (otp.length !== 6) { setError('Entrez le code à 6 chiffres reçu par SMS.'); return; }
+    setLoading(true);
+    const res = await onPhoneVerify(full, otp);
+    setLoading(false);
+    if (res.error) setError(translateError(res.error));
+    // succès → la session s'ouvre, l'écran de connexion disparaît
+  }
 
   async function handleSubmit(e: React.FormEvent): Promise<void> {
     e.preventDefault();
@@ -156,8 +202,105 @@ export function Landing({ onSignUp, onSignIn, onSocial, onDemo }: LandingProps):
             </button>
           </div>
 
-          <div className="auth-divider"><span>ou avec un email</span></div>
+          <div className="auth-divider"><span>ou avec</span></div>
 
+          <div className="auth-toggle" role="tablist" aria-label="Méthode de connexion">
+            <button
+              type="button" role="tab" aria-selected={method === 'email'}
+              className={`auth-toggle-btn${method === 'email' ? ' active' : ''}`}
+              onClick={() => { setMethod('email'); setError(''); setNotice(''); }}
+            >
+              Email
+            </button>
+            <button
+              type="button" role="tab" aria-selected={method === 'phone'}
+              className={`auth-toggle-btn${method === 'phone' ? ' active' : ''}`}
+              onClick={() => { setMethod('phone'); setError(''); setNotice(''); }}
+            >
+              Téléphone
+            </button>
+          </div>
+
+          {method === 'phone' && (
+            <form
+              className="login-form"
+              onSubmit={(e) => { void (otpSent ? handleVerifyOtp(e) : handleSendOtp(e)); }}
+              noValidate
+            >
+              <div className="form-group">
+                <label className="form-label" htmlFor="phone">Numéro de téléphone</label>
+                <div className="input-wrap" style={{ display: 'flex', flexDirection: 'column', alignItems: 'stretch', gap: 8 }}>
+                  <select
+                    aria-label="Indicatif du pays"
+                    className="form-input form-select"
+                    value={countryCode}
+                    onChange={(e) => setCountryCode(e.target.value)}
+                    disabled={otpSent || loading}
+                  >
+                    {COUNTRY_CODES.map((c) => <option key={c.code + c.label} value={c.code}>{c.label}</option>)}
+                  </select>
+                  <Phone size={14} className="input-icon" aria-hidden="true" style={{ display: 'none' }} />
+                  <input
+                    id="phone"
+                    type="tel"
+                    inputMode="tel"
+                    className="form-input"
+                    placeholder="81 234 56 78"
+                    value={phoneInput}
+                    onChange={(e) => setPhoneInput(e.target.value)}
+                    autoComplete="tel-national"
+                    disabled={otpSent || loading}
+                  />
+                </div>
+              </div>
+
+              {otpSent && (
+                <div className="form-group">
+                  <label className="form-label" htmlFor="otp">Code reçu par SMS</label>
+                  <input
+                    id="otp"
+                    type="text"
+                    inputMode="numeric"
+                    className="form-input"
+                    placeholder="123456"
+                    maxLength={6}
+                    value={otp}
+                    onChange={(e) => setOtp(cleanOtp(e.target.value))}
+                    autoComplete="one-time-code"
+                    autoFocus
+                  />
+                </div>
+              )}
+
+              <button type="submit" className="btn-login" disabled={loading}>
+                {loading ? 'Veuillez patienter…' : otpSent ? 'Valider le code' : 'Recevoir le code par SMS'}
+              </button>
+
+              {otpSent && (
+                <button
+                  type="button"
+                  className="pass-toggle"
+                  style={{ alignSelf: 'center', marginTop: 8 }}
+                  disabled={loading || resendIn > 0}
+                  onClick={() => { void handleSendOtp(); }}
+                >
+                  {resendIn > 0 ? `Renvoyer le code (${resendIn} s)` : 'Renvoyer le code'}
+                </button>
+              )}
+              {otpSent && (
+                <button
+                  type="button"
+                  className="pass-toggle"
+                  style={{ alignSelf: 'center' }}
+                  onClick={() => { setOtpSent(false); setOtp(''); setNotice(''); setError(''); }}
+                >
+                  Changer de numéro
+                </button>
+              )}
+            </form>
+          )}
+
+          {method === 'email' && (
           <form className="login-form" onSubmit={(e) => { void handleSubmit(e); }} noValidate>
             {mode === 'signup' && (
               <div className="form-group">
@@ -239,6 +382,7 @@ export function Landing({ onSignUp, onSignIn, onSocial, onDemo }: LandingProps):
                 : mode === 'signup' ? 'Créer mon compte' : 'Se connecter'}
             </button>
           </form>
+          )}
 
           <button className="btn-demo" onClick={onDemo} disabled={loading}>
             <Play size={14} fill="currentColor" />
@@ -264,6 +408,10 @@ function translateError(msg: string): string {
   if (m.includes('email not confirmed')) return 'Confirmez votre email avant de vous connecter.';
   if (m.includes('duplicate key') || m.includes('username')) return "Ce nom d'utilisateur est déjà pris.";
   if (m.includes('provider is not enabled') || m.includes('unsupported provider')) return 'Connexion sociale pas encore activée côté serveur.';
+  if (m.includes('unsupported phone provider') || m.includes('sms provider') || m.includes('phone provider')) return "L'envoi de SMS n'est pas encore activé côté serveur.";
+  if (m.includes('token has expired') || m.includes('otp') || m.includes('invalid token')) return 'Code incorrect ou expiré. Demandez un nouveau code.';
+  if (m.includes('rate limit') || m.includes('too many') || m.includes('security purposes')) return 'Trop de tentatives. Réessayez dans une minute.';
+  if (m.includes('invalid phone') || m.includes('phone number')) return 'Numéro de téléphone invalide.';
   if (m.includes('password')) return 'Mot de passe trop faible (6 caractères min).';
   return msg;
 }

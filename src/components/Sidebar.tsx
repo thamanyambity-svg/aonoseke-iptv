@@ -27,6 +27,8 @@ interface AdItem {
   emblem?: boolean;
 }
 
+const BANNER_ROTATION_MS = 15_000;
+
 interface SidebarProps {
   user: AuthUser | null;
   activeChannel: Channel | null;
@@ -55,6 +57,14 @@ export function Sidebar({
     setActiveTab, setRawSearch, setSelectedCountry, setSelectedGroup,
   } = usePlayerStore();
   const [focusedIdx, setFocusedIdx] = useState<number>(-1);
+  // Rotation des bannières sponsor (une nouvelle toutes les 15 s).
+  const [bannerIdx, setBannerIdx] = useState(0);
+  useEffect(() => {
+    if (!adsEnabled || banners.length < 2) return;
+    const t = window.setInterval(() => setBannerIdx((i) => i + 1), BANNER_ROTATION_MS);
+    return () => window.clearInterval(t);
+  }, [adsEnabled, banners.length]);
+  const currentBanner = banners.length > 0 ? banners[bannerIdx % banners.length] : undefined;
   const listRef = useRef<HTMLDivElement>(null);
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
   const countrySliderRef = useRef<HTMLDivElement>(null);
@@ -326,8 +336,8 @@ export function Sidebar({
           </div>
         )}
 
-        {adsEnabled && banners.length > 0 && (
-          <BannerAd ad={banners[0]}
+        {adsEnabled && currentBanner && (
+          <BannerAd key={currentBanner.id} ad={currentBanner}
             onImpression={(id) => { trackEvent('ad_impression', id); void trackAdEvent(id, 'impression'); }}
             onClick={(id) => { trackEvent('ad_click', id); void trackAdEvent(id, 'click'); }} />
         )}

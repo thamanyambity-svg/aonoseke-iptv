@@ -31,6 +31,14 @@
                 <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
             </intent-filter>
 
+            <!-- Retour de la connexion Google / Facebook (navigateur système) -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="com.aonoseke.iptv" android:host="auth" />
+            </intent-filter>
+
         </activity>
 
         <provider

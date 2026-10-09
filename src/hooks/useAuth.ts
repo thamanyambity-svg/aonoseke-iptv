@@ -11,6 +11,7 @@
  */
 import { useState, useEffect, useCallback } from 'react';
 import { supabase, isSupabaseEnabled, rpc } from '../lib/supabaseClient.ts';
+import { isNativeApp, startNativeOAuth } from '../lib/nativeAuth.ts';
 import type { PostgrestError } from '@supabase/supabase-js';
 import { logger } from '../utils/logger.ts';
 
@@ -269,6 +270,7 @@ export function useAuth(): {
   const signInWithProvider = useCallback(
     async (provider: 'google' | 'facebook' | 'apple'): Promise<{ error?: string }> => {
       if (!supabase) return { error: 'Service indisponible' };
+      if (isNativeApp()) return startNativeOAuth(provider);
       const { error } = await supabase.auth.signInWithOAuth({
         provider,
         options: { redirectTo: window.location.origin },

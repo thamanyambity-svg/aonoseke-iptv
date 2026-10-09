@@ -11,6 +11,8 @@ export interface PrerollAd {
   url?: string;
   bg?: string;
   image?: string;
+  /** Version verticale (9:16) affichée sur écran en portrait (mobile). */
+  imagePortrait?: string;
   video?: string;
   logo?: string;
   eyebrow?: string;

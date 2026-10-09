@@ -79,7 +79,10 @@ export function PreRollAd({
             onEnded={complete}
           />
         ) : ad.image ? (
-          <img src={ad.image} alt={ad.title} className="preroll-img" />
+          <picture style={{ display: 'contents' }}>
+            {ad.imagePortrait && <source media="(orientation: portrait)" srcSet={ad.imagePortrait} />}
+            <img src={ad.image} alt={ad.title} className="preroll-img" />
+          </picture>
         ) : (
           <div className="preroll-content">
             {ad.emblem ? (
