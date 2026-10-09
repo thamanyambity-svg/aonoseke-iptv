@@ -4,12 +4,14 @@
 // (et ne charge plus les campagnes publicitaires). Ces variables sont lues par Vite depuis l'environnement ou .env.local.
 import { loadEnv } from 'vite';
 
-const env = { ...loadEnv('production', process.cwd(), 'VITE_'), ...process.env };
+// Mode Vite : « production » (défaut) ou « staging » (projet de test) — voir docs/CONFIG-ENVIRONNEMENTS.md.
+const mode = process.argv[2] ?? 'production';
+const env = { ...loadEnv(mode, process.cwd(), 'VITE_'), ...process.env };
 const missing = ['VITE_SUPABASE_URL', 'VITE_SUPABASE_ANON_KEY'].filter((k) => !env[k]);
 if (missing.length > 0) {
-  console.error(`\n✖ Variables manquantes : ${missing.join(', ')}`);
+  console.error(`\n✖ Variables manquantes (mode « ${mode} ») : ${missing.join(', ')}`);
   console.error('  Créez .env.local (voir .env.example) ou exportez-les avant « npm run android:apk ».');
   console.error('  Sans elles, l’APK affichera « Service indisponible » à la connexion.\n');
   process.exit(1);
 }
-console.log('✔ Configuration Supabase trouvée pour la compilation native.');
+console.log(`✔ Configuration Supabase trouvée (mode « ${mode} ») pour la compilation native.`);
