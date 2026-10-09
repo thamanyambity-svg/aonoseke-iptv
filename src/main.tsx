@@ -33,7 +33,7 @@ if (isTV) {
 }
 
 function AuthGate({ children }: { children: React.ReactNode }): JSX.Element {
-  const { user, loading, signUp, signIn, signInWithProvider, sendPhoneOtp, verifyPhoneOtp, signInDemo } = useAuth();
+  const { user, loading, signUp, signIn, signInWithProvider, signInDemo } = useAuth();
   const setUser = useAuthStore((s) => s.setUser);
   const setLoading = useAuthStore((s) => s.setLoading);
 
@@ -59,8 +59,6 @@ function AuthGate({ children }: { children: React.ReactNode }): JSX.Element {
         onSignUp={signUp}
         onSignIn={signIn}
         onSocial={signInWithProvider}
-        onPhoneSend={sendPhoneOtp}
-        onPhoneVerify={verifyPhoneOtp}
         onDemo={signInDemo}
       />
     );

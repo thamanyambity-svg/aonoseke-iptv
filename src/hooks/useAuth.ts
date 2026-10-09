@@ -159,8 +159,6 @@ export function useAuth(): {
   signUp: (username: string, email: string, password: string, ageRange?: string) => Promise<{ error?: string }>;
   signIn: (email: string, password: string) => Promise<{ error?: string }>;
   signInWithProvider: (provider: 'google' | 'facebook' | 'apple') => Promise<{ error?: string }>;
-  sendPhoneOtp: (phone: string) => Promise<{ error?: string }>;
-  verifyPhoneOtp: (phone: string, token: string) => Promise<{ error?: string }>;
   signInDemo: () => void;
   signOut: () => Promise<void>;
 } {
@@ -281,26 +279,6 @@ export function useAuth(): {
     [],
   );
 
-  const sendPhoneOtp = useCallback(
-    async (phone: string): Promise<{ error?: string }> => {
-      if (!supabase) return { error: 'Service indisponible' };
-      const { error } = await supabase.auth.signInWithOtp({ phone });
-      if (error) return { error: error.message };
-      return {};
-    },
-    [],
-  );
-
-  const verifyPhoneOtp = useCallback(
-    async (phone: string, token: string): Promise<{ error?: string }> => {
-      if (!supabase) return { error: 'Service indisponible' };
-      const { error } = await supabase.auth.verifyOtp({ phone, token, type: 'sms' });
-      if (error) return { error: error.message };
-      return {};
-    },
-    [],
-  );
-
   const signInDemo = useCallback((): void => {
     const demo: AuthUser = { name: 'Visiteur Démo', email: 'demo@aonoseke.com', provider: 'demo' };
     try { localStorage.setItem(DEMO_KEY, JSON.stringify(demo)); } catch { /* ignore */ }
@@ -313,5 +291,5 @@ export function useAuth(): {
     setState({ user: null, loading: false });
   }, []);
 
-  return { user: state.user, loading: state.loading, signUp, signIn, signInWithProvider, sendPhoneOtp, verifyPhoneOtp, signInDemo, signOut };
+  return { user: state.user, loading: state.loading, signUp, signIn, signInWithProvider, signInDemo, signOut };
 }
