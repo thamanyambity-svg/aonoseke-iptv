@@ -45,6 +45,7 @@ export function CampaignForm({ advertisers, initial, onSubmit, onCancel }: Campa
   const [legal, setLegal] = useState(initial?.content?.legal ?? '');
   const [variant, setVariant] = useState<'souverain' | 'corridor'>(initial?.content?.variant ?? 'souverain');
   const [image, setImage] = useState(initial?.content?.image ?? '');
+  const [imagePortrait, setImagePortrait] = useState(initial?.content?.imagePortrait ?? '');
   const [video, setVideo] = useState(initial?.content?.video ?? '');
   const [weight, setWeight] = useState(initial?.weight ?? 10);
   const [freqCap, setFreqCap] = useState(initial?.frequency_cap_per_user ?? 3);
@@ -52,12 +53,12 @@ export function CampaignForm({ advertisers, initial, onSubmit, onCancel }: Campa
   const [endAt, setEndAt] = useState(toLocalInput(initial?.end_at ?? null));
   const [imprCap, setImprCap] = useState(initial?.impression_cap != null ? String(initial.impression_cap) : '');
   const [clickCap, setClickCap] = useState(initial?.click_cap != null ? String(initial.click_cap) : '');
-  const [uploading, setUploading] = useState<'image' | 'video' | null>(null);
+  const [uploading, setUploading] = useState<'image' | 'imagePortrait' | 'video' | null>(null);
   const [formError, setFormError] = useState<string | null>(null);
 
   const activeAdvertisers = advertisers.filter((a) => a.status === 'active');
 
-  async function handleUpload(file: File | undefined, kind: 'image' | 'video'): Promise<void> {
+  async function handleUpload(file: File | undefined, kind: 'image' | 'imagePortrait' | 'video'): Promise<void> {
     if (!file) return;
     if (!supabase) { window.alert('Backend non configuré'); return; }
     setFormError(null);
@@ -77,7 +78,9 @@ export function CampaignForm({ advertisers, initial, onSubmit, onCancel }: Campa
         setFormError('Impossible de récupérer l’URL publique du média.');
         return;
       }
-      if (kind === 'image') setImage(data.publicUrl); else setVideo(data.publicUrl);
+      if (kind === 'image') setImage(data.publicUrl);
+      else if (kind === 'imagePortrait') setImagePortrait(data.publicUrl);
+      else setVideo(data.publicUrl);
     } finally {
       setUploading(null);
     }
@@ -97,7 +100,7 @@ export function CampaignForm({ advertisers, initial, onSubmit, onCancel }: Campa
           advertiser_id: advertiserId,
           name,
           type,
-          content: { title, subtitle, cta, url, eyebrow, legal, variant, image: image || undefined, video: video || undefined },
+          content: { title, subtitle, cta, url, eyebrow, legal, variant, image: image || undefined, imagePortrait: imagePortrait || undefined, video: video || undefined },
           weight,
           frequency_cap_per_user: freqCap,
           start_at: startAt ? new Date(startAt).toISOString() : undefined,
@@ -148,6 +151,21 @@ export function CampaignForm({ advertisers, initial, onSubmit, onCancel }: Campa
         <label>
           <span>Cap fréquence/jour</span>
           <input type="number" min={1} max={20} value={freqCap} onChange={(e) => setFreqCap(Number(e.target.value))} />
+        </label>
+      </div>
+
+      <div className="ad-form-row">
+        <label>
+          <span>Image verticale 9:16 pour mobile (optionnel)</span>
+          <input type="file" accept="image/*" disabled={uploading !== null}
+            onChange={(e) => {
+              const file = e.currentTarget.files?.[0];
+              if (file) void handleUpload(file, 'imagePortrait');
+              e.currentTarget.value = '';
+            }} />
+          <input value={imagePortrait} onChange={(e) => setImagePortrait(e.target.value)} placeholder="https://… (ou via upload)" />
+          {uploading === 'imagePortrait' && <span className="u-time-ago">Upload en cours…</span>}
+          {imagePortrait && <img src={imagePortrait} alt="aperçu vertical" style={{ maxHeight: 70, borderRadius: 6, marginTop: 6, objectFit: 'cover' }} />}
         </label>
       </div>
 

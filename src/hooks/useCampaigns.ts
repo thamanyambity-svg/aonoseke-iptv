@@ -18,6 +18,8 @@ export interface CampaignContent {
   url?: string;
   bg?: string;
   image?: string;
+  /** Version verticale (9:16) pour mobile en portrait. */
+  imagePortrait?: string;
   video?: string;
   logo?: string;
   eyebrow?: string;

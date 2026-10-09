@@ -1,6 +1,8 @@
 [
   {
     "id": "sourcing",
+    "kind": "service",
+    "page": "/register",
     "eyebrow": "SOURCING & ACHATS",
     "title": "Achetez directement à la source",
     "sub": "Fournisseurs vérifiés en Chine, Turquie, Dubaï, Japon et Thaïlande.",
@@ -8,6 +10,8 @@
   },
   {
     "id": "maritime",
+    "kind": "service",
+    "page": "/how-it-works",
     "eyebrow": "FRET MARITIME",
     "title": "Vos conteneurs, de l'Asie à Kinshasa",
     "sub": "Un suivi complet, de l'embarquement à la livraison.",
@@ -15,6 +19,8 @@
   },
   {
     "id": "aerien",
+    "kind": "service",
+    "page": "/contact",
     "eyebrow": "FRET AÉRIEN",
     "title": "Urgent ? Livré par avion",
     "sub": "Des délais maîtrisés pour vos marchandises sensibles.",
@@ -22,6 +28,8 @@
   },
   {
     "id": "douane",
+    "kind": "service",
+    "page": "/how-it-works",
     "eyebrow": "DÉDOUANEMENT KINSHASA",
     "title": "La douane sans casse-tête",
     "sub": "Commissionnaires agréés, dossier complet, circuit maîtrisé.",
@@ -29,6 +37,8 @@
   },
   {
     "id": "qualite",
+    "kind": "service",
+    "page": "/services",
     "eyebrow": "CONTRÔLE QUALITÉ",
     "title": "Vérifié avant de partir",
     "sub": "Inspection avant expédition et rapport photo.",
@@ -36,6 +46,8 @@
   },
   {
     "id": "securise",
+    "kind": "service",
+    "page": "/how-it-works",
     "eyebrow": "PAIEMENT SÉCURISÉ 60/40",
     "title": "Ne payez le solde qu'à réception",
     "sub": "60 % sur compte séquestre, 40 % à la livraison conforme.",
@@ -43,6 +55,8 @@
   },
   {
     "id": "financement",
+    "kind": "service",
+    "page": "/contact",
     "eyebrow": "FINANCEMENT TRADE",
     "title": "Financez vos achats à l’international",
     "sub": "Préfinancement, crédit documentaire, assurance-crédit.",
@@ -50,9 +64,65 @@
   },
   {
     "id": "conseil",
+    "kind": "service",
+    "page": "/contact",
     "eyebrow": "CONSEIL & ACCOMPAGNEMENT",
     "title": "Un dossier d’import solide",
     "sub": "Étude de faisabilité, fiscalité et douane.",
     "cta": "Parler à un conseiller"
+  },
+  {
+    "id": "electronique",
+    "kind": "produit",
+    "page": "/register",
+    "eyebrow": "IMPORT · ÉLECTRONIQUE",
+    "title": "TV, téléphones, électroménager",
+    "sub": "Achetés à la source, contrôlés avant expédition, livrés à Kinshasa.",
+    "cta": "Demander un devis"
+  },
+  {
+    "id": "btp",
+    "kind": "produit",
+    "page": "/register",
+    "eyebrow": "IMPORT · MATÉRIAUX DE CONSTRUCTION",
+    "title": "Équipez vos chantiers",
+    "sub": "Carrelage, sanitaires, quincaillerie : du sourcing à la livraison.",
+    "cta": "Demander un devis"
+  },
+  {
+    "id": "auto",
+    "kind": "produit",
+    "page": "/register",
+    "eyebrow": "IMPORT · PIÈCES AUTO & MOTOS",
+    "title": "Des pièces fiables, sans surprise",
+    "sub": "Contrôle avant expédition et suivi jusqu’à Kinshasa.",
+    "cta": "Demander un devis"
+  },
+  {
+    "id": "textile",
+    "kind": "produit",
+    "page": "/register",
+    "eyebrow": "IMPORT · TEXTILE & MODE",
+    "title": "Habillez votre boutique",
+    "sub": "Tissus, vêtements, accessoires : sourcing en Chine, Turquie et Thaïlande.",
+    "cta": "Demander un devis"
+  },
+  {
+    "id": "solaire",
+    "kind": "produit",
+    "page": "/register",
+    "eyebrow": "IMPORT · ÉNERGIE SOLAIRE",
+    "title": "L’énergie qui ne s’arrête pas",
+    "sub": "Panneaux, onduleurs, batteries : importés avec contrôle qualité.",
+    "cta": "Demander un devis"
+  },
+  {
+    "id": "machines",
+    "kind": "produit",
+    "page": "/register",
+    "eyebrow": "IMPORT · MACHINES & ÉQUIPEMENTS",
+    "title": "Équipez votre activité",
+    "sub": "Machines, outils et équipements : du sourcing au dédouanement.",
+    "cta": "Demander un devis"
   }
 ]

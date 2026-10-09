@@ -13,6 +13,7 @@
         "subtitle": "Fournisseurs vérifiés en Chine, Turquie, Dubaï, Japon et Thaïlande.",
         "cta": "Demander un devis",
         "image": "/ads/sectors/sourcing-preroll.jpg",
+        "imagePortrait": "/ads/sectors/sourcing-portrait.jpg",
         "url": "https://aonosekehouseinvestmentdrc.site/register?utm_source=iptv-player&utm_medium=preroll&utm_campaign=alpha-import-2026&utm_content=sector-sourcing",
         "legal": "A.Onoseke House Investment RDC · RCCM CD/KNM/RCCM/21-A-01949 · Siège : Av. Haut Congo n°13, Ngaliema, Kinshasa · contact@aonosekehouseinvestmentdrc.site · +243 999 894 788"
       },
@@ -23,6 +24,7 @@
         "subtitle": "Un suivi complet, de l'embarquement à la livraison.",
         "cta": "Voir le circuit",
         "image": "/ads/sectors/maritime-preroll.jpg",
+        "imagePortrait": "/ads/sectors/maritime-portrait.jpg",
         "url": "https://aonosekehouseinvestmentdrc.site/how-it-works?utm_source=iptv-player&utm_medium=preroll&utm_campaign=alpha-import-2026&utm_content=sector-maritime",
         "legal": "A.Onoseke House Investment RDC · RCCM CD/KNM/RCCM/21-A-01949 · Siège : Av. Haut Congo n°13, Ngaliema, Kinshasa · contact@aonosekehouseinvestmentdrc.site · +243 999 894 788"
       },
@@ -33,6 +35,7 @@
         "subtitle": "Des délais maîtrisés pour vos marchandises sensibles.",
         "cta": "Demander un devis",
         "image": "/ads/sectors/aerien-preroll.jpg",
+        "imagePortrait": "/ads/sectors/aerien-portrait.jpg",
         "url": "https://aonosekehouseinvestmentdrc.site/contact?utm_source=iptv-player&utm_medium=preroll&utm_campaign=alpha-import-2026&utm_content=sector-aerien",
         "legal": "A.Onoseke House Investment RDC · RCCM CD/KNM/RCCM/21-A-01949 · Siège : Av. Haut Congo n°13, Ngaliema, Kinshasa · contact@aonosekehouseinvestmentdrc.site · +243 999 894 788"
       },
@@ -43,6 +46,7 @@
         "subtitle": "Commissionnaires agréés, dossier complet, circuit maîtrisé.",
         "cta": "Comment ça marche",
         "image": "/ads/sectors/douane-preroll.jpg",
+        "imagePortrait": "/ads/sectors/douane-portrait.jpg",
         "url": "https://aonosekehouseinvestmentdrc.site/how-it-works?utm_source=iptv-player&utm_medium=preroll&utm_campaign=alpha-import-2026&utm_content=sector-douane",
         "legal": "A.Onoseke House Investment RDC · RCCM CD/KNM/RCCM/21-A-01949 · Siège : Av. Haut Congo n°13, Ngaliema, Kinshasa · contact@aonosekehouseinvestmentdrc.site · +243 999 894 788"
       },
@@ -53,6 +57,7 @@
         "subtitle": "Inspection avant expédition et rapport photo.",
         "cta": "En savoir plus",
         "image": "/ads/sectors/qualite-preroll.jpg",
+        "imagePortrait": "/ads/sectors/qualite-portrait.jpg",
         "url": "https://aonosekehouseinvestmentdrc.site/services?utm_source=iptv-player&utm_medium=preroll&utm_campaign=alpha-import-2026&utm_content=sector-qualite",
         "legal": "A.Onoseke House Investment RDC · RCCM CD/KNM/RCCM/21-A-01949 · Siège : Av. Haut Congo n°13, Ngaliema, Kinshasa · contact@aonosekehouseinvestmentdrc.site · +243 999 894 788"
       },
@@ -63,6 +68,7 @@
         "subtitle": "60 % sur compte séquestre, 40 % à la livraison conforme.",
         "cta": "Comment ça marche",
         "image": "/ads/sectors/securise-preroll.jpg",
+        "imagePortrait": "/ads/sectors/securise-portrait.jpg",
         "url": "https://aonosekehouseinvestmentdrc.site/how-it-works?utm_source=iptv-player&utm_medium=preroll&utm_campaign=alpha-import-2026&utm_content=sector-securise",
         "legal": "A.Onoseke House Investment RDC · RCCM CD/KNM/RCCM/21-A-01949 · Siège : Av. Haut Congo n°13, Ngaliema, Kinshasa · contact@aonosekehouseinvestmentdrc.site · +243 999 894 788"
       },
@@ -73,6 +79,7 @@
         "subtitle": "Préfinancement, crédit documentaire, assurance-crédit.",
         "cta": "Nous contacter",
         "image": "/ads/sectors/financement-preroll.jpg",
+        "imagePortrait": "/ads/sectors/financement-portrait.jpg",
         "url": "https://aonosekehouseinvestmentdrc.site/contact?utm_source=iptv-player&utm_medium=preroll&utm_campaign=alpha-import-2026&utm_content=sector-financement",
         "legal": "A.Onoseke House Investment RDC · RCCM CD/KNM/RCCM/21-A-01949 · Siège : Av. Haut Congo n°13, Ngaliema, Kinshasa · contact@aonosekehouseinvestmentdrc.site · +243 999 894 788"
       },
@@ -83,7 +90,74 @@
         "subtitle": "Étude de faisabilité, fiscalité et douane.",
         "cta": "Parler à un conseiller",
         "image": "/ads/sectors/conseil-preroll.jpg",
+        "imagePortrait": "/ads/sectors/conseil-portrait.jpg",
         "url": "https://aonosekehouseinvestmentdrc.site/contact?utm_source=iptv-player&utm_medium=preroll&utm_campaign=alpha-import-2026&utm_content=sector-conseil",
+        "legal": "A.Onoseke House Investment RDC · RCCM CD/KNM/RCCM/21-A-01949 · Siège : Av. Haut Congo n°13, Ngaliema, Kinshasa · contact@aonosekehouseinvestmentdrc.site · +243 999 894 788"
+      },
+      {
+        "id": "sector-electronique",
+        "variant": "souverain",
+        "title": "TV, téléphones, électroménager",
+        "subtitle": "Achetés à la source, contrôlés avant expédition, livrés à Kinshasa.",
+        "cta": "Demander un devis",
+        "image": "/ads/sectors/electronique-preroll.jpg",
+        "imagePortrait": "/ads/sectors/electronique-portrait.jpg",
+        "url": "https://aonosekehouseinvestmentdrc.site/register?utm_source=iptv-player&utm_medium=preroll&utm_campaign=alpha-import-2026&utm_content=sector-electronique",
+        "legal": "A.Onoseke House Investment RDC · RCCM CD/KNM/RCCM/21-A-01949 · Siège : Av. Haut Congo n°13, Ngaliema, Kinshasa · contact@aonosekehouseinvestmentdrc.site · +243 999 894 788"
+      },
+      {
+        "id": "sector-btp",
+        "variant": "souverain",
+        "title": "Équipez vos chantiers",
+        "subtitle": "Carrelage, sanitaires, quincaillerie : du sourcing à la livraison.",
+        "cta": "Demander un devis",
+        "image": "/ads/sectors/btp-preroll.jpg",
+        "imagePortrait": "/ads/sectors/btp-portrait.jpg",
+        "url": "https://aonosekehouseinvestmentdrc.site/register?utm_source=iptv-player&utm_medium=preroll&utm_campaign=alpha-import-2026&utm_content=sector-btp",
+        "legal": "A.Onoseke House Investment RDC · RCCM CD/KNM/RCCM/21-A-01949 · Siège : Av. Haut Congo n°13, Ngaliema, Kinshasa · contact@aonosekehouseinvestmentdrc.site · +243 999 894 788"
+      },
+      {
+        "id": "sector-auto",
+        "variant": "souverain",
+        "title": "Des pièces fiables, sans surprise",
+        "subtitle": "Contrôle avant expédition et suivi jusqu’à Kinshasa.",
+        "cta": "Demander un devis",
+        "image": "/ads/sectors/auto-preroll.jpg",
+        "imagePortrait": "/ads/sectors/auto-portrait.jpg",
+        "url": "https://aonosekehouseinvestmentdrc.site/register?utm_source=iptv-player&utm_medium=preroll&utm_campaign=alpha-import-2026&utm_content=sector-auto",
+        "legal": "A.Onoseke House Investment RDC · RCCM CD/KNM/RCCM/21-A-01949 · Siège : Av. Haut Congo n°13, Ngaliema, Kinshasa · contact@aonosekehouseinvestmentdrc.site · +243 999 894 788"
+      },
+      {
+        "id": "sector-textile",
+        "variant": "souverain",
+        "title": "Habillez votre boutique",
+        "subtitle": "Tissus, vêtements, accessoires : sourcing en Chine, Turquie et Thaïlande.",
+        "cta": "Demander un devis",
+        "image": "/ads/sectors/textile-preroll.jpg",
+        "imagePortrait": "/ads/sectors/textile-portrait.jpg",
+        "url": "https://aonosekehouseinvestmentdrc.site/register?utm_source=iptv-player&utm_medium=preroll&utm_campaign=alpha-import-2026&utm_content=sector-textile",
+        "legal": "A.Onoseke House Investment RDC · RCCM CD/KNM/RCCM/21-A-01949 · Siège : Av. Haut Congo n°13, Ngaliema, Kinshasa · contact@aonosekehouseinvestmentdrc.site · +243 999 894 788"
+      },
+      {
+        "id": "sector-solaire",
+        "variant": "souverain",
+        "title": "L’énergie qui ne s’arrête pas",
+        "subtitle": "Panneaux, onduleurs, batteries : importés avec contrôle qualité.",
+        "cta": "Demander un devis",
+        "image": "/ads/sectors/solaire-preroll.jpg",
+        "imagePortrait": "/ads/sectors/solaire-portrait.jpg",
+        "url": "https://aonosekehouseinvestmentdrc.site/register?utm_source=iptv-player&utm_medium=preroll&utm_campaign=alpha-import-2026&utm_content=sector-solaire",
+        "legal": "A.Onoseke House Investment RDC · RCCM CD/KNM/RCCM/21-A-01949 · Siège : Av. Haut Congo n°13, Ngaliema, Kinshasa · contact@aonosekehouseinvestmentdrc.site · +243 999 894 788"
+      },
+      {
+        "id": "sector-machines",
+        "variant": "souverain",
+        "title": "Équipez votre activité",
+        "subtitle": "Machines, outils et équipements : du sourcing au dédouanement.",
+        "cta": "Demander un devis",
+        "image": "/ads/sectors/machines-preroll.jpg",
+        "imagePortrait": "/ads/sectors/machines-portrait.jpg",
+        "url": "https://aonosekehouseinvestmentdrc.site/register?utm_source=iptv-player&utm_medium=preroll&utm_campaign=alpha-import-2026&utm_content=sector-machines",
         "legal": "A.Onoseke House Investment RDC · RCCM CD/KNM/RCCM/21-A-01949 · Siège : Av. Haut Congo n°13, Ngaliema, Kinshasa · contact@aonosekehouseinvestmentdrc.site · +243 999 894 788"
       }
     ]
@@ -151,6 +225,54 @@
       "subtitle": "Étude de faisabilité, fiscalité et douane.",
       "image": "/ads/sectors/conseil-banner.jpg",
       "url": "https://aonosekehouseinvestmentdrc.site/contact?utm_source=iptv-player&utm_medium=banner&utm_campaign=alpha-import-2026&utm_content=sector-conseil",
+      "legal": "RCCM CD/KNM/RCCM/21-A-01949 — Ngaliema, Kinshasa"
+    },
+    {
+      "id": "banner-electronique",
+      "title": "Alpha Import Exchange — TV, téléphones, électroménager",
+      "subtitle": "Achetés à la source, contrôlés avant expédition, livrés à Kinshasa.",
+      "image": "/ads/sectors/electronique-banner.jpg",
+      "url": "https://aonosekehouseinvestmentdrc.site/register?utm_source=iptv-player&utm_medium=banner&utm_campaign=alpha-import-2026&utm_content=sector-electronique",
+      "legal": "RCCM CD/KNM/RCCM/21-A-01949 — Ngaliema, Kinshasa"
+    },
+    {
+      "id": "banner-btp",
+      "title": "Alpha Import Exchange — Équipez vos chantiers",
+      "subtitle": "Carrelage, sanitaires, quincaillerie : du sourcing à la livraison.",
+      "image": "/ads/sectors/btp-banner.jpg",
+      "url": "https://aonosekehouseinvestmentdrc.site/register?utm_source=iptv-player&utm_medium=banner&utm_campaign=alpha-import-2026&utm_content=sector-btp",
+      "legal": "RCCM CD/KNM/RCCM/21-A-01949 — Ngaliema, Kinshasa"
+    },
+    {
+      "id": "banner-auto",
+      "title": "Alpha Import Exchange — Des pièces fiables, sans surprise",
+      "subtitle": "Contrôle avant expédition et suivi jusqu’à Kinshasa.",
+      "image": "/ads/sectors/auto-banner.jpg",
+      "url": "https://aonosekehouseinvestmentdrc.site/register?utm_source=iptv-player&utm_medium=banner&utm_campaign=alpha-import-2026&utm_content=sector-auto",
+      "legal": "RCCM CD/KNM/RCCM/21-A-01949 — Ngaliema, Kinshasa"
+    },
+    {
+      "id": "banner-textile",
+      "title": "Alpha Import Exchange — Habillez votre boutique",
+      "subtitle": "Tissus, vêtements, accessoires : sourcing en Chine, Turquie et Thaïlande.",
+      "image": "/ads/sectors/textile-banner.jpg",
+      "url": "https://aonosekehouseinvestmentdrc.site/register?utm_source=iptv-player&utm_medium=banner&utm_campaign=alpha-import-2026&utm_content=sector-textile",
+      "legal": "RCCM CD/KNM/RCCM/21-A-01949 — Ngaliema, Kinshasa"
+    },
+    {
+      "id": "banner-solaire",
+      "title": "Alpha Import Exchange — L’énergie qui ne s’arrête pas",
+      "subtitle": "Panneaux, onduleurs, batteries : importés avec contrôle qualité.",
+      "image": "/ads/sectors/solaire-banner.jpg",
+      "url": "https://aonosekehouseinvestmentdrc.site/register?utm_source=iptv-player&utm_medium=banner&utm_campaign=alpha-import-2026&utm_content=sector-solaire",
+      "legal": "RCCM CD/KNM/RCCM/21-A-01949 — Ngaliema, Kinshasa"
+    },
+    {
+      "id": "banner-machines",
+      "title": "Alpha Import Exchange — Équipez votre activité",
+      "subtitle": "Machines, outils et équipements : du sourcing au dédouanement.",
+      "image": "/ads/sectors/machines-banner.jpg",
+      "url": "https://aonosekehouseinvestmentdrc.site/register?utm_source=iptv-player&utm_medium=banner&utm_campaign=alpha-import-2026&utm_content=sector-machines",
       "legal": "RCCM CD/KNM/RCCM/21-A-01949 — Ngaliema, Kinshasa"
     }
   ]
