@@ -188,7 +188,7 @@ export function Sidebar({
             <AlphaLogoAnimated size={34} />
           </div>
           <div className="sidebar-title">
-            <h1>AMBITY.A IPTV PLAYER</h1>
+            <h1>Aonoseke IPTV Player</h1>
             <span>by A.Onoseke House Investment RDC</span>
           </div>
           <div className="channel-count-badge" title="Nombre de chaînes">{channels.length}</div>
