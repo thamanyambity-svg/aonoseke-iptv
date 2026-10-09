@@ -312,14 +312,23 @@ end;
 $$;
 
 -- ── Événements publics : contenu contrôlé ───────────────────────────────────
-drop policy if exists "anon insert events" on public.view_events;
-create policy "anon insert events"
-  on public.view_events for insert
-  to anon, authenticated
-  with check (
-    event_type in ('channel_view', 'ad_impression', 'ad_click', 'session_start')
-    and (ref is null or char_length(ref) <= 300)
-    and (category is null or char_length(category) <= 100)
-    and user_email is null
-    and (user_id is null or user_id = auth.uid())
-  );
+do $$
+declare
+  v_email_clause text := '';
+begin
+  -- Selon l'historique de la base, view_events peut ne pas avoir la colonne obsolète user_email.
+  if exists (
+    select 1 from information_schema.columns
+    where table_schema = 'public' and table_name = 'view_events' and column_name = 'user_email'
+  ) then
+    v_email_clause := ' and user_email is null';
+  end if;
+
+  execute 'drop policy if exists "anon insert events" on public.view_events';
+  execute 'create policy "anon insert events" on public.view_events for insert to anon, authenticated with check ('
+    || 'event_type in (''channel_view'', ''ad_impression'', ''ad_click'', ''session_start'')'
+    || ' and (ref is null or char_length(ref) <= 300)'
+    || ' and (category is null or char_length(category) <= 100)'
+    || v_email_clause
+    || ' and (user_id is null or user_id = auth.uid()))';
+end $$;
