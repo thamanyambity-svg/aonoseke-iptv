@@ -129,13 +129,26 @@ function App(): JSX.Element {
     setSidebarOpen(!sidebarOpen);
   }, [sidebarOpen, setSidebarOpen]);
 
-  const handleLogout = useCallback(() => {
+  const resetSession = useCallback((): void => {
     setShowProfile(false);
     setActiveChannel(null);
     setSidebarOpen(true);
     setError(null);
-    useAuthStore.getState().setUser(null);
   }, [setActiveChannel, setSidebarOpen, setError]);
+
+  // Ferme réellement la session (Supabase + mode démo) : l'écran de connexion réapparaît ensuite.
+  const handleLogout = useCallback((): void => {
+    resetSession();
+    void useAuthStore.getState().actions?.signOut();
+  }, [resetSession]);
+
+  const handleDeleteAccount = useCallback(async (): Promise<{ error?: string }> => {
+    const actions = useAuthStore.getState().actions;
+    if (!actions) return { error: 'Service indisponible' };
+    const res = await actions.deleteAccount();
+    if (!res.error) resetSession();
+    return res;
+  }, [resetSession]);
 
   return (
     <div className={`app-container${sidebarOpen ? ' sidebar-open' : ''}`}>
@@ -227,6 +240,7 @@ function App(): JSX.Element {
             favoritesCount={favorites.size}
             onClose={() => setShowProfile(false)}
             onLogout={handleLogout}
+            onDeleteAccount={user.provider !== 'demo' && user.role !== 'admin' ? handleDeleteAccount : undefined}
             onOpenAdmin={user.role === 'admin' ? () => { setShowProfile(false); void navigate('/admin'); } : undefined}
             onOpenAdMgmt={user.role === 'admin' ? () => { setShowProfile(false); void navigate('/admin'); } : undefined}
           />

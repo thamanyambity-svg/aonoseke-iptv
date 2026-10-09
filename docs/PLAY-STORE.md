@@ -149,10 +149,20 @@ Ne sont **pas** collectés : position GPS précise, contacts, photos, messages, 
 
 > Aonoseke IPTV est un lecteur de télévision en direct. Il ne contient, n'héberge et ne vend aucun contenu : il lit uniquement des flux HLS gratuits que les chaînes publient elles-mêmes (liste publique iptv-org / Free-TV), après vérification technique. Les chaînes payantes, les flux piratés et les chaînes d'État sanctionnées sont exclus. Tout ayant droit peut demander le retrait d'une chaîne à contact@aonosekehouseinvestmentdrc.site, traité rapidement. L'application contient des publicités de l'annonceur partenaire Alpha Import Exchange.
 
-## 8. Points bloquants à régler AVANT la soumission
+## 8. Points bloquants — état
 
-1. **Suppression de compte (obligatoire pour toute application qui crée des comptes).** Google exige (a) un moyen de demander la suppression depuis l'application et (b) une adresse web publique décrivant la procédure. Aujourd'hui l'application n'a ni bouton ni page : seule la politique de confidentialité indique d'écrire un e-mail. À développer : fonction de suppression de son propre compte, bouton dans le profil, page `/supprimer-mon-compte`.
-2. **Chiffre « 1 700+ chaînes » sur la page d'accueil.** La liste vérifiée contient 415 chaînes ; l'annuaire de sources en propose davantage mais non vérifiées. Google sanctionne les affirmations trompeuses : remplacer par « 400+ chaînes vérifiées ». Idem « 100 % légal » : préférer « sources publiques et gratuites ».
-3. **Politique de confidentialité.** Elle mentionne des « prestataires de paiement pour les abonnements » alors que l'application est gratuite sans paiement : retirer cette phrase ou l'expliquer. Mettre à jour la date.
-4. **Google et Facebook en production.** Écran de consentement Google en production, application Facebook en mode Production (sinon seuls les testeurs peuvent se connecter).
-5. **Test interne avant la production.** Téléverser le `.aab`, installer depuis le Play Store, tester connexion, lecture, pubs et déconnexion.
+1. **Suppression de compte — corrigé.**
+   - Dans l'application : Profil → « Supprimer mon compte » (confirmation en tapant SUPPRIMER). Fonction base de données `delete_my_account`, migration `20261009130000_delete_my_account.sql`.
+   - URL à saisir dans la Play Console (Contenu de l'application → Sécurité des données → « Supprimer le compte ») :
+     `https://iptv-web-player-aonoseke-drc.vercel.app/supprimer-mon-compte.html`
+   - Les comptes administrateurs ne peuvent pas se supprimer eux-mêmes (le journal d'audit les référence) : sans importance pour le public.
+2. **Chiffres affichés — corrigé.** « 400+ chaînes vérifiées » à la place de « 1 700+ », « sources publiques » à la place de « 100 % légal ».
+3. **Politique de confidentialité — corrigée.** Mention des paiements retirée, section suppression de compte ajoutée, date mise à jour (9 octobre 2026).
+4. **Google et Facebook en production — à faire par vous.** Écran de consentement Google en production, application Facebook en mode Production (sinon seuls les testeurs peuvent se connecter).
+5. **Test interne avant la production — à faire par vous.** Téléverser le `.aab`, installer depuis le Play Store, tester connexion, lecture, pubs, déconnexion et suppression de compte.
+6. **Reconstruire l'application.** Ces corrections sont dans le code : refaire un `.aab` signé (version 1.0, code 2 si 1.0 a déjà été téléversée) avant la soumission.
+
+### Réponses à mettre à jour dans « Sécurité des données »
+
+- « Les utilisateurs peuvent demander la suppression de leurs données » : **Oui**, via l'application et via l'URL ci-dessus.
+- Données supprimées : compte, profil, favoris, activité. Données conservées de façon anonyme : événements d'audience et publicitaires.

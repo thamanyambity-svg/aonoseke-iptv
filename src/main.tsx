@@ -33,9 +33,14 @@ if (isTV) {
 }
 
 function AuthGate({ children }: { children: React.ReactNode }): JSX.Element {
-  const { user, loading, signUp, signIn, signInWithProvider, signInDemo } = useAuth();
+  const { user, loading, signUp, signIn, signInWithProvider, signInDemo, signOut, deleteAccount } = useAuth();
   const setUser = useAuthStore((s) => s.setUser);
   const setLoading = useAuthStore((s) => s.setLoading);
+  const setActions = useAuthStore((s) => s.setActions);
+
+  useEffect(() => {
+    setActions({ signOut, deleteAccount });
+  }, [signOut, deleteAccount, setActions]);
 
   useEffect(() => {
     setUser(user);

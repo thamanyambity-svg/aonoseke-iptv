@@ -3783,3 +3783,84 @@ video::cue {
   color: #fff;
   font-size: 1.1em;
 }
+
+/* ── Suppression de compte (Profil) ── */
+.profile-delete-link {
+  margin-top: 10px;
+  background: none;
+  border: 0;
+  color: var(--text-3);
+  font-size: 0.78rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: underline;
+  align-self: center;
+}
+.profile-delete-link:hover {
+  color: #ff6b6b;
+}
+.profile-delete-box {
+  margin-top: 12px;
+  padding: 12px;
+  border: 1px solid rgba(255, 107, 107, 0.4);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 107, 107, 0.06);
+  text-align: left;
+}
+.profile-delete-warn {
+  margin: 0 0 10px;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: var(--text-2);
+}
+.profile-delete-label {
+  display: block;
+  font-size: 0.75rem;
+  margin-bottom: 6px;
+  color: var(--text-2);
+}
+.profile-delete-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text-1);
+  font: inherit;
+}
+.profile-delete-error {
+  margin: 8px 0 0;
+  font-size: 0.75rem;
+  color: #ff6b6b;
+}
+.profile-delete-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+.profile-delete-actions button {
+  flex: 1;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.78rem;
+}
+.profile-delete-cancel {
+  background: transparent;
+  color: var(--text-2);
+}
+.profile-delete-confirm {
+  background: #c0392b;
+  border-color: #c0392b;
+  color: #fff;
+  font-weight: 700;
+}
+.profile-delete-confirm:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}

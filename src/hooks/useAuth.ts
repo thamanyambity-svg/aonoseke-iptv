@@ -161,6 +161,7 @@ export function useAuth(): {
   signInWithProvider: (provider: 'google' | 'facebook' | 'apple') => Promise<{ error?: string }>;
   signInDemo: () => void;
   signOut: () => Promise<void>;
+  deleteAccount: () => Promise<{ error?: string }>;
 } {
   const [state, setState] = useState<AuthState>({ user: null, loading: true });
 
@@ -291,5 +292,16 @@ export function useAuth(): {
     setState({ user: null, loading: false });
   }, []);
 
-  return { user: state.user, loading: state.loading, signUp, signIn, signInWithProvider, signInDemo, signOut };
+  /** Supprime définitivement le compte de l'utilisateur connecté (RPC delete_my_account), puis ferme la session. */
+  const deleteAccount = useCallback(async (): Promise<{ error?: string }> => {
+    if (!supabase) return { error: 'Service indisponible' };
+    const { error } = await rpc('delete_my_account');
+    if (error) return { error: error.message };
+    try { await supabase.auth.signOut({ scope: 'local' }); } catch { /* le compte n'existe plus : session locale seulement */ }
+    try { localStorage.removeItem(DEMO_KEY); } catch { /* ignore */ }
+    setState({ user: null, loading: false });
+    return {};
+  }, []);
+
+  return { user: state.user, loading: state.loading, signUp, signIn, signInWithProvider, signInDemo, signOut, deleteAccount };
 }
