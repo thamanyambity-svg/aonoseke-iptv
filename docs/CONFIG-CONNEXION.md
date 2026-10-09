@@ -30,14 +30,11 @@ Projet Supabase : `aonoseke-iptv` (réf. `cvuhvppsdzrjtvrtvrlv`).
 4. Copier _App ID_ et _App Secret_ dans Supabase, activer.
 5. **Passer l'app en mode « Live »** (en mode _Development_, seuls les administrateurs/testeurs peuvent se connecter).
 
-## 4. Téléphone (Authentication → Providers → Phone)
+## 4. Téléphone (retiré)
 
-1. Activer _Phone_ puis choisir un fournisseur SMS (Twilio / Twilio Verify, MessageBird, Vonage, TextLocal).
-2. Vérifier que le fournisseur couvre vos pays (RDC `+243`, Congo `+242`, Côte d'Ivoire `+225`…) et le coût par SMS.
-3. Alternative pour l'Afrique (Africa's Talking, WhatsApp…) : _Auth Hooks → Send SMS hook_ vers une Edge Function.
+La connexion par SMS a été retirée de l'application (service d'envoi de SMS payant). Les connexions proposées sont **Google, Facebook et e-mail**. Si besoin plus tard, l'historique git contient l'ancienne implémentation (écran Landing, `useAuth`, `utils/phone`).
 
 ## Vérifier
 
 - Web : « Continuer avec Google/Facebook » redirige vers le fournisseur puis revient connecté.
 - Android : le navigateur s'ouvre, puis l'application se rouvre connectée (lien `com.aonoseke.iptv://auth/callback`).
-- Téléphone : saisir le numéro → SMS reçu → code à 6 chiffres.
