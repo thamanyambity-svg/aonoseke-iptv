@@ -15,6 +15,9 @@ import { AgentConsole } from './regie/AgentConsole.tsx';
 import { OnlineUsersPanel } from './admin/OnlineUsersPanel.tsx';
 import { LiveDevicesPanel } from './admin/LiveDevicesPanel.tsx';
 import { BarList } from './admin/BarList.tsx';
+import {
+  fmtDate, fmtTimeAgo, isOnline, flagEmoji, csvEscape, deviceLabel, fmtCtr, fmtNumber, fmtShare, DASHBOARD_TZ,
+} from './admin/dashboardFormat.ts';
 import type { JSX } from 'react';
 
 const MapboxMap = lazy(() => import('./MapboxMap.tsx'));
@@ -72,84 +75,23 @@ interface AdminDashboardProps {
 
 type AdminTab = 'audience' | 'ads' | 'regie';
 
+/** Nombre de lignes demandées à admin_recent_users (la base borne à 500). */
+const RECENT_USERS_LIMIT = 100;
+/** Rafraîchissement des statistiques (silencieux) et de la liste « en ligne ». */
+const STATS_REFRESH_MS = 60_000;
+const ONLINE_REFRESH_MS = 10_000;
+/** Noms des panneaux, dans l'ordre des appels de load(). */
+const PANEL_NAMES = ['Indicateurs', 'Utilisateurs', 'Répartition mondiale', 'Engagement', 'Heures de pointe', 'Contenus préférés', 'Tranches d’âge', 'Appareils', 'Segments'] as const;
+
 // ── Helpers ──────────────────────────────────────────────────────────────────
-
-function fmtDate(s: string): string {
-  try {
-    return new Date(s).toLocaleString('fr-FR', { dateStyle: 'short', timeStyle: 'short' });
-  } catch {
-    return s;
-  }
-}
-
-function fmtTimeAgo(s: string): string {
-  try {
-    const diffMs = Date.now() - new Date(s).getTime();
-    const sec = Math.floor(diffMs / 1000);
-    if (sec < 5) return "à l'instant";
-    if (sec < 60) return `il y a ${sec}s`;
-    const min = Math.floor(sec / 60);
-    if (min < 60) return `il y a ${min} min`;
-    const hr = Math.floor(min / 60);
-    if (hr < 24) return `il y a ${hr}h`;
-    const day = Math.floor(hr / 24);
-    return `il y a ${day}j`;
-  } catch {
-    return s;
-  }
-}
-
-/**
- * Seuil "en ligne" aligné sur le heartbeat (60s) avec marge de sécurité.
- * Le heartbeat envoie une mise à jour toutes les 60s ; on considère un
- * utilisateur en ligne jusqu'à 90s après son dernier heartbeat (couvre
- * le délai réseau + la fenêtre entre deux battements).
- */
-const ONLINE_THRESHOLD_MS = 90 * 1000;
-
-function isOnline(lastSeen: string): boolean {
-  try {
-    return Date.now() - new Date(lastSeen).getTime() < ONLINE_THRESHOLD_MS;
-  } catch {
-    return false;
-  }
-}
-
-function flagEmoji(cc: string | null): string {
-  if (!cc || cc.length !== 2) return '🌍';
-  const base = 0x1f1e6;
-  return String.fromCodePoint(...[...cc.toUpperCase()].map((c) => base + c.charCodeAt(0) - 65));
-}
 
 function safeDisplayName(user: OnlineUser | RecentUser): string {
   const username = safeString(user.username);
   if (username) return username;
   const email = safeString(user.email);
-  if (email.includes('@')) return email.split('@')[0];
+  if (email.includes('@')) return email.split('@')[0] ?? email;
   if (email.length > 0) return email;
   return 'Utilisateur';
-}
-
-/**
- * Échappe une valeur CSV pour prévenir l'injection de formules
- * (CSV injection : Excel/Sheets interprètent =, +, -, @, \t, \r).
- * Préfixe par une apostrophe si le champ commence par un caractère
- * dangereux, et entoure systématiquement de guillemets (RFC 4180).
- */
-function csvEscape(value: unknown): string {
-  const s =
-    typeof value === 'string' ? value
-    : value == null ? ''
-    : typeof value === 'number' || typeof value === 'boolean' || typeof value === 'bigint' ? String(value)
-    : JSON.stringify(value);
-  // Doubler les guillemets internes
-  const escaped = s.replace(/"/g, '""');
-  // Si contient virgule, guillemet, retour ligne, ou commence par caractère dangereux
-  const needsQuote = /[,"\n\r]/.test(s) || /^[=+\-@\t\r]/.test(s);
-  const quoted = needsQuote ? `"${escaped}"` : escaped;
-  // Préfixer les formules potentielles (=, +, -, @) par une apostrophe
-  if (/^[=+\-@]/.test(quoted)) return `'${quoted}`;
-  return quoted;
 }
 
 function safeArray<T>(value: unknown): T[] {
@@ -177,9 +119,8 @@ export default function AdminDashboard({ user, onClose, initialTab = 'audience' 
   
   // DEBUG: Log complet pour diagnostic
   const userRole = user?.role;
-  const isAdmin = userRole === 'admin';
-  
-  if (!isAdmin) {
+
+  if (!user || userRole !== 'admin') {
     logger.warn('🔒 AdminDashboard accès refusé', { 
       userId: user?.id,
       email: user?.email,
@@ -237,16 +178,14 @@ function AdminDashboardInner({ user, onClose, initialTab }: {
   const [ages, setAges] = useState<NamedStat[]>([]);
   const [devices, setDevices] = useState<NamedStat[]>([]);
   const [segments, setSegments] = useState<NamedStat[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);        // 1er chargement uniquement (spinner plein écran)
+  const [refreshing, setRefreshing] = useState(false); // actualisation en cours (icône qui tourne, sans effacer l'écran)
   const [error, setError] = useState('');
+  const [failedPanels, setFailedPanels] = useState<string[]>([]);
   const [lastUpdate, setLastUpdate] = useState<Date | null>(null);
 
   // Référence pour tracker la visibilité de l'onglet (économie de requêtes)
   const isVisibleRef = useRef<boolean>(document.visibilityState === 'visible');
-
-  // Débounce timer pour eviter les requêtes répétées lors d'événements
-  // Realtime massifs (ex. plusieurs utilisateurs font heartbeat simultanément)
-  const debounceTimerRef = useRef<number | null>(null);
 
   // ── Chargement complet des données ────────────────────────────────────────
   function parseGeo(raw: unknown): GeoStats | null {
@@ -271,58 +210,72 @@ function AdminDashboardInner({ user, onClose, initialTab }: {
     };
   }
 
-  const load = useCallback(async (): Promise<void> => {
+  const load = useCallback(async (opts: { silent?: boolean } = {}): Promise<void> => {
     if (!supabase) {
       setError('Backend non configuré');
       setLoading(false);
       return;
     }
-    setLoading(true);
-    setError('');
+    if (!opts.silent) setLoading(true);
+    setRefreshing(true);
     try {
-      const [s, u, g, e, h, c, a, d, seg] = await Promise.all([
-        supabase.rpc('admin_stats'),
-        supabase.rpc('admin_recent_users', { lim: 100 }),
-        supabase.rpc('admin_geo_stats'),
-        supabase.rpc('admin_engagement'),
-        supabase.rpc('admin_activity_heatmap'),
-        supabase.rpc('admin_content_affinity'),
-        supabase.rpc('admin_age_distribution'),
-        supabase.rpc('admin_device_split'),
-        supabase.rpc('admin_segments'),
+      // allSettled : si UNE fonction SQL échoue, les autres panneaux restent affichés.
+      const settled = await Promise.allSettled([
+        rpc('admin_stats'),
+        rpc('admin_recent_users', { lim: RECENT_USERS_LIMIT }),
+        rpc('admin_geo_stats'),
+        rpc('admin_engagement'),
+        rpc('admin_activity_heatmap'),
+        rpc('admin_content_affinity'),
+        rpc('admin_age_distribution'),
+        rpc('admin_device_split'),
+        rpc('admin_segments'),
       ]);
+      const res = settled.map((r) =>
+        r.status === 'fulfilled'
+          ? { data: r.value.data, error: r.value.error }
+          : { data: null, error: { message: String(r.reason), code: '' } },
+      );
+      const [s, u, g, e, h, c, a, d, seg] = res;
 
-      // Vérification des erreurs (la RPC lève une exception si non-admin,
-      // mais on garde le garde-fou côté client pour la robustesse)
-      const firstError = [s.error, u.error, g.error, e.error, h.error, c.error, a.error, d.error, seg.error].find((x) => x !== null);
-      if (firstError) throw new Error(firstError.message);
+      const denied = res.some((r) => r.error && (r.error.message.includes('administrateur') || r.error.code === '42501'));
+      if (denied) {
+        setError("Accès refusé : cette page est réservée aux administrateurs.");
+        return;
+      }
+      const failed = PANEL_NAMES.filter((_, i) => res[i]?.error);
+      if (failed.length === res.length) {
+        setError('Erreur lors du chargement des statistiques. Réessayez.');
+        return;
+      }
+      setError('');
+      setFailedPanels(failed);
+      failed.forEach((name) => logger.warn('admin panel failed', { panel: name }));
 
       // admin_stats / admin_geo_stats / admin_engagement sont des RPC "returns table"
-      // -> Supabase renvoie un TABLEAU [{...}] : on prend la 1re ligne (sinon
-      // stats/eng/geo seraient un tableau et stats.total_users serait undefined
-      // -> crash .toLocaleString() au rendu).
-      const statsRow = firstRow(s.data);
-      setStats(statsRow && typeof statsRow === 'object' ? (statsRow as Stats) : null);
-      setUsers(safeArray<RecentUser>(u.data));
-      setGeo(parseGeo(firstRow(g.data)));
-      const engRow = firstRow(e.data);
-      setEng(engRow && typeof engRow === 'object' ? (engRow as Engagement) : null);
-      setHeat(safeArray<HeatCell>(h.data));
-      setContent(safeArray<{ category: string; count: number }>(c.data).map((x) => ({ label: safeString(x.category), count: safeNumber(x.count) })));
-      setAges(safeArray<{ age_range: string; count: number }>(a.data).map((x) => ({ label: safeString(x.age_range), count: safeNumber(x.count) })));
-      setDevices(safeArray<{ device: string; count: number }>(d.data).map((x) => ({ label: safeString(x.device), count: safeNumber(x.count) })));
-      setSegments(safeArray<NamedStat>(seg.data));
+      // -> Supabase renvoie un TABLEAU [{...}] : on prend la 1re ligne.
+      if (!s?.error) {
+        const row = firstRow(s?.data);
+        setStats(row && typeof row === 'object' ? (row as Stats) : null);
+      }
+      if (!u?.error) setUsers(safeArray<RecentUser>(u?.data));
+      if (!g?.error) setGeo(parseGeo(firstRow(g?.data)));
+      if (!e?.error) {
+        const row = firstRow(e?.data);
+        setEng(row && typeof row === 'object' ? (row as Engagement) : null);
+      }
+      if (!h?.error) setHeat(safeArray<HeatCell>(h?.data));
+      if (!c?.error) setContent(safeArray<{ category: string; count: number }>(c?.data).map((x) => ({ label: safeString(x.category), count: safeNumber(x.count) })));
+      if (!a?.error) setAges(safeArray<{ age_range: string; count: number }>(a?.data).map((x) => ({ label: safeString(x.age_range), count: safeNumber(x.count) })));
+      if (!d?.error) setDevices(safeArray<{ device: string; count: number }>(d?.data).map((x) => ({ label: deviceLabel(safeString(x.device).toLowerCase()) === '—' ? 'Inconnu' : deviceLabel(safeString(x.device).toLowerCase()), count: safeNumber(x.count) })));
+      if (!seg?.error) setSegments(safeArray<NamedStat>(seg?.data).map((x) => ({ label: safeString(x.label), count: safeNumber(x.count) })));
       setLastUpdate(new Date());
     } catch (err) {
       logger.error('admin load failed', err as Error);
-      const msg = (err as Error)?.message ?? '';
-      if (msg.includes('administrateur') || msg.includes('42501')) {
-        setError("Accès refusé : cette page est réservée aux administrateurs.");
-      } else {
-        setError("Erreur lors du chargement des statistiques. Réessayez.");
-      }
+      setError('Erreur lors du chargement des statistiques. Réessayez.');
     } finally {
       setLoading(false);
+      setRefreshing(false);
     }
   }, []);
 
@@ -344,60 +297,37 @@ function AdminDashboardInner({ user, onClose, initialTab }: {
       setOnlineUsers([]);
     }
   }, []);
-  // ── Chargement initial + polling intelligent ─────────────────────────────
+  // ── Chargement initial + actualisation automatique ───────────────────────
+  // La liste « en ligne » est relue toutes les 10 s, les statistiques toutes les 60 s,
+  // silencieusement (sans effacer l'écran) et seulement quand l'onglet est visible.
+  // NB : l'ancien abonnement Realtime sur `profiles` a été retiré : la politique RLS
+  // « own profile read » ne laisse l'admin voir que SA propre ligne, il ne recevait donc
+  // jamais les mises à jour des autres utilisateurs — mais déclenchait un rechargement
+  // complet à chacun de ses propres battements.
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect -- chargement/initialisation au montage : le setState est voulu
     void load();
     void loadOnline();
 
-    // Polling des utilisateurs en ligne toutes les 10s (et non 3s)
-    // — c'est suffisant pour du "temps réel" administrateur et économise Supabase.
-    const onlineId = window.setInterval(() => void loadOnline(), 10_000);
+    const onlineId = window.setInterval(() => void loadOnline(), ONLINE_REFRESH_MS);
+    const statsId = window.setInterval(() => {
+      if (isVisibleRef.current) void load({ silent: true });
+    }, STATS_REFRESH_MS);
 
-    // Suspend le polling quand l'onglet est caché, le reprend au retour
+    // Onglet caché : on suspend ; au retour, rafraîchissement immédiat.
     const onVis = (): void => {
       isVisibleRef.current = document.visibilityState === 'visible';
       if (isVisibleRef.current) {
-        void loadOnline(); // refresh immédiat au retour
+        void loadOnline();
+        void load({ silent: true });
       }
     };
     document.addEventListener('visibilitychange', onVis);
 
-    // ── Supabase Realtime : écoute des mises à jour de profils ─────────────
-    // Quand un utilisateur fait un heartbeat, last_seen_at est mis à jour.
-    // On écoute ces updates pour rafraîchir la liste en ligne instantanément.
-    let channel: ReturnType<typeof supabase.channel> | null = null;
-    if (supabase) {
-      channel = supabase
-        .channel('admin-realtime')
-        .on(
-          'postgres_changes',
-          { event: 'UPDATE', schema: 'public', table: 'profiles' },
-          () => {
-            // Un profil a été mis à jour (heartbeat probable).
-            // Appelle loadOnline immédiatement pour la liste en ligne.
-            void loadOnline();
-            
-            // Débounce : appelle load() (qui inclut admin_recent_users)
-            // une seule fois par 500ms max, même si on reçoit plusieurs events
-            if (debounceTimerRef.current === null) {
-              debounceTimerRef.current = window.setTimeout(() => {
-                void load();
-                debounceTimerRef.current = null;
-              }, 500);
-            }
-          },
-        )
-        .subscribe();
-    }
-
     return () => {
       window.clearInterval(onlineId);
+      window.clearInterval(statsId);
       document.removeEventListener('visibilitychange', onVis);
-      if (debounceTimerRef.current !== null) {
-        window.clearTimeout(debounceTimerRef.current);
-      }
-      if (channel) void supabase?.removeChannel(channel);
     };
   }, [load, loadOnline]);
 
@@ -429,7 +359,7 @@ function AdminDashboardInner({ user, onClose, initialTab }: {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `aonoseke-utilisateurs-${new Date().toISOString().slice(0, 10)}.csv`;
+    a.download = `aonoseke-derniers-actifs-${new Date().toLocaleDateString('sv-SE', { timeZone: DASHBOARD_TZ })}.csv`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -448,7 +378,8 @@ function AdminDashboardInner({ user, onClose, initialTab }: {
       `Supprimer définitivement « ${username} » ?\n\n` +
       `Cette action est IRRÉVERSIBLE :\n` +
       `  · Compte auth.users supprimé\n` +
-      `  · Profil, activité et favoris effacés (cascade)\n` +
+      `  · Profil et temps d'activité effacés (cascade)\n` +
+      `  · Les favoris, enregistrés dans l'appareil de l'utilisateur, ne sont pas concernés\n` +
       `  · Action journalisée dans admin_audit_log\n\n` +
       `Confirmez en cliquant sur OK.`;
     if (!window.confirm(confirmText)) return;
@@ -464,21 +395,20 @@ function AdminDashboardInner({ user, onClose, initialTab }: {
   }
 
   // ── KPI cards (carte premium supprimée, remplacée par CTR pub) ───────────
-  const ctr7d = stats && stats.ad_impressions_7d > 0
-    ? ((stats.ad_clicks_7d / stats.ad_impressions_7d) * 100).toFixed(2)
-    : '0,00';
+  const ctr7d = stats ? fmtCtr(safeNumber(stats.ad_clicks_7d), safeNumber(stats.ad_impressions_7d)) : '—';
 
+  const n = (v: unknown): string => fmtNumber(safeNumber(v));
   const cards = stats ? [
-    { icon: <Users size={18} />,      label: 'Inscrits (total)',       value: safeNumber(stats.total_users).toLocaleString('fr-FR'),       hi: true },
-    { icon: <Activity size={18} />,   label: 'Actifs · 24h',           value: safeNumber(stats.active_24h).toLocaleString('fr-FR') },
-    { icon: <Activity size={18} />,   label: 'Actifs · 7 jours',       value: safeNumber(stats.active_7d).toLocaleString('fr-FR') },
-    { icon: <Activity size={18} />,   label: 'Actifs · 30 jours',      value: safeNumber(stats.active_30d).toLocaleString('fr-FR') },
-    { icon: <TrendingUp size={18} />, label: "Nouveaux · aujourd'hui", value: safeNumber(stats.new_today).toLocaleString('fr-FR') },
-    { icon: <TrendingUp size={18} />, label: 'Nouveaux · 7 jours',     value: safeNumber(stats.new_7d).toLocaleString('fr-FR') },
-    { icon: <Zap size={18} />,        label: 'Sessions · 7j',          value: safeNumber(stats.sessions_7d).toLocaleString('fr-FR') },
-    { icon: <Eye size={18} />,        label: 'Vues chaînes · 7j',      value: safeNumber(stats.channel_views_7d).toLocaleString('fr-FR') },
-    { icon: <Eye size={18} />,        label: 'Impressions pub · 7j',  value: safeNumber(stats.ad_impressions_7d).toLocaleString('fr-FR') },
-    { icon: <Target size={18} />,     label: 'CTR pub · 7j',           value: `${ctr7d} %`,                                    hi: true },
+    { icon: <Users size={18} />,      label: 'Inscrits (total)',       hint: 'tous les comptes créés',                              value: n(stats.total_users), hi: true },
+    { icon: <Activity size={18} />,   label: 'Actifs · 24 h',          hint: 'vus dans les dernières 24 h',                         value: n(stats.active_24h) },
+    { icon: <Activity size={18} />,   label: 'Actifs · 7 jours',       hint: 'vus dans les 7 derniers jours',                       value: n(stats.active_7d) },
+    { icon: <Activity size={18} />,   label: 'Actifs · 30 jours',      hint: 'vus dans les 30 derniers jours',                      value: n(stats.active_30d) },
+    { icon: <TrendingUp size={18} />, label: "Nouveaux · aujourd'hui", hint: 'inscrits depuis minuit (heure de Kinshasa)',          value: n(stats.new_today) },
+    { icon: <TrendingUp size={18} />, label: 'Nouveaux · 7 jours',     hint: 'inscrits sur les 7 derniers jours',                   value: n(stats.new_7d) },
+    { icon: <Zap size={18} />,        label: 'Sessions · 7 jours',     hint: 'ouvertures de l’application',                         value: n(stats.sessions_7d) },
+    { icon: <Eye size={18} />,        label: 'Vues chaînes · 7 jours', hint: 'chaînes lancées',                                     value: n(stats.channel_views_7d) },
+    { icon: <Eye size={18} />,        label: 'Impressions pub · 7 jours', hint: 'pubs affichées à l’écran',                         value: n(stats.ad_impressions_7d) },
+    { icon: <Target size={18} />,     label: 'CTR pub · 7 jours',      hint: `${n(stats.ad_clicks_7d)} clics ÷ ${n(stats.ad_impressions_7d)} impressions`, value: ctr7d, hi: true },
   ] : [];
 
   return (
@@ -498,15 +428,15 @@ function AdminDashboardInner({ user, onClose, initialTab }: {
         <div className="admin-actions admin-no-print">
           {activeTab === 'audience' && (
             <>
-              <button className="admin-btn" onClick={() => void load()} disabled={loading}>
-                <RefreshCw size={14} className={loading ? 'spin-icon' : ''} /> Actualiser
+              <button className="admin-btn" onClick={() => void load({ silent: true })} disabled={refreshing}>
+                <RefreshCw size={14} className={refreshing ? 'spin-icon' : ''} /> Actualiser
               </button>
               <button className="admin-btn" onClick={() => window.print()}>
                 <FileDown size={14} /> Media Kit PDF
               </button>
               {users.length > 0 && (
                 <button className="admin-btn" onClick={exportCsv}>
-                  <Download size={14} /> Export CSV
+                  <Download size={14} /> Export CSV ({users.length} lignes)
                 </button>
               )}
             </>
@@ -554,23 +484,32 @@ function AdminDashboardInner({ user, onClose, initialTab }: {
         </>
       ) : (
         <>
-          {/* Bandeau temps réel */}
+          {/* Bandeau d'actualisation automatique */}
           <div className="admin-realtime-bar">
             <span className="rt-pulse" aria-hidden="true" />
-            <span className="rt-label">Temps réel actif</span>
+            <span className="rt-label">Actualisation automatique</span>
             <span className="rt-sep" aria-hidden="true">·</span>
             <span className="rt-online-count">
               {onlineUsers.length} utilisateur{onlineUsers.length > 1 ? 's' : ''} en ligne
             </span>
+            <span className="rt-sep" aria-hidden="true">·</span>
+            <span className="rt-last-update">en ligne : toutes les 10 s · statistiques : toutes les 60 s · heure de Kinshasa</span>
             {lastUpdate && (
               <>
                 <span className="rt-sep" aria-hidden="true">·</span>
                 <span className="rt-last-update">
-                  Dernière synchro : {lastUpdate.toLocaleTimeString('fr-FR')}
+                  Dernière synchro : {lastUpdate.toLocaleTimeString('fr-FR', { timeZone: DASHBOARD_TZ })}
                 </span>
               </>
             )}
           </div>
+
+          {failedPanels.length > 0 && (
+            <div className="admin-warn" role="alert">
+              Certains panneaux n’ont pas pu être chargés : <b>{failedPanels.join(', ')}</b>. Les autres sont à jour.
+              Si le problème persiste, exécutez la dernière migration SQL (<code>20261009100000_admin_dashboard_consistency.sql</code>).
+            </div>
+          )}
 
           {loading ? (
             <div className="admin-loading"><div className="spinner" /><p>Chargement des statistiques…</p></div>
@@ -592,6 +531,7 @@ function AdminDashboardInner({ user, onClose, initialTab }: {
                 <div className="admin-card-icon">{c.icon}</div>
                 <div className="admin-card-value">{c.value}</div>
                 <div className="admin-card-label">{c.label}</div>
+                <div className="admin-card-hint">{c.hint}</div>
               </div>
             ))}
           </div>
@@ -601,12 +541,17 @@ function AdminDashboardInner({ user, onClose, initialTab }: {
             <div className="admin-eng">
               <div className="eng-metric">
                 <Clock size={16} />
-                <b>{eng.avg_min_per_active_day}</b> min / jour actif
+                <b>{fmtNumber(safeNumber(eng.avg_min_per_active_day), 1)}</b> min / utilisateur actif / jour
+                <span className="eng-hint">moyenne sur 30 jours</span>
               </div>
-              <div className="eng-metric"><b>{eng.dau.toLocaleString('fr-FR')}</b> actifs aujourd'hui</div>
-              <div className="eng-metric"><b>{eng.wau.toLocaleString('fr-FR')}</b> actifs · 7j</div>
-              <div className="eng-metric"><b>{eng.mau.toLocaleString('fr-FR')}</b> actifs · 30j</div>
-              <div className="eng-metric"><b>{eng.total_min_today.toLocaleString('fr-FR')}</b> min cumulées aujourd'hui</div>
+              <div className="eng-metric">
+                <b>{fmtNumber(safeNumber(eng.dau))}</b> actifs aujourd'hui
+                <span className="eng-hint">depuis minuit, heure de Kinshasa</span>
+              </div>
+              <div className="eng-metric">
+                <b>{fmtNumber(safeNumber(eng.total_min_today))}</b> min cumulées aujourd'hui
+                <span className="eng-hint">tous utilisateurs confondus</span>
+              </div>
             </div>
           )}
 
@@ -616,7 +561,7 @@ function AdminDashboardInner({ user, onClose, initialTab }: {
               <h3 className="admin-table-title"><Globe size={15} /> Répartition mondiale</h3>
               {geo && (
                 <span className="admin-geo-sub">
-                  {geo.located.toLocaleString('fr-FR')} / {geo.total.toLocaleString('fr-FR')} localisés · {geo.countries.length} pays
+                  {fmtNumber(geo.located)} / {fmtNumber(geo.total)} inscrits localisés ({fmtShare(geo.located, geo.total)}) · {geo.countries.length} pays · top 8 ci-dessous
                 </span>
               )}
             </div>
@@ -636,7 +581,7 @@ function AdminDashboardInner({ user, onClose, initialTab }: {
                     <div key={`${c.country_code ?? ''}-${i}`} className="geo-row">
                       <span className="geo-flag">{flagEmoji(c.country_code)}</span>
                       <span className="geo-country">{c.country}</span>
-                      <span className="geo-count">{c.count.toLocaleString('fr-FR')}</span>
+                      <span className="geo-count">{fmtNumber(c.count)} <span className="geo-share">({fmtShare(c.count, geo.located)})</span></span>
                     </div>
                   ))
                 ) : (
@@ -651,27 +596,32 @@ function AdminDashboardInner({ user, onClose, initialTab }: {
           {/* ── Heatmap (heures de pointe) — version pro ───────────────── */}
           <div className="admin-table-wrap">
             <h3 className="admin-table-title">
-              <Clock size={15} /> Heures de pointe (30 derniers jours)
+              <Clock size={15} /> Heures de pointe · 30 derniers jours
             </h3>
+            <p className="admin-panel-sub">Minutes d'activité cumulées par jour et par heure · heure de Kinshasa</p>
             <Heatmap cells={heat} />
           </div>
 
           {/* ── Affinité contenu / âge / appareils / segments ─────────── */}
           <div className="admin-panels">
             <div className="admin-panel">
-              <h3 className="admin-table-title"><Eye size={15} /> Contenus préférés</h3>
+              <h3 className="admin-table-title"><Eye size={15} /> Groupes de chaînes les plus regardés</h3>
+              <p className="admin-panel-sub">Chaînes lancées sur 30 jours · top 10</p>
               <BarList items={content} />
             </div>
             <div className="admin-panel">
               <h3 className="admin-table-title"><Layers size={15} /> Segments d'audience</h3>
+              <p className="admin-panel-sub">Chaque inscrit dans un seul segment · total = inscrits</p>
               <BarList items={segments} />
             </div>
             <div className="admin-panel">
               <h3 className="admin-table-title"><Users size={15} /> Tranches d'âge</h3>
+              <p className="admin-panel-sub">Déclarées à l'inscription (facultatif)</p>
               <BarList items={ages} />
             </div>
             <div className="admin-panel">
               <h3 className="admin-table-title"><Activity size={15} /> Appareils</h3>
+              <p className="admin-panel-sub">Dernier appareil détecté par inscrit</p>
               <BarList items={devices} />
             </div>
           </div>
@@ -679,8 +629,9 @@ function AdminDashboardInner({ user, onClose, initialTab }: {
           {/* ── Table des utilisateurs récents ─────────────────────────── */}
           <div className="admin-table-wrap admin-no-print">
             <h3 className="admin-table-title">
-              Utilisateurs récents ({users.length})
+              Derniers utilisateurs actifs ({users.length})
             </h3>
+            <p className="admin-panel-sub">Triés par dernière activité · {RECENT_USERS_LIMIT} maximum · « en ligne » = signe de vie il y a moins de 90 s</p>
             <table className="admin-table">
               <thead>
                 <tr>

@@ -1,5 +1,6 @@
 import { Radio, Clock } from 'lucide-react';
 import type { JSX } from 'react';
+import { fmtDate, fmtTimeAgo, flagEmoji, deviceLabel } from './dashboardFormat.ts';
 
 interface OnlineUser {
   id: string;
@@ -12,53 +13,12 @@ interface OnlineUser {
   last_seen_at: string;
 }
 
-function flagEmoji(cc: string | null): string {
-  if (!cc || cc.length !== 2) return '🌍';
-  const base = 0x1f1e6;
-  return String.fromCodePoint(...[...cc.toUpperCase()].map((c) => base + c.charCodeAt(0) - 65));
-}
-
-function fmtDate(s: string): string {
-  try {
-    return new Date(s).toLocaleString('fr-FR', { dateStyle: 'short', timeStyle: 'short' });
-  } catch {
-    return s;
-  }
-}
-
-function fmtTimeAgo(s: string): string {
-  try {
-    const diffMs = Date.now() - new Date(s).getTime();
-    const sec = Math.floor(diffMs / 1000);
-    if (sec < 5) return "à l'instant";
-    if (sec < 60) return `il y a ${sec}s`;
-    const min = Math.floor(sec / 60);
-    if (min < 60) return `il y a ${min} min`;
-    const hr = Math.floor(min / 60);
-    if (hr < 24) return `il y a ${hr}h`;
-    const day = Math.floor(hr / 24);
-    return `il y a ${day}j`;
-  } catch {
-    return s;
-  }
-}
-
 function safeDisplayName(user: OnlineUser): string {
   const u = user.username ?? '';
   if (u) return u;
-  if (user.email?.includes('@')) return user.email.split('@')[0];
+  if (user.email?.includes('@')) return user.email.split('@')[0] ?? user.email;
   if (user.email) return user.email;
   return 'Utilisateur';
-}
-
-function deviceLabel(d: string | null): string {
-  if (!d) return '—';
-  switch (d) {
-    case 'tv': return 'TV';
-    case 'mobile': return 'Mobile';
-    case 'desktop': return 'Desktop';
-    default: return d;
-  }
 }
 
 export function OnlineUsersPanel({ users, loading }: { users: OnlineUser[]; loading: boolean }): JSX.Element {
@@ -72,7 +32,7 @@ export function OnlineUsersPanel({ users, loading }: { users: OnlineUser[]; load
             {users.length} <span className="admin-online-pulse" aria-hidden="true" />
           </span>
         </h3>
-        <span className="admin-online-sub">Mise à jour temps réel · seuil 90s</span>
+        <span className="admin-online-sub">Signe de vie il y a moins de 90 s · actualisé toutes les 10 s</span>
       </div>
       {users.length === 0 ? (
         <p className="geo-empty">Aucun utilisateur en ligne actuellement.</p>

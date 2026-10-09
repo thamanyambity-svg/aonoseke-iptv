@@ -10,6 +10,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { detectDevice } from '../lib/adTracking.ts';
 import { trackAdEvent } from '../hooks/useAds.ts';
+import { trackEvent } from '../hooks/useAnalytics.ts';
 import { logger } from '../utils/logger.ts';
 import type { AdCampaign } from '../hooks/useAdMatrix';
 import './AdBanner.css';
@@ -40,6 +41,7 @@ export function AdBanner({
   useEffect(() => {
     if (!hasTrackedImpression && campaign?.id) {
       const timer = setTimeout(() => {
+        trackEvent('ad_impression', campaign.id);
         void trackAdEvent(campaign.id, 'impression', { device: detectDevice() });
         setHasTrackedImpression(true);
       }, 300);
@@ -49,6 +51,7 @@ export function AdBanner({
 
   const handleClick = async (): Promise<void> => {
     if (!campaign?.id) return;
+    trackEvent('ad_click', campaign.id);
     await trackAdEvent(campaign.id, 'click', { device: detectDevice() });
     logger.info('Ad clicked', { campaignId: campaign.id });
     const url = campaign.content?.url;

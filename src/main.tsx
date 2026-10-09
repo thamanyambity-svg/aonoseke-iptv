@@ -10,6 +10,7 @@ import { captureUtmParams } from './utils/utmTracking.ts';
 import { startPresence } from './lib/devicePresence.ts';
 import { initSentry } from './lib/sentry.ts';
 import { initNativeAuthListener } from './lib/nativeAuth.ts';
+import { trackSessionStart } from './hooks/useAnalytics.ts';
 import { useAuthStore } from './stores/authStore.ts';
 import type { JSX } from 'react';
 
@@ -17,6 +18,7 @@ initSentry();
 initNativeAuthListener();
 
 captureUtmParams();
+trackSessionStart();
 startPresence();
 
 const AdminPage = lazy(() => import('./pages/AdminPage.tsx'));

@@ -3673,3 +3673,50 @@ video {
     width: auto;
   }
 }
+
+/* ══ Tableau de bord admin — sous-titres explicatifs ══ */
+.admin-card-hint {
+  margin-top: 4px;
+  font-size: 0.68rem;
+  line-height: 1.3;
+  color: var(--text-3, #8a8372);
+}
+.admin-panel-sub {
+  margin: -4px 0 10px;
+  font-size: 0.74rem;
+  line-height: 1.35;
+  color: var(--text-3, #8a8372);
+}
+.eng-hint {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.68rem;
+  font-weight: 400;
+  color: var(--text-3, #8a8372);
+}
+.geo-share {
+  color: var(--text-3, #8a8372);
+  font-weight: 400;
+  font-size: 0.72rem;
+}
+.admin-warn {
+  margin: 0 0 14px;
+  padding: 10px 14px;
+  border: 1px solid rgba(201, 168, 76, 0.45);
+  border-left-width: 4px;
+  border-radius: 10px;
+  background: rgba(201, 168, 76, 0.08);
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--text-1, #f3ead2);
+}
+.admin-warn code {
+  font-size: 0.76rem;
+  opacity: 0.85;
+}
+.eng-metric {
+  flex-wrap: wrap;
+}
+.eng-hint {
+  flex-basis: 100%;
+}
