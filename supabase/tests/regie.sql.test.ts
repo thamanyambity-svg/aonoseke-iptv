@@ -14,6 +14,7 @@ const ADM = '00000000-0000-0000-0000-0000000000ad';
 
 let db: PGlite;
 let adv: string;
+const as = (uid: string): Promise<unknown> => db.query(`select set_config('app.uid', $1, false)`, [uid]);
 
 beforeAll(async () => {
   db = new PGlite();
@@ -34,17 +35,18 @@ beforeEach(async () => {
   await db.exec(`
     delete from public.agent_proposals; delete from public.ad_events; delete from public.campaigns; delete from public.advertisers;
     delete from auth.users;
-    insert into auth.users(id, email) values ('${ADM}','thamanyambity@gmail.com');
-    select set_config('app.uid', '${ADM}', false);
   `);
+  await db.query(`insert into auth.users(id, email) values ($1, 'thamanyambity@gmail.com')`, [ADM]);
+  await as(ADM);
   const { rows } = await db.query<{ id: string }>(`insert into public.advertisers(name) values ('Alpha') returning id`);
   adv = rows[0]!.id;
 });
 
-const campaign = async (name: string, extra = ''): Promise<string> => {
+const campaign = async (name: string, opts: { weight?: number; impression_cap?: number } = {}): Promise<string> => {
   const { rows } = await db.query<{ id: string }>(
-    `insert into public.campaigns(advertiser_id, name, type, content, status ${extra ? ', ' + extra.split('=')[0] : ''})
-     values ('${adv}', '${name}', 'banner', '{"title":"t"}', 'active' ${extra ? ', ' + extra.split('=')[1] : ''}) returning id`);
+    `insert into public.campaigns(advertiser_id, name, type, content, status, weight, impression_cap)
+     values ($1, $2, 'banner', '{"title":"t"}', 'active', coalesce($3::int, 10), $4::bigint) returning id`,
+    [adv, name, opts.weight ?? null, opts.impression_cap ?? null]);
   return rows[0]!.id;
 };
 const served = async (country: string | null = null, category: string | null = null): Promise<string[]> => {
@@ -64,30 +66,30 @@ const click = (cid: string, ip: string, sig: string, ageMin = 10): Promise<unkno
 describe('diffusion : get_active_campaigns', () => {
   it('sert une campagne ciblée quand le lecteur ne précise ni pays ni catégorie (avant : jamais servie)', async () => {
     await campaign('globale');
-    await db.exec(`insert into public.campaigns(advertiser_id, name, type, content, status, target_countries, target_categories)
-                   values ('${adv}', 'ciblée', 'banner', '{}', 'active', '{CD}', '{Sport}')`);
+    await db.query(`insert into public.campaigns(advertiser_id, name, type, content, status, target_countries, target_categories)
+                    values ($1, 'ciblée', 'banner', '{}', 'active', '{CD}', '{Sport}')`, [adv]);
     expect((await served()).sort()).toEqual(['ciblée', 'globale']);
   });
 
   it('respecte le ciblage quand le pays est connu', async () => {
-    await db.exec(`insert into public.campaigns(advertiser_id, name, type, content, status, target_countries)
-                   values ('${adv}', 'RDC seulement', 'banner', '{}', 'active', '{CD}')`);
+    await db.query(`insert into public.campaigns(advertiser_id, name, type, content, status, target_countries)
+                    values ($1, 'RDC seulement', 'banner', '{}', 'active', '{CD}')`, [adv]);
     expect(await served('FR')).toEqual([]);
     expect(await served('CD')).toEqual(['RDC seulement']);
   });
 
   it('le plafond d’impressions ignore les événements en quarantaine', async () => {
-    const id = await campaign('plafonnée', 'impression_cap=2');
-    await db.exec(`insert into public.ad_events(campaign_id, advertiser_id, event_type, session_id, signature, suspect)
-                   select '${id}', '${adv}', 'impression', 's', 'x', true from generate_series(1, 5)`);
+    const id = await campaign('plafonnée', { impression_cap: 2 });
+    await db.query(`insert into public.ad_events(campaign_id, advertiser_id, event_type, session_id, signature, suspect)
+                    select $1, $2, 'impression', 's', 'x', true from generate_series(1, 5)`, [id, adv]);
     expect(await served()).toEqual(['plafonnée']);
     await db.exec(`update public.ad_events set suspect = false`);
     expect(await served()).toEqual([]);
   });
 
   it('la rotation est proportionnelle au poids (≈ 90 % / 10 %)', async () => {
-    await campaign('lourde', 'weight=90');
-    await campaign('légère', 'weight=10');
+    await campaign('lourde', { weight: 90 });
+    await campaign('légère', { weight: 10 });
     let heavyFirst = 0;
     const N = 600;
     for (let i = 0; i < N; i++) {
@@ -107,7 +109,7 @@ describe('validation des propositions', () => {
     await click(cid, '8.8.8.8', 'vieux', 60 * 24 * 10); // 10 jours : hors fenêtre
     const pid = await propose('quarantine_events', { event_type: 'click', ips: ['1.1.1.1'], signatures: [] }, cid);
 
-    const { rows } = await db.query<{ r: { status: string; result: { count: number } } }>(`select public.admin_resolve_agent_proposal('${pid}', true) r`);
+    const { rows } = await db.query<{ r: { status: string; result: { count: number } } }>(`select public.admin_resolve_agent_proposal($1, true) r`, [pid]);
     expect(rows[0]!.r.result.count).toBe(25);
     const { rows: left } = await db.query<{ n: string }>(`select count(*) n from public.ad_events where not suspect`);
     expect(Number(left[0]!.n)).toBe(6);
@@ -119,17 +121,17 @@ describe('validation des propositions', () => {
     await click(cid, '3.3.3.3', 'b');
     await click(cid, '4.4.4.4', 'vieux', 60 * 24 * 10);
     const pid = await propose('quarantine_events', { event_type: 'click' }, cid);
-    await db.query(`select public.admin_resolve_agent_proposal('${pid}', true)`);
+    await db.query(`select public.admin_resolve_agent_proposal($1, true)`, [pid]);
     const { rows } = await db.query<{ n: string }>(`select count(*) n from public.ad_events where suspect`);
     expect(Number(rows[0]!.n)).toBe(2);
   });
 
   it('migrate_channel : ajoute les catégories sans écraser le ciblage et mémorise l’ancien', async () => {
     const cid = await campaign('c');
-    await db.exec(`update public.campaigns set target_categories = '{News}' where id = '${cid}'`);
+    await db.query(`update public.campaigns set target_categories = '{News}' where id = $1`, [cid]);
     const pid = await propose('migrate_channel', { to: 'mobile', categories: ['Mobile', 'News'] }, cid);
-    const { rows } = await db.query<{ r: { result: { previous_categories: string[] } } }>(`select public.admin_resolve_agent_proposal('${pid}', true) r`);
-    const { rows: c } = await db.query<{ target_categories: string[] }>(`select target_categories from public.campaigns where id = '${cid}'`);
+    const { rows } = await db.query<{ r: { result: { previous_categories: string[] } } }>(`select public.admin_resolve_agent_proposal($1, true) r`, [pid]);
+    const { rows: c } = await db.query<{ target_categories: string[] }>(`select target_categories from public.campaigns where id = $1`, [cid]);
     expect([...c[0]!.target_categories].sort()).toEqual(['Mobile', 'News']);
     expect(rows[0]!.r.result.previous_categories).toEqual(['News']);
     // …et la campagne reste diffusée quand le lecteur ne précise pas de catégorie
@@ -139,21 +141,21 @@ describe('validation des propositions', () => {
   it('creative_swap : une variante inconnue (« rain ») ne modifie pas la campagne', async () => {
     const cid = await campaign('c');
     const pid = await propose('creative_swap', { variant: 'rain' }, cid);
-    const { rows } = await db.query<{ r: { result: { action: string } } }>(`select public.admin_resolve_agent_proposal('${pid}', true) r`);
+    const { rows } = await db.query<{ r: { result: { action: string } } }>(`select public.admin_resolve_agent_proposal($1, true) r`, [pid]);
     expect(rows[0]!.r.result.action).toBe('noted');
-    const { rows: c } = await db.query<{ content: Record<string, string> }>(`select content from public.campaigns where id = '${cid}'`);
+    const { rows: c } = await db.query<{ content: Record<string, string> }>(`select content from public.campaigns where id = $1`, [cid]);
     expect(c[0]!.content.variant).toBeUndefined();
 
     const pid2 = await propose('creative_swap', { variant: 'corridor' }, cid);
-    await db.query(`select public.admin_resolve_agent_proposal('${pid2}', true)`);
-    const { rows: c2 } = await db.query<{ content: Record<string, string> }>(`select content from public.campaigns where id = '${cid}'`);
+    await db.query(`select public.admin_resolve_agent_proposal($1, true)`, [pid2]);
+    const { rows: c2 } = await db.query<{ content: Record<string, string> }>(`select content from public.campaigns where id = $1`, [cid]);
     expect(c2[0]!.content.variant).toBe('corridor');
   });
 
   it('refuse les non-administrateurs', async () => {
     const cid = await campaign('c');
     const pid = await propose('set_weight', { weight: 5 }, cid);
-    await db.exec(`select set_config('app.uid', '00000000-0000-0000-0000-00000000000a', false)`);
-    await expect(db.query(`select public.admin_resolve_agent_proposal('${pid}', true)`)).rejects.toThrow(/administrateur/);
+    await as('00000000-0000-0000-0000-00000000000a');
+    await expect(db.query(`select public.admin_resolve_agent_proposal($1, true)`, [pid])).rejects.toThrow(/administrateur/);
   });
 });
