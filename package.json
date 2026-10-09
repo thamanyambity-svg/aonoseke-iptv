@@ -35,8 +35,8 @@
     "verify:unverified": "node scripts/verify-channels.mjs --unverified",
     "prepare": "husky",
     "android:sync": "vite build && cap sync android",
-    "android:apk": "npm run android:sync && cd android && ./gradlew assembleDebug",
-    "android:release": "npm run android:sync && cd android && ./gradlew assembleRelease bundleRelease",
+    "android:apk": "node scripts/require-supabase-env.mjs && npm run android:sync && cd android && ./gradlew assembleDebug",
+    "android:release": "node scripts/require-supabase-env.mjs && npm run android:sync && cd android && ./gradlew assembleRelease bundleRelease",
     "icons": "node scripts/generate-icons.mjs"
   },
   "dependencies": {
