@@ -3720,3 +3720,66 @@ video {
 .eng-hint {
   flex-basis: 100%;
 }
+
+/* ── Sous-titres du lecteur ── */
+.subtitle-ctl {
+  position: absolute;
+  bottom: 108px;
+  right: 14px;
+  z-index: 5;
+}
+.subtitle-btn {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.subtitle-btn:hover,
+.subtitle-btn.is-on {
+  background: var(--lime-dim);
+  border-color: rgba(184, 255, 87, 0.3);
+  color: var(--lime);
+}
+.subtitle-menu {
+  position: absolute;
+  bottom: 42px;
+  right: 0;
+  min-width: 150px;
+  margin: 0;
+  padding: 4px;
+  list-style: none;
+  background: rgba(10, 10, 10, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-sm);
+}
+.subtitle-menu button {
+  width: 100%;
+  text-align: left;
+  padding: 8px 10px;
+  background: none;
+  border: 0;
+  border-radius: 4px;
+  color: rgba(255, 255, 255, 0.8);
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+.subtitle-menu button:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+.subtitle-menu button[aria-checked='true'] {
+  color: var(--lime);
+  font-weight: 600;
+}
+video::cue {
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  font-size: 1.1em;
+}
