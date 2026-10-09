@@ -1,4 +1,5 @@
-import { X, LogOut, Star, Shield, Megaphone } from 'lucide-react';
+import { useState } from 'react';
+import { X, LogOut, Star, Shield, Megaphone, Trash2 } from 'lucide-react';
 import type { AuthUser } from '../hooks/useAuth.ts';
 import type { JSX } from 'react';
 
@@ -9,11 +10,18 @@ interface ProfileProps {
   onLogout: () => void;
   onOpenAdmin?: () => void;
   onOpenAdMgmt?: () => void;
+  /** Absent pour le mode démo et les administrateurs : le bouton « Supprimer mon compte » n'est alors pas affiché. */
+  onDeleteAccount?: () => Promise<{ error?: string }>;
 }
 
 export default function Profile({
-  user, favoritesCount, onClose, onLogout, onOpenAdmin, onOpenAdMgmt,
+  user, favoritesCount, onClose, onLogout, onOpenAdmin, onOpenAdMgmt, onDeleteAccount,
 }: ProfileProps): JSX.Element {
+  const [confirming, setConfirming] = useState(false);
+  const [confirmText, setConfirmText] = useState('');
+  const [deleting, setDeleting] = useState(false);
+  const [deleteError, setDeleteError] = useState('');
+
   const initial = (user.username ?? user.name ?? '?').charAt(0).toUpperCase();
 
   return (
@@ -61,6 +69,56 @@ export default function Profile({
         <button className="profile-logout" onClick={onLogout}>
           <LogOut size={14} /> Se déconnecter
         </button>
+
+        {onDeleteAccount && !confirming && (
+          <button className="profile-delete-link" onClick={() => setConfirming(true)}>
+            <Trash2 size={13} /> Supprimer mon compte
+          </button>
+        )}
+
+        {onDeleteAccount && confirming && (
+          <div className="profile-delete-box" role="alertdialog" aria-label="Confirmer la suppression du compte">
+            <p className="profile-delete-warn">
+              Cette action est <strong>définitive</strong> : votre compte, vos favoris et votre historique d'activité
+              seront supprimés. Les statistiques d'audience sont conservées sans aucun lien avec vous.
+            </p>
+            <label className="profile-delete-label" htmlFor="delete-confirm">
+              Tapez <strong>SUPPRIMER</strong> pour confirmer
+            </label>
+            <input
+              id="delete-confirm"
+              className="profile-delete-input"
+              value={confirmText}
+              onChange={(e) => setConfirmText(e.target.value)}
+              autoComplete="off"
+              disabled={deleting}
+            />
+            {deleteError && <p className="profile-delete-error" role="alert">{deleteError}</p>}
+            <div className="profile-delete-actions">
+              <button
+                className="profile-delete-cancel"
+                disabled={deleting}
+                onClick={() => { setConfirming(false); setConfirmText(''); setDeleteError(''); }}
+              >
+                Annuler
+              </button>
+              <button
+                className="profile-delete-confirm"
+                disabled={deleting || confirmText.trim().toUpperCase() !== 'SUPPRIMER'}
+                onClick={() => {
+                  setDeleting(true);
+                  setDeleteError('');
+                  void onDeleteAccount().then((res) => {
+                    setDeleting(false);
+                    if (res.error) setDeleteError(res.error);
+                  });
+                }}
+              >
+                {deleting ? 'Suppression…' : 'Supprimer définitivement'}
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

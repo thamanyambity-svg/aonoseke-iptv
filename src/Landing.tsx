@@ -66,7 +66,7 @@ export function Landing({ onSignUp, onSignIn, onSocial, onDemo }: LandingProps):
       <section className="landing-left">
         <div className="landing-badge">
           <span className="landing-badge-dot" aria-hidden="true" />
-          Streaming gratuit · 100% légal
+          Streaming gratuit · sources publiques
         </div>
 
         <div className="landing-logo">
@@ -78,14 +78,14 @@ export function Landing({ onSignUp, onSignIn, onSocial, onDemo }: LandingProps):
         </div>
 
         <p className="landing-tagline">
-          <strong>1700+ chaînes</strong> dont un noyau <strong>francophone & Afrique</strong>
-          {' '}vérifié — Congo, Côte d'Ivoire, Cameroun, Sénégal, France 24, TV5Monde…
+          <strong>400+ chaînes vérifiées</strong> dont un noyau <strong>francophone & Afrique</strong>
+          {' '}— Congo, Côte d'Ivoire, Cameroun, Sénégal, France 24, TV5Monde…
           {' '}depuis votre navigateur ou votre <strong>Smart TV VIDAA</strong>.
         </p>
 
         <div className="landing-stats">
           <div className="stat-card">
-            <div className="stat-number">1700+</div>
+            <div className="stat-number">400+</div>
             <div className="stat-label">Chaînes en direct</div>
           </div>
           <div className="stat-card">
@@ -249,7 +249,7 @@ export function Landing({ onSignUp, onSignIn, onSocial, onDemo }: LandingProps):
             En vous connectant, vous acceptez nos{' '}
             <a href="/terms.html" target="_blank" rel="noopener noreferrer">Conditions d'utilisation</a> et notre{' '}
             <a href="/privacy.html" target="_blank" rel="noopener noreferrer">Politique de confidentialité</a>.<br />
-            Contenu légal · sources iptv-org · 100% gratuit
+            Sources publiques iptv-org · 100% gratuit
           </p>
         </div>
       </section>
