@@ -336,7 +336,7 @@ export function Sidebar({
           </div>
         )}
 
-        {adsEnabled && currentBanner && (
+        {adsEnabled && sidebarOpen && currentBanner && (
           <BannerAd key={currentBanner.id} ad={currentBanner}
             onImpression={(id) => { trackEvent('ad_impression', id); void trackAdEvent(id, 'impression'); }}
             onClick={(id) => { trackEvent('ad_click', id); void trackAdEvent(id, 'click'); }} />

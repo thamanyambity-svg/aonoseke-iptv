@@ -36,6 +36,22 @@ export function trackEvent(type: EventType, ref?: string, category?: string): vo
   });
 }
 
+const SESSION_KEY = 'iptv-session-started';
+
+/**
+ * Enregistre UNE ouverture de l'application par onglet/session (alimente « Sessions · 7 jours »).
+ * Avant ce correctif, l'événement `session_start` n'était émis nulle part : le compteur restait à 0.
+ */
+export function trackSessionStart(): void {
+  try {
+    if (sessionStorage.getItem(SESSION_KEY)) return;
+    sessionStorage.setItem(SESSION_KEY, '1');
+  } catch {
+    /* stockage indisponible : on enregistre quand même */
+  }
+  trackEvent('session_start');
+}
+
 /**
  * Heartbeat : signale ~60s de présence active de l'utilisateur connecté.
  * Sert à mesurer le temps de connexion réel (table user_activity).

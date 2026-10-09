@@ -1,41 +1,7 @@
 import { RefreshCw, Wifi } from 'lucide-react';
 import { useLiveDevices } from '../../hooks/useLiveDevices';
 import type { JSX } from 'react';
-
-function fmtDate(s: string): string {
-  try {
-    return new Date(s).toLocaleString('fr-FR', { dateStyle: 'short', timeStyle: 'short' });
-  } catch {
-    return s;
-  }
-}
-
-function fmtTimeAgo(s: string): string {
-  try {
-    const diffMs = Date.now() - new Date(s).getTime();
-    const sec = Math.floor(diffMs / 1000);
-    if (sec < 5) return "à l'instant";
-    if (sec < 60) return `il y a ${sec}s`;
-    const min = Math.floor(sec / 60);
-    if (min < 60) return `il y a ${min} min`;
-    const hr = Math.floor(min / 60);
-    if (hr < 24) return `il y a ${hr}h`;
-    const day = Math.floor(hr / 24);
-    return `il y a ${day}j`;
-  } catch {
-    return s;
-  }
-}
-
-function deviceLabel(d: string | null): string {
-  if (!d) return '—';
-  switch (d) {
-    case 'tv': return 'TV';
-    case 'mobile': return 'Mobile';
-    case 'desktop': return 'Desktop';
-    default: return d;
-  }
-}
+import { fmtDate, fmtTimeAgo, deviceLabel } from './dashboardFormat.ts';
 
 export function LiveDevicesPanel(): JSX.Element {
   const { devices, loading, error, reload } = useLiveDevices();

@@ -97,15 +97,15 @@ export function Heatmap({ cells }: { cells: HeatCell[] }): JSX.Element {
       {/* Bandeau de synthèse */}
       <div className="heatmap-summary">
         <span className="hm-stat">
-          <span className="hm-stat-label">Total événements</span>
-          <span className="hm-stat-value">{total.toLocaleString('fr-FR')}</span>
+          <span className="hm-stat-label">Total activité</span>
+          <span className="hm-stat-value">{total.toLocaleString('fr-FR')} min</span>
         </span>
         {peakValue > 0 && (
           <span className="hm-stat hm-stat--peak">
             <span className="hm-stat-label">Pic d'activité</span>
             <span className="hm-stat-value">
               {DAYS[peakDay]} · {formatHour(peakHour)}
-              <span className="hm-stat-sub"> ({peakValue.toLocaleString('fr-FR')} év.)</span>
+              <span className="hm-stat-sub"> ({peakValue.toLocaleString('fr-FR')} min)</span>
             </span>
           </span>
         )}
@@ -121,7 +121,7 @@ export function Heatmap({ cells }: { cells: HeatCell[] }): JSX.Element {
         role="img"
         aria-label={
           peakValue > 0
-            ? `Heatmap d'activité sur 30 jours. Pic le ${DAYS[peakDay]} à ${formatHour(peakHour)} avec ${peakValue} événements. Total ${total} événements.`
+            ? `Heatmap d'activité sur 30 jours. Pic le ${DAYS[peakDay]} à ${formatHour(peakHour)} avec ${peakValue} minutes d'activité. Total ${total} minutes.`
             : `Heatmap d'activité sur 30 jours. Aucune donnée pour l'instant.`
         }
       >
@@ -151,7 +151,7 @@ export function Heatmap({ cells }: { cells: HeatCell[] }): JSX.Element {
                     key={h}
                     className={`heatmap-cell heatmap-cell--l${level}`}
                     style={{ background: LEVEL_COLORS[level] }}
-                    title={`${d} ${formatHourRange(h)} — ${v.toLocaleString('fr-FR')} événement${v > 1 ? 's' : ''} · ${LEVEL_LABELS[level]}`}
+                    title={`${d} ${formatHourRange(h)} — ${v.toLocaleString('fr-FR')} min d'activité · ${LEVEL_LABELS[level]}`}
                   />
                 );
               })}
