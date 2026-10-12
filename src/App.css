@@ -515,6 +515,19 @@
   letter-spacing: 0.3px;
 }
 
+.channel-geo {
+  margin-left: 6px;
+  padding: 1px 6px;
+  border: 1px solid rgba(255, 202, 58, 0.45);
+  border-radius: 999px;
+  color: var(--gold, #ffca3a);
+  font-family: var(--mono);
+  font-size: 0.5rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
 .channel-item.active .channel-group {
   color: var(--text-2);
 }

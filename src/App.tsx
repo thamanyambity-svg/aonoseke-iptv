@@ -211,7 +211,11 @@ function App(): JSX.Element {
               <Player
                 url={activeChannel?.url ?? ''}
                 onError={(msg) => {
-                  setError(msg);
+                  setError(
+                    activeChannel?.geoBlocked
+                      ? "Cette chaîne est restreinte à certains pays : elle n'est probablement pas disponible depuis votre localisation."
+                      : msg,
+                  );
                   if (activeChannel?.url) markDead(activeChannel.url);
                 }}
               />

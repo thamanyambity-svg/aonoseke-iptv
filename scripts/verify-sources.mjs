@@ -1,38 +1,25 @@
 /**
  * Vérification des sources — ne garde QUE ce qui marche.
  *
- * - Chaînes (playlist.json) : fetch du .m3u8, suit les redirections,
- *   exige HTTP 200 + corps contenant #EXTM3U. Sinon = supprimée.
+ * - Chaînes (playlist.json) : fetch du .m3u8, suit les redirections, trois issues (voir scripts/lib/stream-status.mjs) :
+ *     ok   → gardée, verified:true ;
+ *     geo  → accès refusé (HTTP 403/451 ou message « indisponible dans votre pays ») : GARDÉE et signalée
+ *            geoBlocked:true — la vérification tourne depuis les États-Unis, la chaîne marche sans doute chez elle ;
+ *     dead → flux disparu : supprimée.
  * - Sites (sites.json) : HEAD/GET, statut online/offline.
  *
- * Sortie : playlist nettoyée + rapport. Chaque entrée gardée reçoit
- * verified:true + verifiedAt.
+ * Sortie : playlist nettoyée + public/sources-report.json (chaînes bloquées par pays et chaînes mortes,
+ * avec la raison). Chaque entrée gardée reçoit verifiedAt ; verified:true seulement si elle est lisible d'ici.
  *
  * Usage : node scripts/verify-sources.mjs
  */
 import { readFile, writeFile } from 'node:fs/promises';
+import { checkStream } from './lib/stream-status.mjs';
 
 const ROOT = new URL('..', import.meta.url).pathname;
 const CONCURRENCY = 40;
 const TIMEOUT_MS = 7000;
 const NOW = new Date().toISOString();
-
-async function checkStream(url) {
-  try {
-    const res = await fetch(url, {
-      method: 'GET',
-      redirect: 'follow',
-      signal: AbortSignal.timeout(TIMEOUT_MS),
-      headers: { 'User-Agent': 'Mozilla/5.0' },
-    });
-    if (!res.ok) return false;
-    // Lit un petit bout pour confirmer un vrai manifest HLS
-    const text = (await res.text()).slice(0, 800);
-    return text.includes('#EXTM3U') || text.includes('#EXT-X');
-  } catch {
-    return false;
-  }
-}
 
 async function pool(items, worker) {
   const out = new Array(items.length);
@@ -53,31 +40,60 @@ async function verifyPlaylist() {
   console.log(`\n📺 Vérification de ${channels.length} chaînes (concurrence ${CONCURRENCY})…`);
 
   let done = 0;
-  const flags = await pool(channels, async (ch) => {
-    const ok = await checkStream(ch.url);
+  const results = await pool(channels, async (ch) => {
+    const r = await checkStream(ch.url, { timeoutMs: TIMEOUT_MS });
     done++;
     if (done % 250 === 0) console.log(`   …${done}/${channels.length}`);
-    return ok;
+    return r;
   });
 
   const kept = [];
-  let removed = 0;
+  const geoBlocked = [];
+  const dead = [];
   channels.forEach((ch, idx) => {
-    if (flags[idx]) {
-      kept.push({ ...ch, verified: true, verifiedAt: NOW });
+    const r = results[idx];
+    // On repart d'une chaîne sans anciens marqueurs : l'état est recalculé à chaque passage.
+    const { geoBlocked: _g, geoReason: _r, verified: _v, ...base } = ch;
+    const info = { name: ch.name, country: ch.country, group: ch.group, url: ch.url, reason: r.reason, ...(r.code ? { code: r.code } : {}) };
+    if (r.status === 'ok') {
+      kept.push({ ...base, verified: true, verifiedAt: NOW });
+    } else if (r.status === 'geo') {
+      kept.push({ ...base, geoBlocked: true, geoReason: r.reason, verifiedAt: NOW });
+      geoBlocked.push(info);
     } else {
-      removed++;
+      dead.push(info);
     }
   });
 
   await writeFile(path, JSON.stringify(kept, null, 2));
-  console.log(`✅ Chaînes : ${kept.length} gardées, ${removed} mortes supprimées`);
+  const ok = kept.length - geoBlocked.length;
+  console.log(`✅ Chaînes : ${ok} lisibles, ${geoBlocked.length} bloquées par pays (gardées), ${dead.length} mortes supprimées`);
+
+  // Rapport lisible : quelles chaînes sont récupérables (bloquées par pays) et lesquelles sont perdues (mortes).
+  const deadReasons = {};
+  for (const d of dead) deadReasons[d.reason] = (deadReasons[d.reason] ?? 0) + 1;
+  await writeFile(
+    `${ROOT}public/sources-report.json`,
+    JSON.stringify(
+      {
+        generatedAt: NOW,
+        note: 'Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l\'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d\'origine.',
+        counts: { checked: channels.length, ok, geoBlocked: geoBlocked.length, dead: dead.length },
+        deadReasons,
+        geoBlocked,
+        dead,
+      },
+      null,
+      2,
+    ),
+  );
+  console.log('   raisons des chaînes mortes :', JSON.stringify(deadReasons));
 
   // Répartition par source
   const bySrc = {};
   for (const c of kept) bySrc[c.source ?? '?'] = (bySrc[c.source ?? '?'] ?? 0) + 1;
   console.log('   par source :', JSON.stringify(bySrc));
-  return { kept: kept.length, removed };
+  return { ok, geo: geoBlocked.length, removed: dead.length };
 }
 
 async function verifySites() {
@@ -108,5 +124,5 @@ async function verifySites() {
 const playlist = await verifyPlaylist();
 const sites = await verifySites();
 console.log('\n📊 RÉSUMÉ');
-console.log(`   Chaînes opérationnelles : ${playlist.kept} (${playlist.removed} retirées)`);
+console.log(`   Chaînes lisibles : ${playlist.ok} · bloquées par pays (gardées) : ${playlist.geo} · mortes retirées : ${playlist.removed}`);
 console.log(`   Sites en ligne : ${sites.online}/${sites.total}`);
