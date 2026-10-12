@@ -5,7 +5,8 @@
  *     ok   → gardée, verified:true ;
  *     geo  → accès refusé (HTTP 403/451 ou message « indisponible dans votre pays ») : GARDÉE et signalée
  *            geoBlocked:true — la vérification tourne depuis les États-Unis, la chaîne marche sans doute chez elle ;
- *     dead → flux disparu : supprimée.
+ *     dead → flux disparu : supprimée seulement au 2e échec de suite (règle des deux échecs :
+ *            au 1er échec la chaîne est gardée avec failedChecks:1, un succès remet le compteur à zéro).
  * - Sites (sites.json) : HEAD/GET, statut online/offline.
  *
  * Sortie : playlist nettoyée + public/sources-report.json (chaînes bloquées par pays et chaînes mortes,
@@ -15,6 +16,7 @@
  */
 import { readFile, writeFile } from 'node:fs/promises';
 import { checkStream } from './lib/stream-status.mjs';
+import { decideChannel, MAX_FAILED_CHECKS } from './lib/channel-state.mjs';
 
 const ROOT = new URL('..', import.meta.url).pathname;
 const CONCURRENCY = 40;
@@ -49,25 +51,24 @@ async function verifyPlaylist() {
 
   const kept = [];
   const geoBlocked = [];
+  const pending = [];
   const dead = [];
   channels.forEach((ch, idx) => {
     const r = results[idx];
-    // On repart d'une chaîne sans anciens marqueurs : l'état est recalculé à chaque passage.
-    const { geoBlocked: _g, geoReason: _r, verified: _v, ...base } = ch;
+    const { bucket, entry } = decideChannel(ch, r, NOW);
     const info = { name: ch.name, country: ch.country, group: ch.group, url: ch.url, reason: r.reason, ...(r.code ? { code: r.code } : {}) };
-    if (r.status === 'ok') {
-      kept.push({ ...base, verified: true, verifiedAt: NOW });
-    } else if (r.status === 'geo') {
-      kept.push({ ...base, geoBlocked: true, geoReason: r.reason, verifiedAt: NOW });
-      geoBlocked.push(info);
-    } else {
-      dead.push(info);
-    }
+    if (entry) kept.push(entry);
+    if (bucket === 'geo') geoBlocked.push(info);
+    else if (bucket === 'pending') pending.push(info);
+    else if (bucket === 'dead') dead.push(info);
   });
 
   await writeFile(path, JSON.stringify(kept, null, 2));
-  const ok = kept.length - geoBlocked.length;
-  console.log(`✅ Chaînes : ${ok} lisibles, ${geoBlocked.length} bloquées par pays (gardées), ${dead.length} mortes supprimées`);
+  const ok = kept.length - geoBlocked.length - pending.length;
+  console.log(
+    `✅ Chaînes : ${ok} lisibles, ${geoBlocked.length} bloquées par pays (gardées), ` +
+      `${pending.length} en échec (1er échec, gardées), ${dead.length} mortes supprimées (${MAX_FAILED_CHECKS} échecs de suite)`,
+  );
 
   // Rapport lisible : quelles chaînes sont récupérables (bloquées par pays) et lesquelles sont perdues (mortes).
   const deadReasons = {};
@@ -77,10 +78,11 @@ async function verifyPlaylist() {
     JSON.stringify(
       {
         generatedAt: NOW,
-        note: 'Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l\'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d\'origine.',
-        counts: { checked: channels.length, ok, geoBlocked: geoBlocked.length, dead: dead.length },
+        note: 'Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l\'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d\'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.',
+        counts: { checked: channels.length, ok, geoBlocked: geoBlocked.length, pending: pending.length, dead: dead.length },
         deadReasons,
         geoBlocked,
+        pending,
         dead,
       },
       null,
@@ -93,7 +95,7 @@ async function verifyPlaylist() {
   const bySrc = {};
   for (const c of kept) bySrc[c.source ?? '?'] = (bySrc[c.source ?? '?'] ?? 0) + 1;
   console.log('   par source :', JSON.stringify(bySrc));
-  return { ok, geo: geoBlocked.length, removed: dead.length };
+  return { ok, geo: geoBlocked.length, pending: pending.length, removed: dead.length };
 }
 
 async function verifySites() {
@@ -124,5 +126,5 @@ async function verifySites() {
 const playlist = await verifyPlaylist();
 const sites = await verifySites();
 console.log('\n📊 RÉSUMÉ');
-console.log(`   Chaînes lisibles : ${playlist.ok} · bloquées par pays (gardées) : ${playlist.geo} · mortes retirées : ${playlist.removed}`);
+console.log(`   Chaînes lisibles : ${playlist.ok} · bloquées par pays (gardées) : ${playlist.geo} · en échec (gardées) : ${playlist.pending} · mortes retirées : ${playlist.removed}`);
 console.log(`   Sites en ligne : ${sites.online}/${sites.total}`);
