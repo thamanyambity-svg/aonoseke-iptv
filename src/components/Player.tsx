@@ -41,6 +41,7 @@ export const Player: React.FC<PlayerProps> = ({ url, onError }): JSX.Element => 
   // Smart-Stream Ad Matrix
   const { currentAd, nextAd } = useAdMatrix();
   const [showAd, setShowAd] = useState(false);
+  const adTimerRef = useRef<number | null>(null);
 
   useEffect((): (() => void) => {
     const onFsChange = (): void => setIsFullscreen(!!document.fullscreenElement);
@@ -48,13 +49,24 @@ export const Player: React.FC<PlayerProps> = ({ url, onError }): JSX.Element => 
     return () => document.removeEventListener('fullscreenchange', onFsChange);
   }, []);
 
-  // Afficher la pub après que le player soit prêt (délai 2s)
+  // Bandeau pub : apparaît 5 s après le début du flux, puis une nouvelle campagne revient
+  // toutes les ~40 s (2 min si l'utilisateur l'a fermé).
+  const hasAd = !!currentAd;
   useEffect(() => {
-    if (url && currentAd) {
-      const timer = setTimeout(() => setShowAd(true), 2000);
-      return () => clearTimeout(timer);
-    }
-  }, [url, currentAd]);
+    if (!url || !hasAd) return undefined;
+    const timer = window.setTimeout(() => setShowAd(true), 5000);
+    return () => {
+      window.clearTimeout(timer);
+      if (adTimerRef.current !== null) window.clearTimeout(adTimerRef.current);
+    };
+  }, [url, hasAd]);
+
+  const handleAdDone = useCallback((reason: 'timeout' | 'closed'): void => {
+    setShowAd(false);
+    nextAd();
+    if (adTimerRef.current !== null) window.clearTimeout(adTimerRef.current);
+    adTimerRef.current = window.setTimeout(() => setShowAd(true), reason === 'closed' ? 120_000 : 40_000);
+  }, [nextAd]);
 
   const toggleFullscreen = useCallback((): void => {
     if (!document.fullscreenElement) {
@@ -306,12 +318,7 @@ export const Player: React.FC<PlayerProps> = ({ url, onError }): JSX.Element => 
       {/* Smart-Stream Ad Matrix — Affichage de la bannière publicitaire */}
       {showAd && currentAd && (
         <Suspense fallback={null}>
-          <AdBanner
-            campaign={currentAd}
-            position="bottom"
-            onClose={() => setShowAd(false)}
-            onNextAd={nextAd}
-          />
+          <AdBanner key={currentAd.id} campaign={currentAd} onDone={handleAdDone} />
         </Suspense>
       )}
     </div>
