@@ -9,7 +9,8 @@ const config: CapacitorConfig = {
     androidScheme: 'https',
   },
   android: {
-    allowMixedContent: false,
+    // Autorise les flux http:// (chaînes qui n'ont pas de version https). Sur le web, ces chaînes sont masquées.
+    allowMixedContent: true,
     backgroundColor: '#0d0a04',
   },
 };

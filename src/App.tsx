@@ -22,6 +22,8 @@ import { AdOverlay } from './components/AdOverlay.tsx';
 import { Directory } from './components/Directory.tsx';
 import { Sidebar, countryFlag } from './components/Sidebar.tsx';
 import { useDeadChannels } from './hooks/useDeadChannels.ts';
+import { filterPlayable } from './utils/playableChannels.ts';
+import { isNativeApp } from './lib/nativeAuth.ts';
 import { useAds, trackAdEvent } from './hooks/useAds.ts';
 import type { PrerollAd } from './hooks/useAds.ts';
 import { trackEvent } from './hooks/useAnalytics.ts';
@@ -69,7 +71,11 @@ function App(): JSX.Element {
         if (!res.ok) throw new Error(`HTTP ${res.status}: ${res.statusText}`);
         const data = (await res.json()) as unknown;
         const validated = validatePlaylist(data).slice(0, appConfig.maxChannels);
-        const sanitized = validated.map((ch) => ({ ...ch, logo: sanitizeLogoUrl(ch.logo) }));
+        // Les flux http:// ne se lisent que dans l'application Android (contenu mixte bloqué sur le web).
+        const sanitized = filterPlayable(
+          validated.map((ch) => ({ ...ch, logo: sanitizeLogoUrl(ch.logo) })),
+          isNativeApp(),
+        );
         setChannels(sanitized);
         logger.info('Playlist loaded', { count: sanitized.length });
       } catch (err) {
