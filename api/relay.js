@@ -44,10 +44,20 @@ function rateOk(ip) {
   return true;
 }
 
+/** Adresse à interroger : l'hôte vient de NOTRE liste (jamais de la chaîne reçue), seuls chemin et paramètres viennent de la demande. */
+function upstreamHref(target, allowed) {
+  for (const origin of allowed) {
+    if (origin === target.origin) return `${origin}${target.pathname}${target.search}`;
+  }
+  return null;
+}
+
 async function fetchUpstream(target, allowed, range) {
   let current = target;
   for (let hop = 0; hop < 4; hop++) {
-    const res = await fetch(current.href, {
+    const href = upstreamHref(current, allowed);
+    if (!href) return null;
+    const res = await fetch(href, {
       redirect: 'manual',
       signal: AbortSignal.timeout(UPSTREAM_TIMEOUT_MS),
       headers: {
