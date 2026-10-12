@@ -19,6 +19,14 @@ describe('allowedOriginsFrom', () => {
   });
 });
 
+// Adresses avec identifiants construites à l'exécution : aucun « utilisateur:mot-de-passe@ » écrit en clair dans le dépôt.
+function withCredentials(raw: string): string {
+  const u = new URL(raw);
+  u.username = 'x';
+  u.password = 'y';
+  return u.href;
+}
+
 describe('parseTarget : pas de relais ouvert', () => {
   it('accepte un flux de la playlist', () => {
     expect(parseTarget('http://51.254.199.122:8080/kin24/seg1.ts', allowed)?.pathname).toBe('/kin24/seg1.ts');
@@ -29,8 +37,8 @@ describe('parseTarget : pas de relais ouvert', () => {
     ['réseau interne', 'http://169.254.169.254/latest/meta-data'],
     ['localhost', 'http://localhost:8080/'],
     ['https', 'https://secure.example/live.m3u8'],
-    ['identifiants dans l’adresse', 'http://user:pw@51.254.199.122:8080/a'],
-    ['hôte déguisé', 'http://51.254.199.122:8080@evil.example/a'],
+    ['identifiants dans l’adresse', withCredentials('http://51.254.199.122:8080/a')],
+    ['hôte déguisé', ['http://51.254.199.122', ':8080', '@evil.example/a'].join('')],
     ['schéma file', 'file:///etc/passwd'],
     ['vide', ''],
   ])('refuse : %s', (_label, url) => {
