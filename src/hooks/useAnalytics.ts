@@ -6,6 +6,7 @@
  * Sans Supabase, compteurs locaux uniquement (mode démo).
  */
 import { supabase } from '../lib/supabaseClient.ts';
+import { logger } from '../utils/logger.ts';
 
 export type EventType = 'channel_view' | 'ad_impression' | 'ad_click' | 'session_start';
 
@@ -25,15 +26,28 @@ function bumpLocal(type: EventType): void {
 export function trackEvent(type: EventType, ref?: string, category?: string): void {
   bumpLocal(type);
   if (!supabase) return;
-  // user_id est résolu côté session ; null si anonyme
-  void supabase.auth.getUser().then(({ data }) => {
-    void supabase!.from('view_events').insert({
-      event_type: type,
-      ref: ref ?? null,
-      category: category ?? null,
-      user_id: data.user?.id ?? null,
+  // user_id est résolu côté session ; null si anonyme.
+  // IMPORTANT : une requête supabase-js n'est envoyée que lorsqu'on appelle `.then()` (ou `await`).
+  // Un simple `void supabase.from(...).insert(...)` n'envoie RIEN — c'est ce qui laissait la table
+  // view_events vide et les statistiques d'audience du tableau de bord à zéro.
+  void supabase.auth
+    .getUser()
+    .then(({ data }) =>
+      supabase!
+        .from('view_events')
+        .insert({
+          event_type: type,
+          ref: ref ?? null,
+          category: category ?? null,
+          user_id: data.user?.id ?? null,
+        })
+        .then(({ error }) => {
+          if (error) logger.warn('trackEvent : insertion refusée', { type, error: error.message });
+        }),
+    )
+    .then(undefined, () => {
+      /* réseau indisponible : la mesure d'audience n'est pas critique */
     });
-  });
 }
 
 const SESSION_KEY = 'iptv-session-started';
@@ -58,7 +72,10 @@ export function trackSessionStart(): void {
  */
 export function trackHeartbeat(): void {
   if (!supabase) return;
-  void supabase.rpc('track_heartbeat', { p_seconds: 60 });
+  // `.then()` obligatoire : sans lui supabase-js n'envoie pas la requête (voir trackEvent).
+  void supabase.rpc('track_heartbeat', { p_seconds: 60 }).then(({ error }) => {
+    if (error) logger.warn('trackHeartbeat : échec', { error: error.message });
+  });
 }
 
 export function getLocalStats(): Record<string, number> {

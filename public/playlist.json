@@ -1006,7 +1006,7 @@
   {
     "name": "Zylo Fréquence Novelas (1080p)",
     "country": "FR",
-    "group": "France",
+    "group": "Telenovelas",
     "logo": "https://i.imgur.com/fEjNAps.png",
     "url": "https://d20oth1416y9a1.cloudfront.net/playlist/amg00711-zylofast-frequencenovelas-rakutenus/playlist.m3u8",
     "source": "iptv-org/fr",
@@ -2756,7 +2756,7 @@
   {
     "name": "Televisa Telenovela Channel",
     "country": "FR",
-    "group": "France (Rakuten)",
+    "group": "Telenovelas",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/IPTV-org-logo.svg/240px-IPTV-org-logo.svg.png",
     "url": "https://televisa-telenovelas-3-eu.rakuten.wurl.tv/playlist.m3u8",
     "source": "iptv-org/fr_rakuten",
@@ -6493,7 +6493,7 @@
   {
     "name": "Novela Channel (720p)",
     "country": "CI",
-    "group": "Afrique",
+    "group": "Telenovelas",
     "logo": "https://i.ibb.co/V3pfjfB/novela-channel-telepack.jpg",
     "url": "https://video1.getstreamhosting.com:1936/8284/8284/playlist.m3u8",
     "source": "iptv-org/api-2026-10-a-confirmer",
@@ -7457,7 +7457,7 @@
   {
     "name": "Estrella TV (1080p)",
     "country": "US",
-    "group": "USA",
+    "group": "Latino",
     "logo": "https://i.imgur.com/IZxjnyp.png",
     "url": "https://estrellatv-oando.amagi.tv/playlist.m3u8",
     "source": "iptv-org/api-2026-10",
@@ -9062,6 +9062,193 @@
     "url": "https://aegis-cloudfront-1.tubi.video/d5171dc7-f8c6-469c-81eb-e1ffaaed5721/playlist.m3u8",
     "source": "iptv-org/api-2026-10",
     "verifiedAt": "2026-10-12T16:40:28.000Z",
+    "verified": true
+  },
+  {
+    "name": "Azteca Internacional (1080p)",
+    "country": "MX",
+    "group": "Latino",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Azteca_Internacional_logo_2023.png",
+    "url": "https://azt-mun.otteravision.com/azt/mun/mun.m3u8",
+    "source": "iptv-org/api-2026-10-latino",
+    "verifiedAt": "2026-10-12T17:17:08.000Z",
+    "verified": true
+  },
+  {
+    "name": "Canal RCN (1080p)",
+    "country": "CO",
+    "group": "Latino",
+    "logo": "https://i.imgur.com/5PhTaHp.png",
+    "url": "https://barinaslive1.boldmss.com/RCN/RCN.isml/RCN.m3u8",
+    "source": "iptv-org/api-2026-10-latino",
+    "verifiedAt": "2026-10-12T17:17:08.000Z",
+    "verified": true
+  },
+  {
+    "name": "Caracol TV (1080p)",
+    "country": "CO",
+    "group": "Latino",
+    "logo": "https://i.imgur.com/WbfdJbk.png",
+    "url": "https://barinaslive1.boldmss.com/CARACOL/CARACOL.isml/CARACOL.m3u8",
+    "source": "iptv-org/api-2026-10-latino",
+    "verifiedAt": "2026-10-12T17:17:08.000Z",
+    "verified": true
+  },
+  {
+    "name": "Galavision (1080p)",
+    "country": "US",
+    "group": "Latino",
+    "logo": "https://i.ibb.co/zThkPg23/IMG-2277.png",
+    "url": "https://streaming-live-fcdn.api.prd.univisionnow.com/galaeast/galaeast.isml/hls/galaeast.m3u8",
+    "source": "iptv-org/api-2026-10-latino",
+    "verifiedAt": "2026-10-12T17:17:08.000Z",
+    "verified": true
+  },
+  {
+    "name": "Las Estrellas (1080p)",
+    "country": "MX",
+    "group": "Latino",
+    "logo": "https://i.imgur.com/g5ShxZ7.png",
+    "url": "https://channel01-onlymex.akamaized.net/hls/live/2022749/event01/index.m3u8",
+    "source": "iptv-org/api-2026-10-latino",
+    "verifiedAt": "2026-10-12T17:17:08.000Z",
+    "geoBlocked": true,
+    "geoReason": "HTTP 403 (accès refusé)"
+  },
+  {
+    "name": "Nuestra Tele Internacional (1080p)",
+    "country": "CO",
+    "group": "Latino",
+    "logo": "https://i.imgur.com/JoGQqmP.png",
+    "url": "https://stream1.bitred.cl/nuestra-tele/index.m3u8",
+    "source": "iptv-org/api-2026-10-latino",
+    "verifiedAt": "2026-10-12T17:17:08.000Z",
+    "verified": true
+  },
+  {
+    "name": "Pluto TV Novelas",
+    "country": "US",
+    "group": "Telenovelas",
+    "logo": "https://i.imgur.com/R44LypS.png",
+    "url": "https://jmp2.uk/plu-5f512365abe1f50007d3ff56.m3u8",
+    "source": "iptv-org/api-2026-10-latino",
+    "verifiedAt": "2026-10-12T17:17:08.000Z",
+    "geoBlocked": true,
+    "geoReason": "HTTP 403 (accès refusé)"
+  },
+  {
+    "name": "Pluto TV Novelas de Mexico",
+    "country": "US",
+    "group": "Telenovelas",
+    "logo": "https://images.pluto.tv/channels/6474a7958e3c0a0008b97cae/colorLogoPNG_1765475296297.png",
+    "url": "https://jmp2.uk/plu-6474a7958e3c0a0008b97cae.m3u8",
+    "source": "iptv-org/api-2026-10-latino",
+    "verifiedAt": "2026-10-12T17:17:08.000Z",
+    "geoBlocked": true,
+    "geoReason": "HTTP 403 (accès refusé)"
+  },
+  {
+    "name": "Pluto TV Novelas de Otros Continentes",
+    "country": "US",
+    "group": "Telenovelas",
+    "logo": "https://images.pluto.tv/channels/686eed4c677f2f98b4a1ccd4/colorLogoPNG_1765466599084.png",
+    "url": "https://jmp2.uk/plu-686eed4c677f2f98b4a1ccd4.m3u8",
+    "source": "iptv-org/api-2026-10-latino",
+    "verifiedAt": "2026-10-12T17:17:08.000Z",
+    "geoBlocked": true,
+    "geoReason": "HTTP 403 (accès refusé)"
+  },
+  {
+    "name": "Pluto TV Novelas de Venezuela",
+    "country": "US",
+    "group": "Telenovelas",
+    "logo": "https://images.pluto.tv/channels/6474a86917f5e100089a0c1c/colorLogoPNG_1765471713312.png",
+    "url": "https://jmp2.uk/plu-6474a86917f5e100089a0c1c.m3u8",
+    "source": "iptv-org/api-2026-10-latino",
+    "verifiedAt": "2026-10-12T17:17:08.000Z",
+    "geoBlocked": true,
+    "geoReason": "HTTP 403 (accès refusé)"
+  },
+  {
+    "name": "Pluto TV Telenovelas Clasicas",
+    "country": "DE",
+    "group": "Telenovelas",
+    "logo": "https://images.pluto.tv/channels/662a69daa0a74e00087a1c72/colorLogoPNG.png",
+    "url": "https://jmp2.uk/plu-662a69daa0a74e00087a1c72.m3u8",
+    "source": "iptv-org/api-2026-10-latino",
+    "verifiedAt": "2026-10-12T17:17:08.000Z",
+    "geoBlocked": true,
+    "geoReason": "HTTP 403 (accès refusé)"
+  },
+  {
+    "name": "RCN Mas (1080p)",
+    "country": "CO",
+    "group": "Latino",
+    "logo": "https://i.imgur.com/MJzuRAN.png",
+    "url": "https://rcntv-rcnmas-1-us.roku.wurl.tv/3000.m3u8",
+    "source": "iptv-org/api-2026-10-latino",
+    "verifiedAt": "2026-10-12T17:17:08.000Z",
+    "verified": true
+  },
+  {
+    "name": "RCN Novelas (1080p)",
+    "country": "CO",
+    "group": "Telenovelas",
+    "logo": "https://i.imgur.com/9wxdWNQ.png",
+    "url": "https://cdnlive.klicgo.net/rcnnovelas/live/playlist.m3u8",
+    "source": "iptv-org/api-2026-10-latino",
+    "verifiedAt": "2026-10-12T17:17:08.000Z",
+    "verified": true
+  },
+  {
+    "name": "Telemundo (1080p)",
+    "country": "US",
+    "group": "Latino",
+    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQr8c_WMuQx6ScVKpDbeYrzyOno6600xj708zvieuW4rS2YIeK9namdorbVRCKw6WsUAM4&usqp=CAU",
+    "url": "https://streamer1.nexgen.bz/TELEMUNDO/index.m3u8",
+    "source": "iptv-org/api-2026-10-latino",
+    "verifiedAt": "2026-10-12T17:17:08.000Z",
+    "verified": true
+  },
+  {
+    "name": "Telemundo Telenovelas Clasicas",
+    "country": "US",
+    "group": "Telenovelas",
+    "logo": "https://i.imgur.com/9bPcYIN.png",
+    "url": "https://jmp2.uk/plu-5cf96cc422df39f1a338d165.m3u8",
+    "source": "iptv-org/api-2026-10-latino",
+    "verifiedAt": "2026-10-12T17:17:08.000Z",
+    "geoBlocked": true,
+    "geoReason": "HTTP 403 (accès refusé)"
+  },
+  {
+    "name": "Todo Novelas (1080p)",
+    "country": "ES",
+    "group": "Telenovelas",
+    "logo": "https://i.imgur.com/NuYwGok.png",
+    "url": "https://dtsszjrztq9ti.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-yshah5p4v45g1/ToDoNovelas_ES.m3u8",
+    "source": "iptv-org/api-2026-10-latino",
+    "verifiedAt": "2026-10-12T17:17:08.000Z",
+    "verified": true
+  },
+  {
+    "name": "UniMas (720p)",
+    "country": "US",
+    "group": "Latino",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Logo_UniM%C3%A1s_2021.svg/960px-Logo_UniM%C3%A1s_2021.svg.png",
+    "url": "https://streaming-live-fcdn.api.prd.univisionnow.com/wfut/wfut.isml/hls/wfut.m3u8",
+    "source": "iptv-org/api-2026-10-latino",
+    "verifiedAt": "2026-10-12T17:17:08.000Z",
+    "verified": true
+  },
+  {
+    "name": "Univision (1080p)",
+    "country": "US",
+    "group": "Latino",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Logo_Univision_2019.svg/960px-Logo_Univision_2019.svg.png",
+    "url": "https://streaming-live-fcdn.api.prd.univisionnow.com/unieast/unieast.isml/hls/unieast.m3u8",
+    "source": "iptv-org/api-2026-10-latino",
+    "verifiedAt": "2026-10-12T17:17:08.000Z",
     "verified": true
   }
 ]
