@@ -40,22 +40,6 @@
     "verified": true
   },
   {
-    "name": "Congo Planet Television (1080p)",
-    "country": "CD",
-    "group": "Afrique",
-    "logo": "https://i.imgur.com/9IIIvPf.png",
-    "url": "https://radio.congoplanet.com/Congo_Planet_TV.sdp/Congo_Planet_TV/playlist.m3u8",
-    "source": "iptv-org/api-2026-10-a-confirmer"
-  },
-  {
-    "name": "ONE-TV (720p)",
-    "country": "CD",
-    "group": "Afrique",
-    "logo": "https://i.imgur.com/Wob7gjp.png",
-    "url": "https://core.live-apc.eu:5443/LiveApp/streams/backup.m3u8",
-    "source": "iptv-org/api-2026-10-a-confirmer"
-  },
-  {
     "name": "Ev-tele (720p)",
     "country": "CG",
     "group": "Afrique",
