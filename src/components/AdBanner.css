@@ -244,11 +244,20 @@
 
 /* Petits écrans : on masque l'appel à l'action pour garder le titre lisible */
 @media (max-width: 520px) {
-  .ad-lt-sub {
+  .ad-lt {
+    height: 46px;
+  }
+  .ad-lt-sub,
+  .ad-lt-cta {
     display: none;
   }
-  .ad-lt-cta {
-    padding: 5px 9px;
+  .ad-lt-title {
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    font-size: 12px;
+    line-height: 1.2;
   }
 }
 
