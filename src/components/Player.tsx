@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState, useCallback, lazy, Suspense } from 'react';
+import { playbackUrl } from '../utils/playableChannels.ts';
+import { isNativeApp } from '../lib/nativeAuth.ts';
 import Hls from 'hls.js';
 import { Maximize2, Minimize2, RefreshCw, Captions } from 'lucide-react';
 import { AlphaLogoAnimated } from './AlphaLogoAnimated.tsx';
@@ -117,7 +119,7 @@ export const Player: React.FC<PlayerProps> = ({ url, onError }): JSX.Element => 
         maxMaxBufferLength: 60,
       });
 
-      hls.loadSource(url);
+      hls.loadSource(playbackUrl(url, isNativeApp()));
       hls.attachMedia(video);
 
       hls.on(Hls.Events.MANIFEST_PARSED, (): void => {
@@ -185,7 +187,7 @@ export const Player: React.FC<PlayerProps> = ({ url, onError }): JSX.Element => 
           logger.warn('Native HLS play failed', { error: String(err) });
         });
       };
-      video.src = url;
+      video.src = playbackUrl(url, isNativeApp());
       video.addEventListener('loadedmetadata', onMetadata);
 
       return (): void => {
