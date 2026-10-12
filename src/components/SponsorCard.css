@@ -8,7 +8,7 @@
 .sp-slot {
   flex-shrink: 0;
   position: relative;
-  margin: 8px 12px 12px;
+  margin: 8px 12px calc(12px + env(safe-area-inset-bottom, 0px));
   aspect-ratio: 16 / 7.5;
   max-height: 168px;
   border-radius: 10px;

@@ -5,6 +5,7 @@
   display: flex;
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   overflow: hidden;
 }
 
@@ -774,6 +775,11 @@
   pointer-events: auto;
 }
 
+/* Le bouton menu flotte en haut à gauche tant que la liste est fermée : on décale l'en-tête. */
+.app-container:not(.sidebar-open) .player-header {
+  padding-left: 72px;
+}
+
 .live-badge {
   display: inline-flex;
   align-items: center;
@@ -899,7 +905,7 @@ video {
 /* ── Reconnect badge ── */
 .reconnect-badge {
   position: absolute;
-  top: 14px;
+  top: 84px; /* sous le logo de la chaîne (en-tête du lecteur) */
   right: 14px;
   display: flex;
   align-items: center;
@@ -1580,6 +1586,7 @@ video {
   top: 0;
   left: 0;
   height: 100vh;
+  height: 100dvh;
   width: 340px;
   min-width: 0;
   max-width: 86vw;
@@ -3585,6 +3592,7 @@ video {
     width: 340px;
     max-width: none;
     height: 100vh;
+    height: 100dvh;
     box-shadow: none;
   }
   .app-container:not(.sidebar-open) .sidebar {
