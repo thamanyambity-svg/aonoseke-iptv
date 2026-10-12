@@ -44,6 +44,19 @@ describe('decideChannel — règle des deux échecs', () => {
     expect(again.bucket).toBe('pending');
   });
 
+  it('échec définitif (retryable false) : retirée tout de suite, sans attendre un 2e échec', () => {
+    const { bucket, entry } = decideChannel(ch, { status: 'dead', reason: 'protégé par DRM', retryable: false }, NOW);
+    expect(bucket).toBe('dead');
+    expect(entry).toBeNull();
+  });
+
+  it('échec passager (retryable true) : règle des deux échecs', () => {
+    const first = decideChannel(ch, { status: 'dead', reason: 'délai dépassé', retryable: true }, NOW);
+    expect(first.bucket).toBe('pending');
+    const second = decideChannel(first.entry!, { status: 'dead', reason: 'délai dépassé', retryable: true }, NOW);
+    expect(second.bucket).toBe('dead');
+  });
+
   it('le seuil est de deux vérifications', () => {
     expect(MAX_FAILED_CHECKS).toBe(2);
   });

@@ -1,12 +1,14 @@
 /**
  * Vérification des sources — ne garde QUE ce qui marche.
  *
- * - Chaînes (playlist.json) : fetch du .m3u8, suit les redirections, trois issues (voir scripts/lib/stream-status.mjs) :
+ * - Chaînes (playlist.json) : vérification COMPLÈTE de lecture (voir scripts/lib/stream-deep.mjs : liste, variante,
+ *   DRM, flux terminé, premier segment réellement lisible, autorisation CORS du site et de l'appli), trois issues :
  *     ok   → gardée, verified:true ;
  *     geo  → accès refusé (HTTP 403/451 ou message « indisponible dans votre pays ») : GARDÉE et signalée
  *            geoBlocked:true — la vérification tourne depuis les États-Unis, la chaîne marche sans doute chez elle ;
- *     dead → flux disparu : supprimée seulement au 2e échec de suite (règle des deux échecs :
- *            au 1er échec la chaîne est gardée avec failedChecks:1, un succès remet le compteur à zéro).
+ *     dead → inutilisable : supprimée tout de suite si l'échec est définitif (DRM, flux terminé, 404, segment
+ *            illisible, pas de CORS) ; panne passagère (réseau, délai, 5xx) : règle des deux échecs
+ *            (1er échec : gardée avec failedChecks:1 ; un succès remet le compteur à zéro).
  * - Sites (sites.json) : HEAD/GET, statut online/offline.
  *
  * Sortie : playlist nettoyée + public/sources-report.json (chaînes bloquées par pays et chaînes mortes,
@@ -15,12 +17,12 @@
  * Usage : node scripts/verify-sources.mjs
  */
 import { readFile, writeFile } from 'node:fs/promises';
-import { checkStream } from './lib/stream-status.mjs';
+import { deepCheckStream } from './lib/stream-deep.mjs';
 import { decideChannel, MAX_FAILED_CHECKS } from './lib/channel-state.mjs';
 
 const ROOT = new URL('..', import.meta.url).pathname;
-const CONCURRENCY = 40;
-const TIMEOUT_MS = 7000;
+const CONCURRENCY = 30;
+const TIMEOUT_MS = 10000;
 const NOW = new Date().toISOString();
 
 async function pool(items, worker) {
@@ -43,7 +45,7 @@ async function verifyPlaylist() {
 
   let done = 0;
   const results = await pool(channels, async (ch) => {
-    const r = await checkStream(ch.url, { timeoutMs: TIMEOUT_MS });
+    const r = await deepCheckStream(ch.url, { timeoutMs: TIMEOUT_MS });
     done++;
     if (done % 250 === 0) console.log(`   …${done}/${channels.length}`);
     return r;

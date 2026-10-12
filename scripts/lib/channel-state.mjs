@@ -1,7 +1,8 @@
 /**
  * Décide du sort d'une chaîne après une vérification (voir stream-status.mjs).
  *
- * Règle des deux échecs : une chaîne n'est retirée qu'après DEUX vérifications mortes de suite
+ * Échec définitif (result.retryable === false) : retrait immédiat.
+ * Règle des deux échecs pour les autres (panne réseau, délai, 5xx) : retirée seulement après DEUX vérifications mortes de suite
  * (≈ 6 h d'écart). Au premier échec elle est gardée, marquée `failedChecks: 1` ; un succès (ok ou
  * bloquée par pays) remet le compteur à zéro. Évite de perdre des chaînes vivantes sur une panne
  * passagère ou un délai dépassé.
@@ -34,6 +35,8 @@ export function decideChannel(ch, result, now) {
       entry: { ...withoutMarkers(ch), geoBlocked: true, geoReason: result.reason, verifiedAt: now },
     };
   }
+  // Échec DÉFINITIF (DRM, flux terminé, 404, segment illisible, pas de CORS…) : retrait immédiat, inutile d'attendre.
+  if (result.retryable === false) return { bucket: 'dead', entry: null };
   const failedChecks = (Number.isInteger(ch.failedChecks) ? ch.failedChecks : 0) + 1;
   if (failedChecks >= MAX_FAILED_CHECKS) return { bucket: 'dead', entry: null };
   // Premier échec : on garde la chaîne telle quelle (statut précédent conservé) en notant l'échec.
