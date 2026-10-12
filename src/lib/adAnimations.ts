@@ -9,6 +9,10 @@ export const CARD_EXIT = ['sink', 'slide', 'zoom', 'wipe', 'flip', 'fade'] as co
 export const BAR_ENTER = ['wipe', 'slide', 'rise', 'zoom'] as const;
 export const BAR_EXIT = ['wipe', 'slide', 'sink', 'zoom'] as const;
 
+/** Choix aléatoire non prévisible (Web Crypto) ; sans Web Crypto on garde la première animation. */
 export function pick<T>(list: readonly T[]): T {
-  return list[Math.floor(Math.random() * list.length)] as T;
+  const buf = new Uint32Array(1);
+  const c = globalThis.crypto as Crypto | undefined;
+  const n = c ? c.getRandomValues(buf)[0] ?? 0 : 0;
+  return list[n % list.length] as T;
 }
