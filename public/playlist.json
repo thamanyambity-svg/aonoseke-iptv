@@ -4018,5 +4018,292 @@
     "source": "iptv-org/curated-2026-10b",
     "verified": true,
     "verifiedAt": "2026-10-12T13:58:57.778Z"
+  },
+  {
+    "name": "RTB 3",
+    "country": "BF",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/OFZm8ic.png",
+    "url": "https://edge13.vedge.infomaniak.com/livecast/ik:rtb3-1/manifest.m3u8",
+    "source": "iptv-org/curated-2026-10",
+    "verifiedAt": "2026-10-12T16:13:45.069Z",
+    "geoBlocked": true,
+    "geoReason": "HTTP 403 (accès refusé)"
+  },
+  {
+    "name": "RTB (360p)",
+    "country": "BF",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/BFfLV0y.png",
+    "url": "https://edge12.vedge.infomaniak.com/livecast/ik:rtblive1_8/manifest.m3u8",
+    "source": "iptv-org/curated-2026-10",
+    "verifiedAt": "2026-10-12T16:13:45.069Z",
+    "geoBlocked": true,
+    "geoReason": "HTTP 403 (accès refusé)"
+  },
+  {
+    "name": "Faith Africa (1080p)",
+    "country": "ZA",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/yAZE7aU.png",
+    "url": "https://faithnow-hls.secdn.net/faithnow-holland-channel/play/FaithAfrica.smil/playlist.m3u8",
+    "source": "iptv-org/curated-2026-10",
+    "verifiedAt": "2026-10-12T16:13:45.069Z",
+    "verified": true
+  },
+  {
+    "name": "TV5Monde Europe (1080p)",
+    "country": "FR",
+    "group": "France",
+    "logo": "https://i.imgur.com/rPAbMSu.png",
+    "url": "https://ert-ucdn.broadpeak-aas.com/bpk-tv/TV5/default/index.m3u8",
+    "source": "iptv-org/curated-2026-10b",
+    "verifiedAt": "2026-10-12T16:13:45.069Z",
+    "verified": true
+  },
+  {
+    "name": "Coptic TV (720p)",
+    "country": "EG",
+    "group": "Afrique",
+    "logo": "https://www.ctvchannel.tv/images/CTV-logo-white.png",
+    "url": "https://ctv.icopts.app/CTV/index.fmp4.m3u8",
+    "source": "iptv-org/curated-2026-10",
+    "verifiedAt": "2026-10-12T16:13:45.069Z",
+    "verified": true
+  },
+  {
+    "name": "GMS TV",
+    "country": "SN",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/Ue02CIH.png",
+    "url": "https://acasmedia6.acangroup.org/gmstv/gmstv_output/playlist.m3u8",
+    "source": "iptv-org/curated-2026-10",
+    "verifiedAt": "2026-10-12T16:13:45.069Z",
+    "verified": true
+  },
+  {
+    "name": "KRC TV",
+    "country": "UG",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/8c9Uqks.jpeg",
+    "url": "https://channels.ad-ug.com/live/ch03/index.m3u8",
+    "source": "iptv-org/curated-2026-10",
+    "verifiedAt": "2026-10-12T16:13:45.069Z",
+    "verified": true
+  },
+  {
+    "name": "Medi1TV Arabic (1080p)",
+    "country": "MA",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/3YsZPY6.jpeg",
+    "url": "https://cdn.live.easybroadcast.io/abr_corp/83_medi1tv-arabic_g90v4ec/playlist.m3u8",
+    "source": "iptv-org/curated-2026-10",
+    "verifiedAt": "2026-10-12T16:13:45.069Z",
+    "verified": true
+  },
+  {
+    "name": "Medi1TV Maghreb (1080p)",
+    "country": "MA",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/F5OFQsp.jpeg",
+    "url": "https://cdn.live.easybroadcast.io/abr_corp/83_medi1tv-maghreb_jnbspmg/playlist.m3u8",
+    "source": "iptv-org/curated-2026-10",
+    "verifiedAt": "2026-10-12T16:13:45.069Z",
+    "verified": true
+  },
+  {
+    "name": "FORT TV (480p)",
+    "country": "UG",
+    "group": "Afrique",
+    "logo": "https://i.ibb.co/4KN5zW9/fort-tv-logo-GENE.png",
+    "url": "https://fort.co-works.org/memfs/87017643-274a-4bc0-a786-7767a0d159c2.m3u8",
+    "source": "iptv-org/curated-2026-10",
+    "verifiedAt": "2026-10-12T16:13:45.069Z",
+    "verified": true
+  },
+  {
+    "name": "KassouaTV (720p)",
+    "country": "BJ",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/EfX3HNG.png",
+    "url": "https://playtv4k.live/live/kassouatv/index.m3u8",
+    "source": "iptv-org/curated-2026-10",
+    "verifiedAt": "2026-10-12T16:13:45.069Z",
+    "verified": true
+  },
+  {
+    "name": "NW Economie (576p)",
+    "country": "TG",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/OmlFQa8.png",
+    "url": "https://hls.newworldtv.com/nw-economie/video/live.m3u8",
+    "source": "iptv-org/curated-2026-10b",
+    "verifiedAt": "2026-10-12T16:13:45.069Z",
+    "geoBlocked": true,
+    "geoReason": "HTTP 403 (accès refusé)"
+  },
+  {
+    "name": "NW Info 2 (576p)",
+    "country": "TG",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/0W4GqFD.png",
+    "url": "https://hls.newworldtv.com/nw-info-2/video/live.m3u8",
+    "source": "iptv-org/curated-2026-10b",
+    "verifiedAt": "2026-10-12T16:13:45.069Z",
+    "geoBlocked": true,
+    "geoReason": "HTTP 403 (accès refusé)"
+  },
+  {
+    "name": "NW Info (576p)",
+    "country": "TG",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/UDEY91v.png",
+    "url": "https://hls.newworldtv.com/nw-info/video/live.m3u8",
+    "source": "iptv-org/curated-2026-10b",
+    "verifiedAt": "2026-10-12T16:13:45.069Z",
+    "geoBlocked": true,
+    "geoReason": "HTTP 403 (accès refusé)"
+  },
+  {
+    "name": "NW Magazine (576p)",
+    "country": "TG",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/RZNJZYN.png",
+    "url": "https://hls.newworldtv.com/nw-magazine/video/live.m3u8",
+    "source": "iptv-org/curated-2026-10b",
+    "verifiedAt": "2026-10-12T16:13:45.069Z",
+    "geoBlocked": true,
+    "geoReason": "HTTP 403 (accès refusé)"
+  },
+  {
+    "name": "Ev-tele (720p)",
+    "country": "CG",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/iBlXl2T.png",
+    "url": "https://playtv4k.live/live/EVTELE/index.m3u8",
+    "source": "iptv-org/curated-2026-10",
+    "verifiedAt": "2026-10-12T16:13:45.069Z",
+    "verified": true
+  },
+  {
+    "name": "QTV Gambia (720p)",
+    "country": "GM",
+    "group": "Afrique",
+    "logo": "https://i.imgur.com/ZsTuADb.png",
+    "url": "https://player.qtv.gm/hls/live.stream.m3u8",
+    "source": "iptv-org/curated-2026-10",
+    "verifiedAt": "2026-10-12T16:13:45.069Z",
+    "verified": true
+  },
+  {
+    "name": "DI.TV 80 (720p)",
+    "country": "IT",
+    "group": "Italy",
+    "logo": "https://i.imgur.com/2AqKAMy.png",
+    "url": "https://5f22d76e220e1.streamlock.net/ditv80/ditv80/playlist.m3u8",
+    "source": "iptv-org/it",
+    "verifiedAt": "2026-10-12T16:13:45.069Z",
+    "verified": true
+  },
+  {
+    "name": "index.ll",
+    "country": "US",
+    "group": "LIVE",
+    "logo": "",
+    "url": "https://live.azenagroup.com/zenith/index.ll.m3u8",
+    "source": "validated-https",
+    "verifiedAt": "2026-10-12T16:13:45.069Z",
+    "verified": true
+  },
+  {
+    "name": "Company TV (720p)",
+    "country": "IT",
+    "group": "Italy",
+    "logo": "https://i.imgur.com/ccdwsWj.png",
+    "url": "https://5929b138b139d.streamlock.net/CompanyTV/smil:CompanyTV.smil/master.m3u8",
+    "source": "iptv-org/it",
+    "verifiedAt": "2026-10-12T16:13:45.069Z",
+    "verified": true
+  },
+  {
+    "name": "Radio Ibiza TV (720p) [Not 24/7]",
+    "country": "IT",
+    "group": "Italy",
+    "logo": "https://i.imgur.com/KfFqYQi.png",
+    "url": "https://5929b138b139d.streamlock.net/RadioIbizaTV/livestream/playlist.m3u8",
+    "source": "iptv-org/it",
+    "verifiedAt": "2026-10-12T16:13:45.069Z",
+    "verified": true
+  },
+  {
+    "name": "Trace Caribbean (1080p)",
+    "country": "FR",
+    "group": "France",
+    "logo": "https://i.imgur.com/ZHD7Vxy.png",
+    "url": "https://channels.trace.plus/Traceprod/CARIBBEAN_hd/index.m3u8",
+    "source": "iptv-org/fr",
+    "verifiedAt": "2026-10-12T16:13:45.069Z",
+    "geoBlocked": true,
+    "geoReason": "HTTP 403 (accès refusé)"
+  },
+  {
+    "name": "Charge! (1080p)",
+    "country": "US",
+    "group": "Movies",
+    "logo": "https://i.imgur.com/1rxmu2u.png",
+    "url": "https://fast-channels.sinclairstoryline.com/CHARGE/index.m3u8",
+    "source": "iptv-org",
+    "verifiedAt": "2026-10-12T16:13:45.069Z",
+    "verified": true
+  },
+  {
+    "name": "ABC 9 Manchester NH (WMUR-TV) (720p)",
+    "country": "US",
+    "group": "News",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/7/72/WMURCurrentLogo.png",
+    "url": "https://aegis-cloudfront-1.tubi.video/b77ffe96-c5d1-43a7-8687-306ff244d725/playlist.m3u8",
+    "source": "iptv-org",
+    "verifiedAt": "2026-10-12T16:13:45.069Z",
+    "verified": true
+  },
+  {
+    "name": "92 News HD (720p)",
+    "country": "PK",
+    "group": "News",
+    "logo": "https://i.imgur.com/gp1Ao4s.jpeg",
+    "url": "http://92news.vdn.dstreamone.net/92newshd/92hd/playlist.m3u8",
+    "source": "iptv-org",
+    "verifiedAt": "2026-10-12T16:13:45.069Z",
+    "verified": true
+  },
+  {
+    "name": "CNBC-e",
+    "country": "TR",
+    "group": "Business",
+    "logo": "https://s.cnbce.com/dist/images/logo-nav.png",
+    "url": "https://hnpsechtsc.turknet.ercdn.net/xpnvudnlsv/cnbc-e/cnbc-e.m3u8",
+    "source": "iptv-org",
+    "verifiedAt": "2026-10-12T16:13:45.069Z",
+    "verified": true
+  },
+  {
+    "name": "Radio Télé Hit (480p)",
+    "country": "HT",
+    "group": "Music",
+    "logo": "https://i.ibb.co/Gt2QDgf/cropped-transparent2-103x70.png",
+    "url": "https://59d39900ebfb8.streamlock.net/RadioTelehit/RadioTelehit/playlist.m3u8",
+    "source": "iptv-org",
+    "verifiedAt": "2026-10-12T16:13:45.069Z",
+    "verified": true
+  },
+  {
+    "name": "Radio Tele Sentinel",
+    "country": "US",
+    "group": "USA",
+    "logo": "https://i.imgur.com/hy3BJxj.png",
+    "url": "https://59d39900ebfb8.streamlock.net/radiotelesentinel/radiotelesentinel/playlist.m3u8",
+    "source": "iptv-org/us",
+    "verifiedAt": "2026-10-12T16:13:45.069Z",
+    "verified": true
   }
 ]
