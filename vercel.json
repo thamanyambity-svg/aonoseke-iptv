@@ -10,6 +10,13 @@
       "schedule": "0 5 * * *"
     }
   ],
+  "functions": {
+    "api/relay.js": {
+      "regions": ["cdg1"],
+      "maxDuration": 30,
+      "includeFiles": "public/playlist.json"
+    }
+  },
   "headers": [
     {
       "source": "/sw.js",
