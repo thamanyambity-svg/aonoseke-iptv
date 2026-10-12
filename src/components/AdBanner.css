@@ -47,7 +47,6 @@
   min-width: 0;
   background: linear-gradient(90deg, rgba(8, 10, 18, 0.94), rgba(17, 20, 34, 0.9));
   border-bottom: 3px solid var(--gold, #ffca3a);
-  clip-path: inset(0 100% 0 0);
   overflow: hidden;
 }
 
@@ -72,6 +71,13 @@
 }
 .ad-lt-main:not(:disabled):hover .ad-lt-cta {
   background: #fff;
+}
+
+.ad-lt-thumb {
+  align-self: stretch;
+  width: clamp(54px, 9vw, 84px);
+  object-fit: cover;
+  flex-shrink: 0;
 }
 
 .ad-lt-text {
@@ -143,8 +149,18 @@
 .ad-lt--in .ad-lt-tag {
   animation: lt-tag-in 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
-.ad-lt--in .ad-lt-bar {
-  animation: lt-bar-in 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s forwards;
+.ad-lt--in.ad-lt-e-wipe .ad-lt-bar {
+  animation: lt-bar-in 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s both;
+}
+.ad-lt--in.ad-lt-e-slide .ad-lt-bar {
+  animation: lt-bar-slide-in 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s both;
+}
+.ad-lt--in.ad-lt-e-rise .ad-lt-bar {
+  animation: lt-bar-rise-in 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s both;
+}
+.ad-lt--in.ad-lt-e-zoom .ad-lt-bar {
+  animation: lt-bar-zoom-in 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s both;
+  transform-origin: left center;
 }
 .ad-lt--in .ad-lt-text {
   animation: lt-text-in 0.4s ease-out 0.7s forwards;
@@ -157,9 +173,6 @@
 /* ── Affichage stable ── */
 .ad-lt--show .ad-lt-tag {
   transform: none;
-}
-.ad-lt--show .ad-lt-bar {
-  clip-path: inset(0 0 0 0);
 }
 .ad-lt--show .ad-lt-text {
   opacity: 1;
@@ -176,8 +189,18 @@
 .ad-lt--out .ad-lt-close {
   animation: lt-fade-out 0.25s ease-in forwards;
 }
-.ad-lt--out .ad-lt-bar {
+.ad-lt--out.ad-lt-x-wipe .ad-lt-bar {
   animation: lt-bar-out 0.45s cubic-bezier(0.6, 0, 0.8, 0.4) 0.2s forwards;
+}
+.ad-lt--out.ad-lt-x-slide .ad-lt-bar {
+  animation: lt-bar-slide-out 0.45s ease-in 0.2s forwards;
+}
+.ad-lt--out.ad-lt-x-sink .ad-lt-bar {
+  animation: lt-bar-sink-out 0.45s ease-in 0.2s forwards;
+}
+.ad-lt--out.ad-lt-x-zoom .ad-lt-bar {
+  animation: lt-bar-zoom-out 0.45s ease-in 0.2s forwards;
+  transform-origin: left center;
 }
 .ad-lt--out .ad-lt-tag {
   animation: lt-tag-out 0.35s ease-in 0.45s forwards;
@@ -223,6 +246,66 @@
   }
   to {
     opacity: 0;
+  }
+}
+@keyframes lt-bar-slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes lt-bar-rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes lt-bar-zoom-in {
+  from {
+    opacity: 0;
+    transform: scaleX(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes lt-bar-slide-out {
+  from {
+    opacity: 1;
+    transform: none;
+  }
+  to {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+}
+@keyframes lt-bar-sink-out {
+  from {
+    opacity: 1;
+    transform: none;
+  }
+  to {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+}
+@keyframes lt-bar-zoom-out {
+  from {
+    opacity: 1;
+    transform: none;
+  }
+  to {
+    opacity: 0;
+    transform: scaleX(0.5);
   }
 }
 @keyframes lt-bar-out {

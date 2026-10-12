@@ -2,7 +2,10 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { SkipForward, ExternalLink } from 'lucide-react';
 import type { PrerollAd } from '../hooks/useAds.ts';
 import { AlphaLogoAnimated } from './AlphaLogoAnimated.tsx';
+import { adPhoto } from '../lib/adPhotos.ts';
+import { CARD_ENTER, pick } from '../lib/adAnimations.ts';
 import type { JSX } from 'react';
+import './SponsorCard.css';
 
 interface PreRollAdProps {
   ad: PrerollAd;
@@ -24,6 +27,8 @@ export function PreRollAd({
   const [remaining, setRemaining] = useState(maxDuration);
   const reported = useRef(false);
   const completed = useRef(false);
+  const [enter] = useState(() => pick(CARD_ENTER));
+  const photo = adPhoto(ad.image);
 
   // Fire onComplete at most once, and never from inside a render/state-updater.
   const complete = useCallback((): void => {
@@ -78,6 +83,22 @@ export function PreRollAd({
             playsInline
             onEnded={complete}
           />
+        ) : photo ? (
+          <div className={`pr-photo sp-phase-in sp-in-${enter}`}>
+            <img src={photo} alt="" className="pr-photo-img" />
+            <div className="pr-photo-shade" aria-hidden="true" />
+            <div className="pr-photo-body">
+              <span className="pr-photo-tag">Publicité</span>
+              <span className="pr-photo-eyebrow">{ad.eyebrow ?? 'Alpha Import Exchange'}</span>
+              <h2 className="pr-photo-title">{ad.title}</h2>
+              {ad.subtitle && <p className="pr-photo-sub">{ad.subtitle}</p>}
+              {ad.cta && ad.url && (
+                <span className="pr-photo-cta">
+                  {ad.cta} <ExternalLink size={14} aria-hidden="true" />
+                </span>
+              )}
+            </div>
+          </div>
         ) : ad.image ? (
           <picture style={{ display: 'contents' }}>
             {ad.imagePortrait && <source media="(orientation: portrait)" srcSet={ad.imagePortrait} />}

@@ -26,6 +26,8 @@ export interface BannerAd {
   id: string;
   title: string;
   subtitle?: string;
+  eyebrow?: string;
+  cta?: string;
   url?: string;
   image?: string;
   logo?: string;
