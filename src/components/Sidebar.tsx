@@ -20,14 +20,14 @@ interface AdItem {
   id: string;
   title: string;
   subtitle?: string;
+  eyebrow?: string;
+  cta?: string;
   url?: string;
   image?: string;
   logo?: string;
   legal?: string;
   emblem?: boolean;
 }
-
-const BANNER_ROTATION_MS = 15_000;
 
 interface SidebarProps {
   user: AuthUser | null;
@@ -57,13 +57,10 @@ export function Sidebar({
     setActiveTab, setRawSearch, setSelectedCountry, setSelectedGroup,
   } = usePlayerStore();
   const [focusedIdx, setFocusedIdx] = useState<number>(-1);
-  // Rotation des bannières sponsor (une nouvelle toutes les 15 s).
+  // Rotation des bannières sponsor : chaque carte entre, reste ~10 s puis sort (animation aléatoire) ;
+  // BannerAd appelle onDone à la fin de sa sortie et on passe à la suivante.
   const [bannerIdx, setBannerIdx] = useState(0);
-  useEffect(() => {
-    if (!adsEnabled || banners.length < 2) return;
-    const t = window.setInterval(() => setBannerIdx((i) => i + 1), BANNER_ROTATION_MS);
-    return () => window.clearInterval(t);
-  }, [adsEnabled, banners.length]);
+  const nextBanner = useCallback(() => setBannerIdx((i) => i + 1), []);
   const currentBanner = banners.length > 0 ? banners[bannerIdx % banners.length] : undefined;
   const listRef = useRef<HTMLDivElement>(null);
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -337,9 +334,11 @@ export function Sidebar({
         )}
 
         {adsEnabled && sidebarOpen && currentBanner && (
-          <BannerAd key={currentBanner.id} ad={currentBanner}
+          <div className="sp-slot">
+            <BannerAd key={`${currentBanner.id}-${bannerIdx}`} ad={currentBanner} onDone={nextBanner}
             onImpression={(id) => { trackEvent('ad_impression', id); void trackAdEvent(id, 'impression'); }}
             onClick={(id) => { trackEvent('ad_click', id); void trackAdEvent(id, 'click'); }} />
+          </div>
         )}
       </aside>
     </>

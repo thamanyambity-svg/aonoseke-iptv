@@ -14,6 +14,8 @@ import { trackAdEvent } from '../hooks/useAds.ts';
 import { trackEvent } from '../hooks/useAnalytics.ts';
 import { logger } from '../utils/logger.ts';
 import { AlphaLogo } from './AlphaLogo.tsx';
+import { adPhoto } from '../lib/adPhotos.ts';
+import { BAR_ENTER, BAR_EXIT, pick } from '../lib/adAnimations.ts';
 import type { AdCampaign } from '../hooks/useAdMatrix';
 import './AdBanner.css';
 
@@ -33,6 +35,7 @@ interface AdBannerProps {
 
 export function AdBanner({ campaign, visibleMs = 12_000, onDone }: AdBannerProps) {
   const [phase, setPhase] = useState<Phase>('in');
+  const [anim] = useState(() => ({ enter: pick(BAR_ENTER), exit: pick(BAR_EXIT) }));
   const closedRef = useRef(false);
   const trackedRef = useRef(false);
 
@@ -41,7 +44,8 @@ export function AdBanner({ campaign, visibleMs = 12_000, onDone }: AdBannerProps
   const subtitle = campaign?.content?.subtitle;
   const cta = campaign?.content?.cta;
   const url = campaign?.content?.url;
-  const showEmblem = /alpha/i.test(advertiser);
+  const photo = adPhoto(campaign?.content?.image);
+  const showEmblem = !photo && /alpha/i.test(advertiser);
 
   // Entrée → affichage → sortie → fin
   useEffect(() => {
@@ -83,12 +87,13 @@ export function AdBanner({ campaign, visibleMs = 12_000, onDone }: AdBannerProps
 
   return (
     <div
-      className={`ad-lt ad-lt--${phase}`}
+      className={`ad-lt ad-lt--${phase} ad-lt-e-${anim.enter} ad-lt-x-${anim.exit}`}
       role="region"
       aria-label={`Publicité : ${advertiser}`}
     >
       <span className="ad-lt-tag">Pub</span>
       <div className="ad-lt-bar">
+        {photo && <img src={photo} alt="" className="ad-lt-thumb" />}
         <button
           type="button"
           className="ad-lt-main"
