@@ -8956,61 +8956,6 @@
     "verified": true
   },
   {
-    "name": "Pluto TV Novelas",
-    "country": "US",
-    "group": "Telenovelas",
-    "logo": "https://i.imgur.com/R44LypS.png",
-    "url": "https://jmp2.uk/plu-5f512365abe1f50007d3ff56.m3u8",
-    "source": "iptv-org/api-2026-10-latino",
-    "verifiedAt": "2026-10-12T18:13:35.241Z",
-    "geoBlocked": true,
-    "geoReason": "HTTP 403 (accès refusé)"
-  },
-  {
-    "name": "Pluto TV Novelas de Mexico",
-    "country": "US",
-    "group": "Telenovelas",
-    "logo": "https://images.pluto.tv/channels/6474a7958e3c0a0008b97cae/colorLogoPNG_1765475296297.png",
-    "url": "https://jmp2.uk/plu-6474a7958e3c0a0008b97cae.m3u8",
-    "source": "iptv-org/api-2026-10-latino",
-    "verifiedAt": "2026-10-12T18:13:35.241Z",
-    "geoBlocked": true,
-    "geoReason": "HTTP 403 (accès refusé)"
-  },
-  {
-    "name": "Pluto TV Novelas de Otros Continentes",
-    "country": "US",
-    "group": "Telenovelas",
-    "logo": "https://images.pluto.tv/channels/686eed4c677f2f98b4a1ccd4/colorLogoPNG_1765466599084.png",
-    "url": "https://jmp2.uk/plu-686eed4c677f2f98b4a1ccd4.m3u8",
-    "source": "iptv-org/api-2026-10-latino",
-    "verifiedAt": "2026-10-12T18:13:35.241Z",
-    "geoBlocked": true,
-    "geoReason": "HTTP 403 (accès refusé)"
-  },
-  {
-    "name": "Pluto TV Novelas de Venezuela",
-    "country": "US",
-    "group": "Telenovelas",
-    "logo": "https://images.pluto.tv/channels/6474a86917f5e100089a0c1c/colorLogoPNG_1765471713312.png",
-    "url": "https://jmp2.uk/plu-6474a86917f5e100089a0c1c.m3u8",
-    "source": "iptv-org/api-2026-10-latino",
-    "verifiedAt": "2026-10-12T18:13:35.241Z",
-    "geoBlocked": true,
-    "geoReason": "HTTP 403 (accès refusé)"
-  },
-  {
-    "name": "Pluto TV Telenovelas Clasicas",
-    "country": "DE",
-    "group": "Telenovelas",
-    "logo": "https://images.pluto.tv/channels/662a69daa0a74e00087a1c72/colorLogoPNG.png",
-    "url": "https://jmp2.uk/plu-662a69daa0a74e00087a1c72.m3u8",
-    "source": "iptv-org/api-2026-10-latino",
-    "verifiedAt": "2026-10-12T18:13:35.241Z",
-    "geoBlocked": true,
-    "geoReason": "HTTP 403 (accès refusé)"
-  },
-  {
     "name": "RCN Mas (1080p)",
     "country": "CO",
     "group": "Latino",
@@ -9039,17 +8984,6 @@
     "source": "iptv-org/api-2026-10-latino",
     "verifiedAt": "2026-10-12T18:13:35.241Z",
     "verified": true
-  },
-  {
-    "name": "Telemundo Telenovelas Clasicas",
-    "country": "US",
-    "group": "Telenovelas",
-    "logo": "https://i.imgur.com/9bPcYIN.png",
-    "url": "https://jmp2.uk/plu-5cf96cc422df39f1a338d165.m3u8",
-    "source": "iptv-org/api-2026-10-latino",
-    "verifiedAt": "2026-10-12T18:13:35.241Z",
-    "geoBlocked": true,
-    "geoReason": "HTTP 403 (accès refusé)"
   },
   {
     "name": "UniMas (720p)",
