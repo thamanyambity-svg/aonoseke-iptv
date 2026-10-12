@@ -1,0 +1,1392 @@
+{
+  "generatedAt": "2026-10-12T18:07:35.718Z",
+  "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
+  "counts": {
+    "checked": 906,
+    "ok": 731,
+    "geoBlocked": 87,
+    "pending": 7,
+    "dead": 81
+  },
+  "deadReasons": {
+    "délai dépassé": 27,
+    "CORS refusé pour le site web": 1,
+    "segment illisible (pas de vidéo)": 2,
+    "segment : HTTP 404": 3,
+    "HTTP 404": 40,
+    "domaine introuvable": 1,
+    "certificat invalide": 2,
+    "connexion refusée": 3,
+    "pas d'autorisation CORS (illisible dans le navigateur et l'appli)": 2
+  },
+  "geoBlocked": [
+    {
+      "name": "Tele Congo",
+      "country": "CG",
+      "group": "Afrique",
+      "url": "http://trn03.bozztv.com/gin-telecongo/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "RTB 3",
+      "country": "BF",
+      "group": "Afrique",
+      "url": "https://edge13.vedge.infomaniak.com/livecast/ik:rtb3-1/manifest.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "RTB (360p)",
+      "country": "BF",
+      "group": "Afrique",
+      "url": "https://edge12.vedge.infomaniak.com/livecast/ik:rtblive1_8/manifest.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "NW Economie (576p)",
+      "country": "TG",
+      "group": "Afrique",
+      "url": "https://hls.newworldtv.com/nw-economie/video/live.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "NW Info 2 (576p)",
+      "country": "TG",
+      "group": "Afrique",
+      "url": "https://hls.newworldtv.com/nw-info-2/video/live.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "NW Info (576p)",
+      "country": "TG",
+      "group": "Afrique",
+      "url": "https://hls.newworldtv.com/nw-info/video/live.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "NW Magazine (576p)",
+      "country": "TG",
+      "group": "Afrique",
+      "url": "https://hls.newworldtv.com/nw-magazine/video/live.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Trace Caribbean (1080p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://channels.trace.plus/Traceprod/CARIBBEAN_hd/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "arte (720p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://artesimulcast.akamaized.net/hls/live/2031003/artelive_fr/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Canal 3",
+      "country": "BF",
+      "group": "Afrique",
+      "url": "https://cs2.push2stream.com/CANAL3BENIN/playlist.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Channels 24",
+      "country": "NG",
+      "group": "Afrique",
+      "url": "https://live20.bozztv.com/dvrfl06/astv/astv-channel24africa/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Channels TV",
+      "country": "NG",
+      "group": "Afrique",
+      "url": "https://cs2.push2stream.com/CHANNELSTV-DVR/playlist.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "CNA (360p)",
+      "country": "DZ",
+      "group": "Afrique",
+      "url": "https://live.creacast.com/cna/stream/playlist.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Dounia TV",
+      "country": "NE",
+      "group": "Afrique",
+      "url": "https://live20.bozztv.com/dvrfl06/astv/astv-douniatv/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "France 4 (1080p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://sv1.data-stream.top/8c0a287e56a6e1843143904778be3775b4d3edd4fba4ffcc3f72638c7a71d4d4/hls/francetv4.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "ILTV (720p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://live.creacast.com/iltv/smil:iltv.smil/playlist.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "KSTV Uganda",
+      "country": "UG",
+      "group": "Afrique",
+      "url": "https://unseenlive.s3.eu-west-1.amazonaws.com/kstv/hls/0/stream.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Mereja TV (1080p)",
+      "country": "ET",
+      "group": "Afrique",
+      "url": "https://rumble.com/live-hls-dvr/4c14o3/playlist.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Moselle TV (720p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://live.creacast.com/mirabelletv/smil:mirabelletv.smil/playlist.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "My Righteous TV",
+      "country": "CM",
+      "group": "Afrique",
+      "url": "https://live20.bozztv.com/ssh101/ssh101/myrighteous/playlist.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "NogoumFMTV (672p)",
+      "country": "EG",
+      "group": "Afrique",
+      "url": "https://nogoumtv.nrpstream.com/hls/stream.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "ORTM 1",
+      "country": "ML",
+      "group": "Afrique",
+      "url": "https://cs2.push2stream.com/ORTM-DVR/playlist.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "SABC 1 (720p)",
+      "country": "ZA",
+      "group": "Afrique",
+      "url": "https://sabconeta.cdn.mangomolo.com/sabc1/smil:sabc1.stream.smil/master.m3u8",
+      "reason": "HTTP 403 + message de blocage par pays",
+      "code": 403
+    },
+    {
+      "name": "SABC 2",
+      "country": "ZA",
+      "group": "Afrique",
+      "url": "https://sabctwota.cdn.mangomolo.com/sabc2/smil:sabc2.stream.smil/master.m3u8",
+      "reason": "HTTP 403 + message de blocage par pays",
+      "code": 403
+    },
+    {
+      "name": "Salt TV",
+      "country": "UG",
+      "group": "Afrique",
+      "url": "https://stream.salttelevision.com/hls/stream.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Saraounia TV",
+      "country": "NE",
+      "group": "Afrique",
+      "url": "https://live20.bozztv.com/dvrfl06/astv/astv-saraouna/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Soundcity TV",
+      "country": "NG",
+      "group": "Afrique",
+      "url": "https://cs2.push2stream.com/SOUNDCITY/playlist.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "TiVi5 Monde",
+      "country": "FR",
+      "group": "France",
+      "url": "https://ott.tv5monde.com/Content/HLS/Live/channel(tivi5)/variant.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Trace Africa (1080p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://channels.trace.plus/Traceprod/AFRICA_FR_hd/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Trace Afrikora (1080p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://channels.trace.plus/Traceprod/TERANGA_hd/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Trace Ayiti (1080p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://channels.trace.plus/Traceprod/AYITI_hd/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Trace Gospel (1080p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://channels.trace.plus/Traceprod/GOSPEL_ROA_hd/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Trace Ivoire (1080p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://channels.trace.plus/Traceprod/TRACE_IVOIRE_hd/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Trace Jama (1080p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://channels.trace.plus/Traceprod/JAMA_hd/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Trace Kitoko (1080p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://channels.trace.plus/Traceprod/KITOKO_hd/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Trace Latina (1080p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://channels.trace.plus/Traceprod/LATINA_hd/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Trace Mboa (1080p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://channels.trace.plus/Traceprod/MBOA_hd/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Trace Muzika (1080p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://channels.trace.plus/Traceprod/MUZIKA_hd/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Trace Mziki (1080p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://channels.trace.plus/Traceprod/MZIKI_hd/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Trace Naija (1080p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://channels.trace.plus/Traceprod/NAIJA_hd/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Trace Ngoma (1080p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://channels.trace.plus/Traceprod/AFRICA_EN_hd/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Trace Toca (1080p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://channels.trace.plus/Traceprod/TOCA_hd/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Trace Vanilla Islands (1080p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://channels.trace.plus/Traceprod/VANILLA_hd/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "TV3",
+      "country": "GH",
+      "group": "Afrique",
+      "url": "https://adesa.tv/live/tv3_AdesaAdb.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "TV5Monde Asia (720p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://liveh12.vtvprime.vn/hls/TV5/03.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "TV5Monde France Belgium Switzerland Monaco (1080p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://ott.tv5monde.com/Content/HLS/Live/channel(fbs)/variant.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "TV5Monde Info (1080p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://ott.tv5monde.com/Content/HLS/Live/channel(info)/variant.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "TV5Monde Pacific (1080p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://ott.tv5monde.com/Content/HLS/Live/channel(pacifique)/variant.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "UTV Africa (720p)",
+      "country": "NG",
+      "group": "Afrique",
+      "url": "https://oqgdro3xd4rm-hls-live.5centscdn.com/tfmediacastlivestreamUTV/8f263182c36c7e5c56a986bf770091e3.sdp/playlist.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "W9 (1080p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://origin-m6web.live.6cloud.fr/out/v1/6play/6play-w9/cmaf_q2hyb21h/hls-short-hd.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Waffi TV (240p)",
+      "country": "NG",
+      "group": "Afrique",
+      "url": "https://oqgdro3xd4rm-hls-live.5centscdn.com/waffiitvstreaminglivetfmediacast/e0885d428bea69e372309657f3bd895f.sdp/playlist.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Yobe TV (720p)",
+      "country": "NG",
+      "group": "Afrique",
+      "url": "https://oqgdro3xd4rm-hls-live.5centscdn.com/tfmediacastlivestream24/60414fd886a863e5851f4559fb86e7f6.sdp/playlist.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "BX Inform (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://reflect-stream-bronxnet.cablecast.tv/live-8/live/stream-4/live.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "CommunityTV Channel 189 (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://reflect-tacm.cablecast.tv/live-3/live/live.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "FCTV (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://reflect-vod-fcgov.cablecast.tv/live-9/live/stream-1/live.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "The Carol Burnett Show (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://carolburnett-vizio.amagi.tv/playlist.m3u8",
+      "reason": "segment refusé (HTTP 403)",
+      "code": 403
+    },
+    {
+      "name": "Vevo '70s (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://d341pfs1smb2ef.cloudfront.net/Vevo_70s.m3u8",
+      "reason": "segment refusé (HTTP 403)",
+      "code": 403
+    },
+    {
+      "name": "Vevo '80s (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://d3svsvgc81yfe1.cloudfront.net/Vevo_80s.m3u8",
+      "reason": "segment refusé (HTTP 403)",
+      "code": 403
+    },
+    {
+      "name": "Vevo '90s (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://d29u7uq3k6xqk0.cloudfront.net/Vevo_90s.m3u8",
+      "reason": "segment refusé (HTTP 403)",
+      "code": 403
+    },
+    {
+      "name": "Vevo 2K (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://d3150hggbcolbo.cloudfront.net/Vevo_2K.m3u8",
+      "reason": "segment refusé (HTTP 403)",
+      "code": 403
+    },
+    {
+      "name": "Vevo Country (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://pb-xrdbj9zdgm6ez.akamaized.net/Vevo_Country.m3u8",
+      "reason": "segment refusé (HTTP 403)",
+      "code": 403
+    },
+    {
+      "name": "Vevo Hip Hop (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://d3vgs3ro3x6v8a.cloudfront.net/Vevo_Hip_Hop.m3u8",
+      "reason": "segment refusé (HTTP 403)",
+      "code": 403
+    },
+    {
+      "name": "Vevo R&B (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://d1hf773q57zx9s.cloudfront.net/Vevo_R_B.m3u8",
+      "reason": "segment refusé (HTTP 403)",
+      "code": 403
+    },
+    {
+      "name": "Vevo Retro Rock (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://d2hdqrshyzxswl.cloudfront.net/Vevo_Retro_Rock.m3u8",
+      "reason": "segment refusé (HTTP 403)",
+      "code": 403
+    },
+    {
+      "name": "Las Estrellas (1080p)",
+      "country": "MX",
+      "group": "Latino",
+      "url": "https://channel01-onlymex.akamaized.net/hls/live/2022749/event01/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Pluto TV Novelas",
+      "country": "US",
+      "group": "Telenovelas",
+      "url": "https://jmp2.uk/plu-5f512365abe1f50007d3ff56.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Pluto TV Novelas de Mexico",
+      "country": "US",
+      "group": "Telenovelas",
+      "url": "https://jmp2.uk/plu-6474a7958e3c0a0008b97cae.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Pluto TV Novelas de Otros Continentes",
+      "country": "US",
+      "group": "Telenovelas",
+      "url": "https://jmp2.uk/plu-686eed4c677f2f98b4a1ccd4.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Pluto TV Novelas de Venezuela",
+      "country": "US",
+      "group": "Telenovelas",
+      "url": "https://jmp2.uk/plu-6474a86917f5e100089a0c1c.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Pluto TV Telenovelas Clasicas",
+      "country": "DE",
+      "group": "Telenovelas",
+      "url": "https://jmp2.uk/plu-662a69daa0a74e00087a1c72.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Telemundo Telenovelas Clasicas",
+      "country": "US",
+      "group": "Telenovelas",
+      "url": "https://jmp2.uk/plu-5cf96cc422df39f1a338d165.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "6ter (1080p)",
+      "country": "FR",
+      "group": "France",
+      "url": "http://145.239.5.177/314/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "AB1 (720p)",
+      "country": "FR",
+      "group": "France",
+      "url": "http://145.239.5.177/332/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Azteca Uno (1080p)",
+      "country": "MX",
+      "group": "Latino",
+      "url": "http://38.44.109.41:8003/play/a033/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Cine+ Emotion (720p)",
+      "country": "FR",
+      "group": "France",
+      "url": "http://145.239.5.177/337/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Foot+",
+      "country": "FR",
+      "group": "France",
+      "url": "http://145.239.5.177/556a/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "France 5 (720p)",
+      "country": "FR",
+      "group": "France",
+      "url": "http://145.239.5.177/305/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "KTO (504p)",
+      "country": "FR",
+      "group": "France",
+      "url": "http://145.239.5.177/354/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "LCI (1080p)",
+      "country": "FR",
+      "group": "France",
+      "url": "http://145.239.5.177/368/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "M6 Music (720p)",
+      "country": "FR",
+      "group": "France",
+      "url": "http://145.239.5.177/320/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Nollywood TV (720p)",
+      "country": "FR",
+      "group": "France",
+      "url": "http://145.239.5.177/148/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "RMC Life (1080p)",
+      "country": "FR",
+      "group": "France",
+      "url": "http://145.239.5.177/333/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "RTS 3 (720p)",
+      "country": "SN",
+      "group": "Afrique",
+      "url": "http://145.239.5.177/224/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Serie Club (720p)",
+      "country": "FR",
+      "group": "France",
+      "url": "http://145.239.5.177/355/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Teva (1080p)",
+      "country": "FR",
+      "group": "France",
+      "url": "http://145.239.5.177/356/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "TFX (720p)",
+      "country": "FR",
+      "group": "France",
+      "url": "http://145.239.5.177/315/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "TV Breizh (1080p)",
+      "country": "FR",
+      "group": "France",
+      "url": "http://145.239.5.177/318/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    }
+  ],
+  "pending": [
+    {
+      "name": "Coptic TV (720p)",
+      "country": "EG",
+      "group": "Afrique",
+      "url": "https://ctv.icopts.app/CTV/index.fmp4.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "92 News HD (720p)",
+      "country": "PK",
+      "group": "News",
+      "url": "http://92news.vdn.dstreamone.net/92newshd/92hd/playlist.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "News12 Long Island (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://mdc.ott.alticeusa.net/live4.ott.optimum.net/live4-uploads/N12LH_WEST_A1/index_new.m3u8?omap=https",
+      "reason": "HTTP 408",
+      "code": 408
+    },
+    {
+      "name": "News12+ Connecticut (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://mdc.ott.alticeusa.net/live4.ott.optimum.net/live4-uploads/N12PLUS_H_CT_A1/index_new.m3u8",
+      "reason": "HTTP 408",
+      "code": 408
+    },
+    {
+      "name": "30A TV Classic Movies (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://30a-tv.com/feeds/pzaz/30atvmovies.m3u8",
+      "reason": "erreur réseau (UND_ERR_SOCKET)"
+    },
+    {
+      "name": "Access Humboldt (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://rtmp-live-ingest-ap-northeast-2-universe-dacast-com.akamaized.net/transmuxv1/streams/f08fcd45-1d04-9a8c-39ca-f56091820e5c.m3u8",
+      "reason": "segment : HTTP 503",
+      "code": 503
+    },
+    {
+      "name": "Humor Mill (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://damkf751d85s1.cloudfront.net/v1/master/9d062541f2ff39b5c0f48b743c6411d25f62fc25/HumorMill-PLEX/152.m3u8",
+      "reason": "variante : HTTP 502",
+      "code": 502
+    }
+  ],
+  "dead": [
+    {
+      "name": "Congo Planet Television (1080p)",
+      "country": "CD",
+      "group": "Afrique",
+      "url": "https://radio.congoplanet.com/Congo_Planet_TV.sdp/Congo_Planet_TV/playlist.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "ONE-TV (720p)",
+      "country": "CD",
+      "group": "Afrique",
+      "url": "https://core.live-apc.eu:5443/LiveApp/streams/backup.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Antenne A",
+      "country": "CD",
+      "group": "Afrique",
+      "url": "http://51.254.199.122:8080/antenne_a-plus/index.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Boss Brothers TV (1080p)",
+      "country": "CD",
+      "group": "Afrique",
+      "url": "http://51.254.199.122:8080/bossbrothersTV/index.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Digital Congo TV",
+      "country": "CD",
+      "group": "Afrique",
+      "url": "http://51.254.199.122:8080/DigitalCongoTV/index.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Kin24",
+      "country": "CD",
+      "group": "Afrique",
+      "url": "http://51.254.199.122:8080/kin24/index.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Mikuba TV (480p)",
+      "country": "CD",
+      "group": "Afrique",
+      "url": "http://51.254.199.122:8080/MIKUBATV/index.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "PSTV HD (480p)",
+      "country": "CD",
+      "group": "Afrique",
+      "url": "http://51.254.199.122:8080/PSTV/index.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "RTNC 3",
+      "country": "CD",
+      "group": "Afrique",
+      "url": "http://51.254.199.122:8080/e-cableRTNC3/index.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "RTVS1",
+      "country": "CD",
+      "group": "Afrique",
+      "url": "http://51.254.199.122:8080/RTVS1/index.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "2M Monde +1 (1080p)",
+      "country": "MA",
+      "group": "Afrique",
+      "url": "https://d2qh3gh0k5vp3v.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-n6pess5lwbghr/2M_ES.m3u8",
+      "reason": "CORS refusé pour le site web",
+      "code": 200
+    },
+    {
+      "name": "HOLA! Play (1080p)",
+      "country": "ES",
+      "group": "Spain",
+      "url": "https://hola-play-2108fd06-86d4-44e8-9867-c35b4895a1c1-es.fast.rakuten.tv/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6433/master.m3u8",
+      "reason": "segment illisible (pas de vidéo)",
+      "code": 206
+    },
+    {
+      "name": "Rakuten TV Alerte Cobra (1080p)",
+      "country": "FR",
+      "group": "France (Rakuten)",
+      "url": "https://alarm-for-cobra-rakuten-tv-fr.fast.rakuten.tv/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6477/master.m3u8",
+      "reason": "segment illisible (pas de vidéo)",
+      "code": 206
+    },
+    {
+      "name": "TV Zimbo (1080p)",
+      "country": "AO",
+      "group": "Afrique",
+      "url": "https://sgn-cdn-video.vods2africa.com/Tv-Zimbo/index.fmp4.m3u8",
+      "reason": "segment : HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "3 Stones TV (240p)",
+      "country": "KE",
+      "group": "Afrique",
+      "url": "https://goliveafrica.media:9998/live/64d21e682fd26/index.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "A12 TV",
+      "country": "CI",
+      "group": "Afrique",
+      "url": "https://video1.getstreamhosting.com:1936/8250/8250/manifest.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Afrique54 TV (720p)",
+      "country": "CM",
+      "group": "Afrique",
+      "url": "https://video1.getstreamhosting.com:1936/8318/8318/playlist.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Arlaadi TV",
+      "country": "SO",
+      "group": "Afrique",
+      "url": "https://ap02.iqplay.tv:8082/iqb8002/alr114iapp/playlist.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "ATV (400p)",
+      "country": "GN",
+      "group": "Afrique",
+      "url": "https://guineetvdirect.online:3320/live/atvguineelive.m3u8",
+      "reason": "domaine introuvable"
+    },
+    {
+      "name": "BTL TV (720p)",
+      "country": "KE",
+      "group": "Afrique",
+      "url": "https://goliveafrica.media:9998/live/638da5440743c/index.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "BTN TV",
+      "country": "RW",
+      "group": "Afrique",
+      "url": "https://tv.btnrwanda.com:3973/live/btnv2live.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Clergy TV (720p)",
+      "country": "KE",
+      "group": "Afrique",
+      "url": "https://goliveafrica.media:9998/live/650452cf2ddb2/index.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "CMTv Kenya (576p)",
+      "country": "KE",
+      "group": "Afrique",
+      "url": "https://goliveafrica.media:9998/live/64ede813cfe1a/index.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Dacwa TV (576p)",
+      "country": "KE",
+      "group": "Afrique",
+      "url": "https://ap02.iqplay.tv:8082/iqb8002/d13w1/playlist.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Dodoma TV (360p)",
+      "country": "TZ",
+      "group": "Afrique",
+      "url": "https://goliveafrica.media:9998/live/625965017ed69/index.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "EBN TV (720p)",
+      "country": "KE",
+      "group": "Afrique",
+      "url": "https://goliveafrica.media:9998/live/65d8475d1e6cb/index.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Ecclesia TV",
+      "country": "CI",
+      "group": "Afrique",
+      "url": "https://video1.getstreamhosting.com:1936/8294/8294/playlist.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Elevate TV (720p)",
+      "country": "KE",
+      "group": "Afrique",
+      "url": "https://goliveafrica.media:9998/live/64a98a7eac12a/index.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Elwatania TV (1080i)",
+      "country": "DZ",
+      "group": "Afrique",
+      "url": "https://livesstream.work.gd:5443/WebRTCApp/streams/stream.m3u8",
+      "reason": "certificat invalide"
+    },
+    {
+      "name": "Evasion TV",
+      "country": "GN",
+      "group": "Afrique",
+      "url": "https://kali.vdopanel.com:3788/hybrid/play.m3u8",
+      "reason": "connexion refusée"
+    },
+    {
+      "name": "Faraja Television (1080p)",
+      "country": "UG",
+      "group": "Afrique",
+      "url": "https://panel.freedomflixtv.org:3868/hybrid/play.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "GBS TV (720p)",
+      "country": "KE",
+      "group": "Afrique",
+      "url": "https://goliveafrica.media:9998/live/647460ac1ddd6/index.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "GTN TV (1080p)",
+      "country": "KE",
+      "group": "Afrique",
+      "url": "https://goliveafrica.media:9998/live/644e07abdc1d3/index.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Guide Love TV (720p)",
+      "country": "CI",
+      "group": "Afrique",
+      "url": "https://video1.getstreamhosting.com:1936/8056/8056/playlist.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Heaven Bound TV (480p)",
+      "country": "KE",
+      "group": "Afrique",
+      "url": "https://goliveafrica.media:9998/live/62580b337c021/index.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "His Grace TV (480p)",
+      "country": "KE",
+      "group": "Afrique",
+      "url": "https://goliveafrica.media:9998/live/6593c35f9c090/index.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "HLC TV (480p)",
+      "country": "KE",
+      "group": "Afrique",
+      "url": "https://goliveafrica.media:9998/live/627d06e001aaf/index.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "ICTV (480p)",
+      "country": "KE",
+      "group": "Afrique",
+      "url": "https://goliveafrica.media:9998/live/659a7f33bed3f/index.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "JCM TV (720p)",
+      "country": "KE",
+      "group": "Afrique",
+      "url": "https://goliveafrica.media:9998/live/646c92d07b16c/index.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Kass TV (720p)",
+      "country": "KE",
+      "group": "Afrique",
+      "url": "https://goliveafrica.media:9998/live/62f643cdca8cf/index.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "LM TV French (720p)",
+      "country": "CI",
+      "group": "Afrique",
+      "url": "https://video1.getstreamhosting.com:1936/8282/8282/playlist.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Lolwe TV (576p)",
+      "country": "KE",
+      "group": "Afrique",
+      "url": "https://goliveafrica.media:9998/live/62580e144eb43/index.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Luyaa TV (480p)",
+      "country": "KE",
+      "group": "Afrique",
+      "url": "https://goliveafrica.media:9998/live/659e7c6432815/index.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Mashariki TV (720p)",
+      "country": "KE",
+      "group": "Afrique",
+      "url": "https://goliveafrica.media:9998/live/634adc0806f2b/index.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "MOF TV",
+      "country": "KE",
+      "group": "Afrique",
+      "url": "https://goliveafrica.media:9998/live/6425a6efa15c8/index.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "MOGPA TV",
+      "country": "GH",
+      "group": "Afrique",
+      "url": "https://srt.mogpa.org:30443/mogpatvplus/website_tv/playlist.m3u8",
+      "reason": "certificat invalide"
+    },
+    {
+      "name": "Muugi TV (480p)",
+      "country": "KE",
+      "group": "Afrique",
+      "url": "https://goliveafrica.media:9998/live/62b3ffb71a3d6/index.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Mwangaza TV (720p)",
+      "country": "KE",
+      "group": "Afrique",
+      "url": "https://goliveafrica.media:9998/live/6516be24a6bac/index.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Ndurumeni TV (480p)",
+      "country": "KE",
+      "group": "Afrique",
+      "url": "https://goliveafrica.media:9998/live/6389d571d20af/index.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Nice TV Kenya (720p)",
+      "country": "KE",
+      "group": "Afrique",
+      "url": "https://goliveafrica.media:9998/live/64ada04aa7678/index.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Njata TV (576p)",
+      "country": "KE",
+      "group": "Afrique",
+      "url": "https://goliveafrica.media:9998/live/625816e585a2b/index.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Novela Channel (720p)",
+      "country": "CI",
+      "group": "Telenovelas",
+      "url": "https://video1.getstreamhosting.com:1936/8284/8284/playlist.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Phenomenal Life TV (1080p)",
+      "country": "NG",
+      "group": "Afrique",
+      "url": "https://5be80bd118c27.streamlock.net:433/phenomenaltv/phenomenal/playlist.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Pillar TV (720p)",
+      "country": "KE",
+      "group": "Afrique",
+      "url": "https://goliveafrica.media:9998/live/627e198474bd1/index.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Quest TV (240p)",
+      "country": "NG",
+      "group": "Afrique",
+      "url": "https://media2.streambrothers.com:19360/8028/8028.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Raia TV (720p)",
+      "country": "KE",
+      "group": "Afrique",
+      "url": "https://goliveafrica.media:9998/live/64873b6222c93/index.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "RTI 1 (1080p)",
+      "country": "CI",
+      "group": "Afrique",
+      "url": "https://video1.getstreamhosting.com:1936/8336/8336/playlist.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Rwenzori TV",
+      "country": "UG",
+      "group": "Afrique",
+      "url": "https://stream.rwenzoritv.com:3232/live/rwenzoritvlive.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Saab TV (576p)",
+      "country": "SO",
+      "group": "Afrique",
+      "url": "https://ap02.iqplay.tv:8082/iqb8002/s03btv/playlist.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Sayare TV (720p)",
+      "country": "KE",
+      "group": "Afrique",
+      "url": "https://goliveafrica.media:9998/live/636dedfa327d7/index.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "SNTV Daljir (576p)",
+      "country": "SO",
+      "group": "Afrique",
+      "url": "https://ap02.iqplay.tv:8082/iqb8002/s2tve/playlist.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Somali National TV (576p)",
+      "country": "SO",
+      "group": "Afrique",
+      "url": "https://ap02.iqplay.tv:8082/iqb8002/s4ne/playlist.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "SunuLabel TV (480p)",
+      "country": "SN",
+      "group": "Afrique",
+      "url": "https://live3.acangroup.org:1929/publiclive/sunulabel/playlist.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Urejesho TV Africa (360p)",
+      "country": "KE",
+      "group": "Afrique",
+      "url": "https://goliveafrica.media:9998/live/64a26e4dd21a3/index.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "UTV (240p)",
+      "country": "KE",
+      "group": "Afrique",
+      "url": "https://goliveafrica.media:9998/live/62580d78ac508/index.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "viaTelePaese (720p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://srv.webtvmanager.fr:3970/live/viatelepaeselive.m3u8",
+      "reason": "segment : HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Outside TV (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://outsidetv-firetv.amagi.tv/playlist.m3u8",
+      "reason": "pas d'autorisation CORS (illisible dans le navigateur et l'appli)",
+      "code": 200
+    },
+    {
+      "name": "30A Darcizzle Offshore (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://30a-tv.com/darcizzle.m3u8",
+      "reason": "pas d'autorisation CORS (illisible dans le navigateur et l'appli)",
+      "code": 200
+    },
+    {
+      "name": "Africa TV3 (720p)",
+      "country": "NG",
+      "group": "Afrique",
+      "url": "http://africatv.live.net.sa:1935/live/africatv3/playlist.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Al Alamiya 2",
+      "country": "SD",
+      "group": "Afrique",
+      "url": "http://82.212.74.98:8000/live/7815.m3u8",
+      "reason": "segment : HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Aviation TV (480p)",
+      "country": "KE",
+      "group": "Afrique",
+      "url": "http://streamer02.nbo1.angani.co:1935/aviationtv/myStream/playlist.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Canal+ Cinemas (720p)",
+      "country": "FR",
+      "group": "France",
+      "url": "http://151.80.18.177:86/Canal+_cinema_HD/index.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "FashionTV Asia (720p)",
+      "country": "FR",
+      "group": "France",
+      "url": "http://58.8.186.128:10006/bysid/2616",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Hirshabelle TV (576p)",
+      "country": "SO",
+      "group": "Afrique",
+      "url": "http://ap02.iqplay.tv:8081/iqb8002/h1rshbe1iptv/playlist.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Nickelodeon Junior (1080p)",
+      "country": "FR",
+      "group": "France",
+      "url": "http://151.80.18.177:86/Nickelodeon_Junior/index.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Puntland TV (720p)",
+      "country": "SO",
+      "group": "Afrique",
+      "url": "http://cdn.mediavisionuae.com:1935/live/putlandtv2.stream/playlist.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "SBC TV (720p)",
+      "country": "SO",
+      "group": "Afrique",
+      "url": "http://cdn.mediavisionuae.com:1935/live/sbctv.stream/playlist.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Tlnovelas Latin America (1080p)",
+      "country": "MX",
+      "group": "Telenovelas",
+      "url": "http://209.14.115.253:8081/TELENOVELAS/index.m3u8",
+      "reason": "connexion refusée"
+    },
+    {
+      "name": "TV4 (720p)",
+      "country": "DZ",
+      "group": "Afrique",
+      "url": "http://91.228.35.249:8001/1:0:1:06A6:3138:13E:820000:0:0:0",
+      "reason": "connexion refusée"
+    },
+    {
+      "name": "TV5Monde Latin America (720p)",
+      "country": "FR",
+      "group": "France",
+      "url": "http://45.162.231.38:7779/TV5_Monde/index.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "TVM Internacional (480p)",
+      "country": "MZ",
+      "group": "Afrique",
+      "url": "http://online.tvm.co.mz:1935/live/smil:Channel2.smil/playlist.m3u8",
+      "reason": "délai dépassé"
+    }
+  ]
+}
