@@ -1,7 +1,7 @@
 name: Vérification automatique des sources
 
 # Relance la vérification, élague les chaînes mortes et met à jour les
-# statuts de l'annuaire, puis commit les fichiers nettoyés.
+# statuts de l'annuaire, distingue chaîne morte / bloquée par pays, puis commit les fichiers.
 on:
   schedule:
     - cron: '0 */6 * * *' # toutes les 6 heures
@@ -27,10 +27,10 @@ jobs:
 
       - name: Commit si changements
         run: |
-          if [ -n "$(git status --porcelain public/playlist.json public/sites.json)" ]; then
+          if [ -n "$(git status --porcelain public/playlist.json public/sites.json public/sources-report.json)" ]; then
             git config user.name  "aonoseke-bot"
             git config user.email "bot@aonoseke.local"
-            git add public/playlist.json public/sites.json
+            git add public/playlist.json public/sites.json public/sources-report.json
             git commit -m "chore: vérification auto des sources [skip ci]"
             git push
           else

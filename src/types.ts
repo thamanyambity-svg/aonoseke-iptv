@@ -6,6 +6,8 @@ export interface Channel {
   url: string;
   source?: string;        // FAST provider id (e.g. 'pluto')
   adSupported?: boolean;  // stream carries built-in server-side ads
+  geoBlocked?: boolean;   // le serveur refuse l'accès depuis certains pays (403/451) : peut ne pas se lancer
+  geoReason?: string;     // raison relevée par la vérification des sources
 }
 
 export interface PlayerProps {
@@ -39,6 +41,8 @@ export function validatePlaylist(data: unknown): Channel[] {
       url: ch.url,
       source: typeof ch.source === 'string' ? ch.source : undefined,
       adSupported: typeof ch.adSupported === 'boolean' ? ch.adSupported : undefined,
+      geoBlocked: ch.geoBlocked === true ? true : undefined,
+      geoReason: ch.geoBlocked === true && typeof ch.geoReason === 'string' ? ch.geoReason : undefined,
     };
   });
 }

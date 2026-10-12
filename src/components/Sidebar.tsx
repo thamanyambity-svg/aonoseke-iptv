@@ -304,6 +304,14 @@ export function Sidebar({
                       <div className="channel-meta">
                         <span aria-hidden="true">{countryFlag(channel.country)}</span>
                         <span className="channel-group">{channel.group}</span>
+                        {channel.geoBlocked && (
+                          <span
+                            className="channel-geo"
+                            title="Chaîne restreinte à certains pays : elle peut ne pas se lancer depuis votre localisation."
+                          >
+                            Selon le pays
+                          </span>
+                        )}
                       </div>
                     </div>
                     <button className={`fav-btn${favorites.has(channel.url) ? ' favorited' : ''}`}
