@@ -57,6 +57,8 @@ async function fetchUpstream(target, allowed, range) {
   for (let hop = 0; hop < 4; hop++) {
     const href = upstreamHref(current, allowed);
     if (!href) return null;
+    // nosemgrep: faux positif SSRF — l'hôte de `href` vient de la liste des serveurs de la playlist (upstreamHref),
+    // jamais de la demande ; seuls chemin et paramètres sont libres. Cas refusés testés : src/utils/__tests__/relay.test.ts.
     const res = await fetch(href, {
       redirect: 'manual',
       signal: AbortSignal.timeout(UPSTREAM_TIMEOUT_MS),
