@@ -1,18 +1,16 @@
 {
-  "generatedAt": "2026-10-12T23:58:49.747Z",
+  "generatedAt": "2026-10-13T05:53:48.026Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
   "counts": {
-    "checked": 810,
-    "ok": 722,
+    "checked": 804,
+    "ok": 720,
     "geoBlocked": 81,
-    "pending": 1,
-    "dead": 6
+    "pending": 0,
+    "dead": 3
   },
   "deadReasons": {
-    "flux terminé (ENDLIST)": 1,
-    "segment : HTTP 404": 1,
-    "délai dépassé": 2,
-    "réponse qui n'est pas un flux HLS": 1,
+    "CORS refusé pour le site web": 1,
+    "erreur réseau (UND_ERR_SOCKET)": 1,
     "HTTP 404": 1
   },
   "geoBlocked": [
@@ -665,59 +663,28 @@
       "code": 403
     }
   ],
-  "pending": [
+  "pending": [],
+  "dead": [
+    {
+      "name": "Le Meilleur de la TV Realite (1080p)",
+      "country": "FR",
+      "group": "France (Rakuten)",
+      "url": "https://amg02393-awpg-amg02393c4-rakuten-uk-3886.playouts.now.amagi.tv/playlist/amg02393-awpg-lemeilleurdelatvrealite-rakutenuk/playlist.m3u8",
+      "reason": "CORS refusé pour le site web",
+      "code": 200
+    },
     {
       "name": "30A Golf Kingdom (720p)",
       "country": "US",
       "group": "USA",
       "url": "https://30a-tv.com/feeds/vidaa/golf.m3u8",
       "reason": "erreur réseau (UND_ERR_SOCKET)"
-    }
-  ],
-  "dead": [
+    },
     {
-      "name": "Filinfo TV (1080p)",
-      "country": "BF",
+      "name": "Isango TV (480p)",
+      "country": "RW",
       "group": "Afrique",
-      "url": "https://d2iqjnqfr8pv3b.cloudfront.net/out/v1/d09d2fc718404cd8bccd3eba2444dd70/index.m3u8",
-      "reason": "flux terminé (ENDLIST)",
-      "code": 200
-    },
-    {
-      "name": "SolTV (720p)",
-      "country": "GQ",
-      "group": "Afrique",
-      "url": "https://stream.solmediaeg.com/soltv/soltv.m3u8",
-      "reason": "segment : HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "WCETV Digital Channel 31.8",
-      "country": "US",
-      "group": "USA",
-      "url": "https://h5cul1yar48um3t.wcetv.com/hls/wcetv318.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "48 Hours (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://dai.google.com/linear/hls/event/JUr94WL2QAiVpGNHY5n5dA/master.m3u8",
-      "reason": "réponse qui n'est pas un flux HLS",
-      "code": 200
-    },
-    {
-      "name": "Bounce XL (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg01438-ewscrippscompan-bouncexl-tablo/playlist.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Amou Yazid TV (576p)",
-      "country": "DZ",
-      "group": "Afrique",
-      "url": "http://mkstream.servehttp.com:1940/AmouYazid/ay1/playlist.m3u8",
+      "url": "http://80.241.215.175:1935/isangostar/isangostar/playlist.m3u8",
       "reason": "HTTP 404",
       "code": 404
     }
