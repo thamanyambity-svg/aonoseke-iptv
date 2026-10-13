@@ -8506,5 +8506,156 @@
     "verifiedAt": "2026-10-13T11:48:37.000Z",
     "geoBlocked": true,
     "geoReason": "HTTP 403 (accès refusé)"
+  },
+  {
+    "name": "CBC Toronto",
+    "country": "CA",
+    "group": "France",
+    "logo": "https://i.imgur.com/H5yEbxf.png",
+    "url": "https://cbcrclinear-tor.akamaized.net/hls/live/2042760/CBCRCLINEAR_TOR_6/master5.m3u8",
+    "source": "free-tv-2026-10",
+    "verifiedAt": "2026-10-13T11:56:21.000Z",
+    "geoBlocked": true,
+    "geoReason": "HTTP 403 (accès refusé)"
+  },
+  {
+    "name": "ICI Télé HD",
+    "country": "CA",
+    "group": "France",
+    "logo": "https://i.imgur.com/HsSi3NV.png",
+    "url": "https://rcavlive.akamaized.net/hls/live/696615/xcancbft/master.m3u8",
+    "source": "free-tv-2026-10",
+    "verifiedAt": "2026-10-13T11:56:21.000Z",
+    "verified": true
+  },
+  {
+    "name": "ICI Montreal",
+    "country": "CA",
+    "group": "France",
+    "logo": "https://i.imgur.com/Z1b2TJD.png",
+    "url": "https://amdici.akamaized.net/hls/live/873426/ICI-Live-Stream/master.m3u8",
+    "source": "free-tv-2026-10",
+    "verifiedAt": "2026-10-13T11:56:21.000Z",
+    "verified": true
+  },
+  {
+    "name": "TV5 Monde FBS",
+    "country": "FR",
+    "group": "France",
+    "logo": "https://i.imgur.com/uPmwTo9.png",
+    "url": "https://ott.tv5monde.com/Content/HLS/Live/channel(fbs)/index.m3u8",
+    "source": "free-tv-2026-10",
+    "verifiedAt": "2026-10-13T11:56:21.000Z",
+    "geoBlocked": true,
+    "geoReason": "HTTP 403 (accès refusé)"
+  },
+  {
+    "name": "RTL Télé Lëtzebuerg",
+    "country": "LU",
+    "group": "France",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/RTL_Luxembourg_2023.svg/500px-RTL_Luxembourg_2023.svg.png",
+    "url": "https://live-edge.rtl.lu/channel1/smil:channel1/playlist.m3u8",
+    "source": "free-tv-2026-10",
+    "verifiedAt": "2026-10-13T11:56:21.000Z",
+    "geoBlocked": true,
+    "geoReason": "HTTP 403 (accès refusé)"
+  },
+  {
+    "name": "Teleticino",
+    "country": "CH",
+    "group": "France",
+    "logo": "https://i.imgur.com/zm2ruqz.png",
+    "url": "https://vstream-cdn.ch/hls/teleticino_720p/index.m3u8",
+    "source": "free-tv-2026-10",
+    "verifiedAt": "2026-10-13T11:56:21.000Z",
+    "verified": true
+  },
+  {
+    "name": "C Star (1080p)",
+    "country": "FR",
+    "group": "France",
+    "logo": "",
+    "url": "http://145.239.5.177/361/index.m3u8",
+    "source": "iptv-org/api-2026-10-fr-a-confirmer",
+    "failedChecks": 1,
+    "lastFailReason": "non vérifiée depuis l'environnement de test (flux http)",
+    "lastFailAt": "2026-10-13T11:56:21.000Z"
+  },
+  {
+    "name": "Leman Bleu (1080p)",
+    "country": "CH",
+    "group": "France",
+    "logo": "",
+    "url": "http://livevideo.infomaniak.com/streaming/livecast/naxoo/playlist.m3u8",
+    "source": "iptv-org/api-2026-10-fr-a-confirmer",
+    "failedChecks": 1,
+    "lastFailReason": "non vérifiée depuis l'environnement de test (flux http)",
+    "lastFailAt": "2026-10-13T11:56:21.000Z"
+  },
+  {
+    "name": "RTL9 (720p)",
+    "country": "LU",
+    "group": "France",
+    "logo": "",
+    "url": "http://145.239.5.177/308/index.m3u8",
+    "source": "iptv-org/api-2026-10-fr-a-confirmer",
+    "failedChecks": 1,
+    "lastFailReason": "non vérifiée depuis l'environnement de test (flux http)",
+    "lastFailAt": "2026-10-13T11:56:21.000Z"
+  },
+  {
+    "name": "TV5 Quebec Canada (1080p)",
+    "country": "CA",
+    "group": "France",
+    "logo": "",
+    "url": "http://23.133.220.149/TV5/index.m3u8",
+    "source": "iptv-org/api-2026-10-fr-a-confirmer",
+    "failedChecks": 1,
+    "lastFailReason": "non vérifiée depuis l'environnement de test (flux http)",
+    "lastFailAt": "2026-10-13T11:56:21.000Z"
+  },
+  {
+    "name": "TV5 Unis",
+    "country": "CA",
+    "group": "France",
+    "logo": "",
+    "url": "http://23.133.220.149/Unis_TV/index.m3u8",
+    "source": "iptv-org/api-2026-10-fr-a-confirmer",
+    "failedChecks": 1,
+    "lastFailReason": "non vérifiée depuis l'environnement de test (flux http)",
+    "lastFailAt": "2026-10-13T11:56:21.000Z"
+  },
+  {
+    "name": "La Trois (720p)",
+    "country": "BE",
+    "group": "France",
+    "logo": "",
+    "url": "http://193.111.198.85:8589/stream/mstv/rtbflatroislive26/master.m3u8?p=967e33767f592e1aaf3d4019f38f380bf784e113b193d89c412d047059d6300d&u=Oleg",
+    "source": "iptv-org/api-2026-10-fr-a-confirmer",
+    "failedChecks": 1,
+    "lastFailReason": "non vérifiée depuis l'environnement de test (flux http)",
+    "lastFailAt": "2026-10-13T11:56:40.000Z"
+  },
+  {
+    "name": "La Une (720p)",
+    "country": "BE",
+    "group": "France",
+    "logo": "",
+    "url": "http://193.111.198.85:8589/stream/mstv/rtbflaunelive26/master.m3u8?p=967e33767f592e1aaf3d4019f38f380bf784e113b193d89c412d047059d6300d&u=Oleg",
+    "source": "iptv-org/api-2026-10-fr-a-confirmer",
+    "failedChecks": 1,
+    "lastFailReason": "non vérifiée depuis l'environnement de test (flux http)",
+    "lastFailAt": "2026-10-13T11:56:40.000Z"
+  },
+  {
+    "name": "Tipik (720p)",
+    "country": "BE",
+    "group": "France",
+    "logo": "",
+    "url": "http://193.111.198.85:8589/stream/mstv/rtbftipiklive26/master.m3u8?p=967e33767f592e1aaf3d4019f38f380bf784e113b193d89c412d047059d6300d&u=Oleg",
+    "source": "iptv-org/api-2026-10-fr-a-confirmer",
+    "failedChecks": 1,
+    "lastFailReason": "non vérifiée depuis l'environnement de test (flux http)",
+    "lastFailAt": "2026-10-13T11:56:40.000Z"
   }
 ]
