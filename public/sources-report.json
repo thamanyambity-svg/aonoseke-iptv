@@ -1,19 +1,16 @@
 {
-  "generatedAt": "2026-10-15T16:00:59.722Z",
+  "generatedAt": "2026-10-15T20:45:49.038Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
   "counts": {
-    "checked": 1606,
-    "ok": 1402,
-    "geoBlocked": 196,
-    "pending": 1,
-    "dead": 7
+    "checked": 1599,
+    "ok": 1386,
+    "geoBlocked": 202,
+    "pending": 6,
+    "dead": 5
   },
   "deadReasons": {
-    "segment : HTTP 404": 3,
-    "flux terminé (ENDLIST)": 1,
-    "HTTP 404": 1,
-    "délai dépassé": 1,
-    "HTTP 408": 1
+    "segment : HTTP 404": 4,
+    "HTTP 404": 1
   },
   "geoBlocked": [
     {
@@ -577,6 +574,14 @@
       "code": 403
     },
     {
+      "name": "Las Estrellas Latin America (1080p)",
+      "country": "MX",
+      "group": "Latino",
+      "url": "http://15.204.246.24:8080/LasEstrellasHD/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
       "name": "LCI (1080p)",
       "country": "FR",
       "group": "France",
@@ -597,6 +602,14 @@
       "country": "FR",
       "group": "France",
       "url": "http://145.239.5.177/148/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Pasiones Latin America (1080p)",
+      "country": "US",
+      "group": "Latino",
+      "url": "http://15.204.246.24:8080/PasionesHD/index.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -645,6 +658,14 @@
       "country": "FR",
       "group": "France",
       "url": "http://145.239.5.177/318/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "TVC (720p)",
+      "country": "NG",
+      "group": "Afrique",
+      "url": "http://212.5.144.156:8080/tvc/index.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -1233,6 +1254,14 @@
       "code": 403
     },
     {
+      "name": "Tele Pam (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://watch.haitilive.net/app/2020/telepam/index.fmp4.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
       "name": "Temecula TV (1080p)",
       "country": "US",
       "group": "USA",
@@ -1286,6 +1315,14 @@
       "group": "Documentary",
       "url": "https://vs-hls-pushb-uk-live.akamaized.net/x=4/i=urn:bbc:pips:service:bbc_four_hd/mobile_wifi_main_hd_abr_v2.m3u8",
       "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Esport3 (1080p)",
+      "country": "ES",
+      "group": "Sport",
+      "url": "https://directes-tv-int.3catdirectes.cat/live-content/esport3-hls/master.m3u8",
+      "reason": "segment refusé (HTTP 403)",
       "code": 403
     },
     {
@@ -1473,6 +1510,14 @@
       "code": 403
     },
     {
+      "name": "TVI Ficcao (720p)",
+      "country": "PT",
+      "group": "Series",
+      "url": "https://raw.githubusercontent.com/thomraider12/canaistvpt/main/m3u8s/tvificcao.m3u8",
+      "reason": "variante : HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
       "name": "Video Rola (1080p)",
       "country": "IT",
       "group": "Music",
@@ -1587,66 +1632,88 @@
   ],
   "pending": [
     {
-      "name": "30A Music (720p)",
+      "name": "30A Investment Pitch (720p)",
       "country": "US",
       "group": "USA",
-      "url": "https://30a-tv.com/feeds/ceftech/30atvmusic.m3u8",
+      "url": "https://30a-tv.com/feeds/xodglobal/30atv.m3u8",
       "reason": "erreur réseau (UND_ERR_SOCKET)"
+    },
+    {
+      "name": "KIIO-LD 10.4 (480p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://streamer1.connectto.com/AABC_WEB_1201/index.m3u8",
+      "reason": "HTTP 503",
+      "code": 503
+    },
+    {
+      "name": "KpopTV Play (576p)",
+      "country": "BR",
+      "group": "Music",
+      "url": "https://giatv.bozztv.com/giatv/giatv-kpoptvplay/kpoptvplay/playlist.m3u8",
+      "reason": "HTTP 503",
+      "code": 503
+    },
+    {
+      "name": "Lingkar TV",
+      "country": "ID",
+      "group": "Music",
+      "url": "https://lingkartv.my.id/hls/lingkartv.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "M-1 (480p)",
+      "country": "LT",
+      "group": "Music",
+      "url": "https://m-1.data.lt/m-1/smil:m-1.smil/playlist.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Maah TV (720p)",
+      "country": "MY",
+      "group": "Movies",
+      "url": "https://hls.maahtv.live/hls/stream.m3u8",
+      "reason": "délai dépassé"
     }
   ],
   "dead": [
     {
-      "name": "Sat 7 Kids (1080p)",
-      "country": "CY",
-      "group": "Kids",
-      "url": "https://svs.itworkscdn.net/sat7kidslive/sat7kids.smil/playlist_dvr.m3u8",
+      "name": "Esaie 45 Tele",
+      "country": "CG",
+      "group": "Afrique",
+      "url": "https://stream.berosat.live/hls/esaie45-tv/esaie45-tv.m3u8",
       "reason": "segment : HTTP 404",
       "code": 404
     },
     {
-      "name": "INA Ardivision (1080p)",
-      "country": "FR",
-      "group": "France (Rakuten)",
-      "url": "https://fast-rakuten.okast.tv/fa2e8c4385712f9a3b579747e448699c/channels/34d82f76-b51f-4bf5-9b35-769fb5904e79/a4226699-b685-4f5d-9cb6-2a6cac14c377/media_.m3u8",
-      "reason": "flux terminé (ENDLIST)",
-      "code": 200
+      "name": "Al Arabiya English (1080p)",
+      "country": "SA",
+      "group": "News",
+      "url": "https://live.alarabiya.net/alarabiapublish/english/playlist_dvr.m3u8",
+      "reason": "segment : HTTP 404",
+      "code": 404
     },
     {
-      "name": "ViaMatele (1080p)",
-      "country": "FR",
-      "group": "France",
-      "url": "https://5dd226f8f01e8.streamlock.net/via-matele-live/matelelive_1080/playlist.m3u8",
+      "name": "GunAz TV",
+      "country": "US",
+      "group": "USA",
+      "url": "https://tv.gunaz.tv/hls/live.m3u8",
+      "reason": "segment : HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Farra Play (576p)",
+      "country": "PY",
+      "group": "Music",
+      "url": "https://stream.farra.com.py/live/farra_low.m3u8",
       "reason": "HTTP 404",
       "code": 404
     },
     {
-      "name": "Asian Culture TV (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://cdn.vegasplus.us/vegas/actv/playlist.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "News12 Brooklyn",
-      "country": "US",
-      "group": "USA",
-      "url": "https://mdc.ott.alticeusa.net/live4.ott.optimum.net/live4-uploads/N12KH_A1/index_new.m3u8?omap=https",
-      "reason": "HTTP 408",
-      "code": 408
-    },
-    {
-      "name": "OneFM (720p)",
-      "country": "LB",
-      "group": "Music",
-      "url": "https://hms.pfs.gdn/v1/broadcast/onefm/playlist.m3u8",
-      "reason": "segment : HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Pauta (1080p)",
-      "country": "CL",
-      "group": "Music",
-      "url": "https://redirector.rudo.video/hls-video/ey6283je82983je9823je8jowowiekldk9838274/pautatv/pautatv.smil/playlist.m3u8",
+      "name": "Duronto TV (720p)",
+      "country": "BD",
+      "group": "Kids",
+      "url": "https://tvsen6.aynaott.com/6xyZ3N4oHv2KBJdB6W4p/index.m3u8",
       "reason": "segment : HTTP 404",
       "code": 404
     }
