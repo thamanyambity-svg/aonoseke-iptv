@@ -1,17 +1,18 @@
 {
-  "generatedAt": "2026-10-15T02:31:07.097Z",
+  "generatedAt": "2026-10-15T10:36:28.693Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
   "counts": {
-    "checked": 1650,
-    "ok": 1376,
-    "geoBlocked": 194,
-    "pending": 51,
-    "dead": 29
+    "checked": 1621,
+    "ok": 1400,
+    "geoBlocked": 197,
+    "pending": 9,
+    "dead": 15
   },
   "deadReasons": {
-    "HTTP 404": 7,
-    "segment : HTTP 404": 5,
-    "délai dépassé": 16,
+    "HTTP 404": 5,
+    "segment : HTTP 404": 4,
+    "erreur réseau (ECONNRESET)": 1,
+    "délai dépassé": 4,
     "CORS refusé pour l'appli Android": 1
   },
   "geoBlocked": [
@@ -104,6 +105,14 @@
       "code": 403
     },
     {
+      "name": "CNA (360p)",
+      "country": "DZ",
+      "group": "Afrique",
+      "url": "https://live.creacast.com/cna/stream/playlist.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
       "name": "Dounia TV",
       "country": "NE",
       "group": "Afrique",
@@ -112,10 +121,26 @@
       "code": 403
     },
     {
+      "name": "Eurosport 2",
+      "country": "FR",
+      "group": "France",
+      "url": "https://andro.mangeinde4.lat/checklist/androstreamlivees2.m3u8",
+      "reason": "segment refusé (HTTP 403)",
+      "code": 403
+    },
+    {
       "name": "France 4 (1080p)",
       "country": "FR",
       "group": "France",
       "url": "https://sv1.data-stream.top/8c0a287e56a6e1843143904778be3775b4d3edd4fba4ffcc3f72638c7a71d4d4/hls/francetv4.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "ILTV (720p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://live.creacast.com/iltv/smil:iltv.smil/playlist.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -628,14 +653,6 @@
       "country": "FR",
       "group": "France",
       "url": "http://145.239.5.177/318/index.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "TVC (720p)",
-      "country": "NG",
-      "group": "Afrique",
-      "url": "http://212.5.144.156:8080/tvc/index.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -1280,14 +1297,6 @@
       "code": 403
     },
     {
-      "name": "Esport3 (1080p)",
-      "country": "ES",
-      "group": "Sport",
-      "url": "https://directes-tv-int.3catdirectes.cat/live-content/esport3-hls/master.m3u8",
-      "reason": "segment refusé (HTTP 403)",
-      "code": 403
-    },
-    {
       "name": "K19",
       "country": "AT",
       "group": "Sport",
@@ -1360,18 +1369,18 @@
       "code": 403
     },
     {
+      "name": "TRT Spor Yildiz (1440p)",
+      "country": "TR",
+      "group": "Sport",
+      "url": "https://trt.daioncdn.net/trtspor-yildiz/master.m3u8?app=web&platform=trtspor",
+      "reason": "segment refusé (HTTP 403)",
+      "code": 403
+    },
+    {
       "name": "TV Cuatro 4.3 (1080p)",
       "country": "MX",
       "group": "Sport",
       "url": "https://5ca3e84a76d30.streamlock.net/tv43gto/tv43gto.smil/.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "VTV6 (1080p)",
-      "country": "VN",
-      "group": "Sport",
-      "url": "https://vips-livecdn.fptplay.net/live/media/vtv6/live247-hls-avc/index.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -1536,6 +1545,14 @@
       "code": 403
     },
     {
+      "name": "Music (480p)",
+      "country": "KG",
+      "group": "Music",
+      "url": "https://st2.mediabay.tv/KG_KTRK-Muzika/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
       "name": "NRK Super (1080i)",
       "country": "NO",
       "group": "Kids",
@@ -1560,6 +1577,14 @@
       "code": 403
     },
     {
+      "name": "TRT Cocuk (1440p)",
+      "country": "TR",
+      "group": "Kids",
+      "url": "https://tv-trtcocuk.medya.trt.com.tr/master.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
       "name": "YleX (720p)",
       "country": "FI",
       "group": "Music",
@@ -1570,48 +1595,112 @@
   ],
   "pending": [
     {
-      "name": "Africanews English (720p)",
-      "country": "FR",
-      "group": "News",
-      "url": "https://c3c275b999764df8a2dd55ffe2996818.mediatailor.eu-west-1.amazonaws.com/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6576/bitok/eyJzdGlkIjoiOTU0NDAyODQtOTU0My00Yzc2LThmZjQtNDRhY2YwYmQxYTYwIiwibWt0IjoicGwiLCJjaCI6NjYwNiwicHRmIjo1fQ==/26036/africanews-en.m3u8",
-      "reason": "HTTP 504",
-      "code": 504
-    },
-    {
-      "name": "Sportitalia (1080p)",
-      "country": "IT",
-      "group": "Sport",
-      "url": "https://edge-001.streamup.eu/sportitalia/sihd_abr/playlist.m3u8",
+      "name": "TV Mana Mocambique (1080p)",
+      "country": "MZ",
+      "group": "Afrique",
+      "url": "https://w2.manasat.com/tvmana-mz/smil:tvmana-mz.smil/playlist.m3u8",
       "reason": "délai dépassé"
     },
     {
-      "name": "Sportitalia Solocalcio (1080p)",
-      "country": "IT",
-      "group": "Sport",
-      "url": "https://edge-001.streamup.eu/sportitalia/sisolocalcio_abr/playlist.m3u8",
+      "name": "Asian Culture TV (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://cdn.vegasplus.us/vegas/actv/playlist.m3u8",
       "reason": "délai dépassé"
     },
     {
-      "name": "TalkTV",
-      "country": "GB",
-      "group": "News",
-      "url": "https://488f4ce4.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/TEctZ2JfVGFsa19ITFM/playlist.m3u8",
-      "reason": "variante : HTTP 504",
-      "code": 504
-    },
-    {
-      "name": "30A Investment Pitch (720p)",
+      "name": "Maxcine Family (720p)",
       "country": "US",
       "group": "USA",
-      "url": "https://30a-tv.com/feeds/xodglobal/30atv.m3u8",
-      "reason": "erreur réseau (UND_ERR_SOCKET)"
+      "url": "https://live20.bozztv.com/giatvplayout7/giatv-208817/playlist.m3u8",
+      "reason": "segment : HTTP 502",
+      "code": 502
     },
     {
-      "name": "30A Luxe Life Discovered (720p)",
+      "name": "News12 Brooklyn",
       "country": "US",
       "group": "USA",
-      "url": "https://30a-tv.com/feeds/vidaa/luxelife.m3u8",
-      "reason": "erreur réseau (UND_ERR_SOCKET)"
+      "url": "https://mdc.ott.alticeusa.net/live4.ott.optimum.net/live4-uploads/N12KH_A1/index_new.m3u8?omap=https",
+      "reason": "HTTP 408",
+      "code": 408
+    },
+    {
+      "name": "VTV6 (1080p)",
+      "country": "VN",
+      "group": "Sport",
+      "url": "https://vips-livecdn.fptplay.net/live/media/vtv6/live247-hls-avc/index.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Wedo Big Stories (1080p)",
+      "country": "CH",
+      "group": "Documentary",
+      "url": "https://amg00735-videosolutionsa-wedobigdocs-ono-0urlz.amagi.tv/playlist/amg00735-videosolutionsa-wedobigdocs-ono/playlist.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Kuriakos Cine (1080p)",
+      "country": "PT",
+      "group": "Movies",
+      "url": "https://w2.manasat.com/kcine/smil:kcine.smil/playlist.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Kuriakos Kids (1080p)",
+      "country": "PT",
+      "group": "Kids",
+      "url": "https://w2.manasat.com/kkids/smil:kkids.smil/playlist.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Suriyan TV (576p)",
+      "country": "IN",
+      "group": "Movies",
+      "url": "https://hlslive.olidigital.in/suriyantv/suriyantv/index.m3u8",
+      "reason": "HTTP 523",
+      "code": 523
+    }
+  ],
+  "dead": [
+    {
+      "name": "Afroculture TV",
+      "country": "CI",
+      "group": "Afrique",
+      "url": "https://streamtv.cmediahosthosting.net:3836/live/myafroculturelive.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Afro Magic Channel",
+      "country": "CI",
+      "group": "Afrique",
+      "url": "https://video1.getstreamhosting.com:1936/8306/8306/playlist.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "News Central",
+      "country": "NG",
+      "group": "Afrique",
+      "url": "https://wf.newscentral.ng:8443/hls/stream.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Savane TV",
+      "country": "BF",
+      "group": "Afrique",
+      "url": "https://savane24.tv:5443/LiveApp/streams/Y4fyif69Q0ll6MeH2190896734859843.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "TNT Novelas (720p)",
+      "country": "US",
+      "group": "Telenovelas",
+      "url": "http://45.162.64.114/TNT_NOVELAS/index.m3u8",
+      "reason": "segment : HTTP 404",
+      "code": 404
     },
     {
       "name": "Karbala Documentary",
@@ -1619,41 +1708,6 @@
       "group": "Documentary",
       "url": "https://ktvlive.online/stream/hls/ch3.m3u8",
       "reason": "erreur réseau (ECONNRESET)"
-    },
-    {
-      "name": "More Than Sports TV (1080p)",
-      "country": "DE",
-      "group": "Sport",
-      "url": "https://mts1.iptv-playoutcenter.de/mts/mts-web/playlist.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Teletrak TV (720p)",
-      "country": "CL",
-      "group": "Sport",
-      "url": "https://unlimited6-cl.dps.live/sportinghd/sportinghd.smil/playlist.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "TR Sport (480p)",
-      "country": "IT",
-      "group": "Sport",
-      "url": "https://livetr.teleromagna.it/mia/live/playlist.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "TRT Spor Yildiz (1440p)",
-      "country": "TR",
-      "group": "Sport",
-      "url": "https://trt.daioncdn.net/trtspor-yildiz/master.m3u8?app=web&platform=trtspor",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "viju+ Sport",
-      "country": "RU",
-      "group": "Sport",
-      "url": "https://stream8.cinerama.uz/1229/tracks-v1a1/mono.m3u8",
-      "reason": "délai dépassé"
     },
     {
       "name": "YES",
@@ -1684,469 +1738,44 @@
       "reason": "délai dépassé"
     },
     {
-      "name": "70-80 TV",
-      "country": "IT",
-      "group": "Music",
-      "url": "https://585b674743bbb.streamlock.net/9050/9050/playlist.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Activa TV (720p)",
-      "country": "ES",
-      "group": "Music",
-      "url": "https://streamtv.mediasector.es/hls/activatv/index.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Afarin Baxcha (1080p)",
-      "country": "IQ",
-      "group": "Kids",
-      "url": "https://5dcabf026b188.streamlock.net/afarinTV/livestream/playlist.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Afarin TV (720p)",
-      "country": "IQ",
-      "group": "Kids",
-      "url": "https://65f16f0fdfc51.streamlock.net/afarinTV/livestream/playlist.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Aflam (1080p)",
-      "country": "SA",
-      "group": "Movies",
-      "url": "https://shd-amg-fast.edgenextcdn.net/tx001/playlist.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
       "name": "Afrobeat TV Entertainment (1080p)",
       "country": "GB",
       "group": "Music",
       "url": "https://stream.ecable.tv/afrobeats/index.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Aghani Aghani TV (1080p)",
-      "country": "LB",
-      "group": "Music",
-      "url": "https://cdn.streamlane.tv/hls/aghanitv/index.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Alegria TV (720p)",
-      "country": "BO",
-      "group": "Music",
-      "url": "https://lbgo.bozztv.com/ssh101/ssh101/confirmatv/playlist.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Atfal & Mawaheb TV (1080p)",
-      "country": "SA",
-      "group": "Kids",
-      "url": "https://5aafcc5de91f1.streamlock.net/atfal1.com/atfal2/playlist.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "BeJoy.kids (1080p)",
-      "country": "IT",
-      "group": "Kids",
-      "url": "https://stream.paroledivita.org/bejoy.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Bibel TV Musik (720p)",
-      "country": "DE",
-      "group": "Music",
-      "url": "https://bibeltv03.iptv-playoutcenter.de/bibeltv03/bibeltv03.stream_1/playlist.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Boreal (720p)",
-      "country": "DO",
-      "group": "Movies",
-      "url": "https://edge.essastream.com/borealtelevision/tracks-v1a1/mono.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "BTA TV (720p)",
-      "country": "VE",
-      "group": "Music",
-      "url": "https://cloud.fastchannel.es/manifiest/hls/prog9/btatv.m3u8",
-      "reason": "délai dépassé"
+      "reason": "HTTP 404",
+      "code": 404
     },
     {
       "name": "Canal 3 KMK TV (720p)",
       "country": "CR",
       "group": "Music",
       "url": "https://live20.bozztv.com/giatv/giatv-KMKTV/KMKTV/chunks.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "DMF (1080p)",
-      "country": "DE",
-      "group": "Music",
-      "url": "https://d-m-f.iptv-playoutcenter.de/dmf/dmf1/playlist.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "El Chavo TV (720p)",
-      "country": "MX",
-      "group": "Kids",
-      "url": "https://live20.bozztv.com/giatvplayout7/giatv-211465/playlist.m3u8",
-      "reason": "HTTP 502",
-      "code": 502
-    },
-    {
-      "name": "KiKA (1080p)",
-      "country": "DE",
-      "group": "Kids",
-      "url": "https://kikageohls.akamaized.net/hls/live/2022693/livetvkika_de/master.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "KpopTV Play (576p)",
-      "country": "BR",
-      "group": "Music",
-      "url": "https://giatv.bozztv.com/giatv/giatv-kpoptvplay/kpoptvplay/playlist.m3u8",
-      "reason": "variante : HTTP 502",
-      "code": 502
-    },
-    {
-      "name": "Latina Clasicos (1080p)",
-      "country": "PE",
-      "group": "Series",
-      "url": "https://redirector.rudo.video/hls-video/plus226/latina2/latina2.smil/playlist.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "m2o TV (1080p)",
-      "country": "IT",
-      "group": "Music",
-      "url": "https://4c4b867c89244861ac216426883d1ad0.msvdn.net/live/S62628868/uhdWBlkC1AoO/playlist.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Radiofreccia (1080p)",
-      "country": "IT",
-      "group": "Music",
-      "url": "https://dd782ed59e2a4e86aabf6fc508674b59.msvdn.net/live/S3160845/0tuSetc8UFkF/playlist_video.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "RiC (1080p)",
-      "country": "DE",
-      "group": "Kids",
-      "url": "https://rictv.iptv-playoutcenter.de/rictv/rictv-web/playlist.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Lingkar TV",
-      "country": "ID",
-      "group": "Music",
-      "url": "https://lingkartv.my.id/hls/lingkartv.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Manoranjan Movies (576p)",
-      "country": "IN",
-      "group": "Movies",
-      "url": "https://mumt04.tangotv.in/m18aqlK4MANORANJANMOVIES/index.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Music (480p)",
-      "country": "KG",
-      "group": "Music",
-      "url": "https://st2.mediabay.tv/KG_KTRK-Muzika/index.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Music India (720p)",
-      "country": "IN",
-      "group": "Music",
-      "url": "https://cdn.pishow.tv/ott/live/226/master.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Patriot (720p)",
-      "country": "RU",
-      "group": "Movies",
-      "url": "https://stream.smotrim.ru/hls2/static/playlist_4.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Peppers TV (576p)",
-      "country": "IN",
-      "group": "Music",
-      "url": "https://mumt07.tangotv.in/zHjX9OFlPEPPERS/index.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Pixel TV (720p)",
-      "country": "UA",
-      "group": "Kids",
-      "url": "https://cdn15.live-tv.cloud/ua_infinitas_tv/pixel-abr/playlist.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Pooya TV",
-      "country": "IR",
-      "group": "Kids",
-      "url": "https://tgn.bozztv.com/eshgtv-dvrfl05/gin-iribpooya/tracks-v1a1/mono.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Power Love (1080p)",
-      "country": "TR",
-      "group": "Music",
-      "url": "https://livetv.powerapp.com.tr/plove/love.smil/playlist.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "PowerTurk Akustik (1080p)",
-      "country": "TR",
-      "group": "Music",
-      "url": "https://livetv.powerapp.com.tr/pturkakustik/akustik.smil/playlist.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "PowerTurk Slow (1080p)",
-      "country": "TR",
-      "group": "Music",
-      "url": "https://livetv.powerapp.com.tr/pturkslow/slow.smil/playlist.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "PowerTurk Taptaze (1080p)",
-      "country": "TR",
-      "group": "Music",
-      "url": "https://livetv.powerapp.com.tr/pturktaptaze/taptaze.smil/playlist.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Zoom (720p)",
-      "country": "IN",
-      "group": "Music",
-      "url": "https://pubads.g.doubleclick.net/ssai/event/JCAm25qkRXiKcK1AJMlvKQ/master.m3u8",
-      "reason": "délai dépassé"
-    }
-  ],
-  "dead": [
-    {
-      "name": "Champion TV",
-      "country": "CI",
-      "group": "Afrique",
-      "url": "https://stream.berosat.live/hls/champion-tv/champion-tv.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Qausain TV (720p)",
-      "country": "NG",
-      "group": "Afrique",
-      "url": "https://acasmedia3.acangroup.org/qausaintv/qausaintv_output/playlist.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "NTN24 (1080p)",
-      "country": "CO",
-      "group": "News",
-      "url": "https://stream1.bitred.cl/ntn24/index.m3u8",
-      "reason": "segment : HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "TV West (720p)",
-      "country": "UG",
-      "group": "Afrique",
-      "url": "https://stream.hydeinnovations.com/tvwest-flussonic/index.m3u8",
-      "reason": "segment : HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Nuestra Tele Internacional (1080p)",
-      "country": "CO",
-      "group": "Latino",
-      "url": "https://stream1.bitred.cl/nuestra-tele/index.m3u8",
-      "reason": "segment : HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "PCT Channel 26 (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://livestream.telvue.com/pacificaca2/f7b44cfafd5c52223d5498196c8a2e7b.sdp/playlist.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "PCT Channel 27 (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://livestream.telvue.com/pacificaca1/f7b44cfafd5c52223d5498196c8a2e7b.sdp/playlist.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "TVS Television Network (480p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://rpn.bozztv.com/gusa/gusa-tvstn/index.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "TeleXitos (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "http://190.197.41.183/TELEXITOS/index.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "History Hit (720p)",
-      "country": "UK",
-      "group": "Documentary",
-      "url": "https://ldsaaaaaa-timeline-samsungau-awedz.amagi.tv/playlist/ldsAAAAAA-timeline-samsungau/playlist.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "India TV Aap Ki Adalat (1080p)",
-      "country": "IN",
-      "group": "Documentary",
-      "url": "https://amg01550-amg01550c6-samsung-in-4679.playouts.now.amagi.tv/playlist/amg01550-indiatvfast-indiatvakasamsung-samsungin/playlist.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Monterrico TV",
-      "country": "PE",
-      "group": "Sport",
-      "url": "https://h.jcp.live.opencaster.com/play_src/index.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Gex TV (1080p)",
-      "country": "CR",
-      "group": "Music",
-      "url": "https://live20.bozztv.com/akamaissh101/ssh101/gextvaccess/playlist.m3u8",
       "reason": "CORS refusé pour l'appli Android",
       "code": 200
     },
     {
-      "name": "mfm (1080p)",
-      "country": "LB",
+      "name": "Totalmusic Concerts (720p)",
+      "country": "GB",
       "group": "Music",
-      "url": "https://hms.pfs.gdn/hms/v1/broadcast/hlmvmp2hfriode891/playlist.m3u8",
+      "url": "https://cdn.global.elektamedia.com/live/c7eds/Totalmusic_Concerts/SA_LIVE_hls_enc/master.m3u8",
       "reason": "segment : HTTP 404",
       "code": 404
     },
     {
-      "name": "Now 70s (720p)",
-      "country": "GB",
-      "group": "Music",
-      "url": "https://lightning-now70s-rakuten.amagi.tv/hls/amagi_hls_data_rakutenAA-lightning-now70s-rakuten/CDN/playlist.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Now 80s (1080p)",
-      "country": "GB",
-      "group": "Music",
-      "url": "https://lightning-now80s-rakuten.amagi.tv/hls/amagi_hls_data_rakutenAA-lightning-now80s-rakuten/CDN/playlist.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "NOW Rock (1080p)",
-      "country": "GB",
-      "group": "Music",
-      "url": "https://lightning-now90s-rakuten.amagi.tv/hls/amagi_hls_data_rakutenAA-lightning-now90s-rakuten/CDN/playlist.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Peques TV (720p)",
-      "country": "PE",
-      "group": "Kids",
-      "url": "https://live-evg7.tv360.bitel.com.pe/bitel/pequestv/playlist.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Balapan (1080p)",
-      "country": "KZ",
-      "group": "Kids",
-      "url": "https://balapantv-stream.qazcdn.com/balapantv/balapantv/playlist.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Chithiram (576p)",
-      "country": "IN",
-      "group": "Kids",
-      "url": "https://cdn.pishow.tv/ott/live/1243/master.m3u8",
-      "reason": "segment : HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Shemaroo Josh (576p)",
-      "country": "IN",
-      "group": "Movies",
-      "url": "https://mumt04.tangotv.in/m18aqlK4SHEMAROOJOSH/index.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Tamyr (576p)",
+      "name": "Kapitan Fantastika (576p)",
       "country": "RU",
       "group": "Kids",
-      "url": "https://bsttv.bonus-tv.ru/cdn/tamyr/playlist.m3u8",
-      "reason": "délai dépassé"
+      "url": "https://stream8.cinerama.uz/1406/tracks-v1a1/mono.m3u8",
+      "reason": "segment : HTTP 404",
+      "code": 404
     },
     {
-      "name": "Tra Vinh TV (1080p)",
-      "country": "VN",
-      "group": "Music",
-      "url": "https://freem3u.xyz/api/live/play.m3u8?vid=91",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Vantage Classic (720p)",
-      "country": "EE",
-      "group": "Music",
-      "url": "https://hls.vantagetv.ee/vclassic_stream/index.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Vantage Dance (720p)",
-      "country": "EE",
-      "group": "Music",
-      "url": "https://hls.vantagetv.ee/vdance_stream/main_stream.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Vantage Music (1080p)",
-      "country": "EE",
-      "group": "Music",
-      "url": "https://hls.vantagetv.co.uk/vmusicuk_stream/index.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "VIP TV",
-      "country": "AW",
-      "group": "Music",
-      "url": "https://vs20.live.opencaster.com/viptvaruba_01e417ae/index.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "YRF Music (1080p)",
+      "name": "ZB Cartoon (1080p)",
       "country": "IN",
-      "group": "Music",
-      "url": "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg01412-xiaomiasia-yrfmusic-xiaomi/playlist.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Zo'r TV (576p)",
-      "country": "UZ",
-      "group": "Music",
-      "url": "https://stream8.cinerama.uz/1016/tracks-v1a1/mono.m3u8",
-      "reason": "délai dépassé"
+      "group": "Kids",
+      "url": "https://server.zillarbarta.com/zbcatun/video.m3u8",
+      "reason": "segment : HTTP 404",
+      "code": 404
     }
   ]
 }
