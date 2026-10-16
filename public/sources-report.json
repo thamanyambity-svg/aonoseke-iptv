@@ -1,17 +1,18 @@
 {
-  "generatedAt": "2026-10-16T15:49:33.917Z",
+  "generatedAt": "2026-10-16T20:18:30.477Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
   "counts": {
-    "checked": 1575,
-    "ok": 1356,
+    "checked": 1570,
+    "ok": 1361,
     "geoBlocked": 197,
-    "pending": 17,
-    "dead": 5
+    "pending": 6,
+    "dead": 6
   },
   "deadReasons": {
-    "HTTP 404": 3,
-    "délai dépassé": 1,
-    "segment : HTTP 404": 1
+    "flux terminé (ENDLIST)": 1,
+    "segment : HTTP 404": 2,
+    "HTTP 404": 1,
+    "erreur réseau (UND_ERR_SOCKET)": 2
   },
   "geoBlocked": [
     {
@@ -1287,6 +1288,14 @@
       "code": 403
     },
     {
+      "name": "Esport3 (1080p)",
+      "country": "ES",
+      "group": "Sport",
+      "url": "https://directes-tv-int.3catdirectes.cat/live-content/esport3-hls/master.m3u8",
+      "reason": "segment refusé (HTTP 403)",
+      "code": 403
+    },
+    {
       "name": "K19",
       "country": "AT",
       "group": "Sport",
@@ -1575,14 +1584,6 @@
       "code": 403
     },
     {
-      "name": "TRT Cocuk (1440p)",
-      "country": "TR",
-      "group": "Kids",
-      "url": "https://tv-trtcocuk.medya.trt.com.tr/master.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "YleX (720p)",
       "country": "FI",
       "group": "Music",
@@ -1593,17 +1594,82 @@
   ],
   "pending": [
     {
+      "name": "N Sports (1080p)",
+      "country": "BR",
+      "group": "Sport",
+      "url": "https://ogc-nsprt-tcl-roku-syndication.otteravision.com/ogc/nsprt/nsprt.m3u8",
+      "reason": "domaine introuvable"
+    },
+    {
+      "name": "30A TV Classic Movies (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://30a-tv.com/feeds/pzaz/30atvmovies.m3u8",
+      "reason": "erreur réseau (UND_ERR_SOCKET)"
+    },
+    {
+      "name": "Maxcine (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://live20.bozztv.com/giatvplayout7/giatv-208138/playlist.m3u8",
+      "reason": "HTTP 502",
+      "code": 502
+    },
+    {
+      "name": "Maxcine Comedy (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://live20.bozztv.com/giatvplayout7/giatv-208730/playlist.m3u8",
+      "reason": "HTTP 502",
+      "code": 502
+    },
+    {
+      "name": "Maxcine Family (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://live20.bozztv.com/giatvplayout7/giatv-208817/playlist.m3u8",
+      "reason": "HTTP 502",
+      "code": 502
+    },
+    {
+      "name": "KIIO-LD 10.4 (480p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://streamer1.connectto.com/AABC_WEB_1201/index.m3u8",
+      "reason": "HTTP 503",
+      "code": 503
+    }
+  ],
+  "dead": [
+    {
+      "name": "Eurosport 1",
+      "country": "FR",
+      "group": "France",
+      "url": "https://andro.mangeinde4.lat/checklist/androstreamlivees1.m3u8",
+      "reason": "flux terminé (ENDLIST)",
+      "code": 200
+    },
+    {
+      "name": "CNN en Espanol (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://streaming.onnethn.com/CNN_ESPANOL/playlist.m3u8",
+      "reason": "segment : HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Advocate Broadcasting Network",
+      "country": "NG",
+      "group": "Afrique",
+      "url": "https://viewmedia7219.bozztv.com/wmedia/viewmedia100/web_045/Stream/playlist.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
       "name": "30A Investment Pitch (720p)",
       "country": "US",
       "group": "USA",
       "url": "https://30a-tv.com/feeds/xodglobal/30atv.m3u8",
-      "reason": "erreur réseau (UND_ERR_SOCKET)"
-    },
-    {
-      "name": "30A Luxe Life Discovered (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://30a-tv.com/feeds/vidaa/luxelife.m3u8",
       "reason": "erreur réseau (UND_ERR_SOCKET)"
     },
     {
@@ -1614,141 +1680,10 @@
       "reason": "erreur réseau (UND_ERR_SOCKET)"
     },
     {
-      "name": "City Eden KinoDok",
-      "country": "RU",
-      "group": "Documentary",
-      "url": "https://cityeden.catcast.tv/content/38354/index.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Ishtar TV (1080p)",
-      "country": "IQ",
-      "group": "Music",
-      "url": "https://stream.ishtartv.com/live/iShtarHD/playlist.m3u8",
-      "reason": "erreur réseau (ECONNRESET)"
-    },
-    {
-      "name": "City Eden Birma Play",
-      "country": "RU",
-      "group": "Music",
-      "url": "https://cityeden.catcast.tv/content/34364/index.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "City Eden KinoAction",
-      "country": "RU",
-      "group": "Movies",
-      "url": "https://cityeden.catcast.tv/content/41333/index.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "City Eden KinoArt",
-      "country": "RU",
-      "group": "Movies",
-      "url": "https://cityeden.catcast.tv/content/38398/index.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "City Eden KinoAsia",
-      "country": "RU",
-      "group": "Movies",
-      "url": "https://cityeden.catcast.tv/content/34393/index.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "City Eden KinoDetektiv",
-      "country": "RU",
-      "group": "Movies",
-      "url": "https://cityeden.catcast.tv/content/41327/index.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "City Eden KinoDrama",
-      "country": "RU",
-      "group": "Movies",
-      "url": "https://cityeden.catcast.tv/content/45269/index.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "City Eden KinoFantastika",
-      "country": "RU",
-      "group": "Movies",
-      "url": "https://cityeden.catcast.tv/content/45268/index.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "City Eden KinoKlassika",
-      "country": "RU",
-      "group": "Movies",
-      "url": "https://cityeden.catcast.tv/content/34185/index.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "City Eden KinoKomediya",
-      "country": "RU",
-      "group": "Movies",
-      "url": "https://cityeden.catcast.tv/content/41331/index.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "City Eden KinoMistika",
-      "country": "RU",
-      "group": "Movies",
-      "url": "https://cityeden.catcast.tv/content/40783/index.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "City Eden Sirtaki TV",
-      "country": "RU",
-      "group": "Music",
-      "url": "https://cityeden.catcast.tv/content/46421/index.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "City Eden TeleNovella",
-      "country": "RU",
-      "group": "Series",
-      "url": "https://cityeden.catcast.tv/content/46209/index.m3u8",
-      "reason": "délai dépassé"
-    }
-  ],
-  "dead": [
-    {
-      "name": "Mahaasin TV",
-      "country": "TZ",
-      "group": "Afrique",
-      "url": "https://mahaasintv.livebox.co.in/mahaasintvhls/mahaasintv.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "TVC Benin (720p)",
-      "country": "BJ",
-      "group": "Afrique",
-      "url": "https://live.tvcbenin.com/direct/729c37a1d3319ee21991227b1f84c687.sdp/playlist.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Diya TV (1080p)",
+      "name": "AXS TV (576p)",
       "country": "US",
       "group": "USA",
-      "url": "https://stream.diyatvinc.com/diya.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Video Tour Channel",
-      "country": "CR",
-      "group": "Music",
-      "url": "https://59ef525c24caa.streamlock.net/videotour/videotour/playlist.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Suriyan TV (576p)",
-      "country": "IN",
-      "group": "Movies",
-      "url": "https://hlslive.olidigital.in/suriyantv/suriyantv/index.m3u8",
+      "url": "https://tvsen3.aynaott.com/P2fJzfsg/index.m3u8",
       "reason": "segment : HTTP 404",
       "code": 404
     }
