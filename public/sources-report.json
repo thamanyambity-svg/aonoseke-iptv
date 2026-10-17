@@ -1,17 +1,16 @@
 {
-  "generatedAt": "2026-10-17T14:42:49.763Z",
+  "generatedAt": "2026-10-17T19:53:27.234Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
   "counts": {
-    "checked": 1550,
-    "ok": 1327,
-    "geoBlocked": 201,
-    "pending": 9,
-    "dead": 13
+    "checked": 1537,
+    "ok": 1331,
+    "geoBlocked": 196,
+    "pending": 5,
+    "dead": 5
   },
   "deadReasons": {
-    "segment : HTTP 404": 3,
-    "HTTP 404": 9,
-    "variante : HTTP 404": 1
+    "HTTP 404": 3,
+    "segment : HTTP 404": 2
   },
   "geoBlocked": [
     {
@@ -575,14 +574,6 @@
       "code": 403
     },
     {
-      "name": "Las Estrellas Latin America (1080p)",
-      "country": "MX",
-      "group": "Latino",
-      "url": "http://15.204.246.24:8080/LasEstrellasHD/index.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "LCI (1080p)",
       "country": "FR",
       "group": "France",
@@ -603,14 +594,6 @@
       "country": "FR",
       "group": "France",
       "url": "http://145.239.5.177/148/index.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "Pasiones Latin America (1080p)",
-      "country": "US",
-      "group": "Latino",
-      "url": "http://15.204.246.24:8080/PasionesHD/index.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -659,14 +642,6 @@
       "country": "FR",
       "group": "France",
       "url": "http://145.239.5.177/318/index.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "TVC (720p)",
-      "country": "NG",
-      "group": "Afrique",
-      "url": "http://212.5.144.156:8080/tvc/index.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -1255,14 +1230,6 @@
       "code": 403
     },
     {
-      "name": "Tele Pam (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://watch.haitilive.net/app/2020/telepam/index.fmp4.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "Temecula TV (1080p)",
       "country": "US",
       "group": "USA",
@@ -1316,14 +1283,6 @@
       "group": "Documentary",
       "url": "https://vs-hls-pushb-uk-live.akamaized.net/x=4/i=urn:bbc:pips:service:bbc_four_hd/mobile_wifi_main_hd_abr_v2.m3u8",
       "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "Esport3 (1080p)",
-      "country": "ES",
-      "group": "Sport",
-      "url": "https://directes-tv-int.3catdirectes.cat/live-content/esport3-hls/master.m3u8",
-      "reason": "segment refusé (HTTP 403)",
       "code": 403
     },
     {
@@ -1625,171 +1584,81 @@
   ],
   "pending": [
     {
-      "name": "365 days TV (576p)",
-      "country": "RU",
-      "group": "Documentary",
-      "url": "https://stream8.cinerama.uz/1242/tracks-v1a1/mono.m3u8",
+      "name": "Red Bull TV (1080p)",
+      "country": "AT",
+      "group": "Sport",
+      "url": "https://db34cc6127ac459db55cab5f97cd66b9.mediatailor.us-west-2.amazonaws.com/v1/master/ba62fe743df0fe93366eba3a257d792884136c7f/LINEAR-680-WORBAUENFAST-WHALETVPLUS/680/whaletvplus/hls/master/playlist.m3u8",
+      "reason": "variante : HTTP 504",
+      "code": 504
+    },
+    {
+      "name": "Medi1TV Arabic (1080p)",
+      "country": "MA",
+      "group": "Afrique",
+      "url": "https://cdn.live.easybroadcast.io/abr_corp/83_medi1tv-arabic_g90v4ec/playlist.m3u8",
       "reason": "délai dépassé"
     },
     {
-      "name": "Arsenal (576p)",
-      "country": "RU",
-      "group": "Documentary",
-      "url": "https://stream8.cinerama.uz/1414/tracks-v1a1/mono.m3u8",
+      "name": "Medi1TV Maghreb (1080p)",
+      "country": "MA",
+      "group": "Afrique",
+      "url": "https://cdn.live.easybroadcast.io/abr_corp/83_medi1tv-maghreb_jnbspmg/playlist.m3u8",
       "reason": "délai dépassé"
     },
     {
-      "name": "Cinema",
-      "country": "RU",
-      "group": "Movies",
-      "url": "https://stream8.cinerama.uz/1227/tracks-v1a1/mono.m3u8",
-      "reason": "délai dépassé"
+      "name": "30A TV Classic Movies (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://30a-tv.com/feeds/pzaz/30atvmovies.m3u8",
+      "reason": "erreur réseau (UND_ERR_SOCKET)"
     },
     {
-      "name": "Indiyskoye Kino",
-      "country": "RU",
-      "group": "Movies",
-      "url": "https://stream8.cinerama.uz/1060/tracks-v1a1/mono.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "KinoHit",
-      "country": "RU",
-      "group": "Movies",
-      "url": "https://stream8.cinerama.uz/1055/tracks-v1a1/mono.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Minika Go (720p)",
-      "country": "TR",
+      "name": "El Chavo TV (720p)",
+      "country": "MX",
       "group": "Kids",
-      "url": "https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/minikago/minikago.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Mult (576p)",
-      "country": "RU",
-      "group": "Kids",
-      "url": "https://stream8.cinerama.uz/1246/tracks-v1a1/mono.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Muz-TV",
-      "country": "RU",
-      "group": "Music",
-      "url": "https://stream8.cinerama.uz/1200/tracks-v1a1/mono.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "V gostyakh u skazki (1080p)",
-      "country": "RU",
-      "group": "Kids",
-      "url": "https://stream8.cinerama.uz/1270/tracks-v1a1/mono.m3u8",
-      "reason": "délai dépassé"
+      "url": "https://live20.bozztv.com/giatvplayout7/giatv-211465/playlist.m3u8",
+      "reason": "HTTP 502",
+      "code": 502
     }
   ],
   "dead": [
     {
-      "name": "Mercy TV",
-      "country": "SL",
+      "name": "OTV (720p)",
+      "country": "GH",
       "group": "Afrique",
-      "url": "https://cdn-cloudfront.eu-central-1.prod.ingest.aws-infra.dacast.com/live/bff8bd53-ee89-2c76-6a51-95a0003f7d96/master.m3u8",
-      "reason": "segment : HTTP 404",
+      "url": "https://5dcabf026b188.streamlock.net/OceansTV/livestream/playlist.m3u8",
+      "reason": "HTTP 404",
       "code": 404
     },
     {
-      "name": "MCN6 Main Channel (1080p)",
+      "name": "Whiplash II (480p)",
       "country": "US",
       "group": "USA",
-      "url": "https://d18fcxaqfnwjhj.cloudfront.net/CDN_Ingest/MCN6_MAIN.smil/Playlist.m3u8",
+      "url": "https://cdn.whiplash.cc/whiplash-2/index.m3u8",
       "reason": "segment : HTTP 404",
       "code": 404
     },
     {
-      "name": "TVS Tavern (480p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://rpn.bozztv.com/gusa/gusa-tavern/index.m3u8",
+      "name": "Alpha Digital (480p)",
+      "country": "UG",
+      "group": "Afrique",
+      "url": "https://streamfi-alphatvdgtl1.zettawiseroutes.com:8181/hls/stream.m3u8",
       "reason": "segment : HTTP 404",
       "code": 404
     },
     {
-      "name": "MMA-TV.com",
-      "country": "RU",
+      "name": "Tayari West TV (1080p)",
+      "country": "UG",
+      "group": "Afrique",
+      "url": "https://stream.hydeinnovations.com/tarari-west/index.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "FTV (720p)",
+      "country": "BO",
       "group": "Sport",
-      "url": "https://stream8.cinerama.uz/1226/tracks-v1a1/mono.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Bollywood HD (576p)",
-      "country": "RO",
-      "group": "Movies",
-      "url": "https://xykt-fix.github.io/cinerama_edge01/hls/BOLLYWOOD_RU/Movie009.m3u8",
-      "reason": "variante : HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Detskiy (576p)",
-      "country": "RU",
-      "group": "Kids",
-      "url": "https://stream8.cinerama.uz/1033/tracks-v1a1/mono.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Dorama",
-      "country": "RU",
-      "group": "Movies",
-      "url": "https://stream8.cinerama.uz/1273/tracks-v1a1/mono.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Gulli Girl (720p)",
-      "country": "RU",
-      "group": "Kids",
-      "url": "https://stream8.cinerama.uz/1445/tracks-v1a1/mono.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Kinopremyera",
-      "country": "RU",
-      "group": "Movies",
-      "url": "https://stream8.cinerama.uz/1207/tracks-v1a1/mono.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Kinosvidanie",
-      "country": "RU",
-      "group": "Movies",
-      "url": "https://stream8.cinerama.uz/1203/tracks-v1a1/mono.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Mama (576p)",
-      "country": "RU",
-      "group": "Kids",
-      "url": "https://stream8.cinerama.uz/1244/tracks-v1a1/mono.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Muzyka Pervogo",
-      "country": "RU",
-      "group": "Music",
-      "url": "https://stream8.cinerama.uz/1201/tracks-v1a1/mono.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Nashe Novoe Kino",
-      "country": "RU",
-      "group": "Movies",
-      "url": "https://stream8.cinerama.uz/1051/tracks-v1a1/mono.m3u8",
+      "url": "https://master.tucableip.com/ftvhd/index.m3u8",
       "reason": "HTTP 404",
       "code": 404
     }
