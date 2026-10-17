@@ -1,18 +1,19 @@
 {
-  "generatedAt": "2026-10-16T20:18:30.477Z",
+  "generatedAt": "2026-10-17T02:17:57.660Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
   "counts": {
-    "checked": 1570,
-    "ok": 1361,
-    "geoBlocked": 197,
-    "pending": 6,
-    "dead": 6
+    "checked": 1564,
+    "ok": 1349,
+    "geoBlocked": 201,
+    "pending": 5,
+    "dead": 9
   },
   "deadReasons": {
-    "flux terminé (ENDLIST)": 1,
-    "segment : HTTP 404": 2,
-    "HTTP 404": 1,
-    "erreur réseau (UND_ERR_SOCKET)": 2
+    "HTTP 404": 2,
+    "variante : HTTP 404": 1,
+    "domaine introuvable": 1,
+    "segment : HTTP 404": 4,
+    "flux terminé (ENDLIST)": 1
   },
   "geoBlocked": [
     {
@@ -576,6 +577,14 @@
       "code": 403
     },
     {
+      "name": "Las Estrellas Latin America (1080p)",
+      "country": "MX",
+      "group": "Latino",
+      "url": "http://15.204.246.24:8080/LasEstrellasHD/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
       "name": "LCI (1080p)",
       "country": "FR",
       "group": "France",
@@ -596,6 +605,14 @@
       "country": "FR",
       "group": "France",
       "url": "http://145.239.5.177/148/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Pasiones Latin America (1080p)",
+      "country": "US",
+      "group": "Latino",
+      "url": "http://15.204.246.24:8080/PasionesHD/index.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -644,6 +661,14 @@
       "country": "FR",
       "group": "France",
       "url": "http://145.239.5.177/318/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "TVC (720p)",
+      "country": "NG",
+      "group": "Afrique",
+      "url": "http://212.5.144.156:8080/tvc/index.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -844,14 +869,6 @@
       "country": "US",
       "group": "USA",
       "url": "https://reflect-tuolumne.cablecast.tv/live-3/live/stream-1/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "ARTN TV (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://streamer1.connectto.com/ARTN_mobile/index.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -1232,6 +1249,14 @@
       "code": 403
     },
     {
+      "name": "Tele Pam (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://watch.haitilive.net/app/2020/telepam/index.fmp4.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
       "name": "Temecula TV (1080p)",
       "country": "US",
       "group": "USA",
@@ -1480,6 +1505,14 @@
       "code": 403
     },
     {
+      "name": "TVI Ficcao (720p)",
+      "country": "PT",
+      "group": "Series",
+      "url": "https://raw.githubusercontent.com/thomraider12/canaistvpt/main/m3u8s/tvificcao.m3u8",
+      "reason": "variante : HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
       "name": "Video Rola (1080p)",
       "country": "IT",
       "group": "Music",
@@ -1594,6 +1627,61 @@
   ],
   "pending": [
     {
+      "name": "30A Music (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://30a-tv.com/feeds/ceftech/30atvmusic.m3u8",
+      "reason": "erreur réseau (UND_ERR_SOCKET)"
+    },
+    {
+      "name": "Z Nation",
+      "country": "US",
+      "group": "USA",
+      "url": "https://d39g1vxj2ef6in.cloudfront.net/v1/master/3fec3e5cac39a52b2132f9c66c83dae043dc17d4/prod-rakuten-stitched/master.m3u8?ads.xumo_channelId=88883098",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "ClickTV Chile (720p)",
+      "country": "CL",
+      "group": "Documentary",
+      "url": "https://v2.tustreaming.cl/clicktv/playlist.m3u8",
+      "reason": "HTTP 503",
+      "code": 503
+    },
+    {
+      "name": "Turf Movil (720p)",
+      "country": "CL",
+      "group": "Sport",
+      "url": "https://tvturf4.janus.cl/playlist/stream.m3u8?d=w&id=",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Deewana HD (540p)",
+      "country": "IN",
+      "group": "Music",
+      "url": "https://live20.bozztv.com/giatvplayout7/giatv-209592/index.m3u8",
+      "reason": "HTTP 502",
+      "code": 502
+    }
+  ],
+  "dead": [
+    {
+      "name": "LBFD RTV (1080p)",
+      "country": "CD",
+      "group": "Afrique",
+      "url": "https://tnt-television.com/LBFD_RTV/index.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "TV Mana Mocambique (1080p)",
+      "country": "MZ",
+      "group": "Afrique",
+      "url": "https://w2.manasat.com/tvmana-mz/smil:tvmana-mz.smil/playlist.m3u8",
+      "reason": "variante : HTTP 404",
+      "code": 404
+    },
+    {
       "name": "N Sports (1080p)",
       "country": "BR",
       "group": "Sport",
@@ -1601,89 +1689,50 @@
       "reason": "domaine introuvable"
     },
     {
-      "name": "30A TV Classic Movies (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://30a-tv.com/feeds/pzaz/30atvmovies.m3u8",
-      "reason": "erreur réseau (UND_ERR_SOCKET)"
-    },
-    {
-      "name": "Maxcine (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://live20.bozztv.com/giatvplayout7/giatv-208138/playlist.m3u8",
-      "reason": "HTTP 502",
-      "code": 502
-    },
-    {
-      "name": "Maxcine Comedy (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://live20.bozztv.com/giatvplayout7/giatv-208730/playlist.m3u8",
-      "reason": "HTTP 502",
-      "code": 502
-    },
-    {
-      "name": "Maxcine Family (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://live20.bozztv.com/giatvplayout7/giatv-208817/playlist.m3u8",
-      "reason": "HTTP 502",
-      "code": 502
-    },
-    {
-      "name": "KIIO-LD 10.4 (480p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://streamer1.connectto.com/AABC_WEB_1201/index.m3u8",
-      "reason": "HTTP 503",
-      "code": 503
-    }
-  ],
-  "dead": [
-    {
-      "name": "Eurosport 1",
+      "name": "zenith (1080p)",
       "country": "FR",
       "group": "France",
-      "url": "https://andro.mangeinde4.lat/checklist/androstreamlivees1.m3u8",
-      "reason": "flux terminé (ENDLIST)",
-      "code": 200
-    },
-    {
-      "name": "CNN en Espanol (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://streaming.onnethn.com/CNN_ESPANOL/playlist.m3u8",
+      "url": "https://live.azenagroup.com/zenith/index.m3u8",
       "reason": "segment : HTTP 404",
       "code": 404
     },
     {
-      "name": "Advocate Broadcasting Network",
-      "country": "NG",
-      "group": "Afrique",
-      "url": "https://viewmedia7219.bozztv.com/wmedia/viewmedia100/web_045/Stream/playlist.m3u8",
+      "name": "Laff (576p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://tvsen3.aynaott.com/UC6a8nsf/index.m3u8",
+      "reason": "segment : HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "RTV Vida (1080p)",
+      "country": "ES",
+      "group": "Music",
+      "url": "https://vidartv2.todostreaming.es/live/radiovida-emisiontvhd.m3u8",
       "reason": "HTTP 404",
       "code": 404
     },
     {
-      "name": "30A Investment Pitch (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://30a-tv.com/feeds/xodglobal/30atv.m3u8",
-      "reason": "erreur réseau (UND_ERR_SOCKET)"
+      "name": "Dhoom Music (720p)",
+      "country": "IN",
+      "group": "Music",
+      "url": "https://cdn.pishow.tv/ott/live/1456/master.m3u8",
+      "reason": "flux terminé (ENDLIST)",
+      "code": 200
     },
     {
-      "name": "30A Television Channel (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://30a-tv.com/feeds/masters/30atv.m3u8",
-      "reason": "erreur réseau (UND_ERR_SOCKET)"
+      "name": "KN Music TV",
+      "country": "AZ",
+      "group": "Music",
+      "url": "https://cdn4.yayin.com.tr/kntv/tracks-v1a1/mono.m3u8",
+      "reason": "segment : HTTP 404",
+      "code": 404
     },
     {
-      "name": "AXS TV (576p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://tvsen3.aynaott.com/P2fJzfsg/index.m3u8",
+      "name": "Unique TV (576p)",
+      "country": "IN",
+      "group": "Kids",
+      "url": "https://mumt05.tangotv.in/87NeALx2UNIQUETV/index.m3u8",
       "reason": "segment : HTTP 404",
       "code": 404
     }
