@@ -1,16 +1,17 @@
 {
-  "generatedAt": "2026-10-17T19:53:27.234Z",
+  "generatedAt": "2026-10-18T02:18:28.860Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
   "counts": {
-    "checked": 1537,
-    "ok": 1331,
-    "geoBlocked": 196,
-    "pending": 5,
-    "dead": 5
+    "checked": 1532,
+    "ok": 1327,
+    "geoBlocked": 197,
+    "pending": 0,
+    "dead": 8
   },
   "deadReasons": {
-    "HTTP 404": 3,
-    "segment : HTTP 404": 2
+    "segment : HTTP 404": 5,
+    "erreur réseau (UND_ERR_SOCKET)": 1,
+    "HTTP 404": 2
   },
   "geoBlocked": [
     {
@@ -1286,6 +1287,14 @@
       "code": 403
     },
     {
+      "name": "Esport3 (1080p)",
+      "country": "ES",
+      "group": "Sport",
+      "url": "https://directes-tv-int.3catdirectes.cat/live-content/esport3-hls/master.m3u8",
+      "reason": "segment refusé (HTTP 403)",
+      "code": 403
+    },
+    {
       "name": "K19",
       "country": "AT",
       "group": "Sport",
@@ -1454,19 +1463,19 @@
       "code": 403
     },
     {
-      "name": "Solo Bailalo (480p)",
-      "country": "CL",
-      "group": "Music",
-      "url": "https://5ff3d9babae13.streamlock.net/8000/8000/playlist.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "SX3 (1080p)",
       "country": "ES",
       "group": "Kids",
       "url": "https://directes-tv-cat.3catdirectes.cat/live-content/super3-hls/master.m3u8",
       "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "TVI Ficcao (720p)",
+      "country": "PT",
+      "group": "Series",
+      "url": "https://raw.githubusercontent.com/thomraider12/canaistvpt/main/m3u8s/tvificcao.m3u8",
+      "reason": "variante : HTTP 403 (accès refusé)",
       "code": 403
     },
     {
@@ -1582,28 +1591,15 @@
       "code": 403
     }
   ],
-  "pending": [
+  "pending": [],
+  "dead": [
     {
-      "name": "Red Bull TV (1080p)",
-      "country": "AT",
-      "group": "Sport",
-      "url": "https://db34cc6127ac459db55cab5f97cd66b9.mediatailor.us-west-2.amazonaws.com/v1/master/ba62fe743df0fe93366eba3a257d792884136c7f/LINEAR-680-WORBAUENFAST-WHALETVPLUS/680/whaletvplus/hls/master/playlist.m3u8",
-      "reason": "variante : HTTP 504",
-      "code": 504
-    },
-    {
-      "name": "Medi1TV Arabic (1080p)",
-      "country": "MA",
+      "name": "Laura Dave Media TV (720p)",
+      "country": "CM",
       "group": "Afrique",
-      "url": "https://cdn.live.easybroadcast.io/abr_corp/83_medi1tv-arabic_g90v4ec/playlist.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Medi1TV Maghreb (1080p)",
-      "country": "MA",
-      "group": "Afrique",
-      "url": "https://cdn.live.easybroadcast.io/abr_corp/83_medi1tv-maghreb_jnbspmg/playlist.m3u8",
-      "reason": "délai dépassé"
+      "url": "https://streaming.lauradavemedia.com/ldm/index.m3u8",
+      "reason": "segment : HTTP 404",
+      "code": 404
     },
     {
       "name": "30A TV Classic Movies (720p)",
@@ -1613,52 +1609,50 @@
       "reason": "erreur réseau (UND_ERR_SOCKET)"
     },
     {
-      "name": "El Chavo TV (720p)",
-      "country": "MX",
-      "group": "Kids",
-      "url": "https://live20.bozztv.com/giatvplayout7/giatv-211465/playlist.m3u8",
-      "reason": "HTTP 502",
-      "code": 502
-    }
-  ],
-  "dead": [
-    {
-      "name": "OTV (720p)",
-      "country": "GH",
-      "group": "Afrique",
-      "url": "https://5dcabf026b188.streamlock.net/OceansTV/livestream/playlist.m3u8",
-      "reason": "HTTP 404",
+      "name": "Monaco Info (1080p)",
+      "country": "MC",
+      "group": "France",
+      "url": "https://webtv.monacoinfo.com/live/prod/index.m3u8",
+      "reason": "segment : HTTP 404",
       "code": 404
     },
     {
-      "name": "Whiplash II (480p)",
+      "name": "Trace Sport Stars (576p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://mumbai-edge.smartplaytv.in/TraceSport/index.m3u8",
+      "reason": "segment : HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "PhillyCAM (720p)",
       "country": "US",
       "group": "USA",
-      "url": "https://cdn.whiplash.cc/whiplash-2/index.m3u8",
-      "reason": "segment : HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Alpha Digital (480p)",
-      "country": "UG",
-      "group": "Afrique",
-      "url": "https://streamfi-alphatvdgtl1.zettawiseroutes.com:8181/hls/stream.m3u8",
-      "reason": "segment : HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Tayari West TV (1080p)",
-      "country": "UG",
-      "group": "Afrique",
-      "url": "https://stream.hydeinnovations.com/tarari-west/index.m3u8",
+      "url": "https://livestream.telvue.com/phillycam1/f7b44cfafd5c52223d5498196c8a2e7b.sdp/playlist.m3u8",
       "reason": "HTTP 404",
       "code": 404
     },
     {
-      "name": "FTV (720p)",
-      "country": "BO",
-      "group": "Sport",
-      "url": "https://master.tucableip.com/ftvhd/index.m3u8",
+      "name": "TVS Tally Ho (360p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://rpn.bozztv.com/gusa/gusa-tvstallyho/index.m3u8",
+      "reason": "segment : HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "kabel eins Doku (720p)",
+      "country": "DE",
+      "group": "Documentary",
+      "url": "https://s6.hopslan.com/dokuX/index.m3u8",
+      "reason": "segment : HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "ZB Music (720p)",
+      "country": "IN",
+      "group": "Music",
+      "url": "https://server.zillarbarta.com/zbmusic/index.m3u8",
       "reason": "HTTP 404",
       "code": 404
     }
