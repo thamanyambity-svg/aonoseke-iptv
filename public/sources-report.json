@@ -1,16 +1,17 @@
 {
-  "generatedAt": "2026-10-18T10:08:03.240Z",
+  "generatedAt": "2026-10-18T15:08:32.844Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
   "counts": {
-    "checked": 1524,
-    "ok": 1317,
-    "geoBlocked": 200,
-    "pending": 3,
-    "dead": 4
+    "checked": 1520,
+    "ok": 1306,
+    "geoBlocked": 198,
+    "pending": 11,
+    "dead": 5
   },
   "deadReasons": {
-    "segment : HTTP 404": 2,
-    "HTTP 404": 2
+    "segment : HTTP 404": 1,
+    "HTTP 404": 3,
+    "délai dépassé": 1
   },
   "geoBlocked": [
     {
@@ -19,6 +20,14 @@
       "group": "Afrique",
       "url": "http://trn03.bozztv.com/gin-telecongo/index.m3u8",
       "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "WDEF-TV News Chattanooga TN (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://townnews.g-mana.live/media/a54a6409-5e91-46f0-9fee-06904c1fd094/main.m3u8",
+      "reason": "segment refusé (HTTP 403)",
       "code": 403
     },
     {
@@ -574,14 +583,6 @@
       "code": 403
     },
     {
-      "name": "Las Estrellas Latin America (1080p)",
-      "country": "MX",
-      "group": "Latino",
-      "url": "http://15.204.246.24:8080/LasEstrellasHD/index.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "LCI (1080p)",
       "country": "FR",
       "group": "France",
@@ -602,14 +603,6 @@
       "country": "FR",
       "group": "France",
       "url": "http://145.239.5.177/148/index.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "Pasiones Latin America (1080p)",
-      "country": "US",
-      "group": "Latino",
-      "url": "http://15.204.246.24:8080/PasionesHD/index.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -658,14 +651,6 @@
       "country": "FR",
       "group": "France",
       "url": "http://145.239.5.177/318/index.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "TVC (720p)",
-      "country": "NG",
-      "group": "Afrique",
-      "url": "http://212.5.144.156:8080/tvc/index.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -1254,14 +1239,6 @@
       "code": 403
     },
     {
-      "name": "Tele Pam (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://watch.haitilive.net/app/2020/telepam/index.fmp4.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "Temecula TV (1080p)",
       "country": "US",
       "group": "USA",
@@ -1606,6 +1583,14 @@
       "code": 403
     },
     {
+      "name": "TRT Cocuk (1440p)",
+      "country": "TR",
+      "group": "Kids",
+      "url": "https://tv-trtcocuk.medya.trt.com.tr/master.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
       "name": "YleX (720p)",
       "country": "FI",
       "group": "Music",
@@ -1616,18 +1601,108 @@
   ],
   "pending": [
     {
-      "name": "LoveWorld UK (1080p)",
-      "country": "NG",
-      "group": "Afrique",
-      "url": "https://cdn3.wowza.com/5/L1Uzd2FrbVlLRG1W/live/smil:lwukweb.smil/playlist.m3u8",
+      "name": "AMGA TV (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://streamer1.connectto.com/AMGA_WEB_1202/playlist.m3u8",
+      "reason": "HTTP 503",
+      "code": 503
+    },
+    {
+      "name": "Deluxe Dance (1080p)",
+      "country": "DE",
+      "group": "Music",
+      "url": "https://sdn-global-live-streaming-packager-cache.3qsdn.com/64733/64733_264_live.m3u8",
       "reason": "délai dépassé"
     },
     {
-      "name": "30A Music (720p)",
+      "name": "Deluxe Rap (1080p)",
+      "country": "DE",
+      "group": "Music",
+      "url": "https://sdn-global-live-streaming-packager-cache.3qsdn.com/65183/65183_264_live.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "KiKA (1080p)",
+      "country": "DE",
+      "group": "Kids",
+      "url": "https://kikageohls.akamaized.net/hls/live/2022693/livetvkika_de/master.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "La Kalle (720p)",
+      "country": "CO",
+      "group": "Music",
+      "url": "https://mdstrm.com/live-stream-playlist/58d191f07290fbb058025843.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Latina Clasicos (1080p)",
+      "country": "PE",
+      "group": "Series",
+      "url": "https://redirector.rudo.video/hls-video/plus226/latina2/latina2.smil/playlist.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Epic Bhojpuri (1080p)",
+      "country": "IN",
+      "group": "Movies",
+      "url": "https://cc-8hy4a26pz2uos.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-8hy4a26pz2uos/playlist.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "M-1 (480p)",
+      "country": "LT",
+      "group": "Music",
+      "url": "https://m-1.data.lt/m-1/smil:m-1.smil/playlist.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Maah TV (720p)",
+      "country": "MY",
+      "group": "Movies",
+      "url": "https://hls.maahtv.live/hls/stream.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Magic TV (720p)",
+      "country": "BG",
+      "group": "Music",
+      "url": "https://bss1.neterra.tv/magictv/magictv.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Maha Movie (576p)",
+      "country": "IN",
+      "group": "Movies",
+      "url": "https://cdn.pishow.tv/ott/live/10007/master.m3u8",
+      "reason": "délai dépassé"
+    }
+  ],
+  "dead": [
+    {
+      "name": "Telemundo Internacional (1080p)",
       "country": "US",
-      "group": "USA",
-      "url": "https://30a-tv.com/feeds/ceftech/30atvmusic.m3u8",
-      "reason": "erreur réseau (UND_ERR_SOCKET)"
+      "group": "Latino",
+      "url": "http://190.60.46.156:8089/TELEMUNDO/index.m3u8",
+      "reason": "segment : HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Miel TV (720p)",
+      "country": "PE",
+      "group": "Music",
+      "url": "https://live-evg5.tv360.bitel.com.pe/bitel/mieltvSRT/playlist.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Impact TV Dance (1080p)",
+      "country": "RO",
+      "group": "Music",
+      "url": "https://online.tvimpact.live/hls/dancetv.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
     },
     {
       "name": "Lingkar TV",
@@ -1635,38 +1710,12 @@
       "group": "Music",
       "url": "https://lingkartv.my.id/hls/lingkartv.m3u8",
       "reason": "délai dépassé"
-    }
-  ],
-  "dead": [
-    {
-      "name": "ESPN 2 Latin America (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://barinaslive1.boldmss.com/ESPN_2/ESPN_2.isml/ESPN_2.m3u8",
-      "reason": "segment : HTTP 404",
-      "code": 404
     },
     {
-      "name": "RVTV (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://rvtv-on-freecast.b-cdn.net/RVTV-on-Freecast/index.m3u8",
-      "reason": "segment : HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "PK Sports (720p)",
-      "country": "PK",
-      "group": "Sport",
-      "url": "https://lbgo.bozztv.com/ssh101/ssh101/pksportshd/playlist.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Muzvar (1080p)",
-      "country": "UA",
+      "name": "Steelbird Music (720p)",
+      "country": "IN",
       "group": "Music",
-      "url": "https://cdn15.live-tv.cloud/ua_infinitas_tv/muzvar-abr/playlist.m3u8",
+      "url": "https://cdn2.in/SteelbirdMusicTVhls/live.m3u8",
       "reason": "HTTP 404",
       "code": 404
     }
