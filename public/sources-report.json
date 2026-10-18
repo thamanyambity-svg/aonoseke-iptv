@@ -1,17 +1,16 @@
 {
-  "generatedAt": "2026-10-18T15:08:32.844Z",
+  "generatedAt": "2026-10-18T19:54:02.254Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
   "counts": {
-    "checked": 1520,
-    "ok": 1306,
-    "geoBlocked": 198,
-    "pending": 11,
-    "dead": 5
+    "checked": 1515,
+    "ok": 1316,
+    "geoBlocked": 195,
+    "pending": 1,
+    "dead": 3
   },
   "deadReasons": {
-    "segment : HTTP 404": 1,
-    "HTTP 404": 3,
-    "délai dépassé": 1
+    "HTTP 404": 2,
+    "segment : HTTP 404": 1
   },
   "geoBlocked": [
     {
@@ -20,14 +19,6 @@
       "group": "Afrique",
       "url": "http://trn03.bozztv.com/gin-telecongo/index.m3u8",
       "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "WDEF-TV News Chattanooga TN (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://townnews.g-mana.live/media/a54a6409-5e91-46f0-9fee-06904c1fd094/main.m3u8",
-      "reason": "segment refusé (HTTP 403)",
       "code": 403
     },
     {
@@ -1295,14 +1286,6 @@
       "code": 403
     },
     {
-      "name": "Esport3 (1080p)",
-      "country": "ES",
-      "group": "Sport",
-      "url": "https://directes-tv-int.3catdirectes.cat/live-content/esport3-hls/master.m3u8",
-      "reason": "segment refusé (HTTP 403)",
-      "code": 403
-    },
-    {
       "name": "K19",
       "country": "AT",
       "group": "Sport",
@@ -1583,14 +1566,6 @@
       "code": 403
     },
     {
-      "name": "TRT Cocuk (1440p)",
-      "country": "TR",
-      "group": "Kids",
-      "url": "https://tv-trtcocuk.medya.trt.com.tr/master.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "YleX (720p)",
       "country": "FI",
       "group": "Music",
@@ -1601,122 +1576,36 @@
   ],
   "pending": [
     {
-      "name": "AMGA TV (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://streamer1.connectto.com/AMGA_WEB_1202/playlist.m3u8",
-      "reason": "HTTP 503",
-      "code": 503
-    },
-    {
-      "name": "Deluxe Dance (1080p)",
-      "country": "DE",
-      "group": "Music",
-      "url": "https://sdn-global-live-streaming-packager-cache.3qsdn.com/64733/64733_264_live.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Deluxe Rap (1080p)",
-      "country": "DE",
-      "group": "Music",
-      "url": "https://sdn-global-live-streaming-packager-cache.3qsdn.com/65183/65183_264_live.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "KiKA (1080p)",
-      "country": "DE",
-      "group": "Kids",
-      "url": "https://kikageohls.akamaized.net/hls/live/2022693/livetvkika_de/master.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "La Kalle (720p)",
-      "country": "CO",
-      "group": "Music",
-      "url": "https://mdstrm.com/live-stream-playlist/58d191f07290fbb058025843.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Latina Clasicos (1080p)",
-      "country": "PE",
-      "group": "Series",
-      "url": "https://redirector.rudo.video/hls-video/plus226/latina2/latina2.smil/playlist.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Epic Bhojpuri (1080p)",
-      "country": "IN",
-      "group": "Movies",
-      "url": "https://cc-8hy4a26pz2uos.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-8hy4a26pz2uos/playlist.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "M-1 (480p)",
-      "country": "LT",
-      "group": "Music",
-      "url": "https://m-1.data.lt/m-1/smil:m-1.smil/playlist.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Maah TV (720p)",
-      "country": "MY",
-      "group": "Movies",
-      "url": "https://hls.maahtv.live/hls/stream.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Magic TV (720p)",
-      "country": "BG",
-      "group": "Music",
-      "url": "https://bss1.neterra.tv/magictv/magictv.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Maha Movie (576p)",
-      "country": "IN",
-      "group": "Movies",
-      "url": "https://cdn.pishow.tv/ott/live/10007/master.m3u8",
+      "name": "A Haber (1080p)",
+      "country": "TR",
+      "group": "News",
+      "url": "https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/ahaber/ahaber.m3u8",
       "reason": "délai dépassé"
     }
   ],
   "dead": [
     {
-      "name": "Telemundo Internacional (1080p)",
+      "name": "Adinkra TV (1080p)",
+      "country": "GH",
+      "group": "Afrique",
+      "url": "https://59d39900ebfb8.streamlock.net/adinkratvny/adinkratvny/playlist.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "De Pelicula US (720p)",
       "country": "US",
-      "group": "Latino",
-      "url": "http://190.60.46.156:8089/TELEMUNDO/index.m3u8",
-      "reason": "segment : HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Miel TV (720p)",
-      "country": "PE",
-      "group": "Music",
-      "url": "https://live-evg5.tv360.bitel.com.pe/bitel/mieltvSRT/playlist.m3u8",
+      "group": "USA",
+      "url": "http://138.121.15.230:9002/DEPELICULA/index.m3u8",
       "reason": "HTTP 404",
       "code": 404
     },
     {
-      "name": "Impact TV Dance (1080p)",
-      "country": "RO",
-      "group": "Music",
-      "url": "https://online.tvimpact.live/hls/dancetv.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Lingkar TV",
-      "country": "ID",
-      "group": "Music",
-      "url": "https://lingkartv.my.id/hls/lingkartv.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Steelbird Music (720p)",
+      "name": "Mastiii (576p)",
       "country": "IN",
       "group": "Music",
-      "url": "https://cdn2.in/SteelbirdMusicTVhls/live.m3u8",
-      "reason": "HTTP 404",
+      "url": "https://mumbai-edge.smartplaytv.in/MastiMusic/index.m3u8",
+      "reason": "segment : HTTP 404",
       "code": 404
     }
   ]
