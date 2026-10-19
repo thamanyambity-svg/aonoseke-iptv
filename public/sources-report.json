@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-10-19T11:39:35.275Z",
+  "generatedAt": "2026-10-19T18:00:59.097Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
   "counts": {
-    "checked": 1509,
-    "ok": 1304,
-    "geoBlocked": 195,
-    "pending": 5,
-    "dead": 5
+    "checked": 1504,
+    "ok": 1290,
+    "geoBlocked": 196,
+    "pending": 14,
+    "dead": 4
   },
   "deadReasons": {
-    "HTTP 404": 3,
-    "segment : HTTP 404": 1,
-    "délai dépassé": 1
+    "variante : HTTP 404": 2,
+    "HTTP 404": 1,
+    "segment : HTTP 404": 1
   },
   "geoBlocked": [
     {
@@ -791,6 +791,14 @@
       "code": 403
     },
     {
+      "name": "Leman Bleu (1080p)",
+      "country": "CH",
+      "group": "France",
+      "url": "http://livevideo.infomaniak.com/streaming/livecast/naxoo/playlist.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
       "name": "RTL9 (720p)",
       "country": "LU",
       "group": "France",
@@ -1279,14 +1287,6 @@
       "code": 403
     },
     {
-      "name": "Esport3 (1080p)",
-      "country": "ES",
-      "group": "Sport",
-      "url": "https://directes-tv-int.3catdirectes.cat/live-content/esport3-hls/master.m3u8",
-      "reason": "segment refusé (HTTP 403)",
-      "code": 403
-    },
-    {
       "name": "K19",
       "country": "AT",
       "group": "Sport",
@@ -1463,6 +1463,14 @@
       "code": 403
     },
     {
+      "name": "TVI Ficcao (720p)",
+      "country": "PT",
+      "group": "Series",
+      "url": "https://raw.githubusercontent.com/thomraider12/canaistvpt/main/m3u8s/tvificcao.m3u8",
+      "reason": "variante : HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
       "name": "Video Rola (1080p)",
       "country": "IT",
       "group": "Music",
@@ -1577,80 +1585,147 @@
   ],
   "pending": [
     {
-      "name": "Leman Bleu (1080p)",
-      "country": "CH",
-      "group": "France",
-      "url": "http://livevideo.infomaniak.com/streaming/livecast/naxoo/playlist.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "AMGA TV (720p)",
+      "name": "30A Luxe Life Discovered (720p)",
       "country": "US",
       "group": "USA",
-      "url": "https://streamer1.connectto.com/AMGA_WEB_1202/playlist.m3u8",
+      "url": "https://30a-tv.com/feeds/vidaa/luxelife.m3u8",
+      "reason": "erreur réseau (UND_ERR_SOCKET)"
+    },
+    {
+      "name": "30A Music (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://30a-tv.com/feeds/ceftech/30atvmusic.m3u8",
+      "reason": "erreur réseau (UND_ERR_SOCKET)"
+    },
+    {
+      "name": "City Eden KinoDok",
+      "country": "RU",
+      "group": "Documentary",
+      "url": "https://cityeden.catcast.tv/content/38354/index.m3u8",
       "reason": "HTTP 503",
       "code": 503
     },
     {
-      "name": "National Iranian Congress TV",
-      "country": "US",
-      "group": "USA",
-      "url": "https://tv.iraniancongress.com/stream/tv.m3u8",
-      "reason": "certificat invalide"
-    },
-    {
-      "name": "Epic Crimes (1080p)",
-      "country": "IN",
-      "group": "Documentary",
-      "url": "https://cc-wsuyg2uxeak04.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-wsuyg2uxeak04/master.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Magic TV (720p)",
-      "country": "BG",
+      "name": "City Eden Birma Play",
+      "country": "RU",
       "group": "Music",
-      "url": "https://bss1.neterra.tv/magictv/magictv.m3u8",
-      "reason": "délai dépassé"
+      "url": "https://cityeden.catcast.tv/content/34364/index.m3u8",
+      "reason": "HTTP 503",
+      "code": 503
+    },
+    {
+      "name": "City Eden KinoAction",
+      "country": "RU",
+      "group": "Movies",
+      "url": "https://cityeden.catcast.tv/content/41333/index.m3u8",
+      "reason": "HTTP 503",
+      "code": 503
+    },
+    {
+      "name": "City Eden KinoArt",
+      "country": "RU",
+      "group": "Movies",
+      "url": "https://cityeden.catcast.tv/content/38398/index.m3u8",
+      "reason": "HTTP 503",
+      "code": 503
+    },
+    {
+      "name": "City Eden KinoAsia",
+      "country": "RU",
+      "group": "Movies",
+      "url": "https://cityeden.catcast.tv/content/34393/index.m3u8",
+      "reason": "HTTP 503",
+      "code": 503
+    },
+    {
+      "name": "City Eden KinoDetektiv",
+      "country": "RU",
+      "group": "Movies",
+      "url": "https://cityeden.catcast.tv/content/41327/index.m3u8",
+      "reason": "HTTP 503",
+      "code": 503
+    },
+    {
+      "name": "City Eden KinoDrama",
+      "country": "RU",
+      "group": "Movies",
+      "url": "https://cityeden.catcast.tv/content/45269/index.m3u8",
+      "reason": "HTTP 503",
+      "code": 503
+    },
+    {
+      "name": "City Eden KinoFantastika",
+      "country": "RU",
+      "group": "Movies",
+      "url": "https://cityeden.catcast.tv/content/45268/index.m3u8",
+      "reason": "HTTP 503",
+      "code": 503
+    },
+    {
+      "name": "City Eden KinoKlassika",
+      "country": "RU",
+      "group": "Movies",
+      "url": "https://cityeden.catcast.tv/content/34185/index.m3u8",
+      "reason": "HTTP 503",
+      "code": 503
+    },
+    {
+      "name": "City Eden KinoKomediya",
+      "country": "RU",
+      "group": "Movies",
+      "url": "https://cityeden.catcast.tv/content/41331/index.m3u8",
+      "reason": "HTTP 503",
+      "code": 503
+    },
+    {
+      "name": "City Eden KinoMistika",
+      "country": "RU",
+      "group": "Movies",
+      "url": "https://cityeden.catcast.tv/content/40783/index.m3u8",
+      "reason": "HTTP 503",
+      "code": 503
+    },
+    {
+      "name": "City Eden Sirtaki TV",
+      "country": "RU",
+      "group": "Music",
+      "url": "https://cityeden.catcast.tv/content/46421/index.m3u8",
+      "reason": "HTTP 503",
+      "code": 503
     }
   ],
   "dead": [
     {
-      "name": "KC2 (720p)",
-      "country": "RW",
-      "group": "Afrique",
-      "url": "https://5c46fa289c89f.streamlock.net/kc2/kc2/chunklist.m3u8",
+      "name": "Al Mayadeen (576p)",
+      "country": "LB",
+      "group": "News",
+      "url": "https://mdnlv.cdn.octivid.com/almdn/smil:mpegts.stream.smil/playlist.m3u8",
+      "reason": "variante : HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Belarus-5 (1080p)",
+      "country": "BY",
+      "group": "Sport",
+      "url": "https://ngtrk.dc.beltelecom.by/ngtrk/smil:belarus5.smil/playlist.m3u8",
+      "reason": "variante : HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Sqala TV (720p)",
+      "country": "PE",
+      "group": "Sport",
+      "url": "https://live-evg8.tv360.bitel.com.pe/bitel/studiotvhuanta/playlist.m3u8",
       "reason": "HTTP 404",
       "code": 404
     },
     {
-      "name": "Diaspora 24",
-      "country": "SN",
-      "group": "Afrique",
-      "url": "https://vdo3.pro-fhi.net:3218/stream/play.m3u8",
-      "reason": "segment : HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Az Corazon (720p)",
-      "country": "MX",
-      "group": "Latino",
-      "url": "http://200.115.120.1:8000/play/ca020/index.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Logos TV Kids (720p)",
-      "country": "ES",
-      "group": "Kids",
-      "url": "https://streamer1.streamhost.org/salive/logoskidsH/playlist.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Look Thoong TV (720p)",
-      "country": "LA",
+      "name": "Cumbia Mix (720p)",
+      "country": "AR",
       "group": "Music",
-      "url": "https://livefta.malimarcdn.com/ftaedge00/lookthoongtv.sdp/playlist.m3u8",
-      "reason": "HTTP 404",
+      "url": "https://cloud.tvomix.com/CUMBIAMIX/index.m3u8",
+      "reason": "segment : HTTP 404",
       "code": 404
     }
   ]
