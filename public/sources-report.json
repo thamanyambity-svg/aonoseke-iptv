@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-10-19T18:00:59.097Z",
+  "generatedAt": "2026-10-20T02:46:09.122Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
   "counts": {
-    "checked": 1504,
-    "ok": 1290,
-    "geoBlocked": 196,
-    "pending": 14,
-    "dead": 4
+    "checked": 1500,
+    "ok": 1285,
+    "geoBlocked": 195,
+    "pending": 5,
+    "dead": 15
   },
   "deadReasons": {
-    "variante : HTTP 404": 2,
-    "HTTP 404": 1,
-    "segment : HTTP 404": 1
+    "HTTP 404": 2,
+    "erreur réseau (UND_ERR_SOCKET)": 1,
+    "HTTP 503": 12
   },
   "geoBlocked": [
     {
@@ -847,14 +847,6 @@
       "code": 403
     },
     {
-      "name": "ARTN TV (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://streamer1.connectto.com/ARTN_mobile/index.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "AuroraTV (720p)",
       "country": "US",
       "group": "USA",
@@ -1287,6 +1279,14 @@
       "code": 403
     },
     {
+      "name": "Esport3 (1080p)",
+      "country": "ES",
+      "group": "Sport",
+      "url": "https://directes-tv-int.3catdirectes.cat/live-content/esport3-hls/master.m3u8",
+      "reason": "segment refusé (HTTP 403)",
+      "code": 403
+    },
+    {
       "name": "K19",
       "country": "AT",
       "group": "Sport",
@@ -1463,14 +1463,6 @@
       "code": 403
     },
     {
-      "name": "TVI Ficcao (720p)",
-      "country": "PT",
-      "group": "Series",
-      "url": "https://raw.githubusercontent.com/thomraider12/canaistvpt/main/m3u8s/tvificcao.m3u8",
-      "reason": "variante : HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "Video Rola (1080p)",
       "country": "IT",
       "group": "Music",
@@ -1585,11 +1577,49 @@
   ],
   "pending": [
     {
-      "name": "30A Luxe Life Discovered (720p)",
+      "name": "Fight Network (720p)",
+      "country": "CA",
+      "group": "Sport",
+      "url": "https://a-cdn.klowdtv.com/live2/fight_720p/playlist.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Fun Vision",
+      "country": "BE",
+      "group": "France",
+      "url": "https://funradiovisionhd.vedge.infomaniak.com/livecast/ik:funradiovisionhd/manifest.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "AMGA TV (720p)",
       "country": "US",
       "group": "USA",
-      "url": "https://30a-tv.com/feeds/vidaa/luxelife.m3u8",
-      "reason": "erreur réseau (UND_ERR_SOCKET)"
+      "url": "https://streamer1.connectto.com/AMGA_WEB_1202/playlist.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "ARTN TV (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://streamer1.connectto.com/ARTN_mobile/index.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "KIIO-LD 10.4 (480p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://streamer1.connectto.com/AABC_WEB_1201/index.m3u8",
+      "reason": "délai dépassé"
+    }
+  ],
+  "dead": [
+    {
+      "name": "Capuchin TV",
+      "country": "KE",
+      "group": "Afrique",
+      "url": "https://goliveafrica.media:9998/live/64227f58b8413/index.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
     },
     {
       "name": "30A Music (720p)",
@@ -1605,6 +1635,14 @@
       "url": "https://cityeden.catcast.tv/content/38354/index.m3u8",
       "reason": "HTTP 503",
       "code": 503
+    },
+    {
+      "name": "TR Sport (480p)",
+      "country": "IT",
+      "group": "Sport",
+      "url": "https://livetr.teleromagna.it/mia/live/playlist.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
     },
     {
       "name": "City Eden Birma Play",
@@ -1693,40 +1731,6 @@
       "url": "https://cityeden.catcast.tv/content/46421/index.m3u8",
       "reason": "HTTP 503",
       "code": 503
-    }
-  ],
-  "dead": [
-    {
-      "name": "Al Mayadeen (576p)",
-      "country": "LB",
-      "group": "News",
-      "url": "https://mdnlv.cdn.octivid.com/almdn/smil:mpegts.stream.smil/playlist.m3u8",
-      "reason": "variante : HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Belarus-5 (1080p)",
-      "country": "BY",
-      "group": "Sport",
-      "url": "https://ngtrk.dc.beltelecom.by/ngtrk/smil:belarus5.smil/playlist.m3u8",
-      "reason": "variante : HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Sqala TV (720p)",
-      "country": "PE",
-      "group": "Sport",
-      "url": "https://live-evg8.tv360.bitel.com.pe/bitel/studiotvhuanta/playlist.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Cumbia Mix (720p)",
-      "country": "AR",
-      "group": "Music",
-      "url": "https://cloud.tvomix.com/CUMBIAMIX/index.m3u8",
-      "reason": "segment : HTTP 404",
-      "code": 404
     }
   ]
 }
