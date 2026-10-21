@@ -1,17 +1,18 @@
 {
-  "generatedAt": "2026-10-21T10:53:24.655Z",
+  "generatedAt": "2026-10-21T16:21:18.408Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
   "counts": {
-    "checked": 1467,
-    "ok": 1247,
-    "geoBlocked": 200,
-    "pending": 14,
-    "dead": 6
+    "checked": 1461,
+    "ok": 1250,
+    "geoBlocked": 203,
+    "pending": 4,
+    "dead": 4
   },
   "deadReasons": {
-    "variante : HTTP 404": 1,
-    "HTTP 404": 3,
-    "segment : HTTP 404": 2
+    "HTTP 404": 1,
+    "segment illisible (pas de vidéo)": 1,
+    "délai dépassé": 1,
+    "réponse qui n'est pas un flux HLS": 1
   },
   "geoBlocked": [
     {
@@ -1495,6 +1496,30 @@
       "code": 403
     },
     {
+      "name": "Cartoon Classics",
+      "country": "PL",
+      "group": "Kids",
+      "url": "https://daiconnect.com/live/hls/tvup/rk-cartoonclassics/578f4b7eb725168349ec0af81b21d388/index.m3u8",
+      "reason": "segment refusé (HTTP 403)",
+      "code": 403
+    },
+    {
+      "name": "Drama Channel (1080p)",
+      "country": "TH",
+      "group": "Series",
+      "url": "https://lb1-live-mv.v2h-cdn.com/hls/fdee/mvmalldd/mvmalldd.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "DR Ramasjang (720p)",
+      "country": "DK",
+      "group": "Kids",
+      "url": "https://drlive03hls.akamaized.net/hls/live/2014190/drlive03/master.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
       "name": "Filmax (576p)",
       "country": "PK",
       "group": "Movies",
@@ -1617,39 +1642,50 @@
   ],
   "pending": [
     {
-      "name": "TVI Ficcao (720p)",
-      "country": "PT",
-      "group": "Series",
-      "url": "https://raw.githubusercontent.com/thomraider12/canaistvpt/main/m3u8s/tvificcao.m3u8",
+      "name": "National Iranian Congress TV",
+      "country": "US",
+      "group": "USA",
+      "url": "https://tv.iraniancongress.com/stream/tv.m3u8",
+      "reason": "certificat invalide"
+    },
+    {
+      "name": "DocuBay TV (1080p)",
+      "country": "IN",
+      "group": "Documentary",
+      "url": "https://cc-mgr91yrk4pehy.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-mgr91yrk4pehy/playlist.m3u8",
       "reason": "délai dépassé"
     },
     {
-      "name": "Carousel (576p)",
-      "country": "RU",
+      "name": "Epic Crimes (1080p)",
+      "country": "IN",
+      "group": "Documentary",
+      "url": "https://cc-wsuyg2uxeak04.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-wsuyg2uxeak04/master.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Minika Go (720p)",
+      "country": "TR",
       "group": "Kids",
-      "url": "https://stream.smotrim.ru/hls2/karusel/playlist_3.m3u8",
+      "url": "https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/minikago/minikago.m3u8",
       "reason": "délai dépassé"
+    }
+  ],
+  "dead": [
+    {
+      "name": "EBS Musika (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://rpn.bozztv.com/ebstv/ebsmusika/index.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
     },
     {
-      "name": "Cartoon Classics",
-      "country": "PL",
-      "group": "Kids",
-      "url": "https://daiconnect.com/live/hls/tvup/rk-cartoonclassics/578f4b7eb725168349ec0af81b21d388/index.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Cinema",
-      "country": "RU",
-      "group": "Movies",
-      "url": "https://stream8.cinerama.uz/1227/tracks-v1a1/mono.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Cinemaraton Plus (1080i)",
-      "country": "RO",
-      "group": "Movies",
-      "url": "https://hls02ns.antenaplay.ro/hls/cinemaraton-plus-hd/index.m3u8",
-      "reason": "délai dépassé"
+      "name": "Deluxe Rap (1080p)",
+      "country": "DE",
+      "group": "Music",
+      "url": "https://sdn-global-live-streaming-packager-cache.3qsdn.com/65183/65183_264_live.m3u8",
+      "reason": "segment illisible (pas de vidéo)",
+      "code": 200
     },
     {
       "name": "City Eden TeleNovella",
@@ -1659,110 +1695,12 @@
       "reason": "délai dépassé"
     },
     {
-      "name": "City TV (576p)",
-      "country": "BG",
+      "name": "Tezaur TV (576i)",
+      "country": "MD",
       "group": "Music",
-      "url": "https://tv.city.bg/play/tshls/citytv/index.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Dance Television (1080p)",
-      "country": "NL",
-      "group": "Music",
-      "url": "https://m1b2.worldcast.tv/dancetelevisionone/2/dancetelevisionone.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "DanceTV Deep House District (1080p)",
-      "country": "EE",
-      "group": "Music",
-      "url": "https://m1b2.worldcast.tv/dancetelevisiontwo/dancetelevisiontwo.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Deep House District (1080p)",
-      "country": "NL",
-      "group": "Music",
-      "url": "https://eu-nl-012.worldcast.tv/dancetelevisiontwo/dancetelevisiontwo.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Dom kino",
-      "country": "RU",
-      "group": "Movies",
-      "url": "https://stream8.cinerama.uz/1054/tracks-v1a1/mono.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Drama Channel (1080p)",
-      "country": "TH",
-      "group": "Series",
-      "url": "https://lb1-live-mv.v2h-cdn.com/hls/fdee/mvmalldd/mvmalldd.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "DR Ramasjang (720p)",
-      "country": "DK",
-      "group": "Kids",
-      "url": "https://drlive03hls.akamaized.net/hls/live/2014190/drlive03/master.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "ducktv (720p)",
-      "country": "SK",
-      "group": "Kids",
-      "url": "https://mmm-dk.otteravision.com/DexaYJdJXkLqFxTK_DuckTVHDSAMS/DuckTVHDSAMS.stream/playlist.m3u8",
-      "reason": "délai dépassé"
-    }
-  ],
-  "dead": [
-    {
-      "name": "W14DK-D 14.1 TV Delmarva",
-      "country": "US",
-      "group": "USA",
-      "url": "https://2-fss-2.streamhoster.com/pl_118/amlst:204972-1949480/playlist.m3u8",
-      "reason": "variante : HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "W14DK-D 14.2 NEWSNET",
-      "country": "US",
-      "group": "USA",
-      "url": "https://2-fss-2.streamhoster.com/pl_118/204972-1954106-1/playlist.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Isango TV (480p)",
-      "country": "RW",
-      "group": "Afrique",
-      "url": "http://80.241.215.175:1935/isangostar/isangostar/playlist.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Vision Latina Network (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://cdn-cloudfront.us-east-1.prod.ingest.aws-infra.dacast.com/live/c1804a4c-ccbf-46e5-87c3-0f8d4a94d9e3/master.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "viju+ Sport",
-      "country": "RU",
-      "group": "Sport",
-      "url": "https://stream8.cinerama.uz/1229/tracks-v1a1/mono.m3u8",
-      "reason": "segment : HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Oscar Movies Bhojpuri (720p)",
-      "country": "IN",
-      "group": "Movies",
-      "url": "https://cdn.pishow.tv/ott/live/233/master.m3u8",
-      "reason": "segment : HTTP 404",
-      "code": 404
+      "url": "https://tezaurtv.md/stream/index.m3u8",
+      "reason": "réponse qui n'est pas un flux HLS",
+      "code": 200
     }
   ]
 }
