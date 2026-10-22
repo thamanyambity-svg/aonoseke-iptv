@@ -1,18 +1,16 @@
 {
-  "generatedAt": "2026-10-22T16:20:55.427Z",
+  "generatedAt": "2026-10-22T21:00:45.578Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
   "counts": {
-    "checked": 1441,
-    "ok": 1231,
-    "geoBlocked": 202,
-    "pending": 3,
+    "checked": 1436,
+    "ok": 1224,
+    "geoBlocked": 203,
+    "pending": 4,
     "dead": 5
   },
   "deadReasons": {
-    "variante : HTTP 404": 1,
+    "segment : HTTP 404": 3,
     "délai dépassé": 1,
-    "segment : HTTP 404": 1,
-    "CORS refusé pour le site web": 1,
     "HTTP 404": 1
   },
   "geoBlocked": [
@@ -1297,6 +1295,14 @@
       "code": 403
     },
     {
+      "name": "Esport3 (1080p)",
+      "country": "ES",
+      "group": "Sport",
+      "url": "https://directes-tv-int.3catdirectes.cat/live-content/esport3-hls/master.m3u8",
+      "reason": "segment refusé (HTTP 403)",
+      "code": 403
+    },
+    {
       "name": "K19",
       "country": "AT",
       "group": "Sport",
@@ -1469,7 +1475,7 @@
       "country": "PT",
       "group": "Series",
       "url": "https://raw.githubusercontent.com/thomraider12/canaistvpt/main/m3u8s/tvificcao.m3u8",
-      "reason": "segment refusé (HTTP 403)",
+      "reason": "variante : HTTP 403 (accès refusé)",
       "code": 403
     },
     {
@@ -1635,12 +1641,43 @@
   ],
   "pending": [
     {
-      "name": "Maxcine Family (720p)",
+      "name": "El Watania 1 (1080i)",
+      "country": "TN",
+      "group": "Afrique",
+      "url": "https://sw1.tanitweb.net/TunisiaTV/_definst_/watania1/chunklist.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "El Watania 2 (1080p)",
+      "country": "TN",
+      "group": "Afrique",
+      "url": "https://sw1.tanitweb.net/TunisiaTV/_definst_/watania2/playlist.m3u8?DVR",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "KIIO-LD 10.4 (480p)",
       "country": "US",
       "group": "USA",
-      "url": "https://live20.bozztv.com/giatvplayout7/giatv-208817/playlist.m3u8",
-      "reason": "HTTP 502",
-      "code": 502
+      "url": "https://streamer1.connectto.com/AABC_WEB_1201/index.m3u8",
+      "reason": "HTTP 503",
+      "code": 503
+    },
+    {
+      "name": "One TV (720p)",
+      "country": "LB",
+      "group": "Music",
+      "url": "https://hms.pfs.gdn/v1/broadcast/one/playlist.m3u8",
+      "reason": "certificat invalide"
+    }
+  ],
+  "dead": [
+    {
+      "name": "CAM 10 TV (720p)",
+      "country": "CM",
+      "group": "Afrique",
+      "url": "https://stream.it-innov.com/cam10tv/index.m3u8",
+      "reason": "segment : HTTP 404",
+      "code": 404
     },
     {
       "name": "Bandamax (1080p)",
@@ -1650,50 +1687,26 @@
       "reason": "délai dépassé"
     },
     {
-      "name": "Jordan Sport (1080p)",
-      "country": "JO",
-      "group": "Sport",
-      "url": "https://jrtv-live.ercdn.net/jordansporthd/jordansporthd.m3u8",
-      "reason": "délai dépassé"
-    }
-  ],
-  "dead": [
-    {
-      "name": "Morning Cloud TV (720p)",
-      "country": "KE",
-      "group": "Afrique",
-      "url": "https://livecdn.live247stream.com/mc/tv/playlist.m3u8",
-      "reason": "variante : HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Spirit TV (720p) [Not 24/7]",
+      "name": "HTV (720p)",
       "country": "US",
       "group": "USA",
-      "url": "https://cdnlive.myspirit.tv/LS-ATL-43240-2/index.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Tele MB (504p)",
-      "country": "BE",
-      "group": "France",
-      "url": "https://dlgt0tdl2hpq3.cloudfront.net/rtbf/clr-rtbf/d14f1e64/index.m3u8",
+      "url": "https://streaming.onnethn.com/HTV/playlist.m3u8",
       "reason": "segment : HTTP 404",
       "code": 404
     },
     {
-      "name": "TRT Spor Yildiz (1440p)",
-      "country": "TR",
+      "name": "Astrahan.Ru Sport (720p)",
+      "country": "RU",
       "group": "Sport",
-      "url": "https://trt.daioncdn.net/trtspor-yildiz/master.m3u8?app=web&platform=trtspor",
-      "reason": "CORS refusé pour le site web",
-      "code": 200
+      "url": "https://streaming.astrakhan.ru/astrakhanrusporthd/playlist.m3u8",
+      "reason": "segment : HTTP 404",
+      "code": 404
     },
     {
-      "name": "Patriot (720p)",
-      "country": "RU",
-      "group": "Movies",
-      "url": "https://stream.smotrim.ru/hls2/static/playlist_4.m3u8",
+      "name": "Isai Aruvi (396p)",
+      "country": "IN",
+      "group": "Music",
+      "url": "https://segment.yuppcdn.net/140622/isaiaruvi/playlist.m3u8",
       "reason": "HTTP 404",
       "code": 404
     }
