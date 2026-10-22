@@ -1,19 +1,15 @@
 {
-  "generatedAt": "2026-10-21T21:03:42.926Z",
+  "generatedAt": "2026-10-22T02:37:47.382Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
   "counts": {
-    "checked": 1457,
-    "ok": 1248,
+    "checked": 1452,
+    "ok": 1235,
     "geoBlocked": 203,
-    "pending": 1,
-    "dead": 5
+    "pending": 13,
+    "dead": 1
   },
   "deadReasons": {
-    "segment : HTTP 404": 1,
-    "HTTP 404": 1,
-    "flux terminé (ENDLIST)": 1,
-    "pas d'autorisation CORS (illisible dans le navigateur et l'appli)": 1,
-    "CORS refusé pour le site web": 1
+    "HTTP 404": 1
   },
   "geoBlocked": [
     {
@@ -105,6 +101,14 @@
       "code": 403
     },
     {
+      "name": "CNA (360p)",
+      "country": "DZ",
+      "group": "Afrique",
+      "url": "https://live.creacast.com/cna/stream/playlist.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
       "name": "Dounia TV",
       "country": "NE",
       "group": "Afrique",
@@ -117,6 +121,14 @@
       "country": "FR",
       "group": "France",
       "url": "https://sv1.data-stream.top/8c0a287e56a6e1843143904778be3775b4d3edd4fba4ffcc3f72638c7a71d4d4/hls/francetv4.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "ILTV (720p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://live.creacast.com/iltv/smil:iltv.smil/playlist.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -621,14 +633,6 @@
       "country": "FR",
       "group": "France",
       "url": "http://145.239.5.177/318/index.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "TVC (720p)",
-      "country": "NG",
-      "group": "Afrique",
-      "url": "http://212.5.144.156:8080/tvc/index.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -1473,14 +1477,6 @@
       "code": 403
     },
     {
-      "name": "TVI Ficcao (720p)",
-      "country": "PT",
-      "group": "Series",
-      "url": "https://raw.githubusercontent.com/thomraider12/canaistvpt/main/m3u8s/tvificcao.m3u8",
-      "reason": "segment refusé (HTTP 403)",
-      "code": 403
-    },
-    {
       "name": "Video Rola (1080p)",
       "country": "IT",
       "group": "Music",
@@ -1643,53 +1639,106 @@
   ],
   "pending": [
     {
-      "name": "Epic Music (1080p)",
-      "country": "IN",
-      "group": "Music",
-      "url": "https://cc-3cyxq80qusspd.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-3cyxq80qusspd/playlist.m3u8",
+      "name": "Rally TV (1080p)",
+      "country": "US",
+      "group": "Sport",
+      "url": "https://rally-tv-live.akamaized.net/hls/live/2117704/RallyTV-Pri/master.m3u8",
+      "reason": "segment : HTTP 503",
+      "code": 503
+    },
+    {
+      "name": "ESPN 3 Latin America (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://barinaslive1.boldmss.com/ESPN_3/ESPN_3.isml/ESPN_3.m3u8",
       "reason": "délai dépassé"
+    },
+    {
+      "name": "ESPN 4 Latin America (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://barinaslive1.boldmss.com/ESPN_4/ESPN_4.isml/ESPN_4.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "ESPN 5 Latin America (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://barinaslive1.boldmss.com/ESPN_5/ESPN_5.isml/ESPN_5.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "ESPN 6 Latin America (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://barinaslive1.boldmss.com/ESPN_6/ESPN_6.isml/ESPN_6.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "ESPN 7 Latin America (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://barinaslive1.boldmss.com/ESPN_7/ESPN_7.isml/ESPN_7.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "ESPN Latin America (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://barinaslive1.boldmss.com/ESPN/ESPN.isml/ESPN.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "FX Latin America (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://barinaslive1.boldmss.com/FX/FX.isml/FX.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "HappyKids (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://dil9xdvretp0f.cloudfront.net/index.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "National Geographic Latin America (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://barinaslive1.boldmss.com/NATGEO/NATGEO.isml/NATGEO.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Canal RCN (1080p)",
+      "country": "CO",
+      "group": "Latino",
+      "url": "https://barinaslive1.boldmss.com/RCN/RCN.isml/RCN.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Caracol TV (1080p)",
+      "country": "CO",
+      "group": "Latino",
+      "url": "https://barinaslive1.boldmss.com/CARACOL/CARACOL.isml/CARACOL.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "AWE (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://a-cdn.klowdtv.com/live1/awe_720p/playlist.m3u8",
+      "reason": "erreur réseau (ERR_SSL_TLSV1_ALERT_INTERNAL_ERROR)"
     }
   ],
   "dead": [
     {
-      "name": "Fox News Channel (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://tvsen6.aynaott.com/foxnews/index.m3u8",
-      "reason": "segment : HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Tlnovelas Mexico (1080p)",
+      "name": "Lobo TV (720p)",
       "country": "MX",
-      "group": "Telenovelas",
-      "url": "http://167.249.23.102:8000/play/a0g8/index.m3u8",
+      "group": "Music",
+      "url": "https://5ca3e84a76d30.streamlock.net/tvlobo/videotvlobo/playlist.m3u8",
       "reason": "HTTP 404",
       "code": 404
-    },
-    {
-      "name": "RTL Zwee (1080p)",
-      "country": "LU",
-      "group": "France",
-      "url": "https://live-edge.rtl.lu/channel2/smil:channel2/playlist.m3u8",
-      "reason": "flux terminé (ENDLIST)",
-      "code": 200
-    },
-    {
-      "name": "National Iranian Congress TV",
-      "country": "US",
-      "group": "USA",
-      "url": "https://tv.iraniancongress.com/stream/tv.m3u8",
-      "reason": "pas d'autorisation CORS (illisible dans le navigateur et l'appli)",
-      "code": 200
-    },
-    {
-      "name": "HauntTV (1080p)",
-      "country": "CA",
-      "group": "Series",
-      "url": "https://amg01446-blueantmediacan-haunttvaussam-samsungau-vcnai.amagi.tv/playlist/amg01446-blueantmediacan-haunttvaussam-samsungau/playlist.m3u8",
-      "reason": "CORS refusé pour le site web",
-      "code": 200
     }
   ]
 }
