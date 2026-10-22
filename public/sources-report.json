@@ -1,17 +1,19 @@
 {
-  "generatedAt": "2026-10-22T10:53:57.597Z",
+  "generatedAt": "2026-10-22T16:20:55.427Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
   "counts": {
-    "checked": 1451,
-    "ok": 1235,
+    "checked": 1441,
+    "ok": 1231,
     "geoBlocked": 202,
-    "pending": 4,
-    "dead": 10
+    "pending": 3,
+    "dead": 5
   },
   "deadReasons": {
-    "segment : HTTP 404": 5,
-    "variante : HTTP 404": 2,
-    "HTTP 404": 3
+    "variante : HTTP 404": 1,
+    "délai dépassé": 1,
+    "segment : HTTP 404": 1,
+    "CORS refusé pour le site web": 1,
+    "HTTP 404": 1
   },
   "geoBlocked": [
     {
@@ -1367,14 +1369,6 @@
       "code": 403
     },
     {
-      "name": "TRT Spor Yildiz (1440p)",
-      "country": "TR",
-      "group": "Sport",
-      "url": "https://trt.daioncdn.net/trtspor-yildiz/master.m3u8?app=web&platform=trtspor",
-      "reason": "segment refusé (HTTP 403)",
-      "code": 403
-    },
-    {
       "name": "TV Cuatro 4.3 (1080p)",
       "country": "MX",
       "group": "Sport",
@@ -1468,6 +1462,14 @@
       "group": "Kids",
       "url": "https://directes-tv-cat.3catdirectes.cat/live-content/super3-hls/master.m3u8",
       "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "TVI Ficcao (720p)",
+      "country": "PT",
+      "group": "Series",
+      "url": "https://raw.githubusercontent.com/thomraider12/canaistvpt/main/m3u8s/tvificcao.m3u8",
+      "reason": "segment refusé (HTTP 403)",
       "code": 403
     },
     {
@@ -1633,6 +1635,38 @@
   ],
   "pending": [
     {
+      "name": "Maxcine Family (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://live20.bozztv.com/giatvplayout7/giatv-208817/playlist.m3u8",
+      "reason": "HTTP 502",
+      "code": 502
+    },
+    {
+      "name": "Bandamax (1080p)",
+      "country": "MX",
+      "group": "Latino",
+      "url": "http://181.78.106.127:5000/play/ca064/index.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Jordan Sport (1080p)",
+      "country": "JO",
+      "group": "Sport",
+      "url": "https://jrtv-live.ercdn.net/jordansporthd/jordansporthd.m3u8",
+      "reason": "délai dépassé"
+    }
+  ],
+  "dead": [
+    {
+      "name": "Morning Cloud TV (720p)",
+      "country": "KE",
+      "group": "Afrique",
+      "url": "https://livecdn.live247stream.com/mc/tv/playlist.m3u8",
+      "reason": "variante : HTTP 404",
+      "code": 404
+    },
+    {
       "name": "Spirit TV (720p) [Not 24/7]",
       "country": "US",
       "group": "USA",
@@ -1640,106 +1674,27 @@
       "reason": "délai dépassé"
     },
     {
-      "name": "Monte Carlo Digital Television (1080p)",
-      "country": "FR",
-      "group": "France",
-      "url": "https://fl718492-exthls-p1.flovp.com/fl718492/live/live.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
       "name": "Tele MB (504p)",
       "country": "BE",
       "group": "France",
       "url": "https://dlgt0tdl2hpq3.cloudfront.net/rtbf/clr-rtbf/d14f1e64/index.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Aflam (1080p)",
-      "country": "SA",
-      "group": "Movies",
-      "url": "https://shd-amg-fast.edgenextcdn.net/tx001/playlist.m3u8",
-      "reason": "délai dépassé"
-    }
-  ],
-  "dead": [
-    {
-      "name": "Wan Luo TV (576p)",
-      "country": "UG",
-      "group": "Afrique",
-      "url": "https://stream.hydeinnovations.com/luotv-flussonic/index.m3u8",
       "reason": "segment : HTTP 404",
       "code": 404
     },
     {
-      "name": "QVC 3 (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://qvc-amd-live.akamaized.net/hls/live/2034113/lsqvc3us/master.m3u8",
-      "reason": "variante : HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Telemundo (1080p)",
-      "country": "US",
-      "group": "Latino",
-      "url": "https://streamer1.nexgen.bz/TELEMUNDO/index.m3u8",
-      "reason": "segment : HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Las Estrellas Latin America (1080p)",
-      "country": "MX",
-      "group": "Latino",
-      "url": "http://15.204.246.24:8080/LasEstrellasHD/index.m3u8",
-      "reason": "segment : HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Bahrain Sports 2 (720p)",
-      "country": "BH",
+      "name": "TRT Spor Yildiz (1440p)",
+      "country": "TR",
       "group": "Sport",
-      "url": "https://5c7b683162943.streamlock.net/live/ngrp:bahrainsportstwo_all/playlist.m3u8",
+      "url": "https://trt.daioncdn.net/trtspor-yildiz/master.m3u8?app=web&platform=trtspor",
+      "reason": "CORS refusé pour le site web",
+      "code": 200
+    },
+    {
+      "name": "Patriot (720p)",
+      "country": "RU",
+      "group": "Movies",
+      "url": "https://stream.smotrim.ru/hls2/static/playlist_4.m3u8",
       "reason": "HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Afarin TV (720p)",
-      "country": "IQ",
-      "group": "Kids",
-      "url": "https://65f16f0fdfc51.streamlock.net/afarinTV/livestream/playlist.m3u8",
-      "reason": "segment : HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "BTA TV (720p)",
-      "country": "VE",
-      "group": "Music",
-      "url": "https://cloud.fastchannel.es/manifiest/hls/prog9/btatv.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Deluxe Dance (1080p)",
-      "country": "DE",
-      "group": "Music",
-      "url": "https://sdn-global-live-streaming-packager-cache.3qsdn.com/64733/64733_264_live.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "BIZ Music (1080p)",
-      "country": "UZ",
-      "group": "Music",
-      "url": "https://fl.biztv.media/music_720_QAKpGmVUjaPApCNjpsgBxrdqNihAkl/index.m3u8",
-      "reason": "segment : HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Boogle Bollywood (720p)",
-      "country": "IN",
-      "group": "Music",
-      "url": "https://yuppnimrestreammum.akamaized.net/181224/smil:bogglebollywood.smil/playlist.m3u8?hdnts=st=1735898689~exp=1835898688~acl=*~hmac=f5fe24724fe05481e3841f9eb5ab8efdee0a3dd83645ae9dcf45703f525bab7b",
-      "reason": "variante : HTTP 404",
       "code": 404
     }
   ]
