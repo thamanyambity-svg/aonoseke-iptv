@@ -1,15 +1,17 @@
 {
-  "generatedAt": "2026-10-22T02:37:47.382Z",
+  "generatedAt": "2026-10-22T10:53:57.597Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
   "counts": {
-    "checked": 1452,
+    "checked": 1451,
     "ok": 1235,
-    "geoBlocked": 203,
-    "pending": 13,
-    "dead": 1
+    "geoBlocked": 202,
+    "pending": 4,
+    "dead": 10
   },
   "deadReasons": {
-    "HTTP 404": 1
+    "segment : HTTP 404": 5,
+    "variante : HTTP 404": 2,
+    "HTTP 404": 3
   },
   "geoBlocked": [
     {
@@ -1293,14 +1295,6 @@
       "code": 403
     },
     {
-      "name": "Esport3 (1080p)",
-      "country": "ES",
-      "group": "Sport",
-      "url": "https://directes-tv-int.3catdirectes.cat/live-content/esport3-hls/master.m3u8",
-      "reason": "segment refusé (HTTP 403)",
-      "code": 403
-    },
-    {
       "name": "K19",
       "country": "AT",
       "group": "Sport",
@@ -1639,105 +1633,113 @@
   ],
   "pending": [
     {
-      "name": "Rally TV (1080p)",
-      "country": "US",
-      "group": "Sport",
-      "url": "https://rally-tv-live.akamaized.net/hls/live/2117704/RallyTV-Pri/master.m3u8",
-      "reason": "segment : HTTP 503",
-      "code": 503
-    },
-    {
-      "name": "ESPN 3 Latin America (1080p)",
+      "name": "Spirit TV (720p) [Not 24/7]",
       "country": "US",
       "group": "USA",
-      "url": "https://barinaslive1.boldmss.com/ESPN_3/ESPN_3.isml/ESPN_3.m3u8",
+      "url": "https://cdnlive.myspirit.tv/LS-ATL-43240-2/index.m3u8",
       "reason": "délai dépassé"
     },
     {
-      "name": "ESPN 4 Latin America (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://barinaslive1.boldmss.com/ESPN_4/ESPN_4.isml/ESPN_4.m3u8",
+      "name": "Monte Carlo Digital Television (1080p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://fl718492-exthls-p1.flovp.com/fl718492/live/live.m3u8",
       "reason": "délai dépassé"
     },
     {
-      "name": "ESPN 5 Latin America (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://barinaslive1.boldmss.com/ESPN_5/ESPN_5.isml/ESPN_5.m3u8",
+      "name": "Tele MB (504p)",
+      "country": "BE",
+      "group": "France",
+      "url": "https://dlgt0tdl2hpq3.cloudfront.net/rtbf/clr-rtbf/d14f1e64/index.m3u8",
       "reason": "délai dépassé"
     },
     {
-      "name": "ESPN 6 Latin America (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://barinaslive1.boldmss.com/ESPN_6/ESPN_6.isml/ESPN_6.m3u8",
+      "name": "Aflam (1080p)",
+      "country": "SA",
+      "group": "Movies",
+      "url": "https://shd-amg-fast.edgenextcdn.net/tx001/playlist.m3u8",
       "reason": "délai dépassé"
-    },
-    {
-      "name": "ESPN 7 Latin America (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://barinaslive1.boldmss.com/ESPN_7/ESPN_7.isml/ESPN_7.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "ESPN Latin America (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://barinaslive1.boldmss.com/ESPN/ESPN.isml/ESPN.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "FX Latin America (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://barinaslive1.boldmss.com/FX/FX.isml/FX.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "HappyKids (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://dil9xdvretp0f.cloudfront.net/index.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "National Geographic Latin America (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://barinaslive1.boldmss.com/NATGEO/NATGEO.isml/NATGEO.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Canal RCN (1080p)",
-      "country": "CO",
-      "group": "Latino",
-      "url": "https://barinaslive1.boldmss.com/RCN/RCN.isml/RCN.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Caracol TV (1080p)",
-      "country": "CO",
-      "group": "Latino",
-      "url": "https://barinaslive1.boldmss.com/CARACOL/CARACOL.isml/CARACOL.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "AWE (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://a-cdn.klowdtv.com/live1/awe_720p/playlist.m3u8",
-      "reason": "erreur réseau (ERR_SSL_TLSV1_ALERT_INTERNAL_ERROR)"
     }
   ],
   "dead": [
     {
-      "name": "Lobo TV (720p)",
+      "name": "Wan Luo TV (576p)",
+      "country": "UG",
+      "group": "Afrique",
+      "url": "https://stream.hydeinnovations.com/luotv-flussonic/index.m3u8",
+      "reason": "segment : HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "QVC 3 (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://qvc-amd-live.akamaized.net/hls/live/2034113/lsqvc3us/master.m3u8",
+      "reason": "variante : HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Telemundo (1080p)",
+      "country": "US",
+      "group": "Latino",
+      "url": "https://streamer1.nexgen.bz/TELEMUNDO/index.m3u8",
+      "reason": "segment : HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Las Estrellas Latin America (1080p)",
       "country": "MX",
-      "group": "Music",
-      "url": "https://5ca3e84a76d30.streamlock.net/tvlobo/videotvlobo/playlist.m3u8",
+      "group": "Latino",
+      "url": "http://15.204.246.24:8080/LasEstrellasHD/index.m3u8",
+      "reason": "segment : HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Bahrain Sports 2 (720p)",
+      "country": "BH",
+      "group": "Sport",
+      "url": "https://5c7b683162943.streamlock.net/live/ngrp:bahrainsportstwo_all/playlist.m3u8",
       "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Afarin TV (720p)",
+      "country": "IQ",
+      "group": "Kids",
+      "url": "https://65f16f0fdfc51.streamlock.net/afarinTV/livestream/playlist.m3u8",
+      "reason": "segment : HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "BTA TV (720p)",
+      "country": "VE",
+      "group": "Music",
+      "url": "https://cloud.fastchannel.es/manifiest/hls/prog9/btatv.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Deluxe Dance (1080p)",
+      "country": "DE",
+      "group": "Music",
+      "url": "https://sdn-global-live-streaming-packager-cache.3qsdn.com/64733/64733_264_live.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "BIZ Music (1080p)",
+      "country": "UZ",
+      "group": "Music",
+      "url": "https://fl.biztv.media/music_720_QAKpGmVUjaPApCNjpsgBxrdqNihAkl/index.m3u8",
+      "reason": "segment : HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Boogle Bollywood (720p)",
+      "country": "IN",
+      "group": "Music",
+      "url": "https://yuppnimrestreammum.akamaized.net/181224/smil:bogglebollywood.smil/playlist.m3u8?hdnts=st=1735898689~exp=1835898688~acl=*~hmac=f5fe24724fe05481e3841f9eb5ab8efdee0a3dd83645ae9dcf45703f525bab7b",
+      "reason": "variante : HTTP 404",
       "code": 404
     }
   ]
