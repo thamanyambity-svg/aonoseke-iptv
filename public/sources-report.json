@@ -1,17 +1,18 @@
 {
-  "generatedAt": "2026-10-22T21:00:45.578Z",
+  "generatedAt": "2026-10-23T02:42:05.795Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
   "counts": {
-    "checked": 1436,
-    "ok": 1224,
-    "geoBlocked": 203,
-    "pending": 4,
-    "dead": 5
+    "checked": 1431,
+    "ok": 1217,
+    "geoBlocked": 201,
+    "pending": 7,
+    "dead": 6
   },
   "deadReasons": {
-    "segment : HTTP 404": 3,
-    "délai dépassé": 1,
-    "HTTP 404": 1
+    "délai dépassé": 2,
+    "segment : HTTP 404": 2,
+    "HTTP 404": 1,
+    "certificat invalide": 1
   },
   "geoBlocked": [
     {
@@ -19,22 +20,6 @@
       "country": "CG",
       "group": "Afrique",
       "url": "http://trn03.bozztv.com/gin-telecongo/index.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "RTB 3",
-      "country": "BF",
-      "group": "Afrique",
-      "url": "https://edge13.vedge.infomaniak.com/livecast/ik:rtb3-1/manifest.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "RTB (360p)",
-      "country": "BF",
-      "group": "Afrique",
-      "url": "https://edge12.vedge.infomaniak.com/livecast/ik:rtblive1_8/manifest.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -1641,6 +1626,57 @@
   ],
   "pending": [
     {
+      "name": "ESPN 4 Latin America (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://barinaslive1.boldmss.com/ESPN_4/ESPN_4.isml/ESPN_4.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "ESPN 5 Latin America (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://barinaslive1.boldmss.com/ESPN_5/ESPN_5.isml/ESPN_5.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "ESPN 6 Latin America (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://barinaslive1.boldmss.com/ESPN_6/ESPN_6.isml/ESPN_6.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "ESPN 7 Latin America (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://barinaslive1.boldmss.com/ESPN_7/ESPN_7.isml/ESPN_7.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Canal RCN (1080p)",
+      "country": "CO",
+      "group": "Latino",
+      "url": "https://barinaslive1.boldmss.com/RCN/RCN.isml/RCN.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Caracol TV (1080p)",
+      "country": "CO",
+      "group": "Latino",
+      "url": "https://barinaslive1.boldmss.com/CARACOL/CARACOL.isml/CARACOL.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "iHolyfield TV",
+      "country": "US",
+      "group": "USA",
+      "url": "https://f-tx-edge-87.christianworldmedia.com/313watkins/mp4:313watkins/playlist.m3u8",
+      "reason": "délai dépassé"
+    }
+  ],
+  "dead": [
+    {
       "name": "El Watania 1 (1080i)",
       "country": "TN",
       "group": "Afrique",
@@ -1655,12 +1691,28 @@
       "reason": "délai dépassé"
     },
     {
-      "name": "KIIO-LD 10.4 (480p)",
+      "name": "National Geographic Latin America (1080p)",
       "country": "US",
       "group": "USA",
-      "url": "https://streamer1.connectto.com/AABC_WEB_1201/index.m3u8",
-      "reason": "HTTP 503",
-      "code": 503
+      "url": "https://barinaslive1.boldmss.com/NATGEO/NATGEO.isml/NATGEO.m3u8",
+      "reason": "segment : HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Shabakeh 7",
+      "country": "US",
+      "group": "USA",
+      "url": "https://sh7hls.wns.live/hls/stream.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Deportes TVC",
+      "country": "HN",
+      "group": "Sport",
+      "url": "https://streaming.onnethn.com/DEPORTES_TVC/playlist.m3u8",
+      "reason": "segment : HTTP 404",
+      "code": 404
     },
     {
       "name": "One TV (720p)",
@@ -1668,47 +1720,6 @@
       "group": "Music",
       "url": "https://hms.pfs.gdn/v1/broadcast/one/playlist.m3u8",
       "reason": "certificat invalide"
-    }
-  ],
-  "dead": [
-    {
-      "name": "CAM 10 TV (720p)",
-      "country": "CM",
-      "group": "Afrique",
-      "url": "https://stream.it-innov.com/cam10tv/index.m3u8",
-      "reason": "segment : HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Bandamax (1080p)",
-      "country": "MX",
-      "group": "Latino",
-      "url": "http://181.78.106.127:5000/play/ca064/index.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "HTV (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://streaming.onnethn.com/HTV/playlist.m3u8",
-      "reason": "segment : HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Astrahan.Ru Sport (720p)",
-      "country": "RU",
-      "group": "Sport",
-      "url": "https://streaming.astrakhan.ru/astrakhanrusporthd/playlist.m3u8",
-      "reason": "segment : HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Isai Aruvi (396p)",
-      "country": "IN",
-      "group": "Music",
-      "url": "https://segment.yuppcdn.net/140622/isaiaruvi/playlist.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
     }
   ]
 }
