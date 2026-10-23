@@ -1,15 +1,18 @@
 {
-  "generatedAt": "2026-10-23T16:10:28.794Z",
+  "generatedAt": "2026-10-23T20:49:42.052Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
   "counts": {
-    "checked": 1422,
-    "ok": 1215,
+    "checked": 1421,
+    "ok": 1210,
     "geoBlocked": 201,
-    "pending": 5,
-    "dead": 1
+    "pending": 4,
+    "dead": 6
   },
   "deadReasons": {
-    "HTTP 404": 1
+    "CORS refusé pour le site web": 1,
+    "HTTP 404": 1,
+    "segment : HTTP 404": 3,
+    "délai dépassé": 1
   },
   "geoBlocked": [
     {
@@ -1277,6 +1280,14 @@
       "code": 403
     },
     {
+      "name": "Esport3 (1080p)",
+      "country": "ES",
+      "group": "Sport",
+      "url": "https://directes-tv-int.3catdirectes.cat/live-content/esport3-hls/master.m3u8",
+      "reason": "segment refusé (HTTP 403)",
+      "code": 403
+    },
+    {
       "name": "K19",
       "country": "AT",
       "group": "Sport",
@@ -1402,14 +1413,6 @@
       "group": "Kids",
       "url": "https://amg07653-apmc-amg07653c9-samsung-us-8740.playouts.now.amagi.tv/playlist.m3u8",
       "reason": "segment refusé (HTTP 403)",
-      "code": 403
-    },
-    {
-      "name": "Lausitzwelle (1080p)",
-      "country": "DE",
-      "group": "Music",
-      "url": "https://h056.video-stream-hosting.de/easycast11-live/_definst_/mp4:livestreamhd2/playlist.m3u8?ref=",
-      "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
     {
@@ -1623,6 +1626,61 @@
   ],
   "pending": [
     {
+      "name": "SolTV (720p)",
+      "country": "GQ",
+      "group": "Afrique",
+      "url": "https://stream.solmediaeg.com/soltv/soltv.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "KIIO-LD 10.4 (480p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://streamer1.connectto.com/AABC_WEB_1201/index.m3u8",
+      "reason": "HTTP 503",
+      "code": 503
+    },
+    {
+      "name": "Peer TV South Tyrol",
+      "country": "IT",
+      "group": "News",
+      "url": "https://iptv.peer.biz/live/peertv-en.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Vaanavil TV (720p)",
+      "country": "IN",
+      "group": "Music",
+      "url": "https://6n3yope4d9ok-hls-live.5centscdn.com/vaanavil/TV.stream/playlist.m3u8",
+      "reason": "délai dépassé"
+    }
+  ],
+  "dead": [
+    {
+      "name": "Qui Veut Gagner Des Millions La Chaîne (1080p)",
+      "country": "FR",
+      "group": "France (Rakuten)",
+      "url": "https://amg02393-awpg-amg02393c1-rakuten-uk-2461.playouts.now.amagi.tv/playlist/amg02393-awpg-quiveutgagnerdesmillions-rakutenuk/playlist.m3u8",
+      "reason": "CORS refusé pour le site web",
+      "code": 200
+    },
+    {
+      "name": "TV5Monde Europe (1080p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://ert-ucdn.broadpeak-aas.com/bpk-tv/TV5/default/index.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Serie Max",
+      "country": "CI",
+      "group": "Afrique",
+      "url": "https://video1.getstreamhosting.com:1936/8330/8330/playlist.m3u8",
+      "reason": "segment : HTTP 404",
+      "code": 404
+    },
+    {
       "name": "TVC (720p)",
       "country": "NG",
       "group": "Afrique",
@@ -1630,41 +1688,19 @@
       "reason": "délai dépassé"
     },
     {
-      "name": "Best of Dance TV (1080p)",
-      "country": "EE",
-      "group": "Music",
-      "url": "https://m1b2.worldcast.tv/dancetelevisionone/dancetelevisionone.m3u8",
-      "reason": "erreur réseau (ECONNRESET)"
+      "name": "Classique TV (360p)",
+      "country": "BR",
+      "group": "Movies",
+      "url": "https://stmv1.srvif.com/classique/classique/playlist.m3u8",
+      "reason": "segment : HTTP 404",
+      "code": 404
     },
     {
-      "name": "Dance Television (1080p)",
-      "country": "NL",
-      "group": "Music",
-      "url": "https://m1b2.worldcast.tv/dancetelevisionone/2/dancetelevisionone.m3u8",
-      "reason": "erreur réseau (ECONNRESET)"
-    },
-    {
-      "name": "DanceTV Deep House District (1080p)",
-      "country": "EE",
-      "group": "Music",
-      "url": "https://m1b2.worldcast.tv/dancetelevisiontwo/dancetelevisiontwo.m3u8",
-      "reason": "erreur réseau (ECONNRESET)"
-    },
-    {
-      "name": "Deep House District (1080p)",
-      "country": "NL",
-      "group": "Music",
-      "url": "https://eu-nl-012.worldcast.tv/dancetelevisiontwo/dancetelevisiontwo.m3u8",
-      "reason": "erreur réseau (ECONNRESET)"
-    }
-  ],
-  "dead": [
-    {
-      "name": "Maqui TV",
-      "country": "CL",
-      "group": "Music",
-      "url": "https://streamyes.alsolnet.com/maquiradio/live/playlist.m3u8",
-      "reason": "HTTP 404",
+      "name": "TV Series (480p)",
+      "country": "BR",
+      "group": "Series",
+      "url": "https://stmv1.srvif.com/tvserie/tvserie/playlist.m3u8",
+      "reason": "segment : HTTP 404",
       "code": 404
     }
   ]
