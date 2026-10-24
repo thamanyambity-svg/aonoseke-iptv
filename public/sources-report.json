@@ -1,17 +1,16 @@
 {
-  "generatedAt": "2026-10-24T02:39:22.764Z",
+  "generatedAt": "2026-10-24T10:01:38.238Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
   "counts": {
-    "checked": 1415,
-    "ok": 1211,
+    "checked": 1412,
+    "ok": 1207,
     "geoBlocked": 200,
-    "pending": 1,
+    "pending": 2,
     "dead": 3
   },
   "deadReasons": {
-    "délai dépassé": 1,
-    "segment : HTTP 404": 1,
-    "HTTP 404": 1
+    "HTTP 404": 1,
+    "segment : HTTP 404": 2
   },
   "geoBlocked": [
     {
@@ -87,6 +86,14 @@
       "code": 403
     },
     {
+      "name": "CNA (360p)",
+      "country": "DZ",
+      "group": "Afrique",
+      "url": "https://live.creacast.com/cna/stream/playlist.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
       "name": "Dounia TV",
       "country": "NE",
       "group": "Afrique",
@@ -99,6 +106,14 @@
       "country": "FR",
       "group": "France",
       "url": "https://sv1.data-stream.top/8c0a287e56a6e1843143904778be3775b4d3edd4fba4ffcc3f72638c7a71d4d4/hls/francetv4.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "ILTV (720p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://live.creacast.com/iltv/smil:iltv.smil/playlist.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -555,14 +570,6 @@
       "country": "FR",
       "group": "France",
       "url": "http://145.239.5.177/148/index.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "Pasiones Latin America (1080p)",
-      "country": "US",
-      "group": "Latino",
-      "url": "http://15.204.246.24:8080/PasionesHD/index.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -1447,14 +1454,6 @@
       "code": 403
     },
     {
-      "name": "TVI Ficcao (720p)",
-      "country": "PT",
-      "group": "Series",
-      "url": "https://raw.githubusercontent.com/thomraider12/canaistvpt/main/m3u8s/tvificcao.m3u8",
-      "reason": "variante : HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "Video Rola (1080p)",
       "country": "IT",
       "group": "Music",
@@ -1617,35 +1616,44 @@
   ],
   "pending": [
     {
-      "name": "ETV Music (1080p)",
+      "name": "Telemundo Al Dia",
+      "country": "US",
+      "group": "USA",
+      "url": "https://d1rqgw5gocwo9i.cloudfront.net/manifest/3fec3e5cac39a52b2132f9c66c83dae043dc17d4/prod_default_xumo-nbcu-stitched/10a44c37-f976-4d2b-ab23-8637a7a094ca/3.m3u8",
+      "reason": "HTTP 504",
+      "code": 504
+    },
+    {
+      "name": "Epic Crimes (1080p)",
       "country": "IN",
-      "group": "Music",
-      "url": "https://cc-szivnms4rlah6.akamaized.net/WWBI/Amagi/ETV_Music_IN/playlist.m3u8",
-      "reason": "délai dépassé"
+      "group": "Documentary",
+      "url": "https://cc-wsuyg2uxeak04.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-wsuyg2uxeak04/master.m3u8",
+      "reason": "erreur réseau (ERR_SSL_TLSV1_ALERT_INTERNAL_ERROR)"
     }
   ],
   "dead": [
     {
-      "name": "SolTV (720p)",
-      "country": "GQ",
-      "group": "Afrique",
-      "url": "https://stream.solmediaeg.com/soltv/soltv.m3u8",
-      "reason": "délai dépassé"
+      "name": "Italia 2 (480p) [Geo-blocked]",
+      "country": "IT",
+      "group": "Italy",
+      "url": "https://59d7d6f47d7fc.streamlock.net/italia2/italia2/playlist.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
     },
     {
-      "name": "Muz TV Uzbekistan",
-      "country": "UZ",
-      "group": "Music",
-      "url": "https://stream8.cinerama.uz/1063/tracks-v1a1/mono.m3u8",
+      "name": "Ivoire Channel (720p)",
+      "country": "CI",
+      "group": "Afrique",
+      "url": "https://video1.getstreamhosting.com:1936/8244/8244/playlist.m3u8",
       "reason": "segment : HTTP 404",
       "code": 404
     },
     {
-      "name": "Vaanavil TV (720p)",
-      "country": "IN",
+      "name": "Karibena (720p)",
+      "country": "PE",
       "group": "Music",
-      "url": "https://6n3yope4d9ok-hls-live.5centscdn.com/vaanavil/TV.stream/playlist.m3u8",
-      "reason": "HTTP 404",
+      "url": "https://iptv-pe-x-7-g3s-video.egostreaming.pe/karibenatv_685a-pe-a5676-584412/index.fmp4.m3u8",
+      "reason": "segment : HTTP 404",
       "code": 404
     }
   ]
