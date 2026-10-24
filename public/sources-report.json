@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-10-24T10:01:38.238Z",
+  "generatedAt": "2026-10-24T15:06:35.019Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
   "counts": {
-    "checked": 1412,
-    "ok": 1207,
+    "checked": 1409,
+    "ok": 1202,
     "geoBlocked": 200,
-    "pending": 2,
-    "dead": 3
+    "pending": 5,
+    "dead": 2
   },
   "deadReasons": {
-    "HTTP 404": 1,
-    "segment : HTTP 404": 2
+    "segment : HTTP 404": 1,
+    "HTTP 504": 1
   },
   "geoBlocked": [
     {
@@ -86,14 +86,6 @@
       "code": 403
     },
     {
-      "name": "CNA (360p)",
-      "country": "DZ",
-      "group": "Afrique",
-      "url": "https://live.creacast.com/cna/stream/playlist.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "Dounia TV",
       "country": "NE",
       "group": "Afrique",
@@ -106,14 +98,6 @@
       "country": "FR",
       "group": "France",
       "url": "https://sv1.data-stream.top/8c0a287e56a6e1843143904778be3775b4d3edd4fba4ffcc3f72638c7a71d4d4/hls/francetv4.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "ILTV (720p)",
-      "country": "FR",
-      "group": "France",
-      "url": "https://live.creacast.com/iltv/smil:iltv.smil/playlist.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -1462,6 +1446,14 @@
       "code": 403
     },
     {
+      "name": "VM Latino (720p)",
+      "country": "CR",
+      "group": "Music",
+      "url": "https://59ef525c24caa.streamlock.net/vmtv/vmlatino/playlist.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
       "name": "Bollywood Film",
       "country": "RO",
       "group": "Movies",
@@ -1606,6 +1598,14 @@
       "code": 403
     },
     {
+      "name": "TRT Cocuk (1440p)",
+      "country": "TR",
+      "group": "Kids",
+      "url": "https://tv-trtcocuk.medya.trt.com.tr/master.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
       "name": "YleX (720p)",
       "country": "FI",
       "group": "Music",
@@ -1616,45 +1616,58 @@
   ],
   "pending": [
     {
+      "name": "ESPN 5 Latin America (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://barinaslive1.boldmss.com/ESPN_5/ESPN_5.isml/ESPN_5.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "ESPN 6 Latin America (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://barinaslive1.boldmss.com/ESPN_6/ESPN_6.isml/ESPN_6.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "ESPN Latin America (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://barinaslive1.boldmss.com/ESPN/ESPN.isml/ESPN.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "FX Latin America (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://barinaslive1.boldmss.com/FX/FX.isml/FX.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Maidan (720p)",
+      "country": "RU",
+      "group": "Music",
+      "url": "https://live-maidantv.cdnvideo.ru/maidantv/maidantv.smil/playlist.m3u8",
+      "reason": "segment : HTTP 503",
+      "code": 503
+    }
+  ],
+  "dead": [
+    {
+      "name": "Bouke (504p)",
+      "country": "BE",
+      "group": "France",
+      "url": "https://dlgt0tdl2hpq3.cloudfront.net/rtbf/clr-rtbf/e1ccc6aa/index.m3u8",
+      "reason": "segment : HTTP 404",
+      "code": 404
+    },
+    {
       "name": "Telemundo Al Dia",
       "country": "US",
       "group": "USA",
       "url": "https://d1rqgw5gocwo9i.cloudfront.net/manifest/3fec3e5cac39a52b2132f9c66c83dae043dc17d4/prod_default_xumo-nbcu-stitched/10a44c37-f976-4d2b-ab23-8637a7a094ca/3.m3u8",
       "reason": "HTTP 504",
       "code": 504
-    },
-    {
-      "name": "Epic Crimes (1080p)",
-      "country": "IN",
-      "group": "Documentary",
-      "url": "https://cc-wsuyg2uxeak04.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-wsuyg2uxeak04/master.m3u8",
-      "reason": "erreur réseau (ERR_SSL_TLSV1_ALERT_INTERNAL_ERROR)"
-    }
-  ],
-  "dead": [
-    {
-      "name": "Italia 2 (480p) [Geo-blocked]",
-      "country": "IT",
-      "group": "Italy",
-      "url": "https://59d7d6f47d7fc.streamlock.net/italia2/italia2/playlist.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Ivoire Channel (720p)",
-      "country": "CI",
-      "group": "Afrique",
-      "url": "https://video1.getstreamhosting.com:1936/8244/8244/playlist.m3u8",
-      "reason": "segment : HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Karibena (720p)",
-      "country": "PE",
-      "group": "Music",
-      "url": "https://iptv-pe-x-7-g3s-video.egostreaming.pe/karibenatv_685a-pe-a5676-584412/index.fmp4.m3u8",
-      "reason": "segment : HTTP 404",
-      "code": 404
     }
   ]
 }
