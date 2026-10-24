@@ -478,10 +478,11 @@ function AdminDashboardInner({ user, onClose, initialTab }: {
       {activeTab === 'ads' ? (
         <AdManagementContent />
       ) : activeTab === 'regie' ? (
-        <>
+        // Zone défilante : sans elle, le contenu dépasse le panneau plein écran (position: fixed) et reste coupé.
+        <div className="admin-body">
           <AgentConsole />
           <AiAdCalendar />
-        </>
+        </div>
       ) : (
         <>
           {/* Bandeau d'actualisation automatique */}
