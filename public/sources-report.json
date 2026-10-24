@@ -1,18 +1,17 @@
 {
-  "generatedAt": "2026-10-23T20:49:42.052Z",
+  "generatedAt": "2026-10-24T02:39:22.764Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
   "counts": {
-    "checked": 1421,
-    "ok": 1210,
-    "geoBlocked": 201,
-    "pending": 4,
-    "dead": 6
+    "checked": 1415,
+    "ok": 1211,
+    "geoBlocked": 200,
+    "pending": 1,
+    "dead": 3
   },
   "deadReasons": {
-    "CORS refusé pour le site web": 1,
-    "HTTP 404": 1,
-    "segment : HTTP 404": 3,
-    "délai dépassé": 1
+    "délai dépassé": 1,
+    "segment : HTTP 404": 1,
+    "HTTP 404": 1
   },
   "geoBlocked": [
     {
@@ -88,14 +87,6 @@
       "code": 403
     },
     {
-      "name": "CNA (360p)",
-      "country": "DZ",
-      "group": "Afrique",
-      "url": "https://live.creacast.com/cna/stream/playlist.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "Dounia TV",
       "country": "NE",
       "group": "Afrique",
@@ -108,14 +99,6 @@
       "country": "FR",
       "group": "France",
       "url": "https://sv1.data-stream.top/8c0a287e56a6e1843143904778be3775b4d3edd4fba4ffcc3f72638c7a71d4d4/hls/francetv4.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "ILTV (720p)",
-      "country": "FR",
-      "group": "France",
-      "url": "https://live.creacast.com/iltv/smil:iltv.smil/playlist.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -572,6 +555,14 @@
       "country": "FR",
       "group": "France",
       "url": "http://145.239.5.177/148/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Pasiones Latin America (1080p)",
+      "country": "US",
+      "group": "Latino",
+      "url": "http://15.204.246.24:8080/PasionesHD/index.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -1626,6 +1617,15 @@
   ],
   "pending": [
     {
+      "name": "ETV Music (1080p)",
+      "country": "IN",
+      "group": "Music",
+      "url": "https://cc-szivnms4rlah6.akamaized.net/WWBI/Amagi/ETV_Music_IN/playlist.m3u8",
+      "reason": "délai dépassé"
+    }
+  ],
+  "dead": [
+    {
       "name": "SolTV (720p)",
       "country": "GQ",
       "group": "Afrique",
@@ -1633,74 +1633,19 @@
       "reason": "délai dépassé"
     },
     {
-      "name": "KIIO-LD 10.4 (480p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://streamer1.connectto.com/AABC_WEB_1201/index.m3u8",
-      "reason": "HTTP 503",
-      "code": 503
-    },
-    {
-      "name": "Peer TV South Tyrol",
-      "country": "IT",
-      "group": "News",
-      "url": "https://iptv.peer.biz/live/peertv-en.m3u8",
-      "reason": "délai dépassé"
+      "name": "Muz TV Uzbekistan",
+      "country": "UZ",
+      "group": "Music",
+      "url": "https://stream8.cinerama.uz/1063/tracks-v1a1/mono.m3u8",
+      "reason": "segment : HTTP 404",
+      "code": 404
     },
     {
       "name": "Vaanavil TV (720p)",
       "country": "IN",
       "group": "Music",
       "url": "https://6n3yope4d9ok-hls-live.5centscdn.com/vaanavil/TV.stream/playlist.m3u8",
-      "reason": "délai dépassé"
-    }
-  ],
-  "dead": [
-    {
-      "name": "Qui Veut Gagner Des Millions La Chaîne (1080p)",
-      "country": "FR",
-      "group": "France (Rakuten)",
-      "url": "https://amg02393-awpg-amg02393c1-rakuten-uk-2461.playouts.now.amagi.tv/playlist/amg02393-awpg-quiveutgagnerdesmillions-rakutenuk/playlist.m3u8",
-      "reason": "CORS refusé pour le site web",
-      "code": 200
-    },
-    {
-      "name": "TV5Monde Europe (1080p)",
-      "country": "FR",
-      "group": "France",
-      "url": "https://ert-ucdn.broadpeak-aas.com/bpk-tv/TV5/default/index.m3u8",
       "reason": "HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Serie Max",
-      "country": "CI",
-      "group": "Afrique",
-      "url": "https://video1.getstreamhosting.com:1936/8330/8330/playlist.m3u8",
-      "reason": "segment : HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "TVC (720p)",
-      "country": "NG",
-      "group": "Afrique",
-      "url": "http://212.5.144.156:8080/tvc/index.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Classique TV (360p)",
-      "country": "BR",
-      "group": "Movies",
-      "url": "https://stmv1.srvif.com/classique/classique/playlist.m3u8",
-      "reason": "segment : HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "TV Series (480p)",
-      "country": "BR",
-      "group": "Series",
-      "url": "https://stmv1.srvif.com/tvserie/tvserie/playlist.m3u8",
-      "reason": "segment : HTTP 404",
       "code": 404
     }
   ]
