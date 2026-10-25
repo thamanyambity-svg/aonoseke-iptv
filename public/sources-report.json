@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-25T10:27:03.451Z",
+  "generatedAt": "2026-10-25T15:19:00.833Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
   "counts": {
-    "checked": 1395,
-    "ok": 1186,
-    "geoBlocked": 200,
-    "pending": 7,
+    "checked": 1393,
+    "ok": 1183,
+    "geoBlocked": 202,
+    "pending": 6,
     "dead": 2
   },
   "deadReasons": {
-    "HTTP 404": 2
+    "délai dépassé": 2
   },
   "geoBlocked": [
     {
@@ -573,6 +573,14 @@
       "code": 403
     },
     {
+      "name": "Pasiones Latin America (1080p)",
+      "country": "US",
+      "group": "Latino",
+      "url": "http://15.204.246.24:8080/PasionesHD/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
       "name": "RMC Life (1080p)",
       "country": "FR",
       "group": "France",
@@ -821,14 +829,6 @@
       "code": 403
     },
     {
-      "name": "ARTN TV (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://streamer1.connectto.com/ARTN_mobile/index.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "AuroraTV (720p)",
       "country": "US",
       "group": "USA",
@@ -977,14 +977,6 @@
       "country": "US",
       "group": "USA",
       "url": "https://reflect-detroit-vod.cablecast.tv/live-10/live/stream-5/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "DreamWorks Channel Latin America (576p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://cdn-5.nxplay.com.br/DREAMWORKS/index.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -1201,6 +1193,14 @@
       "country": "US",
       "group": "USA",
       "url": "https://reflect-tampa-bay-community.cablecast.tv/live-16/live/live.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Tele Pam (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://watch.haitilive.net/app/2020/telepam/index.fmp4.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -1461,6 +1461,14 @@
       "code": 403
     },
     {
+      "name": "VM Latino (720p)",
+      "country": "CR",
+      "group": "Music",
+      "url": "https://59ef525c24caa.streamlock.net/vmtv/vmlatino/playlist.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
       "name": "Bollywood Film",
       "country": "RO",
       "group": "Movies",
@@ -1605,6 +1613,14 @@
       "code": 403
     },
     {
+      "name": "TRT Cocuk (1440p)",
+      "country": "TR",
+      "group": "Kids",
+      "url": "https://tv-trtcocuk.medya.trt.com.tr/master.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
       "name": "YleX (720p)",
       "country": "FI",
       "group": "Music",
@@ -1615,19 +1631,55 @@
   ],
   "pending": [
     {
+      "name": "ESPN 3 Latin America (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://barinaslive1.boldmss.com/ESPN_3/ESPN_3.isml/ESPN_3.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "ESPN 4 Latin America (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://barinaslive1.boldmss.com/ESPN_4/ESPN_4.isml/ESPN_4.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "ESPN 6 Latin America (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://barinaslive1.boldmss.com/ESPN_6/ESPN_6.isml/ESPN_6.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "ESPN 7 Latin America (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://barinaslive1.boldmss.com/ESPN_7/ESPN_7.isml/ESPN_7.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Caracol TV (1080p)",
+      "country": "CO",
+      "group": "Latino",
+      "url": "https://barinaslive1.boldmss.com/CARACOL/CARACOL.isml/CARACOL.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "DreamWorks Channel Latin America (576p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://cdn-5.nxplay.com.br/DREAMWORKS/index.m3u8",
+      "reason": "délai dépassé"
+    }
+  ],
+  "dead": [
+    {
       "name": "Francophonie24 (1080p)",
       "country": "FR",
       "group": "France",
       "url": "https://5421175365ea3.streamlock.net/live/smil:switch.smil/playlist.m3u8",
-      "reason": "connexion refusée"
-    },
-    {
-      "name": "LoveWorld UK (1080p)",
-      "country": "NG",
-      "group": "Afrique",
-      "url": "https://cdn3.wowza.com/5/L1Uzd2FrbVlLRG1W/live/smil:lwukweb.smil/playlist.m3u8",
-      "reason": "HTTP 502",
-      "code": 502
+      "reason": "délai dépassé"
     },
     {
       "name": "A Spor (1080p)",
@@ -1635,53 +1687,6 @@
       "group": "Sport",
       "url": "https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/aspor/aspor.m3u8",
       "reason": "délai dépassé"
-    },
-    {
-      "name": "Guangdong TV America",
-      "country": "US",
-      "group": "USA",
-      "url": "https://h5cul1yar48um3t.wcetv.com/hls/gdtv.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "WCETV Digital Channel 31.8",
-      "country": "US",
-      "group": "USA",
-      "url": "https://h5cul1yar48um3t.wcetv.com/hls/wcetv318.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Sportivnyy (1080p)",
-      "country": "RU",
-      "group": "Sport",
-      "url": "https://live-3.otcnet.ru/sportivny/index.m3u8",
-      "reason": "HTTP 503",
-      "code": 503
-    },
-    {
-      "name": "Turf Movil (720p)",
-      "country": "CL",
-      "group": "Sport",
-      "url": "https://tvturf4.janus.cl/playlist/stream.m3u8?d=w&id=",
-      "reason": "délai dépassé"
-    }
-  ],
-  "dead": [
-    {
-      "name": "S Corby TV (480p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://vodcdn.bamboo-cloud.com/livehls/6a9f89be0630445532152563/master.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "S Metro TV (360p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://vodcdn.bamboo-cloud.com/livehls/6a9f8b4606304461c50dfe93/master.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
     }
   ]
 }
