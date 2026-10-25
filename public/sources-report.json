@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-25T15:19:00.833Z",
+  "generatedAt": "2026-10-25T20:10:52.073Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
   "counts": {
-    "checked": 1393,
-    "ok": 1183,
-    "geoBlocked": 202,
-    "pending": 6,
-    "dead": 2
+    "checked": 1391,
+    "ok": 1178,
+    "geoBlocked": 201,
+    "pending": 7,
+    "dead": 5
   },
   "deadReasons": {
-    "délai dépassé": 2
+    "délai dépassé": 5
   },
   "geoBlocked": [
     {
@@ -573,14 +573,6 @@
       "code": 403
     },
     {
-      "name": "Pasiones Latin America (1080p)",
-      "country": "US",
-      "group": "Latino",
-      "url": "http://15.204.246.24:8080/PasionesHD/index.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "RMC Life (1080p)",
       "country": "FR",
       "group": "France",
@@ -829,6 +821,14 @@
       "code": 403
     },
     {
+      "name": "ARTN TV (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://streamer1.connectto.com/ARTN_mobile/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
       "name": "AuroraTV (720p)",
       "country": "US",
       "group": "USA",
@@ -977,6 +977,14 @@
       "country": "US",
       "group": "USA",
       "url": "https://reflect-detroit-vod.cablecast.tv/live-10/live/stream-5/live.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "DreamWorks Channel Latin America (576p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://cdn-5.nxplay.com.br/DREAMWORKS/index.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -1197,14 +1205,6 @@
       "code": 403
     },
     {
-      "name": "Tele Pam (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://watch.haitilive.net/app/2020/telepam/index.fmp4.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "Temecula TV (1080p)",
       "country": "US",
       "group": "USA",
@@ -1413,6 +1413,14 @@
       "code": 403
     },
     {
+      "name": "Lausitzwelle (1080p)",
+      "country": "DE",
+      "group": "Music",
+      "url": "https://h056.video-stream-hosting.de/easycast11-live/_definst_/mp4:livestreamhd2/playlist.m3u8?ref=",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
       "name": "MagentaMusik 360 (1080p)",
       "country": "DE",
       "group": "Music",
@@ -1457,14 +1465,6 @@
       "country": "IT",
       "group": "Music",
       "url": "https://d3b2epqdk0p7vd.cloudfront.net/out/v1/8a448b5e16384af4a3c8146a7b049c32/index.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "VM Latino (720p)",
-      "country": "CR",
-      "group": "Music",
-      "url": "https://59ef525c24caa.streamlock.net/vmtv/vmlatino/playlist.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -1613,14 +1613,6 @@
       "code": 403
     },
     {
-      "name": "TRT Cocuk (1440p)",
-      "country": "TR",
-      "group": "Kids",
-      "url": "https://tv-trtcocuk.medya.trt.com.tr/master.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "YleX (720p)",
       "country": "FI",
       "group": "Music",
@@ -1630,6 +1622,58 @@
     }
   ],
   "pending": [
+    {
+      "name": "Libya Al Wataniya (360p)",
+      "country": "LY",
+      "group": "Afrique",
+      "url": "https://cdn-globecast.akamaized.net/live/eds/libya_al_watanya/hls_roku/index.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Beach TV Florida & Alabama (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "http://media4.tripsmarter.com:1935/LiveTV/DTVHD/playlist.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Beach TV Myrtle Beach & The Grand Strand (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "http://media4.tripsmarter.com:1935/LiveTV/MTVHD/playlist.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Beach TV Panama City (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "http://media4.tripsmarter.com:1935/LiveTV/BTVHD/playlist.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Atlanta Channel (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "http://media4.tripsmarter.com:1935/LiveTV/ACVBHD/playlist.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "KNOV-CD 41.1 (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "http://media4.tripsmarter.com:1935/LiveTV/NOTVHD/playlist.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Deewana HD (540p)",
+      "country": "IN",
+      "group": "Music",
+      "url": "https://live20.bozztv.com/giatvplayout7/giatv-209592/index.m3u8",
+      "reason": "HTTP 502",
+      "code": 502
+    }
+  ],
+  "dead": [
     {
       "name": "ESPN 3 Latin America (1080p)",
       "country": "US",
@@ -1663,29 +1707,6 @@
       "country": "CO",
       "group": "Latino",
       "url": "https://barinaslive1.boldmss.com/CARACOL/CARACOL.isml/CARACOL.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "DreamWorks Channel Latin America (576p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://cdn-5.nxplay.com.br/DREAMWORKS/index.m3u8",
-      "reason": "délai dépassé"
-    }
-  ],
-  "dead": [
-    {
-      "name": "Francophonie24 (1080p)",
-      "country": "FR",
-      "group": "France",
-      "url": "https://5421175365ea3.streamlock.net/live/smil:switch.smil/playlist.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "A Spor (1080p)",
-      "country": "TR",
-      "group": "Sport",
-      "url": "https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/aspor/aspor.m3u8",
       "reason": "délai dépassé"
     }
   ]
