@@ -1,18 +1,16 @@
 {
-  "generatedAt": "2026-10-24T20:00:24.094Z",
+  "generatedAt": "2026-10-25T02:28:33.547Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
   "counts": {
-    "checked": 1407,
-    "ok": 1190,
-    "geoBlocked": 203,
-    "pending": 4,
-    "dead": 10
+    "checked": 1397,
+    "ok": 1191,
+    "geoBlocked": 201,
+    "pending": 3,
+    "dead": 2
   },
   "deadReasons": {
-    "segment : HTTP 404": 4,
-    "HTTP 404": 2,
-    "délai dépassé": 3,
-    "réponse qui n'est pas un flux HLS": 1
+    "HTTP 404": 1,
+    "segment : HTTP 404": 1
   },
   "geoBlocked": [
     {
@@ -576,14 +574,6 @@
       "code": 403
     },
     {
-      "name": "Pasiones Latin America (1080p)",
-      "country": "US",
-      "group": "Latino",
-      "url": "http://15.204.246.24:8080/PasionesHD/index.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "RMC Life (1080p)",
       "country": "FR",
       "group": "France",
@@ -828,6 +818,14 @@
       "country": "US",
       "group": "USA",
       "url": "https://reflect-tuolumne.cablecast.tv/live-3/live/stream-1/live.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "ARTN TV (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://streamer1.connectto.com/ARTN_mobile/index.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -1208,14 +1206,6 @@
       "code": 403
     },
     {
-      "name": "Tele Pam (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://watch.haitilive.net/app/2020/telepam/index.fmp4.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "Temecula TV (1080p)",
       "country": "US",
       "group": "USA",
@@ -1464,26 +1454,18 @@
       "code": 403
     },
     {
+      "name": "TVI Ficcao (720p)",
+      "country": "PT",
+      "group": "Series",
+      "url": "https://raw.githubusercontent.com/thomraider12/canaistvpt/main/m3u8s/tvificcao.m3u8",
+      "reason": "variante : HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
       "name": "Video Rola (1080p)",
       "country": "IT",
       "group": "Music",
       "url": "https://d3b2epqdk0p7vd.cloudfront.net/out/v1/8a448b5e16384af4a3c8146a7b049c32/index.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "Vintage Music (720p)",
-      "country": "CR",
-      "group": "Music",
-      "url": "https://59ef525c24caa.streamlock.net/vmtv/tvvintage/playlist.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "VM Latino (720p)",
-      "country": "CR",
-      "group": "Music",
-      "url": "https://59ef525c24caa.streamlock.net/vmtv/vmlatino/playlist.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -1642,111 +1624,44 @@
   ],
   "pending": [
     {
-      "name": "ESPN 3 Latin America (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://barinaslive1.boldmss.com/ESPN_3/ESPN_3.isml/ESPN_3.m3u8",
+      "name": "Lollywood HD TV",
+      "country": "CD",
+      "group": "Afrique",
+      "url": "https://stream.berosat.live/hls/lollywood-hd/lollywood-hd.m3u8",
+      "reason": "HTTP 500",
+      "code": 500
+    },
+    {
+      "name": "BTV (480p)",
+      "country": "UG",
+      "group": "Afrique",
+      "url": "https://streamfi-alphadgtl1.zettawiseroutes.com:8181/hls/stream.m3u8",
       "reason": "délai dépassé"
     },
     {
-      "name": "ESPN 4 Latin America (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://barinaslive1.boldmss.com/ESPN_4/ESPN_4.isml/ESPN_4.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "ESPN 7 Latin America (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://barinaslive1.boldmss.com/ESPN_7/ESPN_7.isml/ESPN_7.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Turf Movil (720p)",
-      "country": "CL",
-      "group": "Sport",
-      "url": "https://tvturf4.janus.cl/playlist/stream.m3u8?d=w&id=",
+      "name": "RumbaMix TV (720p)",
+      "country": "PE",
+      "group": "Music",
+      "url": "https://live-evg5.tv360.bitel.com.pe/bitel/mixtvSRT/playlist.m3u8",
       "reason": "délai dépassé"
     }
   ],
   "dead": [
     {
-      "name": "CCTV-9 (576i)",
-      "country": "CN",
-      "group": "Documentary",
-      "url": "https://xykt-fix.github.io/Y77.m3u8",
-      "reason": "segment : HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Rwanda TV (480p)",
-      "country": "RW",
-      "group": "Afrique",
-      "url": "https://5c46fa289c89f.streamlock.net/rtv25/rtv/playlist.m3u8",
+      "name": "Giornale Radio TV (720p)",
+      "country": "IT",
+      "group": "Italy",
+      "url": "https://5f204aff97bee.streamlock.net/GR_tv/livestream/playlist.m3u8",
       "reason": "HTTP 404",
       "code": 404
     },
     {
-      "name": "Persiana Cinema",
-      "country": "FR",
-      "group": "France",
-      "url": "https://cinehls.persiana.live/hls/stream.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "ESPN 5 Latin America (1080p)",
+      "name": "MCN6 Music Channel (1080p)",
       "country": "US",
       "group": "USA",
-      "url": "https://barinaslive1.boldmss.com/ESPN_5/ESPN_5.isml/ESPN_5.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "ESPN Latin America (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://barinaslive1.boldmss.com/ESPN/ESPN.isml/ESPN.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "FX Latin America (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://barinaslive1.boldmss.com/FX/FX.isml/FX.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Fox Business Network (576p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://tvsen6.aynaott.com/foxbusiness/index.m3u8",
+      "url": "https://d18fcxaqfnwjhj.cloudfront.net/CDN_Ingest/MCN6_MUSIC.smil/Playlist.m3u8",
       "reason": "segment : HTTP 404",
       "code": 404
-    },
-    {
-      "name": "Totalmusic Dance (720p)",
-      "country": "GB",
-      "group": "Music",
-      "url": "https://cdn.global.elektamedia.com/live/c7eds/Totalmusic_Dance/SA_LIVE_hls_enc/master.m3u8",
-      "reason": "segment : HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "FON Music (576p)",
-      "country": "RU",
-      "group": "Music",
-      "url": "https://stream8.cinerama.uz/1272/tracks-v1a1/mono.m3u8",
-      "reason": "segment : HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "PowerTurk Taptaze (1080p)",
-      "country": "TR",
-      "group": "Music",
-      "url": "https://livetv.powerapp.com.tr/pturktaptaze/taptaze.smil/playlist.m3u8",
-      "reason": "réponse qui n'est pas un flux HLS",
-      "code": 200
     }
   ]
 }
