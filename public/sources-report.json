@@ -1,16 +1,15 @@
 {
-  "generatedAt": "2026-10-25T02:28:33.547Z",
+  "generatedAt": "2026-10-25T10:27:03.451Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
   "counts": {
-    "checked": 1397,
-    "ok": 1191,
-    "geoBlocked": 201,
-    "pending": 3,
+    "checked": 1395,
+    "ok": 1186,
+    "geoBlocked": 200,
+    "pending": 7,
     "dead": 2
   },
   "deadReasons": {
-    "HTTP 404": 1,
-    "segment : HTTP 404": 1
+    "HTTP 404": 2
   },
   "geoBlocked": [
     {
@@ -1454,14 +1453,6 @@
       "code": 403
     },
     {
-      "name": "TVI Ficcao (720p)",
-      "country": "PT",
-      "group": "Series",
-      "url": "https://raw.githubusercontent.com/thomraider12/canaistvpt/main/m3u8s/tvificcao.m3u8",
-      "reason": "variante : HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "Video Rola (1080p)",
       "country": "IT",
       "group": "Music",
@@ -1624,43 +1615,72 @@
   ],
   "pending": [
     {
-      "name": "Lollywood HD TV",
-      "country": "CD",
-      "group": "Afrique",
-      "url": "https://stream.berosat.live/hls/lollywood-hd/lollywood-hd.m3u8",
-      "reason": "HTTP 500",
-      "code": 500
+      "name": "Francophonie24 (1080p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://5421175365ea3.streamlock.net/live/smil:switch.smil/playlist.m3u8",
+      "reason": "connexion refusée"
     },
     {
-      "name": "BTV (480p)",
-      "country": "UG",
+      "name": "LoveWorld UK (1080p)",
+      "country": "NG",
       "group": "Afrique",
-      "url": "https://streamfi-alphadgtl1.zettawiseroutes.com:8181/hls/stream.m3u8",
+      "url": "https://cdn3.wowza.com/5/L1Uzd2FrbVlLRG1W/live/smil:lwukweb.smil/playlist.m3u8",
+      "reason": "HTTP 502",
+      "code": 502
+    },
+    {
+      "name": "A Spor (1080p)",
+      "country": "TR",
+      "group": "Sport",
+      "url": "https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/aspor/aspor.m3u8",
       "reason": "délai dépassé"
     },
     {
-      "name": "RumbaMix TV (720p)",
-      "country": "PE",
-      "group": "Music",
-      "url": "https://live-evg5.tv360.bitel.com.pe/bitel/mixtvSRT/playlist.m3u8",
+      "name": "Guangdong TV America",
+      "country": "US",
+      "group": "USA",
+      "url": "https://h5cul1yar48um3t.wcetv.com/hls/gdtv.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "WCETV Digital Channel 31.8",
+      "country": "US",
+      "group": "USA",
+      "url": "https://h5cul1yar48um3t.wcetv.com/hls/wcetv318.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Sportivnyy (1080p)",
+      "country": "RU",
+      "group": "Sport",
+      "url": "https://live-3.otcnet.ru/sportivny/index.m3u8",
+      "reason": "HTTP 503",
+      "code": 503
+    },
+    {
+      "name": "Turf Movil (720p)",
+      "country": "CL",
+      "group": "Sport",
+      "url": "https://tvturf4.janus.cl/playlist/stream.m3u8?d=w&id=",
       "reason": "délai dépassé"
     }
   ],
   "dead": [
     {
-      "name": "Giornale Radio TV (720p)",
-      "country": "IT",
-      "group": "Italy",
-      "url": "https://5f204aff97bee.streamlock.net/GR_tv/livestream/playlist.m3u8",
+      "name": "S Corby TV (480p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://vodcdn.bamboo-cloud.com/livehls/6a9f89be0630445532152563/master.m3u8",
       "reason": "HTTP 404",
       "code": 404
     },
     {
-      "name": "MCN6 Music Channel (1080p)",
+      "name": "S Metro TV (360p)",
       "country": "US",
       "group": "USA",
-      "url": "https://d18fcxaqfnwjhj.cloudfront.net/CDN_Ingest/MCN6_MUSIC.smil/Playlist.m3u8",
-      "reason": "segment : HTTP 404",
+      "url": "https://vodcdn.bamboo-cloud.com/livehls/6a9f8b4606304461c50dfe93/master.m3u8",
+      "reason": "HTTP 404",
       "code": 404
     }
   ]
