@@ -1,16 +1,18 @@
 {
-  "generatedAt": "2026-10-26T02:28:12.929Z",
+  "generatedAt": "2026-10-26T11:56:39.611Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
   "counts": {
-    "checked": 1386,
-    "ok": 1180,
-    "geoBlocked": 196,
-    "pending": 3,
-    "dead": 7
+    "checked": 1379,
+    "ok": 1173,
+    "geoBlocked": 199,
+    "pending": 1,
+    "dead": 6
   },
   "deadReasons": {
+    "segment : HTTP 404": 2,
     "HTTP 404": 2,
-    "délai dépassé": 5
+    "variante : HTTP 404": 1,
+    "flux terminé (ENDLIST)": 1
   },
   "geoBlocked": [
     {
@@ -86,6 +88,14 @@
       "code": 403
     },
     {
+      "name": "CNA (360p)",
+      "country": "DZ",
+      "group": "Afrique",
+      "url": "https://live.creacast.com/cna/stream/playlist.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
       "name": "Dounia TV",
       "country": "NE",
       "group": "Afrique",
@@ -98,6 +108,14 @@
       "country": "FR",
       "group": "France",
       "url": "https://sv1.data-stream.top/8c0a287e56a6e1843143904778be3775b4d3edd4fba4ffcc3f72638c7a71d4d4/hls/francetv4.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "ILTV (720p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://live.creacast.com/iltv/smil:iltv.smil/playlist.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -1262,14 +1280,6 @@
       "code": 403
     },
     {
-      "name": "Esport3 (1080p)",
-      "country": "ES",
-      "group": "Sport",
-      "url": "https://directes-tv-int.3catdirectes.cat/live-content/esport3-hls/master.m3u8",
-      "reason": "segment refusé (HTTP 403)",
-      "code": 403
-    },
-    {
       "name": "K19",
       "country": "AT",
       "group": "Sport",
@@ -1494,6 +1504,22 @@
       "code": 403
     },
     {
+      "name": "Jiangxi Children's Channel",
+      "country": "CN",
+      "group": "Kids",
+      "url": "https://play-live-hls.jxtvcn.com.cn/live-city/tv_jxtv6.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Jiangxi Movie Channel",
+      "country": "CN",
+      "group": "Movies",
+      "url": "https://play-live-hls.jxtvcn.com.cn/live-city/tv_jxtv4.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
       "name": "Kral Pop TV (720p)",
       "country": "TR",
       "group": "Music",
@@ -1584,79 +1610,61 @@
   ],
   "pending": [
     {
-      "name": "KIIO-LD 10.4 (480p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://streamer1.connectto.com/AABC_WEB_1201/index.m3u8",
-      "reason": "HTTP 503",
-      "code": 503
-    },
-    {
-      "name": "Jiangxi Children's Channel",
-      "country": "CN",
-      "group": "Kids",
-      "url": "https://play-live-hls.jxtvcn.com.cn/live-city/tv_jxtv6.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Jiangxi Movie Channel",
-      "country": "CN",
-      "group": "Movies",
-      "url": "https://play-live-hls.jxtvcn.com.cn/live-city/tv_jxtv4.m3u8",
-      "reason": "délai dépassé"
+      "name": "Teledeporte",
+      "country": "ES",
+      "group": "Sport",
+      "url": "https://rtve01p.origin.c21livecloud.com/live-origin/tdp-hls/bitrate_1.m3u8",
+      "reason": "domaine introuvable"
     }
   ],
   "dead": [
     {
-      "name": "CP24 (576p)",
-      "country": "CA",
-      "group": "Canada",
-      "url": "https://tvsen6.aynaott.com/cp24/index.m3u8",
+      "name": "Benie TV (720p)",
+      "country": "CI",
+      "group": "Afrique",
+      "url": "https://tv.voozmedia.fun/benietv/index.m3u8",
+      "reason": "segment : HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "TR24 (720p)",
+      "country": "CM",
+      "group": "Afrique",
+      "url": "https://stream.it-innov.com/tr24/index.m3u8",
+      "reason": "segment : HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Silverbird News 24 (576p)",
+      "country": "NG",
+      "group": "Afrique",
+      "url": "https://viewmedia7219.bozztv.com/wmedia/viewmedia100/web_029/Stream/playlist.m3u8",
       "reason": "HTTP 404",
       "code": 404
     },
     {
-      "name": "Discovery Family (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://tvsen5.aynaott.com/discoveryfamily/index.m3u8",
-      "reason": "HTTP 404",
+      "name": "BTV (480p)",
+      "country": "UG",
+      "group": "Afrique",
+      "url": "https://streamfi-alphadgtl1.zettawiseroutes.com:8181/hls/stream.m3u8",
+      "reason": "variante : HTTP 404",
       "code": 404
     },
     {
-      "name": "Beach TV Florida & Alabama (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "http://media4.tripsmarter.com:1935/LiveTV/DTVHD/playlist.m3u8",
-      "reason": "délai dépassé"
+      "name": "Activa TV (720p)",
+      "country": "ES",
+      "group": "Music",
+      "url": "https://streamtv.mediasector.es/hls/activatv/index.m3u8",
+      "reason": "flux terminé (ENDLIST)",
+      "code": 200
     },
     {
-      "name": "Beach TV Myrtle Beach & The Grand Strand (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "http://media4.tripsmarter.com:1935/LiveTV/MTVHD/playlist.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Beach TV Panama City (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "http://media4.tripsmarter.com:1935/LiveTV/BTVHD/playlist.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Atlanta Channel (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "http://media4.tripsmarter.com:1935/LiveTV/ACVBHD/playlist.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "KNOV-CD 41.1 (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "http://media4.tripsmarter.com:1935/LiveTV/NOTVHD/playlist.m3u8",
-      "reason": "délai dépassé"
+      "name": "Muzyka Kino",
+      "country": "RU",
+      "group": "Music",
+      "url": "https://kino-1.catcast.tv/content/37739/index.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
     }
   ]
 }
