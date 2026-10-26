@@ -1,14 +1,15 @@
 {
-  "generatedAt": "2026-10-25T20:10:52.073Z",
+  "generatedAt": "2026-10-26T02:28:12.929Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
   "counts": {
-    "checked": 1391,
-    "ok": 1178,
-    "geoBlocked": 201,
-    "pending": 7,
-    "dead": 5
+    "checked": 1386,
+    "ok": 1180,
+    "geoBlocked": 196,
+    "pending": 3,
+    "dead": 7
   },
   "deadReasons": {
+    "HTTP 404": 2,
     "délai dépassé": 5
   },
   "geoBlocked": [
@@ -85,14 +86,6 @@
       "code": 403
     },
     {
-      "name": "CNA (360p)",
-      "country": "DZ",
-      "group": "Afrique",
-      "url": "https://live.creacast.com/cna/stream/playlist.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "Dounia TV",
       "country": "NE",
       "group": "Afrique",
@@ -105,14 +98,6 @@
       "country": "FR",
       "group": "France",
       "url": "https://sv1.data-stream.top/8c0a287e56a6e1843143904778be3775b4d3edd4fba4ffcc3f72638c7a71d4d4/hls/francetv4.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "ILTV (720p)",
-      "country": "FR",
-      "group": "France",
-      "url": "https://live.creacast.com/iltv/smil:iltv.smil/playlist.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -1413,14 +1398,6 @@
       "code": 403
     },
     {
-      "name": "Lausitzwelle (1080p)",
-      "country": "DE",
-      "group": "Music",
-      "url": "https://h056.video-stream-hosting.de/easycast11-live/_definst_/mp4:livestreamhd2/playlist.m3u8?ref=",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "MagentaMusik 360 (1080p)",
       "country": "DE",
       "group": "Music",
@@ -1517,22 +1494,6 @@
       "code": 403
     },
     {
-      "name": "Jiangxi Children's Channel",
-      "country": "CN",
-      "group": "Kids",
-      "url": "https://play-live-hls.jxtvcn.com.cn/live-city/tv_jxtv6.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "Jiangxi Movie Channel",
-      "country": "CN",
-      "group": "Movies",
-      "url": "https://play-live-hls.jxtvcn.com.cn/live-city/tv_jxtv4.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "Kral Pop TV (720p)",
       "country": "TR",
       "group": "Music",
@@ -1623,11 +1584,44 @@
   ],
   "pending": [
     {
-      "name": "Libya Al Wataniya (360p)",
-      "country": "LY",
-      "group": "Afrique",
-      "url": "https://cdn-globecast.akamaized.net/live/eds/libya_al_watanya/hls_roku/index.m3u8",
+      "name": "KIIO-LD 10.4 (480p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://streamer1.connectto.com/AABC_WEB_1201/index.m3u8",
+      "reason": "HTTP 503",
+      "code": 503
+    },
+    {
+      "name": "Jiangxi Children's Channel",
+      "country": "CN",
+      "group": "Kids",
+      "url": "https://play-live-hls.jxtvcn.com.cn/live-city/tv_jxtv6.m3u8",
       "reason": "délai dépassé"
+    },
+    {
+      "name": "Jiangxi Movie Channel",
+      "country": "CN",
+      "group": "Movies",
+      "url": "https://play-live-hls.jxtvcn.com.cn/live-city/tv_jxtv4.m3u8",
+      "reason": "délai dépassé"
+    }
+  ],
+  "dead": [
+    {
+      "name": "CP24 (576p)",
+      "country": "CA",
+      "group": "Canada",
+      "url": "https://tvsen6.aynaott.com/cp24/index.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Discovery Family (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://tvsen5.aynaott.com/discoveryfamily/index.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
     },
     {
       "name": "Beach TV Florida & Alabama (720p)",
@@ -1662,51 +1656,6 @@
       "country": "US",
       "group": "USA",
       "url": "http://media4.tripsmarter.com:1935/LiveTV/NOTVHD/playlist.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Deewana HD (540p)",
-      "country": "IN",
-      "group": "Music",
-      "url": "https://live20.bozztv.com/giatvplayout7/giatv-209592/index.m3u8",
-      "reason": "HTTP 502",
-      "code": 502
-    }
-  ],
-  "dead": [
-    {
-      "name": "ESPN 3 Latin America (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://barinaslive1.boldmss.com/ESPN_3/ESPN_3.isml/ESPN_3.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "ESPN 4 Latin America (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://barinaslive1.boldmss.com/ESPN_4/ESPN_4.isml/ESPN_4.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "ESPN 6 Latin America (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://barinaslive1.boldmss.com/ESPN_6/ESPN_6.isml/ESPN_6.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "ESPN 7 Latin America (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://barinaslive1.boldmss.com/ESPN_7/ESPN_7.isml/ESPN_7.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Caracol TV (1080p)",
-      "country": "CO",
-      "group": "Latino",
-      "url": "https://barinaslive1.boldmss.com/CARACOL/CARACOL.isml/CARACOL.m3u8",
       "reason": "délai dépassé"
     }
   ]
