@@ -1,18 +1,18 @@
 {
-  "generatedAt": "2026-10-26T11:56:39.611Z",
+  "generatedAt": "2026-10-26T18:08:12.537Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
   "counts": {
-    "checked": 1379,
-    "ok": 1173,
-    "geoBlocked": 199,
-    "pending": 1,
-    "dead": 6
+    "checked": 1373,
+    "ok": 1163,
+    "geoBlocked": 200,
+    "pending": 5,
+    "dead": 5
   },
   "deadReasons": {
-    "segment : HTTP 404": 2,
+    "domaine introuvable": 1,
+    "flux terminé (ENDLIST)": 1,
     "HTTP 404": 2,
-    "variante : HTTP 404": 1,
-    "flux terminé (ENDLIST)": 1
+    "segment : HTTP 404": 1
   },
   "geoBlocked": [
     {
@@ -88,14 +88,6 @@
       "code": 403
     },
     {
-      "name": "CNA (360p)",
-      "country": "DZ",
-      "group": "Afrique",
-      "url": "https://live.creacast.com/cna/stream/playlist.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "Dounia TV",
       "country": "NE",
       "group": "Afrique",
@@ -108,14 +100,6 @@
       "country": "FR",
       "group": "France",
       "url": "https://sv1.data-stream.top/8c0a287e56a6e1843143904778be3775b4d3edd4fba4ffcc3f72638c7a71d4d4/hls/francetv4.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "ILTV (720p)",
-      "country": "FR",
-      "group": "France",
-      "url": "https://live.creacast.com/iltv/smil:iltv.smil/playlist.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -1080,6 +1064,14 @@
       "code": 403
     },
     {
+      "name": "Metaleitor TV",
+      "country": "US",
+      "group": "USA",
+      "url": "https://vs20.live.opencaster.com/metaleitortv_423d3342/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
       "name": "MeTV (720p)",
       "country": "US",
       "group": "USA",
@@ -1408,6 +1400,14 @@
       "code": 403
     },
     {
+      "name": "Lausitzwelle (1080p)",
+      "country": "DE",
+      "group": "Music",
+      "url": "https://h056.video-stream-hosting.de/easycast11-live/_definst_/mp4:livestreamhd2/playlist.m3u8?ref=",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
       "name": "MagentaMusik 360 (1080p)",
       "country": "DE",
       "group": "Music",
@@ -1445,6 +1445,14 @@
       "group": "Kids",
       "url": "https://directes-tv-cat.3catdirectes.cat/live-content/super3-hls/master.m3u8",
       "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "TVI Ficcao (720p)",
+      "country": "PT",
+      "group": "Series",
+      "url": "https://raw.githubusercontent.com/thomraider12/canaistvpt/main/m3u8s/tvificcao.m3u8",
+      "reason": "variante : HTTP 403 (accès refusé)",
       "code": 403
     },
     {
@@ -1610,59 +1618,78 @@
   ],
   "pending": [
     {
+      "name": "Mi Musica Reggaeton (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "http://181.78.12.119:16123/play/ch53/index.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Mi Musica Romantica (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "http://181.78.12.119:16123/play/ch54/index.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Mi Musica Salsa (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "http://181.78.12.119:16123/play/ch55/index.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "RumbaMix TV (720p)",
+      "country": "PE",
+      "group": "Music",
+      "url": "https://live-evg5.tv360.bitel.com.pe/bitel/mixtvSRT/playlist.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Epic Music (1080p)",
+      "country": "IN",
+      "group": "Music",
+      "url": "https://cc-3cyxq80qusspd.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-3cyxq80qusspd/playlist.m3u8",
+      "reason": "délai dépassé"
+    }
+  ],
+  "dead": [
+    {
       "name": "Teledeporte",
       "country": "ES",
       "group": "Sport",
       "url": "https://rtve01p.origin.c21livecloud.com/live-origin/tdp-hls/bitrate_1.m3u8",
       "reason": "domaine introuvable"
-    }
-  ],
-  "dead": [
-    {
-      "name": "Benie TV (720p)",
-      "country": "CI",
-      "group": "Afrique",
-      "url": "https://tv.voozmedia.fun/benietv/index.m3u8",
-      "reason": "segment : HTTP 404",
-      "code": 404
     },
     {
-      "name": "TR24 (720p)",
-      "country": "CM",
+      "name": "Huda TV (720p)",
+      "country": "EG",
       "group": "Afrique",
-      "url": "https://stream.it-innov.com/tr24/index.m3u8",
-      "reason": "segment : HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Silverbird News 24 (576p)",
-      "country": "NG",
-      "group": "Afrique",
-      "url": "https://viewmedia7219.bozztv.com/wmedia/viewmedia100/web_029/Stream/playlist.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "BTV (480p)",
-      "country": "UG",
-      "group": "Afrique",
-      "url": "https://streamfi-alphadgtl1.zettawiseroutes.com:8181/hls/stream.m3u8",
-      "reason": "variante : HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Activa TV (720p)",
-      "country": "ES",
-      "group": "Music",
-      "url": "https://streamtv.mediasector.es/hls/activatv/index.m3u8",
+      "url": "https://cdn.bestream.io:19360/elfaro1/elfaro1.m3u8",
       "reason": "flux terminé (ENDLIST)",
       "code": 200
     },
     {
-      "name": "Muzyka Kino",
-      "country": "RU",
+      "name": "UMSA TVU Internacional (720p)",
+      "country": "BO",
+      "group": "Documentary",
+      "url": "https://edge.enhdtv.com/8026/index.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Totalmusic (1080p)",
+      "country": "GB",
       "group": "Music",
-      "url": "https://kino-1.catcast.tv/content/37739/index.m3u8",
+      "url": "https://cdn.global.elektamedia.com/live/c7eds/Totalmusic/SA_LIVE_hls_enc/master.m3u8",
+      "reason": "segment : HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Impact TV Manele (1080p)",
+      "country": "RO",
+      "group": "Music",
+      "url": "https://online.tvimpact.live/hls/impact_tv.m3u8",
       "reason": "HTTP 404",
       "code": 404
     }
