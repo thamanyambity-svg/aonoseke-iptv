@@ -1,17 +1,15 @@
 {
-  "generatedAt": "2026-10-28T11:52:36.865Z",
+  "generatedAt": "2026-10-28T17:41:38.614Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
   "counts": {
-    "checked": 1351,
-    "ok": 1143,
-    "geoBlocked": 200,
-    "pending": 4,
-    "dead": 4
+    "checked": 1347,
+    "ok": 1140,
+    "geoBlocked": 203,
+    "pending": 1,
+    "dead": 3
   },
   "deadReasons": {
-    "segment : HTTP 404": 2,
-    "HTTP 404": 1,
-    "variante : HTTP 404": 1
+    "HTTP 404": 3
   },
   "geoBlocked": [
     {
@@ -20,22 +18,6 @@
       "group": "Afrique",
       "url": "http://trn03.bozztv.com/gin-telecongo/index.m3u8",
       "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "ABC WWAY 3",
-      "country": "US",
-      "group": "News",
-      "url": "https://townnews.g-mana.live/media/027a05c7-43b6-49eb-ad10-a0c0f10a0754/main.m3u8",
-      "reason": "segment refusé (HTTP 403)",
-      "code": 403
-    },
-    {
-      "name": "WDEF-TV News Chattanooga TN (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://townnews.g-mana.live/media/a54a6409-5e91-46f0-9fee-06904c1fd094/main.m3u8",
-      "reason": "segment refusé (HTTP 403)",
       "code": 403
     },
     {
@@ -343,6 +325,14 @@
       "code": 403
     },
     {
+      "name": "TV5Monde Asia (720p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://liveh12.vtvprime.vn/hls/TV5/03.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
       "name": "TV5Monde France Belgium Switzerland Monaco (1080p)",
       "country": "FR",
       "group": "France",
@@ -579,6 +569,14 @@
       "country": "FR",
       "group": "France",
       "url": "http://145.239.5.177/148/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Pasiones Latin America (1080p)",
+      "country": "US",
+      "group": "Latino",
+      "url": "http://15.204.246.24:8080/PasionesHD/index.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -1215,6 +1213,14 @@
       "code": 403
     },
     {
+      "name": "Tele Pam (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://watch.haitilive.net/app/2020/telepam/index.fmp4.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
       "name": "Temecula TV (1080p)",
       "country": "US",
       "group": "USA",
@@ -1284,6 +1290,14 @@
       "group": "Documentary",
       "url": "https://vs-hls-pushb-uk-live.akamaized.net/x=4/i=urn:bbc:pips:service:bbc_four_hd/mobile_wifi_main_hd_abr_v2.m3u8",
       "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Esport3 (1080p)",
+      "country": "ES",
+      "group": "Sport",
+      "url": "https://directes-tv-int.3catdirectes.cat/live-content/esport3-hls/master.m3u8",
+      "reason": "segment refusé (HTTP 403)",
       "code": 403
     },
     {
@@ -1455,6 +1469,14 @@
       "code": 403
     },
     {
+      "name": "TVI Ficcao (720p)",
+      "country": "PT",
+      "group": "Series",
+      "url": "https://raw.githubusercontent.com/thomraider12/canaistvpt/main/m3u8s/tvificcao.m3u8",
+      "reason": "variante : HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
       "name": "Video Rola (1080p)",
       "country": "IT",
       "group": "Music",
@@ -1617,65 +1639,36 @@
   ],
   "pending": [
     {
-      "name": "SC Currents",
-      "country": "US",
-      "group": "USA",
-      "url": "https://reflect-communitytv.cablecast.tv/live-5/live/stream-3/live.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Whiplash (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://cdn.whiplash.cc/whiplash/index.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "TV5Monde Asia (720p)",
-      "country": "FR",
-      "group": "France",
-      "url": "https://liveh12.vtvprime.vn/hls/TV5/03.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "9X Jalwa (1080p)",
-      "country": "IN",
-      "group": "Music",
-      "url": "https://wiselp.wiseplayout.com/9X_Jalwa/master.m3u8",
+      "name": "TJK TV (1080p)",
+      "country": "TR",
+      "group": "Sport",
+      "url": "https://tjktv-live.tjk.org/tjktv.m3u8",
       "reason": "délai dépassé"
     }
   ],
   "dead": [
     {
-      "name": "For You TV",
-      "country": "CM",
-      "group": "Afrique",
-      "url": "https://stream.az-multimedia.com:3325/live/foryoutvlive.m3u8",
-      "reason": "segment : HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "AFTV (1080p)",
+      "name": "News 12 New York (1080p)",
       "country": "US",
       "group": "USA",
-      "url": "https://livestream.telvue.com/accframingham1/f7b44cfafd5c52223d5498196c8a2e7b.sdp/playlist.m3u8",
+      "url": "https://aegis-cloudfront-1.tubi.video/97fbb992-c212-4164-8406-abb6f731e517/playlist.m3u8",
       "reason": "HTTP 404",
       "code": 404
     },
     {
-      "name": "Fun Vision",
-      "country": "BE",
-      "group": "France",
-      "url": "https://funradiovisionhd.vedge.infomaniak.com/livecast/ik:funradiovisionhd/manifest.m3u8",
-      "reason": "variante : HTTP 404",
+      "name": "Fox Soul (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://aegis-cloudfront-1.tubi.video/0c4bd880-76cc-4000-b9cb-8edabeb88daa/index.m3u8",
+      "reason": "HTTP 404",
       "code": 404
     },
     {
-      "name": "ShowVen TV (720p)",
-      "country": "VE",
-      "group": "Music",
-      "url": "https://cdnbarinas.tvzamora.com/showven/index.m3u8",
-      "reason": "segment : HTTP 404",
+      "name": "Teletrak TV (720p)",
+      "country": "CL",
+      "group": "Sport",
+      "url": "https://unlimited6-cl.dps.live/sportinghd/sportinghd.smil/playlist.m3u8",
+      "reason": "HTTP 404",
       "code": 404
     }
   ]
