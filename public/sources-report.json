@@ -1,15 +1,16 @@
 {
-  "generatedAt": "2026-10-28T17:41:38.614Z",
+  "generatedAt": "2026-10-28T22:01:54.010Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
   "counts": {
-    "checked": 1347,
-    "ok": 1140,
-    "geoBlocked": 203,
-    "pending": 1,
-    "dead": 3
+    "checked": 1344,
+    "ok": 1136,
+    "geoBlocked": 201,
+    "pending": 2,
+    "dead": 5
   },
   "deadReasons": {
-    "HTTP 404": 3
+    "HTTP 404": 1,
+    "flux terminé (ENDLIST)": 4
   },
   "geoBlocked": [
     {
@@ -569,14 +570,6 @@
       "country": "FR",
       "group": "France",
       "url": "http://145.239.5.177/148/index.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "Pasiones Latin America (1080p)",
-      "country": "US",
-      "group": "Latino",
-      "url": "http://15.204.246.24:8080/PasionesHD/index.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -1213,14 +1206,6 @@
       "code": 403
     },
     {
-      "name": "Tele Pam (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://watch.haitilive.net/app/2020/telepam/index.fmp4.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "Temecula TV (1080p)",
       "country": "US",
       "group": "USA",
@@ -1639,37 +1624,60 @@
   ],
   "pending": [
     {
-      "name": "TJK TV (1080p)",
-      "country": "TR",
-      "group": "Sport",
-      "url": "https://tjktv-live.tjk.org/tjktv.m3u8",
+      "name": "Nickelodeon Latin America (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://barinaslive1.boldmss.com/NICK/NICK.isml/NICK.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Canal RCN (1080p)",
+      "country": "CO",
+      "group": "Latino",
+      "url": "https://barinaslive1.boldmss.com/RCN/RCN.isml/RCN.m3u8",
       "reason": "délai dépassé"
     }
   ],
   "dead": [
     {
-      "name": "News 12 New York (1080p)",
+      "name": "Pars TV",
       "country": "US",
       "group": "USA",
-      "url": "https://aegis-cloudfront-1.tubi.video/97fbb992-c212-4164-8406-abb6f731e517/playlist.m3u8",
+      "url": "https://parshls.wns.live/hls/stream.m3u8",
       "reason": "HTTP 404",
       "code": 404
     },
     {
-      "name": "Fox Soul (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://aegis-cloudfront-1.tubi.video/0c4bd880-76cc-4000-b9cb-8edabeb88daa/index.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
+      "name": "7S Music (576p)",
+      "country": "IN",
+      "group": "Music",
+      "url": "https://cdn.pishow.tv/ott/live/1257/master.m3u8",
+      "reason": "flux terminé (ENDLIST)",
+      "code": 200
     },
     {
-      "name": "Teletrak TV (720p)",
-      "country": "CL",
-      "group": "Sport",
-      "url": "https://unlimited6-cl.dps.live/sportinghd/sportinghd.smil/playlist.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
+      "name": "Public Music (720p)",
+      "country": "IN",
+      "group": "Music",
+      "url": "https://cdn.pishow.tv/ott/live/441/master.m3u8",
+      "reason": "flux terminé (ENDLIST)",
+      "code": 200
+    },
+    {
+      "name": "Raj Musix Malayalam (576p)",
+      "country": "IN",
+      "group": "Music",
+      "url": "https://cdn.pishow.tv/ott/live/1073/master.m3u8",
+      "reason": "flux terminé (ENDLIST)",
+      "code": 200
+    },
+    {
+      "name": "Sangeet Marathi (720p)",
+      "country": "IN",
+      "group": "Music",
+      "url": "https://cdn.pishow.tv/ott/live/1229/master.m3u8",
+      "reason": "flux terminé (ENDLIST)",
+      "code": 200
     }
   ]
 }
