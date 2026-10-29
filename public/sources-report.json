@@ -1,16 +1,15 @@
 {
-  "generatedAt": "2026-10-28T22:01:54.010Z",
+  "generatedAt": "2026-10-29T03:39:59.968Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
   "counts": {
-    "checked": 1344,
-    "ok": 1136,
+    "checked": 1339,
+    "ok": 1137,
     "geoBlocked": 201,
-    "pending": 2,
-    "dead": 5
+    "pending": 0,
+    "dead": 1
   },
   "deadReasons": {
-    "HTTP 404": 1,
-    "flux terminé (ENDLIST)": 4
+    "HTTP 404": 1
   },
   "geoBlocked": [
     {
@@ -574,6 +573,14 @@
       "code": 403
     },
     {
+      "name": "Pasiones Latin America (1080p)",
+      "country": "US",
+      "group": "Latino",
+      "url": "http://15.204.246.24:8080/PasionesHD/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
       "name": "RMC Life (1080p)",
       "country": "FR",
       "group": "France",
@@ -818,14 +825,6 @@
       "country": "US",
       "group": "USA",
       "url": "https://reflect-tuolumne.cablecast.tv/live-3/live/stream-1/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "ARTN TV (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://streamer1.connectto.com/ARTN_mobile/index.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -1206,6 +1205,14 @@
       "code": 403
     },
     {
+      "name": "Tele Pam (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://watch.haitilive.net/app/2020/telepam/index.fmp4.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
       "name": "Temecula TV (1080p)",
       "country": "US",
       "group": "USA",
@@ -1454,14 +1461,6 @@
       "code": 403
     },
     {
-      "name": "TVI Ficcao (720p)",
-      "country": "PT",
-      "group": "Series",
-      "url": "https://raw.githubusercontent.com/thomraider12/canaistvpt/main/m3u8s/tvificcao.m3u8",
-      "reason": "variante : HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "Video Rola (1080p)",
       "country": "IT",
       "group": "Music",
@@ -1622,62 +1621,15 @@
       "code": 403
     }
   ],
-  "pending": [
-    {
-      "name": "Nickelodeon Latin America (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://barinaslive1.boldmss.com/NICK/NICK.isml/NICK.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Canal RCN (1080p)",
-      "country": "CO",
-      "group": "Latino",
-      "url": "https://barinaslive1.boldmss.com/RCN/RCN.isml/RCN.m3u8",
-      "reason": "délai dépassé"
-    }
-  ],
+  "pending": [],
   "dead": [
     {
-      "name": "Pars TV",
-      "country": "US",
-      "group": "USA",
-      "url": "https://parshls.wns.live/hls/stream.m3u8",
+      "name": "Lollywood HD TV",
+      "country": "CD",
+      "group": "Afrique",
+      "url": "https://stream.berosat.live/hls/lollywood-hd/lollywood-hd.m3u8",
       "reason": "HTTP 404",
       "code": 404
-    },
-    {
-      "name": "7S Music (576p)",
-      "country": "IN",
-      "group": "Music",
-      "url": "https://cdn.pishow.tv/ott/live/1257/master.m3u8",
-      "reason": "flux terminé (ENDLIST)",
-      "code": 200
-    },
-    {
-      "name": "Public Music (720p)",
-      "country": "IN",
-      "group": "Music",
-      "url": "https://cdn.pishow.tv/ott/live/441/master.m3u8",
-      "reason": "flux terminé (ENDLIST)",
-      "code": 200
-    },
-    {
-      "name": "Raj Musix Malayalam (576p)",
-      "country": "IN",
-      "group": "Music",
-      "url": "https://cdn.pishow.tv/ott/live/1073/master.m3u8",
-      "reason": "flux terminé (ENDLIST)",
-      "code": 200
-    },
-    {
-      "name": "Sangeet Marathi (720p)",
-      "country": "IN",
-      "group": "Music",
-      "url": "https://cdn.pishow.tv/ott/live/1229/master.m3u8",
-      "reason": "flux terminé (ENDLIST)",
-      "code": 200
     }
   ]
 }
