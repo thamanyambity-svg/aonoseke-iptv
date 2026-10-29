@@ -1,14 +1,15 @@
 {
-  "generatedAt": "2026-10-29T03:39:59.968Z",
+  "generatedAt": "2026-10-29T12:00:01.537Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
   "counts": {
-    "checked": 1339,
-    "ok": 1137,
-    "geoBlocked": 201,
-    "pending": 0,
-    "dead": 1
+    "checked": 1338,
+    "ok": 1129,
+    "geoBlocked": 200,
+    "pending": 6,
+    "dead": 3
   },
   "deadReasons": {
+    "réponse qui n'est pas un flux HLS": 2,
     "HTTP 404": 1
   },
   "geoBlocked": [
@@ -573,14 +574,6 @@
       "code": 403
     },
     {
-      "name": "Pasiones Latin America (1080p)",
-      "country": "US",
-      "group": "Latino",
-      "url": "http://15.204.246.24:8080/PasionesHD/index.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "RMC Life (1080p)",
       "country": "FR",
       "group": "France",
@@ -773,14 +766,6 @@
       "code": 403
     },
     {
-      "name": "Leman Bleu (1080p)",
-      "country": "CH",
-      "group": "France",
-      "url": "http://livevideo.infomaniak.com/streaming/livecast/naxoo/playlist.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "RTL9 (720p)",
       "country": "LU",
       "group": "France",
@@ -825,6 +810,14 @@
       "country": "US",
       "group": "USA",
       "url": "https://reflect-tuolumne.cablecast.tv/live-3/live/stream-1/live.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "ARTN TV (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://streamer1.connectto.com/ARTN_mobile/index.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -1201,14 +1194,6 @@
       "country": "US",
       "group": "USA",
       "url": "https://reflect-tampa-bay-community.cablecast.tv/live-16/live/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "Tele Pam (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://watch.haitilive.net/app/2020/telepam/index.fmp4.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -1613,6 +1598,14 @@
       "code": 403
     },
     {
+      "name": "TRT Cocuk (1440p)",
+      "country": "TR",
+      "group": "Kids",
+      "url": "https://tv-trtcocuk.medya.trt.com.tr/master.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
       "name": "YleX (720p)",
       "country": "FI",
       "group": "Music",
@@ -1621,13 +1614,72 @@
       "code": 403
     }
   ],
-  "pending": [],
+  "pending": [
+    {
+      "name": "Leman Bleu (1080p)",
+      "country": "CH",
+      "group": "France",
+      "url": "http://livevideo.infomaniak.com/streaming/livecast/naxoo/playlist.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "AFV (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://linear-12.frequency.stream/dist/plex/12/hls/master/playlist.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Bounce XL (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg01438-ewscrippscompan-bouncexl-tablo/playlist.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Epic Crimes (1080p)",
+      "country": "IN",
+      "group": "Documentary",
+      "url": "https://cc-wsuyg2uxeak04.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-wsuyg2uxeak04/master.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "PowerTurk Slow (1080p)",
+      "country": "TR",
+      "group": "Music",
+      "url": "https://livetv.powerapp.com.tr/pturkslow/slow.smil/playlist.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "PTC Chakde (720p)",
+      "country": "IN",
+      "group": "Music",
+      "url": "https://cdn.pishow.tv/ott/live/449/master.m3u8",
+      "reason": "délai dépassé"
+    }
+  ],
   "dead": [
     {
-      "name": "Lollywood HD TV",
-      "country": "CD",
-      "group": "Afrique",
-      "url": "https://stream.berosat.live/hls/lollywood-hd/lollywood-hd.m3u8",
+      "name": "48 Hours (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://dai.google.com/linear/hls/event/JUr94WL2QAiVpGNHY5n5dA/master.m3u8",
+      "reason": "réponse qui n'est pas un flux HLS",
+      "code": 200
+    },
+    {
+      "name": "PowerTurk Akustik (1080p)",
+      "country": "TR",
+      "group": "Music",
+      "url": "https://livetv.powerapp.com.tr/pturkakustik/akustik.smil/playlist.m3u8",
+      "reason": "réponse qui n'est pas un flux HLS",
+      "code": 200
+    },
+    {
+      "name": "Tele7music (576i)",
+      "country": "RO",
+      "group": "Music",
+      "url": "https://live.tele7music.ro/hls/stream/index.m3u8",
       "reason": "HTTP 404",
       "code": 404
     }
