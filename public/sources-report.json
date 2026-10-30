@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-30T03:43:08.821Z",
+  "generatedAt": "2026-10-30T11:54:10.959Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
   "counts": {
-    "checked": 1335,
-    "ok": 1132,
-    "geoBlocked": 202,
-    "pending": 0,
+    "checked": 1334,
+    "ok": 1133,
+    "geoBlocked": 198,
+    "pending": 2,
     "dead": 1
   },
   "deadReasons": {
-    "délai dépassé": 1
+    "segment : HTTP 404": 1
   },
   "geoBlocked": [
     {
@@ -85,14 +85,6 @@
       "code": 403
     },
     {
-      "name": "CNA (360p)",
-      "country": "DZ",
-      "group": "Afrique",
-      "url": "https://live.creacast.com/cna/stream/playlist.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "Dounia TV",
       "country": "NE",
       "group": "Afrique",
@@ -105,14 +97,6 @@
       "country": "FR",
       "group": "France",
       "url": "https://sv1.data-stream.top/8c0a287e56a6e1843143904778be3775b4d3edd4fba4ffcc3f72638c7a71d4d4/hls/francetv4.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "ILTV (720p)",
-      "country": "FR",
-      "group": "France",
-      "url": "https://live.creacast.com/iltv/smil:iltv.smil/playlist.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -573,14 +557,6 @@
       "code": 403
     },
     {
-      "name": "Pasiones Latin America (1080p)",
-      "country": "US",
-      "group": "Latino",
-      "url": "http://15.204.246.24:8080/PasionesHD/index.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "RMC Life (1080p)",
       "country": "FR",
       "group": "France",
@@ -825,6 +801,14 @@
       "country": "US",
       "group": "USA",
       "url": "https://reflect-tuolumne.cablecast.tv/live-3/live/stream-1/live.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "ARTN TV (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://streamer1.connectto.com/ARTN_mobile/index.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -1205,14 +1189,6 @@
       "code": 403
     },
     {
-      "name": "Tele Pam (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://watch.haitilive.net/app/2020/telepam/index.fmp4.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "Temecula TV (1080p)",
       "country": "US",
       "group": "USA",
@@ -1282,14 +1258,6 @@
       "group": "Documentary",
       "url": "https://vs-hls-pushb-uk-live.akamaized.net/x=4/i=urn:bbc:pips:service:bbc_four_hd/mobile_wifi_main_hd_abr_v2.m3u8",
       "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "Esport3 (1080p)",
-      "country": "ES",
-      "group": "Sport",
-      "url": "https://directes-tv-int.3catdirectes.cat/live-content/esport3-hls/master.m3u8",
-      "reason": "segment refusé (HTTP 403)",
       "code": 403
     },
     {
@@ -1461,18 +1429,18 @@
       "code": 403
     },
     {
-      "name": "TVI Ficcao (720p)",
-      "country": "PT",
-      "group": "Series",
-      "url": "https://raw.githubusercontent.com/thomraider12/canaistvpt/main/m3u8s/tvificcao.m3u8",
-      "reason": "variante : HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "Video Rola (1080p)",
       "country": "IT",
       "group": "Music",
       "url": "https://d3b2epqdk0p7vd.cloudfront.net/out/v1/8a448b5e16384af4a3c8146a7b049c32/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "BIZ Cinema (1080p)",
+      "country": "UZ",
+      "group": "Movies",
+      "url": "https://fl.biztv.media/cinema_720_EMfSyXgoRdiIHgldXTZICucKTIeCKO/index.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -1629,14 +1597,30 @@
       "code": 403
     }
   ],
-  "pending": [],
+  "pending": [
+    {
+      "name": "RTB (360p)",
+      "country": "BF",
+      "group": "Afrique",
+      "url": "https://edge12.vedge.infomaniak.com/livecast/ik:rtblive1_8/manifest.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Extrema TV (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "http://livestreamcdn.net:1935/ExtremaTV/ExtremaTV/playlist.m3u8",
+      "reason": "délai dépassé"
+    }
+  ],
   "dead": [
     {
-      "name": "Inooro TV",
-      "country": "KE",
-      "group": "Afrique",
-      "url": "https://live-onesignal.royalmedia.co.ke/live/T-MxRsFebq6zx7k2QFMbLw.m3u8",
-      "reason": "délai dépassé"
+      "name": "KIIO-LD 10.4 (480p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://streamer1.connectto.com/AABC_WEB_1201/index.m3u8",
+      "reason": "segment : HTTP 404",
+      "code": 404
     }
   ]
 }
