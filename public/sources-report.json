@@ -1,15 +1,17 @@
 {
-  "generatedAt": "2026-10-30T17:30:15.719Z",
+  "generatedAt": "2026-10-30T21:49:05.290Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
   "counts": {
-    "checked": 1333,
-    "ok": 1128,
+    "checked": 1332,
+    "ok": 1124,
     "geoBlocked": 202,
     "pending": 2,
-    "dead": 1
+    "dead": 4
   },
   "deadReasons": {
-    "segment : HTTP 404": 1
+    "certificat invalide": 1,
+    "HTTP 404": 1,
+    "segment : HTTP 404": 2
   },
   "geoBlocked": [
     {
@@ -18,14 +20,6 @@
       "group": "Afrique",
       "url": "http://trn03.bozztv.com/gin-telecongo/index.m3u8",
       "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "WDEF-TV News Chattanooga TN (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://townnews.g-mana.live/media/a54a6409-5e91-46f0-9fee-06904c1fd094/main.m3u8",
-      "reason": "segment refusé (HTTP 403)",
       "code": 403
     },
     {
@@ -1085,14 +1079,6 @@
       "code": 403
     },
     {
-      "name": "Metaleitor TV",
-      "country": "US",
-      "group": "USA",
-      "url": "https://vs20.live.opencaster.com/metaleitortv_423d3342/index.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "MeTV (720p)",
       "country": "US",
       "group": "USA",
@@ -1293,6 +1279,14 @@
       "code": 403
     },
     {
+      "name": "Esport3 (1080p)",
+      "country": "ES",
+      "group": "Sport",
+      "url": "https://directes-tv-int.3catdirectes.cat/live-content/esport3-hls/master.m3u8",
+      "reason": "segment refusé (HTTP 403)",
+      "code": 403
+    },
+    {
       "name": "K19",
       "country": "AT",
       "group": "Sport",
@@ -1458,6 +1452,14 @@
       "group": "Kids",
       "url": "https://directes-tv-cat.3catdirectes.cat/live-content/super3-hls/master.m3u8",
       "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "TVI Ficcao (720p)",
+      "country": "PT",
+      "group": "Series",
+      "url": "https://raw.githubusercontent.com/thomraider12/canaistvpt/main/m3u8s/tvificcao.m3u8",
+      "reason": "variante : HTTP 403 (accès refusé)",
       "code": 403
     },
     {
@@ -1631,26 +1633,50 @@
   ],
   "pending": [
     {
-      "name": "LoveWorld Persia (720p)",
-      "country": "NG",
-      "group": "Afrique",
-      "url": "https://cdn3.wowza.com/5/aVJETlF0UFdmYTFu/LWPP/ngrp:persia.stream_all/playlist.m3u8",
-      "reason": "délai dépassé"
+      "name": "Sportivnyy (1080p)",
+      "country": "RU",
+      "group": "Sport",
+      "url": "https://live-3.otcnet.ru/sportivny/index.m3u8",
+      "reason": "HTTP 503",
+      "code": 503
     },
+    {
+      "name": "IQ Channel (720p)",
+      "country": "CR",
+      "group": "Music",
+      "url": "https://rtmp.info/iqtv/envivo/playlist.m3u8",
+      "reason": "délai dépassé"
+    }
+  ],
+  "dead": [
     {
       "name": "Ark TV (1080p)",
       "country": "UG",
       "group": "Afrique",
       "url": "https://stream.hydeinnovations.com/arktv-international/index.fmp4.m3u8",
       "reason": "certificat invalide"
-    }
-  ],
-  "dead": [
+    },
     {
-      "name": "MCN6 Arts Channel (1080p)",
+      "name": "Documentary+ (1080p)",
       "country": "US",
       "group": "USA",
-      "url": "https://d18fcxaqfnwjhj.cloudfront.net/CDN_Ingest/MCN6_COMEDY.smil/Playlist.m3u8",
+      "url": "https://1d153317c8db4250b3789601274e2402.mediatailor.us-west-2.amazonaws.com/v1/master/ba62fe743df0fe93366eba3a257d792884136c7f/LINEAR-887-DOCUMENTARYINTERNATIONAL-DOCUMENTARYPLUS/mt/documentaryplus/887/hls/master/playlist.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "M Sports (1080p)",
+      "country": "PK",
+      "group": "Sport",
+      "url": "https://cdn.rabta.stream/M-Sports/index.m3u8",
+      "reason": "segment : HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "MH One Movies (576p)",
+      "country": "IN",
+      "group": "Movies",
+      "url": "https://mumt03.tangotv.in/Dsly5z3HMHONEMOVIE/index.m3u8",
       "reason": "segment : HTTP 404",
       "code": 404
     }
