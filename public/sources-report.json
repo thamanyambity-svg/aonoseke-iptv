@@ -1,15 +1,16 @@
 {
-  "generatedAt": "2026-10-31T16:34:55.926Z",
+  "generatedAt": "2026-10-31T20:48:56.120Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
   "counts": {
-    "checked": 1321,
-    "ok": 1113,
-    "geoBlocked": 203,
-    "pending": 3,
-    "dead": 2
+    "checked": 1319,
+    "ok": 1117,
+    "geoBlocked": 199,
+    "pending": 0,
+    "dead": 3
   },
   "deadReasons": {
-    "segment : HTTP 404": 2
+    "délai dépassé": 2,
+    "HTTP 404": 1
   },
   "geoBlocked": [
     {
@@ -18,22 +19,6 @@
       "group": "Afrique",
       "url": "http://trn03.bozztv.com/gin-telecongo/index.m3u8",
       "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "ABC WWAY 3",
-      "country": "US",
-      "group": "News",
-      "url": "https://townnews.g-mana.live/media/027a05c7-43b6-49eb-ad10-a0c0f10a0754/main.m3u8",
-      "reason": "segment refusé (HTTP 403)",
-      "code": 403
-    },
-    {
-      "name": "WDEF-TV News Chattanooga TN (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://townnews.g-mana.live/media/a54a6409-5e91-46f0-9fee-06904c1fd094/main.m3u8",
-      "reason": "segment refusé (HTTP 403)",
       "code": 403
     },
     {
@@ -589,14 +574,6 @@
       "code": 403
     },
     {
-      "name": "Pasiones Latin America (1080p)",
-      "country": "US",
-      "group": "Latino",
-      "url": "http://15.204.246.24:8080/PasionesHD/index.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "RMC Life (1080p)",
       "country": "FR",
       "group": "France",
@@ -841,6 +818,14 @@
       "country": "US",
       "group": "USA",
       "url": "https://reflect-tuolumne.cablecast.tv/live-3/live/stream-1/live.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "ARTN TV (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://streamer1.connectto.com/ARTN_mobile/index.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -1221,14 +1206,6 @@
       "code": 403
     },
     {
-      "name": "Tele Pam (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://watch.haitilive.net/app/2020/telepam/index.fmp4.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "Temecula TV (1080p)",
       "country": "US",
       "group": "USA",
@@ -1493,14 +1470,6 @@
       "code": 403
     },
     {
-      "name": "Cartoon Classics",
-      "country": "PL",
-      "group": "Kids",
-      "url": "https://daiconnect.com/live/hls/tvup/rk-cartoonclassics/578f4b7eb725168349ec0af81b21d388/index.m3u8",
-      "reason": "segment refusé (HTTP 403)",
-      "code": 403
-    },
-    {
       "name": "Drama Channel (1080p)",
       "country": "TH",
       "group": "Series",
@@ -1637,7 +1606,8 @@
       "code": 403
     }
   ],
-  "pending": [
+  "pending": [],
+  "dead": [
     {
       "name": "Nickelodeon Latin America (1080p)",
       "country": "US",
@@ -1653,29 +1623,11 @@
       "reason": "délai dépassé"
     },
     {
-      "name": "Sportivnyy (1080p)",
-      "country": "RU",
-      "group": "Sport",
-      "url": "https://live-3.otcnet.ru/sportivny/index.m3u8",
-      "reason": "HTTP 503",
-      "code": 503
-    }
-  ],
-  "dead": [
-    {
-      "name": "Wazobia Max TV Nigeria (720p)",
-      "country": "NG",
-      "group": "Afrique",
-      "url": "https://wazobia.live:8333/channel/wmax.m3u8",
-      "reason": "segment : HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Impact TV 2 (1080p)",
-      "country": "RO",
-      "group": "Music",
-      "url": "https://online.tvimpact.live/hls/impact_tv2.m3u8",
-      "reason": "segment : HTTP 404",
+      "name": "Cartoon Classics",
+      "country": "PL",
+      "group": "Kids",
+      "url": "https://daiconnect.com/live/hls/tvup/rk-cartoonclassics/578f4b7eb725168349ec0af81b21d388/index.m3u8",
+      "reason": "HTTP 404",
       "code": 404
     }
   ]
