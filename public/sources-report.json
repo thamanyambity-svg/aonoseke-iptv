@@ -1,17 +1,16 @@
 {
-  "generatedAt": "2026-10-30T21:49:05.290Z",
+  "generatedAt": "2026-10-31T03:26:53.301Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
   "counts": {
-    "checked": 1332,
-    "ok": 1124,
-    "geoBlocked": 202,
-    "pending": 2,
-    "dead": 4
+    "checked": 1328,
+    "ok": 1122,
+    "geoBlocked": 201,
+    "pending": 0,
+    "dead": 5
   },
   "deadReasons": {
-    "certificat invalide": 1,
-    "HTTP 404": 1,
-    "segment : HTTP 404": 2
+    "segment : HTTP 404": 2,
+    "HTTP 404": 3
   },
   "geoBlocked": [
     {
@@ -87,14 +86,6 @@
       "code": 403
     },
     {
-      "name": "CNA (360p)",
-      "country": "DZ",
-      "group": "Afrique",
-      "url": "https://live.creacast.com/cna/stream/playlist.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "Dounia TV",
       "country": "NE",
       "group": "Afrique",
@@ -107,14 +98,6 @@
       "country": "FR",
       "group": "France",
       "url": "https://sv1.data-stream.top/8c0a287e56a6e1843143904778be3775b4d3edd4fba4ffcc3f72638c7a71d4d4/hls/francetv4.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "ILTV (720p)",
-      "country": "FR",
-      "group": "France",
-      "url": "https://live.creacast.com/iltv/smil:iltv.smil/playlist.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -571,6 +554,14 @@
       "country": "FR",
       "group": "France",
       "url": "http://145.239.5.177/148/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Pasiones Latin America (1080p)",
+      "country": "US",
+      "group": "Latino",
+      "url": "http://15.204.246.24:8080/PasionesHD/index.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -1459,7 +1450,7 @@
       "country": "PT",
       "group": "Series",
       "url": "https://raw.githubusercontent.com/thomraider12/canaistvpt/main/m3u8s/tvificcao.m3u8",
-      "reason": "variante : HTTP 403 (accès refusé)",
+      "reason": "segment refusé (HTTP 403)",
       "code": 403
     },
     {
@@ -1631,53 +1622,46 @@
       "code": 403
     }
   ],
-  "pending": [
-    {
-      "name": "Sportivnyy (1080p)",
-      "country": "RU",
-      "group": "Sport",
-      "url": "https://live-3.otcnet.ru/sportivny/index.m3u8",
-      "reason": "HTTP 503",
-      "code": 503
-    },
-    {
-      "name": "IQ Channel (720p)",
-      "country": "CR",
-      "group": "Music",
-      "url": "https://rtmp.info/iqtv/envivo/playlist.m3u8",
-      "reason": "délai dépassé"
-    }
-  ],
+  "pending": [],
   "dead": [
     {
-      "name": "Ark TV (1080p)",
-      "country": "UG",
-      "group": "Afrique",
-      "url": "https://stream.hydeinnovations.com/arktv-international/index.fmp4.m3u8",
-      "reason": "certificat invalide"
-    },
-    {
-      "name": "Documentary+ (1080p)",
+      "name": "TVS Mainstreet (360p)",
       "country": "US",
       "group": "USA",
-      "url": "https://1d153317c8db4250b3789601274e2402.mediatailor.us-west-2.amazonaws.com/v1/master/ba62fe743df0fe93366eba3a257d792884136c7f/LINEAR-887-DOCUMENTARYINTERNATIONAL-DOCUMENTARYPLUS/mt/documentaryplus/887/hls/master/playlist.m3u8",
+      "url": "https://rpn.bozztv.com/gusa/gusa-tvsmainst/index.m3u8",
+      "reason": "segment : HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "TVS Talk Network (360p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://rpn.bozztv.com/gusa/gusa-TVStalk/index.m3u8",
+      "reason": "segment : HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "70-80 TV",
+      "country": "IT",
+      "group": "Music",
+      "url": "https://585b674743bbb.streamlock.net/9050/9050/playlist.m3u8",
       "reason": "HTTP 404",
       "code": 404
     },
     {
-      "name": "M Sports (1080p)",
-      "country": "PK",
-      "group": "Sport",
-      "url": "https://cdn.rabta.stream/M-Sports/index.m3u8",
-      "reason": "segment : HTTP 404",
+      "name": "Vintage Music (720p)",
+      "country": "CR",
+      "group": "Music",
+      "url": "https://59ef525c24caa.streamlock.net/vmtv/tvvintage/playlist.m3u8",
+      "reason": "HTTP 404",
       "code": 404
     },
     {
-      "name": "MH One Movies (576p)",
-      "country": "IN",
+      "name": "SL 2",
+      "country": "IR",
       "group": "Movies",
-      "url": "https://mumt03.tangotv.in/Dsly5z3HMHONEMOVIE/index.m3u8",
-      "reason": "segment : HTTP 404",
+      "url": "https://sltwohls.wns.live/hls/stream.m3u8",
+      "reason": "HTTP 404",
       "code": 404
     }
   ]
