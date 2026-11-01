@@ -1,16 +1,19 @@
 {
-  "generatedAt": "2026-11-01T12:23:14.408Z",
+  "generatedAt": "2026-11-01T21:30:51.569Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
   "counts": {
-    "checked": 1316,
-    "ok": 1112,
-    "geoBlocked": 200,
-    "pending": 2,
-    "dead": 2
+    "checked": 1314,
+    "ok": 1102,
+    "geoBlocked": 201,
+    "pending": 5,
+    "dead": 6
   },
   "deadReasons": {
-    "HTTP 404": 1,
-    "CORS refusé pour l'appli Android": 1
+    "HTTP 404": 2,
+    "domaine introuvable": 1,
+    "variante : HTTP 502": 1,
+    "flux terminé (ENDLIST)": 1,
+    "réponse qui n'est pas un flux HLS": 1
   },
   "geoBlocked": [
     {
@@ -570,6 +573,14 @@
       "country": "FR",
       "group": "France",
       "url": "http://145.239.5.177/148/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Pasiones Latin America (1080p)",
+      "country": "US",
+      "group": "Latino",
+      "url": "http://15.204.246.24:8080/PasionesHD/index.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -1616,6 +1627,51 @@
   ],
   "pending": [
     {
+      "name": "WildEarth (1080p)",
+      "country": "ZA",
+      "group": "Afrique",
+      "url": "https://cdn-ue1-prod.tsv2.amagi.tv/linear/amg01290-wildearth-oando/playlist.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Azteca Deportes Network (720p)",
+      "country": "MX",
+      "group": "Sport",
+      "url": "https://live-manifest.production-public.tubi.io/live/6bf131c3-d664-424c-93c9-49188a788980/playlist.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "KiKA (1080p)",
+      "country": "DE",
+      "group": "Kids",
+      "url": "https://kikageohls.akamaized.net/hls/live/2022693/livetvkika_de/master.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "La Kalle (720p)",
+      "country": "CO",
+      "group": "Music",
+      "url": "https://mdstrm.com/live-stream-playlist/58d191f07290fbb058025843.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Latina Clasicos (1080p)",
+      "country": "PE",
+      "group": "Series",
+      "url": "https://redirector.rudo.video/hls-video/plus226/latina2/latina2.smil/playlist.m3u8",
+      "reason": "délai dépassé"
+    }
+  ],
+  "dead": [
+    {
+      "name": "Itage TV (480p)",
+      "country": "NG",
+      "group": "Afrique",
+      "url": "https://viewmedia7219.bozztv.com/wmedia/viewmedia100/web_011/Stream/playlist.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
       "name": "Tele Pam (1080p)",
       "country": "US",
       "group": "USA",
@@ -1629,23 +1685,29 @@
       "url": "https://gist.githubusercontent.com/iptvonlinetv/244b66c61f162a7c0c2b4fa59b528139/raw/2376b7ba1989ebbd383301ec7d645e222a6c9338/udp780.510.345:4545.m3u8",
       "reason": "variante : HTTP 502",
       "code": 502
-    }
-  ],
-  "dead": [
+    },
     {
-      "name": "Lacrosse TV (720p)",
-      "country": "US",
-      "group": "Sport",
-      "url": "https://a-cdn.klowdtv.com/live2/lsn_720p/playlist.m3u8",
+      "name": "Mireasa (720p)",
+      "country": "RO",
+      "group": "Series",
+      "url": "https://stream1.antenaplay.ro/live/MireasaExtra/playlist.m3u8",
       "reason": "HTTP 404",
       "code": 404
     },
     {
-      "name": "Maxcine (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://live20.bozztv.com/giatvplayout7/giatv-208138/playlist.m3u8",
-      "reason": "CORS refusé pour l'appli Android",
+      "name": "Studio One + (720p)",
+      "country": "IN",
+      "group": "Movies",
+      "url": "https://cdn.pishow.tv/ott/live/276/master.m3u8",
+      "reason": "flux terminé (ENDLIST)",
+      "code": 200
+    },
+    {
+      "name": "VAM TV (720p)",
+      "country": "CW",
+      "group": "Music",
+      "url": "https://sincerecloud.stream/loadbalancer/public/J9EmQQGf.m3u8",
+      "reason": "réponse qui n'est pas un flux HLS",
       "code": 200
     }
   ]
