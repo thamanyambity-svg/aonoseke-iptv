@@ -1,14 +1,17 @@
 {
-  "generatedAt": "2026-11-01T03:29:54.946Z",
+  "generatedAt": "2026-11-01T12:23:14.408Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
   "counts": {
     "checked": 1316,
-    "ok": 1114,
-    "geoBlocked": 198,
-    "pending": 4,
-    "dead": 0
+    "ok": 1112,
+    "geoBlocked": 200,
+    "pending": 2,
+    "dead": 2
   },
-  "deadReasons": {},
+  "deadReasons": {
+    "HTTP 404": 1,
+    "CORS refusé pour l'appli Android": 1
+  },
   "geoBlocked": [
     {
       "name": "Tele Congo",
@@ -83,6 +86,14 @@
       "code": 403
     },
     {
+      "name": "CNA (360p)",
+      "country": "DZ",
+      "group": "Afrique",
+      "url": "https://live.creacast.com/cna/stream/playlist.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
       "name": "Dounia TV",
       "country": "NE",
       "group": "Afrique",
@@ -95,6 +106,14 @@
       "country": "FR",
       "group": "France",
       "url": "https://sv1.data-stream.top/8c0a287e56a6e1843143904778be3775b4d3edd4fba4ffcc3f72638c7a71d4d4/hls/francetv4.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "ILTV (720p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://live.creacast.com/iltv/smil:iltv.smil/playlist.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -1275,6 +1294,14 @@
       "code": 403
     },
     {
+      "name": "Lazio Style Channel (720p)",
+      "country": "IT",
+      "group": "Sport",
+      "url": "https://distribution.sportitalialive.it/origin/laziostyle_abr/playlist.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
       "name": "LRT Plius (1080p)",
       "country": "LT",
       "group": "Sport",
@@ -1424,14 +1451,6 @@
       "group": "Kids",
       "url": "https://directes-tv-cat.3catdirectes.cat/live-content/super3-hls/master.m3u8",
       "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "TVI Ficcao (720p)",
-      "country": "PT",
-      "group": "Series",
-      "url": "https://raw.githubusercontent.com/thomraider12/canaistvpt/main/m3u8s/tvificcao.m3u8",
-      "reason": "variante : HTTP 403 (accès refusé)",
       "code": 403
     },
     {
@@ -1597,35 +1616,37 @@
   ],
   "pending": [
     {
-      "name": "Sportitalia (1080p)",
-      "country": "IT",
-      "group": "Sport",
-      "url": "https://edge-001.streamup.eu/sportitalia/sihd_abr/playlist.m3u8",
-      "reason": "HTTP 502",
-      "code": 502
+      "name": "Tele Pam (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://watch.haitilive.net/app/2020/telepam/index.fmp4.m3u8",
+      "reason": "domaine introuvable"
     },
     {
-      "name": "Sportitalia Solocalcio (1080p)",
-      "country": "IT",
-      "group": "Sport",
-      "url": "https://edge-001.streamup.eu/sportitalia/sisolocalcio_abr/playlist.m3u8",
-      "reason": "HTTP 502",
-      "code": 502
-    },
-    {
-      "name": "Lazio Style Channel (720p)",
-      "country": "IT",
-      "group": "Sport",
-      "url": "https://distribution.sportitalialive.it/origin/laziostyle_abr/playlist.m3u8",
-      "reason": "connexion refusée"
-    },
-    {
-      "name": "BeJoy.kids (1080p)",
-      "country": "IT",
+      "name": "Groovia Kids (576p)",
+      "country": "ID",
       "group": "Kids",
-      "url": "https://stream.paroledivita.org/bejoy.m3u8",
-      "reason": "délai dépassé"
+      "url": "https://gist.githubusercontent.com/iptvonlinetv/244b66c61f162a7c0c2b4fa59b528139/raw/2376b7ba1989ebbd383301ec7d645e222a6c9338/udp780.510.345:4545.m3u8",
+      "reason": "variante : HTTP 502",
+      "code": 502
     }
   ],
-  "dead": []
+  "dead": [
+    {
+      "name": "Lacrosse TV (720p)",
+      "country": "US",
+      "group": "Sport",
+      "url": "https://a-cdn.klowdtv.com/live2/lsn_720p/playlist.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Maxcine (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://live20.bozztv.com/giatvplayout7/giatv-208138/playlist.m3u8",
+      "reason": "CORS refusé pour l'appli Android",
+      "code": 200
+    }
+  ]
 }
