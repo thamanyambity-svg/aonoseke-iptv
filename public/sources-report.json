@@ -1,14 +1,18 @@
 {
-  "generatedAt": "2026-11-02T14:18:46.739Z",
+  "generatedAt": "2026-11-03T00:13:45.302Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
   "counts": {
-    "checked": 1305,
+    "checked": 1304,
     "ok": 1096,
     "geoBlocked": 202,
-    "pending": 6,
-    "dead": 1
+    "pending": 0,
+    "dead": 6
   },
   "deadReasons": {
+    "domaine introuvable": 2,
+    "variante : HTTP 404": 1,
+    "erreur réseau (ECONNRESET)": 1,
+    "délai dépassé": 1,
     "HTTP 404": 1
   },
   "geoBlocked": [
@@ -1461,6 +1465,14 @@
       "code": 403
     },
     {
+      "name": "VM Latino (720p)",
+      "country": "CR",
+      "group": "Music",
+      "url": "https://59ef525c24caa.streamlock.net/vmtv/vmlatino/playlist.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
       "name": "BIZ Cinema (1080p)",
       "country": "UZ",
       "group": "Movies",
@@ -1613,14 +1625,6 @@
       "code": 403
     },
     {
-      "name": "TRT Cocuk (1440p)",
-      "country": "TR",
-      "group": "Kids",
-      "url": "https://tv-trtcocuk.medya.trt.com.tr/master.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "YleX (720p)",
       "country": "FI",
       "group": "Music",
@@ -1629,7 +1633,8 @@
       "code": 403
     }
   ],
-  "pending": [
+  "pending": [],
+  "dead": [
     {
       "name": "Discovering China (1080p)",
       "country": "CN",
@@ -1645,11 +1650,19 @@
       "reason": "domaine introuvable"
     },
     {
+      "name": "Star 101 FM (KNUT Guam)",
+      "country": "GU",
+      "group": "Music",
+      "url": "https://live2.tensila.com/knut-v-1.choice/hls/master.m3u8",
+      "reason": "variante : HTTP 404",
+      "code": 404
+    },
+    {
       "name": "UCTV University of California (720p) [Not 24/7]",
       "country": "US",
       "group": "USA",
       "url": "https://59e8e1c60a2b2.streamlock.net/509/509.stream/playlist.m3u8",
-      "reason": "connexion refusée"
+      "reason": "erreur réseau (ECONNRESET)"
     },
     {
       "name": "Littoral FM TV (720p)",
@@ -1663,23 +1676,6 @@
       "country": "GN",
       "group": "Afrique",
       "url": "https://kali.vdopanel.com:3119/hybrid/play.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "TV Mulhouse (1080p)",
-      "country": "FR",
-      "group": "France",
-      "url": "http://194.163.157.137:8080/hls/radiomulhouse.m3u8",
-      "reason": "HTTP 504",
-      "code": 504
-    }
-  ],
-  "dead": [
-    {
-      "name": "HANDICAP TV",
-      "country": "FR",
-      "group": "France",
-      "url": "https://srv.webtvmanager.fr:3697/stream/play.m3u8",
       "reason": "HTTP 404",
       "code": 404
     }
