@@ -1,18 +1,15 @@
 {
-  "generatedAt": "2026-11-03T00:13:45.302Z",
+  "generatedAt": "2026-11-03T13:19:50.649Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
   "counts": {
-    "checked": 1304,
-    "ok": 1096,
-    "geoBlocked": 202,
-    "pending": 0,
-    "dead": 6
+    "checked": 1298,
+    "ok": 1094,
+    "geoBlocked": 200,
+    "pending": 2,
+    "dead": 2
   },
   "deadReasons": {
-    "domaine introuvable": 2,
     "variante : HTTP 404": 1,
-    "erreur réseau (ECONNRESET)": 1,
-    "délai dépassé": 1,
     "HTTP 404": 1
   },
   "geoBlocked": [
@@ -1465,22 +1462,6 @@
       "code": 403
     },
     {
-      "name": "VM Latino (720p)",
-      "country": "CR",
-      "group": "Music",
-      "url": "https://59ef525c24caa.streamlock.net/vmtv/vmlatino/playlist.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "BIZ Cinema (1080p)",
-      "country": "UZ",
-      "group": "Movies",
-      "url": "https://fl.biztv.media/cinema_720_EMfSyXgoRdiIHgldXTZICucKTIeCKO/index.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "Bollywood Film",
       "country": "RO",
       "group": "Movies",
@@ -1633,49 +1614,36 @@
       "code": 403
     }
   ],
-  "pending": [],
+  "pending": [
+    {
+      "name": "Telesambre (504p)",
+      "country": "BE",
+      "group": "France",
+      "url": "https://dlgt0tdl2hpq3.cloudfront.net/rtbf/clr-rtbf/2f00284b/index.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "BIZ Cinema (1080p)",
+      "country": "UZ",
+      "group": "Movies",
+      "url": "https://fl.biztv.media/cinema_720_EMfSyXgoRdiIHgldXTZICucKTIeCKO/index.m3u8",
+      "reason": "certificat invalide"
+    }
+  ],
   "dead": [
     {
-      "name": "Discovering China (1080p)",
-      "country": "CN",
-      "group": "Culture",
-      "url": "https://amg01314-amg01314c8-distrotv-us-10218.playouts.now.amagi.tv/playlist/amg01314-cgtn-cgtndiscoveringchina-distrotvus/playlist.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "Duck Dynasty (1080p)",
-      "country": "US",
-      "group": "Series",
-      "url": "https://amg00276-amg00276c2-rakuten-uk-3449.playouts.now.amagi.tv/playlist.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "Star 101 FM (KNUT Guam)",
-      "country": "GU",
-      "group": "Music",
-      "url": "https://live2.tensila.com/knut-v-1.choice/hls/master.m3u8",
+      "name": "LoveWorld UK (1080p)",
+      "country": "NG",
+      "group": "Afrique",
+      "url": "https://cdn3.wowza.com/5/L1Uzd2FrbVlLRG1W/live/smil:lwukweb.smil/playlist.m3u8",
       "reason": "variante : HTTP 404",
       "code": 404
     },
     {
-      "name": "UCTV University of California (720p) [Not 24/7]",
-      "country": "US",
-      "group": "USA",
-      "url": "https://59e8e1c60a2b2.streamlock.net/509/509.stream/playlist.m3u8",
-      "reason": "erreur réseau (ECONNRESET)"
-    },
-    {
-      "name": "Littoral FM TV (720p)",
-      "country": "FR",
-      "group": "France",
-      "url": "https://live.creacast.com/littoralfm-ch1/stream/playlist.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Afrik Info TV",
-      "country": "GN",
-      "group": "Afrique",
-      "url": "https://kali.vdopanel.com:3119/hybrid/play.m3u8",
+      "name": "PMC",
+      "country": "AE",
+      "group": "Music",
+      "url": "https://pmchls.wns.live/hls/stream.m3u8",
       "reason": "HTTP 404",
       "code": 404
     }
