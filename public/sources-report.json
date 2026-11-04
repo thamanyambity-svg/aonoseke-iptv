@@ -1,18 +1,16 @@
 {
-  "generatedAt": "2026-11-03T22:43:32.875Z",
+  "generatedAt": "2026-11-04T04:04:59.623Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
   "counts": {
-    "checked": 1296,
-    "ok": 1070,
-    "geoBlocked": 200,
-    "pending": 21,
-    "dead": 5
+    "checked": 1291,
+    "ok": 1086,
+    "geoBlocked": 202,
+    "pending": 1,
+    "dead": 2
   },
   "deadReasons": {
-    "HTTP 404": 2,
-    "variante : HTTP 404": 1,
-    "CORS refusé pour l'appli Android": 1,
-    "certificat invalide": 1
+    "délai dépassé": 1,
+    "segment : HTTP 404": 1
   },
   "geoBlocked": [
     {
@@ -21,6 +19,14 @@
       "group": "Afrique",
       "url": "http://trn03.bozztv.com/gin-telecongo/index.m3u8",
       "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "WDEF-TV News Chattanooga TN (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://townnews.g-mana.live/media/a54a6409-5e91-46f0-9fee-06904c1fd094/main.m3u8",
+      "reason": "segment refusé (HTTP 403)",
       "code": 403
     },
     {
@@ -1080,6 +1086,14 @@
       "code": 403
     },
     {
+      "name": "Metaleitor TV",
+      "country": "US",
+      "group": "USA",
+      "url": "https://vs20.live.opencaster.com/metaleitortv_423d3342/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
       "name": "MeTV (720p)",
       "country": "US",
       "group": "USA",
@@ -1280,6 +1294,14 @@
       "code": 403
     },
     {
+      "name": "Esport3 (1080p)",
+      "country": "ES",
+      "group": "Sport",
+      "url": "https://directes-tv-int.3catdirectes.cat/live-content/esport3-hls/master.m3u8",
+      "reason": "segment refusé (HTTP 403)",
+      "code": 403
+    },
+    {
       "name": "K19",
       "country": "AT",
       "group": "Sport",
@@ -1448,14 +1470,6 @@
       "code": 403
     },
     {
-      "name": "TVI Ficcao (720p)",
-      "country": "PT",
-      "group": "Series",
-      "url": "https://raw.githubusercontent.com/thomraider12/canaistvpt/main/m3u8s/tvificcao.m3u8",
-      "reason": "variante : HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "Video Rola (1080p)",
       "country": "IT",
       "group": "Music",
@@ -1618,12 +1632,14 @@
   ],
   "pending": [
     {
-      "name": "Chada TV (720p)",
-      "country": "MA",
-      "group": "Afrique",
-      "url": "https://edge13.vedge.infomaniak.com/livecast/ik:chadatv/manifest.m3u8",
+      "name": "T Sports 7",
+      "country": "TH",
+      "group": "Sport",
+      "url": "https://live-us1.thaimomo.com/live-as/chtsport-1/playlist.m3u8",
       "reason": "délai dépassé"
-    },
+    }
+  ],
+  "dead": [
     {
       "name": "RTB (360p)",
       "country": "BF",
@@ -1632,197 +1648,12 @@
       "reason": "délai dépassé"
     },
     {
-      "name": "Berks Community TV (1080p)",
+      "name": "Omid e Iran TV",
       "country": "US",
       "group": "USA",
-      "url": "https://livestream.telvue.com/berkscmttv2/f7b44cfafd5c52223d5498196c8a2e7b.sdp/playlist.m3u8",
-      "reason": "HTTP 502",
-      "code": 502
-    },
-    {
-      "name": "CVTV Channel 192 (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://livestream.telvue.com/cvtv2/f7b44cfafd5c52223d5498196c8a2e7b.sdp/playlist.m3u8",
-      "reason": "HTTP 502",
-      "code": 502
-    },
-    {
-      "name": "CVTV Channel 194 (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://livestream.telvue.com/cvtv1/f7b44cfafd5c52223d5498196c8a2e7b.sdp/playlist.m3u8",
-      "reason": "variante : HTTP 502",
-      "code": 502
-    },
-    {
-      "name": "Access Nashua (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://livestream.telvue.com/nashuanh1/f7b44cfafd5c52223d5498196c8a2e7b.sdp/playlist.m3u8",
-      "reason": "variante : HTTP 502",
-      "code": 502
-    },
-    {
-      "name": "BATV Public Channel",
-      "country": "US",
-      "group": "USA",
-      "url": "https://livestream.telvue.com/billerica1/f7b44cfafd5c52223d5498196c8a2e7b.sdp/playlist.m3u8",
-      "reason": "variante : HTTP 502",
-      "code": 502
-    },
-    {
-      "name": "Best of BATV Channel",
-      "country": "US",
-      "group": "USA",
-      "url": "https://livestream.telvue.com/billerica4/f7b44cfafd5c52223d5498196c8a2e7b.sdp/playlist.m3u8",
-      "reason": "variante : HTTP 502",
-      "code": 502
-    },
-    {
-      "name": "BMC-HD TV (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://livestream.telvue.com/belmontmedia4/f7b44cfafd5c52223d5498196c8a2e7b.sdp/playlist.m3u8",
-      "reason": "variante : HTTP 502",
-      "code": 502
-    },
-    {
-      "name": "MRVTV Channel 44 (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://livestream.telvue.com/madrivervalleytv1/f7b44cfafd5c52223d5498196c8a2e7b.sdp/playlist.m3u8",
-      "reason": "variante : HTTP 502",
-      "code": 502
-    },
-    {
-      "name": "MRVTV Channel 45 (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://livestream.telvue.com/madrivervalleytv2/f7b44cfafd5c52223d5498196c8a2e7b.sdp/playlist.m3u8",
-      "reason": "HTTP 502",
-      "code": 502
-    },
-    {
-      "name": "Nashua ETV (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://livestream.telvue.com/nashuanh2/f7b44cfafd5c52223d5498196c8a2e7b.sdp/playlist.m3u8",
-      "reason": "variante : HTTP 502",
-      "code": 502
-    },
-    {
-      "name": "Natick Education Channel (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://livestream.telvue.com/natickpegasus1/f7b44cfafd5c52223d5498196c8a2e7b.sdp/playlist.m3u8",
-      "reason": "HTTP 502",
-      "code": 502
-    },
-    {
-      "name": "Natick Public Access Channel (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://livestream.telvue.com/natickpegasus2/f7b44cfafd5c52223d5498196c8a2e7b.sdp/playlist.m3u8",
-      "reason": "segment : HTTP 502",
-      "code": 502
-    },
-    {
-      "name": "RCTV (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://livestream.telvue.com/riflecmttv2/f7b44cfafd5c52223d5498196c8a2e7b.sdp/playlist.m3u8",
-      "reason": "segment : HTTP 502",
-      "code": 502
-    },
-    {
-      "name": "SMCTV Channel 24 (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://livestream.telvue.com/santamariactv2/f7b44cfafd5c52223d5498196c8a2e7b.sdp/playlist.m3u8",
-      "reason": "variante : HTTP 502",
-      "code": 502
-    },
-    {
-      "name": "Sound View Community Media (480p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://livestream.telvue.com/soundviewcmt2/f7b44cfafd5c52223d5498196c8a2e7b.sdp/playlist.m3u8",
-      "reason": "HTTP 502",
-      "code": 502
-    },
-    {
-      "name": "TAP TV Channel 23 (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://livestream.telvue.com/lompoccmttv1/f7b44cfafd5c52223d5498196c8a2e7b.sdp/playlist.m3u8",
-      "reason": "variante : HTTP 502",
-      "code": 502
-    },
-    {
-      "name": "TAP TV Channel 24 (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://livestream.telvue.com/lompoccmttv2/f7b44cfafd5c52223d5498196c8a2e7b.sdp/playlist.m3u8",
-      "reason": "HTTP 502",
-      "code": 502
-    },
-    {
-      "name": "TAP TV Channel 25 (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://livestream.telvue.com/lompoccmttv3/f7b44cfafd5c52223d5498196c8a2e7b.sdp/playlist.m3u8",
-      "reason": "variante : HTTP 502",
-      "code": 502
-    },
-    {
-      "name": "TUTV (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://livestream.telvue.com/templeuni1/f7b44cfafd5c52223d5498196c8a2e7b.sdp/playlist.m3u8",
-      "reason": "HTTP 502",
-      "code": 502
-    }
-  ],
-  "dead": [
-    {
-      "name": "TV10 (720p)",
-      "country": "RW",
-      "group": "Afrique",
-      "url": "https://5c46fa289c89f.streamlock.net/pub1live/mystream/playlist.m3u8",
-      "reason": "HTTP 404",
+      "url": "https://oitnhls.wns.live/hls/stream.m3u8",
+      "reason": "segment : HTTP 404",
       "code": 404
-    },
-    {
-      "name": "Carac 5",
-      "country": "CH",
-      "group": "France",
-      "url": "https://lfmmd.vedge.infomaniak.com/livecast/ik:carac5/manifest.m3u8",
-      "reason": "variante : HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Payam-e-Afghan TV (480p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://g5nl6xx5lpq6-hls-live.5centscdn.com/live1234/2621b29e501b445fabf227b086123b70.sdp/mono.m3u8",
-      "reason": "CORS refusé pour l'appli Android",
-      "code": 200
-    },
-    {
-      "name": "Bahrain Sports 1 (720p)",
-      "country": "BH",
-      "group": "Sport",
-      "url": "https://5c7b683162943.streamlock.net/live/ngrp:sportsone_all/playlist.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "BIZ Cinema (1080p)",
-      "country": "UZ",
-      "group": "Movies",
-      "url": "https://fl.biztv.media/cinema_720_EMfSyXgoRdiIHgldXTZICucKTIeCKO/index.m3u8",
-      "reason": "certificat invalide"
     }
   ]
 }
