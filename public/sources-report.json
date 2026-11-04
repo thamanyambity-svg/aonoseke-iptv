@@ -1,16 +1,15 @@
 {
-  "generatedAt": "2026-11-04T04:04:59.623Z",
+  "generatedAt": "2026-11-04T13:30:57.849Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
   "counts": {
-    "checked": 1291,
+    "checked": 1289,
     "ok": 1086,
-    "geoBlocked": 202,
+    "geoBlocked": 201,
     "pending": 1,
-    "dead": 2
+    "dead": 1
   },
   "deadReasons": {
-    "délai dépassé": 1,
-    "segment : HTTP 404": 1
+    "HTTP 404": 1
   },
   "geoBlocked": [
     {
@@ -19,14 +18,6 @@
       "group": "Afrique",
       "url": "http://trn03.bozztv.com/gin-telecongo/index.m3u8",
       "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "WDEF-TV News Chattanooga TN (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://townnews.g-mana.live/media/a54a6409-5e91-46f0-9fee-06904c1fd094/main.m3u8",
-      "reason": "segment refusé (HTTP 403)",
       "code": 403
     },
     {
@@ -1632,27 +1623,20 @@
   ],
   "pending": [
     {
-      "name": "T Sports 7",
-      "country": "TH",
-      "group": "Sport",
-      "url": "https://live-us1.thaimomo.com/live-as/chtsport-1/playlist.m3u8",
-      "reason": "délai dépassé"
+      "name": "30A Luxe Life Discovered (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://30a-tv.com/feeds/vidaa/luxelife.m3u8",
+      "reason": "erreur réseau (UND_ERR_SOCKET)"
     }
   ],
   "dead": [
     {
-      "name": "RTB (360p)",
-      "country": "BF",
-      "group": "Afrique",
-      "url": "https://edge12.vedge.infomaniak.com/livecast/ik:rtblive1_8/manifest.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Omid e Iran TV",
+      "name": "Cinemax Latin America (720p)",
       "country": "US",
       "group": "USA",
-      "url": "https://oitnhls.wns.live/hls/stream.m3u8",
-      "reason": "segment : HTTP 404",
+      "url": "https://streaming.onnethn.com/CINEMAX/playlist.m3u8",
+      "reason": "HTTP 404",
       "code": 404
     }
   ]
