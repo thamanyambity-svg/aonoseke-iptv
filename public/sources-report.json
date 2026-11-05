@@ -1,14 +1,16 @@
 {
-  "generatedAt": "2026-11-05T04:26:25.397Z",
+  "generatedAt": "2026-11-05T13:45:28.134Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
   "counts": {
     "checked": 1287,
-    "ok": 1084,
+    "ok": 1083,
     "geoBlocked": 200,
     "pending": 3,
-    "dead": 0
+    "dead": 1
   },
-  "deadReasons": {},
+  "deadReasons": {
+    "HTTP 404": 1
+  },
   "geoBlocked": [
     {
       "name": "Tele Congo",
@@ -571,6 +573,14 @@
       "code": 403
     },
     {
+      "name": "Pasiones Latin America (1080p)",
+      "country": "US",
+      "group": "Latino",
+      "url": "http://15.204.246.24:8080/PasionesHD/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
       "name": "RMC Life (1080p)",
       "country": "FR",
       "group": "France",
@@ -815,14 +825,6 @@
       "country": "US",
       "group": "USA",
       "url": "https://reflect-tuolumne.cablecast.tv/live-3/live/stream-1/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "ARTN TV (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://streamer1.connectto.com/ARTN_mobile/index.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -1613,27 +1615,36 @@
   ],
   "pending": [
     {
-      "name": "MBC 3 USA (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-3-usa/5d58265a862a476dc7f97694addb5ded/index.m3u8",
+      "name": "Sportitalia (1080p)",
+      "country": "IT",
+      "group": "Sport",
+      "url": "https://edge-001.streamup.eu/sportitalia/sihd_abr/playlist.m3u8",
       "reason": "délai dépassé"
     },
     {
-      "name": "MBC 1 USA (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-1-usa/fdac3a4fc0473f1f56e07ec1d63a4b7b/index.m3u8",
+      "name": "Sportitalia Solocalcio (1080p)",
+      "country": "IT",
+      "group": "Sport",
+      "url": "https://edge-001.streamup.eu/sportitalia/sisolocalcio_abr/playlist.m3u8",
       "reason": "délai dépassé"
     },
     {
-      "name": "America TeVe",
-      "country": "US",
-      "group": "USA",
-      "url": "https://live.gideo.video/americateve2/master.m3u8",
-      "reason": "HTTP 503",
-      "code": 503
+      "name": "DocuBay TV (1080p)",
+      "country": "IN",
+      "group": "Documentary",
+      "url": "https://cc-mgr91yrk4pehy.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-mgr91yrk4pehy/playlist.m3u8",
+      "reason": "HTTP 504",
+      "code": 504
     }
   ],
-  "dead": []
+  "dead": [
+    {
+      "name": "EBS Cinema (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://rpn.bozztv.com/ebstv/ebscinema/index.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    }
+  ]
 }
