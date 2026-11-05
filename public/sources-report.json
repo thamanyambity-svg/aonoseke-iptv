@@ -1,16 +1,14 @@
 {
-  "generatedAt": "2026-11-04T23:00:35.991Z",
+  "generatedAt": "2026-11-05T04:26:25.397Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
   "counts": {
-    "checked": 1288,
-    "ok": 1086,
+    "checked": 1287,
+    "ok": 1084,
     "geoBlocked": 200,
-    "pending": 1,
-    "dead": 1
+    "pending": 3,
+    "dead": 0
   },
-  "deadReasons": {
-    "segment : HTTP 404": 1
-  },
+  "deadReasons": {},
   "geoBlocked": [
     {
       "name": "Tele Congo",
@@ -1615,21 +1613,27 @@
   ],
   "pending": [
     {
-      "name": "La Kalle (720p)",
-      "country": "CO",
-      "group": "Music",
-      "url": "https://mdstrm.com/live-stream-playlist/58d191f07290fbb058025843.m3u8",
-      "reason": "délai dépassé"
-    }
-  ],
-  "dead": [
-    {
-      "name": "NowMedia Television (1080p)",
+      "name": "MBC 3 USA (1080p)",
       "country": "US",
       "group": "USA",
-      "url": "https://stream-204968.castr.net/64e0c91d08bff3041638aee3/live_a4243540d4b911f0b624bda5e9a32aa9/index.m3u8",
-      "reason": "segment : HTTP 404",
-      "code": 404
+      "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-3-usa/5d58265a862a476dc7f97694addb5ded/index.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "MBC 1 USA (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-1-usa/fdac3a4fc0473f1f56e07ec1d63a4b7b/index.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "America TeVe",
+      "country": "US",
+      "group": "USA",
+      "url": "https://live.gideo.video/americateve2/master.m3u8",
+      "reason": "HTTP 503",
+      "code": 503
     }
-  ]
+  ],
+  "dead": []
 }
