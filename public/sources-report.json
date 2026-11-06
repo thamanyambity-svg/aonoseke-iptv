@@ -1,16 +1,14 @@
 {
-  "generatedAt": "2026-11-06T04:24:47.584Z",
+  "generatedAt": "2026-11-06T13:29:29.715Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
   "counts": {
-    "checked": 1283,
-    "ok": 1100,
-    "geoBlocked": 182,
-    "pending": 0,
-    "dead": 1
+    "checked": 1282,
+    "ok": 1096,
+    "geoBlocked": 184,
+    "pending": 2,
+    "dead": 0
   },
-  "deadReasons": {
-    "segment : HTTP 404": 1
-  },
+  "deadReasons": {},
   "geoBlocked": [
     {
       "name": "Tele Congo",
@@ -77,6 +75,14 @@
       "code": 403
     },
     {
+      "name": "CNA (360p)",
+      "country": "DZ",
+      "group": "Afrique",
+      "url": "https://live.creacast.com/cna/stream/playlist.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
       "name": "Dounia TV",
       "country": "NE",
       "group": "Afrique",
@@ -89,6 +95,14 @@
       "country": "FR",
       "group": "France",
       "url": "https://sv1.data-stream.top/8c0a287e56a6e1843143904778be3775b4d3edd4fba4ffcc3f72638c7a71d4d4/hls/francetv4.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "ILTV (720p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://live.creacast.com/iltv/smil:iltv.smil/playlist.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -1469,15 +1483,21 @@
       "code": 403
     }
   ],
-  "pending": [],
-  "dead": [
+  "pending": [
     {
-      "name": "TVS Quiz Show Network (720p)",
+      "name": "30A Luxe Life Discovered (720p)",
       "country": "US",
       "group": "USA",
-      "url": "https://rpn.bozztv.com/gusa/gusa-tvsgameshow/index.m3u8",
-      "reason": "segment : HTTP 404",
-      "code": 404
+      "url": "https://30a-tv.com/feeds/vidaa/luxelife.m3u8",
+      "reason": "erreur réseau (UND_ERR_SOCKET)"
+    },
+    {
+      "name": "Semillitas TV (576p)",
+      "country": "US",
+      "group": "USA",
+      "url": "http://45.5.117.99:8000/play/a0g3/index.m3u8",
+      "reason": "délai dépassé"
     }
-  ]
+  ],
+  "dead": []
 }
