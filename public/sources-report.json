@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-11-07T03:52:27.709Z",
+  "generatedAt": "2026-11-07T12:09:59.855Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
   "counts": {
-    "checked": 1280,
-    "ok": 1093,
+    "checked": 1278,
+    "ok": 1089,
     "geoBlocked": 184,
-    "pending": 1,
+    "pending": 3,
     "dead": 2
   },
   "deadReasons": {
-    "délai dépassé": 1,
-    "pas d'autorisation CORS (illisible dans le navigateur et l'appli)": 1
+    "HTTP 404": 1,
+    "segment : HTTP 404": 1
   },
   "geoBlocked": [
     {
@@ -78,6 +78,14 @@
       "code": 403
     },
     {
+      "name": "CNA (360p)",
+      "country": "DZ",
+      "group": "Afrique",
+      "url": "https://live.creacast.com/cna/stream/playlist.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
       "name": "Dounia TV",
       "country": "NE",
       "group": "Afrique",
@@ -90,6 +98,14 @@
       "country": "FR",
       "group": "France",
       "url": "https://sv1.data-stream.top/8c0a287e56a6e1843143904778be3775b4d3edd4fba4ffcc3f72638c7a71d4d4/hls/francetv4.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "ILTV (720p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://live.creacast.com/iltv/smil:iltv.smil/playlist.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -426,14 +442,6 @@
       "country": "FR",
       "group": "France",
       "url": "http://145.239.5.177/148/index.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "Pasiones Latin America (1080p)",
-      "country": "US",
-      "group": "Latino",
-      "url": "http://15.204.246.24:8080/PasionesHD/index.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -1318,14 +1326,6 @@
       "code": 403
     },
     {
-      "name": "TVI Ficcao (720p)",
-      "country": "PT",
-      "group": "Series",
-      "url": "https://raw.githubusercontent.com/thomraider12/canaistvpt/main/m3u8s/tvificcao.m3u8",
-      "reason": "variante : HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "Video Rola (1080p)",
       "country": "IT",
       "group": "Music",
@@ -1488,28 +1488,44 @@
   ],
   "pending": [
     {
-      "name": "30A Luxe Life Discovered (720p)",
+      "name": "ACTV (504p)",
+      "country": "BE",
+      "group": "France",
+      "url": "https://dlgt0tdl2hpq3.cloudfront.net/rtbf/clr-rtbf/4db788c7/index.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "DKN (1080p)",
       "country": "US",
       "group": "USA",
-      "url": "https://30a-tv.com/feeds/vidaa/luxelife.m3u8",
-      "reason": "erreur réseau (UND_ERR_SOCKET)"
+      "url": "https://video.oct.dc.gov/out/u/DKN.m3u8",
+      "reason": "segment : HTTP 520",
+      "code": 520
+    },
+    {
+      "name": "RumbaMix TV (720p)",
+      "country": "PE",
+      "group": "Music",
+      "url": "https://live-evg5.tv360.bitel.com.pe/bitel/mixtvSRT/playlist.m3u8",
+      "reason": "délai dépassé"
     }
   ],
   "dead": [
     {
-      "name": "TVM",
-      "country": "MZ",
-      "group": "Afrique",
-      "url": "https://stream.tvm.co.mz/hls/tvm/playlist.m3u8",
-      "reason": "délai dépassé"
+      "name": "Radio Télé Hit (480p)",
+      "country": "HT",
+      "group": "Music",
+      "url": "https://59d39900ebfb8.streamlock.net/RadioTelehit/RadioTelehit/playlist.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
     },
     {
-      "name": "Peer TV South Tyrol",
-      "country": "IT",
-      "group": "News",
-      "url": "https://iptv.peer.biz/live/peertv-en.m3u8",
-      "reason": "pas d'autorisation CORS (illisible dans le navigateur et l'appli)",
-      "code": 200
+      "name": "Punjabi Hits (1080p)",
+      "country": "IN",
+      "group": "Music",
+      "url": "https://stream.ottlive.co.in/punjabihits/index.m3u8",
+      "reason": "segment : HTTP 404",
+      "code": 404
     }
   ]
 }
