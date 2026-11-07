@@ -1,16 +1,15 @@
 {
-  "generatedAt": "2026-11-07T12:09:59.855Z",
+  "generatedAt": "2026-11-07T21:15:10.808Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
   "counts": {
-    "checked": 1278,
-    "ok": 1089,
+    "checked": 1276,
+    "ok": 1091,
     "geoBlocked": 184,
-    "pending": 3,
-    "dead": 2
+    "pending": 0,
+    "dead": 1
   },
   "deadReasons": {
-    "HTTP 404": 1,
-    "segment : HTTP 404": 1
+    "HTTP 404": 1
   },
   "geoBlocked": [
     {
@@ -1486,45 +1485,14 @@
       "code": 403
     }
   ],
-  "pending": [
-    {
-      "name": "ACTV (504p)",
-      "country": "BE",
-      "group": "France",
-      "url": "https://dlgt0tdl2hpq3.cloudfront.net/rtbf/clr-rtbf/4db788c7/index.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "DKN (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://video.oct.dc.gov/out/u/DKN.m3u8",
-      "reason": "segment : HTTP 520",
-      "code": 520
-    },
-    {
-      "name": "RumbaMix TV (720p)",
-      "country": "PE",
-      "group": "Music",
-      "url": "https://live-evg5.tv360.bitel.com.pe/bitel/mixtvSRT/playlist.m3u8",
-      "reason": "délai dépassé"
-    }
-  ],
+  "pending": [],
   "dead": [
     {
-      "name": "Radio Télé Hit (480p)",
-      "country": "HT",
+      "name": "Rewind TV (1080p)",
+      "country": "CL",
       "group": "Music",
-      "url": "https://59d39900ebfb8.streamlock.net/RadioTelehit/RadioTelehit/playlist.m3u8",
+      "url": "https://tls-cl.cdnz.cl/rewindtv/live/playlist.m3u8",
       "reason": "HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Punjabi Hits (1080p)",
-      "country": "IN",
-      "group": "Music",
-      "url": "https://stream.ottlive.co.in/punjabihits/index.m3u8",
-      "reason": "segment : HTTP 404",
       "code": 404
     }
   ]
