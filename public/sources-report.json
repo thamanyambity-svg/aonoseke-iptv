@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-11-06T22:33:57.247Z",
+  "generatedAt": "2026-11-07T03:52:27.709Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
   "counts": {
-    "checked": 1282,
+    "checked": 1280,
     "ok": 1093,
-    "geoBlocked": 185,
-    "pending": 2,
+    "geoBlocked": 184,
+    "pending": 1,
     "dead": 2
   },
   "deadReasons": {
-    "segment : HTTP 404": 1,
-    "délai dépassé": 1
+    "délai dépassé": 1,
+    "pas d'autorisation CORS (illisible dans le navigateur et l'appli)": 1
   },
   "geoBlocked": [
     {
@@ -78,14 +78,6 @@
       "code": 403
     },
     {
-      "name": "CNA (360p)",
-      "country": "DZ",
-      "group": "Afrique",
-      "url": "https://live.creacast.com/cna/stream/playlist.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "Dounia TV",
       "country": "NE",
       "group": "Afrique",
@@ -98,14 +90,6 @@
       "country": "FR",
       "group": "France",
       "url": "https://sv1.data-stream.top/8c0a287e56a6e1843143904778be3775b4d3edd4fba4ffcc3f72638c7a71d4d4/hls/francetv4.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "ILTV (720p)",
-      "country": "FR",
-      "group": "France",
-      "url": "https://live.creacast.com/iltv/smil:iltv.smil/playlist.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -442,6 +426,14 @@
       "country": "FR",
       "group": "France",
       "url": "http://145.239.5.177/148/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Pasiones Latin America (1080p)",
+      "country": "US",
+      "group": "Latino",
+      "url": "http://15.204.246.24:8080/PasionesHD/index.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -950,14 +942,6 @@
       "code": 403
     },
     {
-      "name": "Metaleitor TV",
-      "country": "US",
-      "group": "USA",
-      "url": "https://vs20.live.opencaster.com/metaleitortv_423d3342/index.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "MeTV (720p)",
       "country": "US",
       "group": "USA",
@@ -1334,6 +1318,14 @@
       "code": 403
     },
     {
+      "name": "TVI Ficcao (720p)",
+      "country": "PT",
+      "group": "Series",
+      "url": "https://raw.githubusercontent.com/thomraider12/canaistvpt/main/m3u8s/tvificcao.m3u8",
+      "reason": "variante : HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
       "name": "Video Rola (1080p)",
       "country": "IT",
       "group": "Music",
@@ -1496,35 +1488,28 @@
   ],
   "pending": [
     {
-      "name": "Muzangala TV (1080p)",
-      "country": "AO",
-      "group": "Afrique",
-      "url": "https://5cf4a2c2512a2.streamlock.net/tvmuzangala/tvmuzangala/playlist.m3u8",
-      "reason": "délai dépassé"
-    },
+      "name": "30A Luxe Life Discovered (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://30a-tv.com/feeds/vidaa/luxelife.m3u8",
+      "reason": "erreur réseau (UND_ERR_SOCKET)"
+    }
+  ],
+  "dead": [
     {
       "name": "TVM",
       "country": "MZ",
       "group": "Afrique",
       "url": "https://stream.tvm.co.mz/hls/tvm/playlist.m3u8",
       "reason": "délai dépassé"
-    }
-  ],
-  "dead": [
-    {
-      "name": "Tennis Channel 2 (1080p)",
-      "country": "US",
-      "group": "Sport",
-      "url": "https://mumbai-edge.smartplaytv.in/Tennis2/index.m3u8",
-      "reason": "segment : HTTP 404",
-      "code": 404
     },
     {
-      "name": "Semillitas TV (576p)",
-      "country": "US",
-      "group": "USA",
-      "url": "http://45.5.117.99:8000/play/a0g3/index.m3u8",
-      "reason": "délai dépassé"
+      "name": "Peer TV South Tyrol",
+      "country": "IT",
+      "group": "News",
+      "url": "https://iptv.peer.biz/live/peertv-en.m3u8",
+      "reason": "pas d'autorisation CORS (illisible dans le navigateur et l'appli)",
+      "code": 200
     }
   ]
 }
