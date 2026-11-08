@@ -1,15 +1,16 @@
 {
-  "generatedAt": "2026-11-08T03:35:45.853Z",
+  "generatedAt": "2026-11-08T12:30:18.416Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
   "counts": {
-    "checked": 1275,
-    "ok": 1088,
+    "checked": 1273,
+    "ok": 1083,
     "geoBlocked": 184,
     "pending": 1,
-    "dead": 2
+    "dead": 5
   },
   "deadReasons": {
-    "segment : HTTP 404": 2
+    "HTTP 404": 4,
+    "CORS refusé pour l'appli Android": 1
   },
   "geoBlocked": [
     {
@@ -1487,30 +1488,53 @@
   ],
   "pending": [
     {
-      "name": "Deewana HD (540p)",
-      "country": "IN",
-      "group": "Music",
-      "url": "https://live20.bozztv.com/giatvplayout7/giatv-209592/index.m3u8",
-      "reason": "HTTP 502",
-      "code": 502
+      "name": "Sportitalia (1080p)",
+      "country": "IT",
+      "group": "Sport",
+      "url": "https://edge-001.streamup.eu/sportitalia/sihd_abr/playlist.m3u8",
+      "reason": "délai dépassé"
     }
   ],
   "dead": [
     {
-      "name": "FTF Sports (720p)",
-      "country": "US",
-      "group": "Sport",
-      "url": "https://1593604785.rsc.cdn77.org/FTF/FTF_SCTE.m3u8",
-      "reason": "segment : HTTP 404",
+      "name": "NTV (1080p)",
+      "country": "CI",
+      "group": "Afrique",
+      "url": "https://strhlslb01.streamakaci.tv/str_ntv_ntv/str_ntv_ntv_multi/playlist.m3u8",
+      "reason": "HTTP 404",
       "code": 404
     },
     {
-      "name": "City TV (576p)",
-      "country": "BG",
-      "group": "Music",
-      "url": "https://tv.city.bg/play/tshls/citytv/index.m3u8",
-      "reason": "segment : HTTP 404",
+      "name": "CAN TV19 (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://cantv.streamguys1.com/cantv/cantv19hls/playlist.m3u8",
+      "reason": "HTTP 404",
       "code": 404
+    },
+    {
+      "name": "CAN TV21 (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://cantv.streamguys1.com/cantv/cantv21hls/playlist.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "CAN TV36 (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://cantv.streamguys1.com/cantv/cantv36hls/playlist.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Deewana HD (540p)",
+      "country": "IN",
+      "group": "Music",
+      "url": "https://live20.bozztv.com/giatvplayout7/giatv-209592/index.m3u8",
+      "reason": "CORS refusé pour l'appli Android",
+      "code": 200
     }
   ]
 }
