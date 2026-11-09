@@ -1,16 +1,14 @@
 {
-  "generatedAt": "2026-11-09T03:49:25.078Z",
+  "generatedAt": "2026-11-09T14:46:14.293Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
   "counts": {
-    "checked": 1267,
-    "ok": 1028,
+    "checked": 1205,
+    "ok": 1027,
     "geoBlocked": 177,
-    "pending": 0,
-    "dead": 62
+    "pending": 1,
+    "dead": 0
   },
-  "deadReasons": {
-    "domaine introuvable": 62
-  },
+  "deadReasons": {},
   "geoBlocked": [
     {
       "name": "NW Economie (576p)",
@@ -649,14 +647,6 @@
       "country": "US",
       "group": "USA",
       "url": "https://reflect-tuolumne.cablecast.tv/live-3/live/stream-1/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "ARTN TV (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://streamer1.connectto.com/ARTN_mobile/index.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -1421,6 +1411,14 @@
       "code": 403
     },
     {
+      "name": "TRT Cocuk (1440p)",
+      "country": "TR",
+      "group": "Kids",
+      "url": "https://tv-trtcocuk.medya.trt.com.tr/master.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
       "name": "YleX (720p)",
       "country": "FI",
       "group": "Music",
@@ -1429,441 +1427,14 @@
       "code": 403
     }
   ],
-  "pending": [],
-  "dead": [
+  "pending": [
     {
-      "name": "Tele Congo",
-      "country": "CG",
-      "group": "Afrique",
-      "url": "http://trn03.bozztv.com/gin-telecongo/index.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "SUMtv English (1080p)",
+      "name": "ARTN TV (1080p)",
       "country": "US",
       "group": "USA",
-      "url": "https://bozztv.com/uni10rtmp/ssstv1-cdn/smil:ssstv1web.smil/playlist.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "SUMtv Latino (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://bozztv.com/uni10rtmp/ssstv2-cdn/smil:ssstv2web.smil/playlist.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "ACNN (480p)",
-      "country": "NG",
-      "group": "Afrique",
-      "url": "https://viewmedia7219.bozztv.com/wmedia/viewmedia100/web_014/Stream/playlist.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "BCS StarCross TV (576p)",
-      "country": "NG",
-      "group": "Afrique",
-      "url": "https://viewmedia7219.bozztv.com/wmedia/viewmedia100/web_001/Stream/playlist.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "Bride TV (576p)",
-      "country": "NG",
-      "group": "Afrique",
-      "url": "https://viewmedia7219.bozztv.com/wmedia/viewmedia100/web_013/Stream/playlist.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "Channels 24",
-      "country": "NG",
-      "group": "Afrique",
-      "url": "https://live20.bozztv.com/dvrfl06/astv/astv-channel24africa/index.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "Chosen TV English (360p)",
-      "country": "NG",
-      "group": "Afrique",
-      "url": "https://viewmedia7219.bozztv.com/wmedia/viewmedia100/web_024/Stream/playlist.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "Coza TV (576p)",
-      "country": "NG",
-      "group": "Afrique",
-      "url": "https://viewmedia7219.bozztv.com/wmedia/viewmedia100/web_019/Stream/playlist.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "Dounia TV",
-      "country": "NE",
-      "group": "Afrique",
-      "url": "https://live20.bozztv.com/dvrfl06/astv/astv-douniatv/index.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "Flame TV (576p)",
-      "country": "NG",
-      "group": "Afrique",
-      "url": "https://viewmedia7219.bozztv.com/wmedia/viewmedia100/web_010/Stream/playlist.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "Homebase TV (480p)",
-      "country": "ZA",
-      "group": "Afrique",
-      "url": "https://viewmedia7219.bozztv.com/wmedia/viewmedia100/web_022/Stream/playlist.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "My Righteous TV",
-      "country": "CM",
-      "group": "Afrique",
-      "url": "https://live20.bozztv.com/ssh101/ssh101/myrighteous/playlist.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "NuView TV (360p)",
-      "country": "ZA",
-      "group": "Afrique",
-      "url": "https://viewmedia7219.bozztv.com/wmedia/viewmedia100/web_002/Stream/playlist.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "ROV TV (576p)",
-      "country": "ZA",
-      "group": "Afrique",
-      "url": "https://viewmedia7219.bozztv.com/wmedia/viewmedia100/web_012/Stream/playlist.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "Salvation TV (576p)",
-      "country": "NG",
-      "group": "Afrique",
-      "url": "https://viewmedia7219.bozztv.com/wmedia/viewmedia100/web_017/Stream/playlist.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "Saraounia TV",
-      "country": "NE",
-      "group": "Afrique",
-      "url": "https://live20.bozztv.com/dvrfl06/astv/astv-saraouna/index.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "Sunna TV (576p)",
-      "country": "NG",
-      "group": "Afrique",
-      "url": "https://viewmedia7219.bozztv.com/wmedia/viewmedia100/web_015/Stream/playlist.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "Synagogue TV (576p)",
-      "country": "NG",
-      "group": "Afrique",
-      "url": "https://viewmedia7219.bozztv.com/wmedia/viewmedia100/web_038/Stream/playlist.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "Yadah TV (576p)",
-      "country": "ZW",
-      "group": "Afrique",
-      "url": "https://viewmedia7219.bozztv.com/wmedia/viewmedia100/web_018/Stream/playlist.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "Chef Champion (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://rpn.bozztv.com/gusa/gusa-chefchampion/index.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "Chef Roc Show (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://rpn.bozztv.com/gusa/gusa-chefrock/index.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "TVS Bowling Network (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://rpn.bozztv.com/gusa/gusa-tvsbowling/index.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "TVS Sports (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://rpn.bozztv.com/gusa/gusa-tvssports/index.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "TVS Sports Bureau (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://rpn.bozztv.com/gusa/gusa-tvssportsbureau/index.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "TVS Travel Network (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://rpn.bozztv.com/gusa/gusa-tvstravel/index.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "TVS Women Sports (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://rpn.bozztv.com/gusa/gusa-tvswsn/index.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "Camera Smile TV (480p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://rpn.bozztv.com/gusa/gusa-camerasmile/index.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "Celebrity Scene TV (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://rpn.bozztv.com/gusa/gusa-celebrityscene/index.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "Classic Cinema (240p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://rpn.bozztv.com/gusa/gusa-classiccinema/index.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "EBS (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://rpn.bozztv.com/ebstv/ebstv/index.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "HollyWire (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://bozztv.com/hwotta/playlist/playlist.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "Mad Dog and Merrill (540p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://rpn.bozztv.com/gusa/gusa-mwg/index.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "SGTN-49 (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://rpn.bozztv.com/gusa/gusa-stgn/index.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "The Loop (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://tgn.bozztv.com/watc57/watc57-theloop/watc57-theloop/index.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "TVS Boxing (360p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://rpn.bozztv.com/gusa/gusa-tvsboxing/index.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "TVS Cipher Network (360p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://rpn.bozztv.com/gusa/gusa-tvsmystery/index.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "TVS Classic Movies (288p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://rpn.bozztv.com/gusa/gusa-tvsclassicmovies/index.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "TVS Classic Sports (360p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://rpn.bozztv.com/gusa/gusa-tvs/index.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "TVS Comedy Network (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://rpn.bozztv.com/gusa/gusa-tvscomedy/index.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "TVS Drive In Movie (360p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://rpn.bozztv.com/gusa/gusa-tvsdriveinmovie/index.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "TVS Family Channel (360p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://rpn.bozztv.com/gusa/gusa-TVSFamilyChannel/index.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "TVS Flashback Network (360p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://rpn.bozztv.com/gusa/gusa-TVSFlashback/index.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "TVS Hi Tops (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://rpn.bozztv.com/gusa/gusa-hitops/index.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "TVS Hollywood History (582p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://rpn.bozztv.com/gusa/gusa-tvshollywoohistory/index.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "TVS Music Network (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://rpn.bozztv.com/gusa/gusa-tvsmusic/index.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "TVS Nostalgia (472p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://rpn.bozztv.com/gusa/gusa-nostalgia/index.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "TVS Nostalgia Movies (480p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://rpn.bozztv.com/gusa/gusa-tvsNostalgiaMovies/index.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "TVS Pet Parade Network (360p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://rpn.bozztv.com/gusa/gusa-petparadenetwork/index.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "TVS Pinball Network (480p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://rpn.bozztv.com/gusa/gusa-TVSCartoonNetwork/index.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "TVS Select Network (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://rpn.bozztv.com/gusa/gusa-tvsselect/index.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "TVS Turbo (360p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://rpn.bozztv.com/gusa/gusa-tvsturbo/index.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "TVS Vintage Network (360p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://rpn.bozztv.com/gusa/gusa-tvsvintage/index.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "TVS Western Movie (270p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://rpn.bozztv.com/gusa/gusa-tvswesternmovies/index.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "VBS TV (480p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://tgn.bozztv.com/vbstvcdn/vbstv/ngrp:vbstv_all/playlist.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "Zarin TV (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://fl1002.bozztv.com/gf-zarintv/index.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "Adjarasport 1",
-      "country": "GE",
-      "group": "Sport",
-      "url": "https://live20.bozztv.com/dvrfl05/gin-adjara/index.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "El Chavo TV (720p)",
-      "country": "MX",
-      "group": "Kids",
-      "url": "https://live20.bozztv.com/giatvplayout7/giatv-211465/playlist.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "Harmony Gospel Music TV (1080p)",
-      "country": "US",
-      "group": "Music",
-      "url": "https://tgn.bozztv.com/watc57/watc57-harmony/watc57-harmony/index.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "Montones TV (1080p)",
-      "country": "DO",
-      "group": "Music",
-      "url": "https://lbgo.bozztv.com/ssh101/ssh101/montonestv1/playlist.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "AFN TV",
-      "country": "IR",
-      "group": "Music",
-      "url": "https://bozztv.com/1gbw5/tintv2/tintv2/playlist.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "Pooya TV",
-      "country": "IR",
-      "group": "Kids",
-      "url": "https://tgn.bozztv.com/eshgtv-dvrfl05/gin-iribpooya/tracks-v1a1/mono.m3u8",
-      "reason": "domaine introuvable"
+      "url": "https://streamer1.connectto.com/ARTN_mobile/index.m3u8",
+      "reason": "délai dépassé"
     }
-  ]
+  ],
+  "dead": []
 }
