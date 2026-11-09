@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-11-08T21:29:51.234Z",
+  "generatedAt": "2026-11-09T03:49:25.078Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
   "counts": {
-    "checked": 1268,
+    "checked": 1267,
     "ok": 1028,
     "geoBlocked": 177,
-    "pending": 62,
-    "dead": 1
+    "pending": 0,
+    "dead": 62
   },
   "deadReasons": {
-    "HTTP 404": 1
+    "domaine introuvable": 62
   },
   "geoBlocked": [
     {
@@ -1429,7 +1429,8 @@
       "code": 403
     }
   ],
-  "pending": [
+  "pending": [],
+  "dead": [
     {
       "name": "Tele Congo",
       "country": "CG",
@@ -1863,16 +1864,6 @@
       "group": "Kids",
       "url": "https://tgn.bozztv.com/eshgtv-dvrfl05/gin-iribpooya/tracks-v1a1/mono.m3u8",
       "reason": "domaine introuvable"
-    }
-  ],
-  "dead": [
-    {
-      "name": "Metaleitor TV",
-      "country": "US",
-      "group": "USA",
-      "url": "https://vs20.live.opencaster.com/metaleitortv_423d3342/index.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
     }
   ]
 }
