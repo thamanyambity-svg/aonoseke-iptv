@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-11-10T13:59:48.702Z",
+  "generatedAt": "2026-11-10T22:40:19.805Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
   "counts": {
-    "checked": 1203,
-    "ok": 1024,
+    "checked": 1202,
+    "ok": 1023,
     "geoBlocked": 177,
-    "pending": 1,
-    "dead": 1
+    "pending": 0,
+    "dead": 2
   },
   "deadReasons": {
-    "CORS refusé pour le site web": 1
+    "HTTP 404": 2
   },
   "geoBlocked": [
     {
@@ -1429,24 +1429,23 @@
       "code": 403
     }
   ],
-  "pending": [
-    {
-      "name": "America TeVe",
-      "country": "US",
-      "group": "USA",
-      "url": "https://live.gideo.video/americateve2/master.m3u8",
-      "reason": "variante : HTTP 503",
-      "code": 503
-    }
-  ],
+  "pending": [],
   "dead": [
     {
-      "name": "Sony One Blacklist (1080p)",
+      "name": "Monte Carlo Digital Television (1080p)",
       "country": "FR",
       "group": "France",
-      "url": "https://06cb85ad6ccb4a6b97f561e62d16ad3f.mediatailor.us-west-2.amazonaws.com/v1/master/ba62fe743df0fe93366eba3a257d792884136c7f/LINEAR-822-FR-SONYONETHEBLACKLIST-LG_FR/playlist.m3u8",
-      "reason": "CORS refusé pour le site web",
-      "code": 200
+      "url": "https://fl718492-exthls-p1.flovp.com/fl718492/live/live.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Sporty TV",
+      "country": "CZ",
+      "group": "Sport",
+      "url": "https://dash2.antik.sk/live/sporty_tv/index.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
     }
   ]
 }
