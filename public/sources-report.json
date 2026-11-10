@@ -1,16 +1,15 @@
 {
-  "generatedAt": "2026-11-10T00:59:57.771Z",
+  "generatedAt": "2026-11-10T13:59:48.702Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée ; retirée au 2e échec de suite.",
   "counts": {
-    "checked": 1205,
-    "ok": 1025,
-    "geoBlocked": 178,
-    "pending": 0,
-    "dead": 2
+    "checked": 1203,
+    "ok": 1024,
+    "geoBlocked": 177,
+    "pending": 1,
+    "dead": 1
   },
   "deadReasons": {
-    "segment : HTTP 404": 1,
-    "HTTP 404": 1
+    "CORS refusé pour le site web": 1
   },
   "geoBlocked": [
     {
@@ -1270,14 +1269,6 @@
       "code": 403
     },
     {
-      "name": "TVI Ficcao (720p)",
-      "country": "PT",
-      "group": "Series",
-      "url": "https://raw.githubusercontent.com/thomraider12/canaistvpt/main/m3u8s/tvificcao.m3u8",
-      "reason": "segment refusé (HTTP 403)",
-      "code": 403
-    },
-    {
       "name": "Video Rola (1080p)",
       "country": "IT",
       "group": "Music",
@@ -1438,23 +1429,24 @@
       "code": 403
     }
   ],
-  "pending": [],
-  "dead": [
+  "pending": [
     {
-      "name": "Whiplash Cinema (480p)",
+      "name": "America TeVe",
       "country": "US",
       "group": "USA",
-      "url": "https://cdn.whiplash.cc/whiplash-cinema/index.m3u8",
-      "reason": "segment : HTTP 404",
-      "code": 404
-    },
+      "url": "https://live.gideo.video/americateve2/master.m3u8",
+      "reason": "variante : HTTP 503",
+      "code": 503
+    }
+  ],
+  "dead": [
     {
-      "name": "Afarin Baxcha (1080p)",
-      "country": "IQ",
-      "group": "Kids",
-      "url": "https://5dcabf026b188.streamlock.net/afarinTV/livestream/playlist.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
+      "name": "Sony One Blacklist (1080p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://06cb85ad6ccb4a6b97f561e62d16ad3f.mediatailor.us-west-2.amazonaws.com/v1/master/ba62fe743df0fe93366eba3a257d792884136c7f/LINEAR-822-FR-SONYONETHEBLACKLIST-LG_FR/playlist.m3u8",
+      "reason": "CORS refusé pour le site web",
+      "code": 200
     }
   ]
 }
