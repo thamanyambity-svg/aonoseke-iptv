@@ -17,6 +17,7 @@
       "includeFiles": "public/playlist.json"
     }
   },
+  "rewrites": [{ "source": "/((?!api/).*)", "destination": "/index.html" }],
   "headers": [
     {
       "source": "/sw.js",
