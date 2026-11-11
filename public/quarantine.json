@@ -1,0 +1,106 @@
+[
+  {
+    "channel": {
+      "name": "Afrobeat Tv",
+      "country": "CD",
+      "group": "Afrique",
+      "logo": "",
+      "url": "https://stream.ecable.tv/afrobeats/index.m3u8",
+      "source": "github.com/bermufine/rdcongo"
+    },
+    "reason": "segment : HTTP 404",
+    "since": "2026-11-11T23:52:55.364Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "Medi1TV Arabic (1080p)",
+      "country": "MA",
+      "group": "Afrique",
+      "logo": "https://i.imgur.com/3YsZPY6.jpeg",
+      "url": "https://cdn.live.easybroadcast.io/abr_corp/83_medi1tv-arabic_g90v4ec/playlist.m3u8",
+      "source": "iptv-org/curated-2026-10"
+    },
+    "reason": "HTTP 404",
+    "since": "2026-11-11T23:52:55.364Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "Medi1TV Maghreb (1080p)",
+      "country": "MA",
+      "group": "Afrique",
+      "logo": "https://i.imgur.com/F5OFQsp.jpeg",
+      "url": "https://cdn.live.easybroadcast.io/abr_corp/83_medi1tv-maghreb_jnbspmg/playlist.m3u8",
+      "source": "iptv-org/curated-2026-10"
+    },
+    "reason": "HTTP 404",
+    "since": "2026-11-11T23:52:55.364Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "CBS News Miami (720p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/DExbVa9.png",
+      "url": "https://cbsn-mia.cbsnstream.cbsnews.com/out/v1/ac174b7938264d24ae27e56f6584bca0/master.m3u8",
+      "source": "iptv-org/api-2026-10-us"
+    },
+    "reason": "flux terminé (ENDLIST)",
+    "since": "2026-11-11T23:52:55.364Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "TF1",
+      "country": "FR",
+      "group": "France",
+      "logo": "",
+      "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/G1dJEWsFB5Nt/C63HVD4PtDrLHMB.m3u8",
+      "source": "github.com/Paradise-91/ParaTV"
+    },
+    "reason": "HTTP 404",
+    "since": "2026-11-11T23:52:55.364Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "TMC",
+      "country": "FR",
+      "group": "France",
+      "logo": "",
+      "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/G1dJEWsFB5Nt/vT2U1OS7bYDVDM.m3u8",
+      "source": "github.com/Paradise-91/ParaTV"
+    },
+    "reason": "HTTP 404",
+    "since": "2026-11-11T23:52:55.364Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "Rai 5",
+      "country": "IT",
+      "group": "Italy",
+      "logo": "",
+      "url": "http://team-tv.co:81/rai5/index.m3u8",
+      "source": "iptv-org (api/streams)"
+    },
+    "reason": "segment : HTTP 404",
+    "since": "2026-11-11T23:52:55.364Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "TF1 Séries Films",
+      "country": "FR",
+      "group": "France",
+      "logo": "",
+      "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/G1dJEWsFB5Nt/sNk192s51D5Ceu.m3u8",
+      "source": "github.com/Paradise-91/ParaTV"
+    },
+    "reason": "HTTP 404",
+    "since": "2026-11-11T23:52:55.364Z",
+    "okRuns": 0
+  }
+]
