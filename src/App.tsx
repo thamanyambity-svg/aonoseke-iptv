@@ -216,6 +216,7 @@ function App(): JSX.Element {
               {!activeChannel && <CinematicBg />}
               <Player
                 url={activeChannel?.url ?? ''}
+                backups={activeChannel?.backups}
                 onError={(msg) => {
                   setError(
                     activeChannel?.geoBlocked

@@ -27,10 +27,10 @@ jobs:
 
       - name: Commit si changements
         run: |
-          if [ -n "$(git status --porcelain public/playlist.json public/sites.json public/sources-report.json)" ]; then
+          if [ -n "$(git status --porcelain public/playlist.json public/sites.json public/sources-report.json public/quarantine.json)" ]; then
             git config user.name  "aonoseke-bot"
             git config user.email "bot@aonoseke.local"
-            git add public/playlist.json public/sites.json public/sources-report.json
+            git add public/playlist.json public/sites.json public/sources-report.json public/quarantine.json
             git commit -m "chore: vérification auto des sources [skip ci]"
             git push
           else
