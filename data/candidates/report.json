@@ -1,7 +1,7 @@
 {
   "generatedAt": "2026-11-11T11:42:04.584Z",
   "counts": {
-    "ok": 42,
+    "ok": 39,
     "geo": 22,
     "dead": 106
   },
@@ -535,17 +535,6 @@
       "retryable": true
     },
     {
-      "name": "Fun Radio",
-      "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/refs/heads/main/streams/misc/radio/fun-radio-dm.m3u8",
-      "country": "FR",
-      "group": "France",
-      "source": "github.com/Paradise-91/ParaTV",
-      "file": "catchup.json",
-      "status": "ok",
-      "reason": "lecture vérifiée (liste, segment, CORS)",
-      "retryable": false
-    },
-    {
       "name": "RTL 2",
       "url": "https://viamotionhsi.netplus.ch/live/eds/rtl2/browser-HLS8/rtl2.m3u8",
       "country": "FR",
@@ -610,28 +599,6 @@
       "status": "dead",
       "reason": "délai dépassé",
       "retryable": true
-    },
-    {
-      "name": "Europe 1",
-      "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/refs/heads/main/streams/misc/radio/europe-1-dm.m3u8",
-      "country": "FR",
-      "group": "France",
-      "source": "github.com/Paradise-91/ParaTV",
-      "file": "catchup.json",
-      "status": "ok",
-      "reason": "lecture vérifiée (liste, segment, CORS)",
-      "retryable": false
-    },
-    {
-      "name": "Europe 1",
-      "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/refs/heads/main/streams/misc/radio/europe-1-backup-dm.m3u8",
-      "country": "FR",
-      "group": "France",
-      "source": "github.com/Paradise-91/ParaTV",
-      "file": "catchup.json",
-      "status": "ok",
-      "reason": "lecture vérifiée (liste, segment, CORS)",
-      "retryable": false
     },
     {
       "name": "La7",

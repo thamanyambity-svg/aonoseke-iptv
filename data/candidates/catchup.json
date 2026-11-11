@@ -336,13 +336,6 @@
     "source": "iptv-org (api/streams)"
   },
   {
-    "name": "Fun Radio",
-    "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/refs/heads/main/streams/misc/radio/fun-radio-dm.m3u8",
-    "country": "FR",
-    "group": "France",
-    "source": "github.com/Paradise-91/ParaTV"
-  },
-  {
     "name": "RTL 2",
     "url": "https://viamotionhsi.netplus.ch/live/eds/rtl2/browser-HLS8/rtl2.m3u8",
     "country": "FR",
@@ -380,20 +373,6 @@
   {
     "name": "RTL",
     "url": "https://viamotionhsi.netplus.ch/live/eds/rtl/browser-HLS8/rtl.m3u8",
-    "country": "FR",
-    "group": "France",
-    "source": "github.com/Paradise-91/ParaTV"
-  },
-  {
-    "name": "Europe 1",
-    "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/refs/heads/main/streams/misc/radio/europe-1-dm.m3u8",
-    "country": "FR",
-    "group": "France",
-    "source": "github.com/Paradise-91/ParaTV"
-  },
-  {
-    "name": "Europe 1",
-    "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/refs/heads/main/streams/misc/radio/europe-1-backup-dm.m3u8",
     "country": "FR",
     "group": "France",
     "source": "github.com/Paradise-91/ParaTV"
