@@ -1,0 +1,113 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #000; overflow: hidden; }
+    #aintro-stage { position: absolute; inset: 0; perspective: 1100px; }
+
+    /* ── La lettre A : trois rubans (jambe claire, jambe sombre, barre) ── */
+    #aintro-letter { position: absolute; left: 50%; top: 50%; width: 300px; height: 400px; }
+    .aintro-rib { position: absolute; inset: 0; }
+    .aintro-in { position: absolute; inset: 0; }
+    #aintro-legL .aintro-in { clip-path: polygon(112px 0, 166px 0, 54px 400px, 0 400px);
+      background: linear-gradient(180deg, #ff2a2a 0%, #e50914 55%, #c40812 100%); }
+    #aintro-legR .aintro-in { clip-path: polygon(134px 0, 188px 0, 300px 400px, 246px 400px);
+      background: linear-gradient(180deg, #8c050b 0%, #7a0408 60%, #5e0307 100%); }
+    #aintro-bar  .aintro-in { clip-path: polygon(84px 252px, 216px 252px, 230px 304px, 70px 304px);
+      background: linear-gradient(90deg, #d0090f 0%, #ff1f1f 45%, #a30609 100%); }
+    #aintro-shine { position: absolute; inset: 0; opacity: 0;
+      clip-path: polygon(112px 0, 188px 0, 300px 400px, 246px 400px, 150px 120px, 54px 400px, 0 400px);
+      background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,.55) 50%, transparent 60%); }
+
+    /* ── Rideau de traînées lumineuses ── */
+    #aintro-curtain { position: absolute; inset: 0; opacity: 0; }
+    .aintro-bar { position: absolute; left: 50%; top: -12%; height: 124%; transform-origin: 50% 50%; }
+    #aintro-glow { position: absolute; left: 50%; top: 50%; width: 1500px; height: 1500px; margin: -750px 0 0 -750px; opacity: 0;
+      background: radial-gradient(closest-side, rgba(255,255,255,.95), rgba(255,170,150,.45) 45%, transparent 75%); }
+    #aintro-line { position: absolute; left: 50%; top: -10%; width: 14px; height: 120%; margin-left: -7px; opacity: 0; transform-origin: 50% 50%;
+      background: linear-gradient(180deg, #ff3b00, #ff1500 50%, #ff3b00); }
+  </style>
+
+  <div id="root" data-composition-id="aintro" data-width="1920" data-height="1080">
+    <div id="aintro-stage">
+      <div id="aintro-curtain" data-layout-allow-overflow></div>
+      <div id="aintro-glow"></div>
+      <div id="aintro-letter">
+        <div id="aintro-legL" class="aintro-rib"><div class="aintro-in"></div></div>
+        <div id="aintro-legR" class="aintro-rib"><div class="aintro-in"></div></div>
+        <div id="aintro-bar"  class="aintro-rib"><div class="aintro-in"></div></div>
+        <div id="aintro-shine"></div>
+      </div>
+      <div id="aintro-line"></div>
+    </div>
+  </div>
+
+  <script>
+    // Générateur pseudo-aléatoire à graine : le rendu est identique à chaque exécution.
+    function mulberry32(a) { return function () { a |= 0; a = (a + 0x6d2b79f5) | 0; let t = Math.imul(a ^ (a >>> 15), 1 | a); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+    const rnd = mulberry32(20260511);
+
+    // Couleur selon la position : rouge/orange à gauche, rose/blanc au centre, bleu/cyan à droite.
+    function tint(u) {
+      const pick = (a) => a[Math.floor(rnd() * a.length)];
+      if (u < -0.45) return pick(["#ff1a1a", "#e50914", "#ff5a1f", "#ff8a00", "#b3050d"]);
+      if (u < -0.1)  return pick(["#ff3b30", "#ff7a59", "#ffb199", "#ff2d55", "#ffd0b8"]);
+      if (u < 0.2)   return pick(["#ffffff", "#ffe3ee", "#ff9fb8", "#ffd1c4", "#f5f5ff"]);
+      if (u < 0.55)  return pick(["#3b6bff", "#1f4dff", "#6aa0ff", "#2a7bff", "#9bc3ff"]);
+      return pick(["#0a3cff", "#1b6bff", "#00b3ff", "#2b9cff", "#0a2fd6"]);
+    }
+
+    const curtain = document.getElementById("aintro-curtain");
+    const bars = [];
+    for (let i = 0; i < 84; i++) {
+      const u = rnd() * 2 - 1;                       // -1 … 1 : position finale en largeur
+      const w = 4 + Math.pow(rnd(), 2.2) * 70;       // largeur, surtout de fines traînées
+      const el = document.createElement("div");
+      el.className = "aintro-bar";
+      el.style.width = w + "px";
+      el.style.marginLeft = -w / 2 + "px";
+      const c = tint(u);
+      el.style.background = c;
+      el.style.boxShadow = "0 0 " + Math.round(8 + w * 0.6) + "px " + c;
+      el.style.opacity = "0";
+      curtain.appendChild(el);
+      const warm = ["#ff1a1a", "#e50914", "#ff4a1a", "#ff8a00", "#ffb000", "#c40812"];
+      bars.push({ el, u, delay: rnd() * 0.35, o: 0.55 + rnd() * 0.45, c, from: warm[Math.floor(rnd() * warm.length)] });
+    }
+
+    const tl = gsap.timeline({ paused: true });
+    const letter = "#aintro-letter";
+    gsap.set(letter, { xPercent: -50, yPercent: -50, scale: 0.92, transformPerspective: 1100, transformOrigin: "50% 50%" });
+
+    /* 1. La lettre se dessine : jambe claire, jambe sombre, puis la barre (0,17 → 0,95 s). */
+    tl.fromTo("#aintro-legL", { clipPath: "inset(0% 0% 100% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.34, ease: "power2.out" }, 0.17);
+    tl.fromTo("#aintro-legR", { clipPath: "inset(0% 0% 100% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.36, ease: "power2.out" }, 0.42);
+    tl.fromTo("#aintro-bar",  { clipPath: "inset(0% 100% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.26, ease: "power3.out" }, 0.72);
+
+    /* 2. Poussée lente avec un léger effet 3D (0,5 → 2,0 s). */
+    tl.fromTo(letter, { scale: 0.92, rotationY: -9 }, { scale: 1.22, rotationY: 7, duration: 1.55, ease: "sine.inOut" }, 0.45);
+    tl.fromTo("#aintro-shine", { opacity: 0 }, { opacity: 0.9, duration: 0.25, yoyo: true, repeat: 1, ease: "sine.inOut" }, 1.25);
+
+    /* 3. La lettre s'étire en colonne verticale (2,0 → 2,45 s). */
+    tl.to(letter, { scaleX: 0.42, scaleY: 3.1, rotationY: 0, filter: "blur(6px)", duration: 0.45, ease: "power3.in" }, 2.0);
+    tl.to(letter, { opacity: 0, duration: 0.16, ease: "none" }, 2.34);
+
+    /* 4. Une colonne rouge-orange étroite s'ouvre lentement en rideau de lumière (2,2 → 3,6 s) ;
+          le bleu n'apparaît qu'à mesure que le rideau s'élargit ; flash vers 3,45 s. */
+    tl.fromTo("#aintro-curtain", { opacity: 0, filter: "blur(3px)" }, { opacity: 1, filter: "blur(1.2px)", duration: 0.25, ease: "power2.out" }, 2.2);
+    bars.forEach((b) => {
+      const t0 = 2.2 + b.delay * 0.45;
+      tl.fromTo(b.el, { x: b.u * 46, scaleX: 0.55, backgroundColor: b.from }, { x: b.u * 880, scaleX: 1, backgroundColor: b.c, duration: 1.3, ease: "power2.inOut" }, t0);
+      tl.fromTo(b.el, { opacity: 0 }, { opacity: b.o, duration: 0.22, ease: "power1.out" }, t0);
+      tl.to(b.el, { opacity: 0, x: b.u * 40, scaleX: 0.2, duration: 0.32, ease: "power3.in" }, 3.52 + b.delay * 0.15);
+    });
+    tl.fromTo("#aintro-glow", { opacity: 0, scaleX: 1.6, scaleY: 0.9 }, { opacity: 0.6, scaleX: 2.2, scaleY: 1, duration: 0.5, ease: "power2.in" }, 2.95);
+    tl.to("#aintro-glow", { opacity: 0, duration: 0.3, ease: "power2.out" }, 3.5);
+
+    /* 5. Tout converge en une ligne rouge lumineuse qui s'élargit (3,6 → 4,2 s). */
+    gsap.set("#aintro-line", { transformOrigin: "50% 50%" });
+    tl.fromTo("#aintro-line", { opacity: 0, scaleX: 0.55, filter: "blur(2px)", boxShadow: "0 0 30px 6px rgba(255,40,0,.6)" },
+      { opacity: 1, scaleX: 2.6, duration: 0.22, ease: "power2.out" }, 3.58);
+    tl.to("#aintro-line", { scaleX: 18.5, filter: "blur(10px)", boxShadow: "0 0 140px 50px rgba(255,60,10,.85)", duration: 0.42, ease: "power2.in" }, 3.8);
+
+    window.__timelines["aintro"] = tl;
+  </script>
+</template>

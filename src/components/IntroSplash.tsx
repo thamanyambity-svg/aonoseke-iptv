@@ -1,10 +1,15 @@
-import { useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import type { JSX } from 'react';
 import './IntroSplash.css';
 
-/** Durée de l'animation (ms) — doit rester alignée avec IntroSplash.css. */
-export const INTRO_DURATION_MS = 3400;
+/** Durée du film (s) — public/intro-a.mp4. Sert de garde-fou si l'événement « fin » n'arrive jamais. */
+export const INTRO_FILM_SECONDS = 4.2;
+/** Garde-fou : on ferme l'intro même si la vidéo se bloque (ms). */
+export const INTRO_FALLBACK_MS = Math.round((INTRO_FILM_SECONDS + 1.8) * 1000);
+/** Durée du fondu vers l'application (ms) — alignée avec IntroSplash.css. */
+export const INTRO_FADE_MS = 350;
 const SEEN_KEY = 'aonoseke-intro-seen';
+const FILM_URL = `${import.meta.env.BASE_URL}intro-a.mp4`;
 
 /** Vrai si l'intro a déjà été jouée dans cette session (ou si l'utilisateur réduit les animations). */
 export function introAlreadySeen(): boolean {
@@ -25,47 +30,63 @@ interface IntroSplashProps {
 }
 
 /**
- * Animation d'ouverture façon « ta-dum » : le A d'Aonoseke se dessine (deux jambes puis la barre,
- * en ruban doré/rouge), pulse, puis zoome jusqu'à engloutir l'écran. Touche ou clic = passer.
+ * Film d'ouverture : le A d'Aonoseke se dessine, avance, s'ouvre en rideau de lumière puis converge en une ligne rouge,
+ * avec un son de 4,2 s. Une fois par session ; un clic ou une touche permet de passer.
+ * Le son est tenté d'abord ; si le navigateur refuse la lecture automatique avec son, le film se joue sans son.
+ * Si la vidéo ne peut pas se lire du tout, l'intro est simplement sautée.
  */
 export function IntroSplash({ onDone }: IntroSplashProps): JSX.Element {
+  const videoRef = useRef<HTMLVideoElement>(null);
   const doneRef = useRef(onDone);
+  const finishedRef = useRef(false);
+  const [leaving, setLeaving] = useState(false);
   useEffect(() => { doneRef.current = onDone; });
 
-  useEffect(() => {
-    const finish = (): void => { markSeen(); doneRef.current(); };
-    const timer = window.setTimeout(finish, INTRO_DURATION_MS);
-    const onKey = (): void => { window.clearTimeout(timer); finish(); };
-    window.addEventListener('keydown', onKey);
-    return () => { window.clearTimeout(timer); window.removeEventListener('keydown', onKey); };
+  const finish = useCallback((): void => {
+    if (finishedRef.current) return;
+    finishedRef.current = true;
+    markSeen();
+    setLeaving(true);
+    window.setTimeout(() => doneRef.current(), INTRO_FADE_MS);
   }, []);
 
-  const skip = (): void => { markSeen(); doneRef.current(); };
+  useEffect(() => {
+    const video = videoRef.current;
+    const guard = window.setTimeout(finish, INTRO_FALLBACK_MS);
+    const onKey = (): void => finish();
+    window.addEventListener('keydown', onKey);
+
+    const start = async (): Promise<void> => {
+      if (!video) { finish(); return; }
+      try {
+        video.muted = false;
+        await video.play();
+      } catch {
+        try {
+          video.muted = true; // lecture automatique avec son refusée : on joue sans son
+          await video.play();
+        } catch {
+          finish();
+        }
+      }
+    };
+    void start();
+
+    return () => { window.clearTimeout(guard); window.removeEventListener('keydown', onKey); };
+  }, [finish]);
 
   return (
-    <div className="intro-splash" role="presentation" onClick={skip} data-testid="intro-splash">
-      <div className="intro-stage">
-        <svg className="intro-a" viewBox="0 0 200 240" aria-hidden="true">
-          <defs>
-            <linearGradient id="introLeg" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stopColor="#f3dc8a" />
-              <stop offset="1" stopColor="#c9a84c" />
-            </linearGradient>
-            <linearGradient id="introShade" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stopColor="#b3202f" />
-              <stop offset="1" stopColor="#5a0b14" />
-            </linearGradient>
-            <linearGradient id="introBar" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0" stopColor="#e50914" />
-              <stop offset="1" stopColor="#8a0710" />
-            </linearGradient>
-          </defs>
-          <polygon className="intro-leg intro-leg-left" points="80,8 112,8 64,232 24,232" fill="url(#introLeg)" />
-          <polygon className="intro-leg intro-leg-right" points="88,8 120,8 176,232 136,232" fill="url(#introShade)" />
-          <polygon className="intro-bar" points="62,150 138,150 142,176 56,176" fill="url(#introBar)" />
-        </svg>
-        <div className="intro-word">AONOSEKE</div>
-      </div>
+    <div className={`intro-splash${leaving ? ' is-leaving' : ''}`} role="presentation" onClick={finish} data-testid="intro-splash">
+      <video
+        ref={videoRef}
+        className="intro-film"
+        src={FILM_URL}
+        playsInline
+        preload="auto"
+        disablePictureInPicture
+        onEnded={finish}
+        onError={finish}
+      />
     </div>
   );
 }
