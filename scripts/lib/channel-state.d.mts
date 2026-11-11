@@ -7,3 +7,10 @@ export function decideChannel(
   result: Pick<StreamCheck, 'status' | 'reason'> & { retryable?: boolean },
   now: string,
 ): { bucket: Bucket; entry: Record<string, unknown> | null };
+
+export const MAX_BACKUPS: number;
+export function decideWithBackups(
+  ch: Record<string, unknown>,
+  results: Array<{ url: string; result: Pick<StreamCheck, 'status' | 'reason'> & { retryable?: boolean } }>,
+  now: string,
+): { bucket: Bucket; entry: Record<string, unknown> | null };
