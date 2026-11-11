@@ -1,5 +1,6 @@
-import React, { useEffect, useRef, useState, useCallback, lazy, Suspense } from 'react';
+import React, { useEffect, useRef, useState, useCallback, useMemo, lazy, Suspense } from 'react';
 import { playbackUrl } from '../utils/playableChannels.ts';
+import { sourceChain, nextSource } from '../utils/failover.ts';
 import { isNativeApp } from '../lib/nativeAuth.ts';
 import Hls from 'hls.js';
 import { Maximize2, Minimize2, RefreshCw, Captions } from 'lucide-react';
@@ -24,7 +25,7 @@ function writeSubtitlePref(lang: string): void {
   try { localStorage.setItem(SUBTITLE_PREF_KEY, lang); } catch { /* mode privé */ }
 }
 
-export const Player: React.FC<PlayerProps> = ({ url, onError }): JSX.Element => {
+export const Player: React.FC<PlayerProps> = ({ url, backups, onError }): JSX.Element => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const hlsRef = useRef<Hls | null>(null);
@@ -32,6 +33,23 @@ export const Player: React.FC<PlayerProps> = ({ url, onError }): JSX.Element => 
   // ne doit pas relancer la lecture (l'effet HLS ne dépend que de `url`).
   const onErrorRef = useRef(onError);
   useEffect(() => { onErrorRef.current = onError; }, [onError]);
+
+  // Basculement : si l'adresse en cours échoue, on essaie la suivante (adresses de secours) avant d'afficher l'erreur.
+  const backupsKey = (backups ?? []).join('\n');
+  const chain = useMemo(() => sourceChain(url, backupsKey ? backupsKey.split('\n') : []), [url, backupsKey]);
+  const [attempt, setAttempt] = useState({ forUrl: url, index: 0 });
+  const attemptIndex = attempt.forUrl === url ? attempt.index : 0;
+  const currentSource = chain[attemptIndex] ?? url;
+  const failoverRef = useRef<() => boolean>(() => false);
+  useEffect(() => {
+    failoverRef.current = (): boolean => {
+      const next = nextSource(chain, attemptIndex);
+      if (next === null) return false;
+      logger.warn('Flux indisponible — bascule sur l’adresse de secours', { from: chain[attemptIndex], to: chain[next] });
+      setAttempt({ forUrl: url, index: next });
+      return true;
+    };
+  }, [chain, attemptIndex, url]);
   const [isLoading, setIsLoading] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [recovering, setRecovering] = useState(false);
@@ -84,7 +102,7 @@ export const Player: React.FC<PlayerProps> = ({ url, onError }): JSX.Element => 
 
   useEffect((): (() => void) => {
     const video = videoRef.current;
-    if (!video || !url) return (): void => {};
+    if (!video || !currentSource) return (): void => {};
 
     if (hlsRef.current) {
       hlsRef.current.destroy();
@@ -119,7 +137,7 @@ export const Player: React.FC<PlayerProps> = ({ url, onError }): JSX.Element => 
         maxMaxBufferLength: 60,
       });
 
-      hls.loadSource(playbackUrl(url, isNativeApp()));
+      hls.loadSource(playbackUrl(currentSource, isNativeApp()));
       hls.attachMedia(video);
 
       hls.on(Hls.Events.MANIFEST_PARSED, (): void => {
@@ -162,6 +180,7 @@ export const Player: React.FC<PlayerProps> = ({ url, onError }): JSX.Element => 
               errorTimer = setTimeout(() => {
                 errorTimer = null;
                 setRecovering(false);
+                if (failoverRef.current()) return;
                 setIsLoading(false);
                 onErrorRef.current?.(ErrorMessages.STREAM_UNAVAILABLE);
               }, 5000);
@@ -172,6 +191,7 @@ export const Player: React.FC<PlayerProps> = ({ url, onError }): JSX.Element => 
               break;
             default:
               hls.destroy();
+              if (failoverRef.current()) break;
               setIsLoading(false);
               onErrorRef.current?.(ErrorMessages.STREAM_ERROR);
               logger.error('HLS Fatal error', undefined, { type: data.type, details: data.details });
@@ -187,7 +207,7 @@ export const Player: React.FC<PlayerProps> = ({ url, onError }): JSX.Element => 
           logger.warn('Native HLS play failed', { error: String(err) });
         });
       };
-      video.src = playbackUrl(url, isNativeApp());
+      video.src = playbackUrl(currentSource, isNativeApp());
       video.addEventListener('loadedmetadata', onMetadata);
 
       return (): void => {
@@ -215,7 +235,7 @@ export const Player: React.FC<PlayerProps> = ({ url, onError }): JSX.Element => 
         hlsRef.current = null;
       }
     };
-  }, [url]);
+  }, [currentSource]);
 
   const chooseSubtitle = (index: number): void => {
     const hls = hlsRef.current;

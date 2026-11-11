@@ -4,7 +4,7 @@ import { render, act, screen, fireEvent } from '@testing-library/react';
 type Handler = (event: string, data: unknown) => void;
 
 // Faux hls.js : on capture les instances et les handlers pour piloter les erreurs.
-const instances: Array<{ handlers: Record<string, Handler>; destroy: ReturnType<typeof vi.fn>; subtitleTrack: number; subtitleDisplay: boolean }> = [];
+const instances: Array<{ handlers: Record<string, Handler>; destroy: ReturnType<typeof vi.fn>; loadSource: ReturnType<typeof vi.fn>; subtitleTrack: number; subtitleDisplay: boolean }> = [];
 
 vi.mock('hls.js', () => {
   class FakeHls {
@@ -117,5 +117,61 @@ describe('Player — sous-titres', () => {
 
     expect(instances[0]!.subtitleDisplay).toBe(false);
     expect(localStorage.getItem('iptv-subtitle-lang')).toBe('');
+  });
+});
+
+
+describe('Player — basculement sur les adresses de secours', () => {
+  const URL_B = 'https://test.com/b.m3u8';
+  const URL_C = 'https://test.com/c.m3u8';
+  beforeEach(() => { instances.length = 0; vi.useFakeTimers(); });
+  afterEach(() => { vi.useRealTimers(); });
+
+  it('essaie la secours avant d’afficher l’erreur', () => {
+    const onError = vi.fn();
+    render(<Player url={URL_A} backups={[URL_B]} onError={onError} />);
+    expect(instances[0]!.loadSource).toHaveBeenCalledWith(URL_A);
+
+    act(() => { instances[0]!.handlers['error']!('error', networkError); });
+    act(() => { vi.advanceTimersByTime(5001); });
+
+    expect(onError).not.toHaveBeenCalled();
+    expect(instances).toHaveLength(2);
+    expect(instances[1]!.loadSource).toHaveBeenCalledWith(URL_B);
+  });
+
+  it('enchaîne les secours puis signale l’erreur quand il n’en reste plus', () => {
+    const onError = vi.fn();
+    render(<Player url={URL_A} backups={[URL_B, URL_C]} onError={onError} />);
+
+    act(() => { instances[0]!.handlers['error']!('error', networkError); });
+    act(() => { vi.advanceTimersByTime(5001); });
+    act(() => { instances[1]!.handlers['error']!('error', networkError); });
+    act(() => { vi.advanceTimersByTime(5001); });
+    expect(instances[2]!.loadSource).toHaveBeenCalledWith(URL_C);
+    expect(onError).not.toHaveBeenCalled();
+
+    act(() => { instances[2]!.handlers['error']!('error', networkError); });
+    act(() => { vi.advanceTimersByTime(5001); });
+    expect(onError).toHaveBeenCalledTimes(1);
+  });
+
+  it('sans secours : comportement inchangé, l’erreur est signalée', () => {
+    const onError = vi.fn();
+    render(<Player url={URL_A} onError={onError} />);
+    act(() => { instances[0]!.handlers['error']!('error', networkError); });
+    act(() => { vi.advanceTimersByTime(5001); });
+    expect(onError).toHaveBeenCalledTimes(1);
+    expect(instances).toHaveLength(1);
+  });
+
+  it('une nouvelle chaîne repart de sa propre adresse principale', () => {
+    const { rerender } = render(<Player url={URL_A} backups={[URL_B]} onError={() => {}} />);
+    act(() => { instances[0]!.handlers['error']!('error', networkError); });
+    act(() => { vi.advanceTimersByTime(5001); });
+    expect(instances[1]!.loadSource).toHaveBeenCalledWith(URL_B);
+
+    rerender(<Player url={URL_C} onError={() => {}} />);
+    expect(instances[instances.length - 1]!.loadSource).toHaveBeenCalledWith(URL_C);
   });
 });

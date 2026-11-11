@@ -8,10 +8,12 @@ export interface Channel {
   adSupported?: boolean;  // stream carries built-in server-side ads
   geoBlocked?: boolean;   // le serveur refuse l'accès depuis certains pays (403/451) : peut ne pas se lancer
   geoReason?: string;     // raison relevée par la vérification des sources
+  backups?: string[] | undefined;     // adresses de secours : le lecteur les essaie si `url` échoue
 }
 
 export interface PlayerProps {
   url: string;
+  backups?: string[] | undefined;
   onError?: (message: string) => void;
 }
 
@@ -43,6 +45,9 @@ export function validatePlaylist(data: unknown): Channel[] {
       ...(typeof ch.adSupported === 'boolean' ? { adSupported: ch.adSupported } : {}),
       ...(ch.geoBlocked === true ? { geoBlocked: true as const } : {}),
       ...(ch.geoBlocked === true && typeof ch.geoReason === 'string' ? { geoReason: ch.geoReason } : {}),
+      ...(Array.isArray(ch.backups)
+        ? { backups: ch.backups.filter((b): b is string => typeof b === 'string' && b.length > 0) }
+        : {}),
     };
   });
 }
