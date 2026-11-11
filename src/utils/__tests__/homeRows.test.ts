@@ -17,6 +17,15 @@ describe('buildHomeRows', () => {
     expect(rows.map((r) => r.title)).toEqual(['Congo (RDC)', 'Afrique', 'Sport']);
   });
 
+  it('ne répète pas dans les autres rangées les chaînes déjà montrées dans « Congo (RDC) »', () => {
+    const list = [
+      ...['a', 'b', 'c'].map((n) => ch(`af${n}`, 'Afrique', 'CI')),
+      ch('rtnc', 'Afrique', 'CD'),
+    ];
+    const rows = buildHomeRows(list);
+    expect(rows.find((r) => r.id === 'g-Afrique')?.channels.map((c) => c.name)).toEqual(['afa', 'afb', 'afc']);
+  });
+
   it('ignore les groupes de moins de 3 chaînes (sauf Congo)', () => {
     const rows = buildHomeRows([ch('x', 'Comedy'), ch('y', 'Comedy')]);
     expect(rows).toEqual([]);

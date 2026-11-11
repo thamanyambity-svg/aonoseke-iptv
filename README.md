@@ -384,6 +384,9 @@ npm run android:release   # APK + AAB de publication (signature : voir ci-dessou
 npm run icons             # régénère les icônes depuis public/favicon.svg
 ```
 
+> Sans poste de développement : le workflow GitHub **« Android — APK et AAB signés »** (`.github/workflows/android-release.yml`) construit l'APK et l'AAB avec la clé et les identifiants stockés dans les secrets du dépôt.
+> Téléviseur Hisense (VIDAA) : voir `docs/TV-HISENSE-VIDAA.md`.
+
 Prérequis : Node 20+, JDK 17+, Android SDK (plateforme 36) avec `ANDROID_HOME` défini.
 
 **Signature de publication (Play Store / Amazon)** : créez _une seule fois_ votre clé et **conservez-la** (sans elle,

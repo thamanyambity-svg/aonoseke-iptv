@@ -25,6 +25,7 @@ import { Sidebar, countryFlag } from './components/Sidebar.tsx';
 import { useDeadChannels } from './hooks/useDeadChannels.ts';
 import { filterPlayable } from './utils/playableChannels.ts';
 import { isNativeApp } from './lib/nativeAuth.ts';
+import { isBackKey } from './utils/spatialNav.ts';
 import { useAds, trackAdEvent } from './hooks/useAds.ts';
 import type { PrerollAd } from './hooks/useAds.ts';
 import { trackEvent } from './hooks/useAnalytics.ts';
@@ -132,6 +133,20 @@ function App(): JSX.Element {
       pendingChannel.current = null;
     }
   }, [playChannel]);
+
+  // Touche « retour » de la télécommande : ferme le profil, sinon revient à l'accueil.
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent): void => {
+      if (!isBackKey(e)) return;
+      const tag = (e.target as HTMLElement | null)?.tagName;
+      if (tag === 'INPUT' || tag === 'TEXTAREA') return;
+      if (showProfile) { setShowProfile(false); e.preventDefault(); return; }
+      if (prerollAd) { setPrerollAd(null); pendingChannel.current = null; e.preventDefault(); return; }
+      if (activeChannel) { setActiveChannel(null); setError(null); e.preventDefault(); }
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [showProfile, prerollAd, activeChannel, setActiveChannel, setError]);
 
   const handleToggleSidebar = useCallback((): void => {
     setSidebarOpen(!sidebarOpen);
