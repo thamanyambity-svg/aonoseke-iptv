@@ -11,6 +11,8 @@ name: Android — APK et AAB signés
 #   ANDROID_KEY_PASSWORD       mot de passe de la clé
 #   VITE_SUPABASE_URL          adresse du projet Supabase
 #   VITE_SUPABASE_ANON_KEY     clé « anon public » (publique par conception)
+# Facultatif :
+#   VITE_TMDB_API_KEY          clé TMDB (affiches avec titres) ; sans elle, affiches de secours
 on:
   workflow_dispatch:
 
@@ -63,6 +65,7 @@ jobs:
         env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+          VITE_TMDB_API_KEY: ${{ secrets.VITE_TMDB_API_KEY }}
           ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
           ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
           ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}

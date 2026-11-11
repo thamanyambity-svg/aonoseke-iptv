@@ -17,15 +17,22 @@ export interface Poster {
   url: string;
   /** Jeu de résolutions pour laisser le navigateur choisir selon le DPR. */
   srcSet: string;
+  /** Titre et année (seulement avec une clé TMDB : les affiches de secours n'en ont pas). */
+  title?: string | undefined;
+  year?: string | undefined;
+  kind?: 'movie' | 'tv' | undefined;
 }
 
 const TMDB_KEY = import.meta.env.VITE_TMDB_API_KEY as string | undefined;
 const img = (size: string, path: string): string => `https://image.tmdb.org/t/p/${size}${path}`;
 
-function toPoster(path: string): Poster {
+function toPoster(path: string, meta?: Pick<Poster, 'title' | 'year' | 'kind'>): Poster {
   return {
     url: img('w342', path),
     srcSet: `${img('w185', path)} 185w, ${img('w342', path)} 342w, ${img('w500', path)} 500w`,
+    ...(meta?.title ? { title: meta.title } : {}),
+    ...(meta?.year ? { year: meta.year } : {}),
+    ...(meta?.kind ? { kind: meta.kind } : {}),
   };
 }
 
@@ -47,38 +54,57 @@ const FALLBACK_PATHS: string[] = [
   '/nEuEMJrnLBneE9tJlmzbhCFLu95.jpg', '/zP19YO60jwEsfKd5Qf1UvA5uJu8.jpg',
 ];
 
-async function trending(kind: 'movie' | 'tv'): Promise<string[]> {
+interface TrendItem { path: string; title?: string | undefined; year?: string | undefined; kind: 'movie' | 'tv' }
+
+async function trending(kind: 'movie' | 'tv'): Promise<TrendItem[]> {
   const res = await fetch(
     `https://api.themoviedb.org/3/trending/${kind}/week?api_key=${TMDB_KEY}&language=fr-FR`,
   );
   if (!res.ok) throw new Error(`TMDB ${kind} ${res.status}`);
-  const data = (await res.json()) as { results?: Array<{ poster_path?: string | null }> };
-  return (data.results ?? [])
-    .map((r) => r.poster_path)
-    .filter((p): p is string => typeof p === 'string' && p.length > 0);
+  const data = (await res.json()) as {
+    results?: Array<{ poster_path?: string | null; title?: string; name?: string; release_date?: string; first_air_date?: string }>;
+  };
+  const items: TrendItem[] = [];
+  for (const r of data.results ?? []) {
+    if (typeof r.poster_path !== 'string' || !r.poster_path) continue;
+    const title = r.title ?? r.name;
+    const year = (r.release_date ?? r.first_air_date ?? '').slice(0, 4);
+    items.push({ path: r.poster_path, title, year: year || undefined, kind });
+  }
+  return items;
 }
 
 /**
  * Récupère 20–30 affiches réelles (films + séries/docs entrelacés).
  * Renvoie `[]` si pas de clé TMDB ou en cas d'échec réseau (jamais d'exception).
  */
-export async function fetchPosters(): Promise<Poster[]> {
-  if (!TMDB_KEY) return FALLBACK_PATHS.map(toPoster);
+async function loadPosters(): Promise<Poster[]> {
+  if (!TMDB_KEY) return FALLBACK_PATHS.map((p) => toPoster(p));
   try {
     const [movies, tv] = await Promise.all([trending('movie'), trending('tv')]);
     // Entrelace films / séries pour varier, plafonne à 30.
-    const paths: string[] = [];
+    const items: TrendItem[] = [];
     const max = Math.max(movies.length, tv.length);
-    for (let i = 0; i < max && paths.length < 30; i++) {
+    for (let i = 0; i < max && items.length < 30; i++) {
       const m = movies[i];
       const t = tv[i];
-      if (m) paths.push(m);
-      if (t) paths.push(t);
+      if (m) items.push(m);
+      if (t) items.push(t);
     }
-    return paths.length >= 6 ? paths.map(toPoster) : FALLBACK_PATHS.map(toPoster);
+    return items.length >= 6
+      ? items.map((it) => toPoster(it.path, { title: it.title, year: it.year, kind: it.kind }))
+      : FALLBACK_PATHS.map((p) => toPoster(p));
   } catch {
-    return FALLBACK_PATHS.map(toPoster);
+    return FALLBACK_PATHS.map((p) => toPoster(p));
   }
+}
+
+let cache: Promise<Poster[]> | null = null;
+
+/** Un seul appel TMDB par chargement de page, partagé entre le fond de la bannière et la rangée « À l'affiche ». */
+export function fetchPosters(): Promise<Poster[]> {
+  cache ??= loadPosters();
+  return cache;
 }
 
 /**

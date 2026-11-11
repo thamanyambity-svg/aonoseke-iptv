@@ -1,6 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { CSSProperties, JSX } from 'react';
 import { ChevronLeft, ChevronRight, Play } from 'lucide-react';
+import { CinematicBg } from './CinematicBg.tsx';
+import { fetchPosters } from '../lib/posters.ts';
+import type { Poster } from '../lib/posters.ts';
 import type { Channel } from '../types';
 import { buildHomeRows, pickFeatured } from '../utils/homeRows.ts';
 import { displayName, monogram } from '../utils/displayName.ts';
@@ -77,12 +80,81 @@ function Row({ id, title, channels, onSelect }: { id: string; title: string; cha
   );
 }
 
+const SHELF_ID = 'affiche';
+
+/** Rangée d'affiches TMDB : un clic mène à la rangée des chaînes de cinéma / séries. */
+function PosterShelf({ posters, onPick }: { posters: Poster[]; onPick: (kind: 'movie' | 'tv') => void }): JSX.Element {
+  const scroller = useRef<HTMLDivElement>(null);
+  const scroll = (dir: -1 | 1): void => {
+    const el = scroller.current;
+    if (el) el.scrollBy({ left: dir * el.clientWidth * 0.85, behavior: 'smooth' });
+  };
+  return (
+    <section className="bh-row" id={`bh-row-${SHELF_ID}`} aria-label="À l'affiche">
+      <h3 className="bh-row-title">À l'affiche<span className="bh-row-count">tendances de la semaine</span></h3>
+      <div className="bh-row-wrap">
+        <button type="button" className="bh-arrow bh-arrow-left" onClick={() => scroll(-1)} aria-label="À l'affiche : précédent">
+          <ChevronLeft size={26} />
+        </button>
+        <div className="bh-scroller" ref={scroller}>
+          {posters.slice(0, 20).map((p, i) => {
+            const kind = p.kind ?? 'movie';
+            const label = p.title ? `${p.title}${p.year ? ` (${p.year})` : ''}` : 'Affiche';
+            return (
+              <button
+                key={`${p.url}-${i}`}
+                type="button"
+                className="bh-card bh-card-poster"
+                onClick={() => onPick(kind)}
+                aria-label={`${label} — voir les chaînes ${kind === 'tv' ? 'séries' : 'cinéma'}`}
+              >
+                <span className="bh-card-frame">
+                  <img className="bh-poster-img" src={p.url} srcSet={p.srcSet} sizes="160px" alt="" loading="lazy" decoding="async"
+                    onError={(e) => { e.currentTarget.style.visibility = 'hidden'; }} />
+                  {p.kind && <span className="bh-pill-q bh-pill-kind">{p.kind === 'tv' ? 'Série' : 'Film'}</span>}
+                </span>
+                {p.title && <span className="bh-card-name">{p.title}</span>}
+                {p.title && p.year && <span className="bh-card-sub">{p.year}</span>}
+              </button>
+            );
+          })}
+        </div>
+        <button type="button" className="bh-arrow bh-arrow-right" onClick={() => scroll(1)} aria-label="À l'affiche : suivant">
+          <ChevronRight size={26} />
+        </button>
+      </div>
+    </section>
+  );
+}
+
 /** Accueil façon catalogue, aux couleurs et aux polices d'Aonoseke : barre de catégories, bannière, rangées. */
 export function BrowseHome({ channels, isLoading, onSelect }: BrowseHomeProps): JSX.Element {
   const rows = useMemo(() => buildHomeRows(channels), [channels]);
   const featured = useMemo(() => pickFeatured(channels), [channels]);
   const root = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState<string>('top');
+  const [posters, setPosters] = useState<Poster[]>([]);
+
+  useEffect(() => {
+    let alive = true;
+    void fetchPosters().then((p) => { if (alive) setPosters(p); });
+    return () => { alive = false; };
+  }, []);
+
+  // La rangée d'affiches se place juste avant les chaînes de cinéma (sinon à la fin).
+  const blocks = useMemo(() => {
+    const list: Array<{ id: string; title: string; kind: 'row' | 'shelf' }> = rows.map((r) => ({ id: r.id, title: r.title, kind: 'row' }));
+    if (posters.length < 6) return list;
+    const at = list.findIndex((b) => b.id === 'g-Movies');
+    list.splice(at >= 0 ? at : list.length, 0, { id: SHELF_ID, title: "À l'affiche", kind: 'shelf' });
+    return list;
+  }, [rows, posters]);
+
+  const pickKind = (kind: 'movie' | 'tv'): void => {
+    const wanted = kind === 'tv' ? 'g-Series' : 'g-Movies';
+    const id = rows.some((r) => r.id === wanted) ? wanted : rows.find((r) => r.id === 'g-Movies' || r.id === 'g-Series')?.id;
+    if (id) goTo(id);
+  };
 
   // Éléments focalisables par ligne : [catégories], [bannière], puis une ligne par rangée.
   const grid = (): HTMLElement[][] => {
@@ -129,7 +201,11 @@ export function BrowseHome({ channels, isLoading, onSelect }: BrowseHomeProps): 
     if (!host) return;
     if (id === 'top') { host.scrollTo({ top: 0, behavior: 'smooth' }); return; }
     const target = host.querySelector<HTMLElement>(`#bh-row-${id}`);
-    if (target) host.scrollTo({ top: target.offsetTop - 76, behavior: 'smooth' });
+    if (target) {
+      // Position réelle dans le conteneur qui défile (offsetTop est relatif à un autre parent).
+      const top = target.getBoundingClientRect().top - host.getBoundingClientRect().top + host.scrollTop - 76;
+      host.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+    }
   };
 
   const hero = featured ? displayName(featured.name) : null;
@@ -140,7 +216,7 @@ export function BrowseHome({ channels, isLoading, onSelect }: BrowseHomeProps): 
         <div className="bh-brand" aria-hidden="true"><span className="bh-brand-a">A</span>AONOSEKE</div>
         <div className="bh-chips">
           <button type="button" className={`bh-chip${active === 'top' ? ' is-active' : ''}`} onClick={() => goTo('top')}>À la une</button>
-          {rows.map((r) => (
+          {blocks.map((r) => (
             <button key={r.id} type="button" className={`bh-chip${active === r.id ? ' is-active' : ''}`} onClick={() => goTo(r.id)}>
               {r.title}
             </button>
@@ -150,8 +226,8 @@ export function BrowseHome({ channels, isLoading, onSelect }: BrowseHomeProps): 
 
       {featured && hero ? (
         <header className="bh-hero" style={tintStyle(featured.name)}>
+          <div className="bh-hero-wall" aria-hidden="true"><CinematicBg /></div>
           <div className="bh-hero-glow" aria-hidden="true" />
-          <span className="bh-hero-mark" aria-hidden="true">A</span>
           <div className="bh-hero-body">
             <div className="bh-hero-meta">
               <span className="bh-pill-live bh-pill-live-lg"><span className="bh-dot" aria-hidden="true" />En direct</span>
@@ -177,8 +253,20 @@ export function BrowseHome({ channels, isLoading, onSelect }: BrowseHomeProps): 
       )}
 
       <div className="bh-rows">
-        {rows.map((r) => <Row key={r.id} id={r.id} title={r.title} channels={r.channels} onSelect={onSelect} />)}
+        {blocks.map((b) => {
+          if (b.kind === 'shelf') return <PosterShelf key={b.id} posters={posters} onPick={pickKind} />;
+          const r = rows.find((x) => x.id === b.id);
+          return r ? <Row key={r.id} id={r.id} title={r.title} channels={r.channels} onSelect={onSelect} /> : null;
+        })}
       </div>
+
+      <footer className="bh-credit">
+        <svg className="bh-tmdb" viewBox="0 0 190 80" role="img" aria-label="TMDB" xmlns="http://www.w3.org/2000/svg">
+          <rect width="190" height="80" rx="12" fill="#0d253f" />
+          <text x="95" y="53" textAnchor="middle" fontFamily="Arial, sans-serif" fontWeight="900" fontSize="40" fill="#01b4e4">TMDB</text>
+        </svg>
+        <p>Ce produit utilise l'API TMDB mais n'est ni approuvé ni certifié par TMDB. Les affiches sont la propriété de leurs ayants droit.</p>
+      </footer>
     </div>
   );
 }
