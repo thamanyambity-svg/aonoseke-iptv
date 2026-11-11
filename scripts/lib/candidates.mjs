@@ -22,7 +22,10 @@ export function mergeCandidates(playlist, results, now) {
   const names = new Set(playlist.map((c) => `${norm(c.name)}|${c.country}`));
   const added = [];
   const skipped = { dead: 0, known: 0 };
-  for (const r of results) {
+  // Un flux lisible passe avant un flux bloqué par pays, pour une même chaîne (sinon le premier rencontré l'emporte).
+  const order = { ok: 0, geo: 1, dead: 2 };
+  const sorted = [...results].sort((x, y) => (order[x.status] ?? 3) - (order[y.status] ?? 3));
+  for (const r of sorted) {
     if (r.status === 'dead') { skipped.dead++; continue; }
     const key = `${norm(r.name)}|${r.country}`;
     if (urls.has(r.url) || names.has(key)) { skipped.known++; continue; }

@@ -19,6 +19,15 @@ describe('mergeCandidates', () => {
     expect(added[0]).toMatchObject({ geoBlocked: true, geoReason: 'HTTP 403' });
     expect(added[0]).not.toHaveProperty('verified');
   });
+  it('préfère un flux lisible à un flux bloqué pour la même chaîne, quel que soit l’ordre', () => {
+    const { added } = mergeCandidates(base, [
+      cand({ name: 'Rai 1', url: 'https://x/geo.m3u8', status: 'geo', reason: 'HTTP 403' }),
+      cand({ name: 'Rai 1', url: 'https://x/ok.m3u8', status: 'ok' }),
+    ], NOW);
+    expect(added).toHaveLength(1);
+    expect(added[0]).toMatchObject({ url: 'https://x/ok.m3u8', verified: true });
+    expect(added[0]).not.toHaveProperty('geoBlocked');
+  });
   it('ignore les chaînes mortes', () => {
     const r = mergeCandidates(base, [cand({ status: 'dead' })], NOW);
     expect(r.added).toHaveLength(0);
