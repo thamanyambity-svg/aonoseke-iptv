@@ -25,7 +25,8 @@ import { Sidebar, countryFlag } from './components/Sidebar.tsx';
 import { useDeadChannels } from './hooks/useDeadChannels.ts';
 import { filterPlayable } from './utils/playableChannels.ts';
 import { isNativeApp } from './lib/nativeAuth.ts';
-import { isBackKey } from './utils/spatialNav.ts';
+import { useBackNavigation } from './hooks/useBackNavigation.ts';
+import type { BackAction } from './utils/backNav.ts';
 import { useAds, trackAdEvent } from './hooks/useAds.ts';
 import type { PrerollAd } from './hooks/useAds.ts';
 import { trackEvent } from './hooks/useAnalytics.ts';
@@ -53,7 +54,7 @@ function App(): JSX.Element {
   const [loadError, setLoadError] = useState<string | null>(null);
   const [retryCount, setRetryCount] = useReducer((n: number) => n + 1, 0);
 
-  const { activeChannel, activeTab, sidebarOpen, error, setActiveChannel, setSidebarOpen, setError } = usePlayerStore();
+  const { activeChannel, activeTab, sidebarOpen, error, setActiveChannel, setActiveTab, setSidebarOpen, setError } = usePlayerStore();
   const { favorites } = useFavoritesStore();
   const { markDead } = useDeadChannels();
   const ads = useAds();
@@ -140,19 +141,26 @@ function App(): JSX.Element {
     setSidebarOpen(!!activeChannel && window.matchMedia(DOCKED_SIDEBAR_QUERY).matches);
   }, [activeChannel, setSidebarOpen]);
 
-  // Touche « retour » de la télécommande : ferme le profil, sinon revient à l'accueil.
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent): void => {
-      if (!isBackKey(e)) return;
-      const tag = (e.target as HTMLElement | null)?.tagName;
-      if (tag === 'INPUT' || tag === 'TEXTAREA') return;
-      if (showProfile) { setShowProfile(false); e.preventDefault(); return; }
-      if (prerollAd) { setPrerollAd(null); pendingChannel.current = null; e.preventDefault(); return; }
-      if (activeChannel) { setActiveChannel(null); setError(null); e.preventDefault(); }
-    };
-    window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
-  }, [showProfile, prerollAd, activeChannel, setActiveChannel, setError]);
+  // « Retour » : bouton Retour d'Android, glissement de gauche à droite (comme TikTok) et touches de télécommande.
+  // Ferme dans l'ordre : profil, pub en attente, liste des chaînes (mobile), chaîne en lecture, annuaire.
+  useBackNavigation(
+    () => ({
+      profile: showProfile,
+      preroll: !!prerollAd,
+      drawer: sidebarOpen && !window.matchMedia(DOCKED_SIDEBAR_QUERY).matches,
+      channel: !!activeChannel,
+      directory: activeTab === 'directory',
+    }),
+    (action: BackAction) => {
+      switch (action) {
+        case 'profile': setShowProfile(false); break;
+        case 'preroll': setPrerollAd(null); pendingChannel.current = null; break;
+        case 'drawer': setSidebarOpen(false); break;
+        case 'channel': setActiveChannel(null); setError(null); break;
+        case 'directory': setActiveTab('all'); break;
+      }
+    },
+  );
 
   const handleToggleSidebar = useCallback((): void => {
     setSidebarOpen(!sidebarOpen);

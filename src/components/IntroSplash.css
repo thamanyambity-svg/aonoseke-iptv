@@ -21,6 +21,23 @@
   height: 100%;
   object-fit: cover;
   background: #000;
+  /* Invisible tant que la première image n'est pas jouée : pas d'icône « lecture » avant le film. */
+  opacity: 0;
+}
+
+.intro-film.is-playing {
+  opacity: 1;
+}
+
+/* Jamais de contrôles ni de bouton « lecture » natifs (WebView Android, Safari, Chrome). */
+.intro-film::-webkit-media-controls,
+.intro-film::-webkit-media-controls-panel,
+.intro-film::-webkit-media-controls-start-playback-button,
+.intro-film::-webkit-media-controls-overlay-play-button,
+.intro-film::-webkit-media-controls-enclosure {
+  display: none !important;
+  -webkit-appearance: none;
+  opacity: 0 !important;
 }
 
 @media (prefers-reduced-motion: reduce) {

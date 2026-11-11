@@ -27,6 +27,16 @@ describe('IntroSplash (film d’ouverture)', () => {
     expect(film().getAttribute('src')).toMatch(/intro-a\.mp4$/);
   });
 
+  it('reste invisible tant que le film n’a pas démarré, sans icône de lecture ni contrôles', async () => {
+    render(<IntroSplash onDone={() => {}} />);
+    await act(async () => { await Promise.resolve(); });
+    expect(film().className).not.toContain('is-playing');
+    expect(film().controls).toBe(false);
+    expect(film().getAttribute('poster')).toMatch(/^data:image\/gif/);
+    fireEvent.playing(film());
+    expect(film().className).toContain('is-playing');
+  });
+
   it('retombe sur une lecture sans son si le navigateur refuse le son automatique', async () => {
     play.mockImplementationOnce(() => Promise.reject(new Error('NotAllowedError')));
     const onDone = vi.fn();
