@@ -5845,11 +5845,13 @@
     "country": "FR",
     "group": "France",
     "logo": "https://i.imgur.com/d91GcVf.png",
-    "url": "http://145.239.5.177/315/index.m3u8",
+    "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/G1dJEWsFB5Nt/KunsExYNItvr4eo.m3u8",
     "source": "iptv-org/api-2026-10-http-android",
     "verifiedAt": "2026-11-11T03:54:34.808Z",
     "geoBlocked": true,
-    "geoReason": "HTTP 403 (accès refusé)"
+    "geoReason": "HTTP 403 (accès refusé)",
+    "verified": true,
+    "backups": ["http://145.239.5.177/315/index.m3u8"]
   },
   {
     "name": "TV Alsace (1080p)",
@@ -12213,5 +12215,79 @@
     "source": "iptv-org/api-2026-10-thematique-monde",
     "verifiedAt": "2026-11-11T03:54:34.808Z",
     "verified": true
+  },
+  {
+    "name": "TF1",
+    "country": "FR",
+    "group": "France",
+    "logo": "",
+    "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/G1dJEWsFB5Nt/C63HVD4PtDrLHMB.m3u8",
+    "source": "github.com/Paradise-91/ParaTV",
+    "verifiedAt": "2026-11-11T11:26:53.148Z",
+    "verified": true
+  },
+  {
+    "name": "France 2",
+    "country": "FR",
+    "group": "France",
+    "logo": "",
+    "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/francetv/backup/france2.m3u8",
+    "source": "github.com/Paradise-91/ParaTV",
+    "verifiedAt": "2026-11-11T11:26:53.148Z",
+    "geoBlocked": true,
+    "geoReason": "variante : HTTP 403 (accès refusé)"
+  },
+  {
+    "name": "TMC",
+    "country": "FR",
+    "group": "France",
+    "logo": "",
+    "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/G1dJEWsFB5Nt/vT2U1OS7bYDVDM.m3u8",
+    "source": "github.com/Paradise-91/ParaTV",
+    "verifiedAt": "2026-11-11T11:26:53.148Z",
+    "verified": true
+  },
+  {
+    "name": "CNEWS",
+    "country": "FR",
+    "group": "France",
+    "logo": "",
+    "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/canalplus/cnews-clair-hd.m3u8",
+    "source": "github.com/Paradise-91/ParaTV",
+    "verifiedAt": "2026-11-11T11:26:53.148Z",
+    "geoBlocked": true,
+    "geoReason": "variante : HTTP 403 (accès refusé)"
+  },
+  {
+    "name": "Gulli",
+    "country": "FR",
+    "group": "France",
+    "logo": "",
+    "url": "https://origin-m6web.live.6cloud.fr/out/v1/6play/6play-gulli/cmaf_q2hyb21h/hls-short-sd.m3u8",
+    "source": "github.com/Paradise-91/ParaTV",
+    "verifiedAt": "2026-11-11T11:26:53.148Z",
+    "verified": true
+  },
+  {
+    "name": "La Chaîne parlementaire",
+    "country": "FR",
+    "group": "France",
+    "logo": "",
+    "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/francetv/lcp-public-senat.m3u8",
+    "source": "github.com/Paradise-91/ParaTV",
+    "verifiedAt": "2026-11-11T11:26:53.148Z",
+    "geoBlocked": true,
+    "geoReason": "variante : HTTP 403 (accès refusé)"
+  },
+  {
+    "name": "L'Équipe",
+    "country": "FR",
+    "group": "France",
+    "logo": "",
+    "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/refs/heads/main/streams/lequipe/la-chaine-l-equipe-en-direct-dm.m3u8",
+    "source": "github.com/Paradise-91/ParaTV",
+    "verifiedAt": "2026-11-11T11:26:53.148Z",
+    "geoBlocked": true,
+    "geoReason": "variante : HTTP 403 (accès refusé)"
   }
 ]

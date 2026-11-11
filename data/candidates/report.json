@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-11T08:02:25.532Z",
+  "generatedAt": "2026-11-11T11:13:31.247Z",
   "counts": {
-    "ok": 5,
-    "geo": 0,
-    "dead": 45
+    "ok": 9,
+    "geo": 4,
+    "dead": 52
   },
   "results": [
     {
@@ -555,6 +555,171 @@
       "status": "dead",
       "reason": "HTTP 404",
       "retryable": false
+    },
+    {
+      "name": "TF1",
+      "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/G1dJEWsFB5Nt/C63HVD4PtDrLHMB.m3u8",
+      "country": "FR",
+      "group": "France",
+      "source": "github.com/Paradise-91/ParaTV",
+      "file": "tnt.json",
+      "status": "ok",
+      "reason": "lecture vérifiée (liste, segment, CORS)",
+      "retryable": false
+    },
+    {
+      "name": "France 2",
+      "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/francetv/backup/france2.m3u8",
+      "country": "FR",
+      "group": "France",
+      "source": "github.com/Paradise-91/ParaTV",
+      "file": "tnt.json",
+      "status": "geo",
+      "reason": "variante : HTTP 403 (accès refusé)",
+      "retryable": false
+    },
+    {
+      "name": "France 2",
+      "url": "http://149.62.177.107:9999/France_2/index.m3u8",
+      "country": "FR",
+      "group": "France",
+      "source": "iptv-org (api/streams)",
+      "file": "tnt.json",
+      "status": "dead",
+      "reason": "connexion refusée",
+      "retryable": true
+    },
+    {
+      "name": "TMC",
+      "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/G1dJEWsFB5Nt/vT2U1OS7bYDVDM.m3u8",
+      "country": "FR",
+      "group": "France",
+      "source": "github.com/Paradise-91/ParaTV",
+      "file": "tnt.json",
+      "status": "ok",
+      "reason": "lecture vérifiée (liste, segment, CORS)",
+      "retryable": false
+    },
+    {
+      "name": "TFX",
+      "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/G1dJEWsFB5Nt/KunsExYNItvr4eo.m3u8",
+      "country": "FR",
+      "group": "France",
+      "source": "github.com/Paradise-91/ParaTV",
+      "file": "tnt.json",
+      "status": "ok",
+      "reason": "lecture vérifiée (liste, segment, CORS)",
+      "retryable": false
+    },
+    {
+      "name": "CNEWS",
+      "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/canalplus/cnews-clair-hd.m3u8",
+      "country": "FR",
+      "group": "France",
+      "source": "github.com/Paradise-91/ParaTV",
+      "file": "tnt.json",
+      "status": "geo",
+      "reason": "variante : HTTP 403 (accès refusé)",
+      "retryable": false
+    },
+    {
+      "name": "CNEWS",
+      "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/canalplus/cnews-dm.m3u8",
+      "country": "FR",
+      "group": "France",
+      "source": "github.com/Paradise-91/ParaTV",
+      "file": "tnt.json",
+      "status": "dead",
+      "reason": "CORS refusé pour le site web",
+      "retryable": false
+    },
+    {
+      "name": "CNEWS",
+      "url": "https://raw.githubusercontent.com/LeBazarDeBryan/XTVZ_/main/Stream/Live/CNews.m3u8",
+      "country": "FR",
+      "group": "France",
+      "source": "github.com/LeBazarDeBryan/XTVZ_",
+      "file": "tnt.json",
+      "status": "dead",
+      "reason": "variante : réponse qui n'est pas un flux HLS",
+      "retryable": false
+    },
+    {
+      "name": "Gulli",
+      "url": "https://origin-m6web.live.6cloud.fr/out/v1/6play/6play-gulli/cmaf_q2hyb21h/hls-short-sd.m3u8",
+      "country": "FR",
+      "group": "France",
+      "source": "github.com/Paradise-91/ParaTV",
+      "file": "tnt.json",
+      "status": "ok",
+      "reason": "lecture vérifiée (liste, segment, CORS)",
+      "retryable": false
+    },
+    {
+      "name": "RMC Découverte",
+      "url": "https://d2mt8for1pddy4.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-6uronj7gzvy4j/index.m3u8",
+      "country": "FR",
+      "group": "France",
+      "source": "github.com/Paradise-91/ParaTV",
+      "file": "tnt.json",
+      "status": "dead",
+      "reason": "domaine introuvable",
+      "retryable": true
+    },
+    {
+      "name": "La Chaîne parlementaire",
+      "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/francetv/lcp-public-senat.m3u8",
+      "country": "FR",
+      "group": "France",
+      "source": "github.com/Paradise-91/ParaTV",
+      "file": "tnt.json",
+      "status": "geo",
+      "reason": "variante : HTTP 403 (accès refusé)",
+      "retryable": false
+    },
+    {
+      "name": "L'Équipe",
+      "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/refs/heads/main/streams/lequipe/la-chaine-l-equipe-en-direct-dm.m3u8",
+      "country": "FR",
+      "group": "France",
+      "source": "github.com/Paradise-91/ParaTV",
+      "file": "tnt.json",
+      "status": "geo",
+      "reason": "variante : HTTP 403 (accès refusé)",
+      "retryable": false
+    },
+    {
+      "name": "RMC Story",
+      "url": "https://d15aro46bnpfm8.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-fqkqiax1078up/RMC_Story_FR.m3u8",
+      "country": "FR",
+      "group": "France",
+      "source": "iptv-org (api/streams)",
+      "file": "tnt.json",
+      "status": "dead",
+      "reason": "CORS refusé pour l'appli Android",
+      "retryable": false
+    },
+    {
+      "name": "RMC Découverte",
+      "url": "https://d16zzycxcd0m0r.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-hixvx5kymecr9/RMC_Decouverte_FR.m3u8",
+      "country": "FR",
+      "group": "France",
+      "source": "iptv-org (api/streams)",
+      "file": "tnt.json",
+      "status": "dead",
+      "reason": "CORS refusé pour le site web",
+      "retryable": false
+    },
+    {
+      "name": "Franceinfo",
+      "url": "http://149.62.177.107:9999/franceinfo:/index.m3u8",
+      "country": "FR",
+      "group": "France",
+      "source": "iptv-org (api/streams)",
+      "file": "tnt.json",
+      "status": "dead",
+      "reason": "connexion refusée",
+      "retryable": true
     }
   ]
 }
