@@ -1,0 +1,28 @@
+name: Test des chaînes candidates
+
+# Teste les fichiers data/candidates/*.json avec la vérification de lecture complète, depuis le serveur GitHub
+# (accès réseau complet : ports non standard compris), et publie le rapport data/candidates/report.json.
+# Déclenchement manuel ; la fusion dans la playlist se fait ensuite avec scripts/merge-candidates.mjs.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Tester les candidats
+        run: node scripts/probe-candidates.mjs
+      - name: Publier le rapport
+        run: |
+          git config user.name  "aonoseke-bot"
+          git config user.email "bot@aonoseke.local"
+          git add data/candidates/report.json
+          git commit -m "chore: rapport des chaînes candidates [skip ci]" || echo "Rapport inchangé"
+          git push
