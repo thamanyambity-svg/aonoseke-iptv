@@ -15,7 +15,8 @@ import {
   X,
 } from 'lucide-react';
 import { Player } from './components/Player.tsx';
-import { CinematicBg } from './components/CinematicBg.tsx';
+import { BrowseHome } from './components/BrowseHome.tsx';
+import { IntroSplash, introAlreadySeen } from './components/IntroSplash.tsx';
 import { PreRollAd } from './components/PreRollAd.tsx';
 import { ErrorBoundary } from './components/ErrorBoundary.tsx';
 import { AdOverlay } from './components/AdOverlay.tsx';
@@ -60,6 +61,7 @@ function App(): JSX.Element {
   const selectCount = useRef(0);
 
   const [showProfile, setShowProfile] = useState(false);
+  const [showIntro, setShowIntro] = useState(() => !introAlreadySeen());
 
   useEffect(() => {
     const controller = new AbortController();
@@ -158,6 +160,7 @@ function App(): JSX.Element {
 
   return (
     <div className={`app-container${sidebarOpen ? ' sidebar-open' : ''}`}>
+      {showIntro && <IntroSplash onDone={() => setShowIntro(false)} />}
       <Sidebar
         user={user}
         activeChannel={activeChannel}
@@ -213,7 +216,9 @@ function App(): JSX.Element {
             )}
 
             <div className="video-container">
-              {!activeChannel && <CinematicBg />}
+              {!activeChannel && (
+                <BrowseHome channels={channels} isLoading={isLoading} onSelect={handleSelectChannel} />
+              )}
               <Player
                 url={activeChannel?.url ?? ''}
                 backups={activeChannel?.backups}
