@@ -1,9 +1,10 @@
-import { useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import type { JSX } from 'react';
 import { ChevronLeft, ChevronRight, Play, Tv } from 'lucide-react';
 import type { Channel } from '../types';
 import { buildHomeRows, pickFeatured } from '../utils/homeRows.ts';
 import { countryFlag } from './Sidebar.tsx';
+import { keyToDir, moveInGrid } from '../utils/spatialNav.ts';
 import './BrowseHome.css';
 
 interface BrowseHomeProps {
@@ -74,9 +75,52 @@ function Row({ title, channels, onSelect }: { title: string; channels: Channel[]
 export function BrowseHome({ channels, isLoading, onSelect }: BrowseHomeProps): JSX.Element {
   const rows = useMemo(() => buildHomeRows(channels), [channels]);
   const featured = useMemo(() => pickFeatured(channels), [channels]);
+  const root = useRef<HTMLDivElement>(null);
+
+  // Éléments focalisables par rangée : [bannière] puis une rangée par thème.
+  const grid = (): HTMLElement[][] => {
+    const el = root.current;
+    if (!el) return [];
+    const hero = Array.from(el.querySelectorAll<HTMLElement>('.bh-play'));
+    const lines = Array.from(el.querySelectorAll<HTMLElement>('.bh-scroller')).map((s) =>
+      Array.from(s.querySelectorAll<HTMLElement>('.bh-card')),
+    );
+    return [hero, ...lines];
+  };
+
+  // Télécommande : en mode TV, le focus démarre sur « Regarder ».
+  useEffect(() => {
+    if (!document.documentElement.classList.contains('tv-mode')) return;
+    root.current?.querySelector<HTMLElement>('.bh-play')?.focus({ preventScroll: true });
+  }, [featured]);
+
+  const onKeyDown = (e: React.KeyboardEvent<HTMLDivElement>): void => {
+    const dir = keyToDir(e.key);
+    if (!dir) return;
+    const lines = grid();
+    const active = document.activeElement as HTMLElement | null;
+    let row = lines.findIndex((l) => active && l.includes(active));
+    if (row < 0) {
+      // Rien de focalisé : la première flèche pose le focus sur la bannière.
+      lines[0]?.[0]?.focus();
+      e.preventDefault();
+      return;
+    }
+    const col = Math.max(0, lines[row]?.indexOf(active as HTMLElement) ?? 0);
+    const next = moveInGrid(lines.map((l) => l.length), { row, col }, dir);
+    row = next.row;
+    const target = lines[row]?.[next.col];
+    if (target && target !== active) {
+      e.preventDefault();
+      target.focus({ preventScroll: true });
+      target.scrollIntoView({ block: 'center', inline: 'nearest', behavior: 'smooth' });
+    } else {
+      e.preventDefault(); // au bord : ne pas laisser la page défiler à côté du focus
+    }
+  };
 
   return (
-    <div className="browse-home">
+    <div className="browse-home" ref={root} onKeyDown={onKeyDown}>
       {featured && (
         <header className="bh-hero" style={{ '--bh-tint': tint(featured.name) } as React.CSSProperties}>
           {featured.logo && <img className="bh-hero-bg" src={featured.logo} alt="" aria-hidden="true" />}

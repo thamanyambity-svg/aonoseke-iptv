@@ -41,10 +41,13 @@ export function buildHomeRows(channels: Channel[]): HomeRow[] {
   const rows: HomeRow[] = [];
 
   const congo = verifiedFirst(channels.filter((c) => c.country === 'CD' || c.country === 'CG'));
-  if (congo.length >= 1) rows.push({ id: 'congo', title: 'Congo (RDC)', channels: congo.slice(0, ROW_SIZE) });
+  const congoShown = congo.slice(0, ROW_SIZE);
+  if (congo.length >= 1) rows.push({ id: 'congo', title: 'Congo (RDC)', channels: congoShown });
+  const inCongoRow = new Set(congoShown.map((c) => c.url));
 
   const byGroup = new Map<string, Channel[]>();
   for (const ch of channels) {
+    if (inCongoRow.has(ch.url)) continue; // déjà montrée dans « Congo (RDC) »
     const list = byGroup.get(ch.group);
     if (list) list.push(ch);
     else byGroup.set(ch.group, [ch]);

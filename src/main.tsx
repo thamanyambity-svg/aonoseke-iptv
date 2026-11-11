@@ -27,7 +27,20 @@ const TV_UA = /VIDAA|HbbTV|SmartTV|Tizen|WebOS|SMART-TV|Android.*TV|NetCast|PHIL
 const isTV = TV_UA.test(navigator.userAgent)
   || (window.matchMedia('(hover: none) and (pointer: coarse)').matches && !navigator.maxTouchPoints);
 
-if (isTV) {
+// Mode TV forcé : adresse /tv ou ?tv=1 (utile sur les téléviseurs Hisense/VIDAA, dont le navigateur est détecté tel quel).
+function wantsTvMode(): boolean {
+  try {
+    if (window.location.pathname.startsWith('/tv') || new URLSearchParams(window.location.search).has('tv')) {
+      localStorage.setItem('aonoseke-tv', '1');
+      return true;
+    }
+    return localStorage.getItem('aonoseke-tv') === '1';
+  } catch {
+    return false;
+  }
+}
+
+if (isTV || wantsTvMode()) {
   document.documentElement.classList.add('tv-mode');
   document.addEventListener('contextmenu', (e) => e.preventDefault());
 }
@@ -91,6 +104,7 @@ createRoot(root).render(
         <AuthGate>
           <Routes>
             <Route path="/" element={<App />} />
+            <Route path="/tv" element={<App />} />
             <Route
               path="/admin"
               element={

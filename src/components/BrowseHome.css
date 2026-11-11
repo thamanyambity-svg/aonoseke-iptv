@@ -279,3 +279,57 @@
 .tv-mode .bh-card:focus-visible {
   transform: scale(1.12);
 }
+
+/* ── Mode TV (télécommande, lecture à 3 m) ── */
+.tv-mode .bh-hero-body {
+  padding-left: var(--safe, 48px);
+  max-width: 900px;
+}
+.tv-mode .bh-hero-title {
+  font-size: clamp(44px, 5vw, 76px);
+}
+.tv-mode .bh-hero-sub {
+  font-size: 22px;
+}
+.tv-mode .bh-play {
+  font-size: 24px;
+  padding: 16px 40px;
+}
+.tv-mode .bh-row-title {
+  font-size: 28px;
+  padding-left: var(--safe, 48px);
+}
+.tv-mode .bh-scroller {
+  padding-left: var(--safe, 48px);
+  padding-right: var(--safe, 48px);
+  gap: 18px;
+}
+.tv-mode .bh-card {
+  flex-basis: clamp(260px, 21vw, 360px);
+}
+.tv-mode .bh-card-name {
+  font-size: 20px;
+}
+.tv-mode .bh-card-sub {
+  font-size: 16px;
+}
+.tv-mode .bh-card-live {
+  font-size: 13px;
+  padding: 3px 8px;
+}
+.tv-mode .bh-card:focus,
+.tv-mode .bh-card:focus-visible {
+  outline: 4px solid #c9a84c;
+  outline-offset: 3px;
+  transform: scale(1.1);
+  z-index: 3;
+}
+.tv-mode .bh-play:focus,
+.tv-mode .bh-play:focus-visible {
+  outline: 4px solid #c9a84c;
+  outline-offset: 4px;
+  background: #fff;
+}
+.tv-mode .bh-arrow {
+  display: none;
+}
