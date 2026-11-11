@@ -39,10 +39,10 @@ export function validatePlaylist(data: unknown): Channel[] {
       group: typeof ch.group === 'string' ? ch.group : 'General',
       logo: typeof ch.logo === 'string' ? ch.logo : '',
       url: ch.url,
-      source: typeof ch.source === 'string' ? ch.source : undefined,
-      adSupported: typeof ch.adSupported === 'boolean' ? ch.adSupported : undefined,
-      geoBlocked: ch.geoBlocked === true ? true : undefined,
-      geoReason: ch.geoBlocked === true && typeof ch.geoReason === 'string' ? ch.geoReason : undefined,
+      ...(typeof ch.source === 'string' ? { source: ch.source } : {}),
+      ...(typeof ch.adSupported === 'boolean' ? { adSupported: ch.adSupported } : {}),
+      ...(ch.geoBlocked === true ? { geoBlocked: true as const } : {}),
+      ...(ch.geoBlocked === true && typeof ch.geoReason === 'string' ? { geoReason: ch.geoReason } : {}),
     };
   });
 }

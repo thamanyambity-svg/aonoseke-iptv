@@ -19,8 +19,8 @@ export interface AuthUser {
   id?: string;
   name: string;
   email: string;
-  username?: string;
-  avatar?: string;
+  username?: string | undefined;
+  avatar?: string | undefined;
   role?: 'user' | 'admin';
   provider: 'demo' | 'google' | 'facebook' | 'apple' | 'email';
 }
@@ -43,7 +43,7 @@ interface AuthState {
 }
 
 async function loadProfile(userId: string, email: string): Promise<AuthUser> {
-  const fallback: AuthUser = { id: userId, name: email.split('@')[0], email, provider: 'email' };
+  const fallback: AuthUser = { id: userId, name: (email.split('@')[0] ?? email), email, provider: 'email' };
   if (!supabase) return fallback;
   try {
     const { data, error } = (await supabase
@@ -62,7 +62,7 @@ async function loadProfile(userId: string, email: string): Promise<AuthUser> {
         id: userId,
         email,
         username: data.username ?? undefined,
-        name: data.full_name ?? data.username ?? email.split('@')[0],
+        name: data.full_name ?? data.username ?? (email.split('@')[0] ?? email),
         avatar: data.avatar_url ?? undefined,
         role: (data.role as 'user' | 'admin') ?? 'user',
         provider: 'email',
@@ -91,7 +91,7 @@ async function loadProfile(userId: string, email: string): Promise<AuthUser> {
         id: userId,
         email,
         username: recreated.username ?? undefined,
-        name: recreated.full_name ?? recreated.username ?? email.split('@')[0],
+        name: recreated.full_name ?? recreated.username ?? (email.split('@')[0] ?? email),
         avatar: recreated.avatar_url ?? undefined,
         role: (recreated.role as 'user' | 'admin') ?? 'user',
         provider: 'email',
@@ -118,7 +118,7 @@ function detectDevice(): string {
  * son profil (fonctions sécurisées : n'écrivent que sa propre ligne).
  * Best-effort : ne fait jamais échouer la connexion.
  */
-interface GeoResult { ip?: string; city?: string; region?: string; country?: string; code?: string; lat?: number; lon?: number }
+interface GeoResult { ip?: string | undefined; city?: string | undefined; region?: string | undefined; country?: string | undefined; code?: string | undefined; lat?: number | undefined; lon?: number | undefined }
 
 async function captureGeo(): Promise<void> {
   if (!supabase) return;

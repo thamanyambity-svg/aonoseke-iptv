@@ -111,22 +111,22 @@ export function Sidebar({
 
   const prevCountry = useCallback(() => {
     const idx = countries.indexOf(selectedCountry);
-    setSelectedCountry(countries[idx > 0 ? idx - 1 : countries.length - 1]);
+    setSelectedCountry(countries[idx > 0 ? idx - 1 : countries.length - 1] ?? selectedCountry);
   }, [countries, selectedCountry, setSelectedCountry]);
 
   const nextCountry = useCallback(() => {
     const idx = countries.indexOf(selectedCountry);
-    setSelectedCountry(countries[idx < countries.length - 1 ? idx + 1 : 0]);
+    setSelectedCountry(countries[idx < countries.length - 1 ? idx + 1 : 0] ?? selectedCountry);
   }, [countries, selectedCountry, setSelectedCountry]);
 
   const prevGroup = useCallback(() => {
     const idx = groups.indexOf(selectedGroup);
-    setSelectedGroup(groups[idx > 0 ? idx - 1 : groups.length - 1]);
+    setSelectedGroup(groups[idx > 0 ? idx - 1 : groups.length - 1] ?? selectedGroup);
   }, [groups, selectedGroup, setSelectedGroup]);
 
   const nextGroup = useCallback(() => {
     const idx = groups.indexOf(selectedGroup);
-    setSelectedGroup(groups[idx < groups.length - 1 ? idx + 1 : 0]);
+    setSelectedGroup(groups[idx < groups.length - 1 ? idx + 1 : 0] ?? selectedGroup);
   }, [groups, selectedGroup, setSelectedGroup]);
 
   const handleCountryKeyDown = useCallback((e: React.KeyboardEvent<HTMLDivElement>): void => {
@@ -165,7 +165,8 @@ export function Sidebar({
         return next;
       });
     } else if (e.key === 'Enter' && focusedIdx >= 0) {
-      onSelectChannel(filteredChannels[focusedIdx]);
+      const picked = filteredChannels[focusedIdx];
+      if (picked) onSelectChannel(picked);
     }
   }, [filteredChannels, focusedIdx, onSelectChannel]);
 

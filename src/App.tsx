@@ -115,7 +115,7 @@ function App(): JSX.Element {
       if (shouldShowAd) {
         const ad = pr.items[(selectCount.current - 1) % pr.items.length];
         pendingChannel.current = channel;
-        setPrerollAd(ad);
+        setPrerollAd(ad ?? null);
       } else {
         playChannel(channel);
       }

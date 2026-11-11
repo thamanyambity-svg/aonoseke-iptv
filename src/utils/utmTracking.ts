@@ -19,11 +19,11 @@ const UTM_KEY = 'iptv-utm-params';
 const UTM_TTL_MS = 30 * 24 * 60 * 60 * 1000; // 30 jours
 
 export interface UtmParams {
-  utm_source?: string;
-  utm_medium?: string;
-  utm_campaign?: string;
-  utm_content?: string;
-  utm_term?: string;
+  utm_source?: string | undefined;
+  utm_medium?: string | undefined;
+  utm_campaign?: string | undefined;
+  utm_content?: string | undefined;
+  utm_term?: string | undefined;
   captured_at: number; // timestamp ms
   landing_url: string; // URL d'atterrissage
 }

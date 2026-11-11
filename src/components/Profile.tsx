@@ -8,10 +8,10 @@ interface ProfileProps {
   favoritesCount: number;
   onClose: () => void;
   onLogout: () => void;
-  onOpenAdmin?: () => void;
-  onOpenAdMgmt?: () => void;
+  onOpenAdmin?: (() => void) | undefined;
+  onOpenAdMgmt?: (() => void) | undefined;
   /** Absent pour le mode démo et les administrateurs : le bouton « Supprimer mon compte » n'est alors pas affiché. */
-  onDeleteAccount?: () => Promise<{ error?: string }>;
+  onDeleteAccount?: (() => Promise<{ error?: string }>) | undefined;
 }
 
 export default function Profile({

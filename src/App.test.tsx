@@ -25,7 +25,7 @@ describe('validatePlaylist', () => {
     const raw = [{ name: 'TF1', url: 'http://example.com/tf1.m3u8', country: 'FR', group: 'News', logo: '' }];
     const result = validatePlaylist(raw);
     expect(result).toHaveLength(1);
-    expect(result[0].name).toBe('TF1');
+    expect(result[0]?.name).toBe('TF1');
   });
 
   it('throws when input is not an array', () => {
@@ -43,12 +43,12 @@ describe('validatePlaylist', () => {
   it('defaults country to US when missing', () => {
     const raw = [{ name: 'Test', url: 'http://x.com/stream.m3u8' }];
     const result = validatePlaylist(raw);
-    expect(result[0].country).toBe('US');
+    expect(result[0]?.country).toBe('US');
   });
 
   it('defaults group to General when missing', () => {
     const raw = [{ name: 'Test', url: 'http://x.com/stream.m3u8' }];
     const result = validatePlaylist(raw);
-    expect(result[0].group).toBe('General');
+    expect(result[0]?.group).toBe('General');
   });
 });

@@ -85,6 +85,7 @@ export function useAdPrefetch(enabled: boolean): { ad: PrefetchedAd | null; dism
       return;
     }
     const camp = pool.current[idx.current % pool.current.length];
+    if (!camp) return;
     idx.current += 1;
 
     // 1) Préchargement 30 s avant le repère.

@@ -24,7 +24,7 @@
     "lint:check": "eslint .",
     "format": "prettier --write .",
     "preview": "vite preview",
-    "type-check": "tsc --noEmit",
+    "type-check": "tsc -p tsconfig.app.json --noEmit",
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest --coverage",

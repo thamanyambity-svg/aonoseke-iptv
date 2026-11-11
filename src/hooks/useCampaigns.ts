@@ -13,22 +13,22 @@ export type CampaignStatus = 'draft' | 'active' | 'paused' | 'ended';
 export interface CampaignContent {
   // Champs alignés sur l'interface PrerollAd/BannerAd existante
   title: string;
-  subtitle?: string;
-  cta?: string;
-  url?: string;
-  bg?: string;
-  image?: string;
+  subtitle?: string | undefined;
+  cta?: string | undefined;
+  url?: string | undefined;
+  bg?: string | undefined;
+  image?: string | undefined;
   /** Version verticale (9:16) pour mobile en portrait. */
-  imagePortrait?: string;
-  video?: string;
-  logo?: string;
-  eyebrow?: string;
-  destinations?: string;
-  legal?: string;
-  variant?: 'souverain' | 'corridor';
-  emblem?: boolean;
+  imagePortrait?: string | undefined;
+  video?: string | undefined;
+  logo?: string | undefined;
+  eyebrow?: string | undefined;
+  destinations?: string | undefined;
+  legal?: string | undefined;
+  variant?: 'souverain' | 'corridor' | undefined;
+  emblem?: boolean | undefined;
   /** Plage horaire quotidienne (dayparting) — posé par la régie IA. */
-  daypart?: { startHour: number; endHour: number };
+  daypart?: { startHour: number; endHour: number } | undefined;
 }
 
 export interface Campaign {
