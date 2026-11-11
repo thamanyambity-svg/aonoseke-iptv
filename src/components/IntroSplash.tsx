@@ -10,6 +10,8 @@ export const INTRO_FALLBACK_MS = Math.round((INTRO_FILM_SECONDS + 1.8) * 1000);
 export const INTRO_FADE_MS = 350;
 const SEEN_KEY = 'aonoseke-intro-seen';
 const FILM_URL = `${import.meta.env.BASE_URL}intro-a.mp4`;
+/** Image noire d'un pixel : remplace l'icône « lecture » que les lecteurs vidéo d'Android affichent avant le démarrage. */
+const BLACK_POSTER = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
 
 /** Vrai si l'intro a déjà été jouée dans cette session (ou si l'utilisateur réduit les animations). */
 export function introAlreadySeen(): boolean {
@@ -40,6 +42,7 @@ export function IntroSplash({ onDone }: IntroSplashProps): JSX.Element {
   const doneRef = useRef(onDone);
   const finishedRef = useRef(false);
   const [leaving, setLeaving] = useState(false);
+  const [playing, setPlaying] = useState(false);
   useEffect(() => { doneRef.current = onDone; });
 
   const finish = useCallback((): void => {
@@ -79,11 +82,15 @@ export function IntroSplash({ onDone }: IntroSplashProps): JSX.Element {
     <div className={`intro-splash${leaving ? ' is-leaving' : ''}`} role="presentation" onClick={finish} data-testid="intro-splash">
       <video
         ref={videoRef}
-        className="intro-film"
+        className={`intro-film${playing ? ' is-playing' : ''}`}
         src={FILM_URL}
+        poster={BLACK_POSTER}
+        controls={false}
         playsInline
         preload="auto"
         disablePictureInPicture
+        disableRemotePlayback
+        onPlaying={() => setPlaying(true)}
         onEnded={finish}
         onError={finish}
       />
