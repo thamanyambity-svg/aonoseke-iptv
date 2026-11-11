@@ -3,7 +3,7 @@ import type { Advertiser } from '../../hooks/useAdvertisers';
 import type { JSX } from 'react';
 
 interface AdvertiserFormProps {
-  initial?: Partial<Advertiser>;
+  initial?: Partial<Advertiser> | undefined;
   onSubmit: (data: { name: string; contact_name: string; contact_email: string; phone: string; logo_url: string; notes: string }) => void;
   onCancel: () => void;
 }

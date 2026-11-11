@@ -21,7 +21,7 @@ function fakeNet(routes: Record<string, Route>): typeof fetch {
     const headers: Record<string, string> = {};
     if (r.cors === 'all' || r.cors === undefined) headers['access-control-allow-origin'] = '*';
     else if (r.cors === 'web-only' && origin === WEB_ORIGIN) headers['access-control-allow-origin'] = origin;
-    const res = new Response(r.body ?? '', { status: r.status ?? 200, headers });
+    const res = new Response((r.body ?? '') as BodyInit, { status: r.status ?? 200, headers });
     Object.defineProperty(res, 'url', { value: href });
     return Promise.resolve(res);
   };

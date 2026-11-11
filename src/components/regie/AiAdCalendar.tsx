@@ -27,10 +27,10 @@ const BRAND_COLORS: Record<string, string> = { vodacom: '#E24B4A', orange: '#D85
 
 function colorFor(name: string): string {
   const key = name.trim().toLowerCase();
-  for (const brand in BRAND_COLORS) if (key.includes(brand)) return BRAND_COLORS[brand];
+  for (const brand in BRAND_COLORS) if (key.includes(brand)) return BRAND_COLORS[brand] ?? PALETTE[0]!;
   let hash = 0;
   for (let i = 0; i < key.length; i++) hash = (hash * 31 + key.charCodeAt(i)) >>> 0;
-  return PALETTE[hash % PALETTE.length];
+  return PALETTE[hash % PALETTE.length] ?? '#c9a84c';
 }
 
 function atHour(day: Date, hour: number): Date {

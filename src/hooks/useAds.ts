@@ -99,18 +99,19 @@ function getCapsForToday(campaignId: string): number {
 function bumpCap(campaignId: string): void {
   try {
     const map = getCapMap();
-    if (!map[campaignId]) map[campaignId] = {};
+    const bucket = map[campaignId] ?? {};
+    map[campaignId] = bucket;
     const today = todayKey();
-    map[campaignId][today] = (map[campaignId][today] ?? 0) + 1;
+    bucket[today] = (bucket[today] ?? 0) + 1;
     // Nettoyage des entrées > 7 jours (garde la taille du localStorage sous contrôle)
     const cutoff = new Date();
     cutoff.setDate(cutoff.getDate() - 7);
     const cutoffStr = cutoff.toISOString().slice(0, 10);
-    for (const cid of Object.keys(map)) {
-      for (const date of Object.keys(map[cid])) {
-        if (date < cutoffStr) delete map[cid][date];
+    for (const [cid, days] of Object.entries(map)) {
+      for (const date of Object.keys(days)) {
+        if (date < cutoffStr) delete days[date];
       }
-      if (Object.keys(map[cid]).length === 0) delete map[cid];
+      if (Object.keys(days).length === 0) delete map[cid];
     }
     localStorage.setItem(CAP_KEY, JSON.stringify(map));
   } catch {

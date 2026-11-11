@@ -14,21 +14,21 @@ export type MediaKind = 'video' | 'image' | 'text';
 export interface DraftMedia {
   kind: MediaKind;
   name: string;
-  url?: string;
+  url?: string | undefined;
 }
 
 export interface CampaignDraft {
   advertiserName: string;
   type: 'preroll' | 'banner' | 'both';
   format: MediaKind;
-  media?: DraftMedia;
+  media?: DraftMedia | undefined;
   title: string;
   /** ISO (jour de début, minuit local). */
   startDate: string;
   /** ISO (jour de fin, minuit local). */
   endDate: string;
   /** Plage horaire quotidienne (dayparting). Absent = toute la journée. */
-  daypart?: { startHour: number; endHour: number };
+  daypart?: { startHour: number; endHour: number } | undefined;
   /** Quota de vues/impressions avant arrêt auto. */
   impressionCap: number | null;
   /** 0..1 — confiance du parsing (sert à colorer la carte de validation). */
@@ -78,14 +78,14 @@ export function parseCampaignPrompt(
   }
   if (!advertiserName) {
     const m = text.match(/pour\s+([A-ZÀ-Ÿ][\wÀ-ÿ&.\- ]{1,28}?)(?:\s+(?:tous|chaque|entre|de|du|à|le|la|pendant|jusqu)\b|[,.;]|$)/);
-    if (m) advertiserName = m[1].trim();
+    if (m?.[1]) advertiserName = m[1].trim();
   }
   if (!advertiserName) advertiserName = 'Annonceur';
 
   // ── Plage horaire (dayparting) ──────────────────────────────────────────
   let daypart: { startHour: number; endHour: number } | undefined;
   const h = lower.match(/(\d{1,2})\s*h(?:\s*\d{2})?\s*(?:a|et|-|–|jusqu['’]?a)\s*(\d{1,2})\s*h/);
-  if (h) {
+  if (h?.[1] && h[2]) {
     const s = Math.min(23, parseInt(h[1], 10));
     const e = Math.min(24, parseInt(h[2], 10));
     if (e > s) daypart = { startHour: s, endHour: e };
@@ -94,7 +94,7 @@ export function parseCampaignPrompt(
   // ── Quota (vues / impressions) ──────────────────────────────────────────
   let impressionCap: number | null = null;
   const c = lower.match(/(\d[\d\s.\u00a0]*)\s*(?:vues|impressions|affichages)/);
-  if (c) {
+  if (c?.[1]) {
     const n = parseInt(c[1].replace(/[\s.\u00a0]/g, ''), 10);
     if (!Number.isNaN(n)) impressionCap = n;
   }
@@ -105,18 +105,20 @@ export function parseCampaignPrompt(
 
   const days = ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi'];
   for (let i = 0; i < 7; i++) {
-    if (lower.includes(days[i] + ' prochain')) { start = nextWeekday(now, i); break; }
+    if (lower.includes(`${days[i] ?? ''} prochain`)) { start = nextWeekday(now, i); break; }
   }
   if (lower.includes('demain')) { start = new Date(now); start.setDate(start.getDate() + 1); start.setHours(0, 0, 0, 0); }
   if (lower.includes("aujourd")) { start = new Date(now); start.setHours(0, 0, 0, 0); }
 
   // Dates explicites « JJ mois »
   const explicit = [...lower.matchAll(/(\d{1,2})\s+([a-zû]+)/g)]
-    .map((m) => ({ day: parseInt(m[1], 10), mi: monthIndex(m[2]) }))
+    .map((m) => ({ day: parseInt(m[1] ?? '', 10), mi: monthIndex(m[2] ?? '') }))
     .filter((x) => x.mi >= 0 && x.day >= 1 && x.day <= 31)
     .map((x) => new Date(now.getFullYear(), x.mi, x.day, 0, 0, 0, 0));
-  if (explicit.length >= 1) start = explicit[0];
-  if (explicit.length >= 2) end = explicit[explicit.length - 1];
+  const firstDate = explicit[0];
+  const lastDate = explicit[explicit.length - 1];
+  if (firstDate) start = firstDate;
+  if (lastDate && explicit.length >= 2) end = lastDate;
   else if (lower.includes('fin du mois') || lower.includes('fin de mois')) end = endOfMonth(start);
 
   if (end < start) end = endOfMonth(start);

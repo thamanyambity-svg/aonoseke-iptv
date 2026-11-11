@@ -17,7 +17,7 @@ function toLocalInput(iso?: string | null): string {
 
 interface CampaignFormProps {
   advertisers: Advertiser[];
-  initial?: Partial<Campaign>;
+  initial?: Partial<Campaign> | undefined;
   onSubmit: (data: {
     advertiser_id: string;
     name: string;
@@ -100,10 +100,10 @@ export function CampaignForm({ advertisers, initial, onSubmit, onCancel }: Campa
           advertiser_id: advertiserId,
           name,
           type,
-          content: { title, subtitle, cta, url, eyebrow, legal, variant, image: image || undefined, imagePortrait: imagePortrait || undefined, video: video || undefined },
+          content: { title, subtitle, cta, url, eyebrow, legal, variant, ...(image ? { image } : {}), ...(imagePortrait ? { imagePortrait } : {}), ...(video ? { video } : {}) },
           weight,
           frequency_cap_per_user: freqCap,
-          start_at: startAt ? new Date(startAt).toISOString() : undefined,
+          ...(startAt ? { start_at: new Date(startAt).toISOString() } : {}),
           end_at: endAt ? new Date(endAt).toISOString() : null,
           impression_cap: imprCap.trim() === '' ? null : Number(imprCap),
           click_cap: clickCap.trim() === '' ? null : Number(clickCap),

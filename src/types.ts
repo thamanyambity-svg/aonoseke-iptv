@@ -8,12 +8,12 @@ export interface Channel {
   adSupported?: boolean;  // stream carries built-in server-side ads
   geoBlocked?: boolean;   // le serveur refuse l'accès depuis certains pays (403/451) : peut ne pas se lancer
   geoReason?: string;     // raison relevée par la vérification des sources
-  backups?: string[];     // adresses de secours : le lecteur les essaie si `url` échoue
+  backups?: string[] | undefined;     // adresses de secours : le lecteur les essaie si `url` échoue
 }
 
 export interface PlayerProps {
   url: string;
-  backups?: string[];
+  backups?: string[] | undefined;
   onError?: (message: string) => void;
 }
 
@@ -41,13 +41,13 @@ export function validatePlaylist(data: unknown): Channel[] {
       group: typeof ch.group === 'string' ? ch.group : 'General',
       logo: typeof ch.logo === 'string' ? ch.logo : '',
       url: ch.url,
-      source: typeof ch.source === 'string' ? ch.source : undefined,
-      adSupported: typeof ch.adSupported === 'boolean' ? ch.adSupported : undefined,
-      geoBlocked: ch.geoBlocked === true ? true : undefined,
-      geoReason: ch.geoBlocked === true && typeof ch.geoReason === 'string' ? ch.geoReason : undefined,
-      backups: Array.isArray(ch.backups)
-        ? ch.backups.filter((b): b is string => typeof b === 'string' && b.length > 0)
-        : undefined,
+      ...(typeof ch.source === 'string' ? { source: ch.source } : {}),
+      ...(typeof ch.adSupported === 'boolean' ? { adSupported: ch.adSupported } : {}),
+      ...(ch.geoBlocked === true ? { geoBlocked: true as const } : {}),
+      ...(ch.geoBlocked === true && typeof ch.geoReason === 'string' ? { geoReason: ch.geoReason } : {}),
+      ...(Array.isArray(ch.backups)
+        ? { backups: ch.backups.filter((b): b is string => typeof b === 'string' && b.length > 0) }
+        : {}),
     };
   });
 }

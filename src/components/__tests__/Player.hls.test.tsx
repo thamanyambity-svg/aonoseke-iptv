@@ -4,7 +4,7 @@ import { render, act, screen, fireEvent } from '@testing-library/react';
 type Handler = (event: string, data: unknown) => void;
 
 // Faux hls.js : on capture les instances et les handlers pour piloter les erreurs.
-const instances: Array<{ handlers: Record<string, Handler>; destroy: ReturnType<typeof vi.fn>; subtitleTrack: number; subtitleDisplay: boolean }> = [];
+const instances: Array<{ handlers: Record<string, Handler>; destroy: ReturnType<typeof vi.fn>; loadSource: ReturnType<typeof vi.fn>; subtitleTrack: number; subtitleDisplay: boolean }> = [];
 
 vi.mock('hls.js', () => {
   class FakeHls {

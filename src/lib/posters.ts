@@ -70,8 +70,10 @@ export async function fetchPosters(): Promise<Poster[]> {
     const paths: string[] = [];
     const max = Math.max(movies.length, tv.length);
     for (let i = 0; i < max && paths.length < 30; i++) {
-      if (movies[i]) paths.push(movies[i]);
-      if (tv[i]) paths.push(tv[i]);
+      const m = movies[i];
+      const t = tv[i];
+      if (m) paths.push(m);
+      if (t) paths.push(t);
     }
     return paths.length >= 6 ? paths.map(toPoster) : FALLBACK_PATHS.map(toPoster);
   } catch {
@@ -86,6 +88,6 @@ export async function fetchPosters(): Promise<Poster[]> {
  */
 export function splitRows<T>(items: T[], rows: number): T[][] {
   const out: T[][] = Array.from({ length: rows }, () => []);
-  items.forEach((it, i) => out[i % rows].push(it));
+  items.forEach((it, i) => out[i % rows]?.push(it));
   return out;
 }

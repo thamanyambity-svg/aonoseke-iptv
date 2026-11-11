@@ -45,7 +45,8 @@ export function AdOverlay({ active }: AdOverlayProps): JSX.Element | null {
   // ── Kill Switch temps réel ────────────────────────────────────────────────
   useEffect(() => {
     if (!ad || !supabase) return;
-    const channel = supabase
+    const sb = supabase;
+    const channel = sb
       .channel(`ad-killswitch-${ad.campaignId}`)
       .on(
         'postgres_changes',
@@ -59,7 +60,7 @@ export function AdOverlay({ active }: AdOverlayProps): JSX.Element | null {
         },
       )
       .subscribe();
-    return () => { void supabase.removeChannel(channel); };
+    return () => { void sb.removeChannel(channel); };
   }, [ad, dismiss]);
 
   if (!ad) return null;

@@ -3,13 +3,14 @@
  */
 
 export class AppError extends Error {
-  constructor(
-    public code: string,
-    message: string,
-    public details?: Record<string, unknown>
-  ) {
+  code: string;
+  details?: Record<string, unknown> | undefined;
+
+  constructor(code: string, message: string, details?: Record<string, unknown>) {
     super(message);
     this.name = 'AppError';
+    this.code = code;
+    this.details = details;
   }
 }
 
