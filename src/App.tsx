@@ -134,6 +134,12 @@ function App(): JSX.Element {
     }
   }, [playChannel]);
 
+  // L'accueil occupe tout l'écran (liste repliée). Dès qu'une chaîne est lancée, la liste s'ouvre sur grand écran pour zapper ;
+  // sur mobile elle reste en tiroir fermé.
+  useEffect(() => {
+    setSidebarOpen(!!activeChannel && window.matchMedia(DOCKED_SIDEBAR_QUERY).matches);
+  }, [activeChannel, setSidebarOpen]);
+
   // Touche « retour » de la télécommande : ferme le profil, sinon revient à l'accueil.
   useEffect(() => {
     const onKey = (e: KeyboardEvent): void => {
