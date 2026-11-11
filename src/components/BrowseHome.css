@@ -101,15 +101,6 @@
     radial-gradient(520px 360px at 82% 42%, hsl(var(--bh-hue, 40) 60% 38% / 0.32), transparent 70%),
     linear-gradient(0deg, var(--void) 0%, transparent 42%);
 }
-.bh-hero-mark {
-  position: absolute;
-  right: 3%;
-  bottom: -14%;
-  font: 900 clamp(240px, 38vw, 560px) / 1 var(--display);
-  color: rgba(255, 255, 255, 0.035);
-  user-select: none;
-  pointer-events: none;
-}
 .bh-hero-body {
   position: relative;
   max-width: min(640px, 100%);
@@ -524,4 +515,82 @@
 .tv-mode .bh-ghost:focus-visible {
   outline-width: 4px;
   outline-offset: 4px;
+}
+
+/* ── Affiches TMDB : mur derrière la bannière + rangée « À l'affiche » ── */
+.bh-hero-wall {
+  position: absolute;
+  inset: 0;
+  opacity: 0.55;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(90deg, transparent 8%, #000 62%);
+  mask-image: linear-gradient(90deg, transparent 8%, #000 62%);
+}
+.bh-hero-wall .cinematic-bg {
+  position: absolute;
+  inset: -6% 0 -6% 28%;
+}
+.bh-hero-wall .cin-overlay {
+  opacity: 0.5;
+}
+
+.bh-card-poster {
+  flex-basis: clamp(120px, 11vw, 170px);
+}
+.bh-card-poster .bh-card-frame {
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  background: var(--surface-2);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.07);
+}
+.bh-poster-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+.bh-pill-kind {
+  top: auto;
+  bottom: 8px;
+  left: 8px;
+  right: auto;
+}
+
+.bh-credit {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px var(--bh-gutter) 40px;
+  color: var(--text-3);
+  font: 500 11px / 1.5 var(--body);
+  max-width: 760px;
+}
+.bh-tmdb {
+  flex: 0 0 74px;
+  height: auto;
+  opacity: 0.8;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bh-hero-wall .cin-track {
+    animation: none;
+  }
+}
+@media (max-width: 720px) {
+  .bh-hero-wall .cinematic-bg {
+    inset: -6% 0 -6% 8%;
+  }
+  .bh-hero-wall {
+    opacity: 0.35;
+  }
+  .bh-card-poster {
+    flex-basis: 112px;
+  }
+}
+.tv-mode .bh-card-poster {
+  flex-basis: clamp(170px, 13vw, 230px);
+}
+.tv-mode .bh-credit {
+  font-size: 15px;
 }
