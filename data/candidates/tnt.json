@@ -1,0 +1,107 @@
+[
+  {
+    "name": "TF1",
+    "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/G1dJEWsFB5Nt/C63HVD4PtDrLHMB.m3u8",
+    "country": "FR",
+    "group": "France",
+    "source": "github.com/Paradise-91/ParaTV"
+  },
+  {
+    "name": "France 2",
+    "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/francetv/backup/france2.m3u8",
+    "country": "FR",
+    "group": "France",
+    "source": "github.com/Paradise-91/ParaTV"
+  },
+  {
+    "name": "France 2",
+    "url": "http://149.62.177.107:9999/France_2/index.m3u8",
+    "country": "FR",
+    "group": "France",
+    "source": "iptv-org (api/streams)"
+  },
+  {
+    "name": "TMC",
+    "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/G1dJEWsFB5Nt/vT2U1OS7bYDVDM.m3u8",
+    "country": "FR",
+    "group": "France",
+    "source": "github.com/Paradise-91/ParaTV"
+  },
+  {
+    "name": "TFX",
+    "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/G1dJEWsFB5Nt/KunsExYNItvr4eo.m3u8",
+    "country": "FR",
+    "group": "France",
+    "source": "github.com/Paradise-91/ParaTV"
+  },
+  {
+    "name": "CNEWS",
+    "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/canalplus/cnews-clair-hd.m3u8",
+    "country": "FR",
+    "group": "France",
+    "source": "github.com/Paradise-91/ParaTV"
+  },
+  {
+    "name": "CNEWS",
+    "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/canalplus/cnews-dm.m3u8",
+    "country": "FR",
+    "group": "France",
+    "source": "github.com/Paradise-91/ParaTV"
+  },
+  {
+    "name": "CNEWS",
+    "url": "https://raw.githubusercontent.com/LeBazarDeBryan/XTVZ_/main/Stream/Live/CNews.m3u8",
+    "country": "FR",
+    "group": "France",
+    "source": "github.com/LeBazarDeBryan/XTVZ_"
+  },
+  {
+    "name": "Gulli",
+    "url": "https://origin-m6web.live.6cloud.fr/out/v1/6play/6play-gulli/cmaf_q2hyb21h/hls-short-sd.m3u8",
+    "country": "FR",
+    "group": "France",
+    "source": "github.com/Paradise-91/ParaTV"
+  },
+  {
+    "name": "RMC Découverte",
+    "url": "https://d2mt8for1pddy4.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-6uronj7gzvy4j/index.m3u8",
+    "country": "FR",
+    "group": "France",
+    "source": "github.com/Paradise-91/ParaTV"
+  },
+  {
+    "name": "La Chaîne parlementaire",
+    "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/francetv/lcp-public-senat.m3u8",
+    "country": "FR",
+    "group": "France",
+    "source": "github.com/Paradise-91/ParaTV"
+  },
+  {
+    "name": "L'Équipe",
+    "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/refs/heads/main/streams/lequipe/la-chaine-l-equipe-en-direct-dm.m3u8",
+    "country": "FR",
+    "group": "France",
+    "source": "github.com/Paradise-91/ParaTV"
+  },
+  {
+    "name": "RMC Story",
+    "url": "https://d15aro46bnpfm8.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-fqkqiax1078up/RMC_Story_FR.m3u8",
+    "country": "FR",
+    "group": "France",
+    "source": "iptv-org (api/streams)"
+  },
+  {
+    "name": "RMC Découverte",
+    "url": "https://d16zzycxcd0m0r.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-hixvx5kymecr9/RMC_Decouverte_FR.m3u8",
+    "country": "FR",
+    "group": "France",
+    "source": "iptv-org (api/streams)"
+  },
+  {
+    "name": "Franceinfo",
+    "url": "http://149.62.177.107:9999/franceinfo:/index.m3u8",
+    "country": "FR",
+    "group": "France",
+    "source": "iptv-org (api/streams)"
+  }
+]
