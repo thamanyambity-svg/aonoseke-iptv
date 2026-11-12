@@ -1,19 +1,18 @@
 {
-  "generatedAt": "2026-11-12T14:20:37.280Z",
+  "generatedAt": "2026-11-12T23:00:14.458Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée. « dead » = mise en quarantaine : retestée à chaque passage et remise dans la playlist après deux succès de suite.",
   "counts": {
     "checked": 1237,
-    "ok": 1046,
-    "geoBlocked": 189,
-    "pending": 2,
+    "ok": 1036,
+    "geoBlocked": 201,
+    "pending": 1,
     "dead": 2,
     "promotedBackups": 0,
-    "restored": 2,
-    "quarantined": 9
+    "restored": 3,
+    "quarantined": 8
   },
   "deadReasons": {
-    "HTTP 404": 1,
-    "réponse qui n'est pas un flux HLS": 1
+    "HTTP 404": 2
   },
   "geoBlocked": [
     {
@@ -49,6 +48,14 @@
       "code": 403
     },
     {
+      "name": "Trace Caribbean (1080p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://channels.trace.plus/Traceprod/CARIBBEAN_hd/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
       "name": "arte (720p)",
       "country": "FR",
       "group": "France",
@@ -65,26 +72,10 @@
       "code": 403
     },
     {
-      "name": "CNA (360p)",
-      "country": "DZ",
-      "group": "Afrique",
-      "url": "https://live.creacast.com/cna/stream/playlist.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "France 4 (1080p)",
       "country": "FR",
       "group": "France",
       "url": "https://sv1.data-stream.top/8c0a287e56a6e1843143904778be3775b4d3edd4fba4ffcc3f72638c7a71d4d4/hls/francetv4.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "ILTV (720p)",
-      "country": "FR",
-      "group": "France",
-      "url": "https://live.creacast.com/iltv/smil:iltv.smil/playlist.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -149,6 +140,126 @@
       "country": "FR",
       "group": "France",
       "url": "https://ott.tv5monde.com/Content/HLS/Live/channel(tivi5)/variant.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Trace Africa (1080p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://channels.trace.plus/Traceprod/AFRICA_FR_hd/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Trace Afrikora (1080p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://channels.trace.plus/Traceprod/TERANGA_hd/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Trace Ayiti (1080p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://channels.trace.plus/Traceprod/AYITI_hd/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Trace Gospel (1080p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://channels.trace.plus/Traceprod/GOSPEL_ROA_hd/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Trace Ivoire (1080p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://channels.trace.plus/Traceprod/TRACE_IVOIRE_hd/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Trace Jama (1080p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://channels.trace.plus/Traceprod/JAMA_hd/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Trace Kitoko (1080p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://channels.trace.plus/Traceprod/KITOKO_hd/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Trace Latina (1080p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://channels.trace.plus/Traceprod/LATINA_hd/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Trace Mboa (1080p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://channels.trace.plus/Traceprod/MBOA_hd/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Trace Muzika (1080p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://channels.trace.plus/Traceprod/MUZIKA_hd/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Trace Mziki (1080p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://channels.trace.plus/Traceprod/MZIKI_hd/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Trace Naija (1080p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://channels.trace.plus/Traceprod/NAIJA_hd/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Trace Ngoma (1080p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://channels.trace.plus/Traceprod/AFRICA_EN_hd/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Trace Toca (1080p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://channels.trace.plus/Traceprod/TOCA_hd/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Trace Vanilla Islands (1080p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://channels.trace.plus/Traceprod/VANILLA_hd/index.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -622,14 +733,6 @@
       "group": "Afrique",
       "url": "https://rotana.hibridcdn.net/rotananet/cinemamasr_net-7Y83PP5adWixDF93/playlist.m3u8",
       "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "30A Luxe Life Discovered (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://30a-tv.com/feeds/vidaa/luxelife.m3u8",
-      "reason": "variante : HTTP 403 (accès refusé)",
       "code": 403
     },
     {
@@ -1433,14 +1536,6 @@
       "code": 403
     },
     {
-      "name": "TRT Cocuk (1440p)",
-      "country": "TR",
-      "group": "Kids",
-      "url": "https://tv-trtcocuk.medya.trt.com.tr/master.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "YleX (720p)",
       "country": "FI",
       "group": "Music",
@@ -1531,36 +1626,30 @@
   ],
   "pending": [
     {
-      "name": "LoveWorld Arabic (360p)",
-      "country": "NG",
-      "group": "Afrique",
-      "url": "https://go5lm6a6dawb-hls-live.5centscdn.com/lwarabic/53132d996b4263ec0d7b602292c46eaf.sdp/playlist.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "CVTV Channel 192 (1080p)",
+      "name": "DKN (1080p)",
       "country": "US",
       "group": "USA",
-      "url": "https://livestream.telvue.com/cvtv2/f7b44cfafd5c52223d5498196c8a2e7b.sdp/playlist.m3u8",
-      "reason": "délai dépassé"
+      "url": "https://video.oct.dc.gov/out/u/DKN.m3u8",
+      "reason": "segment : HTTP 520",
+      "code": 520
     }
   ],
   "dead": [
     {
-      "name": "CC-TV (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://cdn3.wowza.com/5/cHYzekYzM2kvTVFH/charlotte/G0055_009/playlist.m3u8",
+      "name": "Medi1TV Afrique (1080p)",
+      "country": "MA",
+      "group": "Afrique",
+      "url": "https://cdn.live.easybroadcast.io/abr_corp/83_medi1tv-afrique_tm7tu45/playlist.m3u8",
       "reason": "HTTP 404",
       "code": 404
     },
     {
-      "name": "Shemaroo Bollywood (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg00864-shemarooenterta-shemabollywood-ono/playlist.m3u8",
-      "reason": "réponse qui n'est pas un flux HLS",
-      "code": 200
+      "name": "Rai 5",
+      "country": "IT",
+      "group": "Italy",
+      "url": "http://team-tv.co:81/rai5/index.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
     }
   ]
 }
