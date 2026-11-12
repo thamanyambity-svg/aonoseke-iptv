@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+
+Sitemap: https://iptv-web-player-aonoseke-drc.vercel.app/sitemap.xml
