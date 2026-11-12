@@ -1,20 +1,18 @@
 {
-  "generatedAt": "2026-11-11T23:52:55.364Z",
+  "generatedAt": "2026-11-12T05:02:16.734Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée. « dead » = mise en quarantaine : retestée à chaque passage et remise dans la playlist après deux succès de suite.",
   "counts": {
-    "checked": 1246,
+    "checked": 1238,
     "ok": 1049,
     "geoBlocked": 188,
-    "pending": 1,
-    "dead": 8,
-    "promotedBackups": 1,
+    "pending": 0,
+    "dead": 1,
+    "promotedBackups": 0,
     "restored": 0,
-    "quarantined": 8
+    "quarantined": 9
   },
   "deadReasons": {
-    "segment : HTTP 404": 2,
-    "HTTP 404": 5,
-    "flux terminé (ENDLIST)": 1
+    "HTTP 404": 1
   },
   "geoBlocked": [
     {
@@ -445,9 +443,9 @@
       "name": "TFX (720p)",
       "country": "FR",
       "group": "France",
-      "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/G1dJEWsFB5Nt/KunsExYNItvr4eo.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
+      "url": "http://145.239.5.177/315/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
     },
     {
       "name": "TV Breizh (1080p)",
@@ -1106,6 +1104,14 @@
       "code": 403
     },
     {
+      "name": "Esport3 (1080p)",
+      "country": "ES",
+      "group": "Sport",
+      "url": "https://directes-tv-int.3catdirectes.cat/live-content/esport3-hls/master.m3u8",
+      "reason": "segment refusé (HTTP 403)",
+      "code": 403
+    },
+    {
       "name": "K19",
       "country": "AT",
       "group": "Sport",
@@ -1271,14 +1277,6 @@
       "group": "Kids",
       "url": "https://directes-tv-cat.3catdirectes.cat/live-content/super3-hls/master.m3u8",
       "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "TVI Ficcao (720p)",
-      "country": "PT",
-      "group": "Series",
-      "url": "https://raw.githubusercontent.com/thomraider12/canaistvpt/main/m3u8s/tvificcao.m3u8",
-      "reason": "variante : HTTP 403 (accès refusé)",
       "code": 403
     },
     {
@@ -1522,77 +1520,13 @@
       "code": 403
     }
   ],
-  "pending": [
-    {
-      "name": "Indywood TV (720p)",
-      "country": "IN",
-      "group": "Movies",
-      "url": "https://43wrzjnpqoxe-hls-live.wmncdn.net/indywood/indywoodtv/index.m3u8",
-      "reason": "délai dépassé"
-    }
-  ],
+  "pending": [],
   "dead": [
     {
-      "name": "Afrobeat Tv",
-      "country": "CD",
+      "name": "7 Info",
+      "country": "CI",
       "group": "Afrique",
-      "url": "https://stream.ecable.tv/afrobeats/index.m3u8",
-      "reason": "segment : HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Medi1TV Arabic (1080p)",
-      "country": "MA",
-      "group": "Afrique",
-      "url": "https://cdn.live.easybroadcast.io/abr_corp/83_medi1tv-arabic_g90v4ec/playlist.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Medi1TV Maghreb (1080p)",
-      "country": "MA",
-      "group": "Afrique",
-      "url": "https://cdn.live.easybroadcast.io/abr_corp/83_medi1tv-maghreb_jnbspmg/playlist.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "CBS News Miami (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://cbsn-mia.cbsnstream.cbsnews.com/out/v1/ac174b7938264d24ae27e56f6584bca0/master.m3u8",
-      "reason": "flux terminé (ENDLIST)",
-      "code": 200
-    },
-    {
-      "name": "TF1",
-      "country": "FR",
-      "group": "France",
-      "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/G1dJEWsFB5Nt/C63HVD4PtDrLHMB.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "TMC",
-      "country": "FR",
-      "group": "France",
-      "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/G1dJEWsFB5Nt/vT2U1OS7bYDVDM.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Rai 5",
-      "country": "IT",
-      "group": "Italy",
-      "url": "http://team-tv.co:81/rai5/index.m3u8",
-      "reason": "segment : HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "TF1 Séries Films",
-      "country": "FR",
-      "group": "France",
-      "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/G1dJEWsFB5Nt/sNk192s51D5Ceu.m3u8",
+      "url": "https://video1.getstreamhosting.com:1936/8042/8042/playlist.m3u8",
       "reason": "HTTP 404",
       "code": 404
     }

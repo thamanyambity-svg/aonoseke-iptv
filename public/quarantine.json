@@ -10,7 +10,7 @@
     },
     "reason": "segment : HTTP 404",
     "since": "2026-11-11T23:52:55.364Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -23,7 +23,8 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-11T23:52:55.364Z",
-    "okRuns": 0
+    "okRuns": 0,
+    "lastReason": "HTTP 404"
   },
   {
     "channel": {
@@ -36,7 +37,8 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-11T23:52:55.364Z",
-    "okRuns": 0
+    "okRuns": 0,
+    "lastReason": "HTTP 404"
   },
   {
     "channel": {
@@ -49,7 +51,8 @@
     },
     "reason": "flux terminé (ENDLIST)",
     "since": "2026-11-11T23:52:55.364Z",
-    "okRuns": 0
+    "okRuns": 0,
+    "lastReason": "flux terminé (ENDLIST)"
   },
   {
     "channel": {
@@ -62,7 +65,8 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-11T23:52:55.364Z",
-    "okRuns": 0
+    "okRuns": 0,
+    "lastReason": "HTTP 404"
   },
   {
     "channel": {
@@ -75,7 +79,8 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-11T23:52:55.364Z",
-    "okRuns": 0
+    "okRuns": 0,
+    "lastReason": "HTTP 404"
   },
   {
     "channel": {
@@ -88,7 +93,7 @@
     },
     "reason": "segment : HTTP 404",
     "since": "2026-11-11T23:52:55.364Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -101,6 +106,20 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-11T23:52:55.364Z",
+    "okRuns": 0,
+    "lastReason": "HTTP 404"
+  },
+  {
+    "channel": {
+      "name": "7 Info",
+      "country": "CI",
+      "group": "Afrique",
+      "logo": "https://i.imgur.com/jcl1nNR.png",
+      "url": "https://video1.getstreamhosting.com:1936/8042/8042/playlist.m3u8",
+      "source": "iptv-org/api-2026-10-a-confirmer"
+    },
+    "reason": "HTTP 404",
+    "since": "2026-11-12T05:02:16.734Z",
     "okRuns": 0
   }
 ]
