@@ -1,19 +1,6 @@
 [
   {
     "channel": {
-      "name": "Afrobeat Tv",
-      "country": "CD",
-      "group": "Afrique",
-      "logo": "",
-      "url": "https://stream.ecable.tv/afrobeats/index.m3u8",
-      "source": "github.com/bermufine/rdcongo"
-    },
-    "reason": "segment : HTTP 404",
-    "since": "2026-11-11T23:52:55.364Z",
-    "okRuns": 1
-  },
-  {
-    "channel": {
       "name": "Medi1TV Arabic (1080p)",
       "country": "MA",
       "group": "Afrique",
@@ -23,7 +10,7 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-11T23:52:55.364Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "HTTP 404"
   },
   {
@@ -37,7 +24,7 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-11T23:52:55.364Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "HTTP 404"
   },
   {
@@ -84,19 +71,6 @@
   },
   {
     "channel": {
-      "name": "Rai 5",
-      "country": "IT",
-      "group": "Italy",
-      "logo": "",
-      "url": "http://team-tv.co:81/rai5/index.m3u8",
-      "source": "iptv-org (api/streams)"
-    },
-    "reason": "segment : HTTP 404",
-    "since": "2026-11-11T23:52:55.364Z",
-    "okRuns": 1
-  },
-  {
-    "channel": {
       "name": "TF1 Séries Films",
       "country": "FR",
       "group": "France",
@@ -120,6 +94,32 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-12T05:02:16.734Z",
+    "okRuns": 1
+  },
+  {
+    "channel": {
+      "name": "CC-TV (720p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "",
+      "url": "https://cdn3.wowza.com/5/cHYzekYzM2kvTVFH/charlotte/G0055_009/playlist.m3u8",
+      "source": "iptv-org/api-2026-10-us"
+    },
+    "reason": "HTTP 404",
+    "since": "2026-11-12T14:20:37.280Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "Shemaroo Bollywood (1080p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/TFxLj80.png",
+      "url": "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg00864-shemarooenterta-shemabollywood-ono/playlist.m3u8",
+      "source": "iptv-org/api-2026-10-us"
+    },
+    "reason": "réponse qui n'est pas un flux HLS",
+    "since": "2026-11-12T14:20:37.280Z",
     "okRuns": 0
   }
 ]
