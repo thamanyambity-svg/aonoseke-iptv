@@ -1,18 +1,19 @@
 {
-  "generatedAt": "2026-11-13T13:40:59.138Z",
+  "generatedAt": "2026-11-13T23:03:12.094Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée. « dead » = mise en quarantaine : retestée à chaque passage et remise dans la playlist après deux succès de suite.",
   "counts": {
-    "checked": 1239,
-    "ok": 1036,
-    "geoBlocked": 201,
+    "checked": 1238,
+    "ok": 1033,
+    "geoBlocked": 202,
     "pending": 1,
     "dead": 2,
     "promotedBackups": 0,
-    "restored": 1,
-    "quarantined": 8
+    "restored": 0,
+    "quarantined": 10
   },
   "deadReasons": {
-    "HTTP 404": 2
+    "HTTP 504": 1,
+    "HTTP 404": 1
   },
   "geoBlocked": [
     {
@@ -1400,6 +1401,14 @@
       "code": 403
     },
     {
+      "name": "VM Latino (720p)",
+      "country": "CR",
+      "group": "Music",
+      "url": "https://59ef525c24caa.streamlock.net/vmtv/vmlatino/playlist.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
       "name": "Bollywood Film",
       "country": "RO",
       "group": "Movies",
@@ -1626,28 +1635,27 @@
   ],
   "pending": [
     {
+      "name": "Ausbiz",
+      "country": "AU",
+      "group": "News",
+      "url": "https://d9quh89lh7dtw.cloudfront.net/public-output/index.m3u8",
+      "reason": "domaine introuvable"
+    }
+  ],
+  "dead": [
+    {
       "name": "Africanews English (720p)",
       "country": "FR",
       "group": "News",
       "url": "https://c3c275b999764df8a2dd55ffe2996818.mediatailor.eu-west-1.amazonaws.com/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6576/bitok/eyJzdGlkIjoiOTU0NDAyODQtOTU0My00Yzc2LThmZjQtNDRhY2YwYmQxYTYwIiwibWt0IjoicGwiLCJjaCI6NjYwNiwicHRmIjo1fQ==/26036/africanews-en.m3u8",
       "reason": "HTTP 504",
       "code": 504
-    }
-  ],
-  "dead": [
-    {
-      "name": "Lazio Style Channel (720p)",
-      "country": "IT",
-      "group": "Sport",
-      "url": "https://distribution.sportitalialive.it/origin/laziostyle_abr/playlist.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
     },
     {
-      "name": "NASHE Music (720p)",
-      "country": "UA",
-      "group": "Music",
-      "url": "https://cdn15.live-tv.cloud/ua_infinitas_tv/nashemus-abr/playlist.m3u8",
+      "name": "Impact Network (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://edge1.lifestreamcdn.com/live/impactroku1/index.m3u8",
       "reason": "HTTP 404",
       "code": 404
     }
