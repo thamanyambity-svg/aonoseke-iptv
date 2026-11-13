@@ -85,16 +85,28 @@
   },
   {
     "channel": {
-      "name": "Rai 5",
+      "name": "Lazio Style Channel (720p)",
       "country": "IT",
-      "group": "Italy",
-      "logo": "",
-      "url": "http://team-tv.co:81/rai5/index.m3u8",
-      "source": "iptv-org (api/streams)",
-      "restoredAt": "2026-11-12T14:20:37.280Z"
+      "group": "Sport",
+      "logo": "https://i.imgur.com/vDB8HFq.png",
+      "url": "https://distribution.sportitalialive.it/origin/laziostyle_abr/playlist.m3u8",
+      "source": "iptv-org/api-2026-10-thematique"
     },
     "reason": "HTTP 404",
-    "since": "2026-11-12T23:00:14.458Z",
-    "okRuns": 1
+    "since": "2026-11-13T13:40:59.138Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "NASHE Music (720p)",
+      "country": "UA",
+      "group": "Music",
+      "logo": "https://i.imgur.com/ienkbOc.png",
+      "url": "https://cdn15.live-tv.cloud/ua_infinitas_tv/nashemus-abr/playlist.m3u8",
+      "source": "iptv-org/api-2026-10-thematique-monde"
+    },
+    "reason": "HTTP 404",
+    "since": "2026-11-13T13:40:59.138Z",
+    "okRuns": 0
   }
 ]

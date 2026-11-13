@@ -1,17 +1,19 @@
 {
-  "generatedAt": "2026-11-13T04:17:53.069Z",
+  "generatedAt": "2026-11-13T13:40:59.138Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée. « dead » = mise en quarantaine : retestée à chaque passage et remise dans la playlist après deux succès de suite.",
   "counts": {
-    "checked": 1238,
+    "checked": 1239,
     "ok": 1036,
-    "geoBlocked": 199,
-    "pending": 4,
-    "dead": 0,
+    "geoBlocked": 201,
+    "pending": 1,
+    "dead": 2,
     "promotedBackups": 0,
     "restored": 1,
-    "quarantined": 7
+    "quarantined": 8
   },
-  "deadReasons": {},
+  "deadReasons": {
+    "HTTP 404": 2
+  },
   "geoBlocked": [
     {
       "name": "NW Economie (576p)",
@@ -70,10 +72,26 @@
       "code": 403
     },
     {
+      "name": "CNA (360p)",
+      "country": "DZ",
+      "group": "Afrique",
+      "url": "https://live.creacast.com/cna/stream/playlist.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
       "name": "France 4 (1080p)",
       "country": "FR",
       "group": "France",
       "url": "https://sv1.data-stream.top/8c0a287e56a6e1843143904778be3775b4d3edd4fba4ffcc3f72638c7a71d4d4/hls/francetv4.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "ILTV (720p)",
+      "country": "FR",
+      "group": "France",
+      "url": "https://live.creacast.com/iltv/smil:iltv.smil/playlist.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -1222,14 +1240,6 @@
       "code": 403
     },
     {
-      "name": "Lazio Style Channel (720p)",
-      "country": "IT",
-      "group": "Sport",
-      "url": "https://distribution.sportitalialive.it/origin/laziostyle_abr/playlist.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "LRT Plius (1080p)",
       "country": "LT",
       "group": "Sport",
@@ -1438,6 +1448,22 @@
       "code": 403
     },
     {
+      "name": "Jiangxi Children's Channel",
+      "country": "CN",
+      "group": "Kids",
+      "url": "https://play-live-hls.jxtvcn.com.cn/live-city/tv_jxtv6.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Jiangxi Movie Channel",
+      "country": "CN",
+      "group": "Movies",
+      "url": "https://play-live-hls.jxtvcn.com.cn/live-city/tv_jxtv4.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
       "name": "Kral Pop TV (720p)",
       "country": "TR",
       "group": "Music",
@@ -1550,14 +1576,6 @@
       "code": 403
     },
     {
-      "name": "L'Équipe",
-      "country": "FR",
-      "group": "France",
-      "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/refs/heads/main/streams/lequipe/la-chaine-l-equipe-en-direct-dm.m3u8",
-      "reason": "variante : HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "CBC",
       "country": "CA",
       "group": "Canada",
@@ -1608,33 +1626,30 @@
   ],
   "pending": [
     {
-      "name": "SABC News",
-      "country": "ZA",
+      "name": "Africanews English (720p)",
+      "country": "FR",
       "group": "News",
-      "url": "https://sabconetanw.cdn.mangomolo.com/news/smil:news.stream.smil/chunklist_b250000_t64MjQwcA==.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "American Horrors (480p)",
-      "country": "US",
-      "group": "USA",
-      "url": "http://107.167.7.162:8081/playlist/amhor/playlist.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Jiangxi Children's Channel",
-      "country": "CN",
-      "group": "Kids",
-      "url": "https://play-live-hls.jxtvcn.com.cn/live-city/tv_jxtv6.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Jiangxi Movie Channel",
-      "country": "CN",
-      "group": "Movies",
-      "url": "https://play-live-hls.jxtvcn.com.cn/live-city/tv_jxtv4.m3u8",
-      "reason": "délai dépassé"
+      "url": "https://c3c275b999764df8a2dd55ffe2996818.mediatailor.eu-west-1.amazonaws.com/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6576/bitok/eyJzdGlkIjoiOTU0NDAyODQtOTU0My00Yzc2LThmZjQtNDRhY2YwYmQxYTYwIiwibWt0IjoicGwiLCJjaCI6NjYwNiwicHRmIjo1fQ==/26036/africanews-en.m3u8",
+      "reason": "HTTP 504",
+      "code": 504
     }
   ],
-  "dead": []
+  "dead": [
+    {
+      "name": "Lazio Style Channel (720p)",
+      "country": "IT",
+      "group": "Sport",
+      "url": "https://distribution.sportitalialive.it/origin/laziostyle_abr/playlist.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "NASHE Music (720p)",
+      "country": "UA",
+      "group": "Music",
+      "url": "https://cdn15.live-tv.cloud/ua_infinitas_tv/nashemus-abr/playlist.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    }
+  ]
 }
