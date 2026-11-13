@@ -57,19 +57,6 @@
   },
   {
     "channel": {
-      "name": "CC-TV (720p)",
-      "country": "US",
-      "group": "USA",
-      "logo": "",
-      "url": "https://cdn3.wowza.com/5/cHYzekYzM2kvTVFH/charlotte/G0055_009/playlist.m3u8",
-      "source": "iptv-org/api-2026-10-us"
-    },
-    "reason": "HTTP 404",
-    "since": "2026-11-12T14:20:37.280Z",
-    "okRuns": 1
-  },
-  {
-    "channel": {
       "name": "Shemaroo Bollywood (1080p)",
       "country": "US",
       "group": "USA",
@@ -93,7 +80,8 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-12T23:00:14.458Z",
-    "okRuns": 0
+    "okRuns": 0,
+    "lastReason": "HTTP 404"
   },
   {
     "channel": {
@@ -107,6 +95,6 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-12T23:00:14.458Z",
-    "okRuns": 0
+    "okRuns": 1
   }
 ]

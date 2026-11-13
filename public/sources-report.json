@@ -1,19 +1,17 @@
 {
-  "generatedAt": "2026-11-12T23:00:14.458Z",
+  "generatedAt": "2026-11-13T04:17:53.069Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée. « dead » = mise en quarantaine : retestée à chaque passage et remise dans la playlist après deux succès de suite.",
   "counts": {
-    "checked": 1237,
+    "checked": 1238,
     "ok": 1036,
-    "geoBlocked": 201,
-    "pending": 1,
-    "dead": 2,
+    "geoBlocked": 199,
+    "pending": 4,
+    "dead": 0,
     "promotedBackups": 0,
-    "restored": 3,
-    "quarantined": 8
+    "restored": 1,
+    "quarantined": 7
   },
-  "deadReasons": {
-    "HTTP 404": 2
-  },
+  "deadReasons": {},
   "geoBlocked": [
     {
       "name": "NW Economie (576p)",
@@ -1440,22 +1438,6 @@
       "code": 403
     },
     {
-      "name": "Jiangxi Children's Channel",
-      "country": "CN",
-      "group": "Kids",
-      "url": "https://play-live-hls.jxtvcn.com.cn/live-city/tv_jxtv6.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "Jiangxi Movie Channel",
-      "country": "CN",
-      "group": "Movies",
-      "url": "https://play-live-hls.jxtvcn.com.cn/live-city/tv_jxtv4.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "Kral Pop TV (720p)",
       "country": "TR",
       "group": "Music",
@@ -1626,30 +1608,33 @@
   ],
   "pending": [
     {
-      "name": "DKN (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://video.oct.dc.gov/out/u/DKN.m3u8",
-      "reason": "segment : HTTP 520",
-      "code": 520
-    }
-  ],
-  "dead": [
-    {
-      "name": "Medi1TV Afrique (1080p)",
-      "country": "MA",
-      "group": "Afrique",
-      "url": "https://cdn.live.easybroadcast.io/abr_corp/83_medi1tv-afrique_tm7tu45/playlist.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
+      "name": "SABC News",
+      "country": "ZA",
+      "group": "News",
+      "url": "https://sabconetanw.cdn.mangomolo.com/news/smil:news.stream.smil/chunklist_b250000_t64MjQwcA==.m3u8",
+      "reason": "délai dépassé"
     },
     {
-      "name": "Rai 5",
-      "country": "IT",
-      "group": "Italy",
-      "url": "http://team-tv.co:81/rai5/index.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
+      "name": "American Horrors (480p)",
+      "country": "US",
+      "group": "USA",
+      "url": "http://107.167.7.162:8081/playlist/amhor/playlist.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Jiangxi Children's Channel",
+      "country": "CN",
+      "group": "Kids",
+      "url": "https://play-live-hls.jxtvcn.com.cn/live-city/tv_jxtv6.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Jiangxi Movie Channel",
+      "country": "CN",
+      "group": "Movies",
+      "url": "https://play-live-hls.jxtvcn.com.cn/live-city/tv_jxtv4.m3u8",
+      "reason": "délai dépassé"
     }
-  ]
+  ],
+  "dead": []
 }
