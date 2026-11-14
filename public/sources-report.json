@@ -1,21 +1,30 @@
 {
-  "generatedAt": "2026-11-13T23:03:12.094Z",
+  "generatedAt": "2026-11-14T04:13:56.065Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée. « dead » = mise en quarantaine : retestée à chaque passage et remise dans la playlist après deux succès de suite.",
   "counts": {
-    "checked": 1238,
-    "ok": 1033,
-    "geoBlocked": 202,
-    "pending": 1,
-    "dead": 2,
+    "checked": 1236,
+    "ok": 1063,
+    "geoBlocked": 149,
+    "pending": 11,
+    "dead": 15,
     "promotedBackups": 0,
-    "restored": 0,
-    "quarantined": 10
+    "restored": 2,
+    "quarantined": 23
   },
   "deadReasons": {
-    "HTTP 504": 1,
-    "HTTP 404": 1
+    "réponse qui n'est pas un flux HLS": 13,
+    "HTTP 404": 1,
+    "domaine introuvable": 1
   },
   "geoBlocked": [
+    {
+      "name": "WDEF-TV News Chattanooga TN (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://townnews.g-mana.live/media/a54a6409-5e91-46f0-9fee-06904c1fd094/main.m3u8",
+      "reason": "segment refusé (HTTP 403)",
+      "code": 403
+    },
     {
       "name": "NW Economie (576p)",
       "country": "TG",
@@ -109,14 +118,6 @@
       "country": "ET",
       "group": "Afrique",
       "url": "https://rumble.com/live-hls-dvr/4c14o3/playlist.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "NogoumFMTV (672p)",
-      "country": "EG",
-      "group": "Afrique",
-      "url": "https://nogoumtv.nrpstream.com/hls/stream.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -349,30 +350,6 @@
       "country": "NG",
       "group": "Afrique",
       "url": "https://oqgdro3xd4rm-hls-live.5centscdn.com/tfmediacastlivestream24/60414fd886a863e5851f4559fb86e7f6.sdp/playlist.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "BX Inform (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://reflect-stream-bronxnet.cablecast.tv/live-8/live/stream-4/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "CommunityTV Channel 189 (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://reflect-tacm.cablecast.tv/live-3/live/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "FCTV (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://reflect-vod-fcgov.cablecast.tv/live-9/live/stream-1/live.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -753,38 +730,6 @@
       "code": 403
     },
     {
-      "name": "Access 19",
-      "country": "US",
-      "group": "USA",
-      "url": "https://reflect-montgomerycommunitymedia.cablecast.tv/live-8/live/stream-3/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "Access 4 PAC",
-      "country": "US",
-      "group": "USA",
-      "url": "https://reflect-channel18vod-springfield-il-us.cablecast.tv/live-16/live/stream-4/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "Access Sacramento Channel 17",
-      "country": "US",
-      "group": "USA",
-      "url": "https://reflect-access-sacramento.cablecast.tv/live-7/live/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "Access Tuolumne (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://reflect-tuolumne.cablecast.tv/live-3/live/stream-1/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "ARTN TV (1080p)",
       "country": "US",
       "group": "USA",
@@ -793,210 +738,10 @@
       "code": 403
     },
     {
-      "name": "AuroraTV (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://reflect-aurora.cablecast.tv/live-8/live/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "BATV (480p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://reflect-batv.cablecast.tv/live-5/live/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "BIG Civic Channel",
-      "country": "US",
-      "group": "USA",
-      "url": "https://reflect-brookline-interactive-group.cablecast.tv/live-5/live/stream-2/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "BIG Community Channel",
-      "country": "US",
-      "group": "USA",
-      "url": "https://reflect-brookline-interactive-group.cablecast.tv/live-4/live/stream-1/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "BX Arts (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://reflect-stream-bronxnet.cablecast.tv/live-19/live/stream-2/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "BX Culture (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://reflect-stream-bronxnet.cablecast.tv/live-7/live/stream-3/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "BX Omni (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://reflect-stream-bronxnet.cablecast.tv/live-16/live/stream-1/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "City of Fairfield Channel 26 (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://reflect-fairfield-ca.cablecast.tv/live-8/live/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "City of Loveland TV (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://reflect-cityofloveland-co.cablecast.tv/live-3/live/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "CMAC 1 (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://reflect-vod-cmac.cablecast.tv/live-11/live/stream-1/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "CMAC 2 (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://reflect-vod-cmac.cablecast.tv/live-11/live/stream-2/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "Concord TV (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://concordca.cablecast.tv/live/stream-2/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "CreaTV Channel 15 (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://reflect-creatv.cablecast.tv/live-13/live/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "CreaTV Channel 27 (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://reflect-creatv.cablecast.tv/live-19/live/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "CreaTV Channel 28 (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://reflect-creatv.cablecast.tv/live-14/live/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "CreaTV Channel 30 (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://reflect-creatv.cablecast.tv/live-16/live/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "Detroit Channel 21",
-      "country": "US",
-      "group": "USA",
-      "url": "https://reflect-detroit-vod.cablecast.tv/live-9/live/stream-4/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "Detroit Channel 22",
-      "country": "US",
-      "group": "USA",
-      "url": "https://reflect-detroit-vod.cablecast.tv/live-3/live/stream-3/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "Detroit Channel 68",
-      "country": "US",
-      "group": "USA",
-      "url": "https://reflect-detroit-vod.cablecast.tv/live-10/live/stream-5/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "DreamWorks Channel Latin America (576p)",
       "country": "US",
       "group": "USA",
       "url": "https://cdn-5.nxplay.com.br/DREAMWORKS/index.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "FC Public Media (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://reflect-fcpublicmedia.cablecast.tv/live-5/live/stream-1/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "GCO.tv (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://reflect-golden-co.cablecast.tv/live-3/live/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "HBTV (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://reflect-huntingtonbeach.cablecast.tv/live-4/live/stream-1/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "HCTV Educational Access Channel",
-      "country": "US",
-      "group": "USA",
-      "url": "https://reflect-hudsonctv.cablecast.tv/live-26/live/stream-1/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "HCTV Public Access Channel",
-      "country": "US",
-      "group": "USA",
-      "url": "https://reflect-hudsonctv.cablecast.tv/live-26/live/stream-5/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "HKTV (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://reflect-hktv.cablecast.tv/live-3/live/live.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -1017,30 +762,6 @@
       "code": 403
     },
     {
-      "name": "KCAT (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://reflect-kcat-live.cablecast.tv/live-2/live/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "KFON TV (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://reflect-watchkfon-fontana.cablecast.tv/live-3/live/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "LA36 (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://reflect-channel36-la.cablecast.tv/live-3/live/stream-1/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "MeTV (720p)",
       "country": "US",
       "group": "USA",
@@ -1049,146 +770,10 @@
       "code": 403
     },
     {
-      "name": "Monroe Community Media Education Channel",
-      "country": "US",
-      "group": "USA",
-      "url": "https://reflect-monroe-public-access.cablecast.tv/live-4/live/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "Monroe Community Media Public Access Channel",
-      "country": "US",
-      "group": "USA",
-      "url": "https://reflect-monroe-public-access.cablecast.tv/live-3/live/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "Montgomery Channel",
-      "country": "US",
-      "group": "USA",
-      "url": "https://reflect-montgomerycommunitymedia.cablecast.tv/live-11/live/stream-4/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "MSTV (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://reflect-mcsb-vod.cablecast.tv/live-16/live/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "NCM Educational & Kids Channel",
-      "country": "US",
-      "group": "USA",
-      "url": "https://reflect-npa.cablecast.tv/live-9/live/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "NCM Main Channel",
-      "country": "US",
-      "group": "USA",
-      "url": "https://reflect-npa.cablecast.tv/live-6/live/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "NYXT (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://reflect-stream-bronxnet.cablecast.tv/live-10/live/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "Pomona Internet Streaming Channel (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://reflect-pomona.cablecast.tv/live-1/live/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "PSD TV (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://reflect-broadcast-psdschools.cablecast.tv/live-6/live/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "SCVTV (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://reflect-scvtv.cablecast.tv/live-2/live/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "SF Commons 29 (480p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://reflect-bayarea.cablecast.tv/live-5/live/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "SF Commons 76 (480p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://reflect-bayarea.cablecast.tv/live-6/live/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "Sony Movies Latin America (720p)",
       "country": "US",
       "group": "USA",
       "url": "https://cdn-5.nxplay.com.br/SONY_MOVIES/index.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "St Lucie Public Schools",
-      "country": "US",
-      "group": "USA",
-      "url": "https://reflect-stlucie-ps-fl.cablecast.tv/live-1/live/stream-1/WIFI-1896k-720p.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "TBCN (480p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://reflect-tampa-bay-community.cablecast.tv/live-16/live/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "Temecula TV (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://reflect-temecula.cablecast.tv/live-2/live/stream-1/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "VSCTV (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://reflect-vsctv.cablecast.tv/live-3/live/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "CCX1 (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "http://reflect-ccx.cablecast.tv/live-9/live/stream-1/live.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -1397,14 +982,6 @@
       "country": "IT",
       "group": "Music",
       "url": "https://d3b2epqdk0p7vd.cloudfront.net/out/v1/8a448b5e16384af4a3c8146a7b049c32/index.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "VM Latino (720p)",
-      "country": "CR",
-      "group": "Music",
-      "url": "https://59ef525c24caa.streamlock.net/vmtv/vmlatino/playlist.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -1635,29 +1212,212 @@
   ],
   "pending": [
     {
+      "name": "Access Sacramento Channel 17",
+      "country": "US",
+      "group": "USA",
+      "url": "https://reflect-access-sacramento.cablecast.tv/live-7/live/live.m3u8",
+      "reason": "HTTP 502",
+      "code": 502
+    },
+    {
+      "name": "GCO.tv (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://reflect-golden-co.cablecast.tv/live-3/live/live.m3u8",
+      "reason": "HTTP 502",
+      "code": 502
+    },
+    {
+      "name": "MSTV (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://reflect-mcsb-vod.cablecast.tv/live-16/live/live.m3u8",
+      "reason": "HTTP 502",
+      "code": 502
+    },
+    {
+      "name": "NCM Educational & Kids Channel",
+      "country": "US",
+      "group": "USA",
+      "url": "https://reflect-npa.cablecast.tv/live-9/live/live.m3u8",
+      "reason": "HTTP 502",
+      "code": 502
+    },
+    {
+      "name": "NCM Main Channel",
+      "country": "US",
+      "group": "USA",
+      "url": "https://reflect-npa.cablecast.tv/live-6/live/live.m3u8",
+      "reason": "HTTP 502",
+      "code": 502
+    },
+    {
+      "name": "NYXT (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://reflect-stream-bronxnet.cablecast.tv/live-10/live/live.m3u8",
+      "reason": "HTTP 502",
+      "code": 502
+    },
+    {
+      "name": "Pomona Internet Streaming Channel (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://reflect-pomona.cablecast.tv/live-1/live/live.m3u8",
+      "reason": "HTTP 502",
+      "code": 502
+    },
+    {
+      "name": "PSD TV (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://reflect-broadcast-psdschools.cablecast.tv/live-6/live/live.m3u8",
+      "reason": "HTTP 502",
+      "code": 502
+    },
+    {
+      "name": "SF Commons 29 (480p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://reflect-bayarea.cablecast.tv/live-5/live/live.m3u8",
+      "reason": "HTTP 503",
+      "code": 503
+    },
+    {
+      "name": "SF Commons 76 (480p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://reflect-bayarea.cablecast.tv/live-6/live/live.m3u8",
+      "reason": "HTTP 503",
+      "code": 503
+    },
+    {
+      "name": "NHK World",
+      "country": "JP",
+      "group": "International",
+      "url": "https://freem3u.xyz/api/live/play.m3u8?vid=106",
+      "reason": "délai dépassé"
+    }
+  ],
+  "dead": [
+    {
+      "name": "AuroraTV (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://reflect-aurora.cablecast.tv/live-8/live/live.m3u8",
+      "reason": "réponse qui n'est pas un flux HLS",
+      "code": 200
+    },
+    {
+      "name": "BATV (480p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://reflect-batv.cablecast.tv/live-5/live/live.m3u8",
+      "reason": "réponse qui n'est pas un flux HLS",
+      "code": 200
+    },
+    {
+      "name": "City of Fairfield Channel 26 (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://reflect-fairfield-ca.cablecast.tv/live-8/live/live.m3u8",
+      "reason": "réponse qui n'est pas un flux HLS",
+      "code": 200
+    },
+    {
+      "name": "City of Loveland TV (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://reflect-cityofloveland-co.cablecast.tv/live-3/live/live.m3u8",
+      "reason": "réponse qui n'est pas un flux HLS",
+      "code": 200
+    },
+    {
+      "name": "CreaTV Channel 15 (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://reflect-creatv.cablecast.tv/live-13/live/live.m3u8",
+      "reason": "réponse qui n'est pas un flux HLS",
+      "code": 200
+    },
+    {
+      "name": "CreaTV Channel 27 (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://reflect-creatv.cablecast.tv/live-19/live/live.m3u8",
+      "reason": "réponse qui n'est pas un flux HLS",
+      "code": 200
+    },
+    {
+      "name": "CreaTV Channel 28 (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://reflect-creatv.cablecast.tv/live-14/live/live.m3u8",
+      "reason": "réponse qui n'est pas un flux HLS",
+      "code": 200
+    },
+    {
+      "name": "CreaTV Channel 30 (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://reflect-creatv.cablecast.tv/live-16/live/live.m3u8",
+      "reason": "réponse qui n'est pas un flux HLS",
+      "code": 200
+    },
+    {
+      "name": "HKTV (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://reflect-hktv.cablecast.tv/live-3/live/live.m3u8",
+      "reason": "réponse qui n'est pas un flux HLS",
+      "code": 200
+    },
+    {
+      "name": "KCAT (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://reflect-kcat-live.cablecast.tv/live-2/live/live.m3u8",
+      "reason": "réponse qui n'est pas un flux HLS",
+      "code": 200
+    },
+    {
+      "name": "KFON TV (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://reflect-watchkfon-fontana.cablecast.tv/live-3/live/live.m3u8",
+      "reason": "réponse qui n'est pas un flux HLS",
+      "code": 200
+    },
+    {
+      "name": "PBC Tapesh TV (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://iptv.tapesh.tv/tapesh/playlist.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "TBCN (480p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://reflect-tampa-bay-community.cablecast.tv/live-16/live/live.m3u8",
+      "reason": "réponse qui n'est pas un flux HLS",
+      "code": 200
+    },
+    {
+      "name": "VSCTV (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://reflect-vsctv.cablecast.tv/live-3/live/live.m3u8",
+      "reason": "réponse qui n'est pas un flux HLS",
+      "code": 200
+    },
+    {
       "name": "Ausbiz",
       "country": "AU",
       "group": "News",
       "url": "https://d9quh89lh7dtw.cloudfront.net/public-output/index.m3u8",
       "reason": "domaine introuvable"
-    }
-  ],
-  "dead": [
-    {
-      "name": "Africanews English (720p)",
-      "country": "FR",
-      "group": "News",
-      "url": "https://c3c275b999764df8a2dd55ffe2996818.mediatailor.eu-west-1.amazonaws.com/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6576/bitok/eyJzdGlkIjoiOTU0NDAyODQtOTU0My00Yzc2LThmZjQtNDRhY2YwYmQxYTYwIiwibWt0IjoicGwiLCJjaCI6NjYwNiwicHRmIjo1fQ==/26036/africanews-en.m3u8",
-      "reason": "HTTP 504",
-      "code": 504
-    },
-    {
-      "name": "Impact Network (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://edge1.lifestreamcdn.com/live/impactroku1/index.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
     }
   ]
 }
