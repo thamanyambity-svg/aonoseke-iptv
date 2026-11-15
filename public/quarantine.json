@@ -67,7 +67,7 @@
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-12T14:20:37.280Z",
     "okRuns": 0,
-    "lastReason": "HTTP 500"
+    "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
     "channel": {
@@ -122,7 +122,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-14T04:13:56.065Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
@@ -136,7 +136,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-14T04:13:56.065Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
@@ -150,7 +150,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-14T04:13:56.065Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
@@ -164,7 +164,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-14T04:13:56.065Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
@@ -178,7 +178,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-14T04:13:56.065Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
@@ -192,7 +192,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-14T04:13:56.065Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
@@ -206,7 +206,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-14T04:13:56.065Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
@@ -220,7 +220,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-14T04:13:56.065Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
@@ -234,7 +234,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-14T04:13:56.065Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
@@ -248,7 +248,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-14T04:13:56.065Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
@@ -262,7 +262,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-14T04:13:56.065Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
@@ -276,7 +276,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-14T04:13:56.065Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
@@ -290,7 +290,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-14T04:13:56.065Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
@@ -318,7 +318,7 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-14T12:45:12.372Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "HTTP 404"
   },
   {
@@ -346,47 +346,8 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-14T12:45:12.372Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "HTTP 404"
-  },
-  {
-    "channel": {
-      "name": "Rally TV (1080p)",
-      "country": "US",
-      "group": "Sport",
-      "logo": "https://i.postimg.cc/WtLq2C7c/logo-Rally-Tv1.png",
-      "url": "https://rally-tv-live.akamaized.net/hls/live/2117704/RallyTV-Pri/master.m3u8",
-      "source": "iptv-org/curated-2026-10b"
-    },
-    "reason": "variante : HTTP 404",
-    "since": "2026-11-14T21:50:15.149Z",
-    "okRuns": 1
-  },
-  {
-    "channel": {
-      "name": "Rai 2",
-      "country": "IT",
-      "group": "Italy",
-      "logo": "",
-      "url": "http://team-tv.co:81/rai2/index.m3u8",
-      "source": "iptv-org (api/streams)"
-    },
-    "reason": "HTTP 404",
-    "since": "2026-11-14T21:50:15.149Z",
-    "okRuns": 1
-  },
-  {
-    "channel": {
-      "name": "Rai 4",
-      "country": "IT",
-      "group": "Italy",
-      "logo": "",
-      "url": "http://team-tv.co:81/rai4/index.m3u8",
-      "source": "iptv-org (api/streams)"
-    },
-    "reason": "HTTP 404",
-    "since": "2026-11-14T21:50:15.149Z",
-    "okRuns": 1
   },
   {
     "channel": {
@@ -399,7 +360,7 @@
     },
     "reason": "HTTP 502",
     "since": "2026-11-15T03:59:06.064Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -412,7 +373,7 @@
     },
     "reason": "HTTP 502",
     "since": "2026-11-15T03:59:06.064Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -425,7 +386,7 @@
     },
     "reason": "HTTP 502",
     "since": "2026-11-15T03:59:06.064Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -438,7 +399,7 @@
     },
     "reason": "HTTP 502",
     "since": "2026-11-15T03:59:06.064Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -451,7 +412,7 @@
     },
     "reason": "HTTP 502",
     "since": "2026-11-15T03:59:06.064Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -464,7 +425,7 @@
     },
     "reason": "HTTP 502",
     "since": "2026-11-15T03:59:06.064Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -477,7 +438,7 @@
     },
     "reason": "HTTP 502",
     "since": "2026-11-15T03:59:06.064Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -490,7 +451,7 @@
     },
     "reason": "HTTP 502",
     "since": "2026-11-15T03:59:06.064Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -503,7 +464,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-15T03:59:06.064Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -516,7 +477,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-15T03:59:06.064Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -529,7 +490,7 @@
     },
     "reason": "variante : réponse qui n'est pas un flux HLS",
     "since": "2026-11-15T03:59:06.064Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -542,7 +503,7 @@
     },
     "reason": "flux terminé (ENDLIST)",
     "since": "2026-11-15T03:59:06.064Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -555,7 +516,7 @@
     },
     "reason": "segment : HTTP 404",
     "since": "2026-11-15T03:59:06.064Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -569,6 +530,20 @@
     },
     "reason": "segment : HTTP 404",
     "since": "2026-11-15T03:59:06.064Z",
+    "okRuns": 1
+  },
+  {
+    "channel": {
+      "name": "PBC Tapesh TV (720p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/50JzsmH.png",
+      "url": "https://iptv.tapesh.tv/tapesh/playlist.m3u8",
+      "source": "iptv-org/api-2026-10-us",
+      "restoredAt": "2026-11-15T03:59:06.064Z"
+    },
+    "reason": "HTTP 404",
+    "since": "2026-11-15T13:13:02.228Z",
     "okRuns": 0
   }
 ]
