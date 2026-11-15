@@ -1,19 +1,22 @@
 {
-  "generatedAt": "2026-11-14T21:50:15.149Z",
+  "generatedAt": "2026-11-15T03:59:06.064Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée. « dead » = mise en quarantaine : retestée à chaque passage et remise dans la playlist après deux succès de suite.",
   "counts": {
-    "checked": 1220,
-    "ok": 1057,
+    "checked": 1217,
+    "ok": 1054,
     "geoBlocked": 148,
-    "pending": 12,
-    "dead": 3,
+    "pending": 2,
+    "dead": 14,
     "promotedBackups": 0,
-    "restored": 0,
-    "quarantined": 29
+    "restored": 1,
+    "quarantined": 42
   },
   "deadReasons": {
-    "variante : HTTP 404": 1,
-    "HTTP 404": 2
+    "HTTP 502": 8,
+    "réponse qui n'est pas un flux HLS": 2,
+    "variante : réponse qui n'est pas un flux HLS": 1,
+    "flux terminé (ENDLIST)": 1,
+    "segment : HTTP 404": 2
   },
   "geoBlocked": [
     {
@@ -1203,6 +1206,22 @@
   ],
   "pending": [
     {
+      "name": "TeleHit (576p)",
+      "country": "MX",
+      "group": "Latino",
+      "url": "http://200.115.120.1:8000/play/ca048/index.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "viàMaTélé",
+      "country": "FR",
+      "group": "France",
+      "url": "https://5dd226f8f01e8.streamlock.net/via-matele-live/matelelive_1080/playlist.m3u8",
+      "reason": "délai dépassé"
+    }
+  ],
+  "dead": [
+    {
       "name": "Access Sacramento Channel 17",
       "country": "US",
       "group": "USA",
@@ -1271,56 +1290,47 @@
       "country": "US",
       "group": "USA",
       "url": "https://reflect-bayarea.cablecast.tv/live-5/live/live.m3u8",
-      "reason": "HTTP 503",
-      "code": 503
+      "reason": "réponse qui n'est pas un flux HLS",
+      "code": 200
     },
     {
       "name": "SF Commons 76 (480p)",
       "country": "US",
       "group": "USA",
       "url": "https://reflect-bayarea.cablecast.tv/live-6/live/live.m3u8",
-      "reason": "HTTP 503",
-      "code": 503
+      "reason": "réponse qui n'est pas un flux HLS",
+      "code": 200
     },
     {
-      "name": "America TeVe",
-      "country": "US",
-      "group": "USA",
-      "url": "https://live.gideo.video/americateve2/master.m3u8",
-      "reason": "HTTP 503",
-      "code": 503
+      "name": "Tiankov Folk (576p)",
+      "country": "BG",
+      "group": "Music",
+      "url": "https://streamer103.neterra.tv/tiankov-folk/live.m3u8",
+      "reason": "variante : réponse qui n'est pas un flux HLS",
+      "code": 200
     },
     {
-      "name": "NHK World",
-      "country": "JP",
-      "group": "International",
-      "url": "https://freem3u.xyz/api/live/play.m3u8?vid=106",
-      "reason": "délai dépassé"
-    }
-  ],
-  "dead": [
+      "name": "Tiankov Orient Folk (576p)",
+      "country": "BG",
+      "group": "Music",
+      "url": "https://streamer103.neterra.tv/tiankov-orient/live.m3u8",
+      "reason": "flux terminé (ENDLIST)",
+      "code": 200
+    },
     {
-      "name": "Rally TV (1080p)",
-      "country": "US",
-      "group": "Sport",
-      "url": "https://rally-tv-live.akamaized.net/hls/live/2117704/RallyTV-Pri/master.m3u8",
-      "reason": "variante : HTTP 404",
+      "name": "CCTV-9 纪录",
+      "country": "CN",
+      "group": "China",
+      "url": "https://xykt-fix.github.io/Y77.m3u8",
+      "reason": "segment : HTTP 404",
       "code": 404
     },
     {
-      "name": "Rai 2",
+      "name": "Rai 5",
       "country": "IT",
       "group": "Italy",
-      "url": "http://team-tv.co:81/rai2/index.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Rai 4",
-      "country": "IT",
-      "group": "Italy",
-      "url": "http://team-tv.co:81/rai4/index.m3u8",
-      "reason": "HTTP 404",
+      "url": "http://team-tv.co:81/rai5/index.m3u8",
+      "reason": "segment : HTTP 404",
       "code": 404
     }
   ]

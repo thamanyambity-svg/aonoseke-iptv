@@ -67,7 +67,7 @@
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-12T14:20:37.280Z",
     "okRuns": 0,
-    "lastReason": "réponse qui n'est pas un flux HLS"
+    "lastReason": "HTTP 500"
   },
   {
     "channel": {
@@ -267,20 +267,6 @@
   },
   {
     "channel": {
-      "name": "PBC Tapesh TV (720p)",
-      "country": "US",
-      "group": "USA",
-      "logo": "https://i.imgur.com/50JzsmH.png",
-      "url": "https://iptv.tapesh.tv/tapesh/playlist.m3u8",
-      "source": "iptv-org/api-2026-10-us"
-    },
-    "reason": "HTTP 404",
-    "since": "2026-11-14T04:13:56.065Z",
-    "okRuns": 1,
-    "lastReason": "HTTP 404"
-  },
-  {
-    "channel": {
       "name": "TBCN (480p)",
       "country": "US",
       "group": "USA",
@@ -374,7 +360,7 @@
     },
     "reason": "variante : HTTP 404",
     "since": "2026-11-14T21:50:15.149Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -387,7 +373,7 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-14T21:50:15.149Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -400,6 +386,189 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-14T21:50:15.149Z",
+    "okRuns": 1
+  },
+  {
+    "channel": {
+      "name": "Access Sacramento Channel 17",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/j0UC4ke.png",
+      "url": "https://reflect-access-sacramento.cablecast.tv/live-7/live/live.m3u8",
+      "source": "iptv-org/api-2026-10-us"
+    },
+    "reason": "HTTP 502",
+    "since": "2026-11-15T03:59:06.064Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "GCO.tv (1080p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/zHBR2zR.png",
+      "url": "https://reflect-golden-co.cablecast.tv/live-3/live/live.m3u8",
+      "source": "iptv-org/api-2026-10-us"
+    },
+    "reason": "HTTP 502",
+    "since": "2026-11-15T03:59:06.064Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "MSTV (1080p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/x0lJqSp.png",
+      "url": "https://reflect-mcsb-vod.cablecast.tv/live-16/live/live.m3u8",
+      "source": "iptv-org/api-2026-10-us"
+    },
+    "reason": "HTTP 502",
+    "since": "2026-11-15T03:59:06.064Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "NCM Educational & Kids Channel",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/3YPvfPn.png",
+      "url": "https://reflect-npa.cablecast.tv/live-9/live/live.m3u8",
+      "source": "iptv-org/api-2026-10-us"
+    },
+    "reason": "HTTP 502",
+    "since": "2026-11-15T03:59:06.064Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "NCM Main Channel",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/3YPvfPn.png",
+      "url": "https://reflect-npa.cablecast.tv/live-6/live/live.m3u8",
+      "source": "iptv-org/api-2026-10-us"
+    },
+    "reason": "HTTP 502",
+    "since": "2026-11-15T03:59:06.064Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "NYXT (1080p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/7kuluji.png",
+      "url": "https://reflect-stream-bronxnet.cablecast.tv/live-10/live/live.m3u8",
+      "source": "iptv-org/api-2026-10-us"
+    },
+    "reason": "HTTP 502",
+    "since": "2026-11-15T03:59:06.064Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "Pomona Internet Streaming Channel (720p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/80gaUbq.png",
+      "url": "https://reflect-pomona.cablecast.tv/live-1/live/live.m3u8",
+      "source": "iptv-org/api-2026-10-us"
+    },
+    "reason": "HTTP 502",
+    "since": "2026-11-15T03:59:06.064Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "PSD TV (720p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/djT0Q8q.png",
+      "url": "https://reflect-broadcast-psdschools.cablecast.tv/live-6/live/live.m3u8",
+      "source": "iptv-org/api-2026-10-us"
+    },
+    "reason": "HTTP 502",
+    "since": "2026-11-15T03:59:06.064Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "SF Commons 29 (480p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/aVkJkgm.png",
+      "url": "https://reflect-bayarea.cablecast.tv/live-5/live/live.m3u8",
+      "source": "iptv-org/api-2026-10-us"
+    },
+    "reason": "réponse qui n'est pas un flux HLS",
+    "since": "2026-11-15T03:59:06.064Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "SF Commons 76 (480p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/7L53Gju.png",
+      "url": "https://reflect-bayarea.cablecast.tv/live-6/live/live.m3u8",
+      "source": "iptv-org/api-2026-10-us"
+    },
+    "reason": "réponse qui n'est pas un flux HLS",
+    "since": "2026-11-15T03:59:06.064Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "Tiankov Folk (576p)",
+      "country": "BG",
+      "group": "Music",
+      "logo": "https://i.imgur.com/VKY4q64.png",
+      "url": "https://streamer103.neterra.tv/tiankov-folk/live.m3u8",
+      "source": "iptv-org/api-2026-10-thematique-monde"
+    },
+    "reason": "variante : réponse qui n'est pas un flux HLS",
+    "since": "2026-11-15T03:59:06.064Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "Tiankov Orient Folk (576p)",
+      "country": "BG",
+      "group": "Music",
+      "logo": "https://i.imgur.com/33LexyP.png",
+      "url": "https://streamer103.neterra.tv/tiankov-orient/live.m3u8",
+      "source": "iptv-org/api-2026-10-thematique-monde"
+    },
+    "reason": "flux terminé (ENDLIST)",
+    "since": "2026-11-15T03:59:06.064Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "CCTV-9 纪录",
+      "country": "CN",
+      "group": "China",
+      "logo": "",
+      "url": "https://xykt-fix.github.io/Y77.m3u8",
+      "source": "iptv-org (api/streams)"
+    },
+    "reason": "segment : HTTP 404",
+    "since": "2026-11-15T03:59:06.064Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "Rai 5",
+      "country": "IT",
+      "group": "Italy",
+      "logo": "",
+      "url": "http://team-tv.co:81/rai5/index.m3u8",
+      "source": "iptv-org (api/streams)",
+      "restoredAt": "2026-11-13T13:40:59.138Z"
+    },
+    "reason": "segment : HTTP 404",
+    "since": "2026-11-15T03:59:06.064Z",
     "okRuns": 0
   }
 ]
