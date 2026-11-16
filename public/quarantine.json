@@ -67,7 +67,7 @@
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-12T14:20:37.280Z",
     "okRuns": 0,
-    "lastReason": "réponse qui n'est pas un flux HLS"
+    "lastReason": "HTTP 500"
   },
   {
     "channel": {
@@ -152,5 +152,58 @@
     "since": "2026-11-15T22:18:35.058Z",
     "okRuns": 0,
     "lastReason": "HTTP 404"
+  },
+  {
+    "channel": {
+      "name": "Sportitalia (1080p)",
+      "country": "IT",
+      "group": "Sport",
+      "logo": "https://i.imgur.com/0CJGGgd.png",
+      "url": "https://edge-001.streamup.eu/sportitalia/sihd_abr/playlist.m3u8",
+      "source": "iptv-org/curated-2026-10b"
+    },
+    "reason": "HTTP 404",
+    "since": "2026-11-16T14:22:24.427Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "BX1 (720p)",
+      "country": "BE",
+      "group": "France",
+      "logo": "https://i.imgur.com/0OkSa6c.png",
+      "url": "https://59959724487e3.streamlock.net/stream/live/playlist.m3u8",
+      "source": "iptv-org/api-2026-10-fr"
+    },
+    "reason": "HTTP 404",
+    "since": "2026-11-16T14:22:24.427Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "The Chat Show Channel (1080p)",
+      "country": "GB",
+      "group": "Series",
+      "logo": "https://yt3.googleusercontent.com/aQ_vvywmcBt4X1SmeEMgT3uf7bb1Z__I9XVwabeg7RrSSEuIhswMlvwhyi0Wl4PlLHwXufLgOg=s900-c-k-c0x00ffffff-no-rj",
+      "url": "https://amg00426-littledotstudio-thechatshow-samsungnz-uqmtt.amagi.tv/playlist/amg00426-littledotstudio-thechatshow-samsungnz/playlist.m3u8",
+      "source": "iptv-org/api-2026-10-thematique"
+    },
+    "reason": "réponse qui n'est pas un flux HLS",
+    "since": "2026-11-16T14:22:24.427Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "PBC Tapesh TV (720p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/50JzsmH.png",
+      "url": "https://iptv.tapesh.tv/tapesh/playlist.m3u8",
+      "source": "iptv-org/api-2026-10-us",
+      "restoredAt": "2026-11-16T03:58:56.985Z"
+    },
+    "reason": "HTTP 404",
+    "since": "2026-11-16T14:22:24.427Z",
+    "okRuns": 0
   }
 ]
