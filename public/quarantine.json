@@ -141,20 +141,6 @@
   },
   {
     "channel": {
-      "name": "PBC Tapesh TV (720p)",
-      "country": "US",
-      "group": "USA",
-      "logo": "https://i.imgur.com/50JzsmH.png",
-      "url": "https://iptv.tapesh.tv/tapesh/playlist.m3u8",
-      "source": "iptv-org/api-2026-10-us",
-      "restoredAt": "2026-11-15T03:59:06.064Z"
-    },
-    "reason": "HTTP 404",
-    "since": "2026-11-15T13:13:02.228Z",
-    "okRuns": 1
-  },
-  {
-    "channel": {
       "name": "TeleHit (576p)",
       "country": "MX",
       "group": "Latino",
@@ -164,6 +150,7 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-15T22:18:35.058Z",
-    "okRuns": 0
+    "okRuns": 0,
+    "lastReason": "HTTP 404"
   }
 ]
