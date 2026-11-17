@@ -169,19 +169,6 @@
   },
   {
     "channel": {
-      "name": "BX1 (720p)",
-      "country": "BE",
-      "group": "France",
-      "logo": "https://i.imgur.com/0OkSa6c.png",
-      "url": "https://59959724487e3.streamlock.net/stream/live/playlist.m3u8",
-      "source": "iptv-org/api-2026-10-fr"
-    },
-    "reason": "HTTP 404",
-    "since": "2026-11-16T14:22:24.427Z",
-    "okRuns": 1
-  },
-  {
-    "channel": {
       "name": "The Chat Show Channel (1080p)",
       "country": "GB",
       "group": "Series",
@@ -196,20 +183,6 @@
   },
   {
     "channel": {
-      "name": "PBC Tapesh TV (720p)",
-      "country": "US",
-      "group": "USA",
-      "logo": "https://i.imgur.com/50JzsmH.png",
-      "url": "https://iptv.tapesh.tv/tapesh/playlist.m3u8",
-      "source": "iptv-org/api-2026-10-us",
-      "restoredAt": "2026-11-16T03:58:56.985Z"
-    },
-    "reason": "HTTP 404",
-    "since": "2026-11-16T14:22:24.427Z",
-    "okRuns": 1
-  },
-  {
-    "channel": {
       "name": "Totalmusic 2000s (720p)",
       "country": "GB",
       "group": "Music",
@@ -219,6 +192,32 @@
     },
     "reason": "segment : HTTP 404",
     "since": "2026-11-17T01:19:43.565Z",
+    "okRuns": 1
+  },
+  {
+    "channel": {
+      "name": "Akili Kids!",
+      "country": "KE",
+      "group": "Afrique",
+      "logo": "https://i.imgur.com/xFm2co6.png",
+      "url": "https://m6.livecdn.io/akilikids.co.ke/akilikids.smil/playlist.m3u8",
+      "source": "iptv-org/curated-2026-10"
+    },
+    "reason": "variante : HTTP 404",
+    "since": "2026-11-17T15:14:18.358Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "Jordan Songs (1080p)",
+      "country": "JO",
+      "group": "Music",
+      "logo": "https://i.imgur.com/1DE7Gmw.png",
+      "url": "https://playlist.fasttvcdn.com/pl/cc0blorawy1ibohhrupraa/Song/playlist.m3u8",
+      "source": "iptv-org/api-2026-10-thematique"
+    },
+    "reason": "variante : HTTP 404",
+    "since": "2026-11-17T15:14:18.358Z",
     "okRuns": 0
   }
 ]
