@@ -67,7 +67,7 @@
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-12T14:20:37.280Z",
     "okRuns": 0,
-    "lastReason": "HTTP 500"
+    "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
     "channel": {
@@ -164,7 +164,8 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-16T14:22:24.427Z",
-    "okRuns": 0
+    "okRuns": 0,
+    "lastReason": "HTTP 404"
   },
   {
     "channel": {
@@ -177,7 +178,7 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-16T14:22:24.427Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -190,7 +191,8 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-16T14:22:24.427Z",
-    "okRuns": 0
+    "okRuns": 0,
+    "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
     "channel": {
@@ -204,6 +206,19 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-16T14:22:24.427Z",
+    "okRuns": 1
+  },
+  {
+    "channel": {
+      "name": "Totalmusic 2000s (720p)",
+      "country": "GB",
+      "group": "Music",
+      "logo": "",
+      "url": "https://cdn.global.elektamedia.com/live/c7eds/Totalmusic_00s/SA_LIVE_hls_enc/master.m3u8",
+      "source": "iptv-org/api-2026-10-thematique"
+    },
+    "reason": "segment : HTTP 404",
+    "since": "2026-11-17T01:19:43.565Z",
     "okRuns": 0
   }
 ]
