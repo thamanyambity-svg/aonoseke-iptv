@@ -1,20 +1,19 @@
 {
-  "generatedAt": "2026-11-18T14:51:15.328Z",
+  "generatedAt": "2026-11-18T23:43:30.797Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée. « dead » = mise en quarantaine : retestée à chaque passage et remise dans la playlist après deux succès de suite.",
   "counts": {
-    "checked": 1229,
-    "ok": 1019,
-    "geoBlocked": 201,
-    "pending": 6,
-    "dead": 4,
+    "checked": 1226,
+    "ok": 1016,
+    "geoBlocked": 202,
+    "pending": 4,
+    "dead": 6,
     "promotedBackups": 0,
-    "restored": 1,
-    "quarantined": 20
+    "restored": 2,
+    "quarantined": 24
   },
   "deadReasons": {
-    "segment : HTTP 404": 1,
-    "variante : HTTP 404": 1,
-    "certificat invalide": 2
+    "HTTP 404": 5,
+    "variante : HTTP 404": 1
   },
   "geoBlocked": [
     {
@@ -1218,6 +1217,14 @@
       "code": 403
     },
     {
+      "name": "TVI Ficcao (720p)",
+      "country": "PT",
+      "group": "Series",
+      "url": "https://raw.githubusercontent.com/thomraider12/canaistvpt/main/m3u8s/tvificcao.m3u8",
+      "reason": "variante : HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
       "name": "Video Rola (1080p)",
       "country": "IT",
       "group": "Music",
@@ -1628,79 +1635,82 @@
   ],
   "pending": [
     {
-      "name": "A Haber (1080p)",
-      "country": "TR",
-      "group": "News",
-      "url": "https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/ahaber/ahaber.m3u8",
+      "name": "Kartoon Channel! (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://cdn-apse1-prod.tsv2.amagi.tv/linear/amg01076-lightningintern-kartoonchannel-samsungnz/playlist.m3u8",
       "reason": "délai dépassé"
     },
     {
-      "name": "Radiofreccia (1080p)",
-      "country": "IT",
-      "group": "Music",
-      "url": "https://dd782ed59e2a4e86aabf6fc508674b59.msvdn.net/live/S3160845/0tuSetc8UFkF/playlist_video.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "RumbaMix TV (720p)",
-      "country": "PE",
-      "group": "Music",
-      "url": "https://live-evg5.tv360.bitel.com.pe/bitel/mixtvSRT/playlist.m3u8",
-      "reason": "HTTP 504",
-      "code": 504
-    },
-    {
-      "name": "Super!",
-      "country": "IT",
-      "group": "Kids",
-      "url": "https://495c5a85d9074f29acffeaea9e0215eb.msvdn.net/super/super_main/super_main_hbbtv/playlist.m3u8",
-      "reason": "domaine introuvable"
-    },
-    {
-      "name": "Minika Go (720p)",
-      "country": "TR",
-      "group": "Kids",
-      "url": "https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/minikago/minikago.m3u8",
+      "name": "Epic Bhojpuri (1080p)",
+      "country": "IN",
+      "group": "Movies",
+      "url": "https://cc-8hy4a26pz2uos.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-8hy4a26pz2uos/playlist.m3u8",
       "reason": "délai dépassé"
     },
     {
-      "name": "TRT Diyanet Cocuk (720p)",
+      "name": "Epic Kids (1080p)",
+      "country": "IN",
+      "group": "Kids",
+      "url": "https://cc-t8lqe1o99pszu.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-t8lqe1o99pszu/playlist.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Minika Cocuk (720p)",
       "country": "TR",
       "group": "Kids",
-      "url": "https://tv-trtdiyanetcocuk.medya.trt.com.tr/master.m3u8",
+      "url": "https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/minikago_cocuk/minikago_cocuk.m3u8",
       "reason": "délai dépassé"
     }
   ],
   "dead": [
     {
-      "name": "Gospel Channel",
-      "country": "CD",
-      "group": "Afrique",
-      "url": "https://stream.berosat.live:19360/gospel-channel/gospel-channel.m3u8",
-      "reason": "segment : HTTP 404",
+      "name": "NBC 11 Baltimore MD (WBAL) (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://aegis-cloudfront-1.tubi.video/888aedca-93fb-4aed-bb92-4beb8f1323c6/playlist.m3u8",
+      "reason": "HTTP 404",
       "code": 404
     },
     {
-      "name": "Public Sénat",
-      "country": "FR",
-      "group": "France",
-      "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/publicsenat/publicsenat-dm.m3u8",
+      "name": "NBC 12 Winston-Salem NC (WXII) (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://aegis-cloudfront-1.tubi.video/54b357b4-bf4b-4356-97b4-b1acb6ab62f7/playlist.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Scripps News (1080p)",
+      "country": "US",
+      "group": "News",
+      "url": "https://aegis-cloudfront-1.tubi.video/7e1c26b7-7975-4240-9a4f-480eaa8f3ea4/playlist.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Real Madrid TV (726p)",
+      "country": "ES",
+      "group": "Sport",
+      "url": "https://rmtv.akamaized.net/hls/live/2043153/rmtv-es-web/master.m3u8",
       "reason": "variante : HTTP 404",
       "code": 404
     },
     {
-      "name": "التلفزة التونسية الوطنية 1",
-      "country": "TN",
-      "group": "Afrique",
-      "url": "https://sw1.tanitweb.net/TunisiaTV/_definst_/watania1/chunklist.m3u8",
-      "reason": "certificat invalide"
+      "name": "Teleticino",
+      "country": "CH",
+      "group": "France",
+      "url": "https://vstream-cdn.ch/hls/teleticino_720p/index.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
     },
     {
-      "name": "التلفزة التونسية الوطنية 2",
-      "country": "TN",
-      "group": "Afrique",
-      "url": "https://sw1.tanitweb.net/TunisiaTV/_definst_/watania2/playlist.m3u8?DVR",
-      "reason": "certificat invalide"
+      "name": "KNXV-TV 61.1 (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://aegis-cloudfront-1.tubi.video/e923f4ce-7229-4e01-a25e-d453993dab82/playlist.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
     }
   ]
 }

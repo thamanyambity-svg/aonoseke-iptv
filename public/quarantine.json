@@ -108,7 +108,7 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-13T23:03:12.094Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "HTTP 404"
   },
   {
@@ -169,20 +169,6 @@
   },
   {
     "channel": {
-      "name": "Akili Kids!",
-      "country": "KE",
-      "group": "Afrique",
-      "logo": "https://i.imgur.com/xFm2co6.png",
-      "url": "https://m6.livecdn.io/akilikids.co.ke/akilikids.smil/playlist.m3u8",
-      "source": "iptv-org/curated-2026-10"
-    },
-    "reason": "variante : HTTP 404",
-    "since": "2026-11-17T15:14:18.358Z",
-    "okRuns": 1,
-    "lastReason": "variante : HTTP 404"
-  },
-  {
-    "channel": {
       "name": "Jordan Songs (1080p)",
       "country": "JO",
       "group": "Music",
@@ -206,21 +192,8 @@
     },
     "reason": "segment : HTTP 404",
     "since": "2026-11-18T00:16:28.845Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "HTTP 503"
-  },
-  {
-    "channel": {
-      "name": "CCTV-1 综合",
-      "country": "CN",
-      "group": "China",
-      "logo": "",
-      "url": "http://69.30.245.50/live/cctv1.m3u8",
-      "source": "iptv-org (api/streams)"
-    },
-    "reason": "pas d'autorisation CORS (illisible dans le navigateur et l'appli)",
-    "since": "2026-11-18T00:16:28.845Z",
-    "okRuns": 1
   },
   {
     "channel": {
@@ -233,7 +206,7 @@
     },
     "reason": "segment : HTTP 404",
     "since": "2026-11-18T14:51:15.328Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -246,7 +219,7 @@
     },
     "reason": "variante : HTTP 404",
     "since": "2026-11-18T14:51:15.328Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -259,7 +232,8 @@
     },
     "reason": "certificat invalide",
     "since": "2026-11-18T14:51:15.328Z",
-    "okRuns": 0
+    "okRuns": 0,
+    "lastReason": "certificat invalide"
   },
   {
     "channel": {
@@ -272,6 +246,85 @@
     },
     "reason": "certificat invalide",
     "since": "2026-11-18T14:51:15.328Z",
+    "okRuns": 0,
+    "lastReason": "certificat invalide"
+  },
+  {
+    "channel": {
+      "name": "NBC 11 Baltimore MD (WBAL) (720p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/IPTV-org-logo.svg/240px-IPTV-org-logo.svg.png",
+      "url": "https://aegis-cloudfront-1.tubi.video/888aedca-93fb-4aed-bb92-4beb8f1323c6/playlist.m3u8",
+      "source": "iptv-org/us"
+    },
+    "reason": "HTTP 404",
+    "since": "2026-11-18T23:43:30.797Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "NBC 12 Winston-Salem NC (WXII) (720p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/NBC_logo_2022_%28vertical%29.svg/960px-NBC_logo_2022_%28vertical%29.svg.png",
+      "url": "https://aegis-cloudfront-1.tubi.video/54b357b4-bf4b-4356-97b4-b1acb6ab62f7/playlist.m3u8",
+      "source": "iptv-org/us"
+    },
+    "reason": "HTTP 404",
+    "since": "2026-11-18T23:43:30.797Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "Scripps News (1080p)",
+      "country": "US",
+      "group": "News",
+      "logo": "https://i.imgur.com/UfN6aAi.png",
+      "url": "https://aegis-cloudfront-1.tubi.video/7e1c26b7-7975-4240-9a4f-480eaa8f3ea4/playlist.m3u8",
+      "source": "iptv-org/curated-2026-10"
+    },
+    "reason": "HTTP 404",
+    "since": "2026-11-18T23:43:30.797Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "Real Madrid TV (726p)",
+      "country": "ES",
+      "group": "Sport",
+      "logo": "https://i.imgur.com/5pMo7dL.png",
+      "url": "https://rmtv.akamaized.net/hls/live/2043153/rmtv-es-web/master.m3u8",
+      "source": "iptv-org/curated-2026-10b"
+    },
+    "reason": "variante : HTTP 404",
+    "since": "2026-11-18T23:43:30.797Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "Teleticino",
+      "country": "CH",
+      "group": "France",
+      "logo": "https://i.imgur.com/zm2ruqz.png",
+      "url": "https://vstream-cdn.ch/hls/teleticino_720p/index.m3u8",
+      "source": "free-tv-2026-10"
+    },
+    "reason": "HTTP 404",
+    "since": "2026-11-18T23:43:30.797Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "KNXV-TV 61.1 (720p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/43s7KXt.png",
+      "url": "https://aegis-cloudfront-1.tubi.video/e923f4ce-7229-4e01-a25e-d453993dab82/playlist.m3u8",
+      "source": "iptv-org/api-2026-10-us"
+    },
+    "reason": "HTTP 404",
+    "since": "2026-11-18T23:43:30.797Z",
     "okRuns": 0
   }
 ]
