@@ -141,20 +141,6 @@
   },
   {
     "channel": {
-      "name": "TeleHit (576p)",
-      "country": "MX",
-      "group": "Latino",
-      "logo": "https://i.imgur.com/NVxHxJn.png",
-      "url": "http://200.115.120.1:8000/play/ca048/index.m3u8",
-      "source": "iptv-org/api-2026-10-http-android"
-    },
-    "reason": "HTTP 404",
-    "since": "2026-11-15T22:18:35.058Z",
-    "okRuns": 1,
-    "lastReason": "HTTP 404"
-  },
-  {
-    "channel": {
       "name": "Sportitalia (1080p)",
       "country": "IT",
       "group": "Sport",
@@ -192,7 +178,7 @@
     },
     "reason": "variante : HTTP 404",
     "since": "2026-11-17T15:14:18.358Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "variante : HTTP 404"
   },
   {
@@ -220,7 +206,8 @@
     },
     "reason": "segment : HTTP 404",
     "since": "2026-11-18T00:16:28.845Z",
-    "okRuns": 0
+    "okRuns": 0,
+    "lastReason": "HTTP 503"
   },
   {
     "channel": {
@@ -233,6 +220,58 @@
     },
     "reason": "pas d'autorisation CORS (illisible dans le navigateur et l'appli)",
     "since": "2026-11-18T00:16:28.845Z",
+    "okRuns": 1
+  },
+  {
+    "channel": {
+      "name": "Gospel Channel",
+      "country": "CD",
+      "group": "Afrique",
+      "logo": "",
+      "url": "https://stream.berosat.live:19360/gospel-channel/gospel-channel.m3u8",
+      "source": "github.com/bermufine/rdcongo"
+    },
+    "reason": "segment : HTTP 404",
+    "since": "2026-11-18T14:51:15.328Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "Public Sénat",
+      "country": "FR",
+      "group": "France",
+      "logo": "",
+      "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/publicsenat/publicsenat-dm.m3u8",
+      "source": "github.com/Paradise-91/ParaTV"
+    },
+    "reason": "variante : HTTP 404",
+    "since": "2026-11-18T14:51:15.328Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "التلفزة التونسية الوطنية 1",
+      "country": "TN",
+      "group": "Afrique",
+      "logo": "",
+      "url": "https://sw1.tanitweb.net/TunisiaTV/_definst_/watania1/chunklist.m3u8",
+      "source": "iptv-org (api/streams)"
+    },
+    "reason": "certificat invalide",
+    "since": "2026-11-18T14:51:15.328Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "التلفزة التونسية الوطنية 2",
+      "country": "TN",
+      "group": "Afrique",
+      "logo": "",
+      "url": "https://sw1.tanitweb.net/TunisiaTV/_definst_/watania2/playlist.m3u8?DVR",
+      "source": "iptv-org (api/streams)"
+    },
+    "reason": "certificat invalide",
+    "since": "2026-11-18T14:51:15.328Z",
     "okRuns": 0
   }
 ]

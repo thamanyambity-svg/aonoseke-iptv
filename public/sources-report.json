@@ -1,19 +1,20 @@
 {
-  "generatedAt": "2026-11-18T00:16:28.845Z",
+  "generatedAt": "2026-11-18T14:51:15.328Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée. « dead » = mise en quarantaine : retestée à chaque passage et remise dans la playlist après deux succès de suite.",
   "counts": {
-    "checked": 1230,
-    "ok": 1025,
-    "geoBlocked": 202,
-    "pending": 2,
-    "dead": 2,
+    "checked": 1229,
+    "ok": 1019,
+    "geoBlocked": 201,
+    "pending": 6,
+    "dead": 4,
     "promotedBackups": 0,
     "restored": 1,
-    "quarantined": 17
+    "quarantined": 20
   },
   "deadReasons": {
     "segment : HTTP 404": 1,
-    "pas d'autorisation CORS (illisible dans le navigateur et l'appli)": 1
+    "variante : HTTP 404": 1,
+    "certificat invalide": 2
   },
   "geoBlocked": [
     {
@@ -1217,14 +1218,6 @@
       "code": 403
     },
     {
-      "name": "TVI Ficcao (720p)",
-      "country": "PT",
-      "group": "Series",
-      "url": "https://raw.githubusercontent.com/thomraider12/canaistvpt/main/m3u8s/tvificcao.m3u8",
-      "reason": "variante : HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "Video Rola (1080p)",
       "country": "IT",
       "group": "Music",
@@ -1635,6 +1628,67 @@
   ],
   "pending": [
     {
+      "name": "A Haber (1080p)",
+      "country": "TR",
+      "group": "News",
+      "url": "https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/ahaber/ahaber.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Radiofreccia (1080p)",
+      "country": "IT",
+      "group": "Music",
+      "url": "https://dd782ed59e2a4e86aabf6fc508674b59.msvdn.net/live/S3160845/0tuSetc8UFkF/playlist_video.m3u8",
+      "reason": "domaine introuvable"
+    },
+    {
+      "name": "RumbaMix TV (720p)",
+      "country": "PE",
+      "group": "Music",
+      "url": "https://live-evg5.tv360.bitel.com.pe/bitel/mixtvSRT/playlist.m3u8",
+      "reason": "HTTP 504",
+      "code": 504
+    },
+    {
+      "name": "Super!",
+      "country": "IT",
+      "group": "Kids",
+      "url": "https://495c5a85d9074f29acffeaea9e0215eb.msvdn.net/super/super_main/super_main_hbbtv/playlist.m3u8",
+      "reason": "domaine introuvable"
+    },
+    {
+      "name": "Minika Go (720p)",
+      "country": "TR",
+      "group": "Kids",
+      "url": "https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/minikago/minikago.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "TRT Diyanet Cocuk (720p)",
+      "country": "TR",
+      "group": "Kids",
+      "url": "https://tv-trtdiyanetcocuk.medya.trt.com.tr/master.m3u8",
+      "reason": "délai dépassé"
+    }
+  ],
+  "dead": [
+    {
+      "name": "Gospel Channel",
+      "country": "CD",
+      "group": "Afrique",
+      "url": "https://stream.berosat.live:19360/gospel-channel/gospel-channel.m3u8",
+      "reason": "segment : HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Public Sénat",
+      "country": "FR",
+      "group": "France",
+      "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/publicsenat/publicsenat-dm.m3u8",
+      "reason": "variante : HTTP 404",
+      "code": 404
+    },
+    {
       "name": "التلفزة التونسية الوطنية 1",
       "country": "TN",
       "group": "Afrique",
@@ -1647,24 +1701,6 @@
       "group": "Afrique",
       "url": "https://sw1.tanitweb.net/TunisiaTV/_definst_/watania2/playlist.m3u8?DVR",
       "reason": "certificat invalide"
-    }
-  ],
-  "dead": [
-    {
-      "name": "Sportivnyy (1080p)",
-      "country": "RU",
-      "group": "Sport",
-      "url": "https://live-3.otcnet.ru/sportivny/index.m3u8",
-      "reason": "segment : HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "CCTV-1 综合",
-      "country": "CN",
-      "group": "China",
-      "url": "http://69.30.245.50/live/cctv1.m3u8",
-      "reason": "pas d'autorisation CORS (illisible dans le navigateur et l'appli)",
-      "code": 200
     }
   ]
 }
