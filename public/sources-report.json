@@ -1,18 +1,19 @@
 {
-  "generatedAt": "2026-11-17T15:14:18.358Z",
+  "generatedAt": "2026-11-18T00:16:28.845Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée. « dead » = mise en quarantaine : retestée à chaque passage et remise dans la playlist après deux succès de suite.",
   "counts": {
     "checked": 1230,
     "ok": 1025,
-    "geoBlocked": 200,
-    "pending": 5,
+    "geoBlocked": 202,
+    "pending": 2,
     "dead": 2,
     "promotedBackups": 0,
-    "restored": 2,
-    "quarantined": 16
+    "restored": 1,
+    "quarantined": 17
   },
   "deadReasons": {
-    "variante : HTTP 404": 2
+    "segment : HTTP 404": 1,
+    "pas d'autorisation CORS (illisible dans le navigateur et l'appli)": 1
   },
   "geoBlocked": [
     {
@@ -600,6 +601,14 @@
       "code": 403
     },
     {
+      "name": "Canal 9 (1080p)",
+      "country": "CH",
+      "group": "France",
+      "url": "https://livehd.vedge.infomaniak.com/livecast/livehd/master.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
       "name": "Canal Z (1080p)",
       "country": "BE",
       "group": "France",
@@ -644,6 +653,14 @@
       "country": "BE",
       "group": "France",
       "url": "https://tvlocales-live.freecaster.com/rtc/95d2f6ec-22f7-4027-b23d-d5372116b2ad/95d2f6ec-22f7-4027-b23d-d5372116b2ad.isml/master.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Rhone TV (1080p)",
+      "country": "CH",
+      "group": "France",
+      "url": "https://edge14.vedge.infomaniak.com/livecast/ik:rhonetv/manifest.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -716,6 +733,14 @@
       "country": "FR",
       "group": "France",
       "url": "http://145.239.5.177/361/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Leman Bleu (1080p)",
+      "country": "CH",
+      "group": "France",
+      "url": "http://livevideo.infomaniak.com/streaming/livecast/naxoo/playlist.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -1192,6 +1217,14 @@
       "code": 403
     },
     {
+      "name": "TVI Ficcao (720p)",
+      "country": "PT",
+      "group": "Series",
+      "url": "https://raw.githubusercontent.com/thomraider12/canaistvpt/main/m3u8s/tvificcao.m3u8",
+      "reason": "variante : HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
       "name": "Video Rola (1080p)",
       "country": "IT",
       "group": "Music",
@@ -1344,14 +1377,6 @@
       "code": 403
     },
     {
-      "name": "TRT Cocuk (1440p)",
-      "country": "TR",
-      "group": "Kids",
-      "url": "https://tv-trtcocuk.medya.trt.com.tr/master.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "YleX (720p)",
       "country": "FI",
       "group": "Music",
@@ -1390,14 +1415,6 @@
       "url": "https://cbcrclinear-tor.akamaized.net/hls/live/2042757/CBCRCLINEAR_TOR_3/master5.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
-    },
-    {
-      "name": "CCTV-1 综合",
-      "country": "CN",
-      "group": "China",
-      "url": "http://69.30.245.50/live/cctv1.m3u8",
-      "reason": "message « indisponible dans votre pays »",
-      "code": 200
     },
     {
       "name": "CCTV-13 新闻",
@@ -1618,57 +1635,36 @@
   ],
   "pending": [
     {
-      "name": "Coptic TV (720p)",
-      "country": "EG",
+      "name": "التلفزة التونسية الوطنية 1",
+      "country": "TN",
       "group": "Afrique",
-      "url": "https://ctv.icopts.app/CTV/index.fmp4.m3u8",
-      "reason": "délai dépassé"
+      "url": "https://sw1.tanitweb.net/TunisiaTV/_definst_/watania1/chunklist.m3u8",
+      "reason": "certificat invalide"
     },
     {
-      "name": "CMC-USA Country Music Channel (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://hwlive.streamingmediahosting.com/14215-live/0_obd393sh/playlist.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "KiKA (1080p)",
-      "country": "DE",
-      "group": "Kids",
-      "url": "https://kikageohls.akamaized.net/hls/live/2022693/livetvkika_de/master.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "La Kalle (720p)",
-      "country": "CO",
-      "group": "Music",
-      "url": "https://mdstrm.com/live-stream-playlist/58d191f07290fbb058025843.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Latina Clasicos (1080p)",
-      "country": "PE",
-      "group": "Series",
-      "url": "https://redirector.rudo.video/hls-video/plus226/latina2/latina2.smil/playlist.m3u8",
-      "reason": "délai dépassé"
+      "name": "التلفزة التونسية الوطنية 2",
+      "country": "TN",
+      "group": "Afrique",
+      "url": "https://sw1.tanitweb.net/TunisiaTV/_definst_/watania2/playlist.m3u8?DVR",
+      "reason": "certificat invalide"
     }
   ],
   "dead": [
     {
-      "name": "Akili Kids!",
-      "country": "KE",
-      "group": "Afrique",
-      "url": "https://m6.livecdn.io/akilikids.co.ke/akilikids.smil/playlist.m3u8",
-      "reason": "variante : HTTP 404",
+      "name": "Sportivnyy (1080p)",
+      "country": "RU",
+      "group": "Sport",
+      "url": "https://live-3.otcnet.ru/sportivny/index.m3u8",
+      "reason": "segment : HTTP 404",
       "code": 404
     },
     {
-      "name": "Jordan Songs (1080p)",
-      "country": "JO",
-      "group": "Music",
-      "url": "https://playlist.fasttvcdn.com/pl/cc0blorawy1ibohhrupraa/Song/playlist.m3u8",
-      "reason": "variante : HTTP 404",
-      "code": 404
+      "name": "CCTV-1 综合",
+      "country": "CN",
+      "group": "China",
+      "url": "http://69.30.245.50/live/cctv1.m3u8",
+      "reason": "pas d'autorisation CORS (illisible dans le navigateur et l'appli)",
+      "code": 200
     }
   ]
 }
