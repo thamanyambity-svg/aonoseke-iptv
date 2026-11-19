@@ -80,7 +80,7 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-13T13:40:59.138Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "HTTP 404"
   },
   {
@@ -164,7 +164,7 @@
     },
     "reason": "variante : HTTP 404",
     "since": "2026-11-17T15:14:18.358Z",
-    "okRuns": 1,
+    "okRuns": 0,
     "lastReason": "variante : HTTP 404"
   },
   {
@@ -248,20 +248,8 @@
     },
     "reason": "variante : HTTP 404",
     "since": "2026-11-18T23:43:30.797Z",
-    "okRuns": 1
-  },
-  {
-    "channel": {
-      "name": "Teleticino",
-      "country": "CH",
-      "group": "France",
-      "logo": "https://i.imgur.com/zm2ruqz.png",
-      "url": "https://vstream-cdn.ch/hls/teleticino_720p/index.m3u8",
-      "source": "free-tv-2026-10"
-    },
-    "reason": "HTTP 404",
-    "since": "2026-11-18T23:43:30.797Z",
-    "okRuns": 1
+    "okRuns": 0,
+    "lastReason": "variante : HTTP 404"
   },
   {
     "channel": {
@@ -288,7 +276,8 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-19T05:13:09.599Z",
-    "okRuns": 0
+    "okRuns": 0,
+    "lastReason": "HTTP 404"
   },
   {
     "channel": {
@@ -301,7 +290,8 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-19T05:13:09.599Z",
-    "okRuns": 0
+    "okRuns": 0,
+    "lastReason": "HTTP 404"
   },
   {
     "channel": {
@@ -314,7 +304,8 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-19T05:13:09.599Z",
-    "okRuns": 0
+    "okRuns": 0,
+    "lastReason": "HTTP 404"
   },
   {
     "channel": {
@@ -327,7 +318,8 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-19T05:13:09.599Z",
-    "okRuns": 0
+    "okRuns": 0,
+    "lastReason": "HTTP 404"
   },
   {
     "channel": {
@@ -340,7 +332,8 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-19T05:13:09.599Z",
-    "okRuns": 0
+    "okRuns": 0,
+    "lastReason": "HTTP 404"
   },
   {
     "channel": {
@@ -353,6 +346,33 @@
     },
     "reason": "segment : HTTP 404",
     "since": "2026-11-19T05:13:09.599Z",
+    "okRuns": 1
+  },
+  {
+    "channel": {
+      "name": "La Une",
+      "country": "BE",
+      "group": "Belgium",
+      "logo": "",
+      "url": "http://41.205.93.154/LA-UNE/index.m3u8",
+      "source": "iptv-org (api/streams)"
+    },
+    "reason": "HTTP 404",
+    "since": "2026-11-19T14:57:23.118Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "PBC Tapesh TV (720p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/50JzsmH.png",
+      "url": "https://iptv.tapesh.tv/tapesh/playlist.m3u8",
+      "source": "iptv-org/api-2026-10-us",
+      "restoredAt": "2026-11-17T15:14:18.358Z"
+    },
+    "reason": "HTTP 404",
+    "since": "2026-11-19T14:57:23.118Z",
     "okRuns": 0
   }
 ]

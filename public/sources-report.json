@@ -1,19 +1,18 @@
 {
-  "generatedAt": "2026-11-19T05:13:09.599Z",
+  "generatedAt": "2026-11-19T14:57:23.118Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée. « dead » = mise en quarantaine : retestée à chaque passage et remise dans la playlist après deux succès de suite.",
   "counts": {
-    "checked": 1222,
-    "ok": 1017,
+    "checked": 1220,
+    "ok": 1013,
     "geoBlocked": 203,
-    "pending": 0,
-    "dead": 6,
+    "pending": 3,
+    "dead": 2,
     "promotedBackups": 0,
-    "restored": 4,
-    "quarantined": 26
+    "restored": 1,
+    "quarantined": 27
   },
   "deadReasons": {
-    "HTTP 404": 5,
-    "segment : HTTP 404": 1
+    "HTTP 404": 2
   },
   "geoBlocked": [
     {
@@ -545,14 +544,6 @@
       "code": 403
     },
     {
-      "name": "Pasiones Latin America (1080p)",
-      "country": "US",
-      "group": "Latino",
-      "url": "http://15.204.246.24:8080/PasionesHD/index.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "RMC Life (1080p)",
       "country": "FR",
       "group": "France",
@@ -789,6 +780,14 @@
       "country": "US",
       "group": "USA",
       "url": "https://reflect-tuolumne.cablecast.tv/live-3/live/stream-1/live.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "ARTN TV (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://streamer1.connectto.com/ARTN_mobile/index.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -1641,54 +1640,45 @@
       "code": 200
     }
   ],
-  "pending": [],
+  "pending": [
+    {
+      "name": "Hitradio O3 (720p)",
+      "country": "AT",
+      "group": "Music",
+      "url": "https://studiocam-oe3.mdn.ors.at/orf/studiocam_oe3/q6a/master.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "PowerTurk Slow (1080p)",
+      "country": "TR",
+      "group": "Music",
+      "url": "https://livetv.powerapp.com.tr/pturkslow/slow.smil/playlist.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Sportivnyy (1080p)",
+      "country": "RU",
+      "group": "Sport",
+      "url": "https://live-3.otcnet.ru/sportivny/index.m3u8",
+      "reason": "HTTP 503",
+      "code": 503
+    }
+  ],
   "dead": [
     {
-      "name": "The Johnny Carson Show (720p)",
-      "country": "US",
-      "group": "Series",
-      "url": "https://aegis-cloudfront-1.tubi.video/475550ae-8708-46a5-a7c3-54acb3d91480/playlist.m3u8",
+      "name": "La Une",
+      "country": "BE",
+      "group": "Belgium",
+      "url": "http://41.205.93.154/LA-UNE/index.m3u8",
       "reason": "HTTP 404",
       "code": 404
     },
     {
-      "name": "ABC News Live (720p)",
-      "country": "US",
-      "group": "News",
-      "url": "https://aegis-cloudfront-1.tubi.video/d6cbb0de-68e4-4f3b-82f9-bf5d526e0bde/index.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Gordon Ramsay's Hell's Kitchen (720p)",
+      "name": "PBC Tapesh TV (720p)",
       "country": "US",
       "group": "USA",
-      "url": "https://aegis-cloudfront-1.tubi.video/c8364f36-c60b-4a39-8d86-0b92db4611c0/index.m3u8",
+      "url": "https://iptv.tapesh.tv/tapesh/playlist.m3u8",
       "reason": "HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Wanted: Dead or Alive (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://aegis-cloudfront-1.tubi.video/d5171dc7-f8c6-469c-81eb-e1ffaaed5721/playlist.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Buzzr (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://aegis-cloudfront-1.tubi.video/d4038326-a3e3-4aba-b1f1-f0526c912c74/playlist.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "TJK TV (1080p)",
-      "country": "TR",
-      "group": "Sport",
-      "url": "https://tjktv-live.tjk.org/tjktv.m3u8",
-      "reason": "segment : HTTP 404",
       "code": 404
     }
   ]
