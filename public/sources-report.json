@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-11-18T23:43:30.797Z",
+  "generatedAt": "2026-11-19T05:13:09.599Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée. « dead » = mise en quarantaine : retestée à chaque passage et remise dans la playlist après deux succès de suite.",
   "counts": {
-    "checked": 1226,
-    "ok": 1016,
-    "geoBlocked": 202,
-    "pending": 4,
+    "checked": 1222,
+    "ok": 1017,
+    "geoBlocked": 203,
+    "pending": 0,
     "dead": 6,
     "promotedBackups": 0,
-    "restored": 2,
-    "quarantined": 24
+    "restored": 4,
+    "quarantined": 26
   },
   "deadReasons": {
     "HTTP 404": 5,
-    "variante : HTTP 404": 1
+    "segment : HTTP 404": 1
   },
   "geoBlocked": [
     {
@@ -545,6 +545,14 @@
       "code": 403
     },
     {
+      "name": "Pasiones Latin America (1080p)",
+      "country": "US",
+      "group": "Latino",
+      "url": "http://15.204.246.24:8080/PasionesHD/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
       "name": "RMC Life (1080p)",
       "country": "FR",
       "group": "France",
@@ -781,14 +789,6 @@
       "country": "US",
       "group": "USA",
       "url": "https://reflect-tuolumne.cablecast.tv/live-3/live/stream-1/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "ARTN TV (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://streamer1.connectto.com/ARTN_mobile/index.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -1217,14 +1217,6 @@
       "code": 403
     },
     {
-      "name": "TVI Ficcao (720p)",
-      "country": "PT",
-      "group": "Series",
-      "url": "https://raw.githubusercontent.com/thomraider12/canaistvpt/main/m3u8s/tvificcao.m3u8",
-      "reason": "variante : HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "Video Rola (1080p)",
       "country": "IT",
       "group": "Music",
@@ -1373,6 +1365,14 @@
       "country": "IN",
       "group": "Music",
       "url": "https://prod-runn.cdn.runn.tv/shemaroo/stream/smrfgn/playlist.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "TRT Cocuk (1440p)",
+      "country": "TR",
+      "group": "Kids",
+      "url": "https://tv-trtcocuk.medya.trt.com.tr/master.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -1631,85 +1631,64 @@
       "url": "https://reflect-bayarea.cablecast.tv/live-6/live/live.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
+    },
+    {
+      "name": "CCTV-1 综合",
+      "country": "CN",
+      "group": "China",
+      "url": "http://69.30.245.50/live/cctv1.m3u8",
+      "reason": "message « indisponible dans votre pays »",
+      "code": 200
     }
   ],
-  "pending": [
-    {
-      "name": "Kartoon Channel! (1080p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://cdn-apse1-prod.tsv2.amagi.tv/linear/amg01076-lightningintern-kartoonchannel-samsungnz/playlist.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Epic Bhojpuri (1080p)",
-      "country": "IN",
-      "group": "Movies",
-      "url": "https://cc-8hy4a26pz2uos.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-8hy4a26pz2uos/playlist.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Epic Kids (1080p)",
-      "country": "IN",
-      "group": "Kids",
-      "url": "https://cc-t8lqe1o99pszu.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-t8lqe1o99pszu/playlist.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Minika Cocuk (720p)",
-      "country": "TR",
-      "group": "Kids",
-      "url": "https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/minikago_cocuk/minikago_cocuk.m3u8",
-      "reason": "délai dépassé"
-    }
-  ],
+  "pending": [],
   "dead": [
     {
-      "name": "NBC 11 Baltimore MD (WBAL) (720p)",
+      "name": "The Johnny Carson Show (720p)",
       "country": "US",
-      "group": "USA",
-      "url": "https://aegis-cloudfront-1.tubi.video/888aedca-93fb-4aed-bb92-4beb8f1323c6/playlist.m3u8",
+      "group": "Series",
+      "url": "https://aegis-cloudfront-1.tubi.video/475550ae-8708-46a5-a7c3-54acb3d91480/playlist.m3u8",
       "reason": "HTTP 404",
       "code": 404
     },
     {
-      "name": "NBC 12 Winston-Salem NC (WXII) (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://aegis-cloudfront-1.tubi.video/54b357b4-bf4b-4356-97b4-b1acb6ab62f7/playlist.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Scripps News (1080p)",
+      "name": "ABC News Live (720p)",
       "country": "US",
       "group": "News",
-      "url": "https://aegis-cloudfront-1.tubi.video/7e1c26b7-7975-4240-9a4f-480eaa8f3ea4/playlist.m3u8",
+      "url": "https://aegis-cloudfront-1.tubi.video/d6cbb0de-68e4-4f3b-82f9-bf5d526e0bde/index.m3u8",
       "reason": "HTTP 404",
       "code": 404
     },
     {
-      "name": "Real Madrid TV (726p)",
-      "country": "ES",
-      "group": "Sport",
-      "url": "https://rmtv.akamaized.net/hls/live/2043153/rmtv-es-web/master.m3u8",
-      "reason": "variante : HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Teleticino",
-      "country": "CH",
-      "group": "France",
-      "url": "https://vstream-cdn.ch/hls/teleticino_720p/index.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "KNXV-TV 61.1 (720p)",
+      "name": "Gordon Ramsay's Hell's Kitchen (720p)",
       "country": "US",
       "group": "USA",
-      "url": "https://aegis-cloudfront-1.tubi.video/e923f4ce-7229-4e01-a25e-d453993dab82/playlist.m3u8",
+      "url": "https://aegis-cloudfront-1.tubi.video/c8364f36-c60b-4a39-8d86-0b92db4611c0/index.m3u8",
       "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Wanted: Dead or Alive (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://aegis-cloudfront-1.tubi.video/d5171dc7-f8c6-469c-81eb-e1ffaaed5721/playlist.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Buzzr (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://aegis-cloudfront-1.tubi.video/d4038326-a3e3-4aba-b1f1-f0526c912c74/playlist.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "TJK TV (1080p)",
+      "country": "TR",
+      "group": "Sport",
+      "url": "https://tjktv-live.tjk.org/tjktv.m3u8",
+      "reason": "segment : HTTP 404",
       "code": 404
     }
   ]

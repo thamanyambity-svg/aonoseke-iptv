@@ -99,20 +99,6 @@
   },
   {
     "channel": {
-      "name": "Impact Network (720p)",
-      "country": "US",
-      "group": "USA",
-      "logo": "https://i.imgur.com/57NH9sS.png",
-      "url": "https://edge1.lifestreamcdn.com/live/impactroku1/index.m3u8",
-      "source": "iptv-org/api-2026-10-us"
-    },
-    "reason": "HTTP 404",
-    "since": "2026-11-13T23:03:12.094Z",
-    "okRuns": 1,
-    "lastReason": "HTTP 404"
-  },
-  {
-    "channel": {
       "name": "Ausbiz",
       "country": "AU",
       "group": "News",
@@ -178,48 +164,8 @@
     },
     "reason": "variante : HTTP 404",
     "since": "2026-11-17T15:14:18.358Z",
-    "okRuns": 0,
-    "lastReason": "variante : HTTP 404"
-  },
-  {
-    "channel": {
-      "name": "Sportivnyy (1080p)",
-      "country": "RU",
-      "group": "Sport",
-      "logo": "https://i.imgur.com/ujS6mMo.png",
-      "url": "https://live-3.otcnet.ru/sportivny/index.m3u8",
-      "source": "iptv-org/api-2026-10-thematique"
-    },
-    "reason": "segment : HTTP 404",
-    "since": "2026-11-18T00:16:28.845Z",
     "okRuns": 1,
-    "lastReason": "HTTP 503"
-  },
-  {
-    "channel": {
-      "name": "Gospel Channel",
-      "country": "CD",
-      "group": "Afrique",
-      "logo": "",
-      "url": "https://stream.berosat.live:19360/gospel-channel/gospel-channel.m3u8",
-      "source": "github.com/bermufine/rdcongo"
-    },
-    "reason": "segment : HTTP 404",
-    "since": "2026-11-18T14:51:15.328Z",
-    "okRuns": 1
-  },
-  {
-    "channel": {
-      "name": "Public Sénat",
-      "country": "FR",
-      "group": "France",
-      "logo": "",
-      "url": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/publicsenat/publicsenat-dm.m3u8",
-      "source": "github.com/Paradise-91/ParaTV"
-    },
-    "reason": "variante : HTTP 404",
-    "since": "2026-11-18T14:51:15.328Z",
-    "okRuns": 1
+    "lastReason": "variante : HTTP 404"
   },
   {
     "channel": {
@@ -260,7 +206,8 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-18T23:43:30.797Z",
-    "okRuns": 0
+    "okRuns": 0,
+    "lastReason": "HTTP 404"
   },
   {
     "channel": {
@@ -273,7 +220,8 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-18T23:43:30.797Z",
-    "okRuns": 0
+    "okRuns": 0,
+    "lastReason": "HTTP 404"
   },
   {
     "channel": {
@@ -286,7 +234,8 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-18T23:43:30.797Z",
-    "okRuns": 0
+    "okRuns": 0,
+    "lastReason": "HTTP 404"
   },
   {
     "channel": {
@@ -299,7 +248,7 @@
     },
     "reason": "variante : HTTP 404",
     "since": "2026-11-18T23:43:30.797Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -312,7 +261,7 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-18T23:43:30.797Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -325,6 +274,85 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-18T23:43:30.797Z",
+    "okRuns": 0,
+    "lastReason": "HTTP 404"
+  },
+  {
+    "channel": {
+      "name": "The Johnny Carson Show (720p)",
+      "country": "US",
+      "group": "Series",
+      "logo": "https://i.imgur.com/KBTqpJ7.png",
+      "url": "https://aegis-cloudfront-1.tubi.video/475550ae-8708-46a5-a7c3-54acb3d91480/playlist.m3u8",
+      "source": "iptv-org"
+    },
+    "reason": "HTTP 404",
+    "since": "2026-11-19T05:13:09.599Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "ABC News Live (720p)",
+      "country": "US",
+      "group": "News",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/ABC_News_Live_logo_2021.svg/960px-ABC_News_Live_logo_2021.svg.png",
+      "url": "https://aegis-cloudfront-1.tubi.video/d6cbb0de-68e4-4f3b-82f9-bf5d526e0bde/index.m3u8",
+      "source": "iptv-org/curated-2026-10"
+    },
+    "reason": "HTTP 404",
+    "since": "2026-11-19T05:13:09.599Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "Gordon Ramsay's Hell's Kitchen (720p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/WgN4T18.png",
+      "url": "https://aegis-cloudfront-1.tubi.video/c8364f36-c60b-4a39-8d86-0b92db4611c0/index.m3u8",
+      "source": "iptv-org/api-2026-10"
+    },
+    "reason": "HTTP 404",
+    "since": "2026-11-19T05:13:09.599Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "Wanted: Dead or Alive (720p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/vaSXaFp.png",
+      "url": "https://aegis-cloudfront-1.tubi.video/d5171dc7-f8c6-469c-81eb-e1ffaaed5721/playlist.m3u8",
+      "source": "iptv-org/api-2026-10"
+    },
+    "reason": "HTTP 404",
+    "since": "2026-11-19T05:13:09.599Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "Buzzr (720p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/122019/buzzr-01.png?XpxREagj3UuXaSkmg8dIrgARuDpSggra&itok=lEDMDvuS",
+      "url": "https://aegis-cloudfront-1.tubi.video/d4038326-a3e3-4aba-b1f1-f0526c912c74/playlist.m3u8",
+      "source": "iptv-org/api-2026-10-us"
+    },
+    "reason": "HTTP 404",
+    "since": "2026-11-19T05:13:09.599Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "TJK TV (1080p)",
+      "country": "TR",
+      "group": "Sport",
+      "logo": "https://i.imgur.com/3zHdkYG.png",
+      "url": "https://tjktv-live.tjk.org/tjktv.m3u8",
+      "source": "iptv-org/api-2026-10-thematique"
+    },
+    "reason": "segment : HTTP 404",
+    "since": "2026-11-19T05:13:09.599Z",
     "okRuns": 0
   }
 ]
