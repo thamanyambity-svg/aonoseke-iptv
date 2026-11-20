@@ -67,7 +67,7 @@
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-12T14:20:37.280Z",
     "okRuns": 0,
-    "lastReason": "HTTP 500"
+    "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
     "channel": {
@@ -127,34 +127,6 @@
   },
   {
     "channel": {
-      "name": "التلفزة التونسية الوطنية 1",
-      "country": "TN",
-      "group": "Afrique",
-      "logo": "",
-      "url": "https://sw1.tanitweb.net/TunisiaTV/_definst_/watania1/chunklist.m3u8",
-      "source": "iptv-org (api/streams)"
-    },
-    "reason": "certificat invalide",
-    "since": "2026-11-18T14:51:15.328Z",
-    "okRuns": 1,
-    "lastReason": "certificat invalide"
-  },
-  {
-    "channel": {
-      "name": "التلفزة التونسية الوطنية 2",
-      "country": "TN",
-      "group": "Afrique",
-      "logo": "",
-      "url": "https://sw1.tanitweb.net/TunisiaTV/_definst_/watania2/playlist.m3u8?DVR",
-      "source": "iptv-org (api/streams)"
-    },
-    "reason": "certificat invalide",
-    "since": "2026-11-18T14:51:15.328Z",
-    "okRuns": 1,
-    "lastReason": "certificat invalide"
-  },
-  {
-    "channel": {
       "name": "NBC 11 Baltimore MD (WBAL) (720p)",
       "country": "US",
       "group": "USA",
@@ -206,7 +178,7 @@
     },
     "reason": "variante : HTTP 404",
     "since": "2026-11-18T23:43:30.797Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "variante : HTTP 404"
   },
   {
@@ -305,7 +277,7 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-19T14:57:23.118Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "HTTP 404"
   },
   {
@@ -319,21 +291,8 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-20T00:03:17.995Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "HTTP 404"
-  },
-  {
-    "channel": {
-      "name": "TV Mulhouse (1080p)",
-      "country": "FR",
-      "group": "France",
-      "logo": "https://academie.kasumay.international/ico/radiomulhouse.png",
-      "url": "http://194.163.157.137:8080/hls/radiomulhouse.m3u8",
-      "source": "iptv-org/api-2026-10-http-android"
-    },
-    "reason": "HTTP 404",
-    "since": "2026-11-20T00:03:17.995Z",
-    "okRuns": 1
   },
   {
     "channel": {
@@ -346,22 +305,8 @@
     },
     "reason": "CORS refusé pour l'appli Android",
     "since": "2026-11-20T00:03:17.995Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "HTTP 500"
-  },
-  {
-    "channel": {
-      "name": "CCTV-1 综合",
-      "country": "CN",
-      "group": "China",
-      "logo": "",
-      "url": "http://69.30.245.50/live/cctv1.m3u8",
-      "source": "iptv-org (api/streams)",
-      "restoredAt": "2026-11-18T23:43:30.797Z"
-    },
-    "reason": "pas d'autorisation CORS (illisible dans le navigateur et l'appli)",
-    "since": "2026-11-20T00:03:17.995Z",
-    "okRuns": 1
   },
   {
     "channel": {
@@ -374,7 +319,7 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-20T14:39:29.789Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -387,7 +332,8 @@
     },
     "reason": "aucun segment dans la liste",
     "since": "2026-11-20T14:39:29.789Z",
-    "okRuns": 0
+    "okRuns": 0,
+    "lastReason": "aucun segment dans la liste"
   },
   {
     "channel": {
@@ -400,7 +346,8 @@
     },
     "reason": "segment : HTTP 404",
     "since": "2026-11-20T14:39:29.789Z",
-    "okRuns": 0
+    "okRuns": 0,
+    "lastReason": "segment : HTTP 404"
   },
   {
     "channel": {
@@ -414,7 +361,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-20T14:39:29.789Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -428,7 +375,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-20T14:39:29.789Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -442,7 +389,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-20T14:39:29.789Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -456,7 +403,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-20T14:39:29.789Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -470,7 +417,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-20T14:39:29.789Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -484,7 +431,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-20T14:39:29.789Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -498,7 +445,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-20T14:39:29.789Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -512,7 +459,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-20T14:39:29.789Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -526,7 +473,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-20T14:39:29.789Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -540,7 +487,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-20T14:39:29.789Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -554,7 +501,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-20T14:39:29.789Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -568,7 +515,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-20T14:39:29.789Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -582,7 +529,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-20T14:39:29.789Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -596,7 +543,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-20T14:39:29.789Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -610,6 +557,19 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-20T14:39:29.789Z",
+    "okRuns": 1
+  },
+  {
+    "channel": {
+      "name": "Super TV (720p)",
+      "country": "IT",
+      "group": "Series",
+      "logo": "https://i.imgur.com/hxF3yhw.png",
+      "url": "https://59d7d6f47d7fc.streamlock.net/supertv/supertv/playlist.m3u8",
+      "source": "iptv-org/api-2026-10-thematique"
+    },
+    "reason": "HTTP 404",
+    "since": "2026-11-20T23:30:26.871Z",
     "okRuns": 0
   }
 ]
