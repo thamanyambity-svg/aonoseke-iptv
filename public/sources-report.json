@@ -1,20 +1,38 @@
 {
-  "generatedAt": "2026-11-19T14:57:23.118Z",
+  "generatedAt": "2026-11-20T00:03:17.995Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée. « dead » = mise en quarantaine : retestée à chaque passage et remise dans la playlist après deux succès de suite.",
   "counts": {
-    "checked": 1220,
-    "ok": 1013,
-    "geoBlocked": 203,
-    "pending": 3,
-    "dead": 2,
+    "checked": 1219,
+    "ok": 1009,
+    "geoBlocked": 202,
+    "pending": 6,
+    "dead": 4,
     "promotedBackups": 0,
-    "restored": 1,
-    "quarantined": 27
+    "restored": 2,
+    "quarantined": 29
   },
   "deadReasons": {
-    "HTTP 404": 2
+    "HTTP 404": 2,
+    "CORS refusé pour l'appli Android": 1,
+    "pas d'autorisation CORS (illisible dans le navigateur et l'appli)": 1
   },
   "geoBlocked": [
+    {
+      "name": "ABC WWAY 3",
+      "country": "US",
+      "group": "News",
+      "url": "https://townnews.g-mana.live/media/027a05c7-43b6-49eb-ad10-a0c0f10a0754/main.m3u8",
+      "reason": "segment refusé (HTTP 403)",
+      "code": 403
+    },
+    {
+      "name": "WDEF-TV News Chattanooga TN (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://townnews.g-mana.live/media/a54a6409-5e91-46f0-9fee-06904c1fd094/main.m3u8",
+      "reason": "segment refusé (HTTP 403)",
+      "code": 403
+    },
     {
       "name": "RTB 3",
       "country": "BF",
@@ -24,26 +42,10 @@
       "code": 403
     },
     {
-      "name": "NW Economie (576p)",
-      "country": "TG",
-      "group": "Afrique",
-      "url": "https://hls.newworldtv.com/nw-economie/video/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "NW Info 2 (576p)",
       "country": "TG",
       "group": "Afrique",
       "url": "https://hls.newworldtv.com/nw-info-2/video/live.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "NW Info (576p)",
-      "country": "TG",
-      "group": "Afrique",
-      "url": "https://hls.newworldtv.com/nw-info/video/live.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -1224,6 +1226,14 @@
       "code": 403
     },
     {
+      "name": "VM Latino (720p)",
+      "country": "CR",
+      "group": "Music",
+      "url": "https://59ef525c24caa.streamlock.net/vmtv/vmlatino/playlist.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
       "name": "Bollywood Film",
       "country": "RO",
       "group": "Movies",
@@ -1364,14 +1374,6 @@
       "country": "IN",
       "group": "Music",
       "url": "https://prod-runn.cdn.runn.tv/shemaroo/stream/smrfgn/playlist.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "TRT Cocuk (1440p)",
-      "country": "TR",
-      "group": "Kids",
-      "url": "https://tv-trtcocuk.medya.trt.com.tr/master.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -1630,56 +1632,86 @@
       "url": "https://reflect-bayarea.cablecast.tv/live-6/live/live.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
+    }
+  ],
+  "pending": [
+    {
+      "name": "LN24SA (1080p)",
+      "country": "ZA",
+      "group": "Afrique",
+      "url": "https://cdnstack.internetmultimediaonline.org/ln24/ln24.stream/playlist.m3u8",
+      "reason": "HTTP 503",
+      "code": 503
+    },
+    {
+      "name": "LoveworldSAT (1080p)",
+      "country": "NG",
+      "group": "Afrique",
+      "url": "https://cdnstack.internetmultimediaonline.org/lwsat/lwsat.stream/index.m3u8",
+      "reason": "HTTP 503",
+      "code": 503
+    },
+    {
+      "name": "NW Economie (576p)",
+      "country": "TG",
+      "group": "Afrique",
+      "url": "https://hls.newworldtv.com/nw-economie/video/live.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "NW Info (576p)",
+      "country": "TG",
+      "group": "Afrique",
+      "url": "https://hls.newworldtv.com/nw-info/video/live.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Extrema TV (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "http://livestreamcdn.net:1935/ExtremaTV/ExtremaTV/playlist.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "NHK World",
+      "country": "JP",
+      "group": "International",
+      "url": "https://freem3u.xyz/api/live/play.m3u8?vid=106",
+      "reason": "délai dépassé"
+    }
+  ],
+  "dead": [
+    {
+      "name": "Falastini TV (1080p)",
+      "country": "PS",
+      "group": "Music",
+      "url": "https://rp.tactivemedia.com/palestiniantv_source/live/playlist.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "TV Mulhouse (1080p)",
+      "country": "FR",
+      "group": "France",
+      "url": "http://194.163.157.137:8080/hls/radiomulhouse.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Sensacion Costa",
+      "country": "CL",
+      "group": "Music",
+      "url": "https://tvcosta.gleeze.com/memfs/4d48db09-0b1e-4803-8da7-22be388bdd7e.m3u8",
+      "reason": "CORS refusé pour l'appli Android",
+      "code": 200
     },
     {
       "name": "CCTV-1 综合",
       "country": "CN",
       "group": "China",
       "url": "http://69.30.245.50/live/cctv1.m3u8",
-      "reason": "message « indisponible dans votre pays »",
+      "reason": "pas d'autorisation CORS (illisible dans le navigateur et l'appli)",
       "code": 200
-    }
-  ],
-  "pending": [
-    {
-      "name": "Hitradio O3 (720p)",
-      "country": "AT",
-      "group": "Music",
-      "url": "https://studiocam-oe3.mdn.ors.at/orf/studiocam_oe3/q6a/master.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "PowerTurk Slow (1080p)",
-      "country": "TR",
-      "group": "Music",
-      "url": "https://livetv.powerapp.com.tr/pturkslow/slow.smil/playlist.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Sportivnyy (1080p)",
-      "country": "RU",
-      "group": "Sport",
-      "url": "https://live-3.otcnet.ru/sportivny/index.m3u8",
-      "reason": "HTTP 503",
-      "code": 503
-    }
-  ],
-  "dead": [
-    {
-      "name": "La Une",
-      "country": "BE",
-      "group": "Belgium",
-      "url": "http://41.205.93.154/LA-UNE/index.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "PBC Tapesh TV (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://iptv.tapesh.tv/tapesh/playlist.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
     }
   ]
 }

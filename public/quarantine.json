@@ -71,20 +71,6 @@
   },
   {
     "channel": {
-      "name": "Lazio Style Channel (720p)",
-      "country": "IT",
-      "group": "Sport",
-      "logo": "https://i.imgur.com/vDB8HFq.png",
-      "url": "https://distribution.sportitalialive.it/origin/laziostyle_abr/playlist.m3u8",
-      "source": "iptv-org/api-2026-10-thematique"
-    },
-    "reason": "HTTP 404",
-    "since": "2026-11-13T13:40:59.138Z",
-    "okRuns": 1,
-    "lastReason": "HTTP 404"
-  },
-  {
-    "channel": {
       "name": "Africanews English (720p)",
       "country": "FR",
       "group": "News",
@@ -122,7 +108,7 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-14T12:45:12.372Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "HTTP 404"
   },
   {
@@ -164,7 +150,7 @@
     },
     "reason": "variante : HTTP 404",
     "since": "2026-11-17T15:14:18.358Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "variante : HTTP 404"
   },
   {
@@ -337,19 +323,6 @@
   },
   {
     "channel": {
-      "name": "TJK TV (1080p)",
-      "country": "TR",
-      "group": "Sport",
-      "logo": "https://i.imgur.com/3zHdkYG.png",
-      "url": "https://tjktv-live.tjk.org/tjktv.m3u8",
-      "source": "iptv-org/api-2026-10-thematique"
-    },
-    "reason": "segment : HTTP 404",
-    "since": "2026-11-19T05:13:09.599Z",
-    "okRuns": 1
-  },
-  {
-    "channel": {
       "name": "La Une",
       "country": "BE",
       "group": "Belgium",
@@ -359,7 +332,7 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-19T14:57:23.118Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -373,6 +346,60 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-19T14:57:23.118Z",
+    "okRuns": 0,
+    "lastReason": "HTTP 404"
+  },
+  {
+    "channel": {
+      "name": "Falastini TV (1080p)",
+      "country": "PS",
+      "group": "Music",
+      "logo": "https://i.imgur.com/6B3Cims.png",
+      "url": "https://rp.tactivemedia.com/palestiniantv_source/live/playlist.m3u8",
+      "source": "iptv-org"
+    },
+    "reason": "HTTP 404",
+    "since": "2026-11-20T00:03:17.995Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "TV Mulhouse (1080p)",
+      "country": "FR",
+      "group": "France",
+      "logo": "https://academie.kasumay.international/ico/radiomulhouse.png",
+      "url": "http://194.163.157.137:8080/hls/radiomulhouse.m3u8",
+      "source": "iptv-org/api-2026-10-http-android"
+    },
+    "reason": "HTTP 404",
+    "since": "2026-11-20T00:03:17.995Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "Sensacion Costa",
+      "country": "CL",
+      "group": "Music",
+      "logo": "https://i.imgur.com/oYQoWAB.png",
+      "url": "https://tvcosta.gleeze.com/memfs/4d48db09-0b1e-4803-8da7-22be388bdd7e.m3u8",
+      "source": "iptv-org/api-2026-10-thematique"
+    },
+    "reason": "CORS refusé pour l'appli Android",
+    "since": "2026-11-20T00:03:17.995Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "CCTV-1 综合",
+      "country": "CN",
+      "group": "China",
+      "logo": "",
+      "url": "http://69.30.245.50/live/cctv1.m3u8",
+      "source": "iptv-org (api/streams)",
+      "restoredAt": "2026-11-18T23:43:30.797Z"
+    },
+    "reason": "pas d'autorisation CORS (illisible dans le navigateur et l'appli)",
+    "since": "2026-11-20T00:03:17.995Z",
     "okRuns": 0
   }
 ]
