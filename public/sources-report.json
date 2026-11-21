@@ -1,18 +1,19 @@
 {
-  "generatedAt": "2026-11-21T04:55:35.126Z",
+  "generatedAt": "2026-11-21T13:56:23.570Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée. « dead » = mise en quarantaine : retestée à chaque passage et remise dans la playlist après deux succès de suite.",
   "counts": {
-    "checked": 1205,
-    "ok": 1035,
-    "geoBlocked": 188,
-    "pending": 0,
-    "dead": 1,
+    "checked": 1223,
+    "ok": 1014,
+    "geoBlocked": 202,
+    "pending": 1,
+    "dead": 7,
     "promotedBackups": 0,
-    "restored": 19,
-    "quarantined": 23
+    "restored": 1,
+    "quarantined": 29
   },
   "deadReasons": {
-    "HTTP 404": 1
+    "HTTP 404": 5,
+    "segment : HTTP 404": 2
   },
   "geoBlocked": [
     {
@@ -540,14 +541,6 @@
       "country": "FR",
       "group": "France",
       "url": "http://145.239.5.177/148/index.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "Pasiones Latin America (1080p)",
-      "country": "US",
-      "group": "Latino",
-      "url": "http://15.204.246.24:8080/PasionesHD/index.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -1518,16 +1511,192 @@
       "url": "http://69.30.245.50/live/cctv1.m3u8",
       "reason": "message « indisponible dans votre pays »",
       "code": 200
+    },
+    {
+      "name": "AuroraTV (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://reflect-aurora.cablecast.tv/live-8/live/live.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "BATV (480p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://reflect-batv.cablecast.tv/live-5/live/live.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "City of Fairfield Channel 26 (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://reflect-fairfield-ca.cablecast.tv/live-8/live/live.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "City of Loveland TV (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://reflect-cityofloveland-co.cablecast.tv/live-3/live/live.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "CreaTV Channel 15 (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://reflect-creatv.cablecast.tv/live-13/live/live.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "CreaTV Channel 27 (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://reflect-creatv.cablecast.tv/live-19/live/live.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "CreaTV Channel 28 (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://reflect-creatv.cablecast.tv/live-14/live/live.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "CreaTV Channel 30 (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://reflect-creatv.cablecast.tv/live-16/live/live.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "HKTV (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://reflect-hktv.cablecast.tv/live-3/live/live.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "KCAT (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://reflect-kcat-live.cablecast.tv/live-2/live/live.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "KFON TV (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://reflect-watchkfon-fontana.cablecast.tv/live-3/live/live.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "TBCN (480p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://reflect-tampa-bay-community.cablecast.tv/live-16/live/live.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "VSCTV (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://reflect-vsctv.cablecast.tv/live-3/live/live.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "SF Commons 29 (480p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://reflect-bayarea.cablecast.tv/live-5/live/live.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "SF Commons 76 (480p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://reflect-bayarea.cablecast.tv/live-6/live/live.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
     }
   ],
-  "pending": [],
+  "pending": [
+    {
+      "name": "Slager Original",
+      "country": "CZ",
+      "group": "Music",
+      "url": "https://stream-13.mazana.tv/slagroriginal.m3u8s",
+      "reason": "délai dépassé"
+    }
+  ],
   "dead": [
     {
-      "name": "Alankar TV (720p)",
-      "country": "IN",
-      "group": "Movies",
-      "url": "https://livetv.tarangplus.in/alankar-origin/live/playlist.m3u8",
+      "name": "Port St Lucie PSL TV (Port St Lucie FL) (360p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://cdn3.wowza.com/5/UWpORHhLSEs5SkJs/psl/G0262_003/playlist.m3u8",
       "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "SFGovTV San Francisco The Government Channel (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://cdn3.wowza.com/5/ZFdxUW9BQWt2UWRL/sanfrancisco/G0051_048/playlist.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "PCTV 28 (480p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://cdn3.wowza.com/5/cXdyRHF0Z3kxN0k2/pinole/G0032_002/playlist.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "SFGovTV2 (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://cdn3.wowza.com/5/ZFdxUW9BQWt2UWRL/sanfrancisco/G0051_050/playlist.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Slager Muzika",
+      "country": "CZ",
+      "group": "Music",
+      "url": "https://stream-23.mazana.tv/slagrmuzika.m3u8s",
+      "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "AT5",
+      "country": "NL",
+      "group": "Netherlands",
+      "url": "https://takeoff.jetstre.am/?account=atvijf&file=live&output=playlist.m3u8&protocol=https&service=wowza&type=live",
+      "reason": "segment : HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Rai 2",
+      "country": "IT",
+      "group": "Italy",
+      "url": "http://team-tv.co:81/rai2/index.m3u8",
+      "reason": "segment : HTTP 404",
       "code": 404
     }
   ]

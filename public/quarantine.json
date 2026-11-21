@@ -67,7 +67,7 @@
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-12T14:20:37.280Z",
     "okRuns": 0,
-    "lastReason": "HTTP 500"
+    "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
     "channel": {
@@ -262,7 +262,7 @@
     },
     "reason": "CORS refusé pour l'appli Android",
     "since": "2026-11-20T00:03:17.995Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "CORS refusé pour l'appli Android"
   },
   {
@@ -281,20 +281,6 @@
   },
   {
     "channel": {
-      "name": "Placid (1080p)",
-      "country": "US",
-      "group": "USA",
-      "logo": "https://static.wikitide.net/indietvwiki/0/03/Placid_(2026).svg",
-      "url": "https://toy.vcdn.fyi/placid/index.m3u8",
-      "source": "iptv-org/api-2026-10"
-    },
-    "reason": "segment : HTTP 404",
-    "since": "2026-11-20T14:39:29.789Z",
-    "okRuns": 1,
-    "lastReason": "segment : HTTP 404"
-  },
-  {
-    "channel": {
       "name": "Super TV (720p)",
       "country": "IT",
       "group": "Series",
@@ -304,7 +290,7 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-20T23:30:26.871Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "HTTP 404"
   },
   {
@@ -318,6 +304,98 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-21T04:55:35.126Z",
+    "okRuns": 1
+  },
+  {
+    "channel": {
+      "name": "Port St Lucie PSL TV (Port St Lucie FL) (360p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/kzdRmTN.png",
+      "url": "https://cdn3.wowza.com/5/UWpORHhLSEs5SkJs/psl/G0262_003/playlist.m3u8",
+      "source": "iptv-org/us"
+    },
+    "reason": "HTTP 404",
+    "since": "2026-11-21T13:56:23.570Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "SFGovTV San Francisco The Government Channel (720p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/uYXuwmV.png",
+      "url": "https://cdn3.wowza.com/5/ZFdxUW9BQWt2UWRL/sanfrancisco/G0051_048/playlist.m3u8",
+      "source": "iptv-org/us"
+    },
+    "reason": "HTTP 404",
+    "since": "2026-11-21T13:56:23.570Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "PCTV 28 (480p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/WahZg3L.png",
+      "url": "https://cdn3.wowza.com/5/cXdyRHF0Z3kxN0k2/pinole/G0032_002/playlist.m3u8",
+      "source": "iptv-org/api-2026-10-us"
+    },
+    "reason": "HTTP 404",
+    "since": "2026-11-21T13:56:23.570Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "SFGovTV2 (720p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/SOk5m5B.png",
+      "url": "https://cdn3.wowza.com/5/ZFdxUW9BQWt2UWRL/sanfrancisco/G0051_050/playlist.m3u8",
+      "source": "iptv-org/api-2026-10-us"
+    },
+    "reason": "HTTP 404",
+    "since": "2026-11-21T13:56:23.570Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "Slager Muzika",
+      "country": "CZ",
+      "group": "Music",
+      "logo": "https://i.imgur.com/hKdXwrW.png",
+      "url": "https://stream-23.mazana.tv/slagrmuzika.m3u8s",
+      "source": "iptv-org/api-2026-10-thematique-monde"
+    },
+    "reason": "HTTP 404",
+    "since": "2026-11-21T13:56:23.570Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "AT5",
+      "country": "NL",
+      "group": "Netherlands",
+      "logo": "",
+      "url": "https://takeoff.jetstre.am/?account=atvijf&file=live&output=playlist.m3u8&protocol=https&service=wowza&type=live",
+      "source": "iptv-org (api/streams)"
+    },
+    "reason": "segment : HTTP 404",
+    "since": "2026-11-21T13:56:23.570Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "Rai 2",
+      "country": "IT",
+      "group": "Italy",
+      "logo": "",
+      "url": "http://team-tv.co:81/rai2/index.m3u8",
+      "source": "iptv-org (api/streams)",
+      "restoredAt": "2026-11-15T13:13:02.228Z"
+    },
+    "reason": "segment : HTTP 404",
+    "since": "2026-11-21T13:56:23.570Z",
     "okRuns": 0
   }
 ]
