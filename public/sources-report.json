@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-11-20T23:30:26.871Z",
+  "generatedAt": "2026-11-21T04:55:35.126Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée. « dead » = mise en quarantaine : retestée à chaque passage et remise dans la playlist après deux succès de suite.",
   "counts": {
-    "checked": 1202,
-    "ok": 1018,
-    "geoBlocked": 187,
+    "checked": 1205,
+    "ok": 1035,
+    "geoBlocked": 188,
     "pending": 0,
     "dead": 1,
     "promotedBackups": 0,
-    "restored": 4,
-    "quarantined": 41
+    "restored": 19,
+    "quarantined": 23
   },
   "deadReasons": {
     "HTTP 404": 1
@@ -540,6 +540,14 @@
       "country": "FR",
       "group": "France",
       "url": "http://145.239.5.177/148/index.m3u8",
+      "reason": "HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
+      "name": "Pasiones Latin America (1080p)",
+      "country": "US",
+      "group": "Latino",
+      "url": "http://15.204.246.24:8080/PasionesHD/index.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -1216,14 +1224,6 @@
       "code": 403
     },
     {
-      "name": "TVI Ficcao (720p)",
-      "country": "PT",
-      "group": "Series",
-      "url": "https://raw.githubusercontent.com/thomraider12/canaistvpt/main/m3u8s/tvificcao.m3u8",
-      "reason": "segment refusé (HTTP 403)",
-      "code": 403
-    },
-    {
       "name": "Video Rola (1080p)",
       "country": "IT",
       "group": "Music",
@@ -1510,15 +1510,23 @@
       "url": "https://reflect-broadcast-psdschools.cablecast.tv/live-6/live/live.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
+    },
+    {
+      "name": "CCTV-1 综合",
+      "country": "CN",
+      "group": "China",
+      "url": "http://69.30.245.50/live/cctv1.m3u8",
+      "reason": "message « indisponible dans votre pays »",
+      "code": 200
     }
   ],
   "pending": [],
   "dead": [
     {
-      "name": "Super TV (720p)",
-      "country": "IT",
-      "group": "Series",
-      "url": "https://59d7d6f47d7fc.streamlock.net/supertv/supertv/playlist.m3u8",
+      "name": "Alankar TV (720p)",
+      "country": "IN",
+      "group": "Movies",
+      "url": "https://livetv.tarangplus.in/alankar-origin/live/playlist.m3u8",
       "reason": "HTTP 404",
       "code": 404
     }
