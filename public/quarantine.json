@@ -262,7 +262,7 @@
     },
     "reason": "CORS refusé pour l'appli Android",
     "since": "2026-11-20T00:03:17.995Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "HTTP 500"
   },
   {
@@ -281,20 +281,6 @@
   },
   {
     "channel": {
-      "name": "Port St Lucie PSL TV (Port St Lucie FL) (360p)",
-      "country": "US",
-      "group": "USA",
-      "logo": "https://i.imgur.com/kzdRmTN.png",
-      "url": "https://cdn3.wowza.com/5/UWpORHhLSEs5SkJs/psl/G0262_003/playlist.m3u8",
-      "source": "iptv-org/us"
-    },
-    "reason": "HTTP 404",
-    "since": "2026-11-21T13:56:23.570Z",
-    "okRuns": 1,
-    "lastReason": "HTTP 404"
-  },
-  {
-    "channel": {
       "name": "SFGovTV San Francisco The Government Channel (720p)",
       "country": "US",
       "group": "USA",
@@ -305,20 +291,6 @@
     "reason": "HTTP 404",
     "since": "2026-11-21T13:56:23.570Z",
     "okRuns": 0,
-    "lastReason": "HTTP 404"
-  },
-  {
-    "channel": {
-      "name": "PCTV 28 (480p)",
-      "country": "US",
-      "group": "USA",
-      "logo": "https://i.imgur.com/WahZg3L.png",
-      "url": "https://cdn3.wowza.com/5/cXdyRHF0Z3kxN0k2/pinole/G0032_002/playlist.m3u8",
-      "source": "iptv-org/api-2026-10-us"
-    },
-    "reason": "HTTP 404",
-    "since": "2026-11-21T13:56:23.570Z",
-    "okRuns": 1,
     "lastReason": "HTTP 404"
   },
   {
@@ -337,20 +309,6 @@
   },
   {
     "channel": {
-      "name": "CCTV-9 纪录",
-      "country": "CN",
-      "group": "China",
-      "logo": "",
-      "url": "https://xykt-fix.github.io/Y77.m3u8",
-      "source": "iptv-org (api/streams)",
-      "restoredAt": "2026-11-15T22:18:35.058Z"
-    },
-    "reason": "segment : HTTP 404",
-    "since": "2026-11-22T04:15:25.008Z",
-    "okRuns": 1
-  },
-  {
-    "channel": {
       "name": "Real Madrid TV (726p)",
       "country": "ES",
       "group": "Sport",
@@ -361,7 +319,7 @@
     },
     "reason": "variante : HTTP 404",
     "since": "2026-11-22T04:15:25.008Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "variante : HTTP 404"
   },
   {
@@ -376,7 +334,8 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-22T04:15:25.008Z",
-    "okRuns": 1
+    "okRuns": 0,
+    "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
     "channel": {
@@ -390,7 +349,8 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-22T04:15:25.008Z",
-    "okRuns": 1
+    "okRuns": 0,
+    "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
     "channel": {
@@ -404,7 +364,8 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-22T04:15:25.008Z",
-    "okRuns": 1
+    "okRuns": 0,
+    "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
     "channel": {
@@ -418,7 +379,8 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-22T04:15:25.008Z",
-    "okRuns": 1
+    "okRuns": 0,
+    "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
     "channel": {
@@ -432,7 +394,8 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-22T04:15:25.008Z",
-    "okRuns": 1
+    "okRuns": 0,
+    "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
     "channel": {
@@ -446,7 +409,8 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-22T04:15:25.008Z",
-    "okRuns": 1
+    "okRuns": 0,
+    "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
     "channel": {
@@ -460,7 +424,8 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-22T04:15:25.008Z",
-    "okRuns": 1
+    "okRuns": 0,
+    "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
     "channel": {
@@ -474,7 +439,8 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-22T04:15:25.008Z",
-    "okRuns": 1
+    "okRuns": 0,
+    "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
     "channel": {
@@ -488,7 +454,8 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-22T04:15:25.008Z",
-    "okRuns": 1
+    "okRuns": 0,
+    "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
     "channel": {
@@ -502,7 +469,8 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-22T04:15:25.008Z",
-    "okRuns": 1
+    "okRuns": 0,
+    "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
     "channel": {
@@ -516,7 +484,8 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-22T04:15:25.008Z",
-    "okRuns": 1
+    "okRuns": 0,
+    "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
     "channel": {
@@ -530,7 +499,8 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-22T04:15:25.008Z",
-    "okRuns": 1
+    "okRuns": 0,
+    "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
     "channel": {
@@ -544,7 +514,8 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-22T04:15:25.008Z",
-    "okRuns": 1
+    "okRuns": 0,
+    "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
     "channel": {
@@ -558,7 +529,8 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-22T04:15:25.008Z",
-    "okRuns": 1
+    "okRuns": 0,
+    "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
     "channel": {
@@ -572,7 +544,8 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-22T04:15:25.008Z",
-    "okRuns": 1
+    "okRuns": 0,
+    "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
     "channel": {
@@ -586,7 +559,8 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-22T13:49:34.984Z",
-    "okRuns": 0
+    "okRuns": 0,
+    "lastReason": "HTTP 404"
   },
   {
     "channel": {
@@ -600,6 +574,33 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-22T13:49:34.984Z",
+    "okRuns": 1
+  },
+  {
+    "channel": {
+      "name": "JooMusic (720p)",
+      "country": "PK",
+      "group": "Music",
+      "logo": "https://i.imgur.com/KHuKQQL.png",
+      "url": "https://livecdn.live247stream.com/joomusic/tv/playlist.m3u8",
+      "source": "iptv-org/api-2026-10-thematique-monde"
+    },
+    "reason": "variante : HTTP 404",
+    "since": "2026-11-22T23:00:23.753Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "Rai 5",
+      "country": "IT",
+      "group": "Italy",
+      "logo": "",
+      "url": "http://team-tv.co:81/rai5/index.m3u8",
+      "source": "iptv-org (api/streams)",
+      "restoredAt": "2026-11-15T22:18:35.058Z"
+    },
+    "reason": "segment : HTTP 404",
+    "since": "2026-11-22T23:00:23.753Z",
     "okRuns": 0
   }
 ]
