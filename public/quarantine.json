@@ -262,8 +262,8 @@
     },
     "reason": "CORS refusé pour l'appli Android",
     "since": "2026-11-20T00:03:17.995Z",
-    "okRuns": 1,
-    "lastReason": "CORS refusé pour l'appli Android"
+    "okRuns": 0,
+    "lastReason": "HTTP 500"
   },
   {
     "channel": {
@@ -290,7 +290,7 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-21T13:56:23.570Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "HTTP 404"
   },
   {
@@ -318,7 +318,7 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-21T13:56:23.570Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "HTTP 404"
   },
   {
@@ -337,47 +337,6 @@
   },
   {
     "channel": {
-      "name": "AT5",
-      "country": "NL",
-      "group": "Netherlands",
-      "logo": "",
-      "url": "https://takeoff.jetstre.am/?account=atvijf&file=live&output=playlist.m3u8&protocol=https&service=wowza&type=live",
-      "source": "iptv-org (api/streams)"
-    },
-    "reason": "segment : HTTP 404",
-    "since": "2026-11-21T13:56:23.570Z",
-    "okRuns": 1,
-    "lastReason": "segment : HTTP 404"
-  },
-  {
-    "channel": {
-      "name": "Kiss Kiss Napoli TV (720p)",
-      "country": "IT",
-      "group": "Music",
-      "logo": "https://i.imgur.com/RsGiBwE.png",
-      "url": "https://58f12ffd2447a.streamlock.net/KKTVNapoli/livestream/playlist.m3u8",
-      "source": "iptv-org"
-    },
-    "reason": "HTTP 404",
-    "since": "2026-11-21T22:37:46.619Z",
-    "okRuns": 1
-  },
-  {
-    "channel": {
-      "name": "CCTV-1 综合",
-      "country": "CN",
-      "group": "China",
-      "logo": "",
-      "url": "http://69.30.245.50/live/cctv1.m3u8",
-      "source": "iptv-org (api/streams)",
-      "restoredAt": "2026-11-20T23:30:26.871Z"
-    },
-    "reason": "pas d'autorisation CORS (illisible dans le navigateur et l'appli)",
-    "since": "2026-11-21T22:37:46.619Z",
-    "okRuns": 1
-  },
-  {
-    "channel": {
       "name": "CCTV-9 纪录",
       "country": "CN",
       "group": "China",
@@ -388,7 +347,7 @@
     },
     "reason": "segment : HTTP 404",
     "since": "2026-11-22T04:15:25.008Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -402,7 +361,8 @@
     },
     "reason": "variante : HTTP 404",
     "since": "2026-11-22T04:15:25.008Z",
-    "okRuns": 0
+    "okRuns": 0,
+    "lastReason": "variante : HTTP 404"
   },
   {
     "channel": {
@@ -416,7 +376,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-22T04:15:25.008Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -430,7 +390,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-22T04:15:25.008Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -444,7 +404,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-22T04:15:25.008Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -458,7 +418,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-22T04:15:25.008Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -472,7 +432,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-22T04:15:25.008Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -486,7 +446,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-22T04:15:25.008Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -500,7 +460,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-22T04:15:25.008Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -514,7 +474,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-22T04:15:25.008Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -528,7 +488,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-22T04:15:25.008Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -542,7 +502,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-22T04:15:25.008Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -556,7 +516,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-22T04:15:25.008Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -570,7 +530,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-22T04:15:25.008Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -584,7 +544,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-22T04:15:25.008Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -598,7 +558,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-22T04:15:25.008Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -612,6 +572,34 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-22T04:15:25.008Z",
+    "okRuns": 1
+  },
+  {
+    "channel": {
+      "name": "Rai 4",
+      "country": "IT",
+      "group": "Italy",
+      "logo": "",
+      "url": "http://team-tv.co:81/rai4/index.m3u8",
+      "source": "iptv-org (api/streams)",
+      "restoredAt": "2026-11-15T13:13:02.228Z"
+    },
+    "reason": "HTTP 404",
+    "since": "2026-11-22T13:49:34.984Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "Rai 2",
+      "country": "IT",
+      "group": "Italy",
+      "logo": "",
+      "url": "http://team-tv.co:81/rai2/index.m3u8",
+      "source": "iptv-org (api/streams)",
+      "restoredAt": "2026-11-22T04:15:25.008Z"
+    },
+    "reason": "HTTP 404",
+    "since": "2026-11-22T13:49:34.984Z",
     "okRuns": 0
   }
 ]
