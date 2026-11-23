@@ -81,7 +81,7 @@
     "reason": "HTTP 504",
     "since": "2026-11-13T23:03:12.094Z",
     "okRuns": 0,
-    "lastReason": "HTTP 504"
+    "lastReason": "HTTP 404"
   },
   {
     "channel": {
@@ -276,7 +276,7 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-21T13:56:23.570Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "HTTP 404"
   },
   {
@@ -290,7 +290,7 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-21T13:56:23.570Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "HTTP 404"
   },
   {
@@ -305,7 +305,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-22T04:15:25.008Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
@@ -320,7 +320,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-22T04:15:25.008Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
@@ -335,7 +335,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-22T04:15:25.008Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
@@ -350,7 +350,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-22T04:15:25.008Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
@@ -365,7 +365,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-22T04:15:25.008Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
@@ -380,7 +380,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-22T04:15:25.008Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
@@ -395,7 +395,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-22T04:15:25.008Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
@@ -410,7 +410,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-22T04:15:25.008Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
@@ -425,7 +425,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-22T04:15:25.008Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
@@ -440,7 +440,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-22T04:15:25.008Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
@@ -455,7 +455,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-22T04:15:25.008Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
@@ -470,7 +470,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-22T04:15:25.008Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
@@ -485,7 +485,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-22T04:15:25.008Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
@@ -500,7 +500,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-22T04:15:25.008Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
@@ -515,7 +515,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-22T04:15:25.008Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
@@ -530,7 +530,7 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-22T13:49:34.984Z",
-    "okRuns": 1,
+    "okRuns": 0,
     "lastReason": "HTTP 404"
   },
   {
@@ -544,22 +544,8 @@
     },
     "reason": "variante : HTTP 404",
     "since": "2026-11-22T23:00:23.753Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "variante : HTTP 404"
-  },
-  {
-    "channel": {
-      "name": "Rai 5",
-      "country": "IT",
-      "group": "Italy",
-      "logo": "",
-      "url": "http://team-tv.co:81/rai5/index.m3u8",
-      "source": "iptv-org (api/streams)",
-      "restoredAt": "2026-11-15T22:18:35.058Z"
-    },
-    "reason": "segment : HTTP 404",
-    "since": "2026-11-22T23:00:23.753Z",
-    "okRuns": 1
   },
   {
     "channel": {
@@ -572,7 +558,7 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-23T04:54:48.806Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -586,7 +572,7 @@
     },
     "reason": "HTTP 502",
     "since": "2026-11-23T04:54:48.806Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -600,7 +586,7 @@
     },
     "reason": "HTTP 502",
     "since": "2026-11-23T04:54:48.806Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -614,7 +600,7 @@
     },
     "reason": "HTTP 502",
     "since": "2026-11-23T04:54:48.806Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -628,7 +614,7 @@
     },
     "reason": "HTTP 502",
     "since": "2026-11-23T04:54:48.806Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -642,7 +628,7 @@
     },
     "reason": "HTTP 502",
     "since": "2026-11-23T04:54:48.806Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -656,7 +642,7 @@
     },
     "reason": "HTTP 502",
     "since": "2026-11-23T04:54:48.806Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -670,7 +656,7 @@
     },
     "reason": "HTTP 502",
     "since": "2026-11-23T04:54:48.806Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -684,6 +670,47 @@
     },
     "reason": "HTTP 502",
     "since": "2026-11-23T04:54:48.806Z",
+    "okRuns": 1
+  },
+  {
+    "channel": {
+      "name": "Talkin Live Classics TV (480p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "",
+      "url": "https://2-fss-1.streamhoster.com/pl_122/206338-3120682-1/playlist.m3u8",
+      "source": "iptv-org/api-2026-10-us"
+    },
+    "reason": "HTTP 404",
+    "since": "2026-11-23T16:55:59.228Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "CCTV-9 纪录",
+      "country": "CN",
+      "group": "China",
+      "logo": "",
+      "url": "https://xykt-fix.github.io/Y77.m3u8",
+      "source": "iptv-org (api/streams)",
+      "restoredAt": "2026-11-22T23:00:23.753Z"
+    },
+    "reason": "segment : HTTP 404",
+    "since": "2026-11-23T16:55:59.228Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "Rai 2",
+      "country": "IT",
+      "group": "Italy",
+      "logo": "",
+      "url": "http://team-tv.co:81/rai2/index.m3u8",
+      "source": "iptv-org (api/streams)",
+      "restoredAt": "2026-11-23T04:54:48.806Z"
+    },
+    "reason": "HTTP 404",
+    "since": "2026-11-23T16:55:59.228Z",
     "okRuns": 0
   }
 ]
