@@ -253,20 +253,6 @@
   },
   {
     "channel": {
-      "name": "Sensacion Costa",
-      "country": "CL",
-      "group": "Music",
-      "logo": "https://i.imgur.com/oYQoWAB.png",
-      "url": "https://tvcosta.gleeze.com/memfs/4d48db09-0b1e-4803-8da7-22be388bdd7e.m3u8",
-      "source": "iptv-org/api-2026-10-thematique"
-    },
-    "reason": "CORS refusé pour l'appli Android",
-    "since": "2026-11-20T00:03:17.995Z",
-    "okRuns": 1,
-    "lastReason": "HTTP 500"
-  },
-  {
-    "channel": {
       "name": "CRTV",
       "country": "CM",
       "group": "Afrique",
@@ -306,21 +292,6 @@
     "since": "2026-11-21T13:56:23.570Z",
     "okRuns": 0,
     "lastReason": "HTTP 404"
-  },
-  {
-    "channel": {
-      "name": "Real Madrid TV (726p)",
-      "country": "ES",
-      "group": "Sport",
-      "logo": "https://i.imgur.com/5pMo7dL.png",
-      "url": "https://rmtv.akamaized.net/hls/live/2043153/rmtv-es-web/master.m3u8",
-      "source": "iptv-org/curated-2026-10b",
-      "restoredAt": "2026-11-21T04:55:35.126Z"
-    },
-    "reason": "variante : HTTP 404",
-    "since": "2026-11-22T04:15:25.008Z",
-    "okRuns": 1,
-    "lastReason": "variante : HTTP 404"
   },
   {
     "channel": {
@@ -559,22 +530,8 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-22T13:49:34.984Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "HTTP 404"
-  },
-  {
-    "channel": {
-      "name": "Rai 2",
-      "country": "IT",
-      "group": "Italy",
-      "logo": "",
-      "url": "http://team-tv.co:81/rai2/index.m3u8",
-      "source": "iptv-org (api/streams)",
-      "restoredAt": "2026-11-22T04:15:25.008Z"
-    },
-    "reason": "HTTP 404",
-    "since": "2026-11-22T13:49:34.984Z",
-    "okRuns": 1
   },
   {
     "channel": {
@@ -587,7 +544,8 @@
     },
     "reason": "variante : HTTP 404",
     "since": "2026-11-22T23:00:23.753Z",
-    "okRuns": 0
+    "okRuns": 0,
+    "lastReason": "variante : HTTP 404"
   },
   {
     "channel": {
@@ -601,6 +559,131 @@
     },
     "reason": "segment : HTTP 404",
     "since": "2026-11-22T23:00:23.753Z",
+    "okRuns": 1
+  },
+  {
+    "channel": {
+      "name": "Isibo TV",
+      "country": "RW",
+      "group": "Afrique",
+      "logo": "https://i.imgur.com/bXhEeTC.png",
+      "url": "https://5c46fa289c89f.streamlock.net/pub2live/myStream/playlist.m3u8",
+      "source": "iptv-org/curated-2026-10"
+    },
+    "reason": "HTTP 404",
+    "since": "2026-11-23T04:54:48.806Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "Access Sacramento Channel 17",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/j0UC4ke.png",
+      "url": "https://reflect-access-sacramento.cablecast.tv/live-7/live/live.m3u8",
+      "source": "iptv-org/api-2026-10-us",
+      "restoredAt": "2026-11-15T22:18:35.058Z"
+    },
+    "reason": "HTTP 502",
+    "since": "2026-11-23T04:54:48.806Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "GCO.tv (1080p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/zHBR2zR.png",
+      "url": "https://reflect-golden-co.cablecast.tv/live-3/live/live.m3u8",
+      "source": "iptv-org/api-2026-10-us",
+      "restoredAt": "2026-11-15T22:18:35.058Z"
+    },
+    "reason": "HTTP 502",
+    "since": "2026-11-23T04:54:48.806Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "MSTV (1080p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/x0lJqSp.png",
+      "url": "https://reflect-mcsb-vod.cablecast.tv/live-16/live/live.m3u8",
+      "source": "iptv-org/api-2026-10-us",
+      "restoredAt": "2026-11-15T22:18:35.058Z"
+    },
+    "reason": "HTTP 502",
+    "since": "2026-11-23T04:54:48.806Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "NCM Educational & Kids Channel",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/3YPvfPn.png",
+      "url": "https://reflect-npa.cablecast.tv/live-9/live/live.m3u8",
+      "source": "iptv-org/api-2026-10-us",
+      "restoredAt": "2026-11-15T22:18:35.058Z"
+    },
+    "reason": "HTTP 502",
+    "since": "2026-11-23T04:54:48.806Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "NCM Main Channel",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/3YPvfPn.png",
+      "url": "https://reflect-npa.cablecast.tv/live-6/live/live.m3u8",
+      "source": "iptv-org/api-2026-10-us",
+      "restoredAt": "2026-11-15T22:18:35.058Z"
+    },
+    "reason": "HTTP 502",
+    "since": "2026-11-23T04:54:48.806Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "NYXT (1080p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/7kuluji.png",
+      "url": "https://reflect-stream-bronxnet.cablecast.tv/live-10/live/live.m3u8",
+      "source": "iptv-org/api-2026-10-us",
+      "restoredAt": "2026-11-15T22:18:35.058Z"
+    },
+    "reason": "HTTP 502",
+    "since": "2026-11-23T04:54:48.806Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "Pomona Internet Streaming Channel (720p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/80gaUbq.png",
+      "url": "https://reflect-pomona.cablecast.tv/live-1/live/live.m3u8",
+      "source": "iptv-org/api-2026-10-us",
+      "restoredAt": "2026-11-15T22:18:35.058Z"
+    },
+    "reason": "HTTP 502",
+    "since": "2026-11-23T04:54:48.806Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "PSD TV (720p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/djT0Q8q.png",
+      "url": "https://reflect-broadcast-psdschools.cablecast.tv/live-6/live/live.m3u8",
+      "source": "iptv-org/api-2026-10-us",
+      "restoredAt": "2026-11-15T22:18:35.058Z"
+    },
+    "reason": "HTTP 502",
+    "since": "2026-11-23T04:54:48.806Z",
     "okRuns": 0
   }
 ]

@@ -1,29 +1,21 @@
 {
-  "generatedAt": "2026-11-22T23:00:23.753Z",
+  "generatedAt": "2026-11-23T04:54:48.806Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée. « dead » = mise en quarantaine : retestée à chaque passage et remise dans la playlist après deux succès de suite.",
   "counts": {
-    "checked": 1203,
-    "ok": 1042,
-    "geoBlocked": 150,
-    "pending": 12,
-    "dead": 2,
+    "checked": 1204,
+    "ok": 1048,
+    "geoBlocked": 148,
+    "pending": 2,
+    "dead": 9,
     "promotedBackups": 0,
     "restored": 3,
-    "quarantined": 42
+    "quarantined": 48
   },
   "deadReasons": {
-    "variante : HTTP 404": 1,
-    "segment : HTTP 404": 1
+    "HTTP 404": 1,
+    "HTTP 502": 8
   },
   "geoBlocked": [
-    {
-      "name": "RTB 3",
-      "country": "BF",
-      "group": "Afrique",
-      "url": "https://edge13.vedge.infomaniak.com/livecast/ik:rtb3-1/manifest.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
     {
       "name": "NW Economie (576p)",
       "country": "TG",
@@ -977,14 +969,6 @@
       "code": 403
     },
     {
-      "name": "TVI Ficcao (720p)",
-      "country": "PT",
-      "group": "Series",
-      "url": "https://raw.githubusercontent.com/thomraider12/canaistvpt/main/m3u8s/tvificcao.m3u8",
-      "reason": "variante : HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "Video Rola (1080p)",
       "country": "IT",
       "group": "Music",
@@ -1219,25 +1203,28 @@
   ],
   "pending": [
     {
-      "name": "TBN Ukraine (720p)",
+      "name": "Harbin Movie Channel",
+      "country": "CN",
+      "group": "Movies",
+      "url": "https://stream.hrbtv.net/yspd/playlist.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "American Horrors (480p)",
       "country": "US",
       "group": "USA",
-      "url": "https://5d23269b3ec0c.streamlock.net/WEB_Ukraine24/ngrp:Ukraine24.stream-adaptive/playlist.m3u8",
+      "url": "http://107.167.7.162:8081/playlist/amhor/playlist.m3u8",
       "reason": "délai dépassé"
-    },
+    }
+  ],
+  "dead": [
     {
-      "name": "Smile TV (720p)",
-      "country": "RU",
-      "group": "Kids",
-      "url": "https://5d23269b3ec0c.streamlock.net/WEB_Smilik/ngrp:Smilik.stream-adaptive/playlist.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Solnce (576p)",
-      "country": "RU",
-      "group": "Kids",
-      "url": "https://tv.mediacdn.ru/live/solntse/playlist.m3u8",
-      "reason": "délai dépassé"
+      "name": "Isibo TV",
+      "country": "RW",
+      "group": "Afrique",
+      "url": "https://5c46fa289c89f.streamlock.net/pub2live/myStream/playlist.m3u8",
+      "reason": "HTTP 404",
+      "code": 404
     },
     {
       "name": "Access Sacramento Channel 17",
@@ -1302,31 +1289,6 @@
       "url": "https://reflect-broadcast-psdschools.cablecast.tv/live-6/live/live.m3u8",
       "reason": "HTTP 502",
       "code": 502
-    },
-    {
-      "name": "Sportivnyy (1080p)",
-      "country": "RU",
-      "group": "Sport",
-      "url": "https://live-3.otcnet.ru/sportivny/index.m3u8",
-      "reason": "délai dépassé"
-    }
-  ],
-  "dead": [
-    {
-      "name": "JooMusic (720p)",
-      "country": "PK",
-      "group": "Music",
-      "url": "https://livecdn.live247stream.com/joomusic/tv/playlist.m3u8",
-      "reason": "variante : HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Rai 5",
-      "country": "IT",
-      "group": "Italy",
-      "url": "http://team-tv.co:81/rai5/index.m3u8",
-      "reason": "segment : HTTP 404",
-      "code": 404
     }
   ]
 }
