@@ -109,7 +109,7 @@
     "reason": "HTTP 404",
     "since": "2026-11-16T14:22:24.427Z",
     "okRuns": 0,
-    "lastReason": "délai dépassé"
+    "lastReason": "HTTP 404"
   },
   {
     "channel": {
@@ -267,21 +267,6 @@
   },
   {
     "channel": {
-      "name": "Rai 4",
-      "country": "IT",
-      "group": "Italy",
-      "logo": "",
-      "url": "http://team-tv.co:81/rai4/index.m3u8",
-      "source": "iptv-org (api/streams)",
-      "restoredAt": "2026-11-15T13:13:02.228Z"
-    },
-    "reason": "HTTP 404",
-    "since": "2026-11-22T13:49:34.984Z",
-    "okRuns": 1,
-    "lastReason": "HTTP 404"
-  },
-  {
-    "channel": {
       "name": "Talkin Live Classics TV (480p)",
       "country": "US",
       "group": "USA",
@@ -306,21 +291,8 @@
     },
     "reason": "segment : HTTP 404",
     "since": "2026-11-23T16:55:59.228Z",
-    "okRuns": 1
-  },
-  {
-    "channel": {
-      "name": "Rai 2",
-      "country": "IT",
-      "group": "Italy",
-      "logo": "",
-      "url": "http://team-tv.co:81/rai2/index.m3u8",
-      "source": "iptv-org (api/streams)",
-      "restoredAt": "2026-11-23T04:54:48.806Z"
-    },
-    "reason": "HTTP 404",
-    "since": "2026-11-23T16:55:59.228Z",
-    "okRuns": 1
+    "okRuns": 0,
+    "lastReason": "segment : HTTP 404"
   },
   {
     "channel": {
@@ -334,6 +306,202 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-24T03:38:59.341Z",
+    "okRuns": 1
+  },
+  {
+    "channel": {
+      "name": "AuroraTV (720p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/g8Q1ASR.png",
+      "url": "https://reflect-aurora.cablecast.tv/live-8/live/live.m3u8",
+      "source": "iptv-org/api-2026-10-us",
+      "restoredAt": "2026-11-24T03:38:59.341Z"
+    },
+    "reason": "réponse qui n'est pas un flux HLS",
+    "since": "2026-11-24T16:45:08.823Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "City of Fairfield Channel 26 (720p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/fiqaiUe.png",
+      "url": "https://reflect-fairfield-ca.cablecast.tv/live-8/live/live.m3u8",
+      "source": "iptv-org/api-2026-10-us",
+      "restoredAt": "2026-11-24T03:38:59.341Z"
+    },
+    "reason": "réponse qui n'est pas un flux HLS",
+    "since": "2026-11-24T16:45:08.823Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "City of Loveland TV (1080p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/K9eCdXD.png",
+      "url": "https://reflect-cityofloveland-co.cablecast.tv/live-3/live/live.m3u8",
+      "source": "iptv-org/api-2026-10-us",
+      "restoredAt": "2026-11-24T03:38:59.341Z"
+    },
+    "reason": "réponse qui n'est pas un flux HLS",
+    "since": "2026-11-24T16:45:08.823Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "CreaTV Channel 15 (720p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/Lwzio0H.png",
+      "url": "https://reflect-creatv.cablecast.tv/live-13/live/live.m3u8",
+      "source": "iptv-org/api-2026-10-us",
+      "restoredAt": "2026-11-24T03:38:59.341Z"
+    },
+    "reason": "réponse qui n'est pas un flux HLS",
+    "since": "2026-11-24T16:45:08.823Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "CreaTV Channel 27 (720p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/IYuv0RF.png",
+      "url": "https://reflect-creatv.cablecast.tv/live-19/live/live.m3u8",
+      "source": "iptv-org/api-2026-10-us",
+      "restoredAt": "2026-11-24T03:38:59.341Z"
+    },
+    "reason": "réponse qui n'est pas un flux HLS",
+    "since": "2026-11-24T16:45:08.823Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "CreaTV Channel 28 (720p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/rvQdzL1.png",
+      "url": "https://reflect-creatv.cablecast.tv/live-14/live/live.m3u8",
+      "source": "iptv-org/api-2026-10-us",
+      "restoredAt": "2026-11-24T03:38:59.341Z"
+    },
+    "reason": "réponse qui n'est pas un flux HLS",
+    "since": "2026-11-24T16:45:08.823Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "CreaTV Channel 30 (720p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/O5GXlmE.png",
+      "url": "https://reflect-creatv.cablecast.tv/live-16/live/live.m3u8",
+      "source": "iptv-org/api-2026-10-us",
+      "restoredAt": "2026-11-24T03:38:59.341Z"
+    },
+    "reason": "réponse qui n'est pas un flux HLS",
+    "since": "2026-11-24T16:45:08.823Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "HKTV (1080p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/AYzdlMz.png",
+      "url": "https://reflect-hktv.cablecast.tv/live-3/live/live.m3u8",
+      "source": "iptv-org/api-2026-10-us",
+      "restoredAt": "2026-11-24T03:38:59.341Z"
+    },
+    "reason": "réponse qui n'est pas un flux HLS",
+    "since": "2026-11-24T16:45:08.823Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "KCAT (1080p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/ZAypRkk.png",
+      "url": "https://reflect-kcat-live.cablecast.tv/live-2/live/live.m3u8",
+      "source": "iptv-org/api-2026-10-us",
+      "restoredAt": "2026-11-24T03:38:59.341Z"
+    },
+    "reason": "réponse qui n'est pas un flux HLS",
+    "since": "2026-11-24T16:45:08.823Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "KFON TV (720p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/MQHYm3V.png",
+      "url": "https://reflect-watchkfon-fontana.cablecast.tv/live-3/live/live.m3u8",
+      "source": "iptv-org/api-2026-10-us",
+      "restoredAt": "2026-11-24T03:38:59.341Z"
+    },
+    "reason": "réponse qui n'est pas un flux HLS",
+    "since": "2026-11-24T16:45:08.823Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "TBCN (480p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/nNxl3F4.png",
+      "url": "https://reflect-tampa-bay-community.cablecast.tv/live-16/live/live.m3u8",
+      "source": "iptv-org/api-2026-10-us",
+      "restoredAt": "2026-11-24T03:38:59.341Z"
+    },
+    "reason": "réponse qui n'est pas un flux HLS",
+    "since": "2026-11-24T16:45:08.823Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "VSCTV (1080p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/cn6pAEZ.png",
+      "url": "https://reflect-vsctv.cablecast.tv/live-3/live/live.m3u8",
+      "source": "iptv-org/api-2026-10-us",
+      "restoredAt": "2026-11-24T03:38:59.341Z"
+    },
+    "reason": "réponse qui n'est pas un flux HLS",
+    "since": "2026-11-24T16:45:08.823Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "SF Commons 29 (480p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/aVkJkgm.png",
+      "url": "https://reflect-bayarea.cablecast.tv/live-5/live/live.m3u8",
+      "source": "iptv-org/api-2026-10-us",
+      "restoredAt": "2026-11-24T03:38:59.341Z"
+    },
+    "reason": "réponse qui n'est pas un flux HLS",
+    "since": "2026-11-24T16:45:08.823Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "SF Commons 76 (480p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/7L53Gju.png",
+      "url": "https://reflect-bayarea.cablecast.tv/live-6/live/live.m3u8",
+      "source": "iptv-org/api-2026-10-us",
+      "restoredAt": "2026-11-24T03:38:59.341Z"
+    },
+    "reason": "réponse qui n'est pas un flux HLS",
+    "since": "2026-11-24T16:45:08.823Z",
     "okRuns": 0
   }
 ]
