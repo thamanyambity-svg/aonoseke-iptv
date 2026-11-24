@@ -1,21 +1,28 @@
 {
-  "generatedAt": "2026-11-23T16:55:59.228Z",
+  "generatedAt": "2026-11-24T03:38:59.341Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée. « dead » = mise en quarantaine : retestée à chaque passage et remise dans la playlist après deux succès de suite.",
   "counts": {
-    "checked": 1198,
-    "ok": 1017,
-    "geoBlocked": 178,
-    "pending": 1,
-    "dead": 3,
+    "checked": 1196,
+    "ok": 1045,
+    "geoBlocked": 175,
+    "pending": 2,
+    "dead": 1,
     "promotedBackups": 0,
-    "restored": 1,
-    "quarantined": 50
+    "restored": 27,
+    "quarantined": 24
   },
   "deadReasons": {
-    "HTTP 404": 2,
-    "segment : HTTP 404": 1
+    "HTTP 404": 1
   },
   "geoBlocked": [
+    {
+      "name": "WDEF-TV News Chattanooga TN (720p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://townnews.g-mana.live/media/a54a6409-5e91-46f0-9fee-06904c1fd094/main.m3u8",
+      "reason": "segment refusé (HTTP 403)",
+      "code": 403
+    },
     {
       "name": "NW Economie (576p)",
       "country": "TG",
@@ -73,26 +80,10 @@
       "code": 403
     },
     {
-      "name": "CNA (360p)",
-      "country": "DZ",
-      "group": "Afrique",
-      "url": "https://live.creacast.com/cna/stream/playlist.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "France 4 (1080p)",
       "country": "FR",
       "group": "France",
       "url": "https://sv1.data-stream.top/8c0a287e56a6e1843143904778be3775b4d3edd4fba4ffcc3f72638c7a71d4d4/hls/francetv4.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "ILTV (720p)",
-      "country": "FR",
-      "group": "France",
-      "url": "https://live.creacast.com/iltv/smil:iltv.smil/playlist.m3u8",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
     },
@@ -1265,22 +1256,6 @@
       "code": 403
     },
     {
-      "name": "Jiangxi Children's Channel",
-      "country": "CN",
-      "group": "Kids",
-      "url": "https://play-live-hls.jxtvcn.com.cn/live-city/tv_jxtv6.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
-      "name": "Jiangxi Movie Channel",
-      "country": "CN",
-      "group": "Movies",
-      "url": "https://play-live-hls.jxtvcn.com.cn/live-city/tv_jxtv4.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "Kral Pop TV (720p)",
       "country": "TR",
       "group": "Music",
@@ -1443,36 +1418,26 @@
   ],
   "pending": [
     {
-      "name": "America TeVe",
-      "country": "US",
-      "group": "USA",
-      "url": "https://live.gideo.video/americateve2/master.m3u8",
-      "reason": "variante : HTTP 503",
-      "code": 503
+      "name": "Jiangxi Children's Channel",
+      "country": "CN",
+      "group": "Kids",
+      "url": "https://play-live-hls.jxtvcn.com.cn/live-city/tv_jxtv6.m3u8",
+      "reason": "délai dépassé"
+    },
+    {
+      "name": "Jiangxi Movie Channel",
+      "country": "CN",
+      "group": "Movies",
+      "url": "https://play-live-hls.jxtvcn.com.cn/live-city/tv_jxtv4.m3u8",
+      "reason": "délai dépassé"
     }
   ],
   "dead": [
     {
-      "name": "Talkin Live Classics TV (480p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://2-fss-1.streamhoster.com/pl_122/206338-3120682-1/playlist.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "CCTV-9 纪录",
-      "country": "CN",
-      "group": "China",
-      "url": "https://xykt-fix.github.io/Y77.m3u8",
-      "reason": "segment : HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "Rai 2",
-      "country": "IT",
-      "group": "Italy",
-      "url": "http://team-tv.co:81/rai2/index.m3u8",
+      "name": "La Une",
+      "country": "BE",
+      "group": "Belgium",
+      "url": "http://41.205.93.154/LA-UNE/index.m3u8",
       "reason": "HTTP 404",
       "code": 404
     }
