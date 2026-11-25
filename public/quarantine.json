@@ -296,20 +296,6 @@
   },
   {
     "channel": {
-      "name": "La Une",
-      "country": "BE",
-      "group": "Belgium",
-      "logo": "",
-      "url": "http://41.205.93.154/LA-UNE/index.m3u8",
-      "source": "iptv-org (api/streams)",
-      "restoredAt": "2026-11-20T14:39:29.789Z"
-    },
-    "reason": "HTTP 404",
-    "since": "2026-11-24T03:38:59.341Z",
-    "okRuns": 1
-  },
-  {
-    "channel": {
       "name": "AuroraTV (720p)",
       "country": "US",
       "group": "USA",
@@ -320,7 +306,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-24T16:45:08.823Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -334,7 +320,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-24T16:45:08.823Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -348,7 +334,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-24T16:45:08.823Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -362,7 +348,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-24T16:45:08.823Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -376,7 +362,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-24T16:45:08.823Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -390,7 +376,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-24T16:45:08.823Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -404,7 +390,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-24T16:45:08.823Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -418,7 +404,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-24T16:45:08.823Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -432,7 +418,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-24T16:45:08.823Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -446,7 +432,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-24T16:45:08.823Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -460,7 +446,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-24T16:45:08.823Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -474,7 +460,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-24T16:45:08.823Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -488,7 +474,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-24T16:45:08.823Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -502,6 +488,19 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-24T16:45:08.823Z",
+    "okRuns": 1
+  },
+  {
+    "channel": {
+      "name": "La Deux",
+      "country": "BE",
+      "group": "Belgium",
+      "logo": "",
+      "url": "http://41.205.93.154/TIPIK/index.m3u8",
+      "source": "iptv-org (api/streams)"
+    },
+    "reason": "HTTP 404",
+    "since": "2026-11-25T01:46:02.845Z",
     "okRuns": 0
   }
 ]
