@@ -1,18 +1,20 @@
 {
-  "generatedAt": "2026-11-25T01:46:02.845Z",
+  "generatedAt": "2026-11-25T16:31:57.532Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée. « dead » = mise en quarantaine : retestée à chaque passage et remise dans la playlist après deux succès de suite.",
   "counts": {
     "checked": 1210,
-    "ok": 1018,
+    "ok": 1029,
     "geoBlocked": 187,
     "pending": 5,
-    "dead": 1,
+    "dead": 3,
     "promotedBackups": 0,
-    "restored": 1,
-    "quarantined": 36
+    "restored": 14,
+    "quarantined": 25
   },
   "deadReasons": {
-    "HTTP 404": 1
+    "HTTP 404": 1,
+    "segment : HTTP 404": 1,
+    "variante : HTTP 404": 1
   },
   "geoBlocked": [
     {
@@ -1514,48 +1516,65 @@
   ],
   "pending": [
     {
-      "name": "Aghapy TV (1080p)",
-      "country": "EG",
-      "group": "Afrique",
-      "url": "https://5b622f07944df.streamlock.net/aghapy.tv/aghapy.smil/playlist.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "Ryan and Friends (1080p)",
+      "name": "Kaloopy TV (1080p)",
       "country": "US",
       "group": "USA",
-      "url": "https://cdn-apse1-prod.tsv2.amagi.tv/linear/amg00286-pocketwatch-ryanandfriends-samsungnz/playlist.m3u8",
+      "url": "https://streamingserver000.viewtv.cloud/VIEWTVNETWORK-KALOOPY/index.m3u8",
       "reason": "délai dépassé"
     },
     {
-      "name": "La Kalle (720p)",
-      "country": "CO",
-      "group": "Music",
-      "url": "https://mdstrm.com/live-stream-playlist/58d191f07290fbb058025843.m3u8",
-      "reason": "délai dépassé"
+      "name": "Outdoor Channel (1080p)",
+      "country": "US",
+      "group": "USA",
+      "url": "https://amg00718-outdoorchannela-outdoortv-samsungau-uc7mp.amagi.tv/playlist/amg00718-outdoorchannela-outdoortv-samsungau/playlist.m3u8",
+      "reason": "domaine introuvable"
     },
     {
-      "name": "NHK World",
-      "country": "JP",
-      "group": "International",
-      "url": "https://freem3u.xyz/api/live/play.m3u8?vid=106",
-      "reason": "délai dépassé"
+      "name": "America TeVe",
+      "country": "US",
+      "group": "USA",
+      "url": "https://live.gideo.video/americateve2/master.m3u8",
+      "reason": "HTTP 503",
+      "code": 503
     },
     {
-      "name": "Akili Kids!",
-      "country": "KE",
-      "group": "Afrique",
-      "url": "https://m6.livecdn.io/akilikids.co.ke/akilikids.smil/playlist.m3u8",
+      "name": "Nolly Africa (1080p)",
+      "country": "GB",
+      "group": "Movies",
+      "url": "https://amg02784-amg02784c1-distrotv-us-3394.playouts.now.amagi.tv/playlist/amg02784-nollyafricafast-nollyafricahd-distrotvus/playlist.m3u8",
+      "reason": "domaine introuvable"
+    },
+    {
+      "name": "La Une",
+      "country": "BE",
+      "group": "Belgium",
+      "url": "http://41.205.93.154/LA-UNE/index.m3u8",
       "reason": "délai dépassé"
     }
   ],
   "dead": [
     {
-      "name": "La Deux",
-      "country": "BE",
-      "group": "Belgium",
-      "url": "http://41.205.93.154/TIPIK/index.m3u8",
+      "name": "TBC2 (1080p)",
+      "country": "TZ",
+      "group": "Afrique",
+      "url": "https://stream-134630.castr.net/5fe35eae8c53540cab83659a/live_44ed95e05b6d11f18d5d85805abbdd6f/index.m3u8",
       "reason": "HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "TJK TV (1080p)",
+      "country": "TR",
+      "group": "Sport",
+      "url": "https://tjktv-live.tjk.org/tjktv.m3u8",
+      "reason": "segment : HTTP 404",
+      "code": 404
+    },
+    {
+      "name": "Real Madrid TV (726p)",
+      "country": "ES",
+      "group": "Sport",
+      "url": "https://rmtv.akamaized.net/hls/live/2043153/rmtv-es-web/master.m3u8",
+      "reason": "variante : HTTP 404",
       "code": 404
     }
   ]
