@@ -291,7 +291,7 @@
     },
     "reason": "segment : HTTP 404",
     "since": "2026-11-23T16:55:59.228Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "délai dépassé"
   },
   {
@@ -305,7 +305,7 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-25T01:46:02.845Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "délai dépassé"
   },
   {
@@ -319,7 +319,8 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-25T16:31:57.532Z",
-    "okRuns": 0
+    "okRuns": 0,
+    "lastReason": "HTTP 404"
   },
   {
     "channel": {
@@ -333,7 +334,7 @@
     },
     "reason": "segment : HTTP 404",
     "since": "2026-11-25T16:31:57.532Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -347,6 +348,87 @@
     },
     "reason": "variante : HTTP 404",
     "since": "2026-11-25T16:31:57.532Z",
+    "okRuns": 0,
+    "lastReason": "variante : HTTP 404"
+  },
+  {
+    "channel": {
+      "name": "Kaloopy TV (1080p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/XPyOTZF.jpeg",
+      "url": "https://streamingserver000.viewtv.cloud/VIEWTVNETWORK-KALOOPY/index.m3u8",
+      "source": "iptv-org/api-2026-10"
+    },
+    "reason": "délai dépassé",
+    "since": "2026-11-26T01:21:28.769Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "Outdoor Channel (1080p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/Kh4MWaY.png",
+      "url": "https://amg00718-outdoorchannela-outdoortv-samsungau-uc7mp.amagi.tv/playlist/amg00718-outdoorchannela-outdoortv-samsungau/playlist.m3u8",
+      "source": "iptv-org/api-2026-10"
+    },
+    "reason": "domaine introuvable",
+    "since": "2026-11-26T01:21:28.769Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "America TeVe",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://pbs.twimg.com/profile_images/2067373416173260801/9cUCY5wX_200x200.jpg",
+      "url": "https://live.gideo.video/americateve2/master.m3u8",
+      "source": "free-tv-2026-10"
+    },
+    "reason": "HTTP 503",
+    "since": "2026-11-26T01:21:28.769Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "Nolly Africa (1080p)",
+      "country": "GB",
+      "group": "Movies",
+      "logo": "https://i.imgur.com/IxtGpti.png",
+      "url": "https://amg02784-amg02784c1-distrotv-us-3394.playouts.now.amagi.tv/playlist/amg02784-nollyafricafast-nollyafricahd-distrotvus/playlist.m3u8",
+      "source": "iptv-org/api-2026-10-thematique"
+    },
+    "reason": "domaine introuvable",
+    "since": "2026-11-26T01:21:28.769Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "CCTV-1 综合",
+      "country": "CN",
+      "group": "China",
+      "logo": "",
+      "url": "http://69.30.245.50/live/cctv1.m3u8",
+      "source": "iptv-org (api/streams)",
+      "restoredAt": "2026-11-22T13:49:34.984Z"
+    },
+    "reason": "pas d'autorisation CORS (illisible dans le navigateur et l'appli)",
+    "since": "2026-11-26T01:21:28.769Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "Rai 4",
+      "country": "IT",
+      "group": "Italy",
+      "logo": "",
+      "url": "http://team-tv.co:81/rai4/index.m3u8",
+      "source": "iptv-org (api/streams)",
+      "restoredAt": "2026-11-24T16:45:08.823Z"
+    },
+    "reason": "HTTP 404",
+    "since": "2026-11-26T01:21:28.769Z",
     "okRuns": 0
   }
 ]
