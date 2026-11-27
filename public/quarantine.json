@@ -305,7 +305,7 @@
     },
     "reason": "variante : HTTP 404",
     "since": "2026-11-25T16:31:57.532Z",
-    "okRuns": 1,
+    "okRuns": 0,
     "lastReason": "variante : HTTP 404"
   },
   {
@@ -352,21 +352,6 @@
   },
   {
     "channel": {
-      "name": "CCTV-1 综合",
-      "country": "CN",
-      "group": "China",
-      "logo": "",
-      "url": "http://69.30.245.50/live/cctv1.m3u8",
-      "source": "iptv-org (api/streams)",
-      "restoredAt": "2026-11-22T13:49:34.984Z"
-    },
-    "reason": "pas d'autorisation CORS (illisible dans le navigateur et l'appli)",
-    "since": "2026-11-26T01:21:28.769Z",
-    "okRuns": 1,
-    "lastReason": "pas d'autorisation CORS (illisible dans le navigateur et l'appli)"
-  },
-  {
-    "channel": {
       "name": "FilmUA Live",
       "country": "UA",
       "group": "Movies",
@@ -405,7 +390,8 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-26T16:04:57.366Z",
-    "okRuns": 1
+    "okRuns": 0,
+    "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
     "channel": {
@@ -419,7 +405,8 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-26T16:04:57.366Z",
-    "okRuns": 1
+    "okRuns": 0,
+    "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
     "channel": {
@@ -433,7 +420,8 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-26T16:04:57.366Z",
-    "okRuns": 1
+    "okRuns": 0,
+    "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
     "channel": {
@@ -447,7 +435,8 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-26T16:04:57.366Z",
-    "okRuns": 1
+    "okRuns": 0,
+    "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
     "channel": {
@@ -461,7 +450,8 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-26T16:04:57.366Z",
-    "okRuns": 1
+    "okRuns": 0,
+    "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
     "channel": {
@@ -475,7 +465,8 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-26T16:04:57.366Z",
-    "okRuns": 1
+    "okRuns": 0,
+    "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
     "channel": {
@@ -489,7 +480,8 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-26T16:04:57.366Z",
-    "okRuns": 1
+    "okRuns": 0,
+    "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
     "channel": {
@@ -503,7 +495,8 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-26T16:04:57.366Z",
-    "okRuns": 1
+    "okRuns": 0,
+    "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
     "channel": {
@@ -517,7 +510,8 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-26T16:04:57.366Z",
-    "okRuns": 1
+    "okRuns": 0,
+    "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
     "channel": {
@@ -531,7 +525,8 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-26T16:04:57.366Z",
-    "okRuns": 1
+    "okRuns": 0,
+    "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
     "channel": {
@@ -545,7 +540,8 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-26T16:04:57.366Z",
-    "okRuns": 1
+    "okRuns": 0,
+    "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
     "channel": {
@@ -559,7 +555,8 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-26T16:04:57.366Z",
-    "okRuns": 1
+    "okRuns": 0,
+    "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
     "channel": {
@@ -573,7 +570,8 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-26T16:04:57.366Z",
-    "okRuns": 1
+    "okRuns": 0,
+    "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
     "channel": {
@@ -587,7 +585,8 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-26T16:04:57.366Z",
-    "okRuns": 1
+    "okRuns": 0,
+    "lastReason": "réponse qui n'est pas un flux HLS"
   },
   {
     "channel": {
@@ -600,7 +599,7 @@
     },
     "reason": "variante : HTTP 404",
     "since": "2026-11-27T01:19:56.864Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -614,6 +613,61 @@
     },
     "reason": "segment : HTTP 404",
     "since": "2026-11-27T01:19:56.864Z",
+    "okRuns": 1
+  },
+  {
+    "channel": {
+      "name": "Whiplash (720p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://whiplash.cc/assets/img/channels/whiplash.png",
+      "url": "https://cdn.whiplash.cc/whiplash/index.m3u8",
+      "source": "iptv-org/us"
+    },
+    "reason": "segment : HTTP 404",
+    "since": "2026-11-27T15:52:58.152Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "PBC Tapesh TV (720p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/50JzsmH.png",
+      "url": "https://iptv.tapesh.tv/tapesh/playlist.m3u8",
+      "source": "iptv-org/api-2026-10-us",
+      "restoredAt": "2026-11-21T04:55:35.126Z"
+    },
+    "reason": "HTTP 404",
+    "since": "2026-11-27T15:52:58.152Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "La Une",
+      "country": "BE",
+      "group": "Belgium",
+      "logo": "",
+      "url": "http://41.205.93.154/LA-UNE/index.m3u8",
+      "source": "iptv-org (api/streams)",
+      "restoredAt": "2026-11-25T01:46:02.845Z"
+    },
+    "reason": "HTTP 404",
+    "since": "2026-11-27T15:52:58.152Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "La Deux",
+      "country": "BE",
+      "group": "Belgium",
+      "logo": "",
+      "url": "http://41.205.93.154/TIPIK/index.m3u8",
+      "source": "iptv-org (api/streams)",
+      "restoredAt": "2026-11-26T16:04:57.366Z"
+    },
+    "reason": "HTTP 404",
+    "since": "2026-11-27T15:52:58.152Z",
     "okRuns": 0
   }
 ]
