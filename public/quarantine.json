@@ -11,7 +11,7 @@
     "reason": "flux terminé (ENDLIST)",
     "since": "2026-11-11T23:52:55.364Z",
     "okRuns": 0,
-    "lastReason": "flux terminé (ENDLIST)"
+    "lastReason": "variante : HTTP 404"
   },
   {
     "channel": {
@@ -305,7 +305,7 @@
     },
     "reason": "variante : HTTP 404",
     "since": "2026-11-25T16:31:57.532Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "variante : HTTP 404"
   },
   {
@@ -338,19 +338,6 @@
   },
   {
     "channel": {
-      "name": "America TeVe",
-      "country": "US",
-      "group": "USA",
-      "logo": "https://pbs.twimg.com/profile_images/2067373416173260801/9cUCY5wX_200x200.jpg",
-      "url": "https://live.gideo.video/americateve2/master.m3u8",
-      "source": "free-tv-2026-10"
-    },
-    "reason": "HTTP 503",
-    "since": "2026-11-26T01:21:28.769Z",
-    "okRuns": 1
-  },
-  {
-    "channel": {
       "name": "Nolly Africa (1080p)",
       "country": "GB",
       "group": "Movies",
@@ -375,22 +362,8 @@
     },
     "reason": "pas d'autorisation CORS (illisible dans le navigateur et l'appli)",
     "since": "2026-11-26T01:21:28.769Z",
-    "okRuns": 0,
+    "okRuns": 1,
     "lastReason": "pas d'autorisation CORS (illisible dans le navigateur et l'appli)"
-  },
-  {
-    "channel": {
-      "name": "Rai 4",
-      "country": "IT",
-      "group": "Italy",
-      "logo": "",
-      "url": "http://team-tv.co:81/rai4/index.m3u8",
-      "source": "iptv-org (api/streams)",
-      "restoredAt": "2026-11-24T16:45:08.823Z"
-    },
-    "reason": "HTTP 404",
-    "since": "2026-11-26T01:21:28.769Z",
-    "okRuns": 1
   },
   {
     "channel": {
@@ -403,7 +376,8 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-26T16:04:57.366Z",
-    "okRuns": 0
+    "okRuns": 0,
+    "lastReason": "HTTP 404"
   },
   {
     "channel": {
@@ -416,7 +390,8 @@
     },
     "reason": "HTTP 400",
     "since": "2026-11-26T16:04:57.366Z",
-    "okRuns": 0
+    "okRuns": 0,
+    "lastReason": "HTTP 400"
   },
   {
     "channel": {
@@ -430,7 +405,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-26T16:04:57.366Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -444,7 +419,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-26T16:04:57.366Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -458,7 +433,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-26T16:04:57.366Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -472,7 +447,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-26T16:04:57.366Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -486,7 +461,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-26T16:04:57.366Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -500,7 +475,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-26T16:04:57.366Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -514,7 +489,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-26T16:04:57.366Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -528,7 +503,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-26T16:04:57.366Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -542,7 +517,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-26T16:04:57.366Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -556,7 +531,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-26T16:04:57.366Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -570,7 +545,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-26T16:04:57.366Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -584,7 +559,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-26T16:04:57.366Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -598,7 +573,7 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-26T16:04:57.366Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -612,6 +587,33 @@
     },
     "reason": "réponse qui n'est pas un flux HLS",
     "since": "2026-11-26T16:04:57.366Z",
+    "okRuns": 1
+  },
+  {
+    "channel": {
+      "name": "WVVH-CD 18.1 (720p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/3/3f/WVVH-CD_logo.png",
+      "url": "https://2-fss-2.streamhoster.com/pl_138/amlst:207282-6094500/playlist.m3u8",
+      "source": "iptv-org/us"
+    },
+    "reason": "variante : HTTP 404",
+    "since": "2026-11-27T01:19:56.864Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "TJK TV (1080p)",
+      "country": "TR",
+      "group": "Sport",
+      "logo": "https://i.imgur.com/3zHdkYG.png",
+      "url": "https://tjktv-live.tjk.org/tjktv.m3u8",
+      "source": "iptv-org/api-2026-10-thematique",
+      "restoredAt": "2026-11-26T16:04:57.366Z"
+    },
+    "reason": "segment : HTTP 404",
+    "since": "2026-11-27T01:19:56.864Z",
     "okRuns": 0
   }
 ]
