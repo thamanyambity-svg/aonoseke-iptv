@@ -1,19 +1,20 @@
 {
-  "generatedAt": "2026-11-27T15:52:58.152Z",
+  "generatedAt": "2026-11-28T00:53:20.956Z",
   "note": "Vérification depuis un serveur aux États-Unis : « bloquée par pays » = le serveur répond mais refuse l'accès (HTTP 403/451) ; la chaîne marche probablement dans son pays d'origine. « pending » = premier échec, gardée. « dead » = mise en quarantaine : retestée à chaque passage et remise dans la playlist après deux succès de suite.",
   "counts": {
-    "checked": 1202,
-    "ok": 1037,
-    "geoBlocked": 147,
-    "pending": 15,
-    "dead": 4,
+    "checked": 1199,
+    "ok": 1042,
+    "geoBlocked": 148,
+    "pending": 1,
+    "dead": 10,
     "promotedBackups": 0,
-    "restored": 1,
-    "quarantined": 47
+    "restored": 2,
+    "quarantined": 55
   },
   "deadReasons": {
     "segment : HTTP 404": 1,
-    "HTTP 404": 3
+    "délai dépassé": 1,
+    "HTTP 502": 8
   },
   "geoBlocked": [
     {
@@ -969,6 +970,14 @@
       "code": 403
     },
     {
+      "name": "TVI Ficcao (720p)",
+      "country": "PT",
+      "group": "Series",
+      "url": "https://raw.githubusercontent.com/thomraider12/canaistvpt/main/m3u8s/tvificcao.m3u8",
+      "reason": "variante : HTTP 403 (accès refusé)",
+      "code": 403
+    },
+    {
       "name": "Video Rola (1080p)",
       "country": "IT",
       "group": "Music",
@@ -1121,14 +1130,6 @@
       "code": 403
     },
     {
-      "name": "TRT Cocuk (1440p)",
-      "country": "TR",
-      "group": "Kids",
-      "url": "https://tv-trtcocuk.medya.trt.com.tr/master.m3u8",
-      "reason": "HTTP 403 (accès refusé)",
-      "code": 403
-    },
-    {
       "name": "France 2",
       "country": "FR",
       "group": "France",
@@ -1191,51 +1192,34 @@
       "url": "http://c9851ec-rbm-hilv-fsly.cdn.redbee.live/L2/c0620faf/27ea2088.isml/.mpd",
       "reason": "HTTP 403 (accès refusé)",
       "code": 403
+    },
+    {
+      "name": "CCTV-1 综合",
+      "country": "CN",
+      "group": "China",
+      "url": "http://69.30.245.50/live/cctv1.m3u8",
+      "reason": "message « indisponible dans votre pays »",
+      "code": 200
     }
   ],
   "pending": [
     {
-      "name": "Vox Africa Tv",
-      "country": "CD",
-      "group": "Afrique",
-      "url": "https://1927901613.rsc.cdn77.org/1927901613/tracks-v1a1/mono.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "AWE (720p)",
+      "name": "America TeVe",
       "country": "US",
       "group": "USA",
-      "url": "https://a-cdn.klowdtv.com/live1/awe_720p/playlist.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "AWE Plus (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://a-cdn.herringnetwork.com/affiliate/awee/playlist.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "CMC-USA Country Music Channel (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://hwlive.streamingmediahosting.com/14215-live/0_obd393sh/playlist.m3u8",
+      "url": "https://live.gideo.video/americateve2/master.m3u8",
       "reason": "HTTP 503",
       "code": 503
-    },
+    }
+  ],
+  "dead": [
     {
-      "name": "OAN Plus (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://a-cdn.herringnetwork.com/affiliate/oane/playlist.m3u8",
-      "reason": "délai dépassé"
-    },
-    {
-      "name": "NHK World",
-      "country": "JP",
-      "group": "International",
-      "url": "https://freem3u.xyz/api/live/play.m3u8?vid=106",
-      "reason": "délai dépassé"
+      "name": "Afrobeat Tv",
+      "country": "CD",
+      "group": "Afrique",
+      "url": "https://stream.ecable.tv/afrobeats/index.m3u8",
+      "reason": "segment : HTTP 404",
+      "code": 404
     },
     {
       "name": "BATV (480p)",
@@ -1307,40 +1291,6 @@
       "url": "https://reflect-broadcast-psdschools.cablecast.tv/live-6/live/live.m3u8",
       "reason": "HTTP 502",
       "code": 502
-    }
-  ],
-  "dead": [
-    {
-      "name": "Whiplash (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://cdn.whiplash.cc/whiplash/index.m3u8",
-      "reason": "segment : HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "PBC Tapesh TV (720p)",
-      "country": "US",
-      "group": "USA",
-      "url": "https://iptv.tapesh.tv/tapesh/playlist.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "La Une",
-      "country": "BE",
-      "group": "Belgium",
-      "url": "http://41.205.93.154/LA-UNE/index.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
-    },
-    {
-      "name": "La Deux",
-      "country": "BE",
-      "group": "Belgium",
-      "url": "http://41.205.93.154/TIPIK/index.m3u8",
-      "reason": "HTTP 404",
-      "code": 404
     }
   ]
 }

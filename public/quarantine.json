@@ -590,33 +590,6 @@
   },
   {
     "channel": {
-      "name": "WVVH-CD 18.1 (720p)",
-      "country": "US",
-      "group": "USA",
-      "logo": "https://upload.wikimedia.org/wikipedia/en/3/3f/WVVH-CD_logo.png",
-      "url": "https://2-fss-2.streamhoster.com/pl_138/amlst:207282-6094500/playlist.m3u8",
-      "source": "iptv-org/us"
-    },
-    "reason": "variante : HTTP 404",
-    "since": "2026-11-27T01:19:56.864Z",
-    "okRuns": 1
-  },
-  {
-    "channel": {
-      "name": "TJK TV (1080p)",
-      "country": "TR",
-      "group": "Sport",
-      "logo": "https://i.imgur.com/3zHdkYG.png",
-      "url": "https://tjktv-live.tjk.org/tjktv.m3u8",
-      "source": "iptv-org/api-2026-10-thematique",
-      "restoredAt": "2026-11-26T16:04:57.366Z"
-    },
-    "reason": "segment : HTTP 404",
-    "since": "2026-11-27T01:19:56.864Z",
-    "okRuns": 1
-  },
-  {
-    "channel": {
       "name": "Whiplash (720p)",
       "country": "US",
       "group": "USA",
@@ -626,7 +599,7 @@
     },
     "reason": "segment : HTTP 404",
     "since": "2026-11-27T15:52:58.152Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -640,7 +613,7 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-27T15:52:58.152Z",
-    "okRuns": 0
+    "okRuns": 1
   },
   {
     "channel": {
@@ -654,7 +627,8 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-27T15:52:58.152Z",
-    "okRuns": 0
+    "okRuns": 0,
+    "lastReason": "HTTP 404"
   },
   {
     "channel": {
@@ -668,6 +642,146 @@
     },
     "reason": "HTTP 404",
     "since": "2026-11-27T15:52:58.152Z",
+    "okRuns": 1
+  },
+  {
+    "channel": {
+      "name": "Afrobeat Tv",
+      "country": "CD",
+      "group": "Afrique",
+      "logo": "",
+      "url": "https://stream.ecable.tv/afrobeats/index.m3u8",
+      "source": "github.com/bermufine/rdcongo",
+      "restoredAt": "2026-11-12T14:20:37.280Z"
+    },
+    "reason": "segment : HTTP 404",
+    "since": "2026-11-28T00:53:20.956Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "BATV (480p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/nTeE4xu.png",
+      "url": "https://reflect-batv.cablecast.tv/live-5/live/live.m3u8",
+      "source": "iptv-org/api-2026-10-us",
+      "restoredAt": "2026-11-24T03:38:59.341Z"
+    },
+    "reason": "délai dépassé",
+    "since": "2026-11-28T00:53:20.956Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "Access Sacramento Channel 17",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/j0UC4ke.png",
+      "url": "https://reflect-access-sacramento.cablecast.tv/live-7/live/live.m3u8",
+      "source": "iptv-org/api-2026-10-us",
+      "restoredAt": "2026-11-24T03:38:59.341Z"
+    },
+    "reason": "HTTP 502",
+    "since": "2026-11-28T00:53:20.956Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "GCO.tv (1080p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/zHBR2zR.png",
+      "url": "https://reflect-golden-co.cablecast.tv/live-3/live/live.m3u8",
+      "source": "iptv-org/api-2026-10-us",
+      "restoredAt": "2026-11-24T03:38:59.341Z"
+    },
+    "reason": "HTTP 502",
+    "since": "2026-11-28T00:53:20.956Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "MSTV (1080p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/x0lJqSp.png",
+      "url": "https://reflect-mcsb-vod.cablecast.tv/live-16/live/live.m3u8",
+      "source": "iptv-org/api-2026-10-us",
+      "restoredAt": "2026-11-24T03:38:59.341Z"
+    },
+    "reason": "HTTP 502",
+    "since": "2026-11-28T00:53:20.956Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "NCM Educational & Kids Channel",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/3YPvfPn.png",
+      "url": "https://reflect-npa.cablecast.tv/live-9/live/live.m3u8",
+      "source": "iptv-org/api-2026-10-us",
+      "restoredAt": "2026-11-24T03:38:59.341Z"
+    },
+    "reason": "HTTP 502",
+    "since": "2026-11-28T00:53:20.956Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "NCM Main Channel",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/3YPvfPn.png",
+      "url": "https://reflect-npa.cablecast.tv/live-6/live/live.m3u8",
+      "source": "iptv-org/api-2026-10-us",
+      "restoredAt": "2026-11-24T03:38:59.341Z"
+    },
+    "reason": "HTTP 502",
+    "since": "2026-11-28T00:53:20.956Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "NYXT (1080p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/7kuluji.png",
+      "url": "https://reflect-stream-bronxnet.cablecast.tv/live-10/live/live.m3u8",
+      "source": "iptv-org/api-2026-10-us",
+      "restoredAt": "2026-11-24T03:38:59.341Z"
+    },
+    "reason": "HTTP 502",
+    "since": "2026-11-28T00:53:20.956Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "Pomona Internet Streaming Channel (720p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/80gaUbq.png",
+      "url": "https://reflect-pomona.cablecast.tv/live-1/live/live.m3u8",
+      "source": "iptv-org/api-2026-10-us",
+      "restoredAt": "2026-11-24T03:38:59.341Z"
+    },
+    "reason": "HTTP 502",
+    "since": "2026-11-28T00:53:20.956Z",
+    "okRuns": 0
+  },
+  {
+    "channel": {
+      "name": "PSD TV (720p)",
+      "country": "US",
+      "group": "USA",
+      "logo": "https://i.imgur.com/djT0Q8q.png",
+      "url": "https://reflect-broadcast-psdschools.cablecast.tv/live-6/live/live.m3u8",
+      "source": "iptv-org/api-2026-10-us",
+      "restoredAt": "2026-11-24T03:38:59.341Z"
+    },
+    "reason": "HTTP 502",
+    "since": "2026-11-28T00:53:20.956Z",
     "okRuns": 0
   }
 ]
